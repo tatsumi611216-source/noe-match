@@ -20,6 +20,7 @@ SLUG_MAPPING_FILE = Path(__file__).parent / "article_slugs.json"
 
 # スラッグマッピングをメモリにロード
 SLUG_TO_FILE = {}
+ID_TO_SLUG = {}   # 旧 article_NNN.html → スラッグURL の301用
 if SLUG_MAPPING_FILE.exists():
     with open(SLUG_MAPPING_FILE, 'r', encoding='utf-8') as f:
         articles = json.load(f)
@@ -27,6 +28,15 @@ if SLUG_MAPPING_FILE.exists():
             slug = article['slug']
             html_file = article['slug'] + '.html'
             SLUG_TO_FILE[slug] = html_file
+            if 'id' in article:
+                ID_TO_SLUG[int(article['id'])] = slug
+
+# 旧スラッグ → 新スラッグ の301リダイレクトマップ
+OLD_SLUG_REDIRECTS = {}
+_redir_file = Path(__file__).parent / "redirects.json"
+if _redir_file.exists():
+    with open(_redir_file, 'r', encoding='utf-8') as f:
+        OLD_SLUG_REDIRECTS = json.load(f)
 
 @app.route('/')
 def index():
@@ -46,6 +56,10 @@ def serve_article(slug):
     if html_file and (ARTICLES_DIR / html_file).exists():
         return send_from_directory(str(ARTICLES_DIR), html_file)
 
+    # 旧スラッグなら新スラッグへ301リダイレクト
+    if slug in OLD_SLUG_REDIRECTS:
+        return redirect(f"/articles/{OLD_SLUG_REDIRECTS[slug]}/", code=301)
+
     # 見つからない場合は404
     return "記事が見つかりません", 404
 
@@ -59,12 +73,12 @@ def serve_legacy_article(article_id):
     # 旧形式のファイル名
     old_file = f"article_{article_id:03d}.html"
 
-    # slugMapを探す
-    for slug, html_file in SLUG_TO_FILE.items():
-        if html_file == old_file:
-            return redirect(f"/articles/{slug}/", code=301)
+    # 旧形式(1-48)はスラッグURLへ301リダイレクト
+    slug = ID_TO_SLUG.get(article_id)
+    if slug and (ARTICLES_DIR / f"{slug}.html").exists():
+        return redirect(f"/articles/{slug}/", code=301)
 
-    # ファイルが見つからない場合、直接提供を試みる
+    # 49-115など、実体ファイルが存在すれば直接提供
     old_html_path = ARTICLES_DIR / old_file
     if old_html_path.exists():
         return send_from_directory(str(ARTICLES_DIR), old_file)

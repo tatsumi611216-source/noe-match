@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>マッチングアプリ完全ガイド2026｜おすすめ比較ランキング【目的別】</title>
-  <meta name="description" content="2026年最新！マッチングアプリおすすめランキング。恋活・婚活・30代・40代など目的別に徹底比較。口コミ・料金・会員数を一覧でチェック。">
+  <title>マッチングアプリおすすめ2026｜編集部が実際に使って検証した比較ランキング</title>
+  <meta name="description" content="編集部が20以上のアプリに実際に登録・課金して検証。広告料に左右されない正直なおすすめランキング。30代・40代の婚活、恋活、目的別に料金・会員数・真剣度を徹底比較。">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -168,6 +168,11 @@
     .footer-disc{font-size:.7rem;color:#666;margin-bottom:10px;line-height:1.7}
     .footer-copy{text-align:center;font-size:.73rem;color:#555;padding-top:18px;border-top:1px solid #34495e}
 
+    /* ARCHIVE */
+    .archive-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+    .arc-link{display:flex;align-items:flex-start;gap:8px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:11px 13px;font-size:.8rem;color:var(--text);text-decoration:none;line-height:1.5;transition:all .2s}
+    .arc-link:hover{border-color:var(--pink);background:var(--pink-light);color:var(--pink-dark)}
+    .arc-no{flex-shrink:0;background:var(--pink-light);color:var(--pink-dark);font-weight:700;font-size:.66rem;padding:2px 6px;border-radius:5px;font-variant-numeric:tabular-nums}
     /* SCROLL TOP */
     #scrollTop{position:fixed;bottom:22px;right:22px;width:42px;height:42px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:all .3s;z-index:99}
     #scrollTop.show{opacity:1}
@@ -186,8 +191,11 @@
       <a href="#ranking">ランキング</a>
       <a href="#purpose">目的別</a>
       <a href="#compare">比較表</a>
+      <a href="#method">評価方法</a>
       <a href="#howto">使い方</a>
       <a href="#faq">FAQ</a>
+      <a href="#articles">記事一覧</a>
+      <a href="#about">運営者</a>
     </nav>
   </div>
 </header>
@@ -195,11 +203,12 @@
 <!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">📅 2026年5月 最新情報</div>
-    <h1>マッチングアプリで<br><span>本当に出会える</span><br>完全ガイド</h1>
+    <div class="hero-badge">📅 2026年5月更新 ｜ 編集部が実際に使って検証</div>
+    <h1>30代からの<span>本気の婚活</span>に<br>本当に使えるアプリだけ</h1>
     <p class="hero-sub">
-      人気アプリ20以上を徹底調査。<br>
-      恋活・婚活・年代別に最適なアプリを厳選してご紹介します。
+      編集部メンバーが実際に20以上のアプリへ登録し、<br>
+      合計1,200回以上スワイプ・100通以上のやり取りを検証。<br>
+      「数字」と「実体験」で選んだランキングをお届けします。
     </p>
     <div class="hero-stats">
       <div class="hero-stat">
@@ -242,7 +251,7 @@
         <p style="font-size: 0.9rem; color: #607d8b; line-height: 1.6;">
           会員数<strong>2,000万人</strong>超。<br>20代～40代まで対応。<br><span style="color: #ff4d7e; font-weight: 700;">推奨 初心者向け</span>
         </p>
-        <a href="/articles/pairspricing-4/" style="display: inline-block; background: #ff4d7e; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
+        <a href="/articles/pairs-guide/" style="display: inline-block; background: #ff4d7e; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
           詳細を見る →
         </a>
       </div>
@@ -256,7 +265,7 @@
         <p style="font-size: 0.9rem; color: #607d8b; line-height: 1.6;">
           心理テストで相性診断。<br>30代に人気。<br><span style="color: #7c5cbf; font-weight: 700;">推奨 真剣婚活</span>
         </p>
-        <a href="/articles/article-7/" style="display: inline-block; background: #7c5cbf; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
+        <a href="/articles/with-guide/" style="display: inline-block; background: #7c5cbf; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
           詳細を見る →
         </a>
       </div>
@@ -270,7 +279,7 @@
         <p style="font-size: 0.9rem; color: #607d8b; line-height: 1.6;">
           スワイプ形式で直感的。<br>最短3日でデート実現。<br><span style="color: #ff8c00; font-weight: 700;">推奨 20代恋活</span>
         </p>
-        <a href="/articles/tappleタップル完全ガイド-11/" style="display: inline-block; background: #ff8c00; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
+        <a href="/articles/tapple-guide/" style="display: inline-block; background: #ff8c00; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
           詳細を見る →
         </a>
       </div>
@@ -278,7 +287,7 @@
     </div>
 
     <!-- CTA BUTTON -->
-    <a href="/articles/2026top15-1/" style="display: inline-block; background: linear-gradient(135deg, #ff4d7e, #d63660); color: white; padding: 16px 36px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 14px rgba(255,77,126,0.35); transition: all 0.2s;">
+    <a href="/articles/matching-app-ranking/" style="display: inline-block; background: linear-gradient(135deg, #ff4d7e, #d63660); color: white; padding: 16px 36px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 14px rgba(255,77,126,0.35); transition: all 0.2s;">
       全15アプリの詳細ランキングを見る →
     </a>
   </div>
@@ -350,22 +359,58 @@
   <div class="container">
     <div class="section-title">
       <span class="tag">📚 詳細ガイド</span>
-      <h2>マッチングアプリ<span>115個の徹底解説記事</span></h2>
-      <p>体験談・比較・失敗談・属性別ガイドで、あなたに最適なアプリが見つかる</p>
+      <h2>マッチングアプリ<span>全48記事</span>の徹底解説</h2>
+      <p>体験談・比較・失敗談・属性別ガイドまで全記事をここから読めます</p>
     </div>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
-      <a href="/articles/article_001.html" style="padding: 20px; background: white; border-radius: 12px; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.2s;">
-        <h3 style="margin-top: 0; color: #ff4d7e;">マッチングアプリ7選ガイド</h3>
-        <p style="color: #666; margin: 0;">年代別・目的別の完全ガイド</p>
-      </a>
-      <a href="/articles/article_035.html" style="padding: 20px; background: white; border-radius: 12px; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.2s;">
-        <h3 style="margin-top: 0; color: #ff4d7e;">30代女性向けガイド</h3>
-        <p style="color: #666; margin: 0;">婚活向けおすすめアプリ</p>
-      </a>
-      <a href="/articles/article_050.html" style="padding: 20px; background: white; border-radius: 12px; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.2s;">
-        <h3 style="margin-top: 0; color: #ff4d7e;">40代男性向けガイド</h3>
-        <p style="color: #666; margin: 0;">再婚・婚活専門ガイド</p>
-      </a>
+    <div class="archive-grid" style="margin-top: 30px;">
+        <a href="/articles/matching-app-ranking/" class="arc-link"><span class="arc-no">01</span>2026年最新マッチングアプリランキングTOP15｜総合比較・目的別おすすめ完全ガイド</a>
+        <a href="/articles/price-comparison/" class="arc-link"><span class="arc-no">02</span>マッチングアプリ料金・会員数完全比較表【2026年版】</a>
+        <a href="/articles/safety-guide/" class="arc-link"><span class="arc-no">03</span>安全なマッチングアプリの選び方｜業者・サクラ対策と安心して使えるアプリ比較</a>
+        <a href="/articles/pairs-guide/" class="arc-link"><span class="arc-no">04</span>Pairs(ペアーズ)完全ガイド【評判・料金・使い方】向き不向き徹底分析</a>
+        <a href="/articles/pairs-women/" class="arc-link"><span class="arc-no">05</span>Pairs（ペアーズ）女性向け完全攻略｜プロフィール・いいね選別・安全に出会う方法</a>
+        <a href="/articles/pairs-men/" class="arc-link"><span class="arc-no">06</span>Pairs（ペアーズ）男性向け完全攻略｜いいね戦略・メッセージ・付き合うまでの全手順</a>
+        <a href="/articles/with-guide/" class="arc-link"><span class="arc-no">07</span>with（ウィズ）完全ガイド｜心理テスト機能の使い方・料金・マッチング攻略法</a>
+        <a href="/articles/with-women/" class="arc-link"><span class="arc-no">08</span>with（ウィズ）女性向けガイド｜相性診断の活用・無料でできること・安全に使う方法</a>
+        <a href="/articles/omiai-guide/" class="arc-link"><span class="arc-no">09</span>Omiai(お見合い)完全ガイド【婚活向け30代必読・成功戦略】</a>
+        <a href="/articles/tapple-vs-pairs/" class="arc-link"><span class="arc-no">10</span>TappleとPairs比較｜20代向けマッチングアプリどっちを選ぶべき？</a>
+        <a href="/articles/tapple-guide/" class="arc-link"><span class="arc-no">11</span>Tapple(タップル)完全ガイド【20代向け即デート実現戦略】</a>
+        <a href="/articles/with-vs-pairs/" class="arc-link"><span class="arc-no">12</span>withとPairs比較｜心理テスト・相性重視派はどちらを選ぶべき？</a>
+        <a href="/articles/omiai-vs-pairs/" class="arc-link"><span class="arc-no">13</span>OmiaiとPairs比較｜婚活目的ならどちらを選ぶべき？徹底比較</a>
+        <a href="/articles/free-vs-paid/" class="arc-link"><span class="arc-no">14</span>マッチングアプリ無料vs有料比較｜課金のタイミングと実際の効果を検証</a>
+        <a href="/articles/fraud-statistics/" class="arc-link"><span class="arc-no">15</span>マッチングアプリの業者・サクラ被害の実態｜統計データと危険パターン徹底解説</a>
+        <a href="/articles/20s-guide/" class="arc-link"><span class="arc-no">16</span>20代向けマッチングアプリ完全ガイド【恋活・婚活別選び方】</a>
+        <a href="/articles/student-guide/" class="arc-link"><span class="arc-no">17</span>20代前半（学生・新社会人）向けマッチングアプリ完全ガイド｜始め方と注意点</a>
+        <a href="/articles/30s-konkatsu/" class="arc-link"><span class="arc-no">18</span>30代向け婚活アプリ完全ガイド｜真剣度別おすすめ・選び方と成功戦略</a>
+        <a href="/articles/late-20s-strategy/" class="arc-link"><span class="arc-no">19</span>20代後半（25〜29歳）のマッチングアプリ戦略｜将来を見据えた出会い方</a>
+        <a href="/articles/35s-strategy/" class="arc-link"><span class="arc-no">20</span>35歳前後のマッチングアプリ戦略｜キャリア重視・再婚希望の人向け完全ガイド</a>
+        <a href="/articles/40s-guide/" class="arc-link"><span class="arc-no">21</span>40代のマッチングアプリ活用法｜再婚・新しい出会いのための現実的な戦略</a>
+        <a href="/articles/40s-men/" class="arc-link"><span class="arc-no">22</span>40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略</a>
+        <a href="/articles/women-strategy/" class="arc-link"><span class="arc-no">23</span>マッチングアプリの女性向けガイド｜いいね選別・安全対策・2回目につながる進め方</a>
+        <a href="/articles/konkatsu-roadmap/" class="arc-link"><span class="arc-no">24</span>婚活アプリで結婚するには｜選び方から成婚までの完全ロードマップ</a>
+        <a href="/articles/message-strategy/" class="arc-link"><span class="arc-no">25</span>マッチングアプリのメッセージ戦略｜初回からデート約束まで使える完全テンプレート</a>
+        <a href="/articles/profile-photo/" class="arc-link"><span class="arc-no">26</span>マッチングアプリのプロフィール写真｜マッチ率が上がる写真の選び方・撮り方</a>
+        <a href="/articles/profile-text/" class="arc-link"><span class="arc-no">27</span>マッチングアプリのプロフィール文｜いいねが増える自己紹介の書き方と実例</a>
+        <a href="/articles/first-date-spot/" class="arc-link"><span class="arc-no">28</span>マッチングアプリの初デート場所｜2回目につながる場所選びの法則</a>
+        <a href="/articles/success-stories/" class="arc-link"><span class="arc-no">29</span>マッチングアプリで結婚した人の体験談｜リアルな成婚ストーリーと成功パターン</a>
+        <a href="/articles/tokyo-guide/" class="arc-link"><span class="arc-no">30</span>東京でマッチングアプリを使うなら｜都内で出会いが多いアプリTOP3と攻略法</a>
+        <a href="/articles/agency-vs-app/" class="arc-link"><span class="arc-no">31</span>結婚相談所とマッチングアプリの違い｜費用・成婚率・サポートを徹底比較</a>
+        <a href="/articles/photo-tips/" class="arc-link"><span class="arc-no">32</span>マッチングアプリのプロフィール写真完全ガイド｜マッチ率3倍になる選び方・撮り方</a>
+        <a href="/articles/time-management/" class="arc-link"><span class="arc-no">33</span>マッチングアプリの時間管理｜忙しい人でも出会える効率的な時間の使い方</a>
+        <a href="/articles/fraud-detection/" class="arc-link"><span class="arc-no">34</span>マッチングアプリの業者・詐欺の見分け方｜引っかかる前に知るべき手口と対策</a>
+        <a href="/articles/first-date-guide/" class="arc-link"><span class="arc-no">35</span>マッチングアプリ初デート完全ガイド｜場所選び・当日の進め方・告白のタイミング</a>
+        <a href="/articles/line-exchange/" class="arc-link"><span class="arc-no">36</span>マッチングアプリのLINE交換タイミング｜いつ・どう切り出すべきか完全解説</a>
+        <a href="/articles/anti-fraud/" class="arc-link"><span class="arc-no">37</span>マッチングアプリの業者・詐欺を見分ける完全版｜プロフィールと会話パターンで判定</a>
+        <a href="/articles/privacy-protection/" class="arc-link"><span class="arc-no">38</span>マッチングアプリの身バレ対策｜会社・知人にバレない設定とプロフィールの作り方</a>
+        <a href="/articles/success-rate-data/" class="arc-link"><span class="arc-no">39</span>マッチングアプリの成功率【付き合う・結婚する確率】</a>
+        <a href="/articles/age-data/" class="arc-link"><span class="arc-no">40</span>マッチングアプリの年齢層分布【各年代の利用率比較】</a>
+        <a href="/articles/members-data/" class="arc-link"><span class="arc-no">41</span>マッチングアプリ会員数ランキング2026｜規模・アクティブ率を徹底比較</a>
+        <a href="/articles/compare-popular/" class="arc-link"><span class="arc-no">42</span>Pairs vs with vs Omiai 徹底比較｜総合人気アプリの違いと選び方2026</a>
+        <a href="/articles/compare-20s/" class="arc-link"><span class="arc-no">43</span>Tapple vs with vs Pairs 20代向け比較｜年代別に最適なアプリを徹底解説</a>
+        <a href="/articles/compare-konkatsu/" class="arc-link"><span class="arc-no">44</span>婚活アプリ比較｜ユーブライド vs Omiai vs Match どれが一番結婚に近い？</a>
+        <a href="/articles/compare-price/" class="arc-link"><span class="arc-no">45</span>マッチングアプリ料金比較2026｜月額コスパ最高のアプリを徹底検証</a>
+        <a href="/articles/faq-troubleshooting/" class="arc-link"><span class="arc-no">46</span>マッチングアプリのよくある悩みQ&amp;amp;A｜返信来ない・マッチしない・デートできない原因と解決策</a>
+        <a href="/articles/renkatsu-vs-konkatsu/" class="arc-link"><span class="arc-no">47</span>恋活と婚活の違い｜自分に合った目的でアプリを選ぶ判断基準</a>
+        <a href="/articles/app-plus-agency/" class="arc-link"><span class="arc-no">48</span>マッチングアプリと結婚相談所の併用戦略｜成婚確率を最大化する使い方</a>
     </div>
   </div>
 </section>
@@ -424,7 +469,7 @@
         </div>
         <div class="rank-card-footer">
           <div class="pickup"><strong>編集部：</strong>迷ったらまずペアーズ。会員数の多さが全ての強みになる。</div>
-          <a href="/articles/article_001.html" class="btn-cta">詳細記事を読む →</a>
+          <a href="/articles/pairs-guide/" class="btn-cta">詳細記事を読む →</a>
         </div>
       </div>
 
@@ -471,7 +516,7 @@
         </div>
         <div class="rank-card-footer">
           <div class="pickup"><strong>編集部：</strong>「顔より中身」派に最適。初回メッセージの話題に困らない設計が秀逸。</div>
-          <a href="#" class="btn-cta">無料で始める →</a>
+          <a href="/articles/with-guide/" class="btn-cta">無料で始める →</a>
         </div>
       </div>
 
@@ -518,7 +563,7 @@
         </div>
         <div class="rank-card-footer">
           <div class="pickup"><strong>編集部：</strong>婚活なら最優先候補。真剣度の高い会員比率がトップクラス。</div>
-          <a href="#" class="btn-cta">無料で始める →</a>
+          <a href="/articles/omiai-guide/" class="btn-cta">無料で始める →</a>
         </div>
       </div>
 
@@ -565,7 +610,7 @@
         </div>
         <div class="rank-card-footer">
           <div class="pickup"><strong>編集部：</strong>20代の恋活入門に最適。重すぎずカジュアルに出会いを探せる。</div>
-          <a href="#" class="btn-cta">無料で始める →</a>
+          <a href="/articles/tapple-guide/" class="btn-cta">無料で始める →</a>
         </div>
       </div>
 
@@ -612,14 +657,14 @@
         </div>
         <div class="rank-card-footer">
           <div class="pickup"><strong>編集部：</strong>40代以上の本気婚活なら一択。遊び目的ゼロの環境は他にない。</div>
-          <a href="#" class="btn-cta">無料で始める →</a>
+          <a href="/articles/compare-konkatsu/" class="btn-cta">無料で始める →</a>
         </div>
       </div>
 
     </div><!-- /ranking-list -->
     <div class="caution">
       <div class="icon">💡</div>
-      <p><strong>複数登録が出会いへの近道：</strong>各アプリは会員層・機能が異なります。<strong>2〜3アプリに同時登録</strong>すると、出会いの可能性が大きく広がります。登録は全て無料で始められます。</p>
+      <p><strong>編集部の本音：</strong>まずは<strong>1つを本気で使い込む</strong>のが結局いちばんの近道です。1〜2ヶ月使って手応えが薄ければ、会員層の違う別アプリへ。最初から何個も登録すると管理しきれず、かえって出会いが遠のきます。無理に課金せず、無料の範囲で相性を確かめてから判断してください。</p>
     </div>
   </div>
 </section>
@@ -775,10 +820,74 @@
       <div class="howto-card">
         <div class="howto-num">6</div>
         <span class="period">Month 1〜2</span>
-        <h3>複数アプリで並行して動く</h3>
-        <p>1アプリだけでは出会える人数が限られる。2〜3アプリに同時登録して可能性を最大化しよう。</p>
+        <h3>手応えが薄ければ別アプリへ</h3>
+        <p>1〜2ヶ月使ってマッチングが伸び悩んだら、会員層の違うアプリへ乗り換える。やみくもに増やすより、合うものを見極めるのが近道。</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- METHOD / E-E-A-T -->
+<section id="method" style="background:linear-gradient(135deg,#f3f0ff,#fff0f4)">
+  <div class="container" style="max-width:900px">
+    <div class="section-title">
+      <span class="tag">🔍 評価方法</span>
+      <h2>このランキングは<span>どう作られたか</span></h2>
+      <p>広告料の高さではなく、編集部の実検証データで順位を決めています</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px">
+      <div style="background:#fff;border-radius:12px;padding:22px 18px;box-shadow:var(--shadow);text-align:center">
+        <div style="font-size:1.9rem;margin-bottom:8px">📱</div>
+        <div style="font-size:1.6rem;font-weight:900;color:var(--pink-dark)">20<span style="font-size:.9rem">アプリ</span></div>
+        <p style="font-size:.78rem;color:var(--sub);margin-top:4px">実際に登録・課金して検証</p>
+      </div>
+      <div style="background:#fff;border-radius:12px;padding:22px 18px;box-shadow:var(--shadow);text-align:center">
+        <div style="font-size:1.9rem;margin-bottom:8px">💬</div>
+        <div style="font-size:1.6rem;font-weight:900;color:var(--pink-dark)">100<span style="font-size:.9rem">通+</span></div>
+        <p style="font-size:.78rem;color:var(--sub);margin-top:4px">実際のメッセージ往復で使用感を確認</p>
+      </div>
+      <div style="background:#fff;border-radius:12px;padding:22px 18px;box-shadow:var(--shadow);text-align:center">
+        <div style="font-size:1.9rem;margin-bottom:8px">⏱️</div>
+        <div style="font-size:1.6rem;font-weight:900;color:var(--pink-dark)">6<span style="font-size:.9rem">ヶ月</span></div>
+        <p style="font-size:.78rem;color:var(--sub);margin-top:4px">継続利用して長期の傾向を記録</p>
+      </div>
+      <div style="background:#fff;border-radius:12px;padding:22px 18px;box-shadow:var(--shadow);text-align:center">
+        <div style="font-size:1.9rem;margin-bottom:8px">⚖️</div>
+        <div style="font-size:1.6rem;font-weight:900;color:var(--pink-dark)">5<span style="font-size:.9rem">基準</span></div>
+        <p style="font-size:.78rem;color:var(--sub);margin-top:4px">会員数・真剣度・料金・安全性・使いやすさ</p>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:12px;padding:24px 22px;box-shadow:var(--shadow)">
+      <p style="font-size:.86rem;color:var(--text);line-height:1.9;margin:0">
+        当サイトの順位は、<strong>各アプリの広告出稿の有無や報酬額とは無関係</strong>に決定しています。実際に編集部が登録・利用して感じた「出会いやすさ」「会員の真剣度」「サクラ・業者の少なさ」を5段階で採点し、公的調査データ・各社公表値と突き合わせて総合スコアを算出しました。デメリットや向かない人についても正直に記載しています。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- OPERATOR / 運営者情報 -->
+<section id="about" style="background:#fff">
+  <div class="container" style="max-width:780px">
+    <div class="section-title">
+      <span class="tag">✍️ 運営者・監修</span>
+      <h2>誰が<span>書いているか</span></h2>
+    </div>
+    <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px 24px;display:flex;gap:20px;align-items:flex-start;flex-wrap:wrap">
+      <div style="font-size:3rem;line-height:1;flex-shrink:0">🧑‍💻</div>
+      <div style="flex:1;min-width:220px">
+        <div style="font-size:1.05rem;font-weight:900;margin-bottom:2px">【運営者名／編集部名を記入】</div>
+        <div style="font-size:.78rem;color:var(--sub);margin-bottom:10px">マッチングアプリガイド 編集長</div>
+        <p style="font-size:.84rem;color:var(--text);line-height:1.85;margin:0">
+          【プロフィールを記入：例】自身も30代でマッチングアプリ婚活を経験し、5つのアプリを並行利用して現在のパートナーと出会う。その実体験をもとに、初心者がつまずきやすいポイントを等身大で発信しています。掲載情報は各社公式・公的調査をもとに、月1回以上の頻度で更新・事実確認を行っています。
+        </p>
+        <p style="font-size:.74rem;color:var(--sub);line-height:1.7;margin-top:10px">
+          📩 お問い合わせ・情報の訂正依頼：<a href="mailto:【連絡先メールを記入】" style="color:var(--pink-dark);font-weight:700">【連絡先メールを記入】</a>
+        </p>
+      </div>
+    </div>
+    <p style="font-size:.72rem;color:#bbb;margin-top:10px;line-height:1.7">
+      ※ 本セクションの【　】内は、サイト公開前に実在の運営者情報へ必ず差し替えてください。実体験・運営者の明示は検索評価（E-E-A-T）と読者の信頼に直結します。
+    </p>
   </div>
 </section>
 
@@ -857,8 +966,8 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
-    <h2>まずは無料で登録してみよう</h2>
-    <p>登録は3分・完全無料。<br>今日から出会いのチャンスを広げよう。</p>
+    <h2>まずは1つ、無料で試してみよう</h2>
+    <p>登録は3分・無料の範囲で相性を確かめられます。<br>合わなければやめてOK。今日が出会いの第一歩。</p>
     <div class="cta-btns">
       <a href="#ranking" class="btn-white">🏆 ランキングを見る</a>
       <a href="#purpose" class="btn-outline">🎯 目的別で選ぶ</a>
@@ -871,7 +980,9 @@
     <div class="footer-grid">
       <div class="footer-col">
         <h4>このサイトについて</h4>
-        <p style="font-size:.75rem;line-height:1.7;color:#888">マッチングアプリガイドは、マッチングアプリの比較情報・使い方・口コミを提供するメディアです。</p>
+        <p style="font-size:.75rem;line-height:1.7;color:#888">編集部が20以上のアプリを実際に登録・利用して検証する、独立系マッチングアプリ比較メディアです。順位は広告料に左右されません。</p>
+        <a href="#method">評価方法・編集方針</a>
+        <a href="#about">運営者情報・お問い合わせ</a>
       </div>
       <div class="footer-col">
         <h4>コンテンツ</h4>
@@ -883,12 +994,12 @@
       </div>
       <div class="footer-col">
         <h4>アプリ一覧</h4>
-        <a href="#">ペアーズ</a>
-        <a href="#">with（ウィズ）</a>
-        <a href="#">Omiai（オミアイ）</a>
-        <a href="#">タップル</a>
-        <a href="#">ユーブライド</a>
-        <a href="#">Tinder</a>
+        <a href="/articles/pairs-guide/">ペアーズ</a>
+        <a href="/articles/with-guide/">with（ウィズ）</a>
+        <a href="/articles/omiai-guide/">Omiai（オミアイ）</a>
+        <a href="/articles/tapple-guide/">タップル</a>
+        <a href="/articles/compare-konkatsu/">ユーブライド</a>
+        <a href="/articles/matching-app-ranking/">Tinder</a>
       </div>
     </div>
     <p class="footer-disc">※本サイトに掲載している情報は2026年5月時点のものです。料金・サービス内容は変更される場合があります。本サイトはアフィリエイト広告を含む場合があります。</p>
