@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+Allow: /articles/
+Disallow: /admin/
+Disallow: /.hidden/
+
+Sitemap: https://www.noe-match.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# その他
+User-agent: *
+Crawl-delay: 1
+Request-rate: 1/10
+
+# イメージ検索の許可
+User-agent: Googlebot-Image
+Allow: /

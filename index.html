@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マッチングアプリ完全ガイド2026｜おすすめ比較ランキング【目的別】</title>
+  <meta name="description" content="2026年最新！マッチングアプリおすすめランキング。恋活・婚活・30代・40代など目的別に徹底比較。口コミ・料金・会員数を一覧でチェック。">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --pink:#ff4d7e;--pink-dark:#d63660;--pink-light:#fff0f4;
+      --purple:#7c5cbf;--purple-light:#f3f0ff;
+      --accent:#ff8c00;--gold:#f4c542;
+      --text:#2c3e50;--sub:#607d8b;--bg:#fafafa;
+      --white:#fff;--border:#eee;
+      --shadow:0 4px 20px rgba(0,0,0,.07);
+      --radius:12px;--radius-lg:20px;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.7;font-size:15px}
+
+    /* HEADER */
+    header{background:var(--white);border-bottom:3px solid var(--pink);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .header-inner{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+    .logo{font-size:1.15rem;font-weight:900;color:var(--pink-dark);text-decoration:none;display:flex;align-items:center;gap:8px}
+    .logo-badge{background:var(--pink);color:#fff;font-size:.65rem;padding:2px 8px;border-radius:20px;font-weight:700}
+    nav{display:flex;gap:4px;flex-wrap:wrap}
+    nav a{color:var(--sub);text-decoration:none;font-size:.8rem;padding:6px 10px;border-radius:6px;transition:all .2s;font-weight:500;white-space:nowrap}
+    nav a:hover{background:var(--pink-light);color:var(--pink-dark)}
+    @media(max-width:768px){nav{display:none}}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,#d63660 0%,#ff4d7e 50%,#ff8fa3 100%);color:#fff;padding:60px 20px 70px;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-40%;left:-10%;width:120%;height:180%;background:radial-gradient(ellipse,rgba(255,255,255,.08) 0%,transparent 70%);pointer-events:none}
+    .hero-inner{max-width:800px;margin:0 auto;position:relative}
+    .hero-badge{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);border-radius:30px;padding:6px 20px;font-size:.82rem;font-weight:700;letter-spacing:.08em;margin-bottom:16px}
+    .hero h1{font-size:clamp(1.6rem,5vw,2.8rem);font-weight:900;line-height:1.3;margin-bottom:14px}
+    .hero h1 span{color:var(--gold)}
+    .hero-sub{font-size:clamp(.9rem,2.5vw,1.05rem);opacity:.9;margin-bottom:28px;line-height:1.8}
+    .hero-stats{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+    .hero-stat{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.3);border-radius:var(--radius);padding:12px 18px;text-align:center;min-width:120px}
+    .hero-stat .num{font-size:1.5rem;font-weight:900;color:var(--gold);display:block;line-height:1}
+    .hero-stat .lbl{font-size:.72rem;opacity:.85}
+
+    /* LAYOUT */
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    section{padding:60px 0}
+    .section-title{text-align:center;margin-bottom:40px}
+    .section-title .tag{display:inline-block;background:var(--pink-light);color:var(--pink-dark);font-size:.78rem;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:10px;letter-spacing:.06em}
+    .section-title h2{font-size:clamp(1.3rem,3.5vw,1.8rem);font-weight:900}
+    .section-title h2 span{color:var(--pink)}
+    .section-title p{color:var(--sub);font-size:.9rem;margin-top:8px}
+
+    /* RANKING */
+    .ranking-list{display:flex;flex-direction:column;gap:22px}
+    .rank-card{background:var(--white);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden;transition:all .3s;border:2px solid transparent}
+    .rank-card:hover{box-shadow:0 8px 32px rgba(255,77,126,.15);transform:translateY(-2px);border-color:var(--pink)}
+    .rank-card.top1{border-color:var(--gold);box-shadow:0 6px 30px rgba(244,197,66,.2)}
+    .rank-card-header{display:flex;align-items:center;padding:20px 24px;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+    .rank-card.top1 .rank-card-header{background:linear-gradient(135deg,#fffde7,#fff9c4)}
+    .rank-num{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;font-weight:900}
+    .rn1{background:linear-gradient(135deg,#f9c400,#e6890a);font-size:1.8rem}
+    .rn2{background:linear-gradient(135deg,#9eaeb5,#607d8b);font-size:1.8rem}
+    .rn3{background:linear-gradient(135deg,#cd7f32,#a0522d);font-size:1.8rem}
+    .rn-other{background:linear-gradient(135deg,var(--pink),var(--pink-dark));font-size:1.2rem}
+    .rank-info{flex:1;min-width:180px}
+    .rank-info .name{font-size:1.15rem;font-weight:900;margin-bottom:4px}
+    .rank-info .name-en{font-size:.75rem;color:var(--sub);margin-bottom:8px}
+    .rank-tags{display:flex;flex-wrap:wrap;gap:5px}
+    .rtag{font-size:.7rem;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap}
+    .t-pink{background:#fde8ef;color:#c62366}
+    .t-blue{background:#e3f2fd;color:#1565c0}
+    .t-green{background:#e8f5e9;color:#2e7d32}
+    .t-orange{background:#fff3e0;color:#e65100}
+    .t-purple{background:#f3e5f5;color:#6a1b9a}
+    .rank-score{text-align:center;flex-shrink:0}
+    .score-num{font-size:2rem;font-weight:900;color:var(--pink);display:block;line-height:1}
+    .score-stars{color:var(--gold);font-size:.9rem;margin:4px 0}
+    .score-lbl{font-size:.72rem;color:var(--sub)}
+    .rank-card-body{padding:20px 24px;display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media(max-width:580px){.rank-card-body{grid-template-columns:1fr}}
+    .rdb-item .lbl{font-size:.74rem;font-weight:700;color:var(--sub);margin-bottom:3px}
+    .rdb-item .val{font-size:.9rem;font-weight:700}
+    .rdb-item .val.hl{color:var(--pink-dark);font-size:1rem}
+    .rdb-item p{font-size:.83rem;color:var(--sub);margin-top:3px;line-height:1.6}
+    .rank-card-footer{padding:14px 24px;background:#fafafa;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+    .pickup{background:#fff8e1;border-left:3px solid var(--accent);padding:8px 12px;border-radius:0 8px 8px 0;font-size:.8rem;flex:1}
+    .pickup strong{color:var(--accent)}
+    .btn-cta{display:inline-block;background:linear-gradient(135deg,var(--pink),var(--pink-dark));color:#fff;font-size:.88rem;font-weight:700;padding:12px 22px;border-radius:30px;text-decoration:none;transition:all .2s;white-space:nowrap;box-shadow:0 4px 14px rgba(255,77,126,.35)}
+    .btn-cta:hover{transform:scale(1.04);box-shadow:0 6px 20px rgba(255,77,126,.5)}
+
+    /* PURPOSE CARDS */
+    .purpose-section{background:#fff}
+    .purpose-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .purpose-card{background:var(--bg);border-radius:var(--radius);padding:22px 18px;border:2px solid var(--border);transition:all .3s;text-align:center}
+    .purpose-card:hover{border-color:var(--pink);transform:translateY(-2px)}
+    .purpose-card .icon{font-size:2rem;margin-bottom:10px}
+    .purpose-card h3{font-size:.95rem;font-weight:700;margin-bottom:8px}
+    .purpose-card .app-name{font-size:1.1rem;font-weight:900;color:var(--pink-dark);margin-bottom:6px}
+    .purpose-card p{font-size:.8rem;color:var(--sub);line-height:1.6}
+
+    /* COMPARE TABLE */
+    .table-wrap{overflow-x:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+    table{width:100%;border-collapse:collapse;background:#fff;font-size:.83rem;min-width:640px}
+    thead th{background:var(--pink);color:#fff;padding:13px 11px;text-align:center;font-weight:700;font-size:.8rem}
+    thead th:first-child{text-align:left;border-radius:var(--radius) 0 0 0}
+    thead th:last-child{border-radius:0 var(--radius) 0 0}
+    tbody tr{border-bottom:1px solid var(--border);transition:background .2s}
+    tbody tr:hover{background:#fff0f4}
+    tbody tr:last-child{border-bottom:none}
+    tbody td{padding:13px 11px;text-align:center}
+    tbody td:first-child{text-align:left;font-weight:700}
+    .ck{color:#2ecc71;font-size:1.05rem}
+    .cx{color:#bdc3c7}
+    .tr-gold{background:#fffde7!important}
+    .tr-gold td:first-child::before{content:'👑 '}
+
+    /* HOW TO */
+    .howto-section{background:linear-gradient(135deg,#fff0f4,#f3f0ff)}
+    .howto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+    .howto-card{background:#fff;border-radius:var(--radius);padding:22px 18px;box-shadow:var(--shadow)}
+    .howto-num{width:34px;height:34px;background:var(--pink);color:#fff;border-radius:50%;font-size:.88rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+    .howto-card h3{font-size:.92rem;font-weight:700;margin-bottom:6px}
+    .howto-card p{font-size:.8rem;color:var(--sub);line-height:1.6}
+    .howto-card .period{display:inline-block;background:var(--pink-light);color:var(--pink-dark);font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:20px;margin-bottom:7px}
+
+    /* FAQ */
+    .faq-section{background:#fff}
+    .faq-list{display:flex;flex-direction:column;gap:10px;max-width:780px;margin:0 auto}
+    .faq-item{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    .faq-q{width:100%;background:#fff;border:none;padding:16px 18px;text-align:left;font-size:.9rem;font-weight:700;cursor:pointer;display:flex;align-items:flex-start;gap:10px;transition:background .2s}
+    .faq-q:hover{background:var(--pink-light)}
+    .faq-q .qm{background:var(--pink);color:#fff;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;flex-shrink:0;margin-top:1px}
+    .faq-q .arr{margin-left:auto;color:var(--pink);font-size:.78rem;flex-shrink:0;transition:transform .3s}
+    .faq-item.open .faq-q .arr{transform:rotate(180deg)}
+    .faq-a{display:none;padding:0 18px 16px 50px;font-size:.85rem;color:var(--sub);line-height:1.8;border-top:1px solid var(--border);background:#fafcfc}
+    .faq-item.open .faq-a{display:block}
+    .faq-a strong{color:var(--pink-dark)}
+
+    /* CTA */
+    .cta-section{background:linear-gradient(135deg,var(--pink-dark),var(--pink));color:#fff;text-align:center;padding:70px 20px}
+    .cta-section h2{font-size:clamp(1.3rem,4vw,1.8rem);font-weight:900;margin-bottom:12px}
+    .cta-section p{opacity:.88;font-size:.9rem;margin-bottom:26px;line-height:1.8}
+    .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    .btn-white{display:inline-block;background:#fff;color:var(--pink-dark);font-size:.9rem;font-weight:700;padding:13px 26px;border-radius:30px;text-decoration:none;transition:all .2s;box-shadow:0 4px 14px rgba(0,0,0,.12)}
+    .btn-white:hover{transform:scale(1.04)}
+    .btn-outline{display:inline-block;border:2px solid #fff;color:#fff;font-size:.9rem;font-weight:700;padding:11px 26px;border-radius:30px;text-decoration:none;transition:all .2s}
+    .btn-outline:hover{background:rgba(255,255,255,.15)}
+
+    /* CAUTION */
+    .caution{background:#fff8e1;border:1px solid #ffcc02;border-radius:var(--radius);padding:18px 22px;margin:28px 0;display:flex;gap:12px;align-items:flex-start}
+    .caution .icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+    .caution p{font-size:.84rem;line-height:1.7;color:#5d4037}
+    .caution strong{color:#e65100}
+
+    /* NEW BADGE */
+    .new-badge{background:var(--pink);color:#fff;font-size:.62rem;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:5px;vertical-align:middle}
+    .hot-badge{background:var(--accent);color:#fff;font-size:.62rem;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:5px;vertical-align:middle}
+
+    /* FOOTER */
+    footer{background:#1c2b33;color:#aaa;padding:38px 20px 22px}
+    .footer-inner{max-width:1100px;margin:0 auto}
+    .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-bottom:28px}
+    .footer-col h4{color:#fff;font-size:.86rem;font-weight:700;margin-bottom:10px;padding-bottom:5px;border-bottom:1px solid #34495e}
+    .footer-col a{display:block;color:#aaa;text-decoration:none;font-size:.78rem;padding:3px 0;transition:color .2s}
+    .footer-col a:hover{color:var(--pink)}
+    .footer-disc{font-size:.7rem;color:#666;margin-bottom:10px;line-height:1.7}
+    .footer-copy{text-align:center;font-size:.73rem;color:#555;padding-top:18px;border-top:1px solid #34495e}
+
+    /* SCROLL TOP */
+    #scrollTop{position:fixed;bottom:22px;right:22px;width:42px;height:42px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:all .3s;z-index:99}
+    #scrollTop.show{opacity:1}
+    #scrollTop:hover{background:var(--pink-dark);transform:scale(1.1)}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      💑 マッチングアプリガイド
+      <span class="logo-badge">2026最新版</span>
+    </a>
+    <nav>
+      <a href="#ranking">ランキング</a>
+      <a href="#purpose">目的別</a>
+      <a href="#compare">比較表</a>
+      <a href="#howto">使い方</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">📅 2026年5月 最新情報</div>
+    <h1>マッチングアプリで<br><span>本当に出会える</span><br>完全ガイド</h1>
+    <p class="hero-sub">
+      人気アプリ20以上を徹底調査。<br>
+      恋活・婚活・年代別に最適なアプリを厳選してご紹介します。
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="num">2,000万+</span>
+        <span class="lbl">最大会員数</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">無料</span>
+        <span class="lbl">登録費用</span>
+      </div>
+      <div class="hero-stat">
+        <span class="num">20+</span>
+        <span class="lbl">比較アプリ数</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NEW: QUICK START + COMPARISON (Inserted after HERO) ===== -->
+
+<!-- QUICK START CTA -->
+<section style="background: linear-gradient(135deg, #fff0f4 0%, #f3f0ff 100%); padding: 50px 20px;">
+  <div class="container" style="max-width: 800px; text-align: center;">
+    <h2 style="font-size: 1.6rem; font-weight: 900; margin-bottom: 16px; color: #2c3e50;">
+      どのアプリを選べばいい？
+    </h2>
+    <p style="font-size: 1rem; color: #607d8b; margin-bottom: 32px; line-height: 1.8;">
+      迷ったら、目的に合わせて以下3つから選べば間違いなし。
+    </p>
+
+    <!-- QUICK GUIDE CARDS -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 40px;">
+
+      <!-- CARD 1 -->
+      <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 2px solid transparent; transition: all 0.3s;">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">👑</div>
+        <h3 style="font-size: 1.1rem; font-weight: 900; color: #ff4d7e; margin-bottom: 8px;">
+          迷ったらPairs
+        </h3>
+        <p style="font-size: 0.9rem; color: #607d8b; line-height: 1.6;">
+          会員数<strong>2,000万人</strong>超。<br>20代～40代まで対応。<br><span style="color: #ff4d7e; font-weight: 700;">推奨 初心者向け</span>
+        </p>
+        <a href="/articles/pairspricing-4/" style="display: inline-block; background: #ff4d7e; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
+          詳細を見る →
+        </a>
+      </div>
+
+      <!-- CARD 2 -->
+      <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 2px solid transparent; transition: all 0.3s;">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">🧠</div>
+        <h3 style="font-size: 1.1rem; font-weight: 900; color: #7c5cbf; margin-bottom: 8px;">
+          価値観重視ならwith
+        </h3>
+        <p style="font-size: 0.9rem; color: #607d8b; line-height: 1.6;">
+          心理テストで相性診断。<br>30代に人気。<br><span style="color: #7c5cbf; font-weight: 700;">推奨 真剣婚活</span>
+        </p>
+        <a href="/articles/article-7/" style="display: inline-block; background: #7c5cbf; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
+          詳細を見る →
+        </a>
+      </div>
+
+      <!-- CARD 3 -->
+      <div style="background: white; border-radius: 12px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.07); border: 2px solid transparent; transition: all 0.3s;">
+        <div style="font-size: 2.5rem; margin-bottom: 12px;">⚡</div>
+        <h3 style="font-size: 1.1rem; font-weight: 900; color: #ff8c00; margin-bottom: 8px;">
+          20代向けTapple
+        </h3>
+        <p style="font-size: 0.9rem; color: #607d8b; line-height: 1.6;">
+          スワイプ形式で直感的。<br>最短3日でデート実現。<br><span style="color: #ff8c00; font-weight: 700;">推奨 20代恋活</span>
+        </p>
+        <a href="/articles/tappleタップル完全ガイド-11/" style="display: inline-block; background: #ff8c00; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 700; font-size: 0.88rem; margin-top: 12px; transition: all 0.2s;">
+          詳細を見る →
+        </a>
+      </div>
+
+    </div>
+
+    <!-- CTA BUTTON -->
+    <a href="/articles/2026top15-1/" style="display: inline-block; background: linear-gradient(135deg, #ff4d7e, #d63660); color: white; padding: 16px 36px; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 1rem; box-shadow: 0 4px 14px rgba(255,77,126,0.35); transition: all 0.2s;">
+      全15アプリの詳細ランキングを見る →
+    </a>
+  </div>
+</section>
+
+<!-- QUICK COMPARISON TABLE -->
+<section style="background: white; padding: 50px 20px;">
+  <div class="container" style="max-width: 900px;">
+    <div class="section-title">
+      <span class="tag">📊 人気アプリ比較表</span>
+      <h2>主要3アプリの<span>スペック比較</span></h2>
+    </div>
+
+    <div class="table-wrap" style="margin-top: 30px;">
+      <table>
+        <thead>
+          <tr>
+            <th style="text-align: left;">アプリ</th>
+            <th>会員数</th>
+            <th>男性料金</th>
+            <th>女性</th>
+            <th>主な年代</th>
+            <th>特徴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tr-gold">
+            <td><strong>Pairs</strong></td>
+            <td>2,000万人超</td>
+            <td>3,590円〜</td>
+            <td>無料</td>
+            <td>20～40代</td>
+            <td>圧倒的な会員数</td>
+          </tr>
+          <tr>
+            <td><strong>with</strong></td>
+            <td>500万人以上</td>
+            <td>3,600円〜</td>
+            <td>無料</td>
+            <td>20～40代</td>
+            <td>心理テスト搭載</td>
+          </tr>
+          <tr>
+            <td><strong>Tapple</strong></td>
+            <td>400万人以上</td>
+            <td>3,700円〜</td>
+            <td>無料</td>
+            <td>18～29歳</td>
+            <td>スワイプ形式</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="background: #fff8e1; border-left: 3px solid #ff8c00; padding: 20px 18px; border-radius: 0 8px 8px 0; margin-top: 24px;">
+      <p style="font-size: 0.9rem; color: #5d4037; margin: 0; line-height: 1.7;">
+        <strong style="color: #ff8c00;">💡 結論：</strong>
+        目的がはっきりしていなければ<strong>Pairs</strong>から始めるのがベスト。
+        基本無料で試せるので、登録して相性を確認してから課金判断できます。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== END NEW SECTIONS ===== -->
+
+<!-- ARTICLES SECTION -->
+<section id="articles" style="background: #f0f7ff; padding: 60px 0;">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">📚 詳細ガイド</span>
+      <h2>マッチングアプリ<span>115個の徹底解説記事</span></h2>
+      <p>体験談・比較・失敗談・属性別ガイドで、あなたに最適なアプリが見つかる</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px;">
+      <a href="/articles/article_001.html" style="padding: 20px; background: white; border-radius: 12px; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.2s;">
+        <h3 style="margin-top: 0; color: #ff4d7e;">マッチングアプリ7選ガイド</h3>
+        <p style="color: #666; margin: 0;">年代別・目的別の完全ガイド</p>
+      </a>
+      <a href="/articles/article_035.html" style="padding: 20px; background: white; border-radius: 12px; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.2s;">
+        <h3 style="margin-top: 0; color: #ff4d7e;">30代女性向けガイド</h3>
+        <p style="color: #666; margin: 0;">婚活向けおすすめアプリ</p>
+      </a>
+      <a href="/articles/article_050.html" style="padding: 20px; background: white; border-radius: 12px; text-decoration: none; color: #333; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: all 0.2s;">
+        <h3 style="margin-top: 0; color: #ff4d7e;">40代男性向けガイド</h3>
+        <p style="color: #666; margin: 0;">再婚・婚活専門ガイド</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- RANKING -->
+<section id="ranking">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">🏆 編集部おすすめ</span>
+      <h2>マッチングアプリ<span>おすすめランキング</span></h2>
+      <p>会員数・マッチング率・料金・口コミを総合した2026年版ランキング</p>
+    </div>
+    <div class="ranking-list">
+
+      <!-- 1位 -->
+      <div class="rank-card top1">
+        <div class="rank-card-header">
+          <div class="rank-num rn1">1</div>
+          <div class="rank-info">
+            <div class="name">Pairs（ペアーズ）<span class="hot-badge">会員数No.1</span></div>
+            <div class="name-en">東証プライム上場・株式会社エウレカ運営</div>
+            <div class="rank-tags">
+              <span class="rtag t-pink">累計2,000万人超</span>
+              <span class="rtag t-blue">恋活・婚活両対応</span>
+              <span class="rtag t-green">コミュニティ機能</span>
+              <span class="rtag t-orange">毎日1万人登録</span>
+            </div>
+          </div>
+          <div class="rank-score">
+            <span class="score-num">97</span>
+            <div class="score-stars">★★★★★</div>
+            <span class="score-lbl">総合スコア</span>
+          </div>
+        </div>
+        <div class="rank-card-body">
+          <div class="rdb-item">
+            <div class="lbl">👥 会員数</div>
+            <div class="val hl">累計2,000万人以上</div>
+            <p>国内最大級。毎日1万人が新規登録しており、地方でも出会いやすい。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">💰 料金（男性）</div>
+            <div class="val hl">月3,590円〜</div>
+            <p>女性は基本無料。男性は月額制。長期プランほどお得になる。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">✅ こんな人におすすめ</div>
+            <div class="val">初めてのマッチングアプリ</div>
+            <p>とにかく会員数が多く選択肢が広い。真剣な出会い〜恋活まで対応。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">🎯 特徴</div>
+            <div class="val">コミュニティ機能が強力</div>
+            <p>共通の趣味・価値観で繋がれるグループ機能あり。話題に困らない。</p>
+          </div>
+        </div>
+        <div class="rank-card-footer">
+          <div class="pickup"><strong>編集部：</strong>迷ったらまずペアーズ。会員数の多さが全ての強みになる。</div>
+          <a href="/articles/article_001.html" class="btn-cta">詳細記事を読む →</a>
+        </div>
+      </div>
+
+      <!-- 2位 -->
+      <div class="rank-card">
+        <div class="rank-card-header">
+          <div class="rank-num rn2">2</div>
+          <div class="rank-info">
+            <div class="name">with（ウィズ）<span class="new-badge">価値観重視</span></div>
+            <div class="name-en">株式会社iface運営</div>
+            <div class="rank-tags">
+              <span class="rtag t-pink">心理テスト搭載</span>
+              <span class="rtag t-blue">価値観マッチング</span>
+              <span class="rtag t-green">30代に人気</span>
+            </div>
+          </div>
+          <div class="rank-score">
+            <span class="score-num">94</span>
+            <div class="score-stars">★★★★★</div>
+            <span class="score-lbl">総合スコア</span>
+          </div>
+        </div>
+        <div class="rank-card-body">
+          <div class="rdb-item">
+            <div class="lbl">👥 会員数</div>
+            <div class="val hl">累計500万人以上</div>
+            <p>ペアーズより少ないが、真剣度が高い会員が集まりやすい。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">💰 料金（男性）</div>
+            <div class="val hl">月3,600円〜</div>
+            <p>女性は基本無料。心理テストや性格診断で相性を見える化。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">✅ こんな人におすすめ</div>
+            <div class="val">価値観が合う相手を探したい</div>
+            <p>外見より「考え方・生き方が合う人」を重視する30代に特に人気。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">🎯 特徴</div>
+            <div class="val">心理テスト・性格診断</div>
+            <p>監修心理士によるテストで深い相性チェックができる独自機能あり。</p>
+          </div>
+        </div>
+        <div class="rank-card-footer">
+          <div class="pickup"><strong>編集部：</strong>「顔より中身」派に最適。初回メッセージの話題に困らない設計が秀逸。</div>
+          <a href="#" class="btn-cta">無料で始める →</a>
+        </div>
+      </div>
+
+      <!-- 3位 -->
+      <div class="rank-card">
+        <div class="rank-card-header">
+          <div class="rank-num rn3">3</div>
+          <div class="rank-info">
+            <div class="name">Omiai（オミアイ）</div>
+            <div class="name-en">株式会社ネットマーケティング運営</div>
+            <div class="rank-tags">
+              <span class="rtag t-pink">婚活向け</span>
+              <span class="rtag t-blue">累計1,000万人</span>
+              <span class="rtag t-purple">本人確認厳格</span>
+            </div>
+          </div>
+          <div class="rank-score">
+            <span class="score-num">92</span>
+            <div class="score-stars">★★★★★</div>
+            <span class="score-lbl">総合スコア</span>
+          </div>
+        </div>
+        <div class="rank-card-body">
+          <div class="rdb-item">
+            <div class="lbl">👥 会員数</div>
+            <div class="val hl">累計1,000万人以上</div>
+            <p>利用者の90%以上が「結婚を見据えた出会い」を求めている。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">💰 料金（男性）</div>
+            <div class="val hl">月3,980円〜</div>
+            <p>女性は基本無料。本人確認・収入証明など安全性が高い。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">✅ こんな人におすすめ</div>
+            <div class="val">本気で結婚を考えている</div>
+            <p>遊び目的のユーザーが少なく、真剣な婚活ができる環境。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">🎯 特徴</div>
+            <div class="val">本人確認が業界最高水準</div>
+            <p>運転免許証・保険証など複数書類で厳格に身元確認を実施。</p>
+          </div>
+        </div>
+        <div class="rank-card-footer">
+          <div class="pickup"><strong>編集部：</strong>婚活なら最優先候補。真剣度の高い会員比率がトップクラス。</div>
+          <a href="#" class="btn-cta">無料で始める →</a>
+        </div>
+      </div>
+
+      <!-- 4位 -->
+      <div class="rank-card">
+        <div class="rank-card-header">
+          <div class="rank-num rn-other">4</div>
+          <div class="rank-info">
+            <div class="name">タップル</div>
+            <div class="name-en">株式会社タップル運営</div>
+            <div class="rank-tags">
+              <span class="rtag t-pink">20代に人気</span>
+              <span class="rtag t-blue">趣味でマッチング</span>
+              <span class="rtag t-green">カジュアル恋活</span>
+            </div>
+          </div>
+          <div class="rank-score">
+            <span class="score-num">89</span>
+            <div class="score-stars">★★★★☆</div>
+            <span class="score-lbl">総合スコア</span>
+          </div>
+        </div>
+        <div class="rank-card-body">
+          <div class="rdb-item">
+            <div class="lbl">👥 会員数</div>
+            <div class="val hl">累計1,700万人以上</div>
+            <p>20代の利用率が高い。共通の趣味からマッチングする設計。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">💰 料金（男性）</div>
+            <div class="val hl">月3,700円〜</div>
+            <p>女性は完全無料。気軽なカジュアル恋活に向いている。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">✅ こんな人におすすめ</div>
+            <div class="val">20代・恋活・趣味が合う人</div>
+            <p>「趣味カード」を選ぶだけで相手を探せる。初心者でも使いやすい。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">🎯 特徴</div>
+            <div class="val">趣味から始まるマッチング</div>
+            <p>スワイプ方式で直感的に使える。話題のきっかけが自然に生まれる。</p>
+          </div>
+        </div>
+        <div class="rank-card-footer">
+          <div class="pickup"><strong>編集部：</strong>20代の恋活入門に最適。重すぎずカジュアルに出会いを探せる。</div>
+          <a href="#" class="btn-cta">無料で始める →</a>
+        </div>
+      </div>
+
+      <!-- 5位 -->
+      <div class="rank-card">
+        <div class="rank-card-header">
+          <div class="rank-num rn-other">5</div>
+          <div class="rank-info">
+            <div class="name">ユーブライド（youbride）</div>
+            <div class="name-en">株式会社IBJS運営</div>
+            <div class="rank-tags">
+              <span class="rtag t-pink">40代に強い</span>
+              <span class="rtag t-blue">男女有料制</span>
+              <span class="rtag t-purple">真剣度最高峰</span>
+            </div>
+          </div>
+          <div class="rank-score">
+            <span class="score-num">87</span>
+            <div class="score-stars">★★★★☆</div>
+            <span class="score-lbl">総合スコア</span>
+          </div>
+        </div>
+        <div class="rank-card-body">
+          <div class="rdb-item">
+            <div class="lbl">👥 会員数</div>
+            <div class="val hl">累計200万人以上</div>
+            <p>少数精鋭。男女ともに有料のため、遊び目的ユーザーがほぼいない。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">💰 料金</div>
+            <div class="val hl">男女ともに月2,980円〜</div>
+            <p>男女両方有料制という珍しい設計で、真剣度が最も高い。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">✅ こんな人におすすめ</div>
+            <div class="val">40〜50代・本気の婚活</div>
+            <p>年齢層が高め。40〜50代の真剣な婚活需要に特化している。</p>
+          </div>
+          <div class="rdb-item">
+            <div class="lbl">🎯 特徴</div>
+            <div class="val">男女ともに有料＝質が高い</div>
+            <p>女性も費用を払っているため「本気度」が他アプリより圧倒的に高い。</p>
+          </div>
+        </div>
+        <div class="rank-card-footer">
+          <div class="pickup"><strong>編集部：</strong>40代以上の本気婚活なら一択。遊び目的ゼロの環境は他にない。</div>
+          <a href="#" class="btn-cta">無料で始める →</a>
+        </div>
+      </div>
+
+    </div><!-- /ranking-list -->
+    <div class="caution">
+      <div class="icon">💡</div>
+      <p><strong>複数登録が出会いへの近道：</strong>各アプリは会員層・機能が異なります。<strong>2〜3アプリに同時登録</strong>すると、出会いの可能性が大きく広がります。登録は全て無料で始められます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PURPOSE -->
+<section id="purpose" class="purpose-section">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">🎯 目的別</span>
+      <h2><span>目的・年代別</span>おすすめアプリ</h2>
+      <p>あなたの状況に合ったアプリを選ぼう</p>
+    </div>
+    <div class="purpose-grid">
+      <div class="purpose-card">
+        <div class="icon">💕</div>
+        <h3>恋活（カジュアルに）</h3>
+        <div class="app-name">タップル</div>
+        <p>スワイプ形式で気軽に。20代中心で趣味が合う人と繋がりやすい。</p>
+      </div>
+      <div class="purpose-card">
+        <div class="icon">💍</div>
+        <h3>婚活（結婚前提）</h3>
+        <div class="app-name">Omiai</div>
+        <p>利用者の90%が結婚を意識。本人確認が厳格で安心して使える。</p>
+      </div>
+      <div class="purpose-card">
+        <div class="icon">🧠</div>
+        <h3>価値観で選びたい</h3>
+        <div class="app-name">with</div>
+        <p>心理テストで相性を数値化。外見より中身重視の人にぴったり。</p>
+      </div>
+      <div class="purpose-card">
+        <div class="icon">🌍</div>
+        <h3>とにかく多く会いたい</h3>
+        <div class="app-name">ペアーズ</div>
+        <p>国内最大の会員数。どのエリアでも候補が豊富に見つかる。</p>
+      </div>
+      <div class="purpose-card">
+        <div class="icon">🎂</div>
+        <h3>40〜50代の婚活</h3>
+        <div class="app-name">ユーブライド</div>
+        <p>男女ともに有料制で真剣度最高。同世代の真剣な出会いが多い。</p>
+      </div>
+      <div class="purpose-card">
+        <div class="icon">🌐</div>
+        <h3>外国人と出会いたい</h3>
+        <div class="app-name">Tinder / Bumble</div>
+        <p>グローバルな会員層。語学学習・国際恋愛を求める人に最適。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE TABLE -->
+<section id="compare">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">📊 一覧比較</span>
+      <h2>アプリ<span>機能比較表</span></h2>
+      <p>主要6アプリの特徴を一覧で比較</p>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>アプリ名</th>
+            <th>会員数</th>
+            <th>女性<br>無料</th>
+            <th>婚活<br>向け</th>
+            <th>20代<br>多い</th>
+            <th>40代<br>多い</th>
+            <th>本人<br>確認</th>
+            <th>総合</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tr-gold">
+            <td>ペアーズ</td><td>2,000万+</td>
+            <td class="ck">✔</td><td class="ck">✔</td><td class="ck">✔</td><td class="ck">✔</td><td class="ck">✔</td>
+            <td>★★★★★</td>
+          </tr>
+          <tr>
+            <td>with</td><td>500万+</td>
+            <td class="ck">✔</td><td class="ck">✔</td><td class="ck">✔</td><td class="cx">△</td><td class="ck">✔</td>
+            <td>★★★★★</td>
+          </tr>
+          <tr>
+            <td>Omiai</td><td>1,000万+</td>
+            <td class="ck">✔</td><td class="ck">✔</td><td class="ck">✔</td><td class="ck">✔</td><td class="ck">✔</td>
+            <td>★★★★★</td>
+          </tr>
+          <tr>
+            <td>タップル</td><td>1,700万+</td>
+            <td class="ck">✔</td><td class="cx">△</td><td class="ck">✔</td><td class="cx">△</td><td class="ck">✔</td>
+            <td>★★★★☆</td>
+          </tr>
+          <tr>
+            <td>ユーブライド</td><td>200万+</td>
+            <td class="cx">✕</td><td class="ck">✔</td><td class="cx">△</td><td class="ck">✔</td><td class="ck">✔</td>
+            <td>★★★★☆</td>
+          </tr>
+          <tr>
+            <td>Tinder</td><td>グローバル</td>
+            <td class="ck">✔</td><td class="cx">✕</td><td class="ck">✔</td><td class="cx">✕</td><td class="cx">△</td>
+            <td>★★★☆☆</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:.73rem;color:#bbb;margin-top:6px;text-align:right">※2026年5月時点。会員数は累計。</p>
+  </div>
+</section>
+
+<!-- HOW TO -->
+<section id="howto" class="howto-section">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">📋 使い方</span>
+      <h2>マッチングアプリ<span>成功ステップ</span></h2>
+      <p>登録から初デートまでの流れを解説</p>
+    </div>
+    <div class="howto-grid">
+      <div class="howto-card">
+        <div class="howto-num">1</div>
+        <span class="period">Day 1</span>
+        <h3>プロフィールを作り込む</h3>
+        <p>写真3〜5枚・自己紹介文300字・趣味を丁寧に設定。プロフィールの質でマッチング率が3倍変わる。</p>
+      </div>
+      <div class="howto-card">
+        <div class="howto-num">2</div>
+        <span class="period">Day 2〜7</span>
+        <h3>毎日いいねを送る</h3>
+        <p>1日10〜20いいねを継続。気になる人には「いいね＋コメント」で差をつける。返信率が大幅に上がる。</p>
+      </div>
+      <div class="howto-card">
+        <div class="howto-num">3</div>
+        <span class="period">Week 1〜2</span>
+        <h3>マッチング後は即メッセージ</h3>
+        <p>マッチングから24時間以内に最初のメッセージを送る。相手のプロフィールから話題を1つ拾う。</p>
+      </div>
+      <div class="howto-card">
+        <div class="howto-num">4</div>
+        <span class="period">Week 2〜3</span>
+        <h3>LINE交換→デートを提案</h3>
+        <p>メッセージ10往復を目安にLINE交換。その後デートの誘いは「〇〇行きたいんですけど一緒にどうですか？」で自然に。</p>
+      </div>
+      <div class="howto-card">
+        <div class="howto-num">5</div>
+        <span class="period">Month 1</span>
+        <h3>初デートは昼間のカフェから</h3>
+        <p>初回は1〜2時間で終わる昼間のカフェが安心。お互いの緊張が取れやすく、2回目の約束もしやすい。</p>
+      </div>
+      <div class="howto-card">
+        <div class="howto-num">6</div>
+        <span class="period">Month 1〜2</span>
+        <h3>複数アプリで並行して動く</h3>
+        <p>1アプリだけでは出会える人数が限られる。2〜3アプリに同時登録して可能性を最大化しよう。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">❓ よくある質問</span>
+      <h2><span>FAQ</span>：始める前の疑問を解決</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="qm">Q</span>
+          マッチングアプリは本当に出会えますか？
+          <span class="arr">▼</span>
+        </button>
+        <div class="faq-a">
+          <p><strong>出会えます。</strong>国内では既婚カップルの4組に1組がマッチングアプリで出会っています（2024年調査）。ただし、プロフィールの作り込みと継続的な活動が必須。「登録しただけ」では出会いにくいため、毎日の活動が重要です。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="qm">Q</span>
+          料金はどのくらいかかりますか？
+          <span class="arr">▼</span>
+        </button>
+        <div class="faq-a">
+          <p>女性は多くのアプリで<strong>基本無料</strong>です。男性は月3,000〜4,000円が相場。ユーブライドのみ男女ともに有料です。長期プランほど1ヶ月あたりの費用が安くなります。まず1ヶ月試して合うかどうか確認するのがおすすめです。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="qm">Q</span>
+          身バレしませんか？職場や知人に知られたくない
+          <span class="arr">▼</span>
+        </button>
+        <div class="faq-a">
+          <p>主要アプリには<strong>非表示・ブロック機能</strong>があります。特定の地域・年齢を非表示にしたり、知人のアカウントをブロックする機能も充実しています。本名を登録する必要もなく、ニックネームで活動できます。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="qm">Q</span>
+          どのアプリを最初に使えばいいですか？
+          <span class="arr">▼</span>
+        </button>
+        <div class="faq-a">
+          <p>迷ったら<strong>ペアーズ</strong>から始めてください。会員数2,000万人超で選択肢が最も多く、初めての方でも使いやすい設計です。婚活目的なら<strong>Omiai</strong>を並行して使うのが最短ルートです。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="qm">Q</span>
+          業者・サクラが心配です
+          <span class="arr">▼</span>
+        </button>
+        <div class="faq-a">
+          <p>ペアーズ・Omiai・withなど大手アプリは<strong>24時間監視体制</strong>と運転免許証などによる本人確認を実施しており、業者・サクラの排除に力を入れています。「すぐにLINEに誘う」「お金の話をする」相手は即ブロックが鉄則です。</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span class="qm">Q</span>
+          40代・50代でも使えますか？
+          <span class="arr">▼</span>
+        </button>
+        <div class="faq-a">
+          <p><strong>使えます。</strong>特にユーブライドは40〜50代の利用者が多く、同世代の真剣な出会いを求めている方が集まっています。ペアーズも全年齢対応で、40代向けのコミュニティも充実しています。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>まずは無料で登録してみよう</h2>
+    <p>登録は3分・完全無料。<br>今日から出会いのチャンスを広げよう。</p>
+    <div class="cta-btns">
+      <a href="#ranking" class="btn-white">🏆 ランキングを見る</a>
+      <a href="#purpose" class="btn-outline">🎯 目的別で選ぶ</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>このサイトについて</h4>
+        <p style="font-size:.75rem;line-height:1.7;color:#888">マッチングアプリガイドは、マッチングアプリの比較情報・使い方・口コミを提供するメディアです。</p>
+      </div>
+      <div class="footer-col">
+        <h4>コンテンツ</h4>
+        <a href="#ranking">おすすめランキング</a>
+        <a href="#purpose">目的別おすすめ</a>
+        <a href="#compare">アプリ比較表</a>
+        <a href="#howto">成功ステップ</a>
+        <a href="#faq">よくある質問</a>
+      </div>
+      <div class="footer-col">
+        <h4>アプリ一覧</h4>
+        <a href="#">ペアーズ</a>
+        <a href="#">with（ウィズ）</a>
+        <a href="#">Omiai（オミアイ）</a>
+        <a href="#">タップル</a>
+        <a href="#">ユーブライド</a>
+        <a href="#">Tinder</a>
+      </div>
+    </div>
+    <p class="footer-disc">※本サイトに掲載している情報は2026年5月時点のものです。料金・サービス内容は変更される場合があります。本サイトはアフィリエイト広告を含む場合があります。</p>
+    <div class="footer-copy">&copy; 2026 マッチングアプリガイド. All rights reserved.</div>
+  </div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function toggleFaq(btn){btn.closest('.faq-item').classList.toggle('open')}
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('show',window.scrollY>300)
+})
+</script>
+</body>
+</html>
