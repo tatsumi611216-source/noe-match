@@ -93,7 +93,8 @@ def md_to_html(md, faq_acc):
                 flush_faq()
                 cur_q=re.sub(r'^Q\d*[\.\．]?\s*','',txt)
                 i+=1; continue
-            tag=f'h{min(lvl,4)}'
+            # H1はテンプレ側のタイトルのみ。本文のレベル1見出しはh2へ降格（H1重複回避）
+            tag = 'h2' if lvl==1 else f'h{min(lvl,4)}'
             out.append(f'<{tag}>{inline(txt)}</{tag}>')
             i+=1; continue
         # テーブル
@@ -222,26 +223,51 @@ footer{background:#1c2b33;color:#9aa;padding:30px 20px;font-size:.76rem}
 def build(n):
     p=FILES[n]; slug=SLUGS[n]
     meta,author,byline,updated,body=parse(p.read_text(encoding='utf-8'))
-    faq=[]
-    content=md_to_html(body, faq)
     title=meta.get('title') or ''
     # frontmatterのtitleが欠損/プレースホルダなら本文H1を採用
     if (not title) or title.strip().lower() in ('article','記事',f'記事{n}'):
         mh1=re.search(r'^#\s+(.+?)\s*$', body, re.M)
         title=mh1.group(1).strip() if mh1 else f"記事{n}"
+    # 本文先頭のタイトルH1を除去（テンプレH1と重複するため）
+    body=re.sub(r'^#\s+.+?\s*$', '', body, count=1, flags=re.M)
+    faq=[]
+    content=md_to_html(body, faq)
     # description: 本文最初の<p>から
     mdesc=re.search(r'<p>(.*?)</p>', content, re.S)
     desc=re.sub(r'<[^>]+>','',mdesc.group(1))[:110] if mdesc else title
+    # 更新日をISO8601へ（例: 2026年6月1日 -> 2026-06-01）
+    iso=''
+    md_=re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', updated)
+    if md_: iso=f"{int(md_.group(1)):04d}-{int(md_.group(2)):02d}-{int(md_.group(3)):02d}"
+    # 先頭画像（スキーマ用）
+    mimg=re.search(r'<img src="(/images/[^"]+)"', content)
+    img_url=f"{DOMAIN}{mimg.group(1)}" if mimg else f"{DOMAIN}/images/"
+    canon=f"{DOMAIN}/articles/{slug}/"
     # FAQ schema
-    faq_ld=''
+    schemas=[]
     if faq:
         items=[{"@type":"Question","name":q,
                 "acceptedAnswer":{"@type":"Answer","text":a}} for q,a in faq if a]
         if items:
-            faq_ld='<script type="application/ld+json">'+json.dumps(
-                {"@context":"https://schema.org","@type":"FAQPage","mainEntity":items},
-                ensure_ascii=False)+'</script>'
-    byline_html=f'''<div class="byline"><div class="av">✍️</div><div><strong>{esc(author)}</strong><br>{esc(byline)}<div class="up">最終更新：{esc(updated)}</div></div></div>''' if byline else ''
+            schemas.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":items})
+    # Article(BlogPosting) schema
+    art={"@context":"https://schema.org","@type":"BlogPosting","headline":title[:110],
+         "description":desc,"image":img_url,"mainEntityOfPage":canon,
+         "author":{"@type":"Organization","name":author or "NOE マッチングアプリ大学 編集部"},
+         "publisher":{"@type":"Organization","name":"NOE マッチングアプリ大学",
+                      "url":DOMAIN+"/"}}
+    if iso: art["datePublished"]=iso; art["dateModified"]=iso
+    schemas.append(art)
+    # BreadcrumbList schema
+    schemas.append({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"ホーム","item":DOMAIN+"/"},
+        {"@type":"ListItem","position":2,"name":"記事一覧","item":DOMAIN+"/#articles"},
+        {"@type":"ListItem","position":3,"name":title}]})
+    faq_ld='\n'.join('<script type="application/ld+json">'+json.dumps(s,ensure_ascii=False)+'</script>' for s in schemas)
+    # 著者名（バイラインがあれば著者の肩書/実績、無ければ編集部）
+    aname=esc(author or "Noe編集部")
+    bdesc=esc(byline) if (byline and byline.strip()!=author.strip()) else "マッチングアプリを実際に使用した経験を持つ編集部。Pairs・with・Omiai・Tapple・ユーブライドを検証。"
+    byline_html=f'''<div class="byline"><div class="av">✍️</div><div><strong><a href="/about.html" style="color:inherit;text-decoration:none">{aname}</a></strong><br>{bdesc}<div class="up">最終更新：{esc(updated)}</div></div></div>'''
     page=f'''<!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -277,8 +303,8 @@ def build(n):
 </div>
 </div>
 <footer><div class="footer-inner">
-<div><a href="/">ホーム</a><a href="/#articles">記事一覧</a><a href="/#about">運営者情報</a></div>
-<p class="footer-disc">※本記事の情報は{esc(updated)}時点のものです。料金・サービス内容は変更される場合があります。本サイトはアフィリエイト広告を含む場合があります。<br>&copy; 2026 マッチングアプリガイド</p>
+<div><a href="/">ホーム</a><a href="/#articles">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本記事の情報は{esc(updated)}時点のものです。料金・サービス内容は変更される場合があります。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 NOE マッチングアプリ大学</p>
 </div></footer>
 <button id="top" onclick="scrollTo({{top:0,behavior:'smooth'}})">↑</button>
 <script>onscroll=()=>top.classList.toggle('show',scrollY>300)</script>
