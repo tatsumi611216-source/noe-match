@@ -1,0 +1,53 @@
+# NOE 記事工場エージェント 運用マニュアル
+
+このファイルは、週次で自動実行されるエージェントへの指示書です。エージェントはこのリポジトリ（noe-match.com のソース）をcloneした状態で起動します。
+
+## あなたのタスク（毎回実行）
+
+1. `agent/keyword_queue.json` を読み、`status: "pending"` の先頭 **2件** を選ぶ
+2. 各キーワードについて記事を1本生成する（下記の品質基準に厳密に従う）
+3. `sitemap.xml` に新記事のURLを追加する
+4. `index.html` の記事一覧（`arc-link` のリスト）に新記事へのリンクを追加する（`arc-no` は既存最大値+1）
+5. 処理したキューの `status` を `"done"` に、`published` に日付を記入する
+6. すべてコミットして `main` にプッシュする（プッシュ権限がない場合はPRを作成する）
+
+## 記事の品質基準（必須）
+
+### フォーマット
+- テンプレート：`articles/tokyo-guide/index.html` および `articles/osaka-guide/index.html` の構造を踏襲する
+- 出力先：`articles/<slug>/index.html`（slugはキューに指定済み）
+- `<head>` に必ず含める：title / meta description / canonical / og:title / og:url / BlogPosting JSON-LD / BreadcrumbList JSON-LD / FAQPage JSON-LD
+- 既存記事と同じCSS（テンプレートの `<style>` ブロックをそのまま使用）
+- 画像は `/images/` 内の既存ファイルから未使用のものを選ぶ
+
+### コンテンツ
+- 文字数：本文6,000〜10,000字目安
+- 必須セクション：導入 / 比較表 / 本題（キーワード固有の深掘り）/ 体験談2本 / FAQ 5問 / まとめ / 著者情報
+- 体験談は日本人の姓＋年齢＋職業で、**既存記事と名前・エピソードが重複しないこと**（既存記事をgrepして確認）
+- 内部リンクを最低3本入れる（関連する既存記事へ。`/articles/<slug>/` 形式）
+- FAQはFAQPage JSON-LDと本文の両方に同内容を記載
+
+### 法令・表現ルール（絶対厳守）
+- フッターに【PR】表記（テンプレートに含まれている。削除しないこと）
+- 断定できない数値は「（各社公式発表）」「（〜より推計）」を必ず付ける
+- 効果の断定表現（「必ず出会える」等）は禁止
+- 各アプリの料金は既存記事の料金表をそのまま使う（勝手に変更しない）
+- Pairsのアフィリエイトは2024年9月に終了している。「Pairsに登録すれば報酬」のような記述はしない
+
+### やってはいけないこと
+- 既存記事の削除・改名
+- `about.md` / `privacy-policy.md` / `disclaimer.md` / `CNAME` / `robots.txt` の変更
+- 1回の実行で3記事以上の生成（品質低下防止のため2記事まで）
+- キューにないキーワードでの記事生成
+
+## コミットメッセージ形式
+
+```
+Add article: <slug> (<対象キーワード>)
+
+- weekly article factory run <YYYY-MM-DD>
+```
+
+## Phase 2について
+
+`agent/phase2_gsc.md` に閉ループ化（Search Console API連携）の設計がありますが、**現在は休眠中**です。指示があるまで実行しないでください。

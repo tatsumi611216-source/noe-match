@@ -1,0 +1,113 @@
+{
+  "description": "記事工場の生成キュー。エージェントは毎回pendingの先頭2件を処理する。優先度順に並んでいる。",
+  "queue": [
+    {
+      "slug": "sapporo-guide",
+      "title_hint": "札幌でマッチングアプリを使うなら｜出会えるアプリTOP3とすすきの・大通エリア攻略法",
+      "target_queries": ["マッチングアプリ 札幌", "札幌 出会い アプリ"],
+      "type": "regional",
+      "notes": "冬デート（屋内スポット）・車社会・すすきの/大通/札幌駅のエリア分け",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "pairs-marriage-data",
+      "title_hint": "ペアーズの成婚率・結婚データ【2026年版】本当に結婚できるのか公式数値で検証",
+      "target_queries": ["ペアーズ 成婚率", "pairs 結婚率", "ペアーズ 結婚 データ"],
+      "type": "data",
+      "notes": "公式発表（毎月約13,000人に恋人）を軸に。成婚率は非公表であることを正直に書く。success-rate-dataへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kyoto-guide",
+      "title_hint": "京都でマッチングアプリを使うなら｜出会えるアプリTOP3と河原町・烏丸エリア攻略法",
+      "target_queries": ["マッチングアプリ 京都", "京都 出会い アプリ"],
+      "type": "regional",
+      "notes": "学生都市（大学生比率高）・観光地デートの使い分け・鴨川/河原町/烏丸",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "with-seriousness-data",
+      "title_hint": "withの真剣度・結婚データ【2026年版】恋活アプリで婚活はできるのか検証",
+      "target_queries": ["with 真剣度", "with 結婚率", "ウィズ 婚活 できる"],
+      "type": "data",
+      "notes": "心理テスト機能と真剣度の関係。20代後半の婚活転用がテーマ",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kobe-yokohama-guide",
+      "title_hint": "神戸・横浜でマッチングアプリを使うなら｜港町2都市の出会いエリア攻略法",
+      "target_queries": ["マッチングアプリ 神戸", "マッチングアプリ 横浜"],
+      "type": "regional",
+      "notes": "大都市隣接都市の共通戦略（大阪/東京に吸われない使い方）。三宮・元町/みなとみらい・関内",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "civil-servant-guide",
+      "title_hint": "公務員向けマッチングアプリガイド｜身バレを防ぎつつ堅実に出会う方法",
+      "target_queries": ["公務員 マッチングアプリ", "公務員 出会い"],
+      "type": "attribute",
+      "notes": "身バレ対策記事（privacy-protection）へ内部リンク。公務員が人気属性である事実と注意点",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "nurse-guide",
+      "title_hint": "看護師向けマッチングアプリガイド｜不規則勤務でも出会える使い方",
+      "target_queries": ["看護師 マッチングアプリ", "看護師 出会い ない"],
+      "type": "attribute",
+      "notes": "シフト勤務×デート調整の具体戦略。夜勤明けデートのリアル",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "batsuichi-guide",
+      "title_hint": "バツイチ・再婚向けマッチングアプリガイド｜再婚に強いアプリと書き方",
+      "target_queries": ["バツイチ マッチングアプリ", "再婚 アプリ おすすめ"],
+      "type": "attribute",
+      "notes": "マリッシュ（再婚優遇）を軸に。離婚歴のプロフィール開示タイミング",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "tapple-seriousness-data",
+      "title_hint": "タップルの真剣度は低い？【2026年版】ユーザー層データと目的別の向き不向き",
+      "target_queries": ["タップル 真剣度", "tapple 遊び", "タップル 彼女できた"],
+      "type": "data",
+      "notes": "「遊び」評判の実態を公平に検証。20代恋活には最適という結論への導線",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "sendai-hiroshima-guide",
+      "title_hint": "仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略",
+      "target_queries": ["マッチングアプリ 仙台", "マッチングアプリ 広島"],
+      "type": "regional",
+      "notes": "支店経済都市の転勤族需要。国分町/流川エリアは2回目以降",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "inaka-guide",
+      "title_hint": "地方・田舎でマッチングアプリは使える？【人口10万人以下】出会うための現実的戦略",
+      "target_queries": ["田舎 マッチングアプリ", "地方 マッチングアプリ 出会えない"],
+      "type": "attribute",
+      "notes": "距離設定50km・県庁所在地合流・身バレ率の高さへの対策。正直な期待値調整",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "omiai-30s-women-data",
+      "title_hint": "Omiaiは30代女性に向いている？【2026年版】年齢層データと婚活実績で検証",
+      "target_queries": ["omiai 30代 女性", "omiai 年齢層", "オミアイ 婚活 評判"],
+      "type": "data",
+      "notes": "age-data・success-rate-dataへ内部リンク。30代女性の婚活導線のハブ記事",
+      "status": "pending",
+      "published": null
+    }
+  ]
+}
