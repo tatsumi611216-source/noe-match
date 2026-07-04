@@ -74,6 +74,33 @@ def md_to_html(md, faq_acc):
         # 水平線
         if re.match(r'^\s*---\s*$', ln):
             i+=1; continue
+        # HTMLコメント（<!-- ... -->）は出力しない
+        if re.match(r'^\s*<!--', ln):
+            while i<n and '-->' not in lines[i]:
+                i+=1
+            i+=1; continue
+        # md内に生の <script>（JSON-LD等）が埋め込まれている場合:
+        # そのまま出すとエスケープされて本文に露出するため、FAQPageならfaq_accへ回収し、他は破棄
+        if re.match(r'^\s*<script', ln, re.I):
+            buf=[ln]
+            while i<n and '</script>' not in lines[i].lower():
+                i+=1
+                if i<n: buf.append(lines[i])
+            i+=1
+            raw='\n'.join(buf)
+            mjson=re.search(r'>\s*(\{.*\})\s*</script>', raw, re.S|re.I)
+            if mjson:
+                try:
+                    data=json.loads(mjson.group(1))
+                    if isinstance(data,dict) and data.get('@type')=='FAQPage':
+                        for it in data.get('mainEntity',[]):
+                            q=(it.get('name') or '').strip()
+                            a=((it.get('acceptedAnswer') or {}).get('text') or '').strip()
+                            if q and a and q not in [x[0] for x in faq_acc]:
+                                faq_acc.append((q,a))
+                except Exception:
+                    pass
+            continue
         # 画像（単独行）
         mimg=re.match(r'^\s*!\[([^\]]*)\]\(([^)]+)\)\s*$', ln)
         if mimg:
@@ -170,55 +197,64 @@ def parse(md):
     return meta, author, byline, updated, body
 
 CSS = """*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--pink:#ff4d7e;--pink-dark:#d63660;--pink-light:#fff0f4;--purple:#7c5cbf;--text:#2c3e50;--sub:#607d8b;--bg:#fafafa;--white:#fff;--border:#eee;--shadow:0 4px 20px rgba(0,0,0,.07);--radius:12px}
+:root{--pink:#ff4d7e;--pink-dark:#d63660;--pink-deep:#b02a4e;--pink-light:#fff0f4;--purple:#7c5cbf;--navy:#1c2b33;--text:#2c3e50;--ink-soft:#3d454d;--sub:#607d8b;--bg:#faf8f9;--white:#fff;--border:#efe8ea;--line-strong:#e0d5d9;--shadow:0 1px 3px rgba(30,35,40,.06),0 4px 14px rgba(30,35,40,.06);--shadow-hover:0 4px 10px rgba(214,54,96,.10),0 8px 24px rgba(30,35,40,.08);--radius:12px}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text);background:var(--bg);line-height:1.85;font-size:15px}
-header{background:#fff;border-bottom:3px solid var(--pink);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+body{font-family:'Noto Sans JP',-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;color:var(--text);background:var(--bg);line-height:1.9;font-size:15.5px;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";letter-spacing:.01em}
+header{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:3px solid var(--pink);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.05)}
 .header-inner{max-width:860px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.logo{font-size:1.1rem;font-weight:900;color:var(--pink-dark);text-decoration:none}
+.logo{font-size:1.1rem;font-weight:900;color:var(--pink-dark);text-decoration:none;letter-spacing:.01em}
 .logo-badge{background:var(--pink);color:#fff;font-size:.62rem;padding:2px 8px;border-radius:20px;margin-left:6px}
-nav a{color:var(--sub);text-decoration:none;font-size:.8rem;padding:6px 9px;border-radius:6px;font-weight:500}
+nav a{color:var(--sub);text-decoration:none;font-size:.8rem;padding:6px 9px;border-radius:6px;font-weight:500;transition:background .15s,color .15s}
 nav a:hover{background:var(--pink-light);color:var(--pink-dark)}
 @media(max-width:680px){nav{display:none}}
 .wrap{max-width:860px;margin:0 auto;padding:0 20px}
-.breadcrumb{font-size:.74rem;color:var(--sub);padding:14px 0}
-.breadcrumb a{color:var(--pink-dark);text-decoration:none}
-article{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:34px 30px;margin-bottom:30px}
-@media(max-width:600px){article{padding:24px 18px}}
-article h1{font-size:clamp(1.5rem,4.5vw,2rem);font-weight:900;line-height:1.4;margin-bottom:16px;color:#1c2b33}
-.byline{display:flex;gap:12px;align-items:flex-start;background:var(--pink-light);border-radius:10px;padding:14px 16px;margin-bottom:8px;font-size:.8rem;color:var(--text)}
+.breadcrumb{font-size:.76rem;color:var(--sub);padding:14px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{color:var(--pink-dark)}
+article{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:38px 34px;margin-bottom:30px}
+@media(max-width:600px){article{padding:26px 18px}}
+article h1{font-size:clamp(1.5rem,4.5vw,2rem);font-weight:900;line-height:1.45;letter-spacing:.01em;margin-bottom:16px;color:var(--navy)}
+.byline{display:flex;gap:12px;align-items:flex-start;background:var(--pink-light);border:1px solid #ffdfe8;border-radius:10px;padding:14px 16px;margin-bottom:8px;font-size:.8rem;color:var(--text);line-height:1.7}
 .byline .av{font-size:1.6rem;line-height:1}
 .byline .up{color:var(--sub);font-size:.72rem;margin-top:3px}
-article h2{font-size:clamp(1.2rem,3.4vw,1.5rem);font-weight:900;margin:36px 0 14px;padding:10px 0 10px 14px;border-left:5px solid var(--pink);background:linear-gradient(90deg,var(--pink-light),transparent)}
-article h3{font-size:1.08rem;font-weight:700;margin:26px 0 10px;color:var(--pink-dark)}
-article h4{font-size:.98rem;font-weight:700;margin:20px 0 8px}
-article p{margin:12px 0}
-article ul,article ol{margin:12px 0 12px 1.4em}
-article li{margin:6px 0}
-article a{color:var(--pink-dark);font-weight:500}
-.art-img{max-width:100%;height:auto;border-radius:10px;margin:18px 0;display:block}
-blockquote{background:#fff8e1;border-left:4px solid #f4c542;border-radius:0 8px 8px 0;padding:14px 18px;margin:18px 0;font-size:.92rem}
+article h2{font-size:clamp(1.2rem,3.4vw,1.45rem);font-weight:900;line-height:1.5;margin:44px 0 16px;padding:.45em 0 .45em 14px;border-left:5px solid var(--pink);background:linear-gradient(90deg,var(--pink-light),transparent 70%);border-radius:0 8px 8px 0;color:var(--navy)}
+article h3{font-size:1.08rem;font-weight:700;margin:30px 0 10px;color:var(--pink-deep);padding-bottom:4px;border-bottom:2px solid var(--pink-light)}
+article h4{font-size:.98rem;font-weight:700;margin:22px 0 8px;color:var(--ink-soft)}
+article p{margin:13px 0}
+article ul,article ol{margin:13px 0 13px 1.45em}
+article li{margin:7px 0}
+article a{color:var(--pink-dark);font-weight:500;text-decoration-color:#f2b3c4;text-underline-offset:3px;transition:color .15s}
+article a:hover{color:var(--pink)}
+.art-img{max-width:100%;height:auto;border-radius:10px;margin:20px 0;display:block;box-shadow:var(--shadow)}
+blockquote{background:#fff8e1;border-left:4px solid #f4c542;border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.93rem;color:var(--ink-soft)}
 blockquote strong{color:var(--pink-dark)}
-.table-wrap{overflow-x:auto;border-radius:10px;box-shadow:var(--shadow);margin:18px 0}
-table{width:100%;border-collapse:collapse;background:#fff;font-size:.84rem;min-width:520px}
-thead th{background:var(--pink);color:#fff;padding:11px 10px;text-align:center;font-weight:700}
-tbody td{padding:10px;border-bottom:1px solid var(--border);text-align:center}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;box-shadow:var(--shadow);margin:20px 0;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px}
+thead th{background:linear-gradient(180deg,#243642,var(--navy));color:#fff;padding:12px 10px;text-align:center;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--border);text-align:center}
+tbody tr:nth-child(even){background:#fbf7f8}
 tbody tr:hover{background:var(--pink-light)}
+tbody td:first-child{font-weight:700;color:var(--navy)}
 code{background:#f3f0ff;color:#6a1b9a;padding:1px 6px;border-radius:4px;font-size:.86em}
-.related{background:#f0f7ff;border-radius:var(--radius);padding:22px 24px;margin-bottom:30px}
-.related h2{font-size:1.1rem;font-weight:900;margin-bottom:12px;color:var(--pink-dark)}
-.related ul{list-style:none;display:grid;gap:8px}
-.related a{display:block;background:#fff;border:1px solid var(--border);border-radius:8px;padding:11px 13px;font-size:.82rem;text-decoration:none;color:var(--text)}
-.related a:hover{border-color:var(--pink);background:var(--pink-light);color:var(--pink-dark)}
-.cta-foot{background:linear-gradient(135deg,var(--pink-dark),var(--pink));color:#fff;text-align:center;border-radius:var(--radius);padding:34px 24px;margin-bottom:30px}
-.cta-foot h2{font-size:1.25rem;font-weight:900;margin-bottom:10px;border:none;background:none;padding:0;color:#fff}
-.cta-foot a{display:inline-block;background:#fff;color:var(--pink-dark);font-weight:700;padding:12px 26px;border-radius:30px;text-decoration:none;margin-top:8px}
-footer{background:#1c2b33;color:#9aa;padding:30px 20px;font-size:.76rem}
+.related{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px;margin-bottom:30px}
+.related h2{font-size:1.05rem;font-weight:900;margin-bottom:14px;color:var(--navy);padding-left:10px;border-left:4px solid var(--pink)}
+.related ul{list-style:none;display:grid;gap:10px}
+.related a{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 15px;font-size:.83rem;font-weight:500;text-decoration:none;color:var(--text);transition:border-color .15s,box-shadow .15s,transform .12s}
+.related a:hover{border-color:var(--pink);box-shadow:var(--shadow-hover);transform:translateY(-1px);color:var(--pink-dark)}
+.cta-foot{background:linear-gradient(135deg,var(--pink-deep) 0%,var(--pink-dark) 45%,var(--pink) 100%);color:#fff;text-align:center;border-radius:16px;padding:38px 26px;margin-bottom:30px;box-shadow:0 6px 22px rgba(214,54,96,.28)}
+.cta-foot h2{font-size:1.28rem;font-weight:900;margin-bottom:10px;border:none;background:none;padding:0;color:#fff}
+.cta-foot p{opacity:.92;font-size:.92rem}
+.cta-foot a{display:inline-block;background:linear-gradient(180deg,#fff,#ffeef3);color:var(--pink-deep);font-weight:800;padding:14px 34px;border-radius:32px;text-decoration:none;margin-top:14px;font-size:1.02rem;box-shadow:0 3px 10px rgba(0,0,0,.18);transition:transform .12s,box-shadow .12s}
+.cta-foot a:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.24)}
+footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line-height:1.8}
 .footer-inner{max-width:860px;margin:0 auto;text-align:center}
-.footer-inner a{color:#9aa;text-decoration:none;margin:0 8px}
-.footer-disc{color:#667;font-size:.68rem;margin-top:12px;line-height:1.7}
-#top{position:fixed;bottom:20px;right:20px;width:42px;height:42px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:.3s}
-#top.show{opacity:1}"""
+.footer-inner a{color:#b9c2c8;text-decoration:none;margin:0 8px}
+.footer-inner a:hover{color:#fff}
+.footer-disc{color:#78868f;font-size:.68rem;margin-top:12px;line-height:1.7}
+#top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:.3s}
+#top.show{opacity:1}
+#top:hover{background:var(--pink-dark)}
+@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}.cta-foot a{display:block;padding:14px 18px}}"""
 
 def build(n):
     p=FILES[n]; slug=SLUGS[n]
@@ -251,9 +287,12 @@ def build(n):
         if items:
             schemas.append({"@context":"https://schema.org","@type":"FAQPage","mainEntity":items})
     # Article(BlogPosting) schema
-    art={"@context":"https://schema.org","@type":"BlogPosting","headline":title[:110],
-         "description":desc,"image":img_url,"mainEntityOfPage":canon,
-         "author":{"@type":"Organization","name":author or "NOE マッチングアプリ大学 編集部"},
+    art={"@context":"https://schema.org","@type":"Article","headline":title[:110],
+         "description":desc,"image":img_url,"url":canon,
+         "mainEntityOfPage":{"@type":"WebPage","@id":canon},
+         "inLanguage":"ja",
+         "author":{"@type":"Organization","name":author or "NOE マッチングアプリ大学 編集部",
+                   "url":DOMAIN+"/about.html"},
          "publisher":{"@type":"Organization","name":"NOE マッチングアプリ大学",
                       "url":DOMAIN+"/"}}
     if iso: art["datePublished"]=iso; art["dateModified"]=iso
@@ -277,8 +316,18 @@ def build(n):
 <meta name="description" content="{esc(desc)}">
 <link rel="canonical" href="{DOMAIN}/articles/{slug}/">
 <meta property="og:title" content="{esc(title)}">
+<meta property="og:description" content="{esc(desc)}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{DOMAIN}/articles/{slug}/">
+<meta property="og:image" content="{esc(img_url)}">
+<meta property="og:site_name" content="NOE マッチングアプリ大学">
+<meta property="og:locale" content="ja_JP">
+{f'<meta property="article:published_time" content="{iso}">' if iso else ''}
+{f'<meta property="article:modified_time" content="{iso}">' if iso else ''}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{esc(title)}">
+<meta name="twitter:description" content="{esc(desc)}">
+<meta name="twitter:image" content="{esc(img_url)}">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>{CSS}</style>
 {faq_ld}
@@ -329,6 +378,21 @@ def related_block(content, n):
     lis=''.join(f'<li><a href="{h}">{esc(t)}</a></li>' for h,t in uniq)
     return f'<div class="related"><h2>📚 関連記事</h2><ul>{lis}</ul></div>'
 
+def write_sitemap(lastmod):
+    """トップ＋48記事＋法的ページを含む sitemap.xml を生成。"""
+    entries=[(f"{DOMAIN}/","weekly","1.0")]
+    for n in sorted(SLUGS):
+        entries.append((f"{DOMAIN}/articles/{SLUGS[n]}/","monthly","0.8"))
+    for pg in ("about.html","privacy-policy.html","disclaimer.html"):
+        entries.append((f"{DOMAIN}/{pg}","yearly","0.3"))
+    parts=['<?xml version="1.0" encoding="UTF-8"?>',
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for loc,freq,pri in entries:
+        parts.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{lastmod}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{pri}</priority>\n  </url>")
+    parts.append('</urlset>\n')
+    (DEPLOY/"sitemap.xml").write_text('\n'.join(parts),encoding='utf-8')
+    return len(entries)
+
 if __name__=='__main__':
     targets=[int(x) for x in sys.argv[1:]] if len(sys.argv)>1 else list(SLUGS)
     IMG_OUT.mkdir(exist_ok=True)
@@ -347,4 +411,6 @@ if __name__=='__main__':
         (d/"index.html").write_text(page,encoding='utf-8')
         meta_out.append((n,slug,title))
         print(f"  [{n:>2}] {slug:<22} {title[:42]}")
-    print(f"\n生成 {len(targets)}記事 / 画像コピー {copied}枚")
+    from datetime import date
+    n_urls=write_sitemap(date.today().isoformat())
+    print(f"\n生成 {len(targets)}記事 / 画像コピー {copied}枚 / sitemap {n_urls} URL")
