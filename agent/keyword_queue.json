@@ -7,8 +7,8 @@
       "target_queries": ["マッチングアプリ 札幌", "札幌 出会い アプリ"],
       "type": "regional",
       "notes": "冬デート（屋内スポット）・車社会・すすきの/大通/札幌駅のエリア分け",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-04"
     },
     {
       "slug": "pairs-marriage-data",
@@ -16,8 +16,8 @@
       "target_queries": ["ペアーズ 成婚率", "pairs 結婚率", "ペアーズ 結婚 データ"],
       "type": "data",
       "notes": "公式発表（毎月約13,000人に恋人）を軸に。成婚率は非公表であることを正直に書く。success-rate-dataへ内部リンク",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-04"
     },
     {
       "slug": "kyoto-guide",
