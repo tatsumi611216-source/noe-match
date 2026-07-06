@@ -25,8 +25,8 @@
       "target_queries": ["マッチングアプリ 京都", "京都 出会い アプリ"],
       "type": "regional",
       "notes": "学生都市（大学生比率高）・観光地デートの使い分け・鴨川/河原町/烏丸",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-06"
     },
     {
       "slug": "with-seriousness-data",
@@ -34,8 +34,8 @@
       "target_queries": ["with 真剣度", "with 結婚率", "ウィズ 婚活 できる"],
       "type": "data",
       "notes": "心理テスト機能と真剣度の関係。20代後半の婚活転用がテーマ",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-06"
     },
     {
       "slug": "kobe-yokohama-guide",
