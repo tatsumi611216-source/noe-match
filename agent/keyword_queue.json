@@ -43,8 +43,8 @@
       "target_queries": ["マッチングアプリ 神戸", "マッチングアプリ 横浜"],
       "type": "regional",
       "notes": "大都市隣接都市の共通戦略（大阪/東京に吸われない使い方）。三宮・元町/みなとみらい・関内",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-13"
     },
     {
       "slug": "civil-servant-guide",
@@ -52,8 +52,8 @@
       "target_queries": ["公務員 マッチングアプリ", "公務員 出会い"],
       "type": "attribute",
       "notes": "身バレ対策記事（privacy-protection）へ内部リンク。公務員が人気属性である事実と注意点",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-13"
     },
     {
       "slug": "nurse-guide",
