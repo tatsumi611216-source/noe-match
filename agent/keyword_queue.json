@@ -61,8 +61,8 @@
       "target_queries": ["看護師 マッチングアプリ", "看護師 出会い ない"],
       "type": "attribute",
       "notes": "シフト勤務×デート調整の具体戦略。夜勤明けデートのリアル",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-20"
     },
     {
       "slug": "batsuichi-guide",
@@ -70,8 +70,8 @@
       "target_queries": ["バツイチ マッチングアプリ", "再婚 アプリ おすすめ"],
       "type": "attribute",
       "notes": "マリッシュ（再婚優遇）を軸に。離婚歴のプロフィール開示タイミング",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-20"
     },
     {
       "slug": "tapple-seriousness-data",
