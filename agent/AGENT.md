@@ -39,6 +39,7 @@
 | サービス | リンクURL | 使用ルール |
 |---------|----------|-----------|
 | ユーブライド（afb） | https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I | 婚活文脈の記事のみ。1記事1〜2箇所。必ず rel="nofollow sponsored noopener"・target="_blank"。CTAブロックには小さくPRラベルを付ける |
+| マリッシュ（afb） | https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I | 再婚・バツイチ・40代・婚活比較の文脈のみ。1記事1箇所。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 - CTAブロックのデザインは既存記事の「ユーブライド公式サイトを見る」ボタン（#ff4d7e系）を踏襲する
 - 提携していないサービスへの外部リンクは公式サイトへの通常リンク（rel="nofollow"）のみ
