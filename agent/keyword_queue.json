@@ -110,8 +110,8 @@
       ],
       "type": "app-guide",
       "notes": "収益最重要記事。成婚退会者年間2,000名超（公式）を軸に。30代後半〜40代の真剣婚活層向け。success-rate-data・compare-konkatsu・30s-konkatsu・40s-guideへ内部リンク。既存記事20本からこの記事への内部リンクも追加すること",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-24"
     },
     {
       "slug": "marrish-guide",
@@ -124,8 +124,8 @@
       ],
       "type": "app-guide",
       "notes": "収益重要記事。シンパパシンママ優遇プログラム・再婚成婚報告の多さを軸に。batsuichi-guide・40s-guide・app-plus-agencyへ内部リンク。既存の言及9記事からこの記事への内部リンクも追加すること",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-24"
     },
     {
       "slug": "tapple-seriousness-data",
