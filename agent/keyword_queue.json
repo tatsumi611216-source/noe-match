@@ -589,6 +589,71 @@
       "notes": "【VOD＋婚活の交点】作品を『価値観のリトマス紙』として使う切り口。婚活の実用記事として成立させる。message-strategy・konkatsu-roadmapへ内部リンク",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "tenshoku-riyu-honne",
+      "title_hint": "転職理由ランキング｜結婚を意識すると重みが変わる8つの本音",
+      "target_queries": [
+        "転職理由 ランキング",
+        "転職理由 本音",
+        "結婚 転職 理由"
+      ],
+      "type": "data",
+      "notes": "【広間口パターン】給与・人間関係・WLB・勤務地・将来性・評価・独立の8理由を対等に解説しつつ、各セクション末尾は必ず『結婚を意識すると重みが変わる』という一文で着地。転職メディア顔負けの網羅性を保ちつつ主語は結婚に戻す。kekkon-tenshoku-guide・nurse-guide・civil-servant-guideへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "shinkon-koteihi-minaoshi",
+      "title_hint": "新婚生活の固定費見直し完全ガイド｜携帯・回線・保険をまとめて最適化する",
+      "target_queries": [
+        "新婚 固定費 見直し",
+        "結婚 携帯 プラン 見直し",
+        "新生活 節約"
+      ],
+      "type": "data",
+      "notes": "【広間口パターン・ハブ記事】家族割・回線・保険を横断する固定費見直しのハブ。shinkon-seikatsu-guideの発展版として位置づけ、以下3本へ内部リンクで接続する",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kazoku-simhikaku",
+      "title_hint": "結婚後のスマホ代・格安SIM比較｜家族割・シェアプランの最適構成",
+      "target_queries": [
+        "家族割 スマホ 比較",
+        "結婚 スマホ プラン 見直し",
+        "格安sim 夫婦"
+      ],
+      "type": "data",
+      "notes": "【他サイト型移植：sim-site kazoku-sumaho-dai】2人暮らし・家族割視点を厚く。一般的な比較情報も網羅しつつ新婚読者向けセクションで差別化。shinkon-koteihi-minaoshiへ接続",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "futari-hikari-kaisen",
+      "title_hint": "2人暮らしの光回線選び｜賃貸の工事可否問題と結婚前後の切り替えタイミング",
+      "target_queries": [
+        "同棲 光回線",
+        "結婚 ネット回線 どうする",
+        "賃貸 光回線 工事不可"
+      ],
+      "type": "data",
+      "notes": "【他サイト型移植：sim-site chintai-hikari】賃貸の工事不可問題・名義変更のタイミングを軸に。shinkon-koteihi-minaoshiへ接続",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "keiyaku-jisshitsu-wana",
+      "title_hint": "新生活の契約で見落としがちな「実質」表記の罠｜携帯・保険・引越しに共通する読み解き方",
+      "target_queries": [
+        "実質無料 罠",
+        "キャッシュバック 罠",
+        "新生活 契約 注意"
+      ],
+      "type": "data",
+      "notes": "【他サイト型移植：sim-site cashback-wana】暴露型記事。携帯だけでなく保険・引越し業者の契約全般に応用可能な『実質表記の読み解き方』を提示。shinkon-koteihi-minaoshi・kekkon-hoken-minaoshiへ接続",
+      "status": "pending",
+      "published": null
     }
   ]
 }
