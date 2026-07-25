@@ -836,8 +836,8 @@
       ],
       "type": "data",
       "notes": "【クレカ案件の本命受け皿】旅行保険の自動付帯条件・マイル還元率・海外利用時の為替手数料を比較。kekkon-okane-data・shinkon-koteihi-minaoshiへ内部リンク。断定を避け『比較の軸』を提示する形に",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "fuufu-credit-kanri",
@@ -848,8 +848,8 @@
       ],
       "type": "data",
       "notes": "futari-kouza-kanri（口座管理）の隣接記事。家族カードの年会費優遇・利用履歴の共有可否・別々にするメリットを整理。相互リンク必須",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "gosyugi-shiharai-houhou",
@@ -860,8 +860,8 @@
       ],
       "type": "data",
       "notes": "shikijo-erabi-guide・kekkon-okane-dataへ接続。マナー面（ご祝儀は基本的に新札現金が慣習）と実務面（式場費用のクレカ払い可否）を分けて整理",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     }
   ]
 }
