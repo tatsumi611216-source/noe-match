@@ -176,6 +176,174 @@
       "notes": "age-data・success-rate-dataへ内部リンク。30代女性の婚活導線のハブ記事",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "app-tsukare-guide",
+      "title_hint": "マッチングアプリ疲れの原因と対処法｜やめる前に試す3つの選択肢",
+      "target_queries": [
+        "マッチングアプリ 疲れた",
+        "アプリ疲れ 婚活"
+      ],
+      "type": "attribute",
+      "notes": "疲れ→相談所・サポート型サービスへの導線記事。ユーブライドCTA＋相談所比較へ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "soudanjo-hikaku",
+      "title_hint": "結婚相談所の料金比較【2026年版】オンライン型は本当に安いのか検証",
+      "target_queries": [
+        "結婚相談所 料金 比較",
+        "オンライン結婚相談所 比較"
+      ],
+      "type": "data",
+      "notes": "高単価案件の受け皿。naco-do・スマリッジ・ブライダルネット比較。承認後にリンク挿入",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "youbride-marrish-hikaku",
+      "title_hint": "ユーブライドとマリッシュを徹底比較｜年代・目的別にどちらを選ぶべきか",
+      "target_queries": [
+        "ユーブライド マリッシュ 比較",
+        "ユーブライド マリッシュ どっち"
+      ],
+      "type": "data",
+      "notes": "提携済み2商材の指名比較＝最高転換率が狙える記事。両CTA設置",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "bachelor-date-guide",
+      "title_hint": "バチェラーデート完全ガイド【2026年版】審査制AIデーティングの評判と向き不向き",
+      "target_queries": [
+        "バチェラーデート 評判",
+        "バチェラーデート 審査"
+      ],
+      "type": "app-guide",
+      "notes": "A8申請中の受け皿を先行準備。承認後にCTA挿入",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "konkatsu-photo-guide",
+      "title_hint": "婚活・マッチングアプリのプロフィール写真戦略｜プロ撮影は投資に値するか",
+      "target_queries": [
+        "マッチングアプリ 写真 プロ",
+        "婚活 写真 撮影"
+      ],
+      "type": "data",
+      "notes": "Photojoy等の写真サービス案件の受け皿。profile-photoと差別化（プロ撮影の費用対効果検証軸）",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "saitama-chiba-guide",
+      "title_hint": "埼玉・千葉でマッチングアプリを使うなら｜都心依存しない出会い戦略",
+      "target_queries": [
+        "マッチングアプリ 埼玉",
+        "マッチングアプリ 千葉"
+      ],
+      "type": "regional",
+      "notes": "大宮・浦和・船橋・柏。都内合流とのハイブリッド戦略",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "shizuoka-niigata-guide",
+      "title_hint": "静岡・新潟でマッチングアプリを使うなら｜地方中核県の出会い戦略",
+      "target_queries": [
+        "マッチングアプリ 静岡",
+        "マッチングアプリ 新潟"
+      ],
+      "type": "regional",
+      "notes": "車社会×距離設定。浜松/静岡市・新潟市の2極構造",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "okinawa-guide",
+      "title_hint": "沖縄でマッチングアプリを使うなら｜移住者・地元の出会い事情と攻略法",
+      "target_queries": [
+        "マッチングアプリ 沖縄",
+        "沖縄 出会い アプリ"
+      ],
+      "type": "regional",
+      "notes": "移住者需要・狭いコミュニティでの身バレ対策を厚く",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kaiin-age-cross-data",
+      "title_hint": "マッチングアプリの年齢層×目的マップ【2026年版】どの年代がどこにいるかデータで見る",
+      "target_queries": [
+        "マッチングアプリ 年齢層 比較",
+        "婚活アプリ 年代別"
+      ],
+      "type": "data",
+      "notes": "age-dataの発展版。全アプリ×年代マトリクス表が核",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kekkon-madeno-kikan-data",
+      "title_hint": "マッチングアプリから結婚までの期間データ｜出会って何ヶ月で結婚している？",
+      "target_queries": [
+        "マッチングアプリ 結婚まで 期間",
+        "アプリ婚 期間"
+      ],
+      "type": "data",
+      "notes": "success-rate-dataと相互リンク。交際期間統計が核",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "hitomishiri-guide",
+      "title_hint": "人見知り・内向型のためのマッチングアプリ攻略｜会話が苦手でも出会える設計",
+      "target_queries": [
+        "人見知り マッチングアプリ",
+        "内向的 婚活"
+      ],
+      "type": "attribute",
+      "notes": "メッセージ戦略・with心理テストとの相性。message-strategyへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "engineer-guide",
+      "title_hint": "エンジニア・理系向けマッチングアプリガイド｜論理派の強みを活かす戦略",
+      "target_queries": [
+        "エンジニア マッチングアプリ",
+        "理系 婚活"
+      ],
+      "type": "attribute",
+      "notes": "データ好き層に刺さる書き味。公務員記事の成功パターンを踏襲",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "seishain-igai-guide",
+      "title_hint": "非正規・フリーランスの婚活戦略｜雇用形態の壁をどう越えるか",
+      "target_queries": [
+        "フリーランス 婚活",
+        "非正規 結婚できない"
+      ],
+      "type": "attribute",
+      "notes": "検索者の悩みが深い=転換率高。誠実な現実解を提示",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "over50-guide",
+      "title_hint": "50代のマッチングアプリ・婚活ガイド｜中高年の出会いの現実と最適解",
+      "target_queries": [
+        "50代 マッチングアプリ",
+        "50代 婚活 現実"
+      ],
+      "type": "attribute",
+      "notes": "マリッシュ主役（40-50代層）。40s-guideと差別化",
+      "status": "pending",
+      "published": null
     }
   ]
 }
