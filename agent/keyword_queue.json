@@ -164,42 +164,6 @@
       "published": "2026-07-26"
     },
     {
-      "slug": "bachelor-date-guide",
-      "title_hint": "バチェラーデート完全ガイド【2026年版】審査制AIデーティングの評判と向き不向き",
-      "target_queries": [
-        "バチェラーデート 評判",
-        "バチェラーデート 審査"
-      ],
-      "type": "app-guide",
-      "notes": "A8申請中の受け皿を先行準備。承認後にCTA挿入",
-      "status": "pending",
-      "published": null
-    },
-    {
-      "slug": "konkatsu-photo-guide",
-      "title_hint": "婚活・マッチングアプリのプロフィール写真戦略｜プロ撮影は投資に値するか",
-      "target_queries": [
-        "マッチングアプリ 写真 プロ",
-        "婚活 写真 撮影"
-      ],
-      "type": "data",
-      "notes": "Photojoy等の写真サービス案件の受け皿。profile-photoと差別化（プロ撮影の費用対効果検証軸）",
-      "status": "pending",
-      "published": null
-    },
-    {
-      "slug": "over50-guide",
-      "title_hint": "50代のマッチングアプリ・婚活ガイド｜中高年の出会いの現実と最適解",
-      "target_queries": [
-        "50代 マッチングアプリ",
-        "50代 婚活 現実"
-      ],
-      "type": "attribute",
-      "notes": "マリッシュ主役（40-50代層）。40s-guideと差別化",
-      "status": "pending",
-      "published": null
-    },
-    {
       "slug": "kekkon-okane-data",
       "title_hint": "結婚にかかるお金の総額データ【2026年版】婚約から新生活までの費用を全部見える化",
       "target_queries": [
@@ -235,6 +199,68 @@
       "notes": "データ型の勝ちパターン。年代別・地域別相場表。指輪ブランド資料請求案件の受け皿",
       "status": "done",
       "published": "2026-07-26"
+    },
+    {
+      "slug": "kekkon-tenshoku-guide",
+      "title_hint": "結婚を機に転職すべきか｜収入・勤務地・働き方を見直すタイミングと判断基準",
+      "target_queries": [
+        "結婚 転職 タイミング",
+        "結婚 きっかけ 転職",
+        "婚約 転職 いつ"
+      ],
+      "type": "attribute",
+      "notes": "【高単価】転職エージェント案件（1〜3万円）の受け皿。婚活/結婚文脈に完全接続。住宅ローン審査への影響・入籍前後どちらが有利かを軸に。konkatsu-roadmap・kekkon-okane-dataへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kekkon-sokou-chousa",
+      "title_hint": "結婚前の身元・素行調査は必要か｜費用相場と依頼前に自分でできる確認",
+      "target_queries": [
+        "結婚前 身元調査",
+        "婚前調査 費用",
+        "マッチングアプリ 相手 調べる"
+      ],
+      "type": "attribute",
+      "notes": "【高単価】探偵・調査会社案件（1〜3万円）の受け皿。煽らず「まず自分でできる確認」を主軸にし、依頼は最終手段として提示。fraud-detection・safety-guideへ内部リンク。断定・不安煽り表現は厳禁",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "bachelor-date-guide",
+      "title_hint": "バチェラーデート完全ガイド【2026年版】審査制AIデーティングの評判と向き不向き",
+      "target_queries": [
+        "バチェラーデート 評判",
+        "バチェラーデート 審査"
+      ],
+      "type": "app-guide",
+      "notes": "A8申請中の受け皿を先行準備。承認後にCTA挿入",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "konkatsu-photo-guide",
+      "title_hint": "婚活・マッチングアプリのプロフィール写真戦略｜プロ撮影は投資に値するか",
+      "target_queries": [
+        "マッチングアプリ 写真 プロ",
+        "婚活 写真 撮影"
+      ],
+      "type": "data",
+      "notes": "Photojoy等の写真サービス案件の受け皿。profile-photoと差別化（プロ撮影の費用対効果検証軸）",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "over50-guide",
+      "title_hint": "50代のマッチングアプリ・婚活ガイド｜中高年の出会いの現実と最適解",
+      "target_queries": [
+        "50代 マッチングアプリ",
+        "50代 婚活 現実"
+      ],
+      "type": "attribute",
+      "notes": "マリッシュ主役（40-50代層）。40s-guideと差別化",
+      "status": "pending",
+      "published": null
     },
     {
       "slug": "propose-guide",
@@ -439,6 +465,42 @@
       ],
       "type": "attribute",
       "notes": "検索者の悩みが深い=転換率高。誠実な現実解を提示",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kekkon-hoken-minaoshi",
+      "title_hint": "結婚したら保険はどう見直す？加入タイミングと必要保障額の考え方",
+      "target_queries": [
+        "結婚 保険 見直し",
+        "新婚 保険 いくら"
+      ],
+      "type": "attribute",
+      "notes": "【高単価】保険相談案件（1〜2万円）の受け皿。YMYL領域のため断定を避け「相談先の選び方」を主軸に。shinkon-seikatsu-guideへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kekkon-jutaku-loan",
+      "title_hint": "結婚後の住まい選び｜賃貸か購入か・ペアローンの判断材料をデータで整理",
+      "target_queries": [
+        "結婚 家 買う タイミング",
+        "新婚 賃貸 購入 どっち"
+      ],
+      "type": "data",
+      "notes": "【高単価】住宅ローン比較・不動産案件の受け皿。転職記事と相互リンク（ローン審査と転職の関係）",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kokusai-kekkon-guide",
+      "title_hint": "国際結婚・外国人パートナーとの出会いと手続きガイド",
+      "target_queries": [
+        "国際結婚 出会い",
+        "外国人 マッチングアプリ"
+      ],
+      "type": "attribute",
+      "notes": "ニッチだが競合が薄い。手続き系の情報需要が高い",
       "status": "pending",
       "published": null
     }
