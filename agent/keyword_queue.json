@@ -200,6 +200,103 @@
       "published": null
     },
     {
+      "slug": "kekkon-okane-data",
+      "title_hint": "結婚にかかるお金の総額データ【2026年版】婚約から新生活までの費用を全部見える化",
+      "target_queries": [
+        "結婚 費用 総額",
+        "結婚 お金 いくら"
+      ],
+      "type": "data",
+      "notes": "ライフイベント軸のハブ記事。婚約指輪・式・新婚旅行・新生活の費用を公的調査（ゼクシィ結婚トレンド調査等・出典明記）で表化。全ブライダル記事から内部リンクを集める",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "shikijo-erabi-guide",
+      "title_hint": "結婚式場探し完全ガイド【2026年版】見学予約サイトの特典比較と失敗しない回り方",
+      "target_queries": [
+        "式場探し いつから",
+        "式場見学 特典 比較",
+        "ハナユメ ゼクシィ どっち"
+      ],
+      "type": "app-guide",
+      "notes": "高単価案件（ハナユメ・ゼクシィ等＝見学予約1〜2万円級）の受け皿。承認前でも公式リンクで公開し承認後にCTA差し替え",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "konyaku-yubiwa-data",
+      "title_hint": "婚約指輪の相場データ【2026年版】「給料3ヶ月分」は本当か統計で検証",
+      "target_queries": [
+        "婚約指輪 相場",
+        "婚約指輪 平均 いくら"
+      ],
+      "type": "data",
+      "notes": "データ型の勝ちパターン。年代別・地域別相場表。指輪ブランド資料請求案件の受け皿",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "propose-guide",
+      "title_hint": "プロポーズ準備完全ガイド｜タイミング・場所・指輪の段取りをデータで整理",
+      "target_queries": [
+        "プロポーズ 準備",
+        "プロポーズ タイミング 付き合ってどれくらい"
+      ],
+      "type": "attribute",
+      "notes": "アプリ→交際→婚約の橋渡し記事。konyaku-yubiwa-dataとshikijo-erabiへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "bridal-esthe-guide",
+      "title_hint": "ブライダルエステはいつから？費用・回数の相場データと選び方",
+      "target_queries": [
+        "ブライダルエステ いつから",
+        "ブライダルエステ 費用"
+      ],
+      "type": "data",
+      "notes": "美容系の参入点（ブライダル文脈なら自然）。エステ体験系案件の受け皿",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "maedori-photo-guide",
+      "title_hint": "前撮り・フォトウェディングの費用比較【2026年版】後悔しないスタジオ選び",
+      "target_queries": [
+        "前撮り 相場",
+        "フォトウェディング 安い"
+      ],
+      "type": "data",
+      "notes": "ナシ婚トレンドと合わせて需要増領域。写真スタジオ系案件の受け皿",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "nashikon-data",
+      "title_hint": "結婚式をしない「ナシ婚」の割合データ｜後悔する人・しない人の分かれ目",
+      "target_queries": [
+        "結婚式 しない 割合",
+        "ナシ婚 後悔"
+      ],
+      "type": "data",
+      "notes": "統計型。フォトウェディングへの導線。maedori-photo-guideと相互リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "shinkon-seikatsu-guide",
+      "title_hint": "新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト",
+      "target_queries": [
+        "新婚 引越し 費用",
+        "同棲 準備 リスト"
+      ],
+      "type": "attribute",
+      "notes": "ライフイベント軸の終点。引越し見積もり・家具サブスク案件の将来受け皿",
+      "status": "pending",
+      "published": null
+    },
+    {
       "slug": "tapple-seriousness-data",
       "title_hint": "タップルの真剣度は低い？【2026年版】ユーザー層データと目的別の向き不向き",
       "target_queries": [
