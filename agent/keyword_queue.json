@@ -128,52 +128,14 @@
       "published": "2026-07-24"
     },
     {
-      "slug": "tapple-seriousness-data",
-      "title_hint": "タップルの真剣度は低い？【2026年版】ユーザー層データと目的別の向き不向き",
+      "slug": "youbride-marrish-hikaku",
+      "title_hint": "ユーブライドとマリッシュを徹底比較｜年代・目的別にどちらを選ぶべきか",
       "target_queries": [
-        "タップル 真剣度",
-        "tapple 遊び",
-        "タップル 彼女できた"
+        "ユーブライド マリッシュ 比較",
+        "ユーブライド マリッシュ どっち"
       ],
       "type": "data",
-      "notes": "「遊び」評判の実態を公平に検証。20代恋活には最適という結論への導線",
-      "status": "pending",
-      "published": null
-    },
-    {
-      "slug": "sendai-hiroshima-guide",
-      "title_hint": "仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略",
-      "target_queries": [
-        "マッチングアプリ 仙台",
-        "マッチングアプリ 広島"
-      ],
-      "type": "regional",
-      "notes": "支店経済都市の転勤族需要。国分町/流川エリアは2回目以降",
-      "status": "pending",
-      "published": null
-    },
-    {
-      "slug": "inaka-guide",
-      "title_hint": "地方・田舎でマッチングアプリは使える？【人口10万人以下】出会うための現実的戦略",
-      "target_queries": [
-        "田舎 マッチングアプリ",
-        "地方 マッチングアプリ 出会えない"
-      ],
-      "type": "attribute",
-      "notes": "距離設定50km・県庁所在地合流・身バレ率の高さへの対策。正直な期待値調整",
-      "status": "pending",
-      "published": null
-    },
-    {
-      "slug": "omiai-30s-women-data",
-      "title_hint": "Omiaiは30代女性に向いている？【2026年版】年齢層データと婚活実績で検証",
-      "target_queries": [
-        "omiai 30代 女性",
-        "omiai 年齢層",
-        "オミアイ 婚活 評判"
-      ],
-      "type": "data",
-      "notes": "age-data・success-rate-dataへ内部リンク。30代女性の婚活導線のハブ記事",
+      "notes": "提携済み2商材の指名比較＝最高転換率が狙える記事。両CTA設置",
       "status": "pending",
       "published": null
     },
@@ -202,18 +164,6 @@
       "published": null
     },
     {
-      "slug": "youbride-marrish-hikaku",
-      "title_hint": "ユーブライドとマリッシュを徹底比較｜年代・目的別にどちらを選ぶべきか",
-      "target_queries": [
-        "ユーブライド マリッシュ 比較",
-        "ユーブライド マリッシュ どっち"
-      ],
-      "type": "data",
-      "notes": "提携済み2商材の指名比較＝最高転換率が狙える記事。両CTA設置",
-      "status": "pending",
-      "published": null
-    },
-    {
       "slug": "bachelor-date-guide",
       "title_hint": "バチェラーデート完全ガイド【2026年版】審査制AIデーティングの評判と向き不向き",
       "target_queries": [
@@ -234,6 +184,68 @@
       ],
       "type": "data",
       "notes": "Photojoy等の写真サービス案件の受け皿。profile-photoと差別化（プロ撮影の費用対効果検証軸）",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "over50-guide",
+      "title_hint": "50代のマッチングアプリ・婚活ガイド｜中高年の出会いの現実と最適解",
+      "target_queries": [
+        "50代 マッチングアプリ",
+        "50代 婚活 現実"
+      ],
+      "type": "attribute",
+      "notes": "マリッシュ主役（40-50代層）。40s-guideと差別化",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "tapple-seriousness-data",
+      "title_hint": "タップルの真剣度は低い？【2026年版】ユーザー層データと目的別の向き不向き",
+      "target_queries": [
+        "タップル 真剣度",
+        "tapple 遊び",
+        "タップル 彼女できた"
+      ],
+      "type": "data",
+      "notes": "「遊び」評判の実態を公平に検証。20代恋活には最適という結論への導線",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "omiai-30s-women-data",
+      "title_hint": "Omiaiは30代女性に向いている？【2026年版】年齢層データと婚活実績で検証",
+      "target_queries": [
+        "omiai 30代 女性",
+        "omiai 年齢層",
+        "オミアイ 婚活 評判"
+      ],
+      "type": "data",
+      "notes": "age-data・success-rate-dataへ内部リンク。30代女性の婚活導線のハブ記事",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "sendai-hiroshima-guide",
+      "title_hint": "仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略",
+      "target_queries": [
+        "マッチングアプリ 仙台",
+        "マッチングアプリ 広島"
+      ],
+      "type": "regional",
+      "notes": "支店経済都市の転勤族需要。国分町/流川エリアは2回目以降",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "inaka-guide",
+      "title_hint": "地方・田舎でマッチングアプリは使える？【人口10万人以下】出会うための現実的戦略",
+      "target_queries": [
+        "田舎 マッチングアプリ",
+        "地方 マッチングアプリ 出会えない"
+      ],
+      "type": "attribute",
+      "notes": "距離設定50km・県庁所在地合流・身バレ率の高さへの対策。正直な期待値調整",
       "status": "pending",
       "published": null
     },
@@ -330,18 +342,6 @@
       ],
       "type": "attribute",
       "notes": "検索者の悩みが深い=転換率高。誠実な現実解を提示",
-      "status": "pending",
-      "published": null
-    },
-    {
-      "slug": "over50-guide",
-      "title_hint": "50代のマッチングアプリ・婚活ガイド｜中高年の出会いの現実と最適解",
-      "target_queries": [
-        "50代 マッチングアプリ",
-        "50代 婚活 現実"
-      ],
-      "type": "attribute",
-      "notes": "マリッシュ主役（40-50代層）。40s-guideと差別化",
       "status": "pending",
       "published": null
     }
