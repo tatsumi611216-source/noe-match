@@ -801,6 +801,31 @@
       "notes": "【他サイト型移植：ikumo-site全般を婚活男性属性記事として統合】AGAクリニック・育毛剤メーカーどちらも中立に語れない領域。①第一印象データ②対策の費用対効果比較（クリニック/育毛剤/坊主等）③『隠すより対策して堂々と』という論点④詐欺広告の見抜き方（ikumo-site sagi-koukoku-mikata型を安全に統合）。profile-photo・40s-men・civil-servant-guideへ内部リンク。AGA/医療系リンクはYMYL慎重に扱い断定表現厳禁",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "tantei-erabikata",
+      "title_hint": "探偵事務所の選び方・料金相場比較｜依頼前に確認すべきポイント",
+      "target_queries": [
+        "探偵 料金相場",
+        "探偵事務所 選び方",
+        "探偵 比較"
+      ],
+      "type": "data",
+      "notes": "【探偵クラスタの核・大手不在領域】業界に中立比較メディアがほぼ存在しない。料金体系（着手金・成功報酬・時間制）の違い、悪徳業者の見分け方、無料相談の活用法を整理。uwaki-chousa-kiso・kekkon-sokou-chousaへ相互リンク。探偵社アフィリの本命受け皿",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "tanshin-uwaki-mikiwame",
+      "title_hint": "別居・単身赴任中の浮気の見抜き方｜物理的に離れていても分かるサイン",
+      "target_queries": [
+        "単身赴任 浮気 見抜く",
+        "別居中 浮気 サイン"
+      ],
+      "type": "attribute",
+      "notes": "uwaki-chousa-kisoの発展形・ロングテール。物理的に確認できない状況特有の視点（連絡頻度の変化・SNSの使い方等）。不安煽り厳禁、まず自分でできる観察を主軸に。tantei-erabikataへ接続",
+      "status": "pending",
+      "published": null
     }
   ]
 }
