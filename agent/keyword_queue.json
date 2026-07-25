@@ -775,6 +775,19 @@
       "notes": "rikon-okane-genjitsu・uwaki-chousa-kisoの橋渡しハブ。感情的な決断を急がせない構成にし、順序立てた実務ガイドに徹する",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "koninhiyou-guide",
+      "title_hint": "婚姻費用とは｜別居中の生活費分担の仕組みと相手が支払わない時の対処法",
+      "target_queries": [
+        "婚姻費用 相場",
+        "婚姻費用 支払わない",
+        "婚姻費用 調停"
+      ],
+      "type": "data",
+      "notes": "【離婚クラスタの重要記事】民法760条に基づく婚姻費用の基礎（算定表の考え方・請求方法）と、相手が引き延ばす場合の実務（内容証明・調停申立て）を整理。断定的な法律助言は避け『一般的な流れ』として記述し、詳細は弁護士へ相談を促す。rikon-okane-genjitsu・rikon-junbi-jyunbanと相互リンク。離婚問題に強い弁護士紹介案件の受け皿",
+      "status": "pending",
+      "published": null
     }
   ]
 }
