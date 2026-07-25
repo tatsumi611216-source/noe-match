@@ -33,7 +33,7 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 1. `agent/keyword_queue.json` を読み、`status: "pending"` の先頭 **2件** を選ぶ
 2. 各キーワードについて記事を1本生成する（下記の品質基準に厳密に従う）
 3. `sitemap.xml` に新記事のURLを追加する
-4. `index.html` の記事一覧（`arc-link` のリスト）に新記事へのリンクを追加する（`arc-no` は既存最大値+1）
+4. `index.html` の記事一覧（`arc-link` のリスト）に新記事へのリンクを追加する（`arc-no` は既存最大値+1）。同時に `#articles` セクション見出しの「全N記事」のNを実記事数（sitemap内 /articles/ URL数）に更新する。一覧とsitemapの記事集合は常に一致させること（過去に7本の載せ漏れと記事数表記の乖離が発生した）
 5. 処理したキューの `status` を `"done"` に、`published` に日付を記入する
 6. すべてコミットして `main` にプッシュする（プッシュ権限がない場合はPRを作成する）
 
