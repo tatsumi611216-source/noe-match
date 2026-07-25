@@ -940,6 +940,45 @@
       "notes": "【交差点空白検証済み（個人note程度しか競合なし）】青髭・クマ・ニキビ跡のカバーという実用軸。「メイクは女性のもの」という抵抗感への丁寧な導入。konkatsu-photo-guide・profile-photo・usuge-konkatsu-eikyouへ内部リンク。メンズコスメ案件の受け皿",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "shinkon-osechi",
+      "title_hint": "新婚夫婦の初めてのおせち｜ふたり用おせち通販の選び方と早割カレンダー",
+      "target_queries": [
+        "おせち 二人用 おすすめ",
+        "新婚 おせち どうする",
+        "おせち 早割 いつから"
+      ],
+      "type": "data",
+      "notes": "【季節仕込み・12月末需要を7〜9月に先回り】ふたり用サイズの選び方・早割時期（9月開始が多い）・冷凍/冷蔵の違い。「初めての正月をどう過ごすか」という新婚文脈で。shinkon-seikatsu-guide・futari-kouza-kanri（お金）へ内部リンク。おせち通販案件（博多久松・Oisix等）の受け皿",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kekkon-houkoku-nengajou",
+      "title_hint": "結婚報告はがき・年賀状の作り方｜文例・写真選び・出す範囲のマナー",
+      "target_queries": [
+        "結婚報告 年賀状 文例",
+        "結婚報告はがき いつ",
+        "年賀状 結婚報告 写真なし"
+      ],
+      "type": "attribute",
+      "notes": "【季節仕込み・年賀状印刷案件の本命受け皿】文例・出す範囲（職場/親族/友人）・写真あり/なしの判断・喪中との重なり対応。maedori-photo-guide（前撮り写真の活用）と自然に接続。印刷案件（しまうまプリント等）は9月頃から開始",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kisei-kekkon-aisatsu",
+      "title_hint": "年末年始の帰省と結婚挨拶・手土産ガイド｜両家との初めての正月の乗り切り方",
+      "target_queries": [
+        "帰省 結婚挨拶 手土産",
+        "義実家 正月 手土産",
+        "結婚後 初めての正月"
+      ],
+      "type": "attribute",
+      "notes": "【季節仕込み】婚約中〜新婚1年目の「両家との正月」の悩みに応える。手土産の相場・滞在マナー・どちらの実家を優先するか問題。propose-guide・shinkon-seikatsu-guideへ内部リンク",
+      "status": "pending",
+      "published": null
     }
   ]
 }
