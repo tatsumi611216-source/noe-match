@@ -826,6 +826,42 @@
       "notes": "uwaki-chousa-kisoの発展形・ロングテール。物理的に確認できない状況特有の視点（連絡頻度の変化・SNSの使い方等）。不安煽り厳禁、まず自分でできる観察を主軸に。tantei-erabikataへ接続",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "shinkon-ryokou-credit",
+      "title_hint": "新婚旅行の支払いはどのクレジットカードが得か｜旅行保険・マイル還元率で比較",
+      "target_queries": [
+        "新婚旅行 クレジットカード おすすめ",
+        "新婚旅行 クレカ 保険"
+      ],
+      "type": "data",
+      "notes": "【クレカ案件の本命受け皿】旅行保険の自動付帯条件・マイル還元率・海外利用時の為替手数料を比較。kekkon-okane-data・shinkon-koteihi-minaoshiへ内部リンク。断定を避け『比較の軸』を提示する形に",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "fuufu-credit-kanri",
+      "title_hint": "夫婦のクレジットカードは家族カードか別々か｜メリット・デメリットを整理",
+      "target_queries": [
+        "夫婦 クレジットカード 家族カード",
+        "結婚 クレカ 分ける"
+      ],
+      "type": "data",
+      "notes": "futari-kouza-kanri（口座管理）の隣接記事。家族カードの年会費優遇・利用履歴の共有可否・別々にするメリットを整理。相互リンク必須",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "gosyugi-shiharai-houhou",
+      "title_hint": "結婚式のご祝儀・支払いはクレジットカードでできる？現金以外の選択肢を整理",
+      "target_queries": [
+        "結婚式 ご祝儀 クレジットカード",
+        "ご祝儀 現金以外"
+      ],
+      "type": "data",
+      "notes": "shikijo-erabi-guide・kekkon-okane-dataへ接続。マナー面（ご祝儀は基本的に新札現金が慣習）と実務面（式場費用のクレカ払い可否）を分けて整理",
+      "status": "pending",
+      "published": null
     }
   ]
 }
