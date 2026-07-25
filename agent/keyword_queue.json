@@ -788,6 +788,19 @@
       "notes": "【離婚クラスタの重要記事】民法760条に基づく婚姻費用の基礎（算定表の考え方・請求方法）と、相手が引き延ばす場合の実務（内容証明・調停申立て）を整理。断定的な法律助言は避け『一般的な流れ』として記述し、詳細は弁護士へ相談を促す。rikon-okane-genjitsu・rikon-junbi-jyunbanと相互リンク。離婚問題に強い弁護士紹介案件の受け皿",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "usuge-konkatsu-eikyou",
+      "title_hint": "薄毛は婚活・マッチングアプリで本当に不利か｜第一印象への影響と対策の選び方",
+      "target_queries": [
+        "薄毛 婚活 不利",
+        "薄毛 マッチングアプリ 写真",
+        "薄毛 出会い 影響"
+      ],
+      "type": "attribute",
+      "notes": "【他サイト型移植：ikumo-site全般を婚活男性属性記事として統合】AGAクリニック・育毛剤メーカーどちらも中立に語れない領域。①第一印象データ②対策の費用対効果比較（クリニック/育毛剤/坊主等）③『隠すより対策して堂々と』という論点④詐欺広告の見抜き方（ikumo-site sagi-koukoku-mikata型を安全に統合）。profile-photo・40s-men・civil-servant-guideへ内部リンク。AGA/医療系リンクはYMYL慎重に扱い断定表現厳禁",
+      "status": "pending",
+      "published": null
     }
   ]
 }
