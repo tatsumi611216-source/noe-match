@@ -654,6 +654,55 @@
       "notes": "【他サイト型移植：sim-site cashback-wana】暴露型記事。携帯だけでなく保険・引越し業者の契約全般に応用可能な『実質表記の読み解き方』を提示。shinkon-koteihi-minaoshi・kekkon-hoken-minaoshiへ接続",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "dousei-hajimekata",
+      "title_hint": "同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール",
+      "target_queries": [
+        "同棲 始め方",
+        "同棲 初期費用",
+        "同棲 お金 分担"
+      ],
+      "type": "attribute",
+      "notes": "【新クラスタ：同棲＝結婚×引っ越しの交点】物件探し・初期費用相場・家事/生活費の分担ルールを整理。shinkon-seikatsu-guide・futari-hikari-kaisenへ内部リンク。引っ越し業者案件の受け皿にもなる",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "dousei-kekkon-hikaku",
+      "title_hint": "同棲か結婚か｜先に一緒に住むメリット・デメリットをデータで比較",
+      "target_queries": [
+        "同棲 結婚 メリット デメリット",
+        "同棲してから結婚 割合"
+      ],
+      "type": "data",
+      "notes": "【広間口パターン】同棲経由の結婚割合等の一般データを扱いつつ、結婚を意識する読者への判断材料として構成。propose-guideへ接続",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "dousei-kekkon-timing",
+      "title_hint": "同棲中の結婚のタイミング｜何をきっかけに入籍する人が多いか",
+      "target_queries": [
+        "同棲 結婚 タイミング",
+        "同棲何年 結婚"
+      ],
+      "type": "data",
+      "notes": "【他サイト型移植なし・純粋新規】同棲からの入籍タイミングの実態整理。propose-guide・konyaku-yubiwa-dataへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "dousei-kaisho",
+      "title_hint": "同棲解消のリアル｜うまくいかなかった時どうするか",
+      "target_queries": [
+        "同棲解消",
+        "同棲 うまくいかない"
+      ],
+      "type": "attribute",
+      "notes": "【暴露型・大手が書けない切り口】同棲メディアは基本ポジティブな話しか書かない。解消時の引っ越し・お金の精算・気まずさへの対処を率直に扱う",
+      "status": "pending",
+      "published": null
     }
   ]
 }
