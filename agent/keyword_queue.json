@@ -503,6 +503,55 @@
       "notes": "ニッチだが競合が薄い。手続き系の情報需要が高い",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "ouchi-date-guide",
+      "title_hint": "おうちデート完全ガイド｜付き合う前・付き合った後の過ごし方と失敗しない準備",
+      "target_queries": [
+        "おうちデート 何する",
+        "付き合う前 家デート",
+        "おうちデート 準備"
+      ],
+      "type": "attribute",
+      "notes": "【VOD案件の主力受け皿】映画・ドラマ鑑賞の文脈で動画配信サービスを自然に紹介。付き合う前のおうちデートの是非（安全面）にも誠実に触れる。first-date-guide・first-date-spotへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "amenohi-date-guide",
+      "title_hint": "雨の日デートプラン｜屋内で楽しめる過ごし方と当日の切り替え方",
+      "target_queries": [
+        "雨の日 デート",
+        "デート 雨 どうする"
+      ],
+      "type": "attribute",
+      "notes": "【VOD＋屋内施設案件】急な雨でのプラン変更対応が主軸。おうち時間の選択肢としてVODに接続。ouchi-date-guideへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "enkyori-renai-guide",
+      "title_hint": "遠距離恋愛・遠距離婚活の続け方｜オンラインで距離を縮める具体策",
+      "target_queries": [
+        "遠距離恋愛 続け方",
+        "マッチングアプリ 遠距離"
+      ],
+      "type": "attribute",
+      "notes": "【VOD案件】同じ作品を同時視聴する等のオンラインデート手法。地方在住者の婚活（inaka-guide）とも接続",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "date-plan-2kaime",
+      "title_hint": "2回目・3回目のデートプラン｜関係が進む人と止まる人の違い",
+      "target_queries": [
+        "2回目 デート プラン",
+        "3回目 デート 告白"
+      ],
+      "type": "attribute",
+      "notes": "first-date-guideの続編にあたる需要。おうちデートへの移行タイミングも扱いouchi-date-guideへ内部リンク",
+      "status": "pending",
+      "published": null
     }
   ]
 }
