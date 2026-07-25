@@ -552,6 +552,43 @@
       "notes": "first-date-guideの続編にあたる需要。おうちデートへの移行タイミングも扱いouchi-date-guideへ内部リンク",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "ouchi-date-sakuhin",
+      "title_hint": "おうちデートで見る作品の選び方｜関係性の段階別・会話が生まれる作品の条件",
+      "target_queries": [
+        "おうちデート 映画 何見る",
+        "デート 映画 おすすめ 家",
+        "カップル 映画 選び方"
+      ],
+      "type": "attribute",
+      "notes": "【VOD案件の主力】作品レビューではなく『2人の関係にどう作用するか』が主語。付き合う前/交際直後/長期交際の段階別に選び方の条件を提示。作品名は例示にとどめ、あらすじの詳細引用はしない（著作権配慮）。ouchi-date-guideへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "date-sakuhin-ng",
+      "title_hint": "デートで見ると気まずくなる作品の共通点｜避け方と代わりの選択肢",
+      "target_queries": [
+        "デート 映画 気まずい",
+        "カップル 見ちゃいけない映画"
+      ],
+      "type": "attribute",
+      "notes": "【VOD案件】失敗回避型。生々しい描写・重いテーマ・価値観が割れる作品のパターンを分類。作品名の名指し批判はせず『傾向』として扱う。ouchi-date-sakuhinと相互リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "sakuhin-kachikan",
+      "title_hint": "作品の感想でわかる相手の結婚観｜見終わったあとの会話の使い方",
+      "target_queries": [
+        "価値観 確認 デート",
+        "相手の結婚観 見極め"
+      ],
+      "type": "attribute",
+      "notes": "【VOD＋婚活の交点】作品を『価値観のリトマス紙』として使う切り口。婚活の実用記事として成立させる。message-strategy・konkatsu-roadmapへ内部リンク",
+      "status": "pending",
+      "published": null
     }
   ]
 }
