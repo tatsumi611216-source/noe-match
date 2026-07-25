@@ -160,8 +160,8 @@
       ],
       "type": "data",
       "notes": "高単価案件の受け皿。naco-do・スマリッジ・ブライダルネット比較。承認後にリンク挿入",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "bachelor-date-guide",
@@ -208,8 +208,8 @@
       ],
       "type": "data",
       "notes": "ライフイベント軸のハブ記事。婚約指輪・式・新婚旅行・新生活の費用を公的調査（ゼクシィ結婚トレンド調査等・出典明記）で表化。全ブライダル記事から内部リンクを集める",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "shikijo-erabi-guide",
@@ -221,8 +221,8 @@
       ],
       "type": "app-guide",
       "notes": "高単価案件（ハナユメ・ゼクシィ等＝見学予約1〜2万円級）の受け皿。承認前でも公式リンクで公開し承認後にCTA差し替え",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "konyaku-yubiwa-data",
@@ -233,8 +233,8 @@
       ],
       "type": "data",
       "notes": "データ型の勝ちパターン。年代別・地域別相場表。指輪ブランド資料請求案件の受け皿",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "propose-guide",
