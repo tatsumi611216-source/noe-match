@@ -4,7 +4,10 @@
     {
       "slug": "sapporo-guide",
       "title_hint": "札幌でマッチングアプリを使うなら｜出会えるアプリTOP3とすすきの・大通エリア攻略法",
-      "target_queries": ["マッチングアプリ 札幌", "札幌 出会い アプリ"],
+      "target_queries": [
+        "マッチングアプリ 札幌",
+        "札幌 出会い アプリ"
+      ],
       "type": "regional",
       "notes": "冬デート（屋内スポット）・車社会・すすきの/大通/札幌駅のエリア分け",
       "status": "done",
@@ -13,7 +16,11 @@
     {
       "slug": "pairs-marriage-data",
       "title_hint": "ペアーズの成婚率・結婚データ【2026年版】本当に結婚できるのか公式数値で検証",
-      "target_queries": ["ペアーズ 成婚率", "pairs 結婚率", "ペアーズ 結婚 データ"],
+      "target_queries": [
+        "ペアーズ 成婚率",
+        "pairs 結婚率",
+        "ペアーズ 結婚 データ"
+      ],
       "type": "data",
       "notes": "公式発表（毎月約13,000人に恋人）を軸に。成婚率は非公表であることを正直に書く。success-rate-dataへ内部リンク",
       "status": "done",
@@ -22,7 +29,10 @@
     {
       "slug": "kyoto-guide",
       "title_hint": "京都でマッチングアプリを使うなら｜出会えるアプリTOP3と河原町・烏丸エリア攻略法",
-      "target_queries": ["マッチングアプリ 京都", "京都 出会い アプリ"],
+      "target_queries": [
+        "マッチングアプリ 京都",
+        "京都 出会い アプリ"
+      ],
       "type": "regional",
       "notes": "学生都市（大学生比率高）・観光地デートの使い分け・鴨川/河原町/烏丸",
       "status": "done",
@@ -31,7 +41,11 @@
     {
       "slug": "with-seriousness-data",
       "title_hint": "withの真剣度・結婚データ【2026年版】恋活アプリで婚活はできるのか検証",
-      "target_queries": ["with 真剣度", "with 結婚率", "ウィズ 婚活 できる"],
+      "target_queries": [
+        "with 真剣度",
+        "with 結婚率",
+        "ウィズ 婚活 できる"
+      ],
       "type": "data",
       "notes": "心理テスト機能と真剣度の関係。20代後半の婚活転用がテーマ",
       "status": "done",
@@ -40,7 +54,10 @@
     {
       "slug": "kobe-yokohama-guide",
       "title_hint": "神戸・横浜でマッチングアプリを使うなら｜港町2都市の出会いエリア攻略法",
-      "target_queries": ["マッチングアプリ 神戸", "マッチングアプリ 横浜"],
+      "target_queries": [
+        "マッチングアプリ 神戸",
+        "マッチングアプリ 横浜"
+      ],
       "type": "regional",
       "notes": "大都市隣接都市の共通戦略（大阪/東京に吸われない使い方）。三宮・元町/みなとみらい・関内",
       "status": "done",
@@ -49,7 +66,10 @@
     {
       "slug": "civil-servant-guide",
       "title_hint": "公務員向けマッチングアプリガイド｜身バレを防ぎつつ堅実に出会う方法",
-      "target_queries": ["公務員 マッチングアプリ", "公務員 出会い"],
+      "target_queries": [
+        "公務員 マッチングアプリ",
+        "公務員 出会い"
+      ],
       "type": "attribute",
       "notes": "身バレ対策記事（privacy-protection）へ内部リンク。公務員が人気属性である事実と注意点",
       "status": "done",
@@ -58,16 +78,22 @@
     {
       "slug": "nurse-guide",
       "title_hint": "看護師向けマッチングアプリガイド｜不規則勤務でも出会える使い方",
-      "target_queries": ["看護師 マッチングアプリ", "看護師 出会い ない"],
+      "target_queries": [
+        "看護師 マッチングアプリ",
+        "看護師 出会い ない"
+      ],
       "type": "attribute",
       "notes": "シフト勤務×デート調整の具体戦略。夜勤明けデートのリアル",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-20"
     },
     {
       "slug": "batsuichi-guide",
       "title_hint": "バツイチ・再婚向けマッチングアプリガイド｜再婚に強いアプリと書き方",
-      "target_queries": ["バツイチ マッチングアプリ", "再婚 アプリ おすすめ"],
+      "target_queries": [
+        "バツイチ マッチングアプリ",
+        "再婚 アプリ おすすめ"
+      ],
       "type": "attribute",
       "notes": "マリッシュ（再婚優遇）を軸に。離婚歴のプロフィール開示タイミング",
       "status": "done",
@@ -273,16 +299,36 @@
     {
       "slug": "tapple-seriousness-data",
       "title_hint": "タップルの真剣度は低い？【2026年版】ユーザー層データと目的別の向き不向き",
-      "target_queries": ["タップル 真剣度", "tapple 遊び", "タップル 彼女できた"],
+      "target_queries": [
+        "タップル 真剣度",
+        "tapple 遊び",
+        "タップル 彼女できた"
+      ],
       "type": "data",
       "notes": "「遊び」評判の実態を公平に検証。20代恋活には最適という結論への導線",
       "status": "pending",
       "published": null
     },
     {
+      "slug": "omiai-30s-women-data",
+      "title_hint": "Omiaiは30代女性に向いている？【2026年版】年齢層データと婚活実績で検証",
+      "target_queries": [
+        "omiai 30代 女性",
+        "omiai 年齢層",
+        "オミアイ 婚活 評判"
+      ],
+      "type": "data",
+      "notes": "age-data・success-rate-dataへ内部リンク。30代女性の婚活導線のハブ記事",
+      "status": "pending",
+      "published": null
+    },
+    {
       "slug": "sendai-hiroshima-guide",
       "title_hint": "仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略",
-      "target_queries": ["マッチングアプリ 仙台", "マッチングアプリ 広島"],
+      "target_queries": [
+        "マッチングアプリ 仙台",
+        "マッチングアプリ 広島"
+      ],
       "type": "regional",
       "notes": "支店経済都市の転勤族需要。国分町/流川エリアは2回目以降",
       "status": "pending",
@@ -291,18 +337,108 @@
     {
       "slug": "inaka-guide",
       "title_hint": "地方・田舎でマッチングアプリは使える？【人口10万人以下】出会うための現実的戦略",
-      "target_queries": ["田舎 マッチングアプリ", "地方 マッチングアプリ 出会えない"],
+      "target_queries": [
+        "田舎 マッチングアプリ",
+        "地方 マッチングアプリ 出会えない"
+      ],
       "type": "attribute",
       "notes": "距離設定50km・県庁所在地合流・身バレ率の高さへの対策。正直な期待値調整",
       "status": "pending",
       "published": null
     },
     {
-      "slug": "omiai-30s-women-data",
-      "title_hint": "Omiaiは30代女性に向いている？【2026年版】年齢層データと婚活実績で検証",
-      "target_queries": ["omiai 30代 女性", "omiai 年齢層", "オミアイ 婚活 評判"],
+      "slug": "saitama-chiba-guide",
+      "title_hint": "埼玉・千葉でマッチングアプリを使うなら｜都心依存しない出会い戦略",
+      "target_queries": [
+        "マッチングアプリ 埼玉",
+        "マッチングアプリ 千葉"
+      ],
+      "type": "regional",
+      "notes": "大宮・浦和・船橋・柏。都内合流とのハイブリッド戦略",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "shizuoka-niigata-guide",
+      "title_hint": "静岡・新潟でマッチングアプリを使うなら｜地方中核県の出会い戦略",
+      "target_queries": [
+        "マッチングアプリ 静岡",
+        "マッチングアプリ 新潟"
+      ],
+      "type": "regional",
+      "notes": "車社会×距離設定。浜松/静岡市・新潟市の2極構造",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "okinawa-guide",
+      "title_hint": "沖縄でマッチングアプリを使うなら｜移住者・地元の出会い事情と攻略法",
+      "target_queries": [
+        "マッチングアプリ 沖縄",
+        "沖縄 出会い アプリ"
+      ],
+      "type": "regional",
+      "notes": "移住者需要・狭いコミュニティでの身バレ対策を厚く",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kaiin-age-cross-data",
+      "title_hint": "マッチングアプリの年齢層×目的マップ【2026年版】どの年代がどこにいるかデータで見る",
+      "target_queries": [
+        "マッチングアプリ 年齢層 比較",
+        "婚活アプリ 年代別"
+      ],
       "type": "data",
-      "notes": "age-data・success-rate-dataへ内部リンク。30代女性の婚活導線のハブ記事",
+      "notes": "age-dataの発展版。全アプリ×年代マトリクス表が核",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kekkon-madeno-kikan-data",
+      "title_hint": "マッチングアプリから結婚までの期間データ｜出会って何ヶ月で結婚している？",
+      "target_queries": [
+        "マッチングアプリ 結婚まで 期間",
+        "アプリ婚 期間"
+      ],
+      "type": "data",
+      "notes": "success-rate-dataと相互リンク。交際期間統計が核",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "hitomishiri-guide",
+      "title_hint": "人見知り・内向型のためのマッチングアプリ攻略｜会話が苦手でも出会える設計",
+      "target_queries": [
+        "人見知り マッチングアプリ",
+        "内向的 婚活"
+      ],
+      "type": "attribute",
+      "notes": "メッセージ戦略・with心理テストとの相性。message-strategyへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "engineer-guide",
+      "title_hint": "エンジニア・理系向けマッチングアプリガイド｜論理派の強みを活かす戦略",
+      "target_queries": [
+        "エンジニア マッチングアプリ",
+        "理系 婚活"
+      ],
+      "type": "attribute",
+      "notes": "データ好き層に刺さる書き味。公務員記事の成功パターンを踏襲",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "seishain-igai-guide",
+      "title_hint": "非正規・フリーランスの婚活戦略｜雇用形態の壁をどう越えるか",
+      "target_queries": [
+        "フリーランス 婚活",
+        "非正規 結婚できない"
+      ],
+      "type": "attribute",
+      "notes": "検索者の悩みが深い=転換率高。誠実な現実解を提示",
       "status": "pending",
       "published": null
     }
