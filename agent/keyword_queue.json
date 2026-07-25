@@ -210,8 +210,8 @@
       ],
       "type": "attribute",
       "notes": "【高単価】転職エージェント案件（1〜3万円）の受け皿。婚活/結婚文脈に完全接続。住宅ローン審査への影響・入籍前後どちらが有利かを軸に。konkatsu-roadmap・kekkon-okane-dataへ内部リンク",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "kekkon-sokou-chousa",
@@ -223,8 +223,8 @@
       ],
       "type": "attribute",
       "notes": "【高単価】探偵・調査会社案件（1〜3万円）の受け皿。煽らず「まず自分でできる確認」を主軸にし、依頼は最終手段として提示。fraud-detection・safety-guideへ内部リンク。断定・不安煽り表現は厳禁",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "bachelor-date-guide",
@@ -235,8 +235,8 @@
       ],
       "type": "app-guide",
       "notes": "A8申請中の受け皿を先行準備。承認後にCTA挿入",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "konkatsu-photo-guide",
@@ -247,8 +247,8 @@
       ],
       "type": "data",
       "notes": "Photojoy等の写真サービス案件の受け皿。profile-photoと差別化（プロ撮影の費用対効果検証軸）",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "over50-guide",
@@ -259,8 +259,8 @@
       ],
       "type": "attribute",
       "notes": "マリッシュ主役（40-50代層）。40s-guideと差別化",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "propose-guide",
@@ -271,8 +271,8 @@
       ],
       "type": "attribute",
       "notes": "アプリ→交際→婚約の橋渡し記事。konyaku-yubiwa-dataとshikijo-erabiへ内部リンク",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "bridal-esthe-guide",
@@ -283,8 +283,8 @@
       ],
       "type": "data",
       "notes": "美容系の参入点（ブライダル文脈なら自然）。エステ体験系案件の受け皿",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "maedori-photo-guide",
@@ -295,8 +295,8 @@
       ],
       "type": "data",
       "notes": "ナシ婚トレンドと合わせて需要増領域。写真スタジオ系案件の受け皿",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "nashikon-data",
@@ -307,8 +307,8 @@
       ],
       "type": "data",
       "notes": "統計型。フォトウェディングへの導線。maedori-photo-guideと相互リンク",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "shinkon-seikatsu-guide",
@@ -319,8 +319,8 @@
       ],
       "type": "attribute",
       "notes": "ライフイベント軸の終点。引越し見積もり・家具サブスク案件の将来受け皿",
-      "status": "pending",
-      "published": null
+      "status": "done",
+      "published": "2026-07-26"
     },
     {
       "slug": "tapple-seriousness-data",
