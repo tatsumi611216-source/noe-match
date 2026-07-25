@@ -862,6 +862,84 @@
       "notes": "shikijo-erabi-guide・kekkon-okane-dataへ接続。マナー面（ご祝儀は基本的に新札現金が慣習）と実務面（式場費用のクレカ払い可否）を分けて整理",
       "status": "done",
       "published": "2026-07-26"
+    },
+    {
+      "slug": "dansei-ninkatsu-guide",
+      "title_hint": "男性の妊活準備ガイド｜「妊活は2人でするもの」検査・生活習慣・サプリの基礎知識",
+      "target_queries": [
+        "男性 妊活 何をする",
+        "妊活 男性 準備",
+        "男性不妊 検査 いつ"
+      ],
+      "type": "attribute",
+      "notes": "【新クラスタのハブ・競合弱検証済み】不妊の約半分は男性側要因という事実から。①まず検査（ブライダルチェック）②生活習慣③サプリは補助、の順で誠実に。効果断定禁止・受診勧奨必須。kekkon-madeno-kikan-data・shinkon-seikatsu-guideへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "myseed-kuchikomi",
+      "title_hint": "マイシード（男性妊活サプリ）の口コミ・成分を検証｜亜鉛・コエンザイムQ10配合の実際",
+      "target_queries": [
+        "マイシード 口コミ",
+        "マイシード 効果 なし",
+        "マイシード 成分"
+      ],
+      "type": "data",
+      "notes": "【商品名×競合弱（無料ブログのみ）検証済み】成分の事実（亜鉛・還元型CoQ10・ソイポリア）と公式の訴求を分離して整理。効果断定禁止・薬機法厳守・「新しい精子の生成に約74日」等は一般論として出典付きで。dansei-ninkatsu-guideへ接続",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "mitocore-kuchikomi",
+      "title_hint": "ミトコア300mgの口コミ・成分を検証｜ミトコンドリアサプリの実際と選び方",
+      "target_queries": [
+        "ミトコア 口コミ",
+        "ミトコア 効果",
+        "ミトコンドリア サプリ 妊活"
+      ],
+      "type": "data",
+      "notes": "【商品名×競合弱】イースタティックミネラル等の成分事実を整理。夫婦で飲むタイプという特徴。薬機法厳守。dansei-ninkatsu-guideへ接続",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "mitas-formen-kuchikomi",
+      "title_hint": "mitas for men（ミタス男性用）の口コミ・成分検証｜夫婦で始める妊活サプリ",
+      "target_queries": [
+        "mitas for men 口コミ",
+        "ミタス 男性用",
+        "mitas 夫婦"
+      ],
+      "type": "data",
+      "notes": "【afb案件確認済み＝収益直結】女性用mitasとの夫婦セット訴求が特徴。承認後CTA設置予定。dansei-ninkatsu-guide・myseed-kuchikomiと相互リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "bridal-inner-guide",
+      "title_hint": "ブライダルインナーはどこで買う？必要性・選び方・専門店比較【後悔しない準備】",
+      "target_queries": [
+        "ブライダルインナー どこで買う",
+        "ブライダルインナー 必要",
+        "ブライダルインナー 安い"
+      ],
+      "type": "data",
+      "notes": "【競合弱検証済み（アメブロ・小規模アフィリ主体）】ユニクロ等で代用できるか・専門店（tu-hacci/LuXY等）の価格帯比較・試着交換条件の整理。shikijo-erabi-guide・bridal-esthe-guide・maedori-photo-guideへ内部リンク。EC案件確認後にリンク設置",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "mens-make-konkatsu",
+      "title_hint": "婚活・マッチングアプリ写真のためのメンズメイク入門｜BBクリーム1本から始める第一印象改善",
+      "target_queries": [
+        "メンズメイク 婚活",
+        "マッチングアプリ 写真 メイク 男",
+        "BBクリーム メンズ 自然"
+      ],
+      "type": "attribute",
+      "notes": "【交差点空白検証済み（個人note程度しか競合なし）】青髭・クマ・ニキビ跡のカバーという実用軸。「メイクは女性のもの」という抵抗感への丁寧な導入。konkatsu-photo-guide・profile-photo・usuge-konkatsu-eikyouへ内部リンク。メンズコスメ案件の受け皿",
+      "status": "pending",
+      "published": null
     }
   ]
 }
