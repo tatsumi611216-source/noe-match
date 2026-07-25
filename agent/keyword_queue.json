@@ -751,6 +751,30 @@
       "notes": "【暴露型・大手が書きにくい】結婚情報メディアはほぼ扱わない領域。不安煽りは厳禁、事実整理に徹する。kinsen-kachikan-checkと相互リンクし『備えとしての金銭感覚共有』に着地させる",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "uwaki-chousa-kiso",
+      "title_hint": "浮気・不倫調査の基礎知識｜証拠になるもの・ならないものを正しく理解する",
+      "target_queries": [
+        "浮気調査 証拠",
+        "不倫 証拠 何が必要"
+      ],
+      "type": "data",
+      "notes": "【探偵案件の本命受け皿】法律上有効な証拠の要件（決定的瞬間の写真等）と、自分で集める場合の限界・リスクを整理。感情的な煽りは一切禁止。kekkon-sokou-chousa（結婚前調査）と対になる位置づけとして相互リンク。rikon-okane-genjitsuへも接続",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "rikon-junbi-jyunban",
+      "title_hint": "離婚を考えたら最初にすること｜証拠集め・お金の整理・相談先の順番",
+      "target_queries": [
+        "離婚 準備 何から",
+        "離婚したい 最初にすること"
+      ],
+      "type": "attribute",
+      "notes": "rikon-okane-genjitsu・uwaki-chousa-kisoの橋渡しハブ。感情的な決断を急がせない構成にし、順序立てた実務ガイドに徹する",
+      "status": "pending",
+      "published": null
     }
   ]
 }
