@@ -703,6 +703,54 @@
       "notes": "【暴露型・大手が書けない切り口】同棲メディアは基本ポジティブな話しか書かない。解消時の引っ越し・お金の精算・気まずさへの対処を率直に扱う",
       "status": "pending",
       "published": null
+    },
+    {
+      "slug": "kekkon-chokin-mokuhyou",
+      "title_hint": "結婚までにいくら貯めるべきか｜世帯年収別の貯金目標データ",
+      "target_queries": [
+        "結婚 貯金 いくら",
+        "結婚資金 目標額"
+      ],
+      "type": "data",
+      "notes": "【お金軸の核】婚約〜新生活までの必要額を年収別に逆算。kekkon-okane-data・konyaku-yubiwa-dataと直結するハブ的位置づけ",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "futari-kouza-kanri",
+      "title_hint": "結婚後の口座・お金の管理方法｜共通口座と費目分担の実例パターン",
+      "target_queries": [
+        "夫婦 お金 管理方法",
+        "結婚後 口座 分ける"
+      ],
+      "type": "data",
+      "notes": "shinkon-seikatsu-guideの発展。共働き前提の分担パターンを類型化",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kinsen-kachikan-check",
+      "title_hint": "結婚前に確認すべき金銭感覚のすり合わせ｜聞きにくいお金の話を切り出す方法",
+      "target_queries": [
+        "結婚前 お金の話",
+        "金銭感覚 合わない 結婚"
+      ],
+      "type": "attribute",
+      "notes": "【広間口＋暴露型】婚活で最も避けられがちな話題。message-strategy・konkatsu-roadmapへ接続。断定を避け『聞き方』を主軸に",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "rikon-okane-genjitsu",
+      "title_hint": "離婚した場合のお金の現実｜財産分与・慰謝料の基礎知識と備え方",
+      "target_queries": [
+        "離婚 財産分与 いくら",
+        "離婚 お金 現実"
+      ],
+      "type": "data",
+      "notes": "【暴露型・大手が書きにくい】結婚情報メディアはほぼ扱わない領域。不安煽りは厳禁、事実整理に徹する。kinsen-kachikan-checkと相互リンクし『備えとしての金銭感覚共有』に着地させる",
+      "status": "pending",
+      "published": null
     }
   ]
 }
