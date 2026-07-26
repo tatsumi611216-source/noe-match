@@ -291,9 +291,9 @@ def build(n):
          "description":desc,"image":img_url,"url":canon,
          "mainEntityOfPage":{"@type":"WebPage","@id":canon},
          "inLanguage":"ja",
-         "author":{"@type":"Organization","name":author or "NOE マッチングアプリ大学 編集部",
+         "author":{"@type":"Organization","name":author or "NOE結婚設計室 編集部",
                    "url":DOMAIN+"/about.html"},
-         "publisher":{"@type":"Organization","name":"NOE マッチングアプリ大学",
+         "publisher":{"@type":"Organization","name":"NOE結婚設計室",
                       "url":DOMAIN+"/"}}
     if iso: art["datePublished"]=iso; art["dateModified"]=iso
     schemas.append(art)
@@ -320,7 +320,7 @@ def build(n):
 <meta property="og:type" content="article">
 <meta property="og:url" content="{DOMAIN}/articles/{slug}/">
 <meta property="og:image" content="{esc(img_url)}">
-<meta property="og:site_name" content="NOE マッチングアプリ大学">
+<meta property="og:site_name" content="NOE結婚設計室">
 <meta property="og:locale" content="ja_JP">
 {f'<meta property="article:published_time" content="{iso}">' if iso else ''}
 {f'<meta property="article:modified_time" content="{iso}">' if iso else ''}
@@ -353,7 +353,7 @@ def build(n):
 </div>
 <footer><div class="footer-inner">
 <div><a href="/">ホーム</a><a href="/#articles">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
-<p class="footer-disc">※本記事の情報は{esc(updated)}時点のものです。料金・サービス内容は変更される場合があります。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 NOE マッチングアプリ大学</p>
+<p class="footer-disc">※本記事の情報は{esc(updated)}時点のものです。料金・サービス内容は変更される場合があります。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 NOE結婚設計室</p>
 </div></footer>
 <button id="top" onclick="scrollTo({{top:0,behavior:'smooth'}})">↑</button>
 <script>onscroll=()=>top.classList.toggle('show',scrollY>300)</script>
