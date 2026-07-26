@@ -1,17 +1,25 @@
 {
- "fetched_at": "2026-07-23T19:29:02",
+ "fetched_at": "2026-07-26T14:24:00",
  "period": {
-  "start": "2026-06-23",
-  "end": "2026-07-21"
+  "start": "2026-06-26",
+  "end": "2026-07-24"
  },
  "by_query_page": [
+  {
+   "query": "with 結婚率",
+   "page": "https://www.noe-match.com/articles/with-seriousness-data/",
+   "clicks": 1,
+   "impressions": 9,
+   "ctr": 0.1111,
+   "position": 4.1
+  },
   {
    "query": "omiai 成婚率",
    "page": "https://www.noe-match.com/articles/omiai-guide/",
    "clicks": 0,
-   "impressions": 6,
+   "impressions": 5,
    "ctr": 0,
-   "position": 6.8
+   "position": 6.6
   },
   {
    "query": "with 付き合う確率",
@@ -36,14 +44,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 48
-  },
-  {
-   "query": "with 結婚率",
-   "page": "https://www.noe-match.com/articles/with-seriousness-data/",
-   "clicks": 0,
-   "impressions": 8,
-   "ctr": 0,
-   "position": 4.1
   },
   {
    "query": "お見合い 料金",
@@ -81,9 +81,9 @@
    "query": "マッチング アプリ 東京",
    "page": "https://www.noe-match.com/articles/tokyo-guide/",
    "clicks": 0,
-   "impressions": 16,
+   "impressions": 14,
    "ctr": 0,
-   "position": 35
+   "position": 35.2
   },
   {
    "query": "マッチング アプリ 業者 特徴",
@@ -158,6 +158,14 @@
    "position": 76
   },
   {
+   "query": "京都駅 出会い",
+   "page": "https://www.noe-match.com/articles/kyoto-guide/",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 49
+  },
+  {
    "query": "公務員 マッチング アプリ",
    "page": "https://www.noe-match.com/articles/civil-servant-guide/",
    "clicks": 0,
@@ -172,6 +180,38 @@
    "impressions": 1,
    "ctr": 0,
    "position": 66
+  },
+  {
+   "query": "再婚 アプリ",
+   "page": "https://www.noe-match.com/articles/batsuichi-guide/",
+   "clicks": 0,
+   "impressions": 2,
+   "ctr": 0,
+   "position": 81.5
+  },
+  {
+   "query": "再婚 アプリ",
+   "page": "https://www.noe-match.com/articles/marrish-guide/",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 90
+  },
+  {
+   "query": "再婚 マッチングアプリ",
+   "page": "https://www.noe-match.com/articles/batsuichi-guide/",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 97
+  },
+  {
+   "query": "再婚 マッチングアプリ",
+   "page": "https://www.noe-match.com/articles/marrish-guide/",
+   "clicks": 0,
+   "impressions": 1,
+   "ctr": 0,
+   "position": 86
   },
   {
    "query": "大学生 出会い アプリ",
@@ -230,14 +270,14 @@
   {
    "page": "https://www.noe-match.com/articles/civil-servant-guide/",
    "clicks": 1,
-   "impressions": 7,
-   "position": 24
+   "impressions": 9,
+   "position": 20.6
   },
   {
    "page": "https://www.noe-match.com/articles/kyoto-guide/",
    "clicks": 1,
-   "impressions": 11,
-   "position": 13.8
+   "impressions": 18,
+   "position": 16.8
   },
   {
    "page": "https://www.noe-match.com/articles/profile-photo/",
@@ -248,26 +288,44 @@
   {
    "page": "https://www.noe-match.com/articles/sapporo-guide/",
    "clicks": 1,
-   "impressions": 6,
-   "position": 12
+   "impressions": 9,
+   "position": 10.8
   },
   {
    "page": "https://www.noe-match.com/articles/success-rate-data/",
    "clicks": 1,
-   "impressions": 43,
-   "position": 34.9
+   "impressions": 52,
+   "position": 34.8
+  },
+  {
+   "page": "https://www.noe-match.com/articles/with-seriousness-data/",
+   "clicks": 1,
+   "impressions": 18,
+   "position": 5.5
+  },
+  {
+   "page": "https://www.noe-match.com/articles/batsuichi-guide/",
+   "clicks": 0,
+   "impressions": 3,
+   "position": 86.7
   },
   {
    "page": "https://www.noe-match.com/articles/fraud-detection/",
    "clicks": 0,
-   "impressions": 12,
-   "position": 48.4
+   "impressions": 14,
+   "position": 42.8
   },
   {
    "page": "https://www.noe-match.com/articles/fukuoka-guide/",
    "clicks": 0,
-   "impressions": 5,
-   "position": 13
+   "impressions": 7,
+   "position": 12
+  },
+  {
+   "page": "https://www.noe-match.com/articles/marrish-guide/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 88
   },
   {
    "page": "https://www.noe-match.com/articles/nagoya-guide/",
@@ -276,34 +334,34 @@
    "position": 15.2
   },
   {
+   "page": "https://www.noe-match.com/articles/nurse-guide/",
+   "clicks": 0,
+   "impressions": 2,
+   "position": 45
+  },
+  {
    "page": "https://www.noe-match.com/articles/omiai-guide/",
    "clicks": 0,
-   "impressions": 25,
-   "position": 12.8
+   "impressions": 23,
+   "position": 12.9
   },
   {
    "page": "https://www.noe-match.com/articles/osaka-guide/",
    "clicks": 0,
-   "impressions": 2,
-   "position": 35.5
+   "impressions": 3,
+   "position": 29.3
   },
   {
    "page": "https://www.noe-match.com/articles/student-guide/",
    "clicks": 0,
-   "impressions": 14,
-   "position": 47.5
+   "impressions": 16,
+   "position": 38.4
   },
   {
    "page": "https://www.noe-match.com/articles/tokyo-guide/",
    "clicks": 0,
-   "impressions": 41,
-   "position": 19.8
-  },
-  {
-   "page": "https://www.noe-match.com/articles/with-seriousness-data/",
-   "clicks": 0,
-   "impressions": 14,
-   "position": 5.5
+   "impressions": 37,
+   "position": 19.9
   }
  ]
 }
