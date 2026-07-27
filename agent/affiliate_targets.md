@@ -98,7 +98,7 @@
 |---|------|-----|------|-----------|
 | 14 | **ユーブライド** | afb | ✅提携済 | 32記事に設置済 |
 | 15 | **マリッシュ** | afb | ✅提携済 | 7記事に設置済 |
-| 16 | バチェラーデート | A8 | 申請中? | bachelor-date-guide, time-management, 都市部記事 |
+| 16 | バチェラーデート | A8 | ✅提携済（2026-07-28） | bachelor-date-guide（CTA2箇所設置済） |
 | 17 | タップル | アクセストレード | 未 | tapple-guide, compare-20s, student-guide, 20s系 |
 | 18 | Match（マッチドットコム） | A8/afb | 未 | compare-konkatsu, 35s-strategy, 40s系 |
 | 19 | ゼクシィ縁結び（アプリ） | A8 | 未 | 30s-konkatsu, konkatsu-roadmap |
