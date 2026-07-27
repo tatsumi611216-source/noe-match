@@ -182,3 +182,57 @@ afb は「婚活」カテゴリを一覧して単価5,000円以上を一括申�
 - 医療系（AGA・医療脱毛・美容医療）は当面見送り（YMYL最厳格領域）
 
 *最終更新：2026-07-25*
+
+---
+
+## 🎉 既に提携済みだった案件（2026-07-28 A8管理画面で発見・140件中の関連分）
+
+**申請不要。広告リンクを取得して貼るだけで収益化できる。** 受け皿記事は全て公開済み。
+
+### 最優先（高単価・受け皿あり）
+| 案件 | 成果報酬 | 確定率 | 受け皿記事 |
+|---|---|---|---|
+| **ハナユメ（Hanayume）** | ブライダルフェア来館 **10,000円** | 48.6% | shikijo-erabi-guide |
+| **ALG探偵社** | 新規問合せ **15,000円** | - | tantei-erabikata・uwaki-chousa-kiso |
+| **原一探偵事務所** | メール相談/電話問合せ各 **9,091円** | 42.9% | tantei-erabikata・kekkon-sokou-chousa |
+| **FPカフェ** | 新規面談完了 **11,700円** | 3.1% | kekkon-hoken-minaoshi |
+| **保険ランドリー** | 新規面談 **11,329円** | 12.0% | kekkon-hoken-minaoshi |
+| **結婚相談所エクセレンス青山** | 来店/オンライン相談3,000円・入会18,500円 | 56.5% | soudanjo-hikaku |
+
+### 中単価
+| 案件 | 成果報酬 | 受け皿記事 |
+|---|---|---|
+| 恋愛・結婚情報サービス エンジェル | 会員登録2,500円 | soudanjo-hikaku・konkatsu-roadmap |
+| IBJ Matching(PARTY☆PARTY) | 男性参加1,575円/女性741円 | 婚活パーティー文脈（要記事） |
+| OTOCON（おとコン） | 参加1,000円 | 同上 |
+| Photojoy | 新規プラン購入500円 | konkatsu-photo-guide・profile-photo |
+| ハローストレージ | 成約6,000円 | dousei-hajimekata（荷物置き場） |
+| ビジモ光 | 新規開通30,000円 | futari-hikari-kaisen |
+| 家電レンタルみんなのHappy | 申込2,100円 | shinkon-seikatsu-guide |
+| クレカリ賃貸 | 新規利用1,000円 | dousei-hajimekata |
+| 引越し侍／引越しはネットで安く | 見積667円（確定率100%） | dousei-hajimekata・shinkon-seikatsu-guide |
+| リファスタ（ダイヤ買取） | 見積2,000円/宅配申込4,000円 | 離婚・指輪処分文脈 |
+
+### 物販系（％報酬）
+| 案件 | 報酬率 | 受け皿記事 |
+|---|---|---|
+| THE KISS（ペア/マリッジリング） | 購入5% | konyaku-yubiwa-data・propose-guide |
+| L&Co.（ペアジュエリー） | 購入10% | 同上 |
+| ZEXIMO（ダイヤジュエリー） | 購入5% | konyaku-yubiwa-data |
+| **匠本舗（料亭おせち）** | 購入8% | shinkon-osechi |
+| **Oisixおせち／大地を守る会おせち** | 6%／9.09% | shinkon-osechi |
+| グルメ杵屋おせち／ちこり村 | 5%／6% | shinkon-osechi |
+| 博多久松 | 購入3% | shinkon-osechi |
+| シャディギフトモール | 購入5% | kisei-kekkon-aisatsu（手土産・内祝い） |
+| Oisixおためしセット／Kit Oisix | 各1,000円 | ouchi-date-guide・shinkon-seikatsu-guide |
+| NULL BBクリーム | 購入1,000円 | mens-make-konkatsu |
+| HOLO BELL サンブロック保湿BB | 1,000〜2,500円 | mens-make-konkatsu |
+| ABEMAプレミアム／スカパー! | 902円／3,620円 | ouchi-date-guide・amenohi-date-guide |
+
+### 判断保留
+- **Pappy（イククル運営）** 有料プラン登録10,900円・確定率100%・7/25承認 → サービス性質（パパ活寄りの可能性）を確認するまで設置しない
+- **ナースパワー人材センター** 会員登録14,000円（提携中） → nurse-guide の転職文脈で使えるか掲載サイト規約を要確認
+
+> **運用メモ**：A8管理画面はブラウザ自動操作を受け付けない（クリックが効かない）ため、
+> 広告リンク（a8mat付きURL）の自動取得は不可。ユーザーが管理画面からコピーして渡す運用とする。
+> 一覧の閲覧（GET）だけは可能なので、提携状況の棚卸しは自動でできる。
