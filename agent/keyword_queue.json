@@ -979,6 +979,32 @@
       "notes": "【季節仕込み】婚約中〜新婚1年目の「両家との正月」の悩みに応える。手土産の相場・滞在マナー・どちらの実家を優先するか問題。propose-guide・shinkon-seikatsu-guideへ内部リンク",
       "status": "done",
       "published": "2026-07-26"
+    },
+    {
+      "slug": "appkon-wariai-data",
+      "title_hint": "アプリ婚・マッチングアプリ経由の婚姻割合データ【2026年版】出会い方別の推移と現状",
+      "target_queries": [
+        "アプリ婚 割合",
+        "マッチングアプリ 結婚 割合",
+        "アプリで出会った 結婚"
+      ],
+      "type": "data",
+      "notes": "NIPSSR調査・ブライダル総研データをもとに婚姻割合推移を表化。success-rate-dataとの差別化は全体割合推移vs.アプリ内成功率。inaka-guide・kekkon-madeno-kikan-dataへ内部リンク",
+      "status": "done",
+      "published": "2026-07-27"
+    },
+    {
+      "slug": "matching-dansei-cost-data",
+      "title_hint": "マッチングアプリの男性費用データ【2026年版】月額・利用期間・総額の実態と節約策",
+      "target_queries": [
+        "マッチングアプリ 男性 費用",
+        "マッチングアプリ 月額 男性",
+        "マッチングアプリ いくらかかった"
+      ],
+      "type": "data",
+      "notes": "主要アプリの男性月額・利用期間・総費用シミュレーション表。youbride-guide・konkatsu-photo-guideへ内部リンク",
+      "status": "done",
+      "published": "2026-07-27"
     }
   ]
 }
