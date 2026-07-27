@@ -132,6 +132,11 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 | NULL BBクリーム（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5FAB22+328C+ZRQ0X | 購入1,000円・確定率100%。メンズメイク・第一印象文脈のみ（mens-make-konkatsu）。**化粧品のため薬機法厳守**：「カバーする」等の範囲内表現のみ、肌質改善・効果の断定は禁止。1記事1箇所 |
 | クレカリ賃貸（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5K1RWA+532U+5YRHE | 新規利用1,000円・確定率100%。**商品名SERPが提携中で最も弱い**（上位は個人ブログのみ・大手不在）＝狙い目。家賃クレカ払い・新生活の資金繰り文脈のみ（yachin-credit-shiharai・dousei-hajimekata）。**手数料3.6%でポイント還元は赤字になる事実を隠さず書き、「支払いタイミングを買う」価値で訴求する**こと。1記事1箇所 |
 | 引越し侍（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX | 見積667円・確定率100%（単価は低いが成果地点が無料見積もりで**件数が出やすい**）。同棲・新生活の引っ越し文脈のみ（dousei-hajimekata・shinkon-seikatsu-guide・dousei-nimotsu-trunkroom）。汎用の「引っ越し 見積もり」KWは大手比較サイトの独占なので狙わず、**新婚・同棲文脈でのみ提示**する。1記事1箇所 |
+| 家電レンタルみんなのHappy（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5IUWOQ+5MMG+5ZEMP | 申込2,100円・確定率100%。家電のレンタルvs購入・新生活文脈のみ（kaden-rental-vs-kounyu・shinkon-seikatsu-guide）。**長期利用ではレンタルが割高になる事実を隠さず、短期・転勤前提の読者にのみ提示**する |
+| Oisixおためしセット（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA | 購入1,000円・確定率79.7%。共働きの食事・おうちデート文脈のみ（tomobataraki-shokuji-data・ouchi-date-guide・shinkon-seikatsu-guide） |
+| シャディギフトモール（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+59BZ0A+4DMG+60OXE | 購入5%。内祝い・手土産・ギフト文脈のみ（kekkon-uchiiwai-guide・kisei-kekkon-aisatsu） |
+| THE KISS（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+633N96+1O28+IISMP | 購入5%。ペアリング・ジュエリー文脈のみ（pair-ring-guide・propose-guide・konyaku-yubiwa-data） |
+| PARTY☆PARTY（A8・IBJ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3AHE0Q+FOG+3H6DXV | 男性参加1,575円/女性741円・確定率46.7%。婚活パーティー文脈のみ（konkatsu-party-guide） |
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 - CTAブロックのデザインは既存記事の「ユーブライド公式サイトを見る」ボタン（#ff4d7e系）を踏襲する
