@@ -1005,6 +1005,110 @@
       "notes": "主要アプリの男性月額・利用期間・総費用シミュレーション表。youbride-guide・konkatsu-photo-guideへ内部リンク",
       "status": "done",
       "published": "2026-07-27"
+    },
+    {
+      "slug": "konkatsu-party-guide",
+      "title_hint": "婚活パーティーの選び方と料金相場【2026年版】アプリ・相談所との使い分け",
+      "target_queries": [
+        "婚活パーティー 相場",
+        "婚活パーティー 選び方",
+        "お見合いパーティー 料金"
+      ],
+      "type": "data",
+      "notes": "【提携済み案件の受け皿：IBJ PARTY☆PARTY・OTOCON】アプリ/相談所と並ぶ第3の選択肢として料金体系・形式（個室/着席/立食）・年齢層別の選び方を整理。compare-konkatsu・soudanjo-hikaku・app-plus-agencyへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kekkon-uchiiwai-guide",
+      "title_hint": "結婚内祝いのマナー完全ガイド｜相場・時期・のし・品物の選び方",
+      "target_queries": [
+        "結婚内祝い 相場",
+        "内祝い いつまで",
+        "結婚祝い お返し"
+      ],
+      "type": "attribute",
+      "notes": "【提携済み案件の受け皿：シャディギフトモール】金額の半返し原則・贈る時期（1ヶ月以内）・のし/表書き・職場や連名でもらった場合の対応。kekkon-houkoku-nengajou・gosyugi-shiharai-houhouへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "pair-ring-guide",
+      "title_hint": "ペアリングの選び方と相場データ｜婚約指輪との違い・つける指の意味",
+      "target_queries": [
+        "ペアリング 相場",
+        "ペアリング 選び方",
+        "カップル 指輪 意味"
+      ],
+      "type": "data",
+      "notes": "【提携済み案件の受け皿：THE KISS・L&Co.・ZEXIMO】交際段階のペアリングと婚約指輪の役割の違いを整理。価格帯別の素材（シルバー/ステンレス/K10）・刻印・サイズ選び。konyaku-yubiwa-data・propose-guideへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "kaden-rental-vs-kounyu",
+      "title_hint": "新婚の家電はレンタルと購入どちらが得か｜損益分岐点をデータで検証",
+      "target_queries": [
+        "家電 レンタル 購入 どっち",
+        "新婚 家電 費用",
+        "家電サブスク 比較"
+      ],
+      "type": "data",
+      "notes": "【提携済み案件の受け皿：家電レンタルみんなのHappy】利用年数別の総額比較表が核。転勤族・同棲から結婚に移行する層の判断材料。shinkon-seikatsu-guide・dousei-hajimekata・kekkon-okane-dataへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "tomobataraki-shokuji-data",
+      "title_hint": "共働き夫婦の食事はどうしている？自炊・ミールキット・外食の費用と時間データ",
+      "target_queries": [
+        "共働き 夫婦 食事",
+        "ミールキット 高い",
+        "共働き 自炊 時間"
+      ],
+      "type": "data",
+      "notes": "【提携済み案件の受け皿：Oisixおためしセット・Kit Oisix】自炊/ミールキット/惣菜/外食の1食あたり費用と所要時間の比較表。家事分担の話にも接続。futari-kouza-kanri・shinkon-koteihi-minaoshiへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "dousei-nimotsu-trunkroom",
+      "title_hint": "同棲・結婚で荷物が入らない問題｜処分とトランクルームの料金相場",
+      "target_queries": [
+        "同棲 荷物 多い",
+        "トランクルーム 料金 相場",
+        "二人暮らし 収納 足りない"
+      ],
+      "type": "data",
+      "notes": "【提携済み案件の受け皿：ハローストレージ】2人の荷物が合流する時の実務。処分/実家/トランクルームの判断基準とサイズ別料金相場表。dousei-hajimekata・shinkon-seikatsu-guideへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "shinkyo-kagu-yosan",
+      "title_hint": "新居の家具・インテリア予算データ｜二人暮らしで最初に買うものと後回しでいいもの",
+      "target_queries": [
+        "新婚 家具 予算",
+        "二人暮らし 家具 いくら",
+        "新生活 家具 買う順番"
+      ],
+      "type": "data",
+      "notes": "【提携済み案件の受け皿：カヴァース・ベッドスタイル・輸入雑貨イエ・RIVERET等デザイン食器】品目別の相場表と『最初に買う/後回し』の優先順位が核。ベッド・ソファ・食器の選び方で2人の生活スタイル差をどう埋めるか。shinkon-seikatsu-guide・dousei-hajimekata・kekkon-chokin-mokuhyouへ内部リンク",
+      "status": "pending",
+      "published": null
+    },
+    {
+      "slug": "yachin-credit-shiharai",
+      "title_hint": "家賃はクレジットカードで払える？手数料とポイント還元の損得を計算",
+      "target_queries": [
+        "家賃 クレジットカード 払える",
+        "家賃 クレカ 手数料",
+        "家賃 ポイント 還元"
+      ],
+      "type": "data",
+      "notes": "【提携済み案件の受け皿：クレカリ賃貸】手数料率とポイント還元率の損益分岐計算が核（多くは手数料が還元を上回るが、条件次第で逆転）。管理会社が対応していない場合の代行サービスという選択肢。fuufu-credit-kanri・shinkon-koteihi-minaoshi・dousei-hajimekataへ内部リンク",
+      "status": "pending",
+      "published": null
     }
   ]
 }
