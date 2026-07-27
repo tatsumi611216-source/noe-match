@@ -130,6 +130,7 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 | エクセレンス青山（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+33C6RE+VO0+C03K1 | 無料相談3,000円・入会18,500円・確定率56.5%。結婚相談所文脈のみ。**東京・青山の相談所のため首都圏読者向けであることをCTA内に明記**（soudanjo-hikaku・tokyo-guide）。1記事1箇所 |
 | 匠本舗（A8・おせち） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+555XRU+1ZWM+BYLJL | 購入8%・確定率93.8%。おせち・年末年始文脈のみ（shinkon-osechi・kisei-kekkon-aisatsu）。**9〜12月が商戦期**。早割の締切・内容量は断定せず公式確認を促す。1記事1〜2箇所 |
 | NULL BBクリーム（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5FAB22+328C+ZRQ0X | 購入1,000円・確定率100%。メンズメイク・第一印象文脈のみ（mens-make-konkatsu）。**化粧品のため薬機法厳守**：「カバーする」等の範囲内表現のみ、肌質改善・効果の断定は禁止。1記事1箇所 |
+| クレカリ賃貸（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5K1RWA+532U+5YRHE | 新規利用1,000円・確定率100%。**商品名SERPが提携中で最も弱い**（上位は個人ブログのみ・大手不在）＝狙い目。家賃クレカ払い・新生活の資金繰り文脈のみ（yachin-credit-shiharai・dousei-hajimekata）。**手数料3.6%でポイント還元は赤字になる事実を隠さず書き、「支払いタイミングを買う」価値で訴求する**こと。1記事1箇所 |
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 - CTAブロックのデザインは既存記事の「ユーブライド公式サイトを見る」ボタン（#ff4d7e系）を踏襲する
