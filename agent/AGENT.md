@@ -125,6 +125,8 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 | ハローストレージ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5SDUD6+1I9M+669JL | 成約6,000円・確定率88%。同棲/新生活の荷物・収納文脈のみ（dousei-nimotsu-trunkroom・shinkon-seikatsu-guide・dousei-hajimekata）。料金/空き状況は店舗差があるため断定せず「公式で確認を」を併記。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
 | 原一探偵事務所（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3F8UUY+1T7S+TZE0X | 無料相談9,091円・確定率43%・**全国対応**（関東限定のALG探偵社を補完する位置づけ。地方読者にはこちらを優先）。探偵・浮気調査文脈のみ。不安煽り厳禁・「まず自分でできる確認」主軸を維持。CTAボタン色は#e8913a（ALGと視覚的に区別）。1記事1箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
 | 結婚相談所比較ネット（A8・じげん） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL | 初回資料請求3,800円・**確定率81.6%（提携中で最高水準）**。結婚相談所の比較・検討文脈のみ（soudanjo-hikaku・agency-vs-app・app-plus-agency・app-tsukare-guide・konkatsu-roadmap）。無料の一括比較サービスである事実のみ訴求し、成婚率等の効果は断定しない。CTA色は#7c5cbf。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
+| 白衣コン（A8・ブライダルチューリップ） | https://px.a8.net/svt/ejp?a8mat=35LVUH+7YYZ4Q+32P0+BXQOH | 新規入会40,000円（**提携中で最高単価**）。看護師×婚活文脈のみ（nurse-guide）。不規則勤務の読者への「サポートの厚い選択肢」として提示し、成婚を保証する表現は禁止。CTA色は#c2547e。1記事1〜2箇所 |
+| レバウェル看護（A8） | https://px.a8.net/svt/ejp?a8mat=35LLMU+8OKM56+2JK4+601S1 | 会員登録15,000円・確定率83%（期待値12,450円）。**結婚を機の働き方見直し文脈のみ**（nurse-guide・kekkon-tenshoku-guide）。転職ノウハウそのものの深掘りはしない（広間口パターンの原則）。CTA色は#2f9e8f。1記事1箇所 |
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 - CTAブロックのデザインは既存記事の「ユーブライド公式サイトを見る」ボタン（#ff4d7e系）を踏襲する
