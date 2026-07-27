@@ -127,6 +127,9 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 | 結婚相談所比較ネット（A8・じげん） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL | 初回資料請求3,800円・**確定率81.6%（提携中で最高水準）**。結婚相談所の比較・検討文脈のみ（soudanjo-hikaku・agency-vs-app・app-plus-agency・app-tsukare-guide・konkatsu-roadmap）。無料の一括比較サービスである事実のみ訴求し、成婚率等の効果は断定しない。CTA色は#7c5cbf。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
 | 白衣コン（A8・ブライダルチューリップ） | https://px.a8.net/svt/ejp?a8mat=35LVUH+7YYZ4Q+32P0+BXQOH | 新規入会40,000円（**提携中で最高単価**）。看護師×婚活文脈のみ（nurse-guide）。不規則勤務の読者への「サポートの厚い選択肢」として提示し、成婚を保証する表現は禁止。CTA色は#c2547e。1記事1〜2箇所 |
 | レバウェル看護（A8） | https://px.a8.net/svt/ejp?a8mat=35LLMU+8OKM56+2JK4+601S1 | 会員登録15,000円・確定率83%（期待値12,450円）。**結婚を機の働き方見直し文脈のみ**（nurse-guide・kekkon-tenshoku-guide）。転職ノウハウそのものの深掘りはしない（広間口パターンの原則）。CTA色は#2f9e8f。1記事1箇所 |
+| エクセレンス青山（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+33C6RE+VO0+C03K1 | 無料相談3,000円・入会18,500円・確定率56.5%。結婚相談所文脈のみ。**東京・青山の相談所のため首都圏読者向けであることをCTA内に明記**（soudanjo-hikaku・tokyo-guide）。1記事1箇所 |
+| 匠本舗（A8・おせち） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+555XRU+1ZWM+BYLJL | 購入8%・確定率93.8%。おせち・年末年始文脈のみ（shinkon-osechi・kisei-kekkon-aisatsu）。**9〜12月が商戦期**。早割の締切・内容量は断定せず公式確認を促す。1記事1〜2箇所 |
+| NULL BBクリーム（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5FAB22+328C+ZRQ0X | 購入1,000円・確定率100%。メンズメイク・第一印象文脈のみ（mens-make-konkatsu）。**化粧品のため薬機法厳守**：「カバーする」等の範囲内表現のみ、肌質改善・効果の断定は禁止。1記事1箇所 |
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 - CTAブロックのデザインは既存記事の「ユーブライド公式サイトを見る」ボタン（#ff4d7e系）を踏襲する
