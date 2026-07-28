@@ -14,3 +14,9 @@
 
 ▼両家との初めての正月の乗り切り方の詳細はこちら
 https://www.noe-match.com/articles/kisei-kekkon-aisatsu/
+
+▼あわせて読みたい
+・新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト
+https://www.noe-match.com/articles/shinkon-seikatsu-guide/
+・新婚夫婦の初めてのおせち｜ふたり用おせち通販の選び方と早割カレンダー
+https://www.noe-match.com/articles/shinkon-osechi/

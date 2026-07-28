@@ -15,3 +15,9 @@
 [アプリ婚・マッチングアプリ経由の婚姻割合データ【2026年版】出会い方別の推移と現状](https://www.noe-match.com/articles/appkon-wariai-data/)
 
 データを見てから「自分もアプリを試してみようかな」と思った方は、ぜひ参考にしてみてください。
+
+▼あわせて読みたい
+・マッチングアプリの結婚率・成功率データ【2026年最新】付き合う・結婚する確率を統計で解説
+https://www.noe-match.com/articles/success-rate-data/
+・マッチングアプリから結婚までの期間データ｜出会って何ヶ月で結婚している？
+https://www.noe-match.com/articles/kekkon-madeno-kikan-data/

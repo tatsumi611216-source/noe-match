@@ -18,3 +18,9 @@
 
 ▼利用年数別の総額比較表・損益分岐点の詳細はこちら
 https://www.noe-match.com/articles/kaden-rental-vs-kounyu/
+
+▼あわせて読みたい
+・新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト
+https://www.noe-match.com/articles/shinkon-seikatsu-guide/
+・同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール
+https://www.noe-match.com/articles/dousei-hajimekata/

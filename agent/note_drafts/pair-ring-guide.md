@@ -14,3 +14,9 @@
 
 ▼素材別の相場表・つける指の意味・選び方の詳細はこちら
 https://www.noe-match.com/articles/pair-ring-guide/
+
+▼あわせて読みたい
+・婚約指輪の相場データ【2026年版】「給料3ヶ月分」は本当か統計で検証
+https://www.noe-match.com/articles/konyaku-yubiwa-data/
+・プロポーズ準備完全ガイド｜タイミング・場所・指輪の段取りをデータで整理
+https://www.noe-match.com/articles/propose-guide/

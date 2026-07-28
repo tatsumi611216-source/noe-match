@@ -16,3 +16,9 @@
 
 ▼式場探しの完全ガイドはこちら
 https://www.noe-match.com/articles/shikijo-erabi-guide/
+
+▼あわせて読みたい
+・東京でマッチングアプリを使うなら｜都内で出会いが多いアプリTOP3と攻略法
+https://www.noe-match.com/articles/tokyo-guide/
+・結婚にかかるお金の総額データ【2026年版】婚約から新生活までの費用を全部見える化
+https://www.noe-match.com/articles/kekkon-okane-data/

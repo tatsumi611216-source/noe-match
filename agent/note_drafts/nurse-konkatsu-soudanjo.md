@@ -14,3 +14,9 @@
 
 比較表・費用の内訳・質問リストの全文はこちら →
 https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/
+
+▼あわせて読みたい
+・看護師向けマッチングアプリガイド｜不規則勤務でも出会える使い方【2026年版】
+https://www.noe-match.com/articles/nurse-guide/
+・結婚相談所の料金比較【2026年版】オンライン型は本当に安いのか検証
+https://www.noe-match.com/articles/soudanjo-hikaku/

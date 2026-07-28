@@ -1,10 +1,18 @@
-# Noe結婚設計室 — note立ち上げキット
+# NOE結婚設計室 — note / X 運用設計（2026-07-28 改訂）
+
+## 現状の資産
+
+- note下書き：**34本**（`agent/note_drafts/`）＝週2投稿で17週分・約4ヶ月のストック
+- サイト記事：142本
+- 記事工場が新記事を作るたびに下書きも自動生成されるため、**ストックは今後も自然に増える**
+
+---
 
 ## アカウント基本情報
 
-**アカウント名：** Noe結婚設計室
+**アカウント名：** NOE結婚設計室
 
-**bio（自己紹介文・note設定画面にそのままコピペ）：**
+**bio（note設定画面にそのままコピペ）：**
 
 ```
 マッチングアプリ・婚活・結婚準備・お金のことを、公式データと実体験で整理する編集部。
@@ -13,10 +21,10 @@
 🔗 noe-match.com
 ```
 
-**note固定表示用の自己紹介記事（初回投稿の前に作っておくと良い・任意）：**
+**初回の自己紹介記事（固定表示用）：**
 
 ```
-はじめまして、Noe結婚設計室です。
+はじめまして、NOE結婚設計室です。
 
 マッチングアプリ選びから、結婚相談所、式場探し、婚約指輪、
 新生活の準備、そしてお金のことまで。
@@ -32,111 +40,108 @@
 
 ---
 
-## 投稿カレンダー（週2本・火曜/金曜想定）
+## 投稿カレンダー（週2本・火/金 朝7:00予約）
 
-優先度は「高単価クラスタ→話題性の強いフック→通常クラスタ」の順。
-記事本文は `agent/note_drafts/` の同名ファイルをそのままコピペする。
+### 配置の原則
+1. **立ち上がり4週は「フック最強」を集中投下**（フォロワーゼロの時期に一番強い弾を使う）
+2. **季節記事は商戦期の1〜2ヶ月前に固定**（おせち＝9月上旬／年賀状＝10月中旬／帰省＝12月上旬）
+3. **収益クラスタ（相談所・探偵・保険・光回線）を月1本以上**は必ず混ぜる
+4. 同一クラスタを2回連続で出さない（読者の飽き回避）
 
-| # | 曜日目安 | ファイル | フック |
-|---|---------|---------|--------|
-| 1 | 週1・火 | soudanjo-hikaku.md | 「高い方が安いことがある」逆説 |
-| 2 | 週1・金 | shikijo-erabi-guide.md | 「初回見積もりは100万円上がる」警告 |
-| 3 | 週2・火 | tantei-erabikata.md | 「業界に比較サイトがない」発見 |
-| 4 | 週2・金 | kekkon-tenshoku-guide.md | 「住宅ローンとの関係」実用 |
-| 5 | 週3・火 | with-seriousness-data.md | 「withで婚活できる？」検証 |
-| 6 | 週3・金 | success-rate-data.md | 「結婚した人は4組に1組」統計 |
-| 7 | 週4・火 | youbride-marrish-hikaku.md | ユーブライドvsマリッシュ比較 |
-| 8 | 週4・金 | batsuichi-guide.md | 再婚活のリアル |
-| 9 | 週5・火 | omiai-guide.md | 「omiai成婚率」は非公表という話 |
-| 10 | 週5・金 | civil-servant-guide.md | 公務員は最強カードを出し損ねてる |
-| 11 | 週6・火 | tokyo-guide.md | 東京の候補が多すぎる問題 |
-| 12 | 週6・金 | app-tsukare-guide.md | アプリ疲れの構造的原因 |
-| 13 | 週7・火 | youbride-guide.md | 成婚実績を公表している数字の話 |
-| 14 | 週7・金 | marrish-guide.md | 離婚歴を最初から言える場所 |
+### 第1〜4週：立ち上げ期（フック最優先）
 
-7週間分（約1.5ヶ月）のストックが確保できている計算。
-以降は月曜の記事工場が生成する新記事から、都度note_draftsに追加していく
-（AGENT.mdの既存ルール通り、新記事生成時に自動でnote下書きも作られる）。
+| # | 日 | ファイル | フック |
+|---|---|---|---|
+| 1 | 1週・火 | soudanjo-hikaku | 「高い方が安いことがある」逆説 |
+| 2 | 1週・金 | tantei-erabikata | 「業界に比較サイトがない」発見 |
+| 3 | 2週・火 | success-rate-data | 「婚活目的なら45.2%が結婚」統計 |
+| 4 | 2週・金 | shikijo-erabi-guide | 「初回見積もりは100万円上がる」警告 |
+| 5 | 3週・火 | yachin-credit-shiharai | 家賃のクレカ払いは損か得かの計算 |
+| 6 | 3週・金 | with-seriousness-data | 「withで婚活できる？」検証 |
+| 7 | 4週・火 | nurse-konkatsu-soudanjo | 看護師の婚活は相談所が向くのか |
+| 8 | 4週・金 | kaden-rental-vs-kounyu | 家電レンタルの損益分岐点 |
 
----
+### 第5〜8週：クラスタ横断期
 
-## 投稿時の注意点（メモリ記録済みのハマりどころ）
+| # | 日 | ファイル |
+|---|---|---|
+| 9 | 5週・火 | kekkon-tenshoku-guide（住宅ローンとの関係） |
+| 10 | 5週・金 | **shinkon-osechi**（※9月上旬に固定・早割商戦の入口） |
+| 11 | 6週・火 | dousei-nimotsu-trunkroom |
+| 12 | 6週・金 | youbride-marrish-hikaku |
+| 13 | 7週・火 | tomobataraki-shokuji-data |
+| 14 | 7週・金 | konkatsu-party-guide |
+| 15 | 8週・火 | batsuichi-guide |
+| 16 | 8週・金 | shinkyo-kagu-yosan |
 
-- note下書きへの投入は**paste（貼り付け）イベント一発方式**で行う。
-  execCommandループでの自動投入はクラッシュするため使わない
-- 空行は「空段落」になり読みにくいと過去に指摘あり。
-  貼り付け後、不要な空段落が連続していないか目視確認する
-- **見出し画像のアップロードはブラウザ自動化から操作不可**（検証済み）。
-  画像は下記の方法で生成し、note編集画面から手動で設定する
-- noteにアフィリエイトリンクは直接貼らない（規約リスク）。
-  下書きは全て「詳細はサイトへ」の導線のみで作成済み・安全
-- サイト記事の丸写しはしない。全て書き下ろし要約（重複コンテンツ回避）
+### 第9〜12週：秋の季節枠を差し込む
 
----
+| # | 日 | ファイル |
+|---|---|---|
+| 17 | 9週・火 | omiai-guide |
+| 18 | 9週・金 | pair-ring-guide |
+| 19 | 10週・火 | **kekkon-houkoku-nengajou**（※10月中旬に固定・年賀状商戦） |
+| 20 | 10週・金 | civil-servant-guide |
+| 21 | 11週・火 | tokyo-guide |
+| 22 | 11週・金 | kekkon-uchiiwai-guide |
+| 23 | 12週・火 | app-tsukare-guide |
+| 24 | 12週・金 | marrish-guide |
 
-## ヘッダー画像・アイキャッチ画像の生成方法
+### 第13週以降：残り10本＋新規生成分
 
-note標準のブラウザ自動化では画像アップロードができないため、
-PILで画像を生成し、手動でアップロードする運用にする。
+youbride-guide / appkon-wariai-data / matching-dansei-cost-data / mens-make-konkatsu /
+bridal-inner-guide / dansei-ninkatsu-guide / myseed-kuchikomi / mitocore-kuchikomi /
+mitas-formen-kuchikomi / **kisei-kekkon-aisatsu（※12月上旬に固定）**
 
-以下のPythonスクリプトで、シンプルなテキストベースのアイキャッチを生成できる
-（noe-matchのブランドカラー #ff4d7e を基調）。
-
-```python
-# -*- coding: utf-8 -*-
-from PIL import Image, ImageDraw, ImageFont
-
-def make_eyecatch(title, out_path, size=(1280, 670)):
-    img = Image.new('RGB', size, color='#fff0f4')
-    draw = ImageDraw.Draw(img)
-    # 上部にピンクの帯
-    draw.rectangle([0, 0, size[0], 12], fill='#ff4d7e')
-    # タイトルテキスト（日本語フォントのパスは環境に応じて調整）
-    try:
-        font = ImageFont.truetype("C:/Windows/Fonts/meiryob.ttc", 56)
-        font_small = ImageFont.truetype("C:/Windows/Fonts/meiryo.ttc", 28)
-    except Exception:
-        font = ImageFont.load_default()
-        font_small = font
-    # 簡易的な折り返し
-    import textwrap
-    lines = textwrap.wrap(title, width=14)
-    y = size[1]//2 - (len(lines)*70)//2
-    for line in lines:
-        w = draw.textlength(line, font=font)
-        draw.text(((size[0]-w)/2, y), line, fill='#1c2b33', font=font)
-        y += 70
-    draw.text((size[0]/2-100, size[1]-60), "Noe結婚設計室", fill='#ff4d7e', font=font_small)
-    img.save(out_path)
-
-# 使用例
-make_eyecatch("成婚実績を公表している\n婚活アプリの話", "eyecatch_soudanjo.jpg")
-```
-
-生成後、note編集画面の「見出し画像を追加」から手動でアップロードする。
+> 妊活サプリ3本（myseed / mitocore / mitas）は**noteでも薬機法に注意**。
+> 効果の断定は書かず「成分の事実整理」のトーンを維持すること。
 
 ---
 
-## 効果測定の指標（8月末に確認）
+## 投稿手順
 
-- note各記事のビュー数・スキ数（note管理画面）
-- GSCでの指名検索（「noe match」「Noe結婚設計室」等）の出現有無
-- サイト全体（noe-match.com）の表示回数の傾き変化
-  （note投稿開始前後で伸び率に差が出るか）
+**`note-publisher` スキルを必ず使う**（`~/.claude/skills/note-publisher/SKILL.md`）。要点：
+
+- 本文投入は**pasteイベント一発方式**のみ（execCommandループはクラッシュする）
+- 空行を段落として入れない（空段落が「スペースが多くて読みにくい」の原因）
+- 保存後は `note.com/api/v3/notes/<key>` で本文を検証
+- 予約投稿は「公開に進む→日時の設定→予約投稿」。予約済み記事の更新でも日時は維持される
+- **見出し画像はブラウザ自動化から設定不可**（検証済み）。PILで生成 → 手動アップロード
+- アフィリリンクはnoteに貼らない（規約リスク）。導線はサイトURLのみ
 
 ---
 
-## X自動投稿の展開について（保留・2026-07-26決定）
+## X（Twitter）運用：**2026-07-28に「開始」へ方針転換**
 
-note（Noe結婚設計室）専用のX自動投稿アカウントは、**今は作らない**。
+### 判断を変えた理由
+- 保留理由だった「Noe仕組み設計室のX実験との交絡」は、あちらが7/24にプロンプトv2＋学習ループ＋敗者復活まで実装され**評価の型が固まった**ため解消
+- `x-autopost-setup` スキルに複製手順が文書化され、**立ち上げコストが実質ゼロ**になった
+- サイト記事142本で投稿ネタの母数が十分に育った
 
-理由：
-- Noe仕組み設計室のX自動投稿（Vercel crons方式）がまだ実験中
-  （7/15稼働開始・7/24にプロンプトv2化。安定評価はこれから）
-- 2つのX自動投稿を同時に調整すると、どちらの改善が
-  どちらの結果に効いたか切り分けが難しくなる
+### 立ち上げ方針（低リスク優先）
+1. **第1段階：固定キュー方式のみ**（LLM生成なし・DBなし）。`agent/x_posts.json` の検証済みポストを決定式で配信するだけ＝壊れる要素がない
+2. **第2段階（1ヶ月後）**：新着RSSからの自動補充（refill）を足すかは実測を見て判断
+3. 配信は **JST 7:30 / 21:30 の1日2本**（Vercel crons・Hobby上限2本に収まる）
 
-判断基準：Noe仕組み設計室のX運用が安定稼働と判断できた時点で、
-同じVercel crons方式・投稿ネタはnote_drafts流用で複製を検討する。
-継続コストは低い（自動化済みインフラの複製のため）が、
-立ち上げ期の試行錯誤コスト（プロンプト調整等）は別途発生する前提。
+### コンテンツ規格（実測済みの勝ちパターン）
+- **1行目に数字か読者の名指しを必ず入れる**（比喩・抽象リードは最下位帯）
+- 縦リズムの短文構成・ハッシュタグ2個
+- **リンクは貼らない**（X APIのPay Per UseはURL入りが$0.20/本＝13倍。誘導は「詳しくはプロフィールから」）
+- 断定・煽り・不安訴求は禁止（サイトの編集方針と統一）
+
+### 残タスク（ユーザー作業）
+- Xアカウント作成 → console.x.com でアプリ作成
+- **権限を Read and write に変更 → Access Token を再生成**（忘れると403）
+- OAuth1.0aの4キー（API Key/Secret・Access Token/Secret）を渡す
+
+---
+
+## 効果測定（毎月末に確認）
+
+- note：ビュー数・スキ数・フォロワー数
+- X：インプレッション（フォロワー200未満のオーガニック天井は≒300が目安）
+- GSC：指名検索（「noe match」「NOE結婚設計室」）の出現有無
+- サイト全体の表示回数の傾き変化（note/X開始前後で伸び率に差が出るか）
+
+**撤退基準**：3ヶ月続けて指名検索ゼロ・サイト流入への寄与が見えない場合は、
+投稿頻度を落として記事生産にリソースを戻す。

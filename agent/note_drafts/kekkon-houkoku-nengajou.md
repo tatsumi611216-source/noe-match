@@ -16,3 +16,9 @@
 
 ▼出す範囲の判断表と文例の詳細はこちら
 https://www.noe-match.com/articles/kekkon-houkoku-nengajou/
+
+▼あわせて読みたい
+・年末年始の帰省と結婚挨拶・手土産ガイド｜両家との初めての正月の乗り切り方
+https://www.noe-match.com/articles/kisei-kekkon-aisatsu/
+・新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト
+https://www.noe-match.com/articles/shinkon-seikatsu-guide/

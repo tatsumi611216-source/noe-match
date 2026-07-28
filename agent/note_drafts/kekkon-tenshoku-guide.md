@@ -14,3 +14,9 @@
 
 ▼結婚を機の転職、判断基準の詳細はこちら
 https://www.noe-match.com/articles/kekkon-tenshoku-guide/
+
+▼あわせて読みたい
+・婚活アプリで結婚するには｜選び方から成婚までの完全ロードマップ
+https://www.noe-match.com/articles/konkatsu-roadmap/
+・30代向け婚活アプリ完全ガイド｜真剣度別おすすめ・選び方と成功戦略
+https://www.noe-match.com/articles/30s-konkatsu/

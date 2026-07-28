@@ -16,3 +16,9 @@
 
 ▼形式別の料金相場・比較表の詳細はこちら
 https://www.noe-match.com/articles/konkatsu-party-guide/
+
+▼あわせて読みたい
+・婚活アプリ比較｜ユーブライド vs Omiai vs Match どれが一番結婚に近い？
+https://www.noe-match.com/articles/compare-konkatsu/
+・結婚相談所の料金比較【2026年版】オンライン型は本当に安いのか検証
+https://www.noe-match.com/articles/soudanjo-hikaku/
