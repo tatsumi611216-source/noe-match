@@ -5,6 +5,7 @@ Disallow: /admin/
 Disallow: /.hidden/
 
 Sitemap: https://www.noe-match.com/sitemap.xml
+Sitemap: https://www.noe-match.com/sitemap-all.xml
 
 # Google
 User-agent: Googlebot
