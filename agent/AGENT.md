@@ -137,6 +137,18 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 | シャディギフトモール（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+59BZ0A+4DMG+60OXE | 購入5%。内祝い・手土産・ギフト文脈のみ（kekkon-uchiiwai-guide・kisei-kekkon-aisatsu） |
 | THE KISS（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+633N96+1O28+IISMP | 購入5%。ペアリング・ジュエリー文脈のみ（pair-ring-guide・propose-guide・konyaku-yubiwa-data） |
 | PARTY☆PARTY（A8・IBJ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3AHE0Q+FOG+3H6DXV | 男性参加1,575円/女性741円・確定率46.7%。婚活パーティー文脈のみ（konkatsu-party-guide） |
+| ハナユメ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3K0BP6+3DOK+60OXF | 式場見学予約。**単価1〜2万円級で提携中トップ帯**。式場探し・結婚費用文脈のみ（shikijo-erabi-guide・kekkon-okane-data）。**特典の金額・適用条件・対象会場は時期で変わるため断定せず「公式サイトで確認を」を必ず併記**。1記事1箇所 |
+| naco-do（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2ZRL4Q+4HHW+61RI9 | オンライン完結型の結婚相談所。**店舗型（45〜100万円）との対比でのみ提示**（agency-vs-app・app-plus-agency）。安さだけを訴求せず「サポートが薄いぶん自走力が要る」構造も併記する。成婚を保証する表現は禁止。1記事1箇所 |
+| Photojoy（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+38P37E+4HMW+5YZ77 | マッチングアプリ専門のプロフィール写真撮影。**大手不在で競合が弱い**。写真戦略文脈のみ（konkatsu-photo-guide・photo-tips）。「マッチ率が上がる」等の効果断定は禁止、作例・納品枚数・料金という確認できる事実で訴求する。1記事1箇所 |
+| 挨拶状ドットコム（A8） | https://px.a8.net/svt/ejp?a8mat=3Z97VF+B5A8TM+1IEW+ZW0CI | 結婚報告はがき・年賀状の印刷。**早期割引の締切が11月頃＝商戦期は9〜11月**。kekkon-houkoku-nengajou のみ。割引率・締切・宛名印刷や投函代行の可否は断定せず公式確認を促す。1記事1箇所 |
+| リファスタ（A8・ダイヤ買取） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4HY16I+2J7M+BWVTE | ダイヤモンド買取。konyaku-yubiwa-data のみ（**購入時の予算配分の判断材料としてリセール相場を示す**文脈）。**離婚・財産分与の記事には置かない**（財産分与の文脈で買取を勧めるのは印象を損なうため・2026-07-30判断）。査定額は4C・鑑定書・相場で変動する旨を必ず併記 |
+| OTOCON（A8・タメニー） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2KABEI+17R0+TUGK2 | 婚活パーティー。**PARTY☆PARTYと2社体制**にして「1社に絞らず比較する」文脈で提示（konkatsu-party-guide）。参加費・年齢条件・キャンセル規定は回ごとに違うため断定しない。1記事1箇所 |
+| P!っと縁結び（A8・ピップ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+30YGCA+5UBE+5YZ75 | 全国対応の結婚相談所。**既存2社（エクセレンス青山＝首都圏・白衣コン＝看護師）が埋められない地方読者の穴を埋める枠**。地方・田舎の婚活文脈（inaka-guide・地方記事群）。1記事1箇所 |
+| ヒーローマリッジ（A8・アルファブル） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2W6ZI2+4HMW+NTRMQ | 男性サポート特化の結婚相談所。**男性の伝え方・条件面の不利を扱う文脈のみ**（seishain-igai-guide・男性向け記事）。雇用形態や収入を否定的に扱う表現は禁止 |
+| RIVERET（A8・仲吉商事） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5NMDIY+5TJW+5ZMCH | 天然素材の食器。新生活の家具・食器予算文脈のみ（shinkyo-kagu-yosan・shinkon-seikatsu-guide）。「大型家具を下げて毎日使うものに配分」という予算組み替えの文脈で提示 |
+| L&Co.（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4FKARE+4UT2+5YJRM | ペアジュエリー。**THE KISSとの価格帯比較**として提示（pair-ring-guide）。同一記事でTHE KISSと併置する場合も合計2箇所まで |
+| 保険ランドリー（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX | 保険相談。**YMYL枠につき最も慎重に扱う**。kekkon-hoken-minaoshi のみ・1記事1箇所。「複数の窓口で比較する」という記事の主張の中の一例としてのみ置き、**特定商品・窓口の推奨と読める表現は禁止**。「契約の判断はご自身で」を注記に必ず入れる |
+| 街角相談所-探偵（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3BO98A+5BYA+5Z6WX | 探偵の比較・見積もりサービス（個別事務所ではない）。kekkon-sokou-chousa のみ。**tantei-erabikata には置かない**（既に3本＋「特定事務所を推奨しない」と明記しており、4本目は記事の中立性の主張と矛盾するため・2026-07-30判断）。不安を煽らず「1社で決めないため」の文脈で提示 |
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 ### CTA密度のガードレール（2026-07-28制定・YMYL評価の保護）
@@ -223,7 +235,11 @@ ASP側で成果（クリック・成約）データが取得できるように�
 生成した各記事について、note投稿用の要約を `agent/note_drafts/<slug>.md` に保存する：
 
 - 冒頭：記事の最重要データ・結論を2〜3行（noteユーザーの興味を引く書き出し）
-- 本文：600〜800字の要約（記事の核心データ・表の要点を文章化）
+- 本文：**1,500〜2,500字**（2026-07-29改定。従来の600〜800字は「告知」の長さで、
+  note内で読まれず、note.comのドメイン評価を借りる意味も失われるため引き上げた）
+- 構成：H2見出しを2〜3本立て、note単体で完結する価値を持たせる。
+  サイトへの導線は「表・シミュレーション・全データはこちら」という位置づけにし、
+  「続きはサイトで」型の出し惜しみにはしない
 - 末尾：「詳細なデータ・比較表はこちら →（記事URL）」で必ずサイトへ誘導
 - **さらに末尾へ「▼あわせて読みたい」として関連記事2本のURLを付ける**（回遊を作るため）。
   選ぶ基準は①その記事から内部リンクしている実在記事 ②**CTA設置済みの収益記事を優先**
