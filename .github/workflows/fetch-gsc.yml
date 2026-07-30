@@ -29,14 +29,26 @@ jobs:
           GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
         run: python scripts/fetch_gsc.py
 
+      # Phase 5：工場のKPIを計測して kpi_history.json に追記する。
+      # 反証チェックの結果は実行ログとサマリに残り、月次のルール改定の入力になる。
+      - name: Measure factory KPI
+        run: |
+          python scripts/factory_kpi.py | tee /tmp/kpi.txt
+          {
+            echo '## 記事工場KPI'
+            echo '```'
+            cat /tmp/kpi.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Commit and push if updated
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add agent/gsc_data.json
+          git add agent/gsc_data.json agent/kpi_history.json
           if git diff --cached --quiet; then
-            echo "gsc_data.json に変更なし。スキップ。"
+            echo "gsc_data.json / kpi_history.json に変更なし。スキップ。"
           else
-            git commit -m "chore: update gsc_data.json (weekly fetch $(date -u +%Y-%m-%d))"
+            git commit -m "chore: update gsc_data.json and kpi_history.json (weekly fetch $(date -u +%Y-%m-%d))"
             git push origin main
           fi
