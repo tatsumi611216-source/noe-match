@@ -149,6 +149,14 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 | L&Co.（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4FKARE+4UT2+5YJRM | ペアジュエリー。**THE KISSとの価格帯比較**として提示（pair-ring-guide）。同一記事でTHE KISSと併置する場合も合計2箇所まで |
 | 保険ランドリー（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX | 保険相談。**YMYL枠につき最も慎重に扱う**。kekkon-hoken-minaoshi のみ・1記事1箇所。「複数の窓口で比較する」という記事の主張の中の一例としてのみ置き、**特定商品・窓口の推奨と読める表現は禁止**。「契約の判断はご自身で」を注記に必ず入れる |
 | 街角相談所-探偵（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3BO98A+5BYA+5Z6WX | 探偵の比較・見積もりサービス（個別事務所ではない）。kekkon-sokou-chousa のみ。**tantei-erabikata には置かない**（既に3本＋「特定事務所を推奨しない」と明記しており、4本目は記事の中立性の主張と矛盾するため・2026-07-30判断）。不安を煽らず「1社で決めないため」の文脈で提示 |
+| ABEMAプレミアム（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4T99OA+4EKC+60WN6 | 動画配信。**おうちデート文脈のみ**（ouchi-date-sakuhin）。「次の約束につながる連続もの」という機能で訴求し、作品数の多寡は断定しない。1記事1箇所 |
+| WOWOWオンデマンド（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4SNU2I+5DFW+5Z6WX | 動画配信。**重めの作品＝関係が安定してから**という文脈のみ（date-sakuhin-ng）。ABEMAとは記事を分け、同一記事に併置しない |
+| スカパー!（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4VN03E+461Y+6L9O1 | 放送サービス。**悪天候で外出を取りやめる文脈のみ**（amenohi-date-guide）。1記事1箇所 |
+| 田舎婚（A8・シュタインズ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2HB5DM+3LOM+1NJRXE | 地方在住者と移住希望者に特化した相談所。地方・田舎の婚活文脈のみ（inaka-guide）。**「地方在住が不利にならない設計」という構造の説明**として提示し、地方を不利な立場として描かない |
+| ピュア婚（A8・シュタインズ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+35PX6I+3LOM+1BO6EP | 恋愛経験が少ない層に特化した相談所。人見知り・内向型・交際経験の文脈のみ（hitomishiri-guide）。**経験の少なさを欠点として扱う表現は禁止**。「説明しなくていい相手を選ぶ」という枠組みで提示 |
+| R婚（A8・シュタインズ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2EXEYI+3LOM+NVHCX | 35歳以上に特化した相談所。35s-strategy・40s系。**年齢を不利として煽らず**「年齢が条件ではなく前提になる構造」として提示 |
+| 結婚相談所フィオーレ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+32QR5M+2RIS+BWVTE | 成婚実績を公表する相談所。相談所比較の文脈（app-tsukare-guide）。**公表していること自体は成果の保証ではない**旨を必ず併記 |
+| ベルロード縁結びサポート（A8・IDM） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EQHCMY+4MPE+61C2P | IBJ加盟のオンライン相談所（月額制）。**併用の2本目・費用が軽い選択肢**として提示（app-plus-agency）。naco-doと同一記事に併置しない |
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 ### 大手アプリ記事の役割定義（2026-07-30制定）
