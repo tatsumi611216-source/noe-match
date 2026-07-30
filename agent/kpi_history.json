@@ -7,11 +7,30 @@
   "fetched_at": "2026-07-26T14:24:00",
   "totals": {
    "live_articles": 142,
+   "eligible_articles": 63,
+   "excluded_published_after_window": 79,
    "articles_with_impressions": 17,
-   "silent_rate": 88.0,
+   "silent_rate": 73.0,
    "impressions": 235,
    "clicks": 9,
    "ctr": 3.83
+  },
+  "cohorts": {
+   "legacy": {
+    "articles": 53,
+    "with_impressions": 10,
+    "reach_rate": 18.9
+   },
+   "in_window": {
+    "articles": 10,
+    "with_impressions": 7,
+    "reach_rate": 70.0
+   },
+   "after_window": {
+    "articles": 79,
+    "with_impressions": 0,
+    "reach_rate": 0.0
+   }
   },
   "position_bands": {
    "1-10位": {

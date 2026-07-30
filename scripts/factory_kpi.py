@@ -13,6 +13,11 @@ gsc_data.json と記事の実体から、工場自身の性能を測る。
   2. クラスタ別のクリック効率 → 「どのテーマを作るべきか」
   3. 選定ルールの的中率      → 「キーワード選定は当たっているか」
   4. 強化ルールの有効性      → 「追記強化は順位を上げているか」
+  5. コホート別の露出到達    → 「新記事は表示に到達しているか（インデックスの進行）」
+
+注意：「表示ゼロ」は「インデックスされていない」ではない。インデックス済みでも
+どのクエリでも100位以内に入らなければ表示は立たない。この2つは GSC の
+検索パフォーマンスだけでは区別できないので、混同しないこと。
 
 使い方:
     python3 scripts/factory_kpi.py              # 計測してレポート表示＋履歴に追記
@@ -70,6 +75,36 @@ def band_of(pos):
     return '51位以下'
 
 
+def publish_dates():
+    """スラッグ → 公開日。キュー管理外の記事は None（＝キュー導入前から存在）。
+
+    sitemap.xml の lastmod は「最終更新日」であって公開日ではない
+    （2026-07-04に56本が一括更新されている）ため、公開日の代わりには使えない。
+    """
+    with open(QUEUE, encoding='utf-8') as f:
+        queue = json.load(f)['queue']
+    return {i['slug']: i.get('published') for i in queue if i.get('published')}
+
+
+def cohorts(slugs, pub, window_start, window_end):
+    """計測期間との前後関係で記事を3つに分ける。
+
+    - legacy   : キュー管理外。計測期間より前から存在する初期の記事群
+    - in_window: 計測期間の途中で公開された記事（露出の機会が期間より短い）
+    - after    : 計測期間の終了後に公開された記事。**分母に入れてはいけない**
+    """
+    legacy, in_window, after = set(), set(), set()
+    for s in slugs:
+        d = pub.get(s)
+        if d is None:
+            legacy.add(s)
+        elif d > window_end:
+            after.add(s)
+        else:
+            in_window.add(s)
+    return legacy, in_window, after
+
+
 def load_gsc():
     if not os.path.exists(GSC):
         sys.exit('agent/gsc_data.json が無い。先にGSCデータを取得すること。')
@@ -115,21 +150,45 @@ def measure(gsc):
     top10_pages = sorted({slug_of(r['page']) for r in by_qp if r['position'] <= 10})
     pages_with_clicks = sorted({slug_of(p['page']) for p in by_page if p['clicks'] > 0})
 
-    live = live_article_count()
-    measured = len({slug_of(p['page']) for p in by_page}) - (1 if any(
-        slug_of(p['page']) == '(top)' for p in by_page) else 0)
+    # 4. コホート別の露出到達（インデックスの進行を見る）
+    #    計測期間の終了後に公開された記事を分母に入れると沈黙率が過大に出る。
+    #    2026-07-30の初回計測では、この誤りで 73.0% を 88.0% と報告していた。
+    live_slugs_set = set(live_slugs())
+    pub = publish_dates()
+    ws = gsc['period']['start']
+    we = gsc['period']['end']
+    legacy, in_window, after = cohorts(live_slugs_set, pub, ws, we)
+    measured_slugs = {slug_of(p['page']) for p in by_page} - {'(top)'}
+
+    eligible = legacy | in_window
+    measured_eligible = measured_slugs & eligible
+
+    cohort_stats = {}
+    for name, members in (('legacy', legacy), ('in_window', in_window), ('after_window', after)):
+        seen = measured_slugs & members
+        cohort_stats[name] = {
+            'articles': len(members),
+            'with_impressions': len(seen),
+            'reach_rate': round(len(seen) / len(members) * 100, 1) if members else None,
+        }
+
+    live = len(live_slugs_set)
+    silent = (len(eligible) - len(measured_eligible)) / len(eligible) * 100 if eligible else None
 
     return {
         'period': gsc.get('period'),
         'fetched_at': gsc.get('fetched_at'),
         'totals': {
             'live_articles': live,
-            'articles_with_impressions': measured,
-            'silent_rate': round((live - measured) / live * 100, 1) if live else None,
+            'eligible_articles': len(eligible),
+            'excluded_published_after_window': len(after),
+            'articles_with_impressions': len(measured_eligible),
+            'silent_rate': round(silent, 1) if silent is not None else None,
             'impressions': total_imp,
             'clicks': total_clicks,
             'ctr': round(total_clicks / total_imp * 100, 2) if total_imp else 0.0,
         },
+        'cohorts': cohort_stats,
         'position_bands': dict(bands),
         'clusters': dict(clusters),
         'top10_queries': top10_queries,
@@ -138,21 +197,32 @@ def measure(gsc):
     }
 
 
-def live_article_count():
+def live_slugs():
+    """sitemap.xml に載っている＝出荷済みの記事スラッグ"""
     with open(os.path.join(ROOT, 'sitemap.xml'), encoding='utf-8') as f:
-        return len(set(re.findall(r'/articles/([^/]+)/</loc>', f.read())))
+        return set(re.findall(r'/articles/([^/]+)/</loc>', f.read()))
 
 
 def report(kpi, prev):
     t = kpi['totals']
     print(f"■ 計測期間: {kpi['period']['start']} 〜 {kpi['period']['end']}")
-    print(f"稼働記事 {t['live_articles']}本 / 表示のあった記事 {t['articles_with_impressions']}本 "
-          f"（沈黙率 {t['silent_rate']}%）")
+    print(f"稼働記事 {t['live_articles']}本（うち期間終了後に公開された "
+          f"{t['excluded_published_after_window']}本は計測対象外）")
+    print(f"計測対象 {t['eligible_articles']}本 / 表示のあった記事 "
+          f"{t['articles_with_impressions']}本（表示ゼロ率 {t['silent_rate']}%）")
     print(f"表示 {t['impressions']} / クリック {t['clicks']} / CTR {t['ctr']}%")
     if prev:
         pt = prev['totals']
         print(f"  前回比: クリック {pt['clicks']} → {t['clicks']}  "
-              f"沈黙率 {pt['silent_rate']}% → {t['silent_rate']}%")
+              f"表示到達 {pt['articles_with_impressions']}本 → {t['articles_with_impressions']}本")
+
+    print('\n■ コホート別の露出到達（インデックスの進行）')
+    labels = {'legacy': 'キュー管理外（初期）', 'in_window': '期間中に公開',
+              'after_window': '期間後に公開（対象外）'}
+    for key, label in labels.items():
+        c = kpi['cohorts'][key]
+        rate = f"{c['reach_rate']}%" if c['reach_rate'] is not None else '-'
+        print(f"  {label:22s} {c['articles']:3d}本中 表示あり {c['with_impressions']:3d}本  到達率 {rate}")
 
     print('\n■ 順位帯別のクリック収率（どの順位から金になるか）')
     for b in ('1-10位', '11-30位', '31-50位', '51位以下'):
@@ -213,11 +283,37 @@ def falsification_checks(kpi):
             out.append(f'△ 指標ルール: クリックと表示の最優秀が同じ「{by_clicks[0]}」。'
                        '今期は両指標が一致しており判別力なし')
 
-    # ルール: 沈黙記事が過半なら、生産より流通（インデックス・内部リンク）が問題
+    # ルール: 表示ゼロが多いとき、生産より流通が問題なのか
+    #
+    # 2026-07-30改定：旧版は「稼働記事の50%以上が表示ゼロなら流通が詰まっている」と
+    # 判定していたが、①計測期間の終了後に公開された記事まで分母に入れていた
+    # ②公開からの経過日数を無視していた、の2点で誤りだった。
+    # 新記事は表示に到達しているのに「流通が詰まっている」と誤判定する。
+    # 判定は静的な比率ではなく、新旧コホートの到達率の差と、期間をまたいだ増減で見る。
     t = kpi['totals']
-    if t['silent_rate'] is not None and t['silent_rate'] >= 50:
-        out.append(f'⚠ 生産ルール 要検討: 稼働記事の{t["silent_rate"]}%が表示ゼロ。'
-                   '新規生産より、既存記事のインデックス・内部リンクの点検が先')
+    co = kpi.get('cohorts', {})
+    new_reach = co.get('in_window', {}).get('reach_rate')
+    old_reach = co.get('legacy', {}).get('reach_rate')
+
+    if new_reach is not None and old_reach is not None and co['in_window']['articles'] >= 3:
+        if new_reach >= old_reach:
+            out.append(f'✔ 流通ルール 維持: 期間中に公開した記事の表示到達率{new_reach}%が'
+                       f'初期記事{old_reach}%以上。インデックスは進んでおり、'
+                       'パイプラインは詰まっていない')
+        else:
+            out.append(f'✘ 流通ルール 反証: 新記事の表示到達率{new_reach}%が'
+                       f'初期記事{old_reach}%を下回った。新記事が拾われなくなっている'
+                       '（sitemap・内部リンク・クロール状況を点検すること）')
+    elif t['silent_rate'] is not None and t['silent_rate'] >= 50:
+        out.append(f'△ 流通ルール: 計測対象{t["eligible_articles"]}本の'
+                   f'{t["silent_rate"]}%が表示ゼロだが、コホート比較の標本が足りず'
+                   '流通の問題かは判定不能')
+
+    # 表示ゼロの主体が初期記事側に偏っているなら、対象は新規生産ではなく初期記事の見直し
+    if old_reach is not None and old_reach < 50 and co['legacy']['articles'] >= 20:
+        out.append(f'⚠ 初期記事 要検討: キュー管理外の初期{co["legacy"]["articles"]}本の'
+                   f'表示到達率が{old_reach}%。公開から最も時間が経っているのに'
+                   '表示に至っていないため、経過日数では説明できない')
 
     # ルール: 11-30位ゾーンの強化は有効か
     mid = bands.get('11-30位')
