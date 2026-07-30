@@ -2,6 +2,54 @@
   "description": "記事工場の生成キュー。エージェントは毎回pendingの先頭2件を処理する。優先度順に並んでいる。",
   "queue": [
     {
+      "slug": "pocchari-konkatsu",
+      "title_hint": "ぽっちゃり女性の婚活は不利なのか｜データと「体型を書く/書かない」の判断",
+      "target_queries": [
+        "ぽっちゃり 婚活",
+        "ぽっちゃり マッチングアプリ",
+        "体型 プロフィール 婚活"
+      ],
+      "type": "attribute",
+      "status": "pending",
+      "notes": "A8提携済【ぽちゃ婚】(s00000016807001)の受け皿。体型を欠点として扱う書き方は禁止。プロフィールに体型をどう書くかの実務に徹する"
+    },
+    {
+      "slug": "otaku-konkatsu",
+      "title_hint": "オタク趣味は婚活で隠すべきか｜同じ趣味の相手を探す場所の選び方",
+      "target_queries": [
+        "オタク 婚活",
+        "アニメ好き 結婚相談所",
+        "趣味 婚活 アプリ"
+      ],
+      "type": "attribute",
+      "status": "pending",
+      "notes": "A8提携済【ヲタ婚】(s00000016807002)の受け皿。趣味を隠す前提で書かない。属性特化の相談所という選択肢を比較の1つとして置く"
+    },
+    {
+      "slug": "kodure-saikon-guide",
+      "title_hint": "子連れ再婚のリアル｜相手の子どもとの関係・養育費・タイミングをどう扱うか",
+      "target_queries": [
+        "子連れ 再婚",
+        "子持ち 婚活",
+        "シングルマザー 再婚"
+      ],
+      "type": "attribute",
+      "status": "pending",
+      "notes": "A8提携済【子持ち婚】(s00000016807009)の受け皿。batsuichi-guideは離婚歴の伝え方が主題なので、こちらは子どもを軸に分ける。不安を煽らない"
+    },
+    {
+      "slug": "pet-konkatsu",
+      "title_hint": "ペット可の相手をどう探すか｜動物好き同士の婚活と同居後に揉める論点",
+      "target_queries": [
+        "ペット 婚活",
+        "犬好き 出会い",
+        "猫 同棲 結婚"
+      ],
+      "type": "attribute",
+      "status": "pending",
+      "notes": "A8提携済【ペット婚】(s00000016807006)の受け皿。競合ほぼ不在。同居後のアレルギー・費用・世話分担という実務論点を主軸に"
+    },
+    {
       "slug": "sapporo-guide",
       "title_hint": "札幌でマッチングアプリを使うなら｜出会えるアプリTOP3とすすきの・大通エリア攻略法",
       "target_queries": [
