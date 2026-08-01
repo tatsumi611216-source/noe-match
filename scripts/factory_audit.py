@@ -55,6 +55,9 @@ def body_text(html):
     stripped = re.sub(r'<nav class="toc".*?</nav>', '', stripped, flags=re.S)
     # 冒頭の広告表記も全記事共通の定型文なので内容量には数えない
     stripped = re.sub(r'<p class="pr-notice">.*?</p>', '', stripped, flags=re.S)
+    # 中盤CTAも定型の訴求文であり内容量ではない（既存の記事末CTAは従来どおり数え、
+    # 過去の計測値と比較できるようにしておく）
+    stripped = re.sub(r'<div class="cta-mid">.*?</div>', '', stripped, flags=re.S)
     return re.sub(r'\s+', '', re.sub(r'<[^>]+>', '', stripped))
 
 
@@ -159,6 +162,19 @@ def audit_article(slug):
     # 6,000〜10,000字の記事で目次が無いと、読者が必要な節に到達できない
     if 'class="toc"' not in html:
         warnings.append('目次（.toc）が無い')
+
+    # タイトルは日本語SERPで30〜32字前後で切れる。長さそのものより語順が問題で、
+    # 【20XX年版】を途中に置くと、その後ろの差別化フレーズが丸ごと見えなくなる。
+    tm = re.search(r'<title>(.*?)</title>', html, re.S)
+    if tm:
+        title = re.sub(r'\s+', ' ', tm.group(1)).strip()
+        ym = re.search(r'【20\d\d年(?:版|最新)?】', title)
+        if ym and ym.end() < len(title) - 1:
+            errors.append('タイトルの【年号】が末尾でない（後続の語がSERPで切れる）')
+        # 主キーワード＝最初の区切りまでの節。ここが32字を超えると検索語が見えない
+        head = re.split(r'[｜|？?]', title)[0]
+        if len(head) > 32:
+            errors.append(f'タイトルの主キーワード部が{len(head)}字（32字以内に収める）')
 
     # TOCのアンカーが実在するh2のidを指しているか
     nav = re.search(r'<nav class="toc".*?</nav>', html, re.S)
