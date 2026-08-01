@@ -31,6 +31,11 @@ OUT = os.path.join(ROOT, 'agent', 'silent_articles.md')
 # 寄せ直してから表示に到達したかを判定するまでの猶予
 REWRITE_GRACE_DAYS = 21
 
+# 公開からこの日数に満たない記事は「まだ表示が立つ前」とみなし、
+# 到達率の分母にも寄せ直し対象にも入れない。
+# （2026-08-01：07-26公開の67本を露出4日で初期記事と比べ、到達率を誤って低く出した）
+MIN_EXPOSURE_DAYS = 14
+
 # --- クエリ型の判定 -------------------------------------------------------
 # 実測（2026-07-30）：無修飾ヘッドターム 0/15（0%）／ニッチ内定番トピック 約20%
 #                     指名 20%／サイト外の固有修飾 8/9（89%）
@@ -136,9 +141,15 @@ def scan():
     meta = {s: article_meta(s) for s in slugs}
     rewrites = load_rewrites()
 
-    # 計測対象＝計測期間の終了までに公開された記事だけ。
+    # 計測対象＝計測期間の終了までに公開され、かつ露出が MIN_EXPOSURE_DAYS 以上ある記事。
     # 期間後に公開された記事は表示が立ちようがないので沈黙に数えない。
-    eligible = [s for s in slugs if meta[s][0] and meta[s][0] <= window_end]
+    # 公開直後の記事も「まだ立っていないだけ」なので分母から外し、別枠で観測する。
+    eligible, fresh = [], []
+    for s in slugs:
+        d = meta[s][0]
+        if not d or d > window_end:
+            continue
+        (fresh if days_between(d, window_end) < MIN_EXPOSURE_DAYS else eligible).append(s)
     silent = [s for s in eligible if s not in seen]
 
     tiers = defaultdict(lambda: {'total': 0, 'reached': 0, 'silent': []})
@@ -169,6 +180,7 @@ def scan():
     return {
         'window': gsc['period'],
         'eligible': eligible,
+        'fresh': fresh,
         'silent': silent,
         'seen': seen,
         'meta': meta,
@@ -190,7 +202,8 @@ def render(r):
         'GSCデータが更新されるたびに作り直されるので、寄せ直した記事は自動で消える。',
         '',
         f'計測期間：{w["start"]} 〜 {w["end"]} ／ '
-        f'計測対象 {n_elig}本中 表示ゼロ {n_silent}本',
+        f'計測対象 {n_elig}本中 表示ゼロ {n_silent}本'
+        f'（公開{MIN_EXPOSURE_DAYS}日未満の {len(r["fresh"])}本は判定保留として除外）',
         '',
         '## なぜ表示がゼロなのか（2026-07-30の原因調査の結論）',
         '',
@@ -305,7 +318,8 @@ def main():
         f.write(doc)
 
     print(f'agent/silent_articles.md を再生成した'
-          f'（計測対象{len(r["eligible"])}本 / 表示ゼロ{len(r["silent"])}本）')
+          f'（計測対象{len(r["eligible"])}本 / 表示ゼロ{len(r["silent"])}本 / '
+          f'判定保留{len(r["fresh"])}本）')
     for t in TIER_ORDER:
         d = r['tiers'].get(t)
         if d and d['total']:

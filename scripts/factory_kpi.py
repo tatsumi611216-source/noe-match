@@ -86,23 +86,39 @@ def publish_dates():
     return {i['slug']: i.get('published') for i in queue if i.get('published')}
 
 
-def cohorts(slugs, pub, window_start, window_end):
-    """計測期間との前後関係で記事を3つに分ける。
+MIN_EXPOSURE_DAYS = 14
 
-    - legacy   : キュー管理外。計測期間より前から存在する初期の記事群
-    - in_window: 計測期間の途中で公開された記事（露出の機会が期間より短い）
-    - after    : 計測期間の終了後に公開された記事。**分母に入れてはいけない**
+
+def cohorts(slugs, pub, window_start, window_end):
+    """計測期間との前後関係と、露出できた日数で記事を4つに分ける。
+
+    - legacy    : キュー管理外。計測期間より前から存在する初期の記事群
+    - in_window : 計測期間中に公開され、**14日以上の露出があった**記事
+    - fresh     : 公開から14日未満。表示が立つ前の可能性が高く、到達率の比較に使わない
+    - after     : 計測期間の終了後に公開された記事。分母に入れてはいけない
+
+    fresh を分けている理由（2026-08-01に踏んだ誤り）：
+    07-26に67本を一括公開した直後の期間で集計したところ、露出4日の記事群と
+    2ヶ月経った初期記事を同列に比べてしまい、「新記事が拾われなくなっている」と
+    誤判定した。経過日数を揃えずに到達率を比べてはいけない。
     """
-    legacy, in_window, after = set(), set(), set()
+    from datetime import date
+
+    def age(d):
+        return (date(*map(int, window_end.split('-'))) - date(*map(int, d.split('-')))).days
+
+    legacy, in_window, fresh, after = set(), set(), set(), set()
     for s in slugs:
         d = pub.get(s)
         if d is None:
             legacy.add(s)
         elif d > window_end:
             after.add(s)
+        elif age(d) < MIN_EXPOSURE_DAYS:
+            fresh.add(s)
         else:
             in_window.add(s)
-    return legacy, in_window, after
+    return legacy, in_window, fresh, after
 
 
 def rewrite_effect(measured_slugs, window_end, grace_days=21):
@@ -186,14 +202,16 @@ def measure(gsc):
     pub = publish_dates()
     ws = gsc['period']['start']
     we = gsc['period']['end']
-    legacy, in_window, after = cohorts(live_slugs_set, pub, ws, we)
+    legacy, in_window, fresh, after = cohorts(live_slugs_set, pub, ws, we)
     measured_slugs = {slug_of(p['page']) for p in by_page} - {'(top)'}
 
+    # 露出14日未満(fresh)と期間後公開(after)は到達率の分母に入れない
     eligible = legacy | in_window
     measured_eligible = measured_slugs & eligible
 
     cohort_stats = {}
-    for name, members in (('legacy', legacy), ('in_window', in_window), ('after_window', after)):
+    for name, members in (('legacy', legacy), ('in_window', in_window),
+                          ('fresh', fresh), ('after_window', after)):
         seen = measured_slugs & members
         cohort_stats[name] = {
             'articles': len(members),
@@ -247,8 +265,8 @@ def report(kpi, prev):
               f"表示到達 {pt['articles_with_impressions']}本 → {t['articles_with_impressions']}本")
 
     print('\n■ コホート別の露出到達（インデックスの進行）')
-    labels = {'legacy': 'キュー管理外（初期）', 'in_window': '期間中に公開',
-              'after_window': '期間後に公開（対象外）'}
+    labels = {'legacy': 'キュー管理外（初期）', 'in_window': '期間中に公開（露出14日以上）',
+              'fresh': '公開14日未満（判定保留）', 'after_window': '期間後に公開（対象外）'}
     for key, label in labels.items():
         c = kpi['cohorts'][key]
         rate = f"{c['reach_rate']}%" if c['reach_rate'] is not None else '-'
@@ -325,7 +343,7 @@ def falsification_checks(kpi):
     new_reach = co.get('in_window', {}).get('reach_rate')
     old_reach = co.get('legacy', {}).get('reach_rate')
 
-    if new_reach is not None and old_reach is not None and co['in_window']['articles'] >= 3:
+    if new_reach is not None and old_reach is not None and co['in_window']['articles'] >= 5:
         if new_reach >= old_reach:
             out.append(f'✔ 流通ルール 維持: 期間中に公開した記事の表示到達率{new_reach}%が'
                        f'初期記事{old_reach}%以上。インデックスは進んでおり、'
