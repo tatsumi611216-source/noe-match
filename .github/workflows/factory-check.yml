@@ -1,0 +1,55 @@
+name: Factory Audit
+
+# 記事工場の出荷検品。エージェントが AGENT.md の手順を守り忘れても、
+# ここで機械的に止まる。既知バックログ（agent/quality_backlog.md 登録済み）は
+# 対象外なので、新規に生まれた違反だけが赤くなる。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'articles/**'
+      - 'sitemap.xml'
+      - 'sitemap-all.xml'
+      - 'index.html'
+      - 'redirects.json'
+      - 'agent/quality_backlog.md'
+      - 'scripts/factory_audit.py'
+      - 'scripts/sitemap_sync.py'
+  pull_request:
+    paths:
+      - 'articles/**'
+      - 'sitemap.xml'
+      - 'sitemap-all.xml'
+      - 'index.html'
+      - 'redirects.json'
+      - 'agent/quality_backlog.md'
+      - 'scripts/factory_audit.py'
+      - 'scripts/sitemap_sync.py'
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run factory audit
+        run: |
+          set -o pipefail
+          python3 scripts/factory_audit.py --list | tee /tmp/audit.txt
+        continue-on-error: false
+
+      - name: Publish summary
+        if: always()
+        run: |
+          {
+            echo '## 出荷検品の結果'
+            echo '```'
+            cat /tmp/audit.txt 2>/dev/null || echo '(検品が実行できなかった)'
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
