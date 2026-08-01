@@ -78,7 +78,15 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 #top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:.3s}
 #top.show{opacity:1}
 #top:hover{background:var(--pink-dark)}
-@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}.cta-foot a{display:block;padding:14px 18px}}</style>
+@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}.cta-foot a{display:block;padding:14px 18px}}
+.toc{background:#fff7fa;border:1px solid #ffd9e4;border-radius:8px;padding:14px 18px;margin:22px 0}
+.toc-h{font-weight:700;font-size:15px;margin-bottom:8px}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:5px 0;font-size:14px;line-height:1.6}
+.toc a{color:#c2185b;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.pr-notice{font-size:12px;color:#666;background:#f5f5f5;border-left:3px solid #ffb3c8;border-radius:3px;padding:7px 11px;margin:10px 0 0}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "年齢層×目的マップとはどう見ればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "縦軸に年代、横軸に主要アプリを置いたマトリクス表で、各セルに「その年代がそのアプリで実際に何を目的に使っているか」を示しています。同じアプリでも年代によって恋活寄りか婚活寄りかが大きく変わるため、自分の年代の行を横に見比べることで、目的に合ったアプリを選びやすくなります。"}}, {"@type": "Question", "name": "同じアプリでも年代によって目的が違うのはなぜですか？", "acceptedAnswer": {"@type": "Answer", "text": "アプリの機能自体は年代を問わず同じですが、利用者の平均年齢が上がるほど「結婚を意識した交際」を目的にする割合が増える傾向があるためです(Noe編集部・2025年ユーザー調査より推計)。特にPairsのような会員数の多い総合型アプリほど、年代によって館内の空気がまったく異なります。"}}, {"@type": "Question", "name": "20代なのに婚活したい場合はどう考えればいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "マトリクス表で30代以上の目的欄が「婚活」に偏っているアプリ(Omiai・ユーブライドなど)を選ぶと、年齢は若くても同じ目的意識の相手に出会いやすくなります。20代の婚活層はまだ少数派ですが、真剣度の高いプロフィール文にすることで年代のギャップをカバーできます。"}}, {"@type": "Question", "name": "40代以上は選択肢が少ないと聞きますが本当ですか？", "acceptedAnswer": {"@type": "Answer", "text": "全体の利用者数では少数派ですが、目的が「婚活・再婚」に集約されているため、マッチングした相手との温度感のズレは20代・30代より小さい傾向があります。ユーブライド・マリッシュのような年齢層が高めのアプリを選べば、母数の少なさを目的の一致でカバーできます。"}}, {"@type": "Question", "name": "このマトリクス表はどんな人に一番役立ちますか？", "acceptedAnswer": {"@type": "Answer", "text": "「アプリは使っているが、なぜか目的が合う人に会えない」と感じている人に特に役立ちます。年代だけでなくアプリごとの目的分布まで確認することで、同じ会員数の多いアプリでも自分の年代・目的に合った選び方ができるようになります。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "マッチングアプリの年齢層×目的マップ【2026年版】どの年代がどこにいるかデータで見る", "description": "「30代なのにTappleを開いたら年下ばかりだった」という違和感の正体は、年代×目的のズレにある。全アプリ×年代のマトリクス表で、どの年代がどのアプリのどんな目的欄に集まっているかを可視化した。", "image": "https://www.noe-match.com/images/img_c1e4a687.jpg", "url": "https://www.noe-match.com/articles/kaiin-age-cross-data/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/kaiin-age-cross-data/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "NOE結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "マッチングアプリの年齢層×目的マップ【2026年版】どの年代がどこにいるかデータで見る"}]}</script>
@@ -95,14 +103,31 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <div class="byline"><div class="av">✍️</div><div><strong><a href="/about.html" style="color:inherit;text-decoration:none">Noe編集部</a></strong><br>マッチングアプリを実際に使用した経験を持つ編集部。Pairs・with・Omiai・Tapple・ユーブライドを検証。<div class="up">最終更新：2026年7月26日 ｜ 著者: Noe編集部</div></div></div>
 <img src="/images/img_c1e4a687.jpg" alt="マッチングアプリの年齢層×目的マップ" loading="lazy" class="art-img">
 <blockquote><strong>同じアプリでも年代によって「恋活が主目的」か「婚活が主目的」かが大きく変わる。20代のPairsは恋活寄り、30代以降は婚活寄りに空気が変わるのが典型例。年代×アプリのマトリクスで見ると、自分に合う場所が一目で分かる。</strong></blockquote>
+
+<nav class="toc" aria-label="目次">
+<div class="toc-h">目次</div>
+<ol>
+<li><a href="#sec-1">この記事で分かること</a></li>
+<li><a href="#sec-2">「年齢層だけ」では見えないもの</a></li>
+<li><a href="#sec-3">【マトリクス表】年代×アプリ 主目的の分布</a></li>
+<li><a href="#sec-4">読み解き方：縦ではなく「横」に見る</a></li>
+<li><a href="#sec-5">年代別に見る「目的のねじれ」ポイント</a></li>
+<li><a href="#sec-6">年代×目的から見るおすすめの組み合わせ</a></li>
+<li><a href="#sec-7">年代×目的マップの活用実例</a></li>
+<li><a href="#sec-8">よくある質問（FAQ）</a></li>
+<li><a href="#sec-9">まとめ</a></li>
+<li><a href="#sec-10">著者・監修について</a></li>
+<li><a href="#sec-11">あなたに合うアプリを見つけよう</a></li>
+</ol>
+</nav>
 <h2>関連記事</h2>
 <ul><li><a href="/articles/age-data/">マッチングアプリの年齢層分布</a></li><li><a href="/articles/members-data/">会員数ランキング2026</a></li><li><a href="/articles/30s-konkatsu/">30代向け婚活アプリガイド</a></li><li><a href="/articles/compare-price/">マッチングアプリ料金コスパ比較</a></li></ul>
-<h2>この記事で分かること</h2>
+<h2 id="sec-1">この記事で分かること</h2>
 <ul><li>主要5アプリ×5年代のマトリクスで見る「目的」の分布</li><li>同じアプリでも年代によって恋活寄り・婚活寄りが変わる理由</li><li>自分の年代で本当に目的が合う相手が多いアプリの見分け方</li><li>年代が若い/高いことで生じる目的のミスマッチとその回避策</li><li>年代×目的で見たときのアプリ併用パターン</li></ul>
-<h2>「年齢層だけ」では見えないもの</h2>
+<h2 id="sec-2">「年齢層だけ」では見えないもの</h2>
 <p>以前<a href="/articles/age-data/">年齢層分布のデータ</a>を整理したとき、25〜29歳が全体の3割を占める最大層だという事実を紹介した。ただ、そのデータを見て多くの読者から「年代の割合は分かったが、結局どのアプリで自分と同じ目的の人に会えるのかが分からない」という声をもらった。</p>
 <p>年代だけでは見えないもの、それが「目的」だ。同じ25〜29歳でも、Tappleを開けば恋活・カジュアル志向の相手が多く、Omiaiを開けば婚活志向の相手が多い。年代が同じでも、アプリが違えば館内の空気はまったく別物になる。この記事では年代とアプリを掛け合わせたマトリクスで、その違いを可視化する。</p>
-<h2>【マトリクス表】年代×アプリ 主目的の分布</h2>
+<h2 id="sec-3">【マトリクス表】年代×アプリ 主目的の分布</h2>
 <div class="table-wrap"><table><thead><tr><th>年代</th><th>Pairs</th><th>Tapple</th><th>with</th><th>Omiai</th><th>ユーブライド</th></tr></thead><tbody>
 <tr><td>20-24歳</td><td>恋活6割・カジュアル3割</td><td>カジュアル6割・恋活3割</td><td>恋活7割・カジュアル2割</td><td>婚活5割・恋活4割</td><td>利用者少なく参考値薄</td></tr>
 <tr><td>25-29歳</td><td>恋活5割・婚活3割</td><td>カジュアル5割・恋活4割</td><td>恋活6割・婚活3割</td><td>婚活6割・恋活3割</td><td>婚活7割・恋活2割</td></tr>
@@ -111,17 +136,17 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <tr><td>40歳以上</td><td>婚活5割・再婚3割</td><td>参考値薄(利用者少)</td><td>参考値薄(利用者少)</td><td>婚活6割・再婚3割</td><td>婚活5割・再婚4割</td></tr>
 </tbody></table></div>
 <p>※各社は年代別の目的比率を公式には公表していないため、Noe編集部が2025年に実施したユーザーアンケート(有効回答約1,200件)と各社公表の年代分布を掛け合わせて推計した概算値。実際の比率はアプリの仕様変更・時期により変動する。</p>
-<h2>読み解き方：縦ではなく「横」に見る</h2>
+<h2 id="sec-4">読み解き方：縦ではなく「横」に見る</h2>
 <p>このマトリクス表を見るとき、多くの人は「自分の年代の行」だけを縦に見て終わってしまう。しかし本当に有効な読み方は、自分の年代の行を横に見比べて「同じ年代でもアプリによって目的比率がどれだけ変わるか」を確認することだ。</p>
 <p>例えば30-34歳の行を見ると、Pairsは婚活5割・恋活4割とほぼ拮抗しているのに対し、Omiaiは婚活7割・再婚1割と明確に婚活寄りだ。同じ30代前半でも、選ぶアプリによって出会う相手の温度感がまったく違うことがこの表から読み取れる。</p>
-<h2>年代別に見る「目的のねじれ」ポイント</h2>
+<h2 id="sec-5">年代別に見る「目的のねじれ」ポイント</h2>
 <h3>20代前半とTappleの関係</h3>
 <p>20代前半はカジュアル志向が最も強い年代だが、Tappleの中でも婚活寄りのユーザーは一定数存在する。マトリクス上は「カジュアル6割」と出ているが、残りの3割は恋活、そこからさらに一部が婚活を意識しているという構造だ。婚活目的の20代前半がTappleを使う場合は、プロフィール文で「将来を見据えた出会いを探している」と明記することで、少数派の同じ目的の相手と出会いやすくなる。</p>
 <h3>25-29歳とPairsの関係</h3>
 <p>25-29歳は全アプリの中でも最も目的が分散している年代だ。Pairsでは恋活5割・婚活3割と、恋活が優勢ながら婚活層も一定数いる。この年代がPairsを使う場合、コミュニティ機能で「婚活」「将来のための出会い」系のコミュニティに参加しておくと、目的が近い相手と出会う確率が上がる。</p>
 <h3>30代以降とOmiai・ユーブライドの関係</h3>
 <p>30代に入ると、Omiaiとユーブライドはいずれも7〜8割前後が婚活目的という、非常に目的が揃った空間になる。年代が上がるほど、この2アプリの「婚活8〜9割」という純度の高さが際立ってくる。30代以降で恋活寄りの相手を避けたいなら、この2アプリを軸にするのが合理的だ。</p>
-<h2>年代×目的から見るおすすめの組み合わせ</h2>
+<h2 id="sec-6">年代×目的から見るおすすめの組み合わせ</h2>
 <div class="table-wrap"><table><thead><tr><th>年代</th><th>恋活重視の組み合わせ</th><th>婚活重視の組み合わせ</th></tr></thead><tbody>
 <tr><td>20-24歳</td><td>Tapple＋with</td><td>Pairs(婚活コミュニティ活用)</td></tr>
 <tr><td>25-29歳</td><td>Pairs＋with</td><td>Pairs＋Omiai</td></tr>
@@ -130,14 +155,14 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <tr><td>40歳以上</td><td>Pairs(限定的)</td><td>ユーブライド＋マリッシュ</td></tr>
 </tbody></table></div>
 <p>料金体系も年代選びの重要な要素になる。各アプリの詳しい料金比較は<a href="/articles/compare-price/">マッチングアプリ料金コスパ比較</a>、30代の婚活戦略については<a href="/articles/30s-konkatsu/">30代向け婚活アプリガイド</a>で詳しく解説している。</p>
-<h2>年代×目的マップの活用実例</h2>
+<h2 id="sec-7">年代×目的マップの活用実例</h2>
 <h3>矢野さん（31歳・システムエンジニア）の話</h3>
 <p>矢野さんは30代に入ってからもPairsを恋活目的の20代の頃と同じ感覚で使い続けていた。「なんとなく真剣な人が少ない気がしていましたが、年代のせいなのかアプリのせいなのか判断がつかなかった」と話す。</p>
 <p>年代×アプリのデータを知ってから、自分の30代前半という年代ではOmiaiの方が婚活目的の比率が明確に高いことに気づいた。「Pairsで感じていた『なんとなく噛み合わない』は、年代の問題ではなくアプリの目的分布の問題だったんですね」。Omiaiに登録し直してからは、初回メッセージの段階から結婚を意識した会話がしやすくなったという。現在は交際中の相手がおり、双方とも結婚を前提に話を進めている。</p>
 <h3>皆川さん（24歳・保育士）の話</h3>
 <p>皆川さんは20代前半だが、早い段階から結婚を考えたいタイプだった。「周りの友達はTappleで気軽に楽しんでいたので、自分も同じように登録したんですが、なんだか温度感が合わなくて」と振り返る。</p>
 <p>年代×目的のデータを見て、自分の年代でもPairsの婚活コミュニティを使えば同じ目的の人に出会いやすいと知り、参加コミュニティを「将来のための出会い」に絞って活動を始めた。「同じ20代前半でも、コミュニティを選ぶだけでここまで会話の質が変わるとは思いませんでした」。現在マッチングした相手と月2回のペースでデートを重ねており、真剣な交際に発展しつつあるという。</p>
-<h2>よくある質問（FAQ）</h2>
+<h2 id="sec-8">よくある質問（FAQ）</h2>
 <p><strong>Q1. 年齢層×目的マップとはどう見ればいいですか？</strong></p>
 <p>縦軸に年代、横軸に主要アプリを置いたマトリクス表で、各セルに「その年代がそのアプリで実際に何を目的に使っているか」を示している。同じアプリでも年代によって恋活寄りか婚活寄りかが大きく変わるため、自分の年代の行を横に見比べることで、目的に合ったアプリを選びやすくなる。</p>
 <p><strong>Q2. 同じアプリでも年代によって目的が違うのはなぜですか？</strong></p>
@@ -148,16 +173,16 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <p>全体の利用者数では少数派だが、目的が「婚活・再婚」に集約されているため、マッチングした相手との温度感のズレは20代・30代より小さい傾向がある。ユーブライド・マリッシュのような年齢層が高めのアプリを選べば、母数の少なさを目的の一致でカバーできる。</p>
 <p><strong>Q5. このマトリクス表はどんな人に一番役立ちますか？</strong></p>
 <p>「アプリは使っているが、なぜか目的が合う人に会えない」と感じている人に特に役立つ。年代だけでなくアプリごとの目的分布まで確認することで、同じ会員数の多いアプリでも自分の年代・目的に合った選び方ができるようになる。</p>
-<h2>まとめ</h2>
+<h2 id="sec-9">まとめ</h2>
 <p>マッチングアプリ選びで見落とされがちなのが「年代」と「目的」を掛け合わせた視点だ。同じ年代でもアプリが違えば目的比率は大きく変わり、同じアプリでも年代が違えば館内の空気は別物になる。</p>
 <p>20代前半はカジュアル志向のTapple・withが中心だが婚活目的なら少数派として存在感を出す工夫が必要で、25-29歳は目的が最も分散する年代のため併用戦略が有効、30代以降はOmiai・ユーブライドの婚活純度の高さを活かすのが合理的だ。自分の年代の行を「縦」ではなく「横」に読むこと、これがアプリ選びのミスマッチを避ける一番の近道になる。</p>
-<h2>著者・監修について</h2>
+<h2 id="sec-10">著者・監修について</h2>
 <p><strong>Noe編集部</strong> Pairs・Tapple・with・Omiai・ユーブライドを実際に使用したライターと婚活経験者が執筆・監修。のべマッチ数300件以上・デート経験100回以上の実体験をもとに情報を提供しています。</p>
 <p>※本記事の料金・サービス内容は2026年7月現在の情報に基づきます。</p>
 </article>
 <div class="related"><h2>📚 関連記事</h2><ul><li><a href="/articles/age-data/">マッチングアプリの年齢層分布</a></li><li><a href="/articles/members-data/">会員数ランキング2026</a></li><li><a href="/articles/30s-konkatsu/">30代向け婚活アプリガイド</a></li><li><a href="/articles/compare-price/">マッチングアプリ料金コスパ比較</a></li></ul></div>
 <div class="cta-foot">
-<h2>あなたに合うアプリを見つけよう</h2>
+<h2 id="sec-11">あなたに合うアプリを見つけよう</h2>
 <p>編集部が実際に使って検証した2026年版ランキングはこちら。</p>
 <a href="/#ranking">🏆 おすすめランキングを見る</a>
 </div>

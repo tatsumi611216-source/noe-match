@@ -78,7 +78,15 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 #top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:.3s}
 #top.show{opacity:1}
 #top:hover{background:var(--pink-dark)}
-@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}.cta-foot a{display:block;padding:14px 18px}}</style>
+@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}.cta-foot a{display:block;padding:14px 18px}}
+.toc{background:#fff7fa;border:1px solid #ffd9e4;border-radius:8px;padding:14px 18px;margin:22px 0}
+.toc-h{font-weight:700;font-size:15px;margin-bottom:8px}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:5px 0;font-size:14px;line-height:1.6}
+.toc a{color:#c2185b;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.pr-notice{font-size:12px;color:#666;background:#f5f5f5;border-left:3px solid #ffb3c8;border-radius:3px;padding:7px 11px;margin:10px 0 0}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール", "description": "同棲を始める前に決めておくべき物件探し・初期費用の相場・お金の分担ルールを整理。契約者名義の選び方から家事分担の決め方まで、失敗しない同棲の始め方を解説します。", "image": "https://www.noe-match.com/images/img_1e5e067b.jpg", "url": "https://www.noe-match.com/articles/dousei-hajimekata/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/dousei-hajimekata/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "NOE結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "同棲の初期費用はいくら用意すればいい？", "acceptedAnswer": {"@type": "Answer", "text": "賃貸契約費用（敷金礼金・仲介手数料・前家賃など）で家賃の4〜5倍、家具家電で20〜40万円が目安です。二人で合計40〜70万円、1人あたり20〜35万円程度を見込んでおくと安心です（各種賃貸業界データより推計）。"}}, {"@type": "Question", "name": "賃貸契約は連名にすべき？", "acceptedAnswer": {"@type": "Answer", "text": "同棲段階では収入が高い方の単独名義にするケースが一般的です。連名契約は退去時の手続きが煩雑になりやすく、多くの不動産会社も単独名義を勧める傾向にあります。ただし双方の同意と生活費負担割合は書面かメモで残しておくと安心です。"}}, {"@type": "Question", "name": "生活費はどう分担するのが公平？", "acceptedAnswer": {"@type": "Answer", "text": "収入比例制（収入の割合に応じて負担）が最もトラブルが少ないとされます。折半は収入差が大きいカップルには不満が出やすく、片方全額負担は依存関係になりやすいため推奨されません。"}}, {"@type": "Question", "name": "同棲する前に何を決めておくべき？", "acceptedAnswer": {"@type": "Answer", "text": "お金の分担ルール、家事の分担、将来の結婚に対する時期感の3つは同棲前にすり合わせておくべきです。同棲後に話し合うと感情的な衝突になりやすく、事前のすり合わせが同棲継続の分かれ目になります。"}}, {"@type": "Question", "name": "同棲を始めるベストなタイミングは？", "acceptedAnswer": {"@type": "Answer", "text": "交際期間の長さより、上記3点についてすでに話し合えているかどうかの方が重要だとされます。交際1年未満でも準備ができていれば問題ないケースが多く、逆に交際が長くてもお金の話を避けてきたカップルはトラブルが起きやすい傾向があります。"}}]}</script>
@@ -92,21 +100,39 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#articles">記事一覧</a> ＞ 同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール</div>
 <article>
 <h1>同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール</h1>
+<p class="pr-notice">本ページはプロモーションを含みます。記事内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
 <div class="byline"><div class="av">✍️</div><div><strong><a href="/about.html" style="color:inherit;text-decoration:none">Noe編集部</a></strong><br>マッチングアプリを実際に使用した経験を持つ編集部。Pairs・with・Omiai・Tapple・ユーブライドを検証。<div class="up">最終更新：2026年7月26日 ｜ 著者: Noe編集部</div></div></div>
 <img src="/images/img_1e5e067b.jpg" alt="同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール" loading="lazy" class="art-img">
 <blockquote><strong>同棲の初期費用は二人で40〜70万円が目安。契約名義は単独が主流だが、失敗しやすいのは費用の相場よりも「お金の分担ルール」と「家事分担」を同棲前にすり合わせていないケースだ。</strong></blockquote>
+
+<nav class="toc" aria-label="目次">
+<div class="toc-h">目次</div>
+<ol>
+<li><a href="#sec-1">この記事で分かること</a></li>
+<li><a href="#sec-2">物件探しはいつから、どう進めるか</a></li>
+<li><a href="#sec-3">初期費用の相場</a></li>
+<li><a href="#sec-4">お金の分担ルール3パターン</a></li>
+<li><a href="#sec-5">家事分担の決め方で揉めないコツ</a></li>
+<li><a href="#sec-6">体験談：同棲前にすり合わせて良かったこと</a></li>
+<li><a href="#sec-7">同棲を始める前に必ず話し合っておくべきこと</a></li>
+<li><a href="#sec-8">よくある質問（FAQ）</a></li>
+<li><a href="#sec-9">まとめ</a></li>
+<li><a href="#sec-10">著者・監修について</a></li>
+<li><a href="#sec-11">あなたに合うアプリを見つけよう</a></li>
+</ol>
+</nav>
 <h2>関連記事</h2>
 <ul><li><a href="/articles/shinkon-seikatsu-guide/">新婚生活の準備ガイド</a></li><li><a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ</a></li><li><a href="/articles/dousei-kekkon-hikaku/">同棲か結婚かをデータで比較</a></li><li><a href="/articles/dousei-kekkon-timing/">同棲中の結婚のタイミング</a></li></ul>
-<h2>この記事で分かること</h2>
+<h2 id="sec-1">この記事で分かること</h2>
 <ul><li>同棲に向けた物件探しの進め方と時期の目安</li><li>初期費用の相場と内訳</li><li>お金の分担ルール3パターンとそれぞれの向き不向き</li><li>家事分担で揉めないための決め方</li><li>同棲を始める前に必ず話し合っておくべきこと</li></ul>
 
-<h2>物件探しはいつから、どう進めるか</h2>
+<h2 id="sec-2">物件探しはいつから、どう進めるか</h2>
 <p>同棲を決めたら、まず動くのは物件探しだ。一般的には入居希望日の1〜2ヶ月前から探し始めるのが目安とされる。繁忙期（1〜3月）は物件が動きやすい反面、初期費用が割高になりやすいため、可能であれば閑散期（6〜8月・11〜12月）を狙うと選択肢も増え交渉もしやすい（不動産業界の一般的な傾向として）。</p>
 <p>エリア選びでは「どちらの職場に合わせるか」が最初の論点になる。双方の通勤時間を書き出し、合計時間が最も短くなる中間地点を探すのが基本だが、片方の通勤が極端に長くなる場合は家賃の負担割合で調整するカップルも多い。</p>
 <h3>契約者名義は誰にするか</h3>
 <p>婚姻関係のないカップルの賃貸契約では、収入が高い方・安定した雇用形態の方が単独名義になるのが一般的だ。連名契約に対応する不動産会社もあるが、退去時の敷金精算や更新手続きが煩雑になりやすく、多くの現場担当者は単独名義を勧める傾向にある。名義人にならない側は「生活費のうち家賃相当分をいくら負担するか」を書面かメモアプリなどで残しておくと、後々のトラブルを避けやすい。</p>
 
-<h2>初期費用の相場</h2>
+<h2 id="sec-3">初期費用の相場</h2>
 <p>同棲の初期費用で見落とされがちなのが「賃貸契約費用」と「家具家電費用」を別枠で計算していない点だ。それぞれの相場を切り分けて見てみる。</p>
 <div class="table-wrap"><table><thead><tr><th>項目</th><th>内容</th><th>費用の目安</th></tr></thead><tbody>
 <tr><td rowspan="4">賃貸契約費用</td><td>敷金</td><td>家賃1〜2ヶ月分</td></tr>
@@ -132,7 +158,7 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#4a8b5c;color:#fff;font-weight:700;padding:13px 32px;border-radius:30px;text-decoration:none">引越し侍で一括見積もりする</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">複数社を比較すると相場感がつかめる。複数社の見積もりを一度に依頼できる無料サービス（対応業者・料金は時期と地域により異なります）</p>
 </div>
-<h2>お金の分担ルール3パターン</h2>
+<h2 id="sec-4">お金の分担ルール3パターン</h2>
 <p>同棲生活で最もトラブルになりやすいのが生活費の分担だ。代表的な3パターンを比較する。</p>
 <div class="table-wrap"><table><thead><tr><th>方式</th><th>内容</th><th>向いているカップル</th></tr></thead><tbody>
 <tr><td>完全折半</td><td>家賃・光熱費・食費を全て半分ずつ</td><td>収入差が小さい二人</td></tr>
@@ -141,37 +167,37 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 </tbody></table></div>
 <p>編集部が同棲経験者への取材で聞いた限りでは、収入差が大きいのに完全折半を選んだカップルほど「自分ばかり生活が苦しい」という不満が出やすい傾向があった。収入比例制は最初の計算がやや面倒だが、以降の不満は出にくいという声が多かった。共同で管理する資金計画については<a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ</a>も合わせて参考にしてほしい。</p>
 
-<h2>家事分担の決め方で揉めないコツ</h2>
+<h2 id="sec-5">家事分担の決め方で揉めないコツ</h2>
 <p>お金と並んで同棲生活の満足度を左右するのが家事分担だ。「気づいた方がやる」という曖昧なルールは、同棲開始から2〜3ヶ月で片方の不満が蓄積しやすいという声が多い。</p>
 <p>実務的に機能しやすいのは、料理・洗濯・掃除・ゴミ出し・買い出しの5項目を書き出し、得意・苦手・時間の余裕で担当を割り振る方法だ。完全に半分ずつにする必要はなく、「料理は苦手だから買い出しと皿洗いを多めに引き受ける」といった非対称な分担でも、双方が納得していれば問題ない。逆に納得のないまま始めると、些細な家事のズレが同棲解消の引き金になることもある。</p>
 
-<h2>体験談：同棲前にすり合わせて良かったこと</h2>
+<h2 id="sec-6">体験談：同棲前にすり合わせて良かったこと</h2>
 <blockquote><strong>榊原さん（28歳・会社員）</strong>「同棲前に生活費の分担を収入比例で決めて、Excelで毎月の負担額を記録するようにしました。最初は面倒でしたが、後から『払いすぎている・払わなすぎている』という揉め事が一度も起きなかったのは、この仕組みのおかげだと思います」</blockquote>
 <blockquote><strong>蓮見さん（31歳・看護師）</strong>「私は夜勤があるため、家事を完全に折半すると生活が回らないと分かっていました。同棲前に『夜勤明けの日は免除』というルールを決めておいたことで、罪悪感を持たずに同棲を続けられています」</blockquote>
 
-<h2>同棲を始める前に必ず話し合っておくべきこと</h2>
+<h2 id="sec-7">同棲を始める前に必ず話し合っておくべきこと</h2>
 <p>物件と初期費用の準備だけでは、同棲は長続きしない。編集部が同棲経験者への取材から整理した「事前に話しておくべき3項目」を紹介する。</p>
 <ul><li><strong>お金の分担ルール</strong>：上記のどの方式にするか、そして誰が家計を管理するか</li><li><strong>家事分担</strong>：完璧な折半を目指さず、納得感のある非対称分担でよいと合意する</li><li><strong>結婚に対する時期感</strong>：同棲をゴールにするのか、結婚への通過点にするのか、双方の温度差を確認する</li></ul>
 <p>特に3点目は言い出しにくい話題だが、ここに大きなズレがあると同棲後半年〜1年で関係が停滞しやすい。同棲後のタイミングについては<a href="/articles/dousei-kekkon-timing/">同棲中の結婚のタイミング</a>で詳しく整理しているので、同棲を始める前の心構えとして目を通しておくことをすすめる。</p>
 
-<h2>よくある質問（FAQ）</h2>
+<h2 id="sec-8">よくある質問（FAQ）</h2>
 <p><strong>Q1. 同棲の初期費用はいくら用意すればいい？</strong></p><p>賃貸契約費用（敷金礼金・仲介手数料・前家賃など）で家賃の4〜5倍、家具家電で20〜40万円が目安です。二人で合計40〜70万円、1人あたり20〜35万円程度を見込んでおくと安心です（各種賃貸業界データより推計）。</p>
 <p><strong>Q2. 賃貸契約は連名にすべき？</strong></p><p>同棲段階では収入が高い方の単独名義にするケースが一般的です。連名契約は退去時の手続きが煩雑になりやすく、多くの不動産会社も単独名義を勧める傾向にあります。ただし双方の同意と生活費負担割合は書面かメモで残しておくと安心です。</p>
 <p><strong>Q3. 生活費はどう分担するのが公平？</strong></p><p>収入比例制（収入の割合に応じて負担）が最もトラブルが少ないとされます。折半は収入差が大きいカップルには不満が出やすく、片方全額負担は依存関係になりやすいため推奨されません。</p>
 <p><strong>Q4. 同棲する前に何を決めておくべき？</strong></p><p>お金の分担ルール、家事の分担、将来の結婚に対する時期感の3つは同棲前にすり合わせておくべきです。同棲後に話し合うと感情的な衝突になりやすく、事前のすり合わせが同棲継続の分かれ目になります。</p>
 <p><strong>Q5. 同棲を始めるベストなタイミングは？</strong></p><p>交際期間の長さより、上記3点についてすでに話し合えているかどうかの方が重要だとされます。交際1年未満でも準備ができていれば問題ないケースが多く、逆に交際が長くてもお金の話を避けてきたカップルはトラブルが起きやすい傾向があります。</p>
 
-<h2>まとめ</h2>
+<h2 id="sec-9">まとめ</h2>
 <p>同棲の始め方で重要なのは、物件や初期費用という「準備」の部分だけではない。お金の分担ルール・家事分担・結婚への時期感という「運用」の部分を事前にすり合わせているかどうかが、同棲が長続きするかを分ける。</p>
 <p>初期費用は二人で40〜70万円を目安に準備しつつ、収入比例制などの分担ルールを先に決めておくこと。この順番を守れば、同棲開始後の細かいすれ違いをかなり減らせるはずだ。</p>
 
-<h2>著者・監修について</h2>
+<h2 id="sec-10">著者・監修について</h2>
 <p><strong>Noe編集部</strong> Pairs・Tapple・with・Omiai・ユーブライドを実際に使用したライターと婚活経験者が執筆・監修。のべマッチ数300件以上・デート経験100回以上の実体験をもとに情報を提供しています。</p>
 <p>※本記事の料金・サービス内容は2026年7月現在の情報に基づきます。</p>
 </article>
 <div class="related"><h2>📚 関連記事</h2><ul><li><a href="/articles/shinkon-seikatsu-guide/">新婚生活の準備ガイド</a></li><li><a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ</a></li><li><a href="/articles/dousei-kekkon-hikaku/">同棲か結婚かをデータで比較</a></li><li><a href="/articles/dousei-kekkon-timing/">同棲中の結婚のタイミング</a></li><li><a href="/articles/dousei-nimotsu-trunkroom/">同棲で荷物が入らない問題と収納</a></li><li><a href="/articles/yachin-credit-shiharai/">家賃はクレジットカードで払える？</a></li></ul></div>
 <div class="cta-foot">
-<h2>あなたに合うアプリを見つけよう</h2>
+<h2 id="sec-11">あなたに合うアプリを見つけよう</h2>
 <p>編集部が実際に使って検証した2026年版ランキングはこちら。</p>
 <a href="/#ranking">🏆 おすすめランキングを見る</a>
 </div>

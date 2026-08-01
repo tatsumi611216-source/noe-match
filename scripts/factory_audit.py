@@ -46,8 +46,15 @@ ADVERTISER_RE = re.compile(r'a8mat=([A-Za-z0-9+]+)|visit\.php\?a=([^&"\']+)')
 
 
 def body_text(html):
-    """script/style を除いた本文の実文字数を数える（空白は除外）"""
+    """script/style/目次を除いた本文の実文字数を数える（空白は除外）
+
+    目次は本文の見出しを再掲したナビゲーションであり、内容量ではない。
+    含めると加筆していないのに文字数が増え、品質バックログが自動的に痩せてしまう。
+    """
     stripped = re.sub(r'<script.*?</script>|<style.*?</style>', '', html, flags=re.S)
+    stripped = re.sub(r'<nav class="toc".*?</nav>', '', stripped, flags=re.S)
+    # 冒頭の広告表記も全記事共通の定型文なので内容量には数えない
+    stripped = re.sub(r'<p class="pr-notice">.*?</p>', '', stripped, flags=re.S)
     return re.sub(r'\s+', '', re.sub(r'<[^>]+>', '', stripped))
 
 
@@ -72,6 +79,26 @@ def known_backlog():
     slugs = set(re.findall(r'^\|\s*([a-z0-9][a-z0-9-]+)\s*\|', text, re.M))
     slugs |= set(re.findall(r'([a-z0-9][a-z0-9-]+)（\d+字）', text))
     return slugs
+
+
+_REVENUE_CACHE = set()
+
+
+def revenue_slugs():
+    """アフィリエイトリンクを持つ記事＝収益記事のスラッグ集合（1度だけ走査）"""
+    global _REVENUE_CACHE
+    if _REVENUE_CACHE:
+        return _REVENUE_CACHE
+    found = set()
+    for slug in live_slugs():
+        path = os.path.join(ROOT, 'articles', slug, 'index.html')
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding='utf-8', errors='replace') as f:
+            if AFFILIATE_RE.search(f.read()):
+                found.add(slug)
+    _REVENUE_CACHE = found
+    return found
 
 
 def live_slugs():
@@ -123,6 +150,27 @@ def audit_article(slug):
     ):
         if needle not in html:
             errors.append(f'{label} が無い')
+
+    # 景表法のステマ規制対応：アフィリエイトリンクを持つ記事は、広告である旨を
+    # 記事の冒頭（h1直後）に明示する。フッターの【PR】だけでは「明瞭に表示」といえない。
+    if aff_urls and 'class="pr-notice"' not in html:
+        errors.append('アフィリエイトリンクがあるのに冒頭の広告表記（.pr-notice）が無い')
+
+    # 6,000〜10,000字の記事で目次が無いと、読者が必要な節に到達できない
+    if 'class="toc"' not in html:
+        warnings.append('目次（.toc）が無い')
+
+    # TOCのアンカーが実在するh2のidを指しているか
+    nav = re.search(r'<nav class="toc".*?</nav>', html, re.S)
+    if nav:
+        targets = set(re.findall(r'href="#([^"]+)"', nav.group(0)))
+        ids = set(re.findall(r'<h2[^>]*id="([^"]+)"', html))
+        if targets - ids:
+            errors.append(f'目次のアンカーが実在しない: {sorted(targets - ids)[:3]}')
+
+    # 収益記事へ1クリックで到達できない記事は、集客しても収益に繋がらない
+    if not aff_urls and internal and not (internal & revenue_slugs()):
+        warnings.append('収益記事へ1クリックで到達できない（内部リンクが全て非収益記事）')
 
     if 'BlogPosting' not in html:
         warnings.append('JSON-LD が BlogPosting でない（テンプレ分岐）')
