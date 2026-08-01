@@ -78,7 +78,15 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 #top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:.3s}
 #top.show{opacity:1}
 #top:hover{background:var(--pink-dark)}
-@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}.cta-foot a{display:block;padding:14px 18px}}</style>
+@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}.cta-foot a{display:block;padding:14px 18px}}
+.toc{background:#fff7fa;border:1px solid #ffd9e4;border-radius:8px;padding:14px 18px;margin:22px 0}
+.toc-h{font-weight:700;font-size:15px;margin-bottom:8px}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:5px 0;font-size:14px;line-height:1.6}
+.toc a{color:#c2185b;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.pr-notice{font-size:12px;color:#666;background:#f5f5f5;border-left:3px solid #ffb3c8;border-radius:3px;padding:7px 11px;margin:10px 0 0}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "結婚後の口座・お金の管理方法｜共通口座と費目分担の実例パターン", "description": "結婚後の夫婦のお金の管理方法を類型化して解説。共通口座・費目分担・お小遣い制など、共働き夫婦の実例パターンとメリット・デメリットを紹介します。", "image": "https://www.noe-match.com/images/img_f55bfb69.jpg", "url": "https://www.noe-match.com/articles/futari-kouza-kanri/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/futari-kouza-kanri/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "NOE結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "結婚後の口座・お金の管理方法｜共通口座と費目分担の実例パターン"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "共通口座と個人口座、どちらが正解？", "acceptedAnswer": {"@type": "Answer", "text": "どちらが正解ということはなく、収入差や価値観によって向き不向きがあります。共働きなら費目分担型、収入差が大きいなら共通口座への一本化型が合いやすいとされます。"}}, {"@type": "Question", "name": "お小遣い制はどれくらいが相場？", "acceptedAnswer": {"@type": "Answer", "text": "各種調査では夫婦それぞれ月3〜5万円程度とする回答が多いとされますが、家計全体の収支や住宅ローンの有無によって適正額は変わります。"}}, {"@type": "Question", "name": "貯蓄用の口座は別に作るべき？", "acceptedAnswer": {"@type": "Answer", "text": "生活費用口座と貯蓄用口座を分けておくと、使い込みを防ぎやすいとされます。給与振込時に自動で振り分ける設定が有効です。"}}, {"@type": "Question", "name": "片方が管理を全部担うのはリスクがある？", "acceptedAnswer": {"@type": "Answer", "text": "管理担当が固定されると、もう一方が家計の全体像を把握できなくなるリスクがあります。月1回の共有の場を設けることが推奨されます。"}}, {"@type": "Question", "name": "結婚前から管理方法を決めておくべき？", "acceptedAnswer": {"@type": "Answer", "text": "新生活が始まってから決めると曖昧になりやすいため、入籍前に大枠の方針を話し合っておくことが望ましいとされます。"}}]}</script>
@@ -95,12 +103,29 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <div class="byline"><div class="av">✍️</div><div><strong><a href="/about.html" style="color:inherit;text-decoration:none">Noe編集部</a></strong><br>マッチングアプリを実際に使用した経験を持つ編集部。Pairs・with・Omiai・Tapple・ユーブライドを検証。<div class="up">最終更新：2026年7月26日 ｜ 著者: Noe編集部</div></div></div>
 <img src="/images/img_f55bfb69.jpg" alt="結婚後の口座・お金の管理方法｜共通口座と費目分担の実例パターン" loading="lazy" class="art-img">
 <blockquote><strong>共働き夫婦のお金の管理方法は、大きく「共通口座一本化型」「費目分担型」「お小遣い制」の3類型に分けられる。正解は1つではなく、収入差や価値観に応じて自分たちに合う型を選ぶことが長続きの条件になる。</strong></blockquote>
+
+<nav class="toc" aria-label="目次">
+<div class="toc-h">目次</div>
+<ol>
+<li><a href="#sec-1">この記事で分かること</a></li>
+<li><a href="#sec-2">お金の管理方法は大きく3つに分かれる</a></li>
+<li><a href="#sec-3">共通口座一本化型のメリット・デメリット</a></li>
+<li><a href="#sec-4">費目分担型の実例パターン</a></li>
+<li><a href="#sec-5">お小遣い制のメリット・デメリット</a></li>
+<li><a href="#sec-6">貯蓄用口座を分けておくべき理由</a></li>
+<li><a href="#sec-7">管理方法を決めるタイミング</a></li>
+<li><a href="#sec-8">よくある質問（FAQ）</a></li>
+<li><a href="#sec-9">まとめ</a></li>
+<li><a href="#sec-10">著者・監修について</a></li>
+<li><a href="#sec-11">あなたに合うアプリを見つけよう</a></li>
+</ol>
+</nav>
 <h2>関連記事</h2>
 <ul><li><a href="/articles/shinkon-seikatsu-guide/">新婚生活準備ガイド</a></li><li><a href="/articles/kekkon-chokin-mokuhyou/">結婚までにいくら貯めるべきか</a></li><li><a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ</a></li><li><a href="/articles/kinsen-kachikan-check/">結婚前に確認すべき金銭感覚のすり合わせ</a></li></ul>
-<h2>この記事で分かること</h2>
+<h2 id="sec-1">この記事で分かること</h2>
 <ul><li>夫婦のお金の管理方法の3つの類型</li><li>共働き夫婦での費目分担の実例パターン</li><li>それぞれの方式のメリット・デメリット</li><li>貯蓄用口座を分けるべき理由</li><li>管理方法を決めるタイミングと話し合い方</li></ul>
 
-<h2>お金の管理方法は大きく3つに分かれる</h2>
+<h2 id="sec-2">お金の管理方法は大きく3つに分かれる</h2>
 <p><a href="/articles/shinkon-seikatsu-guide/">新婚生活準備ガイド</a>でも触れた通り、結婚後の家計管理は新生活の中でも最初につまずきやすいテーマの一つだ。特に共働き夫婦が増えた現在、管理方法は一様ではなく、大きく3つの型に整理できる。</p>
 <div class="table-wrap"><table><thead><tr><th>type</th><th>仕組み</th><th>向いているケース</th></tr></thead><tbody>
 <tr><td>共通口座一本化型</td><td>収入を全て共通口座に集約し、そこから生活費・貯蓄・お小遣いを出す</td><td>収入差が大きい・家計を一元管理したい</td></tr>
@@ -109,11 +134,11 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 </tbody></table></div>
 <p>※各種家計調査の公開データをもとにした一般的な分類（2026年7月時点）。実際には複数の型を組み合わせている夫婦も多い。</p>
 
-<h2>共通口座一本化型のメリット・デメリット</h2>
+<h2 id="sec-3">共通口座一本化型のメリット・デメリット</h2>
 <p>共通口座一本化型は、家計の全体像が一目で把握できる点が最大のメリットだ。貯蓄額も生活費も1つの口座で完結するため、無駄遣いのチェックがしやすい。一方で、管理を1人に任せがちになり、もう一方が家計の状況を把握しないまま時間が経ってしまうリスクがある。</p>
 <p>この方式を取る場合は、月1回でも家計簿アプリの画面を2人で見る時間を作ることが推奨される。片方が「知らない間に貯金が減っていた」と感じる状況は、夫婦間の信頼に関わる問題に発展しやすい。</p>
 
-<h2>費目分担型の実例パターン</h2>
+<h2 id="sec-4">費目分担型の実例パターン</h2>
 <p>共働き夫婦に多いのが費目分担型だ。収入が近い場合、それぞれが担当する費目を決めて分担する。実際によく見られるパターンを3つ紹介する。</p>
 <div class="table-wrap"><table><thead><tr><th>パターン</th><th>夫の担当</th><th>妻の担当</th></tr></thead><tbody>
 <tr><td>固定費・変動費で分ける</td><td>家賃・住宅ローン・保険</td><td>食費・日用品・光熱費</td></tr>
@@ -125,36 +150,36 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <h3>体験談：費目分担から収入比按分に切り替えた夫婦</h3>
 <p>共働き夫婦の夫である中野さん（35歳）は、結婚当初は固定費・変動費で担当を分けていたが、妻の収入が増えたタイミングで見直したという。「最初は家賃を僕、食費を妻という分担でしたが、妻の昇進で収入差が縮まったのを機に、収入比で共通口座に入れる方式に変えました。負担感の偏りがなくなり、お互い納得感が出ました」と話す。ライフステージの変化に応じて管理方法を見直した例だ。</p>
 
-<h2>お小遣い制のメリット・デメリット</h2>
+<h2 id="sec-5">お小遣い制のメリット・デメリット</h2>
 <p>お小遣い制は、生活費口座に必要額を入れた上で、残りを個人の裁量に委ねる方式だ。趣味や交際費に気兼ねなく使える自由度が魅力だが、貯蓄が計画的に進みにくい面もある。特に「お小遣いの範囲を超えた支出をどちらが負担するか」というルールを事前に決めていないと、揉め事の火種になりやすい。</p>
 <p>主婦の岡本さん（33歳）は、お小遣い制を導入した当初、貯蓄計画が曖昧になっていたことに気づいたという。「お小遣い制自体は快適でしたが、気づいたら貯金用口座への振り分けが後回しになっていました。給料日に自動で貯蓄口座に振り替える設定を先に組んでから、お小遣い制に戻したら両立できるようになりました」と振り返る。お小遣い制は貯蓄の自動化とセットで運用するのが安全という教訓だ。</p>
 
-<h2>貯蓄用口座を分けておくべき理由</h2>
+<h2 id="sec-6">貯蓄用口座を分けておくべき理由</h2>
 <p>いずれの管理方式を選ぶにせよ、共通する推奨事項がある。それは生活費用の口座と貯蓄用の口座を分けることだ。同じ口座に生活費と貯蓄が混在していると、月末の残高だけでは「使いすぎたのか、貯蓄が減ったのか」の区別がつきにくい。</p>
 <p>給与振込時に一定額を自動で貯蓄用口座に振り分ける設定にしておけば、意識せずとも貯蓄が積み上がっていく。結婚資金の貯め方については<a href="/articles/kekkon-chokin-mokuhyou/">結婚までにいくら貯めるべきか</a>で詳しく解説している。</p>
 
-<h2>管理方法を決めるタイミング</h2>
+<h2 id="sec-7">管理方法を決めるタイミング</h2>
 <p>お金の管理方法は、新生活が始まってから話し合うと、すでに生活リズムができてしまい変更しづらくなる。可能であれば入籍前、遅くとも同居開始のタイミングで大枠の方針を決めておくことが望ましい。</p>
 <p>特に金銭感覚のズレは、管理方法そのものより「価値観の違い」に起因することが多い。管理方法を決める前段階で、そもそもの金銭感覚をすり合わせておくことも重要だ。この点は<a href="/articles/kinsen-kachikan-check/">結婚前に確認すべき金銭感覚のすり合わせ</a>で詳しく取り上げている。</p>
 
-<h2>よくある質問（FAQ）</h2>
+<h2 id="sec-8">よくある質問（FAQ）</h2>
 <p><strong>Q1. 共通口座と個人口座、どちらが正解？</strong></p><p>どちらが正解ということはなく、収入差や価値観によって向き不向きがあります。共働きなら費目分担型、収入差が大きいなら共通口座への一本化型が合いやすいとされます。</p>
 <p><strong>Q2. お小遣い制はどれくらいが相場？</strong></p><p>各種調査では夫婦それぞれ月3〜5万円程度とする回答が多いとされますが、家計全体の収支や住宅ローンの有無によって適正額は変わります。</p>
 <p><strong>Q3. 貯蓄用の口座は別に作るべき？</strong></p><p>生活費用口座と貯蓄用口座を分けておくと、使い込みを防ぎやすいとされます。給与振込時に自動で振り分ける設定が有効です。</p>
 <p><strong>Q4. 片方が管理を全部担うのはリスクがある？</strong></p><p>管理担当が固定されると、もう一方が家計の全体像を把握できなくなるリスクがあります。月1回の共有の場を設けることが推奨されます。</p>
 <p><strong>Q5. 結婚前から管理方法を決めておくべき？</strong></p><p>新生活が始まってから決めると曖昧になりやすいため、入籍前に大枠の方針を話し合っておくことが望ましいとされます。</p>
 
-<h2>まとめ</h2>
+<h2 id="sec-9">まとめ</h2>
 <p>夫婦のお金の管理方法に唯一の正解はない。共通口座一本化型・費目分担型・お小遣い制のいずれも一長一短があり、収入差やライフステージの変化に応じて見直していくのが実態に近い。</p>
 <p>共通して言えるのは、どの方式でも貯蓄用口座を分け、自動化しておくことが安全という点だ。管理方法を決める前に、まずは金銭感覚そのもののすり合わせから始めると、後々の摩擦を減らせる。</p>
 
-<h2>著者・監修について</h2>
+<h2 id="sec-10">著者・監修について</h2>
 <p><strong>Noe編集部</strong> Pairs・Tapple・with・Omiai・ユーブライドを実際に使用したライターと婚活経験者が執筆・監修。のべマッチ数300件以上・デート経験100回以上の実体験をもとに情報を提供しています。</p>
 <p>※本記事の料金・サービス内容は2026年7月現在の情報に基づきます。</p>
 </article>
 <div class="related"><h2>📚 関連記事</h2><ul><li><a href="/articles/shinkon-seikatsu-guide/">新婚生活準備ガイド</a></li><li><a href="/articles/kekkon-chokin-mokuhyou/">結婚までにいくら貯めるべきか</a></li><li><a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ</a></li><li><a href="/articles/kinsen-kachikan-check/">結婚前に確認すべき金銭感覚のすり合わせ</a></li></ul></div>
 <div class="cta-foot">
-<h2>あなたに合うアプリを見つけよう</h2>
+<h2 id="sec-11">あなたに合うアプリを見つけよう</h2>
 <p>編集部が実際に使って検証した2026年版ランキングはこちら。</p>
 <a href="/#ranking">🏆 おすすめランキングを見る</a>
 </div>
