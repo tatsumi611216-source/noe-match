@@ -105,6 +105,35 @@ def cohorts(slugs, pub, window_start, window_end):
     return legacy, in_window, after
 
 
+def rewrite_effect(measured_slugs, window_end, grace_days=21):
+    """寄せ直し（agent/rewrites.json）が表示到達につながったかを集計する。
+
+    寄せ直し直後は評価できないので、猶予期間を過ぎたものだけを分母にする。
+    """
+    path = os.path.join(ROOT, 'agent', 'rewrites.json')
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding='utf-8') as f:
+        rewrites = json.load(f)
+    if not rewrites:
+        return {'evaluated': 0, 'reached': 0, 'pending': 0}
+
+    from datetime import date
+
+    def age(d):
+        return (date(*map(int, window_end.split('-'))) - date(*map(int, d.split('-')))).days
+
+    evaluated = reached = pending = 0
+    for slug, rec in rewrites.items():
+        if age(rec['date']) < grace_days:
+            pending += 1
+            continue
+        evaluated += 1
+        if slug in measured_slugs:
+            reached += 1
+    return {'evaluated': evaluated, 'reached': reached, 'pending': pending}
+
+
 def load_gsc():
     if not os.path.exists(GSC):
         sys.exit('agent/gsc_data.json が無い。先にGSCデータを取得すること。')
@@ -189,6 +218,7 @@ def measure(gsc):
             'ctr': round(total_clicks / total_imp * 100, 2) if total_imp else 0.0,
         },
         'cohorts': cohort_stats,
+        'rewrites': rewrite_effect(measured_slugs, we),
         'position_bands': dict(bands),
         'clusters': dict(clusters),
         'top10_queries': top10_queries,
@@ -309,11 +339,28 @@ def falsification_checks(kpi):
                    f'{t["silent_rate"]}%が表示ゼロだが、コホート比較の標本が足りず'
                    '流通の問題かは判定不能')
 
+    # ルール: 表示ゼロ記事は「タイトルを固有修飾側へ寄せ直す」ことで救える
+    #        （2026-07-30制定。打ち手そのものが効いているかを毎月疑う）
+    rw = kpi.get('rewrites')
+    if rw and rw['evaluated'] >= 3:
+        if rw['reached'] == 0:
+            out.append(f'✘ 寄せ直しルール 反証: 猶予期間を過ぎた{rw["evaluated"]}本すべてが'
+                       '表示ゼロのまま。タイトルの寄せ直しでは足りない。'
+                       '記事の主題そのものを変える打ち手へ切り替えること')
+        else:
+            rate = rw['reached'] / rw['evaluated'] * 100
+            out.append(f'✔ 寄せ直しルール 維持: 評価{rw["evaluated"]}本中{rw["reached"]}本が'
+                       f'表示に到達（{rate:.0f}%）。打ち手は効いている')
+    elif rw and rw['evaluated'] + rw['pending'] > 0:
+        out.append(f'△ 寄せ直しルール: 評価可能な標本が{rw["evaluated"]}本で不足'
+                   f'（観測中{rw["pending"]}本）')
+
     # 表示ゼロの主体が初期記事側に偏っているなら、対象は新規生産ではなく初期記事の見直し
     if old_reach is not None and old_reach < 50 and co['legacy']['articles'] >= 20:
         out.append(f'⚠ 初期記事 要検討: キュー管理外の初期{co["legacy"]["articles"]}本の'
                    f'表示到達率が{old_reach}%。公開から最も時間が経っているのに'
-                   '表示に至っていないため、経過日数では説明できない')
+                   '表示に至っていない（2026-07-30の調査では原因は狙ったクエリの'
+                   '競合の厚さだった）。`scripts/silent_scan.py` の最優先欄から寄せ直すこと')
 
     # ルール: 11-30位ゾーンの強化は有効か
     mid = bands.get('11-30位')
