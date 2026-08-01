@@ -1,0 +1,36 @@
+# GitHub Pages（Jekyll）のビルド設定
+#
+# このリポジトリはルートをそのまま配信しているため、指定しない限り
+# リポジトリ内の全ファイルが公開される。運用専用のファイル（案件台帳・
+# GSC実績・note下書き・内部レポート）が noe-match.com 上から読めてしまう
+# ため、以下で配信対象から除外する。
+#
+# 注意：
+# - `.nojekyll` を置いてはいけない。about.md / privacy-policy.md /
+#   disclaimer.md はフロントマター付きで、Jekyllが /about.html 等に
+#   変換したものにサイト内からリンクしている。Jekyllを止めると404になる
+# - `.`（.github等）と `_` で始まるファイル・ディレクトリはJekyllが
+#   自動で除外するため、ここに書く必要はない
+# - 除外してはいけないもの：index.html / articles/ / images/ / CNAME /
+#   robots.txt / sitemap*.xml / about.md / privacy-policy.md /
+#   disclaimer.md / google4df9c44513d0200e.html（Search Console所有権確認）/
+#   28fb2874520d40719aa81fc0618e863b.txt（IndexNowのキーファイル。
+#   ルートで配信されていないと送信が弾かれる）
+
+exclude:
+  # 記事工場エージェントの運用ファイル
+  # （アフィリエイト台帳の単価・承認率、GSC実績、記事計画、note下書き）
+  - agent/
+  - scripts/
+  - docs/
+
+  # 内部ドキュメント
+  - README.md
+  - CLAUDE.md
+  - ARTICLE_TEMPLATE_GUIDE.md
+  - LICENSE
+
+  # ビルド用データとローカル用スクリプト
+  - "*.py"
+  - article_slugs.json
+  - redirects.json
