@@ -8,6 +8,7 @@ A8の管理画面はブラウザ自動化を受け付けない（合成クリッ
 使い方:
     python scripts/a8_check.py           # デスクトップの最新2ファイルを比較
     python scripts/a8_check.py --all     # 全件を一覧表示
+    python scripts/a8_check.py --gaps    # 収益化できていない記事の受け皿になる提携済み案件を探す
 
 前提: A8管理画面 → プログラム管理 → 提携中プログラム → CSVダウンロード で
       `programs_<ID>_<YYYYMMDDhhmmss>.csv` がデスクトップに保存されていること。
@@ -30,6 +31,81 @@ RELEVANT_CATEGORIES = PRIORITY_CATEGORIES | {
 
 # サイトの立ち位置と噛み合わないため、承認されても使わないと決めたカテゴリ・広告主
 EXCLUDED_CATEGORIES = {"占い", "在宅ワーク", "ASP", "ポイントサービス・懸賞"}
+
+# 収益化できていない記事の受け皿として不足しているジャンル（agent/affiliate_gaps.md）。
+# カテゴリ名はA8側の表記揺れがあるため、カテゴリではなく
+# プログラム名・広告主名へのキーワード一致で拾う。
+#
+# 目的は2つ:
+#   1. 提携済みなのに台帳（AGENT.md）に載っておらず、使われていない案件を発見する
+#      （AGENT.mdは「A8提携153件」と記録している一方、台帳の登録は約40件しかない）
+#   2. 申請後、承認されたかを確認する
+GAP_GENRES = {
+    "クレジットカード": {
+        "keywords": ("カード", "card", "クレジット", "JCB", "VISA", "アメックス",
+                     "セゾン", "楽天", "三井住友", "エポス", "オリコ", "ジャックス"),
+        "articles": ("fuufu-credit-kanri", "gosyugi-shiharai-houhou",
+                     "shinkon-ryokou-credit", "futari-kouza-kanri"),
+    },
+    "妊活サプリ": {
+        "keywords": ("妊活", "葉酸", "マカ", "亜鉛", "サプリ", "ミトコ", "マイシード",
+                     "mitas", "ミタス", "プレコンセプション"),
+        "articles": ("dansei-ninkatsu-guide", "mitas-formen-kuchikomi",
+                     "mitocore-kuchikomi", "myseed-kuchikomi"),
+    },
+    "ブライダルインナー": {
+        "keywords": ("インナー", "下着", "ランジェリー", "ブライダルインナー", "補正"),
+        "articles": ("bridal-inner-guide",),
+    },
+    "国際結婚・ビザ": {
+        "keywords": ("行政書士", "ビザ", "在留", "国際結婚"),
+        "articles": ("kokusai-kekkon-guide",),
+    },
+}
+
+# 台帳（AGENT.md）に既に登録済みの広告主。ここに無いものが「使われていない提携」。
+LEDGER_HINTS = (
+    "ユーブライド", "マリッシュ", "ALG", "ビジモ", "ハローストレージ", "原一",
+    "結婚相談所比較", "白衣コン", "レバウェル", "エクセレンス", "匠本舗", "NULL",
+    "クレカリ", "引越し侍", "家電レンタル", "Oisix", "オイシックス", "シャディ",
+    "THE KISS", "PARTY", "ハナユメ", "naco-do", "Photojoy", "挨拶状",
+    "リファスタ", "OTOCON", "縁結び", "ヒーローマリッジ", "RIVERET", "L&Co",
+    "保険ランドリー", "街角相談所", "ABEMA", "WOWOW", "スカパー", "田舎婚",
+    "ピュア婚", "R婚", "フィオーレ", "ベルロード", "バチェラーデート", "ぽちゃ婚",
+)
+
+
+def in_ledger(advertiser, name):
+    blob = (advertiser or "") + (name or "")
+    return any(h.lower() in blob.lower() for h in LEDGER_HINTS)
+
+
+def report_gaps(programs):
+    """提携中プログラムの中から、空白ジャンルを埋められる案件を探す。"""
+    print("=== 収益化できていない記事の受け皿になりうる提携済み案件 ===\n")
+    any_hit = False
+    for genre, spec in GAP_GENRES.items():
+        hits = []
+        for pid, (cat, adv, name) in programs.items():
+            if cat in EXCLUDED_CATEGORIES:
+                continue
+            blob = (adv or "") + (name or "")
+            if any(k.lower() in blob.lower() for k in spec["keywords"]):
+                hits.append((pid, cat, adv, name, in_ledger(adv, name)))
+        print("■ %s（受け皿記事: %s）" % (genre, "・".join(spec["articles"])))
+        if not hits:
+            print("   提携済み案件なし → A8のプログラム検索で新規申請が必要\n")
+            continue
+        any_hit = True
+        for pid, cat, adv, name, known in sorted(hits, key=lambda x: x[4]):
+            mark = "台帳済" if known else "★未使用"
+            print("   [%s] %s | %s | %s | %s" % (mark, pid, cat, adv, name[:46]))
+        print()
+    if any_hit:
+        print("★未使用 の案件は、提携済みなのに AGENT.md の台帳に載っておらず")
+        print("記事にも置かれていない。管理画面から a8mat URL をコピーし、")
+        print("台帳へ『リンクURL・使用ルール・置いてよい記事・1記事あたりの上限』を追記すること。")
+    return 0
 
 
 def load(path):
@@ -61,6 +137,9 @@ def main():
         print("CSVが見つかりません。A8管理画面から提携中プログラムを書き出してください。")
         print("  保存先の想定: %s" % DESKTOP)
         return 1
+
+    if "--gaps" in sys.argv:
+        return report_gaps(load(files[-1]))
 
     if "--all" in sys.argv:
         latest = load(files[-1])
