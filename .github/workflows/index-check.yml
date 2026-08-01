@@ -1,0 +1,93 @@
+name: Index Status Check
+
+# GSCの検索パフォーマンスでは「表示ゼロ」が
+#   (a) インデックスされていない
+#   (b) インデックス済みだが圏外
+# のどちらなのか区別できない。打ち手が正反対になるので、
+# URL Inspection API で直接確認する。
+#
+# fetch-gsc.yml に相乗りさせず独立させている理由：
+#   URL Inspection API は **プロパティのオーナー権限** を要求する。
+#   検索パフォーマンスAPIは「制限付き」でも通るため、サービスアカウントが
+#   オーナーに昇格していない状態でこのステップを週次ジョブに混ぜると、
+#   毎週動いているGSC取得まで巻き添えで赤くなる。
+#
+# 実行頻度：インデックス状況は日単位で動くものではないので月1回。
+# 権限の確認や、施策の直後に見たいときは workflow_dispatch で手動実行する。
+
+on:
+  schedule:
+    # 毎月1日 22:30 JST（= 1日 13:30 UTC）。fetch-gsc.yml と時間帯をずらす
+    - cron: '30 13 1 * *'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: '検査するURL数の上限（空なら全件。初回は 5 にして権限だけ確認する）'
+        required: false
+        default: ''
+      refresh:
+        description: '取得済みURLも取り直す'
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  index-check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install google-auth google-auth-httplib2 requests
+
+      # 終了コード: 0=正常 / 1=一部URLで取得失敗（再実行で続きから拾える）/ 2=権限・設定の誤り
+      # 1 でジョブを落とすと、途中まで取れた結果がコミットされずに捨てられるので落とさない。
+      - name: Inspect index status
+        id: inspect
+        env:
+          GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
+        run: |
+          set +e
+          ARGS=""
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
+          if [ "${{ inputs.refresh }}" = "true" ]; then ARGS="$ARGS --refresh"; fi
+          python scripts/index_check.py $ARGS 2>&1 | tee /tmp/index.txt
+          code=${PIPESTATUS[0]}
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          {
+            echo '## インデックス状況（URL Inspection API）'
+            echo '```'
+            cat /tmp/index.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          # 権限・設定の誤り（2）だけジョブを失敗させる
+          if [ "$code" = "2" ]; then exit 1; fi
+          exit 0
+
+      - name: Commit index status
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add agent/index_status.json
+          if git diff --cached --quiet; then
+            echo "インデックス状況に変更なし。スキップ。"
+          else
+            git commit -m "chore: update index status ($(date -u +%Y-%m-%d))"
+            # 手動実行はブランチ上から叩かれることがあるので、main 決め打ちにせず
+            # 実行中のブランチへ書き戻す
+            git push origin "HEAD:${{ github.ref_name }}"
+          fi
+
+      - name: Warn on partial failures
+        if: steps.inspect.outputs.code == '1'
+        run: |
+          echo "::warning::一部のURLで取得に失敗した。再実行すると未取得分だけを続きから取得する。"

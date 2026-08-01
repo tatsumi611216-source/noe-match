@@ -237,6 +237,27 @@ def audit_structure():
                 f'sitemap-all.xml と sitemap.xml のURL集合が不一致'
                 f'（差分 {len(sm_all ^ sitemap)}件）'
             )
+
+    # lastmod は記事の JSON-LD dateModified と一致していなければならない。
+    # build_articles.py が全URLに実行日を一律で書く作りだったため、
+    # 2026-08-01時点で60本がズレていた（50本は実際より新しい＝虚偽の鮮度、
+    # 10本は寄せ直し済みなのに更新が伝わっていない）。放置すると lastmod 自体が
+    # 信用されなくなるので、ズレたままコミットできないようにする。
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    try:
+        import sitemap_sync
+    except ImportError:
+        sitemap_sync = None
+    if sitemap_sync:
+        for name in sitemap_sync.SITEMAPS:
+            stale = sitemap_sync.diffs(name)
+            if stale:
+                sample = ', '.join(
+                    f'{u.rsplit("/articles/", 1)[-1].rstrip("/")}({cur}→{want})'
+                    for u, cur, want in stale[:3])
+                errors.append(
+                    f'{name} の lastmod が dateModified と不一致: {len(stale)}件'
+                    f'（{sample} ...）→ python3 scripts/sitemap_sync.py で同期する')
     return errors
 
 

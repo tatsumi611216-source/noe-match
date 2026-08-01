@@ -15,6 +15,7 @@ on:
       - 'redirects.json'
       - 'agent/quality_backlog.md'
       - 'scripts/factory_audit.py'
+      - 'scripts/sitemap_sync.py'
   pull_request:
     paths:
       - 'articles/**'
@@ -24,6 +25,7 @@ on:
       - 'redirects.json'
       - 'agent/quality_backlog.md'
       - 'scripts/factory_audit.py'
+      - 'scripts/sitemap_sync.py'
   workflow_dispatch:
 
 jobs:
