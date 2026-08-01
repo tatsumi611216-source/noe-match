@@ -41,14 +41,26 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # 表示ゼロ記事の寄せ直しリストを作り直す。手で書いたリストは更新されないので、
+      # GSCが更新されるたびに機械が並べ直し、寄せ直し済みの記事は自動で消える。
+      - name: Regenerate silent-article worklist
+        run: |
+          python scripts/silent_scan.py | tee /tmp/silent.txt
+          {
+            echo '## 表示ゼロ記事の寄せ直しリスト'
+            echo '```'
+            cat /tmp/silent.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Commit and push if updated
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add agent/gsc_data.json agent/kpi_history.json
+          git add agent/gsc_data.json agent/kpi_history.json agent/silent_articles.md
           if git diff --cached --quiet; then
-            echo "gsc_data.json / kpi_history.json に変更なし。スキップ。"
+            echo "GSCデータ / KPI履歴 / 寄せ直しリストに変更なし。スキップ。"
           else
-            git commit -m "chore: update gsc_data.json and kpi_history.json (weekly fetch $(date -u +%Y-%m-%d))"
+            git commit -m "chore: update GSC data, KPI history and silent-article worklist (weekly fetch $(date -u +%Y-%m-%d))"
             git push origin main
           fi
