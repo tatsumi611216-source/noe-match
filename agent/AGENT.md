@@ -157,6 +157,9 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 | R婚（A8・シュタインズ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2EXEYI+3LOM+NVHCX | 35歳以上に特化した相談所。35s-strategy・40s系。**年齢を不利として煽らず**「年齢が条件ではなく前提になる構造」として提示 |
 | 結婚相談所フィオーレ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+32QR5M+2RIS+BWVTE | 成婚実績を公表する相談所。相談所比較の文脈（app-tsukare-guide）。**公表していること自体は成果の保証ではない**旨を必ず併記 |
 | ベルロード縁結びサポート（A8・IDM） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EQHCMY+4MPE+61C2P | IBJ加盟のオンライン相談所（月額制）。**併用の2本目・費用が軽い選択肢**として提示（app-plus-agency）。naco-doと同一記事に併置しない |
+| ウェルスマ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2YKPX6+5BUE+5YJRM | オンライン仲人型の相談所（低価格帯）。料金・費用対効果の文脈のみ（compare-price）。**naco-do・ベルロードと同一記事に併置しない**（同じ「オンライン完結・低価格」枠のため）。CTA色は#2f7fa8 |
+| ブライダルネット（A8・IBJ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+39VYEY+FOG+6PJZL | IBJ運営の婚活サイト。**アプリと相談所の中間形態**として提示（agency-vs-app）。PARTY☆PARTYと同一広告主のため、同一記事への併置は2箇所まで。CTA色は#3f6ea8 |
+| Bridalチューリップ（A8・ブライダルチューリップ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+31JVY2+32P0+HVV0H | 30〜40代男性が主対象の相談所。40代男性の文脈のみ（40s-men）。**白衣コンと同一広告主**のため同一記事に併置しない。年齢を不利として煽らず「母数の条件が違う」という枠組みで提示。CTA色は#c2547e |
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 ### 大手アプリ記事の役割定義（2026-07-30制定）
