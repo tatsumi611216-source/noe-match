@@ -68,12 +68,24 @@ TIER_PROPER = 'サイト外の固有修飾'
 TIER_ORDER = [TIER_HEAD, TIER_CORE, TIER_BRAND, TIER_PROPER]
 
 
+def _matches(slug, pattern):
+    """スラッグをハイフン区切りのトークン列として照合する。
+
+    素の部分一致だと 'pairs-marriage-data' が 'age-data'（marri+age-data）に当たるなど、
+    語をまたいだ誤判定が起きる。トークン境界で照合してこれを防ぐ。
+    """
+    tokens = slug.split('-')
+    want = pattern.split('-')
+    n = len(want)
+    return any(tokens[i:i + n] == want for i in range(len(tokens) - n + 1))
+
+
 def tier_of(slug):
-    if any(h in slug for h in HEAD_TERMS):
+    if any(_matches(slug, h) for h in HEAD_TERMS):
         return TIER_HEAD
-    if any(b in slug for b in BRANDS):
+    if any(_matches(slug, b) for b in BRANDS):
         return TIER_BRAND
-    if any(p in slug for p in PROPER):
+    if any(_matches(slug, p) for p in PROPER):
         return TIER_PROPER
     return TIER_CORE
 
