@@ -1539,6 +1539,32 @@
       "notes": "【提携済み案件の受け皿：クレカリ賃貸】手数料率とポイント還元率の損益分岐計算が核（多くは手数料が還元を上回るが、条件次第で逆転）。管理会社が対応していない場合の代行サービスという選択肢。fuufu-credit-kanri・shinkon-koteihi-minaoshi・dousei-hajimekataへ内部リンク",
       "status": "done",
       "published": "2026-07-28"
+    },
+    {
+      "slug": "matching-josei-cost-data",
+      "title_hint": "マッチングアプリの女性費用データ【2026年版】無料で使える範囲と有料が必要なケース",
+      "target_queries": [
+        "マッチングアプリ 女性 費用",
+        "マッチングアプリ 女性 無料",
+        "婚活アプリ 女性 料金"
+      ],
+      "type": "data",
+      "notes": "matching-dansei-cost-dataの対になるデータ記事。女性向け料金設計の非対称性（恋活系無料・婚活特化有料）を整理。ユーブライドCTA×2。",
+      "status": "done",
+      "published": "2026-07-30"
+    },
+    {
+      "slug": "hatsushon-nenmei-data",
+      "title_hint": "初婚年齢の平均データ【2026年版】男女別推移と婚活を始めるべき年齢",
+      "target_queries": [
+        "初婚年齢 平均",
+        "結婚 平均年齢 2026",
+        "婚活 年齢 データ"
+      ],
+      "type": "data",
+      "notes": "厚生労働省 人口動態調査を一次ソースとする統計ハブ記事。晩婚化トレンドと年代別婚活戦略を解説。ユーブライドCTA×2。",
+      "status": "done",
+      "published": "2026-07-30"
     }
   ]
 }

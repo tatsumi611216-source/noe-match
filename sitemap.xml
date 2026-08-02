@@ -960,4 +960,18 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.noe-match.com/articles/matching-josei-cost-data/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.noe-match.com/articles/hatsushon-nenmei-data/</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
