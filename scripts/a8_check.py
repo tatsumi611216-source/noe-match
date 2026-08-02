@@ -21,6 +21,15 @@ import sys
 
 DESKTOP = os.path.expanduser(r"~\OneDrive\デスクトップ")
 
+# CSVの置き場所。ブラウザの既定の保存先はダウンロードフォルダなので、
+# デスクトップだけを見ていると「書き出したのに見つからない」が起きる
+# （2026-08-01に実際に発生し、8/1分の差分を丸ごと取りこぼしかけた）。
+SEARCH_DIRS = [
+    DESKTOP,
+    os.path.expanduser(r"~\Downloads"),
+    os.path.expanduser(r"~\Desktop"),
+]
+
 # noe-match にとって価値のあるカテゴリ（ここに入るものだけを「要検討」として強調する）
 PRIORITY_CATEGORIES = {"婚活", "恋愛", "ウエディング"}
 RELEVANT_CATEGORIES = PRIORITY_CATEGORIES | {
@@ -171,9 +180,18 @@ def load(path):
 
 
 def find_csvs():
-    pattern = os.path.join(DESKTOP, "programs_*.csv")
-    files = sorted(glob.glob(pattern), key=os.path.getmtime)
-    return files
+    """置き場所を横断して集め、更新時刻順に並べる。
+
+    同じファイルがデスクトップとダウンロードの両方にある場合は、
+    ファイル名（書き出し時刻を含む）で重複を除く。
+    """
+    found = {}
+    for d in SEARCH_DIRS:
+        for p in glob.glob(os.path.join(d, "programs_*.csv")):
+            name = os.path.basename(p)
+            if name not in found or os.path.getmtime(p) > os.path.getmtime(found[name]):
+                found[name] = p
+    return sorted(found.values(), key=os.path.getmtime)
 
 
 def classify(category):
@@ -190,7 +208,7 @@ def main():
     files = find_csvs()
     if not files:
         print("CSVが見つかりません。A8管理画面から提携中プログラムを書き出してください。")
-        print("  保存先の想定: %s" % DESKTOP)
+        print("  探した場所: %s" % " / ".join(SEARCH_DIRS))
         return 1
 
     if "--gaps" in sys.argv:
