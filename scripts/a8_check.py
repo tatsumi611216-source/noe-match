@@ -17,6 +17,7 @@ import csv
 import glob
 import io
 import os
+import re
 import sys
 
 DESKTOP = os.path.expanduser(r"~\OneDrive\デスクトップ")
@@ -114,9 +115,36 @@ LEDGER_HINTS = (
 )
 
 
-def in_ledger(advertiser, name):
-    blob = (advertiser or "") + (name or "")
-    return any(h.lower() in blob.lower() for h in LEDGER_HINTS)
+def ledger_names():
+    """AGENT.md の台帳テーブルから登録済みブランド名を読む。
+
+    LEDGER_HINTS は手で保守すると台帳への追記に追従できず、配置済みの案件を
+    「新規」と誤報する（2026-08-02に4件で発生）。実ファイルを正とし、
+    読めないときだけ定数にフォールバックする。
+    """
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "agent", "AGENT.md")
+    names = set(LEDGER_HINTS)
+    try:
+        with io.open(path, encoding="utf-8") as f:
+            text = f.read()
+    except (IOError, OSError):
+        return names
+    # 例: | ウェルスマ（A8） | https://px.a8.net/... | 説明 |
+    for row in re.findall(r"^\|\s*([^|]+?)\s*\|\s*https://(?:px\.a8\.net|t\.afi-b\.com)",
+                          text, re.M):
+        brand = re.split(r"[（(]", row)[0].strip()
+        if len(brand) >= 3:
+            names.add(brand)
+    return names
+
+
+def in_ledger(advertiser, name, names=None):
+    blob = ((advertiser or "") + (name or "")).lower()
+    for h in (names if names is not None else ledger_names()):
+        if h.lower() in blob:
+            return True
+    return False
 
 
 def match_genre(cat, adv, name, spec):
@@ -242,11 +270,19 @@ def main():
         # 最優先 → 検討 → 対象外 → 除外 の順に並べる
         order = {"最優先": 0, "検討": 1, "対象外": 2, "除外": 3}
         added.sort(key=lambda k: order[classify(curr[k][0])])
+        names = ledger_names()
         print("=== 新規承認 %d件 ===" % len(added))
+        n_pri = 0
         for pid in added:
             cat, adv, name = curr[pid]
-            print("[%s] %s | %s | %s" % (classify(cat), pid, cat, name[:70]))
-        n_pri = sum(1 for k in added if classify(curr[k][0]) == "最優先")
+            done = in_ledger(adv, name, names)
+            if classify(cat) == "最優先" and not done:
+                n_pri += 1
+            print("[%s]%s %s | %s | %s"
+                  % (classify(cat), " 配置済" if done else "", pid, cat, name[:70]))
+        if any(in_ledger(curr[k][1], curr[k][2], names) for k in added):
+            print("\n→ 「配置済」は台帳（AGENT.md）に登録済み＝リンク配置まで完了している案件です。"
+                  "対応は不要です。")
         if n_pri:
             print("\n→ 最優先が%d件あります。受け皿記事の有無を確認し、"
                   "無ければ keyword_queue.json に積んでください。" % n_pri)
