@@ -1,5 +1,38 @@
 # Agent Run Log
 
+---
+⚠️ **Phase 4-0 警告（2026-08-03現在）**：`agent/asp_results.md` の `last_updated` が未記入のため、Phase 4-0 ゲートが有効です。新規記事へのアフィリエイトCTAブロック追加は停止中。ASP管理画面の成果データを `agent/asp_results.md` に貼り付けてください（Phase 4へ移行するために必要です）。
+---
+
+## 2026-08-03　週次記事工場ラン｜型A×2本生成（youbride-seikon-data / marrish-saikon-data）
+
+### 実施内容
+
+- `youbride-seikon-data/index.html` 生成完了
+  - タイトル：ユーブライドの成婚率は公表されているか｜成婚退会者数の実数と読み方【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：宮崎さん（33歳・事務職・女性）、北村さん（39歳・フリーランス・男性）
+  - 内部リンク4本 / Phase 4-0によりCTAブロックなし
+  
+- `marrish-saikon-data/index.html` 生成完了
+  - タイトル：マリッシュの再婚成婚データ｜シンパパ・シンママ優遇の実態を公表値で確認する【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：木村さん（39歳・保育士・女性）、坂本さん（44歳・建設業・男性）
+  - 内部リンク4本 / Phase 4-0によりCTAブロックなし
+
+- `sitemap.xml` / `sitemap-all.xml` に2記事分URLを追加
+- `index.html` 更新：全146記事・データ・統計17記事・arc-no 16/17追加
+- `keyword_queue.json` 2件をdoneに更新
+- `factory_audit.py`：FAIL 0件 / 構造エラー 0件 ✅
+
+### Phase 4-0 対応メモ
+
+`asp_results.md` の `last_updated` が「（未記入）」のままのため、新規2記事にはアフィリエイトCTAブロックを設置せず。関連記事ボックスへの内部リンク（CTA記事への誘導）のみ実施。
+
+**人間へのアクション依頼：ASP管理画面（A8.net等）の成果データを `agent/asp_results.md` に転記してください。** これにより Phase 4（収益フィードバック）が開始でき、次回ランからCTA設置が可能になります。
+
+---
+
 ## 2026-08-01(2)　「表示ゼロ」の正体を確定させる装置を作り、sitemapの嘘を消した（記事生成なし）
 
 07-30 から積み上げた4回のルール改定は、すべて「表示ゼロ＝圏外（クエリ競合）」という
