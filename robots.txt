@@ -1,27 +1,29 @@
+# noe-match.com
+# 2026-08-03 整理：User-agent: * のブロックが2つに分かれていたため統合した。
+# 重複ブロックはクローラごとに解釈が分かれ、どちらが適用されるか不定になる。
+# あわせて Request-rate: 1/10（10秒に1リクエスト）を削除。非標準の指示で
+# Googlebot は無視するが、他のクローラを不必要に絞っていた。
+#
+# noindex のスタブ記事（articles/article-N/ 等）は Disallow しない。
+# robots.txt で塞ぐと canonical を読めなくなり、旧URLから新URLへの
+# シグナル統合が止まるため。サイトマップにも含めていないので、
+# クロール枠への影響は実測（2026-08-03のクロール統計）で確認済み＝ほぼゼロ。
+
 User-agent: *
 Allow: /
 Allow: /articles/
 Disallow: /admin/
 Disallow: /.hidden/
 
-Sitemap: https://www.noe-match.com/sitemap.xml
-Sitemap: https://www.noe-match.com/sitemap-all.xml
-
-# Google
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
-# Bing
+User-agent: Googlebot-Image
+Allow: /
+
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-# その他
-User-agent: *
-Crawl-delay: 1
-Request-rate: 1/10
-
-# イメージ検索の許可
-User-agent: Googlebot-Image
-Allow: /
+Sitemap: https://www.noe-match.com/sitemap.xml
+Sitemap: https://www.noe-match.com/sitemap-all.xml
