@@ -11,18 +11,26 @@ usage: python3 crawl.py seed.json --source careers --db ../data/sourcing.db [--w
 """
 import argparse
 import json
+import re
 import threading
 import time
 import urllib.robotparser
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 from common import DEFAULT_DB, connect
 from extract_jobposting import extract
 from http_cache import USER_AGENT, HttpCache
 from update_db import ingest_batch
+
+# 採用トップ→求人一覧/詳細ページを辿るリンク発見（1階層・同一ホスト限定）
+_HREF_RE = re.compile(r'href=["\']([^"\'#]+)["\']', re.IGNORECASE)
+_JOB_LINK_HINT = re.compile(
+    r'(recruit|career|job|saiyo|entry|position|opening|graduate|mid)'
+    r'|(採用|求人|募集|中途|キャリア|新卒)', re.IGNORECASE)
+MAX_DISCOVER_PAGES = 5  # 1社あたり追加で辿る最大ページ数
 
 _robots_cache: dict[str, urllib.robotparser.RobotFileParser | None] = {}
 _robots_lock = threading.Lock()
@@ -65,22 +73,65 @@ def _throttle(url: str):
         _domain_last[host] = time.time()
 
 
+def discover_job_links(base_url: str, html: str, limit: int = MAX_DISCOVER_PAGES) -> list[str]:
+    """採用トップのHTMLから、求人一覧/詳細らしき同一ホストのリンクを抽出する。"""
+    base = urlparse(base_url)
+    seen, links = set(), []
+    for href in _HREF_RE.findall(html):
+        if href.startswith(("mailto:", "javascript:", "tel:")):
+            continue
+        full = urljoin(base_url, href)
+        p = urlparse(full)
+        # 同一ホストのhttp(s)のみ。file://はテスト用にbaseがfileの場合のみ許可
+        if p.scheme in ("http", "https"):
+            if p.netloc != base.netloc:
+                continue
+        elif not (p.scheme == "file" and base.scheme == "file"):
+            continue
+        full = full.split("#")[0]
+        if full == base_url or full in seen:
+            continue
+        if not _JOB_LINK_HINT.search(p.path + ("?" + p.query if p.query else "")):
+            continue
+        seen.add(full)
+        links.append(full)
+        if len(links) >= limit:
+            break
+    return links
+
+
 def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:
-    """1社分を取得・抽出。DB書き込みは行わず結果dictを返す（並列安全のため）。"""
+    """1社分を取得・抽出。トップにJobPostingが無ければ求人リンクを1階層辿る。"""
     url = item["careers_url"]
     company = item.get("company", {})
     name = company.get("name", "")
     if not allowed_by_robots(url):
-        return {"status": "robots_blocked", "company": company, "records": []}
+        return {"status": "robots_blocked", "company": company, "records": [], "pages": 0}
     _throttle(url)
     html, state = cache.fetch(url)
     if state == "not_modified":
-        return {"status": "not_modified", "company": company, "records": []}
+        return {"status": "not_modified", "company": company, "records": [], "pages": 0}
     if state.startswith("error") or html is None:
-        return {"status": state, "company": company, "records": []}
+        return {"status": state, "company": company, "records": [], "pages": 0}
+
     records = extract(html, source_site, name)
+    pages = 1
+    if not records:  # トップに構造化データ無し → 求人ページ候補を辿る
+        for link in discover_job_links(url, html):
+            if not allowed_by_robots(link):
+                continue
+            _throttle(link)
+            sub_html, sub_state = cache.fetch(link)
+            pages += 1
+            if sub_state == "fetched" and sub_html:
+                records.extend(extract(sub_html, source_site, name))
+        # 同一求人の重複除去（discovery で同じ求人が複数ページに出る場合）
+        uniq = {}
+        for r in records:
+            uniq[r["source_job_id"]] = r
+        records = list(uniq.values())
     return {"status": "fetched", "company": {**company, "careers_url": url},
-            "records": records}
+            "records": records, "pages": pages}
 
 
 def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: int = 8) -> dict:
@@ -105,6 +156,11 @@ def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: in
         "robots_blocked": sum(1 for r in results if r["status"] == "robots_blocked"),
         "errors": sum(1 for r in results if r["status"].startswith("error")),
         "ingest": ingest_stats,
+        "details": [
+            {"name": r["company"].get("name", "?"), "status": r["status"],
+             "jobs": len(r["records"]), "pages": r.get("pages", 0)}
+            for r in results
+        ],
     }
     return summary
 

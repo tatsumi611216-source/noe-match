@@ -56,7 +56,10 @@ def main():
     conn = connect(db_path)
     try:
         summary = crawl_seed(conn, seeds, args.source, today, args.workers)
+        details = summary.pop("details", [])
         print(f"クロール結果: {summary}")
+        for d in details:
+            print(f"  [{d['status']}] {d['name']}: 求人{d['jobs']}件 (取得{d['pages']}ページ)")
 
         updates = score.compute_scores(conn, date.today())
         conn.executemany(
