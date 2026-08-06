@@ -22,6 +22,12 @@ CREATE TABLE IF NOT EXISTS companies (
     url             TEXT,
     phone           TEXT,
     employee_count  INTEGER,
+    -- スタートアップ規模/ステージ判定用（そこそこデカい未上場を絞り込むため）
+    is_listed       INTEGER NOT NULL DEFAULT 0,   -- 1=上場（HR新規開拓では除外候補）
+    funding_stage   TEXT,                          -- シード/シリーズA/B/C/D以降/未公開
+    last_funding_date TEXT,
+    last_funding_yen  INTEGER,                      -- 直近調達額（円）
+    source_list     TEXT,                          -- 起点リスト: 'jstartup' / 'vc:XXX' / 'prtimes'
     sales_status    TEXT NOT NULL DEFAULT '未接触'
                     CHECK (sales_status IN ('未接触','アプローチ中','商談','成約','見送り','対象外')),
     priority_score  REAL NOT NULL DEFAULT 0,   -- F-11 営業優先度スコア
@@ -106,6 +112,8 @@ SELECT
     c.name,
     c.prefecture,
     c.industry,
+    c.funding_stage,
+    c.employee_count,
     c.sales_status,
     c.priority_score,
     COUNT(jp.id)                    AS active_jobs,
@@ -118,8 +126,29 @@ FROM companies c
 JOIN job_postings jp ON jp.company_id = c.id AND jp.is_active = 1
 LEFT JOIN categories cat ON cat.id = jp.category_id
 WHERE c.sales_status IN ('未接触', 'アプローチ中')
+  AND c.is_listed = 0                    -- そこそこデカい未上場スタートアップに絞る
 GROUP BY c.id
 ORDER BY c.priority_score DESC, active_jobs DESC;
+
+-- 成長スタートアップ営業リスト: 直近調達あり × 採用強化中を優先
+CREATE VIEW IF NOT EXISTS v_startup_targets AS
+SELECT
+    c.id, c.name, c.prefecture, c.funding_stage, c.employee_count,
+    c.last_funding_date, c.last_funding_yen, c.priority_score,
+    c.sales_status,
+    COUNT(jp.id)                    AS active_jobs,
+    GROUP_CONCAT(DISTINCT cat.name) AS categories,
+    c.url, c.source_list
+FROM companies c
+JOIN job_postings jp ON jp.company_id = c.id AND jp.is_active = 1
+LEFT JOIN categories cat ON cat.id = jp.category_id
+WHERE c.is_listed = 0
+  AND c.sales_status IN ('未接触', 'アプローチ中')
+GROUP BY c.id
+ORDER BY
+    (c.last_funding_date IS NOT NULL) DESC,   -- 調達済みを上位に
+    c.priority_score DESC,
+    active_jobs DESC;
 
 -- カテゴリ別サマリー: 現在有効な案件数と企業数
 CREATE VIEW IF NOT EXISTS v_category_summary AS
