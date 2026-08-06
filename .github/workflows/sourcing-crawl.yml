@@ -45,7 +45,9 @@ jobs:
 
       - name: Run daily crawl
         working-directory: sourcing/scripts
-        run: python3 run_daily.py --seeds ../seeds/game_companies.csv --workers 4
+        run: |
+          python3 run_daily.py --seeds ../seeds/game_companies.csv --workers 4
+          python3 run_daily.py --seeds ../seeds/startups_probe.csv --workers 4
 
       - name: Upload report
         uses: actions/upload-artifact@v4
