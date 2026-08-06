@@ -10,17 +10,16 @@ usage: python3 gbiz_client.py --db ../data/sourcing.db   # 未エンリッチ企
 """
 import argparse
 import json
-import os
 import urllib.parse
 import urllib.request
 from datetime import date
 
 from common import DEFAULT_DB, connect
+from config import get_gbizinfo_token
 from http_cache import USER_AGENT
 from update_db import upsert_company
 
 API_BASE = "https://info.gbiz.go.jp/hojin/v1/hojin"
-TOKEN_ENV = "GBIZINFO_API_TOKEN"
 
 
 def parse_gbiz(payload: dict) -> dict:
@@ -89,9 +88,7 @@ def main():
     parser.add_argument("--db", default=str(DEFAULT_DB))
     parser.add_argument("--limit", type=int, default=500)
     args = parser.parse_args()
-    token = os.environ.get(TOKEN_ENV)
-    if not token:
-        raise SystemExit(f"環境変数 {TOKEN_ENV} が未設定です。https://info.gbiz.go.jp/api/ で取得してください。")
+    token = get_gbizinfo_token()
     conn = connect(args.db)
     try:
         n = enrich_db(conn, token, args.limit)
