@@ -1,0 +1,7 @@
+name,careers_url,website,is_listed,funding_stage,prefecture,industry,source_list
+株式会社アンドパッド,https://herp.careers/v1/andpad,https://andpad.co.jp,0,シリーズD以降,東京都,建設SaaS,probe:herp
+株式会社スマートバンク,https://herp.careers/v1/smartbank,https://smartbank.co.jp,0,シリーズB,東京都,フィンテック,probe:herp
+株式会社カミナシ,https://herp.careers/v1/kaminashi,https://kaminashi.jp,0,シリーズB,東京都,現場DX SaaS,probe:herp
+株式会社10X,https://herp.careers/v1/10x,https://10x.co.jp,0,シリーズC,東京都,小売DX,probe:herp
+株式会社タイミー,https://herp.careers/v1/timee,https://timee.co.jp,1,上場済,東京都,スポットワーク,probe:herp
+株式会社マネーフォワード,https://hrmos.co/pages/moneyforward/jobs,https://moneyforward.com,1,上場済,東京都,フィンテック,probe:hrmos
