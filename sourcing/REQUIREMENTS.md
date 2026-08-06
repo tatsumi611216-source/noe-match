@@ -193,7 +193,7 @@ DB: SQLite（`sourcing/data/sourcing.db`）。スキーマは `schema.sql` を�
 |---|---|---|
 | Phase 0 | 要件定義・DB設計・DB初期化スクリプト | ✅ 完了 |
 | Phase 1a | 中核パイプライン（JobPosting抽出→名寄せ→分類→差分DB→スコア→HTMLレポート）＋一気通貫テスト | ✅ 完了（tests/test_pipeline.py 通過） |
-| Phase 1b | 起点リスト取り込み（JPX上場一覧・資金調達リリース）＋実サイトのクロール実装（robots/条件付き取得/並列） | 未着手 |
+| Phase 1b | 採用ページのクロール実装（robots/条件付き取得/並列）＋シードCSV取り込み＋gBizINFOエンリッチのパース | ◐ 中核実装済み（crawl.py/load_seed.py/http_cache.py/gbiz_client.py、tests/test_crawl.py 通過）。起点リストの自動生成とAPI実接続は残 |
 | Phase 2 | 定期実行化・差分キャッシュ本運用・JobPosting無しページのHTMLフォールバック・営業ステータス運用 | 未着手 |
 | Phase 3 | ハローワーク補完追加・スコア精緻化・CSVエクスポート | 未着手 |
 
