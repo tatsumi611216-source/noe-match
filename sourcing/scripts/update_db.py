@@ -15,36 +15,40 @@ from pathlib import Path
 
 from common import DEFAULT_DB, classify, connect, load_categories, normalize_company_name
 
+# meta から取り込みを許可する companies カラム（DATA_DICTIONARY.md と対応）
+COMPANY_FIELDS = [
+    "corporate_number", "industry", "industry_code", "business_summary",
+    "website", "careers_url", "representative_name", "established_date",
+    "capital_yen", "revenue_yen", "employee_count",
+    "postal_code", "prefecture", "city", "address", "phone",
+    "is_listed", "listing_market", "ticker",
+    "is_subsidiary", "parent_name", "parent_corporate_number", "ultimate_parent_name",
+    "is_foreign_affiliated", "foreign_parent_country", "foreign_ownership_pct",
+    "funding_stage", "first_funding_date", "last_funding_date", "last_funding_yen",
+    "total_funding_yen", "source_list", "gbiz_synced_at",
+]
+
 
 def upsert_company(conn: sqlite3.Connection, name: str, meta: dict, today: str) -> int:
+    """企業を名寄せしてupsert。渡されたメタ項目のみ更新（既存値をnullで潰さない）。"""
     norm = normalize_company_name(name)
+    fields = {k: meta.get(k) for k in COMPANY_FIELDS if k in meta}
     row = conn.execute("SELECT id FROM companies WHERE name_normalized = ?", (norm,)).fetchone()
     if row:
         cid = row[0]
-        conn.execute(
-            """UPDATE companies SET last_seen_at = ?, updated_at = datetime('now'),
-                   is_listed = COALESCE(?, is_listed),
-                   funding_stage = COALESCE(?, funding_stage),
-                   last_funding_date = COALESCE(?, last_funding_date),
-                   last_funding_yen = COALESCE(?, last_funding_yen),
-                   source_list = COALESCE(?, source_list),
-                   url = COALESCE(url, ?)
-               WHERE id = ?""",
-            (today, meta.get("is_listed"), meta.get("funding_stage"),
-             meta.get("last_funding_date"), meta.get("last_funding_yen"),
-             meta.get("source_list"), meta.get("url"), cid),
-        )
+        set_sql = ["last_seen_at = ?", "updated_at = datetime('now')"]
+        params = [today]
+        for k, v in fields.items():
+            set_sql.append(f"{k} = COALESCE(?, {k})")  # 新しい非null値が勝つ
+            params.append(v)
+        params.append(cid)
+        conn.execute(f"UPDATE companies SET {', '.join(set_sql)} WHERE id = ?", params)
         return cid
+    cols = ["name", "name_normalized", "first_seen_at", "last_seen_at", *fields.keys()]
+    vals = [name, norm, today, today, *fields.values()]
+    placeholders = ",".join("?" * len(cols))
     cur = conn.execute(
-        """INSERT INTO companies
-           (name, name_normalized, is_listed, funding_stage, last_funding_date,
-            last_funding_yen, source_list, url, prefecture, industry, employee_count,
-            first_seen_at, last_seen_at)
-           VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-        (name, norm, meta.get("is_listed", 0), meta.get("funding_stage"),
-         meta.get("last_funding_date"), meta.get("last_funding_yen"),
-         meta.get("source_list"), meta.get("url"), meta.get("prefecture"),
-         meta.get("industry"), meta.get("employee_count"), today, today),
+        f"INSERT INTO companies ({','.join(cols)}) VALUES ({placeholders})", vals
     )
     return cur.lastrowid
 

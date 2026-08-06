@@ -104,6 +104,44 @@ def run():
     assert all(r[0] != "大手製造㈱" for r in sales_view), "上場企業がv_sales_targets(未上場のみ)に混入"
     print(f"[OK] ビュー: v_startup_targets={startup_view} / 上場企業は未上場ビューから除外")
 
+    # --- 上場子会社・外資系の網羅項目取り込み ---
+    sub_records = [{"source_site": "sub_site", "source_job_id": "x1",
+                    "company_name": "大手製造テック株式会社", "title": "組込みエンジニア",
+                    "employment_type": "FULL_TIME", "location": "神奈川県", "salary_min": None,
+                    "salary_max": None, "url": "u", "posted_at": "2026-07-01"}]
+    ingest_batch(conn, [{
+        "company": {"name": "大手製造テック株式会社", "corporate_number": "1234567890123",
+                    "is_subsidiary": 1, "parent_name": "大手製造㈱",
+                    "ultimate_parent_name": "大手製造㈱", "capital_yen": 100_000_000,
+                    "employee_count": 300, "industry": "電子部品", "prefecture": "神奈川県",
+                    "source_list": "edinet"},
+        "records": sub_records,
+    }], "sub_site", "2026-08-06")
+
+    foreign_records = [{"source_site": "gj", "source_job_id": "f1",
+                        "company_name": "グローバルSaaSジャパン株式会社", "title": "エンタープライズ営業",
+                        "employment_type": "FULL_TIME", "location": "東京都", "salary_min": None,
+                        "salary_max": None, "url": "u", "posted_at": "2026-07-10"}]
+    ingest_batch(conn, [{
+        "company": {"name": "グローバルSaaSジャパン株式会社", "is_foreign_affiliated": 1,
+                    "foreign_parent_country": "米国", "foreign_ownership_pct": 100.0,
+                    "employee_count": 120, "funding_stage": "未公開", "prefecture": "東京都",
+                    "source_list": "toyokeizai"},
+        "records": foreign_records,
+    }], "gj", "2026-08-06")
+
+    sub = conn.execute(
+        "SELECT name, parent_name, corporate_number, capital_yen FROM v_group_targets"
+    ).fetchall()
+    assert any(r[0] == "大手製造テック株式会社" and r[1] == "大手製造㈱" for r in sub), \
+        f"上場子会社がv_group_targetsに出ない: {sub}"
+    fa = conn.execute(
+        "SELECT name, foreign_parent_country FROM companies WHERE is_foreign_affiliated=1"
+    ).fetchall()
+    assert fa and fa[0][1] == "米国", f"外資系フラグ取り込み失敗: {fa}"
+    print(f"[OK] 上場子会社: {sub[0][0]}←親{sub[0][1]} (法人番号{sub[0][2]}/資本金{sub[0][3]:,}円)")
+    print(f"[OK] 外資系: {fa[0][0]} (親会社国籍{fa[0][1]})")
+
     conn.close()
     db.unlink()
     print("\n=== 全テスト通過 ===")

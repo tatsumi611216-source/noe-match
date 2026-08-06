@@ -48,9 +48,9 @@ def _target_table(rows, cols):
 def build_html(conn, today: str) -> str:
     cat = _rows(conn, "SELECT category, active_jobs, companies FROM v_category_summary")
     startups = _rows(conn, """SELECT name, funding_stage, employee_count, last_funding_date,
-                                     priority_score, active_jobs, categories, prefecture, url
+                                     priority_score, active_jobs, categories, prefecture, website
                               FROM v_startup_targets LIMIT 50""")
-    listed = _rows(conn, """SELECT name, priority_score, active_jobs, categories, prefecture, url
+    listed = _rows(conn, """SELECT name, priority_score, active_jobs, categories, prefecture, website
                             FROM v_sales_targets LIMIT 50""")
     tot_companies = conn.execute("SELECT COUNT(*) FROM companies").fetchone()[0]
     tot_active = conn.execute("SELECT COUNT(*) FROM job_postings WHERE is_active=1").fetchone()[0]
