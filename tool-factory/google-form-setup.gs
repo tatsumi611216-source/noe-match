@@ -91,3 +91,22 @@ function createNoeOrderForm() {
   Logger.log('編集用URL: ' + form.getEditUrl());
   Logger.log('回答スプレッドシート: ' + ss.getUrl());
 }
+
+// ---- 通知設定（任意・推奨）----
+// setupNotification を1回実行すると、発注のたびに回答内容つきメールがオーナーに届く。
+// （フォーム編集画面の「回答 → ⋮ → メール通知」でも可。ただしそちらは中身が書かれない）
+
+function setupNotification() {
+  var form = FormApp.openById('1UoMR8Y1PC1brGiRAI5RjIzEckXN0FikbMLap30zKAyU');
+  ScriptApp.newTrigger('onOrderSubmit').forForm(form).onFormSubmit().create();
+}
+
+function onOrderSubmit(e) {
+  var body = '新しいツール発注が届きました。\n\n';
+  e.response.getItemResponses().forEach(function (ir) {
+    body += '■ ' + ir.getItem().getTitle() + '\n' + ir.getResponse() + '\n\n';
+  });
+  body += '回答シート:\nhttps://docs.google.com/spreadsheets/d/1GCjb_S944rh5Pzd2F5RBkJf6gIjiePr1VSpgkzjuCtQ/edit\n\n';
+  body += 'この発注で進める場合は、Claudeに\n「Google Formの発注を確認して提案書を作って」と伝えてください。';
+  MailApp.sendEmail(Session.getActiveUser().getEmail(), '【Noe工場】新しいツール発注', body);
+}
