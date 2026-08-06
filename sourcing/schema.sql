@@ -211,6 +211,22 @@ WHERE c.is_subsidiary = 1
 GROUP BY c.id
 ORDER BY c.priority_score DESC, active_jobs DESC;
 
+-- 上場企業の営業リスト（採用の困り度順）。上場は新規開拓の旨みは薄いが参照用に保持
+CREATE VIEW IF NOT EXISTS v_listed_targets AS
+SELECT
+    c.id, c.name, c.ticker, c.listing_market, c.industry, c.prefecture,
+    c.employee_count, c.priority_score, c.sales_status,
+    COUNT(jp.id)                    AS active_jobs,
+    GROUP_CONCAT(DISTINCT cat.name) AS categories,
+    c.website, c.careers_url
+FROM companies c
+JOIN job_postings jp ON jp.company_id = c.id AND jp.is_active = 1
+LEFT JOIN categories cat ON cat.id = jp.category_id
+WHERE c.is_listed = 1
+  AND c.sales_status IN ('未接触', 'アプローチ中')
+GROUP BY c.id
+ORDER BY c.priority_score DESC, active_jobs DESC;
+
 -- カテゴリ別サマリー
 CREATE VIEW IF NOT EXISTS v_category_summary AS
 SELECT

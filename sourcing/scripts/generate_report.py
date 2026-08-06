@@ -50,8 +50,9 @@ def build_html(conn, today: str) -> str:
     startups = _rows(conn, """SELECT name, funding_stage, employee_count, last_funding_date,
                                      priority_score, active_jobs, categories, prefecture, website
                               FROM v_startup_targets LIMIT 50""")
-    listed = _rows(conn, """SELECT name, priority_score, active_jobs, categories, prefecture, website
-                            FROM v_sales_targets LIMIT 50""")
+    listed = _rows(conn, """SELECT name, ticker, listing_market, priority_score, active_jobs,
+                                   categories, employee_count, prefecture, website
+                            FROM v_listed_targets LIMIT 50""")
     tot_companies = conn.execute("SELECT COUNT(*) FROM companies").fetchone()[0]
     tot_active = conn.execute("SELECT COUNT(*) FROM job_postings WHERE is_active=1").fetchone()[0]
 
@@ -66,8 +67,9 @@ def build_html(conn, today: str) -> str:
     startup_cols = [("name", "企業"), ("funding_stage", "調達"), ("last_funding_date", "調達日"),
                     ("employee_count", "従業員"), ("priority_score", "困り度"),
                     ("active_jobs", "求人"), ("categories", "職種"), ("prefecture", "地域")]
-    listed_cols = [("name", "企業"), ("priority_score", "困り度"), ("active_jobs", "求人"),
-                   ("categories", "職種"), ("prefecture", "地域")]
+    listed_cols = [("name", "企業"), ("ticker", "証券コード"), ("listing_market", "市場"),
+                   ("priority_score", "困り度"), ("active_jobs", "求人"), ("categories", "職種"),
+                   ("employee_count", "従業員"), ("prefecture", "地域")]
 
     return f"""<!doctype html><html lang="ja"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
