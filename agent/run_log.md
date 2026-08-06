@@ -1,7 +1,37 @@
 # Agent Run Log
 
 ---
-⚠️ **Phase 4-0 警告（2026-08-03現在）**：`agent/asp_results.md` の `last_updated` が未記入のため、Phase 4-0 ゲートが有効です。新規記事へのアフィリエイトCTAブロック追加は停止中。ASP管理画面の成果データを `agent/asp_results.md` に貼り付けてください（Phase 4へ移行するために必要です）。
+⚠️ **Phase 4-0 警告（2026-08-06現在）**：`agent/asp_results.md` の `last_updated` が未記入のため、Phase 4-0 ゲートが有効です。新規記事へのアフィリエイトCTAブロック追加は停止中。ASP管理画面の成果データを `agent/asp_results.md` に貼り付けてください（Phase 4へ移行するために必要です）。
+---
+
+## 2026-08-06　週次記事工場ラン｜型A×2本生成（zexy-enmusubi-data / pairs-kaiin-data）
+
+### 実施内容
+
+- `zexy-enmusubi-data/index.html` 生成完了
+  - タイトル：ゼクシィ縁結びの成婚率｜リクルートが公表している数字と、していない数字【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：田中さん（35歳・営業職・女性）、中村さん（38歳・教員・男性）
+  - 内部リンク5本 / Phase 4-0によりCTAブロックなし
+
+- `pairs-kaiin-data/index.html` 生成完了
+  - タイトル：Pairs（ペアーズ）の会員数は本当に2,700万人？累計と稼働の違いを正直に整理する【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：吉田さん（34歳・SE・男性）、松本さん（37歳・看護師・女性）
+  - 内部リンク4本 / Phase 4-0によりCTAブロックなし（Pairsアフィリエイト2024年9月終了）
+
+- `sitemap.xml` / `sitemap-all.xml` に2記事分URLを追加（lastmod: 2026-08-06）
+- `index.html` 更新：全148記事（hero badge）/ 全153記事（h2）/ データ・統計19記事 / arc-no 18/19追加
+- `keyword_queue.json` 2件（zexy-enmusubi-data, pairs-kaiin-data）をdoneに更新
+- `factory_audit.py`：FAIL 0件 / 構造エラー 0件 ✅
+- `silent_scan.py` 実行：表示ゼロ48本 / サイト外固有修飾64.3%到達
+- サイレント記事寄せ直し2本（age-data, late-20s-strategy）：タイトル/h1/メタを30代婚活・25〜29歳婚活軸に修正
+- note下書き生成：zexy-enmusubi-data.md / pairs-kaiin-data.md
+
+### Phase 4-0 対応メモ
+
+`asp_results.md` の `last_updated` が「（未記入）」のままのため、新規2記事にはアフィリエイトCTAブロックを設置せず。関連記事ボックスへの内部リンク（CTA記事への誘導）のみ実施。
+
 ---
 
 ## 2026-08-03　週次記事工場ラン｜型A×2本生成（youbride-seikon-data / marrish-saikon-data）
