@@ -14,6 +14,7 @@ import json
 import re
 import threading
 import time
+import urllib.request
 import urllib.robotparser
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
@@ -47,10 +48,14 @@ def allowed_by_robots(url: str) -> bool:
     with _robots_lock:
         rp = _robots_cache.get(host, "unset")
     if rp == "unset":
+        # rp.read() はタイムアウト指定不可でハングし得るため、自前で取得してparseする
         rp = urllib.robotparser.RobotFileParser()
         try:
-            rp.set_url(host + "/robots.txt")
-            rp.read()
+            req = urllib.request.Request(host + "/robots.txt",
+                                         headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                body = resp.read(65536).decode("utf-8", "replace")
+            rp.parse(body.splitlines())
         except Exception:
             rp = None  # robots取得失敗時は保守的にアクセスを許可（一般的挙動）
         with _robots_lock:
