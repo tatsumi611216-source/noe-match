@@ -31,10 +31,12 @@ class HttpCache:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(json.dumps(self.data, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    def fetch(self, url: str, timeout: int = 20) -> tuple[str | None, str]:
+    def fetch(self, url: str, timeout: int = 20, force: bool = False) -> tuple[str | None, str]:
         """(本文, 状態) を返す。状態: 'fetched' / 'not_modified' / 'error:xxx'。
 
         304 のときは本文 None・状態 'not_modified'（呼び出し側で再取り込み不要と判断）。
+        force=True で条件付きヘッダを送らず必ず本文を取得する
+        （求人0件の企業はキャッシュに関わらず再探索したい場合に使う）。
         """
         parsed = urlparse(url)
         if parsed.scheme == "file":
@@ -43,7 +45,7 @@ class HttpCache:
             except OSError as e:
                 return None, f"error:{e}"
 
-        prev = self.data.get(url, {})
+        prev = {} if force else self.data.get(url, {})
         headers = {"User-Agent": USER_AGENT}
         if prev.get("etag"):
             headers["If-None-Match"] = prev["etag"]
