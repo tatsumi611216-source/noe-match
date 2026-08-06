@@ -74,6 +74,7 @@
 |---|---|---|---|
 | input/context-intake | ユーザーから質の高い文脈を引き出す質問テンプレ＋品質スコア | noe-brain | noe-brain |
 | input/mode-detection | 入力内容からモード・トリガーを自動判定して分岐 | noe-brain, secretary | noe-brain, secretary |
+| input/spec-drilldown | ヒアリング後に案件専用の追加質問を生成して要件確定 | ツール発注フロー | noe-tool-factory |
 
 ### quality（品質系）
 
@@ -111,6 +112,7 @@
 | output/html-report | HTMLレポートの標準構成とスタイル指針 | web-data-pipeline | web-data-pipeline, keiba-yoso |
 | output/secretary-tone | 秘書口調・先回り報告フォーマット | secretary | secretary |
 | output/meta-evolution | 出力末尾に次回改良ポイントを自動出力 | noe-brain | noe-brain |
+| output/proposal-doc | 製造前の提案書（出力サンプル・スコープ外・検収条件） | ツール発注フロー | noe-tool-factory |
 
 ### integration（連携系）
 
