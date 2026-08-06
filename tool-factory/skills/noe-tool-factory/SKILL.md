@@ -39,10 +39,13 @@ description: >
 入力が以下のいずれかなら、フォーム発注として扱う：
 - 「【自動化ヒアリングシート】」を含むテキスト（Webフォームが生成）
 - Google Form等の回答の貼り付け（質問と回答の羅列）
-- **「Google Formの発注を確認して」等の指示**：Google Driveから
-  スプレッドシート「Noe ツール発注 回答」を検索して開き、**最新行**（タイムスタンプが最も新しい行）を
+- **「Google Formの発注を確認して」等の指示**：回答スプレッドシート
+  「Noe ツール発注 回答」（ID: `1GCjb_S944rh5Pzd2F5RBkJf6gIjiePr1VSpgkzjuCtQ`）を
+  Google Drive連携で開き、**最新行**（タイムスタンプが最も新しい行）を
   ヒアリングシートとして読み込む。未処理の行が複数ある場合は一覧を見せてどれを製造するか確認する。
-  （フォーム自体の作り方は `tool-factory/google-form-setup.gs` を参照）
+  IDで見つからない場合は名前「Noe ツール発注 回答」でDriveを検索する。
+  （フォーム自体の作り方は `tool-factory/google-form-setup.gs` を参照。
+  フォーム回答用URL: https://docs.google.com/forms/d/e/1FAIpQLSc_wpqT4VoR40J4sWU41VWm6evK-U5T96LIEwb1MuuTd2eNYQ/viewform ）
 
 処理：
 1. **実現可否の正式判定を最初に行う**（STEP 0.5）。判定を通過するまで製造に入らない
