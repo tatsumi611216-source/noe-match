@@ -78,8 +78,24 @@ def _throttle(url: str):
         _domain_last[host] = time.time()
 
 
+def _registrable_root(host: str) -> str:
+    """www.等の先頭ラベルを外した比較用ルート。example.co.jp / example.jp 両対応の簡易版。"""
+    host = host.lower()
+    return host[4:] if host.startswith("www.") else host
+
+
+def _same_site(host: str, base_host: str) -> bool:
+    """同一サイト判定: 完全一致 or 互いのルートのサブドメイン（recruit.xxx.co.jp等を許可）。"""
+    h, b = _registrable_root(host), _registrable_root(base_host)
+    return h == b or h.endswith("." + b) or b.endswith("." + h)
+
+
 def discover_job_links(base_url: str, html: str, limit: int = MAX_DISCOVER_PAGES) -> list[str]:
-    """採用トップのHTMLから、求人一覧/詳細らしき同一ホストのリンクを抽出する。"""
+    """採用トップのHTMLから、求人一覧/詳細らしき同一サイトのリンクを抽出する。
+
+    大手は採用を recruit.example.co.jp 等のサブドメインに置くことが多いため、
+    同一ドメイン配下のサブドメインまで許可する（外部ドメインは辿らない）。
+    """
     base = urlparse(base_url)
     seen, links = set(), []
     for href in _HREF_RE.findall(html):
@@ -87,9 +103,9 @@ def discover_job_links(base_url: str, html: str, limit: int = MAX_DISCOVER_PAGES
             continue
         full = urljoin(base_url, href)
         p = urlparse(full)
-        # 同一ホストのhttp(s)のみ。file://はテスト用にbaseがfileの場合のみ許可
+        # 同一サイトのhttp(s)のみ。file://はテスト用にbaseがfileの場合のみ許可
         if p.scheme in ("http", "https"):
-            if p.netloc != base.netloc:
+            if not _same_site(p.netloc, base.netloc):
                 continue
         elif not (p.scheme == "file" and base.scheme == "file"):
             continue
@@ -110,10 +126,11 @@ def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:
     url = item["careers_url"]
     company = item.get("company", {})
     name = company.get("name", "")
+    force = bool(item.get("force"))  # 求人0件の企業はキャッシュ無視で再探索
     if not allowed_by_robots(url):
         return {"status": "robots_blocked", "company": company, "records": [], "pages": 0}
     _throttle(url)
-    html, state = cache.fetch(url)
+    html, state = cache.fetch(url, force=force)
     if state == "not_modified":
         return {"status": "not_modified", "company": company, "records": [], "pages": 0}
     if state.startswith("error") or html is None:
@@ -141,6 +158,18 @@ def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:
 
 def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: int = 8) -> dict:
     cache = HttpCache()
+    # 有効求人が1件も無い企業は、ページ未更新でも再探索する（not_modifiedの罠回避）
+    from common import normalize_company_name
+    for item in seed:
+        name = item.get("company", {}).get("name", "")
+        row = conn.execute(
+            """SELECT COUNT(jp.id) FROM companies c
+               LEFT JOIN job_postings jp ON jp.company_id = c.id AND jp.is_active = 1
+               WHERE c.name_normalized = ? GROUP BY c.id""",
+            (normalize_company_name(name),),
+        ).fetchone()
+        if not row or row[0] == 0:
+            item["force"] = True
     results = []
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futures = {ex.submit(crawl_one, it, source_site, cache): it for it in seed}
