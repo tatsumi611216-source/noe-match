@@ -1,0 +1,76 @@
+name: Deploy to Pages
+
+# 従来は GitHub Pages の legacy ビルド（ブランチ直publish）を使っていたが、
+# 2026-08-06 に deployment が errored のまま復帰せず、4回以上デプロイが未反映になった。
+# あわせて legacy はリポジトリ直下を丸ごと公開するため、agent/AGENT.md（アフィリ台帳）や
+# scripts/ が外部から取得できる状態になっていた。
+# → Actions ビルドに切り替え、公開するものを許可リストで明示する方式にした。
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'sourcing/**'
+      - 'agent/**'
+      - 'scripts/**'
+      - '.github/workflows/sourcing-crawl.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 進行中のデプロイは止めない（止めると errored 状態を招きやすい）
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 公開するものだけを _site に集める
+        run: |
+          set -eu
+          mkdir -p _site
+          # ディレクトリ
+          cp -r articles _site/
+          cp -r images _site/
+          # ページ本体
+          cp index.html about.html disclaimer.html privacy-policy.html _site/
+          # クローラ向け
+          cp sitemap.xml sitemap-all.xml robots.txt CNAME _site/
+          touch _site/.nojekyll
+          # サイト所有権の確認ファイル（消すと GSC / Bing の認証が外れる）
+          cp google4df9c44513d0200e.html _site/
+          cp 28fb2874520d40719aa81fc0618e863b.txt _site/
+
+      - name: 公開してはいけないものが混ざっていないか確認
+        run: |
+          set -eu
+          fail=0
+          for p in agent scripts sourcing build_articles.py server.py complete_implementation.py README.md; do
+            if [ -e "_site/$p" ]; then echo "::error::_site に $p が混入している"; fail=1; fi
+          done
+          if find _site -name '*.py' -o -name '*.env*' | grep -q .; then
+            echo "::error::_site に .py / .env が混入している"; find _site -name '*.py' -o -name '*.env*'; fail=1
+          fi
+          [ "$fail" -eq 0 ] || exit 1
+          echo "記事数: $(find _site/articles -name index.html | wc -l)"
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
