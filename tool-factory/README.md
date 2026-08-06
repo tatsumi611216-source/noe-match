@@ -24,9 +24,13 @@
 
 ```
 tool-factory/
-  README.md            ← このファイル（工場の概要）
-  PARTS_CATALOG.md     ← 部品カタログ（全部品の一覧・既存ツールの分解結果）
-  ASSEMBLY_GUIDE.md    ← 組み立てガイド（SKILL.mdテンプレ＋製造手順）
+  README.md                 ← このファイル（工場の概要）
+  AI_TOOL_DESIGN_CANVAS.md  ← 理論書（キャンバスの理論→実ツール解剖→読者向け応用手順）
+  PARTS_CATALOG.md          ← 部品カタログ（全部品の一覧・既存ツールの分解結果）
+  ASSEMBLY_GUIDE.md         ← 組み立てガイド（SKILL.mdテンプレ＋製造手順）
+  ORDER_FORM.md             ← 自動化ヒアリングシート（質問セット・実現可否基準・部品マッピング）
+  order-form.html           ← 発注フォーム（ヒアリング→実現可否判定→発注書生成）
+  canvas.html               ← キャンバス可視化（内部資料・既存ツールの部品構成を投影）
   parts/               ← 部品ライブラリ（コピペで使える組み込みブロック）
     input/             ← 入力系（文脈引き出し・モード判定）
     quality/           ← 品質系（スコアリング・裏取り・具体性強制）

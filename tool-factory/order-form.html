@@ -15,110 +15,98 @@
     --steel-soft: #E3EBF3;
     --safety: #D8641F;
     --safety-soft: #F9E9DD;
+    --ok: #2E7D4F;
+    --ok-soft: #E2F0E8;
+    --warn: #B26A00;
+    --warn-soft: #F7EDD9;
     --chip-bg: #EEF1F0;
     --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --paper: #151A21;
-      --card: #1D242E;
-      --ink: #E7EAED;
-      --ink-soft: #9AA5B1;
-      --line: #333D49;
-      --steel: #7FA9D4;
-      --steel-soft: #24344A;
-      --safety: #E8834A;
-      --safety-soft: #43301F;
-      --chip-bg: #26303C;
+      --paper: #151A21; --card: #1D242E; --ink: #E7EAED; --ink-soft: #9AA5B1;
+      --line: #333D49; --steel: #7FA9D4; --steel-soft: #24344A;
+      --safety: #E8834A; --safety-soft: #43301F;
+      --ok: #6FBF8F; --ok-soft: #1E3528; --warn: #E0A64E; --warn-soft: #3D2F1B; --chip-bg: #26303C;
     }
   }
   :root[data-theme="dark"] {
     --paper: #151A21; --card: #1D242E; --ink: #E7EAED; --ink-soft: #9AA5B1;
     --line: #333D49; --steel: #7FA9D4; --steel-soft: #24344A;
-    --safety: #E8834A; --safety-soft: #43301F; --chip-bg: #26303C;
+    --safety: #E8834A; --safety-soft: #43301F;
+    --ok: #6FBF8F; --ok-soft: #1E3528; --warn: #E0A64E; --warn-soft: #3D2F1B; --chip-bg: #26303C;
   }
   :root[data-theme="light"] {
     --paper: #F3F4F2; --card: #FFFFFF; --ink: #1B2530; --ink-soft: #55606C;
     --line: #D8DCDB; --steel: #33618F; --steel-soft: #E3EBF3;
-    --safety: #D8641F; --safety-soft: #F9E9DD; --chip-bg: #EEF1F0;
+    --safety: #D8641F; --safety-soft: #F9E9DD;
+    --ok: #2E7D4F; --ok-soft: #E2F0E8; --warn: #B26A00; --warn-soft: #F7EDD9; --chip-bg: #EEF1F0;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
+    margin: 0; background: var(--paper); color: var(--ink);
     font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
-    line-height: 1.65;
-    font-size: 15px;
+    line-height: 1.65; font-size: 15px;
   }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 80px; }
   header.masthead { border-bottom: 3px solid var(--ink); padding-bottom: 14px; margin-bottom: 26px; }
-  .eyebrow {
-    font-size: 11px; letter-spacing: .18em; color: var(--steel);
-    font-weight: 700; text-transform: uppercase; margin: 0 0 4px;
-  }
+  .eyebrow { font-size: 11px; letter-spacing: .18em; color: var(--steel); font-weight: 700; text-transform: uppercase; margin: 0 0 4px; }
   h1 { font-size: 26px; font-weight: 800; margin: 0; letter-spacing: .02em; text-wrap: balance; }
   .masthead p.lead { margin: 8px 0 0; color: var(--ink-soft); max-width: 46em; }
-  .cols { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,420px); gap: 26px; align-items: start; }
+  .flow { display: flex; gap: 8px; margin-top: 12px; font-family: var(--mono); font-size: 11px; color: var(--ink-soft); flex-wrap: wrap; }
+  .flow b { color: var(--steel); }
+  .cols { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,430px); gap: 26px; align-items: start; }
   @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } .preview { position: static !important; } }
 
-  fieldset.block {
-    border: 1px solid var(--line); border-radius: 6px; background: var(--card);
-    margin: 0 0 16px; padding: 16px 18px 14px;
-  }
-  fieldset.block legend {
-    display: flex; align-items: center; gap: 8px;
-    font-weight: 800; font-size: 14px; padding: 0 8px; letter-spacing: .04em;
-  }
+  fieldset.block { border: 1px solid var(--line); border-radius: 6px; background: var(--card); margin: 0 0 16px; padding: 16px 18px 14px; }
+  fieldset.block legend { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 14px; padding: 0 8px; letter-spacing: .04em; }
   legend .bno {
     display: inline-flex; align-items: center; justify-content: center;
-    min-width: 22px; height: 22px; border-radius: 3px;
+    min-width: 22px; height: 22px; border-radius: 3px; padding: 0 5px;
     background: var(--steel); color: var(--card);
     font-family: var(--mono); font-size: 12px; font-weight: 700;
   }
-  legend .cat { color: var(--steel); font-family: var(--mono); font-size: 11px; letter-spacing: .12em; }
   .q { font-size: 13px; color: var(--ink-soft); margin: 2px 0 10px; }
-  label.opt {
-    display: flex; gap: 10px; align-items: flex-start;
-    padding: 8px 10px; border: 1px solid transparent; border-radius: 5px; cursor: pointer;
-  }
+  label.opt { display: flex; gap: 10px; align-items: flex-start; padding: 8px 10px; border: 1px solid transparent; border-radius: 5px; cursor: pointer; }
   label.opt:hover { background: var(--chip-bg); }
   label.opt input { margin-top: 4px; accent-color: var(--steel); flex: none; }
   label.opt.checked { background: var(--steel-soft); border-color: var(--steel); }
   .opt-name { font-weight: 700; }
-  .opt-part {
-    font-family: var(--mono); font-size: 11px; color: var(--steel);
-    background: var(--chip-bg); border-radius: 3px; padding: 1px 6px; margin-left: 6px; white-space: nowrap;
-  }
-  .opt-part.new { color: var(--safety); }
   .opt-func { display: block; font-size: 12.5px; color: var(--ink-soft); }
+  .flag { font-family: var(--mono); font-size: 10px; border-radius: 3px; padding: 1px 6px; margin-left: 6px; white-space: nowrap; vertical-align: 1px; }
+  .flag.ok { color: var(--ok); background: var(--ok-soft); }
+  .flag.cond { color: var(--warn); background: var(--warn-soft); }
+  .flag.ng { color: var(--safety); background: var(--safety-soft); }
   input[type="text"], textarea {
     width: 100%; border: 1px solid var(--line); border-radius: 5px;
-    background: var(--paper); color: var(--ink);
-    padding: 9px 11px; font: inherit; font-size: 14px;
+    background: var(--paper); color: var(--ink); padding: 9px 11px; font: inherit; font-size: 14px;
   }
-  textarea { min-height: 64px; resize: vertical; }
-  input[type="text"]:focus, textarea:focus, label.opt input:focus-visible {
-    outline: 2px solid var(--steel); outline-offset: 1px;
-  }
+  textarea { min-height: 72px; resize: vertical; }
+  input[type="text"]:focus, textarea:focus, label.opt input:focus-visible { outline: 2px solid var(--steel); outline-offset: 1px; }
 
   .preview { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 14px; }
   .panel { border: 1px solid var(--line); border-radius: 6px; background: var(--card); padding: 16px 18px; }
-  .panel h2 {
-    margin: 0 0 10px; font-size: 12px; letter-spacing: .16em; color: var(--ink-soft);
-    font-weight: 700; text-transform: uppercase;
-  }
-  table.canvas { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  table.canvas td { border-top: 1px solid var(--line); padding: 6px 4px; vertical-align: top; }
-  table.canvas td.b { font-family: var(--mono); color: var(--steel); white-space: nowrap; font-size: 11px; padding-right: 10px; }
-  table.canvas td.v { color: var(--ink); }
-  table.canvas td.v .none { color: var(--ink-soft); }
-  .count { font-variant-numeric: tabular-nums; font-weight: 800; color: var(--steel); }
+  .panel h2 { margin: 0 0 10px; font-size: 12px; letter-spacing: .16em; color: var(--ink-soft); font-weight: 700; text-transform: uppercase; }
+  .verdict { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 5px; margin-bottom: 12px; }
+  .verdict .mark { font-size: 30px; font-weight: 800; line-height: 1; }
+  .verdict .vtitle { font-weight: 800; }
+  .verdict .vsub { display: block; font-size: 12px; font-weight: 400; color: var(--ink-soft); }
+  .verdict.v-ok { background: var(--ok-soft); } .verdict.v-ok .mark, .verdict.v-ok .vtitle { color: var(--ok); }
+  .verdict.v-cond { background: var(--warn-soft); } .verdict.v-cond .mark, .verdict.v-cond .vtitle { color: var(--warn); }
+  .verdict.v-ng { background: var(--safety-soft); } .verdict.v-ng .mark, .verdict.v-ng .vtitle { color: var(--safety); }
+  .verdict.v-none { background: var(--chip-bg); } .verdict.v-none .mark, .verdict.v-none .vtitle { color: var(--ink-soft); }
+  ul.reasons { margin: 0; padding-left: 0; list-style: none; font-size: 12.5px; }
+  ul.reasons li { padding: 5px 0 5px 22px; position: relative; border-top: 1px dashed var(--line); }
+  ul.reasons li:first-child { border-top: 0; }
+  ul.reasons li::before { position: absolute; left: 0; font-weight: 800; }
+  ul.reasons li.r-ok::before { content: "✓"; color: var(--ok); }
+  ul.reasons li.r-cond::before { content: "▲"; color: var(--warn); font-size: 10px; top: 8px; }
+  ul.reasons li.r-ng::before { content: "✕"; color: var(--safety); }
+  .partsline { font-family: var(--mono); font-size: 10.5px; color: var(--ink-soft); margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
   pre.order {
     margin: 0; font-family: var(--mono); font-size: 11.5px; line-height: 1.6;
     background: var(--paper); border: 1px dashed var(--line); border-radius: 5px;
-    padding: 12px; white-space: pre-wrap; word-break: break-word;
-    max-height: 300px; overflow: auto;
+    padding: 12px; white-space: pre-wrap; word-break: break-word; max-height: 260px; overflow: auto;
   }
   .copybtn {
     display: block; width: 100%; margin-top: 10px;
@@ -126,7 +114,8 @@
     font: inherit; font-weight: 800; font-size: 15px; letter-spacing: .06em;
     padding: 12px; cursor: pointer;
   }
-  .copybtn:hover { filter: brightness(1.08); }
+  .copybtn:disabled { opacity: .45; cursor: not-allowed; }
+  .copybtn:hover:not(:disabled) { filter: brightness(1.08); }
   .copybtn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
   .hint { font-size: 12px; color: var(--ink-soft); margin-top: 8px; }
   .stamp {
@@ -136,150 +125,125 @@
   }
   @media (prefers-reduced-motion: no-preference) {
     label.opt { transition: background .12s, border-color .12s; }
+    .verdict { transition: background .2s; }
   }
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="masthead">
-    <p class="eyebrow">Noe Tool-Making Factory / Order Sheet</p>
-    <h1>ツール発注フォーム</h1>
-    <p class="lead">質問に答えるだけで、部品が自動選定され「発注書」ができます。発注書をコピーしてClaudeに貼れば、工場（noe-tool-factory）が製造を開始します。番号①〜⑦はAIツールデザインキャンバスの7ブロックです。</p>
+    <p class="eyebrow">Noe Tool-Making Factory / Hearing Sheet</p>
+    <h1>ツール発注フォーム — 自動化ヒアリングシート</h1>
+    <p class="lead">「自動化したいこと」を軸に作業をブレイクダウンしていくと、右側で実現可否がその場で判定されます。判定を確認してから発注してください。部品の選定は工場が裏側で行います。</p>
+    <p class="flow"><b>❶ ヒアリング</b> → <b>❷ 実現可否判定</b> → <b>❸ 発注</b> → 工場が製造（部品選定・組み立て・試運転）</p>
   </header>
 
   <div class="cols">
     <form id="form">
       <fieldset class="block">
-        <legend><span class="bno">0</span>ツールの基本情報</legend>
-        <p class="q">名前は仮でOK。一言定義が発注の核になります。</p>
-        <p><input type="text" id="toolname" placeholder="ツール名（仮）例：物件めきき"></p>
-        <p style="margin-bottom:0"><textarea id="oneliner" placeholder="一言定義：誰が・何に困っていて・何を出すツール？&#10;例：中古物件を探す自分が、割安か判断できずに困っている。候補物件をスコア付きレポートで出すツール。"></textarea></p>
-      </fieldset>
-
-      <fieldset class="block" data-block="1">
-        <legend><span class="bno">①</span>INPUT <span class="cat">入力の受け取り方</span></legend>
-        <p class="q">ツールへの頼み方に近いものを選ぶ（複数可）</p>
-        <label class="opt"><input type="checkbox" data-part="input/mode-detection">
-          <span><span class="opt-name">話しかけたら内容で自動判定してほしい</span><span class="opt-part">input/mode-detection</span>
-          <span class="opt-func">モード・キーワードを自動判定して分岐する</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="input/context-intake">
-          <span><span class="opt-name">最初に質問で詳しい文脈を引き出してほしい</span><span class="opt-part">input/context-intake</span>
-          <span class="opt-func">1回の質問で質の高い入力を引き出し、質を採点する</span></span></label>
-      </fieldset>
-
-      <fieldset class="block" data-block="4">
-        <legend><span class="bno">④</span>DATA <span class="cat">外部データ</span></legend>
-        <p class="q">外のデータを使う？（複数可・使わなければ未選択でOK）</p>
-        <label class="opt"><input type="checkbox" data-part="data/web-scraping data/file-per-item data/auto-parse data/screening">
-          <span><span class="opt-name">Webサイトからデータを集める</span><span class="opt-part">data/web-scraping ほか3部品</span>
-          <span class="opt-func">取得ルール・1件1ファイル・自動パース・足切りのセット</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="data/diff-cache">
-          <span><span class="opt-name">同じデータを定期的に取り直す</span><span class="opt-part">data/diff-cache</span>
-          <span class="opt-func">前回データを再利用して取得量を減らす</span></span></label>
-      </fieldset>
-
-      <fieldset class="block" data-block="3">
-        <legend><span class="bno">③</span>PROCESS <span class="cat">中核の処理</span></legend>
-        <p class="q">ツールの「本体」に近い動きは？（複数可）</p>
-        <label class="opt"><input type="checkbox" data-part="process/stress-test">
-          <span><span class="opt-name">出した案の弱点・失敗理由も出してほしい</span><span class="opt-part">process/stress-test</span>
-          <span class="opt-func">カテゴリ別に失敗理由と回避行動を強制生成する</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="process/debate-engine">
-          <span><span class="opt-name">賛成・反対を討論させて検証してほしい</span><span class="opt-part">process/debate-engine</span>
-          <span class="opt-func">討論者2名＋審判のターン制討論で穴を壊す</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="process/action-design">
-          <span><span class="opt-name">結論を「すぐやる行動」に落としてほしい</span><span class="opt-part">process/action-design</span>
-          <span class="opt-func">誰に・何を・どうやって・いつまでに、の即実行形式</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="__custom__">
-          <span><span class="opt-name">独自の計算・スコアリングがある</span><span class="opt-part new">新造（固有ロジック）</span>
-          <span class="opt-func">例：EV計算のような案件固有の処理。下の補足欄に内容を書く</span></span></label>
-      </fieldset>
-
-      <fieldset class="block" data-block="2">
-        <legend><span class="bno">②</span>QUALITY <span class="cat">品質の担保</span></legend>
-        <p class="q">出力の質をどう守る？（複数可）</p>
-        <label class="opt"><input type="checkbox" data-part="quality/fact-check">
-          <span><span class="opt-name">数字はWeb検索で裏取りしてほしい</span><span class="opt-part">quality/fact-check</span>
-          <span class="opt-func">重要数値を検索で照合し、補正値だけを使わせる</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="quality/confidence-score">
-          <span><span class="opt-name">結論の信頼度を採点してほしい</span><span class="opt-part">quality/confidence-score</span>
-          <span class="opt-func">A〜Eで自己採点し、A未満は改善ロードマップを出す</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="quality/concreteness-rules">
-          <span><span class="opt-name">抽象論禁止。固有名詞と数値で語らせたい</span><span class="opt-part">quality/concreteness-rules</span>
-          <span class="opt-func">「一般的には」等を禁止し具体性を強制する</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="quality/branch-table">
-          <span><span class="opt-name">途中に合否ゲートを置いて足切りしたい</span><span class="opt-part">quality/branch-table</span>
-          <span class="opt-func">多軸チェック→結果で機械的に分岐・停止する</span></span></label>
-      </fieldset>
-
-      <fieldset class="block" data-block="5">
-        <legend><span class="bno">⑤</span>OUTPUT <span class="cat">出力の形</span></legend>
-        <p class="q">最後に何が出てきてほしい？（複数可）</p>
-        <label class="opt"><input type="checkbox" data-part="output/summary-table">
-          <span><span class="opt-name">1画面のサマリー表</span><span class="opt-part">output/summary-table</span>
-          <span class="opt-func">全工程の結論を7行以内の表に圧縮する</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="output/html-report">
-          <span><span class="opt-name">HTMLレポート</span><span class="opt-part">output/html-report</span>
-          <span class="opt-func">注目上位＋全データ表＋注記の標準構成レポート</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="output/secretary-tone">
-          <span><span class="opt-name">秘書口調の短い報告</span><span class="opt-part">output/secretary-tone</span>
-          <span class="opt-func">要点先出し・箇条書き・先回りの一言</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="output/meta-evolution">
-          <span><span class="opt-name">毎回「次回の改良ポイント」も出してほしい</span><span class="opt-part">output/meta-evolution</span>
-          <span class="opt-func">出力末尾に改良ヒントを1つ出し、進化サイクルを回す</span></span></label>
-      </fieldset>
-
-      <fieldset class="block" data-block="6">
-        <legend><span class="bno">⑥</span>INTEGRATION <span class="cat">連携</span></legend>
-        <p class="q">他のサービス・ツールとつなぐ？（複数可）</p>
-        <label class="opt"><input type="checkbox" data-part="integration/notion-task">
-          <span><span class="opt-name">結果をNotionに登録・記録したい</span><span class="opt-part">integration/notion-task</span>
-          <span class="opt-func">NotionのDBへ登録・ステータス更新する定型処理</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="integration/scheduled-task">
-          <span><span class="opt-name">毎日・毎週など定期実行したい</span><span class="opt-part">integration/scheduled-task</span>
-          <span class="opt-func">朝キャッシュ／日中分析／夜突合の3分割で自動化</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="integration/skill-handoff">
-          <span><span class="opt-name">条件次第で別ツールに引き継ぎたい</span><span class="opt-part">integration/skill-handoff</span>
-          <span class="opt-func">要否を判定し、起動コマンドと合流コマンドを生成</span></span></label>
-      </fieldset>
-
-      <fieldset class="block" data-block="7">
-        <legend><span class="bno">⑦</span>SAFETY <span class="cat">安全</span></legend>
-        <p class="q">事故防止（複数可・迷ったら両方）</p>
-        <label class="opt"><input type="checkbox" data-part="safety/irreversible-confirm">
-          <span><span class="opt-name">送信・削除など取り返しのつかない操作がある</span><span class="opt-part">safety/irreversible-confirm</span>
-          <span class="opt-func">不可逆操作の前だけ必ず確認を挟む</span></span></label>
-        <label class="opt"><input type="checkbox" data-part="safety/hallucination-guard" checked>
-          <span><span class="opt-name">推定と事実をはっきり分けてほしい</span><span class="opt-part">safety/hallucination-guard</span>
-          <span class="opt-func">AIが補完した前提を【推定前提】として明示させる</span></span></label>
+        <legend><span class="bno">Q1</span>自動化したいこと</legend>
+        <p class="q">今は手でやっている（またはやれていない）作業を、そのまま書いてください。</p>
+        <p style="margin-bottom:0"><textarea id="want" placeholder="例：毎週、気になる中古物件をサイトで見て回って、良さそうなものをスプレッドシートにメモしている。これを自動でやってほしい。"></textarea></p>
       </fieldset>
 
       <fieldset class="block">
-        <legend><span class="bno">＋</span>補足</legend>
-        <p class="q">固有ロジックの内容・参考にしたい既存ツール・こだわり等</p>
-        <p style="margin-bottom:0"><textarea id="notes" placeholder="例：スコアは「割安度 = 周辺相場 − 提示価格」で計算したい。keiba-yosoのレポートの見た目が好き。"></textarea></p>
+        <legend><span class="bno">Q2</span>きっかけ — その作業はいつ始まる？</legend>
+        <p class="q">1つ選択</p>
+        <label class="opt"><input type="radio" name="trigger" value="ask" data-v="ok">
+          <span><span class="opt-name">自分が頼んだとき</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="radio" name="trigger" value="schedule" data-v="ok">
+          <span><span class="opt-name">毎日・毎週など決まったタイミング</span><span class="flag ok">可</span>
+          <span class="opt-func">定期実行タスクとして自動化できます</span></span></label>
+        <label class="opt"><input type="radio" name="trigger" value="event" data-v="cond">
+          <span><span class="opt-name">何かが起きた瞬間（メールが来たら即、など）</span><span class="flag cond">条件付き</span>
+          <span class="opt-func">「即座」は不安定。短い間隔の定期チェックに置き換えれば実現可能</span></span></label>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend><span class="bno">Q3</span>材料 — 何を見て・何を使う作業？</legend>
+        <p class="q">複数可</p>
+        <label class="opt"><input type="checkbox" name="src" value="web" data-v="ok">
+          <span><span class="opt-name">誰でも見られるWebサイト</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="checkbox" name="src" value="login" data-v="cond">
+          <span><span class="opt-name">ログインが必要なサイト・アプリ</span><span class="flag cond">条件付き</span>
+          <span class="opt-func">ブラウザ操作で対応。サイトによっては不安定な場合あり</span></span></label>
+        <label class="opt"><input type="checkbox" name="src" value="connected" data-v="ok">
+          <span><span class="opt-name">Gmail・カレンダー・Notion・Drive</span><span class="flag ok">可</span>
+          <span class="opt-func">接続済みなのでそのまま使えます</span></span></label>
+        <label class="opt"><input type="checkbox" name="src" value="file" data-v="ok">
+          <span><span class="opt-name">手元のファイル（Excel・PDFなど）</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="checkbox" name="src" value="internal" data-v="ng">
+          <span><span class="opt-name">社内システム・専用ソフト</span><span class="flag ng">要相談</span>
+          <span class="opt-func">直接はつなげない。CSV等で手元にエクスポートできれば「可」に変わります</span></span></label>
+        <label class="opt"><input type="checkbox" name="src" value="none" data-v="ok">
+          <span><span class="opt-name">特になし（頭の中の考え・相談ごと）</span><span class="flag ok">可</span></span></label>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend><span class="bno">Q4</span>加工 — その材料に何をしている？</legend>
+        <p class="q">複数可</p>
+        <label class="opt"><input type="checkbox" name="work" value="collect" data-v="ok">
+          <span><span class="opt-name">集める・整理する・まとめる</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="checkbox" name="work" value="judge" data-v="ok">
+          <span><span class="opt-name">決まった基準で選別・計算・判定する</span><span class="flag ok">可</span>
+          <span class="opt-func">基準を言葉や数式にできるなら、そのまま自動化できます</span></span></label>
+        <label class="opt"><input type="checkbox" name="work" value="write" data-v="ok">
+          <span><span class="opt-name">文章・資料・レポートを作る</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="checkbox" name="work" value="think" data-v="ok">
+          <span><span class="opt-name">案を考える・検証する・意思決定する</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="checkbox" name="work" value="feel" data-v="cond">
+          <span><span class="opt-name">感覚で判断している（基準をまだ言葉にできない）</span><span class="flag cond">条件付き</span>
+          <span class="opt-func">製造前に基準を引き出すヒアリングを挟みます。判断の言語化が精度を決めます</span></span></label>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend><span class="bno">Q5</span>成果 — 最後に何がどこにあれば完了？</legend>
+        <p class="q">複数可</p>
+        <label class="opt"><input type="checkbox" name="out" value="chat" data-v="ok">
+          <span><span class="opt-name">チャットで報告してくれれば良い</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="checkbox" name="out" value="report" data-v="ok">
+          <span><span class="opt-name">レポート・一覧表になっている</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="checkbox" name="out" value="record" data-v="ok">
+          <span><span class="opt-name">Notion・スプレッドシート等に記録されている</span><span class="flag ok">可</span></span></label>
+        <label class="opt"><input type="checkbox" name="out" value="send" data-v="cond">
+          <span><span class="opt-name">メール送信・SNS投稿など外に発信されている</span><span class="flag cond">条件付き</span>
+          <span class="opt-func">発信の直前に必ず本人確認ステップを挟む運用になります</span></span></label>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend><span class="bno">Q6</span>自分の関わり方</legend>
+        <p class="q">1つ選択</p>
+        <label class="opt"><input type="radio" name="human" value="auto" data-v="ok">
+          <span><span class="opt-name">全部おまかせでいい</span></span></label>
+        <label class="opt"><input type="radio" name="human" value="approve" data-v="ok">
+          <span><span class="opt-name">最後に自分が確認してから確定したい</span></span></label>
+        <label class="opt"><input type="radio" name="human" value="middle" data-v="ok">
+          <span><span class="opt-name">途中の大事な判断は自分がやりたい</span></span></label>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend><span class="bno">Q7</span>頻度と量・補足</legend>
+        <p class="q">どのくらいの頻度・件数か、その他伝えたいこと</p>
+        <p style="margin-bottom:0"><textarea id="notes" placeholder="例：週1回、対象は毎回30件くらい。判断基準は「駅徒歩10分以内・周辺相場より1割安い」。"></textarea></p>
       </fieldset>
     </form>
 
     <aside class="preview">
       <div class="panel">
-        <h2>ツールキャンバス（ライブ）</h2>
-        <table class="canvas" id="canvas-table">
-          <tr><td class="b">① INPUT</td><td class="v" data-cat="input"><span class="none">—</span></td></tr>
-          <tr><td class="b">② QUALITY</td><td class="v" data-cat="quality"><span class="none">—</span></td></tr>
-          <tr><td class="b">③ PROCESS</td><td class="v" data-cat="process"><span class="none">—</span></td></tr>
-          <tr><td class="b">④ DATA</td><td class="v" data-cat="data"><span class="none">—</span></td></tr>
-          <tr><td class="b">⑤ OUTPUT</td><td class="v" data-cat="output"><span class="none">—</span></td></tr>
-          <tr><td class="b">⑥ INTEGRATION</td><td class="v" data-cat="integration"><span class="none">—</span></td></tr>
-          <tr><td class="b">⑦ SAFETY</td><td class="v" data-cat="safety"><span class="none">—</span></td></tr>
-        </table>
-        <p class="hint">再利用部品：<span class="count" id="part-count">0</span> 個 ／ 新造：<span class="count" id="custom-count">0</span> 件</p>
+        <h2>❷ 実現可否判定（自動）</h2>
+        <div class="verdict v-none" id="verdict">
+          <span class="mark" id="v-mark">—</span>
+          <span><span class="vtitle" id="v-title">回答すると判定されます</span>
+          <span class="vsub" id="v-sub">Q2〜Q5に答えると精度が上がります</span></span>
+        </div>
+        <ul class="reasons" id="reasons"></ul>
+        <p class="partsline" id="partsline"></p>
       </div>
       <div class="panel">
-        <h2>発注書（Claudeに貼る）</h2>
+        <h2>❸ 発注書（Claudeに貼る）</h2>
         <pre class="order" id="order-text"></pre>
-        <button type="button" class="copybtn" id="copy">発注書をコピー</button>
-        <p class="hint">コピーしたらClaudeのチャットに貼るだけ。noe-tool-factoryスキルが起動して製造が始まります。</p>
+        <button type="button" class="copybtn" id="copy" disabled>発注書をコピー</button>
+        <p class="hint" id="copyhint">Q1（自動化したいこと）を書くと発注できます。工場側でも実現可否を正式判定してから製造に入ります。</p>
       </div>
       <span class="stamp">NOE FACTORY 受付印</span>
     </aside>
@@ -289,73 +253,129 @@
 <script>
 (function () {
   var form = document.getElementById('form');
-  var boxes = Array.prototype.slice.call(form.querySelectorAll('input[type="checkbox"]'));
 
-  function selectedParts() {
-    var parts = [], custom = 0;
-    boxes.forEach(function (b) {
-      if (!b.checked) return;
-      b.getAttribute('data-part').split(' ').forEach(function (p) {
-        if (p === '__custom__') { custom++; }
-        else if (parts.indexOf(p) < 0) { parts.push(p); }
-      });
-    });
-    return { parts: parts, custom: custom };
-  }
+  var MSG = {
+    trigger: { event: { t: 'cond', m: '「起きた瞬間に即」は不安定。短い間隔の定期チェック（例：10分おき・毎朝）に置き換えて実現します' } },
+    src: {
+      web: { t: 'ok', m: '公開Webサイトからの収集は実績部品でそのまま可能' },
+      login: { t: 'cond', m: 'ログインが必要なサイトはブラウザ操作で対応（サイトにより不安定な場合あり）' },
+      connected: { t: 'ok', m: 'Gmail・カレンダー・Notion・Driveは接続済み。すぐ使えます' },
+      file: { t: 'ok', m: '手元ファイルの読み書きは可能' },
+      internal: { t: 'ng', m: '社内システム・専用ソフトには直接つなげません。CSV等でエクスポートして「手元のファイル」にできれば可に変わります' },
+      none: { t: 'ok', m: '思考・相談系はデータ接続なしで実現可能' }
+    },
+    work: { feel: { t: 'cond', m: '判断基準がまだ言葉になっていないため、製造前に基準を引き出すヒアリングを挟みます' } },
+    out: { send: { t: 'cond', m: 'メール送信・投稿は不可逆操作。実行直前に必ず本人確認を挟む設計にします' } }
+  };
 
-  function byCat(parts) {
-    var map = { input: [], quality: [], process: [], data: [], output: [], integration: [], safety: [] };
-    parts.forEach(function (p) {
-      var cat = p.split('/')[0];
-      if (map[cat]) map[cat].push(p.split('/')[1]);
-    });
-    return map;
+  var PARTS = {
+    trigger: { ask: ['mode-detection'], schedule: ['scheduled-task', 'diff-cache'], event: ['scheduled-task'] },
+    src: { web: ['web-scraping', 'file-per-item', 'auto-parse', 'screening'], login: ['web-scraping'], connected: [], file: [], internal: [], none: [] },
+    work: { collect: [], judge: ['branch-table', '新造:判定ロジック'], write: [], think: ['stress-test', 'confidence-score'], feel: ['context-intake'] },
+    out: { chat: ['secretary-tone'], report: ['html-report', 'summary-table'], record: ['notion-task'], send: ['irreversible-confirm'] },
+    human: { auto: [], approve: ['irreversible-confirm'], middle: ['branch-table'] }
+  };
+
+  var LABELS = {
+    trigger: { ask: '自分が頼んだとき', schedule: '定期（毎日・毎週など）', event: 'イベント発生時（定期チェックに置換）' },
+    src: { web: '公開Webサイト', login: 'ログインが必要なサイト', connected: 'Gmail/カレンダー/Notion/Drive', file: '手元のファイル', internal: '社内システム（要相談）', none: 'なし（思考・相談系）' },
+    work: { collect: '収集・整理', judge: '基準による選別・計算・判定', write: '文章・レポート作成', think: '発案・検証・意思決定', feel: '感覚的判断（要言語化）' },
+    out: { chat: 'チャット報告', report: 'レポート・一覧表', record: 'Notion/シートに記録', send: 'メール送信・投稿（確認付き）' },
+    human: { auto: '全部おまかせ', approve: '最後に本人確認', middle: '途中判断は本人' }
+  };
+
+  function picked(name) {
+    return Array.prototype.slice.call(form.querySelectorAll('input[name="' + name + '"]:checked'))
+      .map(function (i) { return i.value; });
   }
 
   function update() {
-    boxes.forEach(function (b) {
-      b.closest('label').classList.toggle('checked', b.checked);
+    Array.prototype.slice.call(form.querySelectorAll('input')).forEach(function (i) {
+      var l = i.closest('label'); if (l) l.classList.toggle('checked', i.checked);
     });
-    var sel = selectedParts();
-    var map = byCat(sel.parts);
-    var hasCustom = sel.custom > 0;
 
-    Object.keys(map).forEach(function (cat) {
-      var cell = document.querySelector('#canvas-table td[data-cat="' + cat + '"]');
-      var items = map[cat].slice();
-      if (cat === 'process' && hasCustom) items.push('★新造');
-      cell.innerHTML = items.length
-        ? items.join(', ')
-        : '<span class="none">なし</span>';
+    var want = document.getElementById('want').value.trim();
+    var notes = document.getElementById('notes').value.trim();
+    var sel = { trigger: picked('trigger'), src: picked('src'), work: picked('work'), out: picked('out'), human: picked('human') };
+    var answered = sel.trigger.length + sel.src.length + sel.work.length + sel.out.length > 0;
+
+    var reasons = [], conds = 0, ngs = 0;
+    ['trigger', 'src', 'work', 'out'].forEach(function (g) {
+      sel[g].forEach(function (v) {
+        var m = MSG[g] && MSG[g][v];
+        if (!m) return;
+        if (m.t === 'ng') { ngs++; reasons.push({ t: 'ng', m: m.m }); }
+        else if (m.t === 'cond') { conds++; reasons.push({ t: 'cond', m: m.m }); }
+        else { reasons.push({ t: 'ok', m: m.m }); }
+      });
     });
-    document.getElementById('part-count').textContent = sel.parts.length;
-    document.getElementById('custom-count').textContent = sel.custom;
 
-    var name = document.getElementById('toolname').value.trim() || '（未定・工場が提案）';
-    var one = document.getElementById('oneliner').value.trim() || '（未記入・工場が最初に1問だけ確認）';
-    var notes = document.getElementById('notes').value.trim() || 'なし';
+    var vEl = document.getElementById('verdict');
+    var mark = document.getElementById('v-mark'), title = document.getElementById('v-title'), sub = document.getElementById('v-sub');
+    vEl.className = 'verdict';
+    if (!answered) {
+      vEl.classList.add('v-none'); mark.textContent = '—';
+      title.textContent = '回答すると判定されます'; sub.textContent = 'Q2〜Q5に答えると精度が上がります';
+    } else if (ngs > 0) {
+      vEl.classList.add('v-ng'); mark.textContent = '△';
+      title.textContent = '要相談'; sub.textContent = 'ネックがあります。代替案込みで相談として発注できます';
+    } else if (conds > 0) {
+      vEl.classList.add('v-cond'); mark.textContent = '○';
+      title.textContent = '条件付きで自動化可能'; sub.textContent = '下の条件を織り込んで製造します';
+    } else {
+      vEl.classList.add('v-ok'); mark.textContent = '◎';
+      title.textContent = 'そのまま自動化可能'; sub.textContent = '既存部品で実現できる見込みです';
+    }
 
+    var ul = document.getElementById('reasons');
+    ul.innerHTML = '';
+    reasons.forEach(function (r) {
+      var li = document.createElement('li');
+      li.className = 'r-' + r.t; li.textContent = r.m;
+      ul.appendChild(li);
+    });
+
+    var partSet = [];
+    Object.keys(sel).forEach(function (g) {
+      sel[g].forEach(function (v) {
+        (PARTS[g][v] || []).forEach(function (p) { if (partSet.indexOf(p) < 0) partSet.push(p); });
+      });
+    });
+    document.getElementById('partsline').textContent =
+      partSet.length ? '想定部品（参考・工場が最終決定）: ' + partSet.join(', ') : '';
+
+    function labelList(g) {
+      var arr = sel[g].map(function (v) { return LABELS[g][v]; });
+      return arr.length ? arr.join('、') : '（未回答）';
+    }
+    var verdictLabel = !answered ? '未判定' : ngs > 0 ? '△要相談' : conds > 0 ? '○条件付き可' : '◎自動化可能';
     var lines = [];
-    lines.push('noe-tool-factory を起動せよ。以下の発注書に基づき製造すること。');
+    lines.push('noe-tool-factory を起動せよ。以下のヒアリングシートに基づき、');
+    lines.push('実現可否を正式判定してから製造すること。');
     lines.push('');
-    lines.push('【ツール発注書】');
-    lines.push('ツール名（仮）：' + name);
-    lines.push('一言定義：' + one);
+    lines.push('【自動化ヒアリングシート】');
+    lines.push('自動化したいこと：' + (want || '（未記入）'));
+    lines.push('きっかけ：' + labelList('trigger'));
+    lines.push('材料：' + labelList('src'));
+    lines.push('加工：' + labelList('work'));
+    lines.push('成果・届け先：' + labelList('out'));
+    lines.push('本人の関わり方：' + labelList('human'));
+    lines.push('頻度・量・補足：' + (notes || 'なし'));
     lines.push('');
-    lines.push('キャンバス指定：');
-    var labels = { input: '① INPUT', quality: '② QUALITY', process: '③ PROCESS', data: '④ DATA', output: '⑤ OUTPUT', integration: '⑥ INTEGRATION', safety: '⑦ SAFETY' };
-    Object.keys(labels).forEach(function (cat) {
-      var items = map[cat].map(function (n) { return cat + '/' + n; });
-      if (cat === 'process' && hasCustom) items.push('新造（固有ロジック）');
-      lines.push(labels[cat] + '：' + (items.length ? items.join(', ') : 'なし'));
+    lines.push('【フォームの暫定判定】' + verdictLabel);
+    reasons.forEach(function (r) {
+      if (r.t !== 'ok') lines.push('・' + (r.t === 'ng' ? '[ネック] ' : '[条件] ') + r.m);
     });
     lines.push('');
-    lines.push('補足・固有ロジック：' + notes);
-    lines.push('');
-    lines.push('※部品はリポジトリ tatsumi611216-source/noe-match の tool-factory/parts/ を参照。');
-    lines.push('※キャンバス確認（STEP 3）は発注書の内容で了承済みとして進めてよい。重大な矛盾がある場合のみ質問すること。');
-
+    lines.push('※部品選定は tool-factory/ORDER_FORM.md のマッピング表を参照して工場が行う。');
+    lines.push('※正式判定が△の場合は製造前にネックと代替案を提示して止まること。');
     document.getElementById('order-text').textContent = lines.join('\n');
+
+    var btn = document.getElementById('copy');
+    btn.disabled = !want;
+    document.getElementById('copyhint').textContent = want
+      ? 'コピーしたらClaudeに貼るだけ。工場側でも実現可否を正式判定してから製造に入ります。'
+      : 'Q1（自動化したいこと）を書くと発注できます。';
   }
 
   form.addEventListener('input', update);
@@ -368,15 +388,15 @@
       btn.textContent = 'コピーしました ✓';
       setTimeout(function () { btn.textContent = '発注書をコピー'; }, 1600);
     }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
-    } else { fallback(); }
     function fallback() {
       var ta = document.createElement('textarea');
       ta.value = text; document.body.appendChild(ta);
       ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
       done();
     }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, fallback);
+    } else { fallback(); }
   });
 
   update();

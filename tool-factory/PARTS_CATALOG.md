@@ -83,6 +83,7 @@
 | quality/fact-check | WebSearchで数字を裏取りして補正表を作る | noe-relay | noe-relay |
 | quality/confidence-score | 出力の信頼度をA〜Eで自己採点＋改善ロードマップ | noe-relay | noe-relay, noe-brain |
 | quality/branch-table | スコア・チェック結果による処理分岐テーブル | noe-brain | noe-brain |
+| quality/feasibility-check | 着手前の実現可否判定（◎○△＋代替案） | ツール発注フォーム | noe-tool-factory |
 
 ### process（処理系）
 
