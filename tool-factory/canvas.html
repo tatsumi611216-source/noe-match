@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AIツールデザインキャンバス</title>
+<style>
+  :root {
+    --ground: #F4F6F7;
+    --grid-line: rgba(50, 94, 133, 0.10);
+    --frame: #26303A;
+    --ink: #26303A;
+    --ink-dim: #6B7885;
+    --accent: #1D5E8F;
+    --hot: #C2571A;
+    --hot-soft: rgba(194, 87, 26, 0.12);
+    --cell: rgba(255, 255, 255, 0.72);
+    --chip-line: #A9BCCB;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --jp: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ground: #0A2140;
+      --grid-line: rgba(140, 190, 235, 0.10);
+      --frame: #8FBBDD;
+      --ink: #DCEBF7;
+      --ink-dim: #7E9DB8;
+      --accent: #6FC3E8;
+      --hot: #FFB454;
+      --hot-soft: rgba(255, 180, 84, 0.14);
+      --cell: rgba(10, 40, 74, 0.55);
+      --chip-line: #3C6285;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #0A2140; --grid-line: rgba(140,190,235,0.10); --frame: #8FBBDD;
+    --ink: #DCEBF7; --ink-dim: #7E9DB8; --accent: #6FC3E8;
+    --hot: #FFB454; --hot-soft: rgba(255,180,84,0.14);
+    --cell: rgba(10,40,74,0.55); --chip-line: #3C6285;
+  }
+  :root[data-theme="light"] {
+    --ground: #F4F6F7; --grid-line: rgba(50,94,133,0.10); --frame: #26303A;
+    --ink: #26303A; --ink-dim: #6B7885; --accent: #1D5E8F;
+    --hot: #C2571A; --hot-soft: rgba(194,87,26,0.12);
+    --cell: rgba(255,255,255,0.72); --chip-line: #A9BCCB;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--ink); font-family: var(--jp); font-size: 14px; line-height: 1.6;
+    background:
+      repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 24px),
+      repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 24px),
+      var(--ground);
+  }
+  .sheet { max-width: 1240px; margin: 26px auto 60px; padding: 0 18px; }
+
+  .masthead {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px;
+    border: 2px solid var(--frame); border-bottom-width: 0;
+    padding: 16px 20px 12px; background: var(--cell);
+  }
+  .masthead .no { font-family: var(--mono); font-size: 10px; letter-spacing: .22em; color: var(--accent); }
+  h1 { margin: 0; font-size: 27px; font-weight: 800; letter-spacing: .04em; text-wrap: balance; }
+  h1 small { display: block; font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: .3em; color: var(--accent); margin-top: 2px; }
+  .masthead .desc { margin-left: auto; max-width: 30em; font-size: 12px; color: var(--ink-dim); }
+
+  .toolbar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    border: 2px solid var(--frame); border-bottom-width: 0;
+    padding: 10px 20px; background: var(--cell);
+  }
+  .toolbar .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-dim); margin-right: 6px; }
+  .tbtn {
+    font-family: var(--mono); font-size: 12px; letter-spacing: .05em;
+    color: var(--ink); background: transparent;
+    border: 1px solid var(--chip-line); border-radius: 3px;
+    padding: 5px 12px; cursor: pointer;
+  }
+  .tbtn:hover { border-color: var(--accent); color: var(--accent); }
+  .tbtn.active { background: var(--accent); border-color: var(--accent); color: var(--ground); font-weight: 700; }
+  .tbtn:focus-visible { outline: 2px solid var(--hot); outline-offset: 2px; }
+  .tally { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--ink-dim); }
+  .tally b { color: var(--hot); font-weight: 700; font-variant-numeric: tabular-nums; }
+
+  .canvas {
+    display: grid; border: 2px solid var(--frame);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      "input  process output"
+      "quality data    integ"
+      "safety safety  safety";
+  }
+  .cell {
+    border: 1px solid var(--frame); margin: -0.5px;
+    background: var(--cell); padding: 14px 16px 16px; min-height: 190px;
+  }
+  .c-input { grid-area: input; } .c-quality { grid-area: quality; }
+  .c-process { grid-area: process; } .c-data { grid-area: data; }
+  .c-output { grid-area: output; } .c-integ { grid-area: integ; }
+  .c-safety { grid-area: safety; min-height: 0; }
+  @media (max-width: 760px) {
+    .canvas { grid-template-columns: 1fr 1fr;
+      grid-template-areas: "input process" "quality data" "output integ" "safety safety"; }
+  }
+  @media (max-width: 480px) {
+    .canvas { grid-template-columns: 1fr;
+      grid-template-areas: "input" "quality" "process" "data" "output" "integ" "safety"; }
+  }
+  .cell header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; }
+  .cell .num { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--accent); }
+  .cell .en { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .18em; }
+  .cell .ja { font-size: 11px; color: var(--ink-dim); }
+  .cell .ask { font-size: 11px; color: var(--ink-dim); margin: 0 0 10px; border-bottom: 1px dashed var(--chip-line); padding-bottom: 6px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-family: var(--mono); font-size: 11px; line-height: 1.35;
+    border: 1px solid var(--chip-line); border-radius: 3px;
+    padding: 4px 8px; color: var(--ink); background: transparent;
+  }
+  .chip .fn { display: block; font-family: var(--jp); font-size: 10px; color: var(--ink-dim); letter-spacing: 0; }
+  .chip.custom { border-style: dashed; color: var(--hot); border-color: var(--hot); display: none; }
+  .chip.custom .fn { color: var(--hot); opacity: .8; }
+  body.focused .chip { opacity: .28; }
+  body.focused .chip.on {
+    opacity: 1; border-color: var(--hot); background: var(--hot-soft);
+    box-shadow: 0 0 0 1px var(--hot);
+  }
+  body.focused .chip.custom.on { display: block; }
+  @media (prefers-reduced-motion: no-preference) {
+    .chip { transition: opacity .25s, box-shadow .25s, border-color .25s; }
+  }
+
+  .titleblock {
+    display: grid; grid-template-columns: 1fr auto auto; gap: 0;
+    border: 2px solid var(--frame); border-top-width: 0; background: var(--cell);
+    font-family: var(--mono); font-size: 10px;
+  }
+  .titleblock > div { padding: 8px 14px; border-left: 1px solid var(--chip-line); }
+  .titleblock > div:first-child { border-left: 0; }
+  .titleblock .k { display: block; letter-spacing: .2em; color: var(--ink-dim); font-size: 9px; }
+  .titleblock .v { font-size: 11px; color: var(--ink); }
+  .titleblock .v.hot { color: var(--hot); font-weight: 700; }
+  .foot { margin-top: 14px; font-size: 12px; color: var(--ink-dim); }
+  .foot a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="masthead">
+    <div>
+      <span class="no">NOE TOOL-MAKING FACTORY — DWG. NO. NTF-001</span>
+      <h1>AIツールデザインキャンバス<small>AI TOOL DESIGN CANVAS</small></h1>
+    </div>
+    <p class="desc">ツールの機能を7ブロックに因数分解する設計図。ブロックに部品を埋めれば、それがそのまま新ツールの仕様になる。下のボタンで既存ツールの設計を投影できる。</p>
+  </div>
+
+  <div class="toolbar" role="group" aria-label="既存ツールの設計を表示">
+    <span class="lbl">PROJECT:</span>
+    <button class="tbtn active" data-tool="">全部品</button>
+    <button class="tbtn" data-tool="keiba">keiba-yoso</button>
+    <button class="tbtn" data-tool="brain">noe-brain</button>
+    <button class="tbtn" data-tool="relay">noe-relay</button>
+    <button class="tbtn" data-tool="sec">secretary</button>
+    <span class="tally" id="tally">部品ライブラリ 21点</span>
+  </div>
+
+  <div class="canvas">
+    <section class="cell c-input">
+      <header><span class="num">①</span><span class="en">INPUT</span><span class="ja">入力</span></header>
+      <p class="ask">入力をどう受け取り、分岐するか</p>
+      <div class="chips">
+        <span class="chip" data-id="mode-detection">mode-detection<span class="fn">モード・キーワード自動判定</span></span>
+        <span class="chip" data-id="context-intake">context-intake<span class="fn">質問で文脈を引き出し採点</span></span>
+      </div>
+    </section>
+
+    <section class="cell c-process">
+      <header><span class="num">③</span><span class="en">PROCESS</span><span class="ja">中核処理</span></header>
+      <p class="ask">このツールの本体は何をするか</p>
+      <div class="chips">
+        <span class="chip" data-id="stress-test">stress-test<span class="fn">失敗理由と回避行動を強制生成</span></span>
+        <span class="chip" data-id="debate-engine">debate-engine<span class="fn">討論2名＋審判で穴を壊す</span></span>
+        <span class="chip" data-id="action-design">action-design<span class="fn">72時間の即実行アクション</span></span>
+        <span class="chip custom" data-id="custom">★ 固有ロジック<span class="fn" id="custom-fn">このツールだけの独自処理</span></span>
+      </div>
+    </section>
+
+    <section class="cell c-output">
+      <header><span class="num">⑤</span><span class="en">OUTPUT</span><span class="ja">出力</span></header>
+      <p class="ask">何を、どんな形で出すか</p>
+      <div class="chips">
+        <span class="chip" data-id="summary-table">summary-table<span class="fn">結論を1画面の表に圧縮</span></span>
+        <span class="chip" data-id="html-report">html-report<span class="fn">HTMLレポート標準構成</span></span>
+        <span class="chip" data-id="secretary-tone">secretary-tone<span class="fn">秘書口調・要点先出し</span></span>
+        <span class="chip" data-id="meta-evolution">meta-evolution<span class="fn">次回改良ポイントを毎回出す</span></span>
+      </div>
+    </section>
+
+    <section class="cell c-quality">
+      <header><span class="num">②</span><span class="en">QUALITY</span><span class="ja">品質</span></header>
+      <p class="ask">出力の質を何で担保するか</p>
+      <div class="chips">
+        <span class="chip" data-id="concreteness-rules">concreteness-rules<span class="fn">抽象論禁止・具体性強制</span></span>
+        <span class="chip" data-id="fact-check">fact-check<span class="fn">Web検索で数字を裏取り補正</span></span>
+        <span class="chip" data-id="confidence-score">confidence-score<span class="fn">信頼度A〜E採点＋改善策</span></span>
+        <span class="chip" data-id="branch-table">branch-table<span class="fn">多軸チェック→機械的分岐</span></span>
+      </div>
+    </section>
+
+    <section class="cell c-data">
+      <header><span class="num">④</span><span class="en">DATA</span><span class="ja">データ</span></header>
+      <p class="ask">外部データをどう取り・貯め・捌くか</p>
+      <div class="chips">
+        <span class="chip" data-id="web-scraping">web-scraping<span class="fn">ブラウザ取得の使い分け</span></span>
+        <span class="chip" data-id="file-per-item">file-per-item<span class="fn">1件1ファイル＋並行取得</span></span>
+        <span class="chip" data-id="auto-parse">auto-parse<span class="fn">フォーマット自動判定パース</span></span>
+        <span class="chip" data-id="diff-cache">diff-cache<span class="fn">差分キャッシュで取得削減</span></span>
+        <span class="chip" data-id="screening">screening<span class="fn">取得前の足切りでコスト減</span></span>
+      </div>
+    </section>
+
+    <section class="cell c-integ">
+      <header><span class="num">⑥</span><span class="en">INTEGRATION</span><span class="ja">連携</span></header>
+      <p class="ask">他ツール・外部サービスとどうつなぐか</p>
+      <div class="chips">
+        <span class="chip" data-id="notion-task">notion-task<span class="fn">Notion DBへ登録・更新</span></span>
+        <span class="chip" data-id="scheduled-task">scheduled-task<span class="fn">朝/日中/夜の定期実行</span></span>
+        <span class="chip" data-id="skill-handoff">skill-handoff<span class="fn">別ツールへの起動・合流</span></span>
+      </div>
+    </section>
+
+    <section class="cell c-safety">
+      <header><span class="num">⑦</span><span class="en">SAFETY</span><span class="ja">安全</span></header>
+      <p class="ask">何を確認し、何を推定と明示し、どこで止まるか</p>
+      <div class="chips">
+        <span class="chip" data-id="irreversible-confirm">irreversible-confirm<span class="fn">不可逆操作の前だけ確認</span></span>
+        <span class="chip" data-id="hallucination-guard">hallucination-guard<span class="fn">推定前提を明示し断定しない</span></span>
+      </div>
+    </section>
+  </div>
+
+  <div class="titleblock">
+    <div><span class="k">SYSTEM</span><span class="v">Noe Tool-Making Factory ／ tool-factory/</span></div>
+    <div><span class="k">PROJECT</span><span class="v hot" id="tb-project">— 全部品表示 —</span></div>
+    <div><span class="k">SCALE</span><span class="v">部品21点／7ブロック</span></div>
+  </div>
+
+  <p class="foot">部品の詳細は <code>tool-factory/PARTS_CATALOG.md</code>、発注は「ツール発注フォーム」から。ブロックが埋まらない＝不要か新造。新造したら部品ライブラリに還元する。</p>
+</div>
+
+<script>
+(function () {
+  var TOOLS = {
+    keiba: {
+      name: 'keiba-yoso（競馬予想）',
+      parts: ['mode-detection','web-scraping','file-per-item','auto-parse','diff-cache','screening','html-report','notion-task','scheduled-task','hallucination-guard','custom'],
+      customFn: 'EV計算（推定勝率×オッズ−1）'
+    },
+    brain: {
+      name: 'noe-brain（事業仮説設計）',
+      parts: ['mode-detection','context-intake','branch-table','concreteness-rules','confidence-score','stress-test','action-design','skill-handoff','summary-table','meta-evolution','hallucination-guard','custom'],
+      customFn: '3型設計（逆張り・接続・除去）'
+    },
+    relay: {
+      name: 'noe-relay（多エージェント討論）',
+      parts: ['debate-engine','concreteness-rules','fact-check','confidence-score','summary-table','action-design'],
+      customFn: ''
+    },
+    sec: {
+      name: 'secretary（個人秘書）',
+      parts: ['mode-detection','notion-task','secretary-tone','irreversible-confirm'],
+      customFn: ''
+    }
+  };
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
+  var btns = Array.prototype.slice.call(document.querySelectorAll('.tbtn'));
+  var tally = document.getElementById('tally');
+  var tbProject = document.getElementById('tb-project');
+  var customFn = document.getElementById('custom-fn');
+
+  function show(toolId) {
+    btns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-tool') === toolId); });
+    if (!toolId) {
+      document.body.classList.remove('focused');
+      chips.forEach(function (c) { c.classList.remove('on'); });
+      tally.textContent = '部品ライブラリ 21点';
+      tbProject.textContent = '— 全部品表示 —';
+      return;
+    }
+    var t = TOOLS[toolId];
+    document.body.classList.add('focused');
+    var reused = 0;
+    chips.forEach(function (c) {
+      var on = t.parts.indexOf(c.getAttribute('data-id')) >= 0;
+      c.classList.toggle('on', on);
+      if (on && c.getAttribute('data-id') !== 'custom') reused++;
+    });
+    if (t.customFn) customFn.textContent = t.customFn;
+    var hasCustom = t.parts.indexOf('custom') >= 0;
+    tally.innerHTML = t.name + '：再利用部品 <b>' + reused + '</b> 点＋固有ロジック <b>' + (hasCustom ? 1 : 0) + '</b>';
+    tbProject.textContent = t.name;
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { show(b.getAttribute('data-tool')); });
+  });
+})();
+</script>
+</body>
+</html>

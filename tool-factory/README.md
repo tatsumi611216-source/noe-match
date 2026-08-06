@@ -43,6 +43,11 @@ tool-factory/
 
 ### 新ツールを作るとき
 
+**ルート1：フォーム発注（推奨）**
+`order-form.html`（Webフォーム）で質問に答える → 発注書が自動生成される → Claudeに貼る。
+Google Form派は `ORDER_FORM.md` の質問セットを転記して使う（回答をそのまま貼ればOK）。
+
+**ルート2：会話発注**
 1. Claude に「〇〇するツールを作って」と依頼する（noe-tool-factory スキルが起動）
 2. 工場スキルが PARTS_CATALOG.md を参照して必要な部品を選定
 3. ASSEMBLY_GUIDE.md のテンプレに部品を組み込んで SKILL.md を生成

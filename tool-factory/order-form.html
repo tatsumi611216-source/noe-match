@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noe ツール発注フォーム</title>
+<style>
+  :root {
+    --paper: #F3F4F2;
+    --card: #FFFFFF;
+    --ink: #1B2530;
+    --ink-soft: #55606C;
+    --line: #D8DCDB;
+    --steel: #33618F;
+    --steel-soft: #E3EBF3;
+    --safety: #D8641F;
+    --safety-soft: #F9E9DD;
+    --chip-bg: #EEF1F0;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #151A21;
+      --card: #1D242E;
+      --ink: #E7EAED;
+      --ink-soft: #9AA5B1;
+      --line: #333D49;
+      --steel: #7FA9D4;
+      --steel-soft: #24344A;
+      --safety: #E8834A;
+      --safety-soft: #43301F;
+      --chip-bg: #26303C;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #151A21; --card: #1D242E; --ink: #E7EAED; --ink-soft: #9AA5B1;
+    --line: #333D49; --steel: #7FA9D4; --steel-soft: #24344A;
+    --safety: #E8834A; --safety-soft: #43301F; --chip-bg: #26303C;
+  }
+  :root[data-theme="light"] {
+    --paper: #F3F4F2; --card: #FFFFFF; --ink: #1B2530; --ink-soft: #55606C;
+    --line: #D8DCDB; --steel: #33618F; --steel-soft: #E3EBF3;
+    --safety: #D8641F; --safety-soft: #F9E9DD; --chip-bg: #EEF1F0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 80px; }
+  header.masthead { border-bottom: 3px solid var(--ink); padding-bottom: 14px; margin-bottom: 26px; }
+  .eyebrow {
+    font-size: 11px; letter-spacing: .18em; color: var(--steel);
+    font-weight: 700; text-transform: uppercase; margin: 0 0 4px;
+  }
+  h1 { font-size: 26px; font-weight: 800; margin: 0; letter-spacing: .02em; text-wrap: balance; }
+  .masthead p.lead { margin: 8px 0 0; color: var(--ink-soft); max-width: 46em; }
+  .cols { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,420px); gap: 26px; align-items: start; }
+  @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } .preview { position: static !important; } }
+
+  fieldset.block {
+    border: 1px solid var(--line); border-radius: 6px; background: var(--card);
+    margin: 0 0 16px; padding: 16px 18px 14px;
+  }
+  fieldset.block legend {
+    display: flex; align-items: center; gap: 8px;
+    font-weight: 800; font-size: 14px; padding: 0 8px; letter-spacing: .04em;
+  }
+  legend .bno {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 22px; height: 22px; border-radius: 3px;
+    background: var(--steel); color: var(--card);
+    font-family: var(--mono); font-size: 12px; font-weight: 700;
+  }
+  legend .cat { color: var(--steel); font-family: var(--mono); font-size: 11px; letter-spacing: .12em; }
+  .q { font-size: 13px; color: var(--ink-soft); margin: 2px 0 10px; }
+  label.opt {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 8px 10px; border: 1px solid transparent; border-radius: 5px; cursor: pointer;
+  }
+  label.opt:hover { background: var(--chip-bg); }
+  label.opt input { margin-top: 4px; accent-color: var(--steel); flex: none; }
+  label.opt.checked { background: var(--steel-soft); border-color: var(--steel); }
+  .opt-name { font-weight: 700; }
+  .opt-part {
+    font-family: var(--mono); font-size: 11px; color: var(--steel);
+    background: var(--chip-bg); border-radius: 3px; padding: 1px 6px; margin-left: 6px; white-space: nowrap;
+  }
+  .opt-part.new { color: var(--safety); }
+  .opt-func { display: block; font-size: 12.5px; color: var(--ink-soft); }
+  input[type="text"], textarea {
+    width: 100%; border: 1px solid var(--line); border-radius: 5px;
+    background: var(--paper); color: var(--ink);
+    padding: 9px 11px; font: inherit; font-size: 14px;
+  }
+  textarea { min-height: 64px; resize: vertical; }
+  input[type="text"]:focus, textarea:focus, label.opt input:focus-visible {
+    outline: 2px solid var(--steel); outline-offset: 1px;
+  }
+
+  .preview { position: sticky; top: 16px; display: flex; flex-direction: column; gap: 14px; }
+  .panel { border: 1px solid var(--line); border-radius: 6px; background: var(--card); padding: 16px 18px; }
+  .panel h2 {
+    margin: 0 0 10px; font-size: 12px; letter-spacing: .16em; color: var(--ink-soft);
+    font-weight: 700; text-transform: uppercase;
+  }
+  table.canvas { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.canvas td { border-top: 1px solid var(--line); padding: 6px 4px; vertical-align: top; }
+  table.canvas td.b { font-family: var(--mono); color: var(--steel); white-space: nowrap; font-size: 11px; padding-right: 10px; }
+  table.canvas td.v { color: var(--ink); }
+  table.canvas td.v .none { color: var(--ink-soft); }
+  .count { font-variant-numeric: tabular-nums; font-weight: 800; color: var(--steel); }
+  pre.order {
+    margin: 0; font-family: var(--mono); font-size: 11.5px; line-height: 1.6;
+    background: var(--paper); border: 1px dashed var(--line); border-radius: 5px;
+    padding: 12px; white-space: pre-wrap; word-break: break-word;
+    max-height: 300px; overflow: auto;
+  }
+  .copybtn {
+    display: block; width: 100%; margin-top: 10px;
+    background: var(--safety); color: #fff; border: 0; border-radius: 5px;
+    font: inherit; font-weight: 800; font-size: 15px; letter-spacing: .06em;
+    padding: 12px; cursor: pointer;
+  }
+  .copybtn:hover { filter: brightness(1.08); }
+  .copybtn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .hint { font-size: 12px; color: var(--ink-soft); margin-top: 8px; }
+  .stamp {
+    align-self: flex-end; font-family: var(--mono); font-size: 10px; letter-spacing: .14em;
+    color: var(--safety); border: 1.5px solid var(--safety); border-radius: 3px; padding: 2px 8px;
+    transform: rotate(-2deg);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    label.opt { transition: background .12s, border-color .12s; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="masthead">
+    <p class="eyebrow">Noe Tool-Making Factory / Order Sheet</p>
+    <h1>ツール発注フォーム</h1>
+    <p class="lead">質問に答えるだけで、部品が自動選定され「発注書」ができます。発注書をコピーしてClaudeに貼れば、工場（noe-tool-factory）が製造を開始します。番号①〜⑦はAIツールデザインキャンバスの7ブロックです。</p>
+  </header>
+
+  <div class="cols">
+    <form id="form">
+      <fieldset class="block">
+        <legend><span class="bno">0</span>ツールの基本情報</legend>
+        <p class="q">名前は仮でOK。一言定義が発注の核になります。</p>
+        <p><input type="text" id="toolname" placeholder="ツール名（仮）例：物件めきき"></p>
+        <p style="margin-bottom:0"><textarea id="oneliner" placeholder="一言定義：誰が・何に困っていて・何を出すツール？&#10;例：中古物件を探す自分が、割安か判断できずに困っている。候補物件をスコア付きレポートで出すツール。"></textarea></p>
+      </fieldset>
+
+      <fieldset class="block" data-block="1">
+        <legend><span class="bno">①</span>INPUT <span class="cat">入力の受け取り方</span></legend>
+        <p class="q">ツールへの頼み方に近いものを選ぶ（複数可）</p>
+        <label class="opt"><input type="checkbox" data-part="input/mode-detection">
+          <span><span class="opt-name">話しかけたら内容で自動判定してほしい</span><span class="opt-part">input/mode-detection</span>
+          <span class="opt-func">モード・キーワードを自動判定して分岐する</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="input/context-intake">
+          <span><span class="opt-name">最初に質問で詳しい文脈を引き出してほしい</span><span class="opt-part">input/context-intake</span>
+          <span class="opt-func">1回の質問で質の高い入力を引き出し、質を採点する</span></span></label>
+      </fieldset>
+
+      <fieldset class="block" data-block="4">
+        <legend><span class="bno">④</span>DATA <span class="cat">外部データ</span></legend>
+        <p class="q">外のデータを使う？（複数可・使わなければ未選択でOK）</p>
+        <label class="opt"><input type="checkbox" data-part="data/web-scraping data/file-per-item data/auto-parse data/screening">
+          <span><span class="opt-name">Webサイトからデータを集める</span><span class="opt-part">data/web-scraping ほか3部品</span>
+          <span class="opt-func">取得ルール・1件1ファイル・自動パース・足切りのセット</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="data/diff-cache">
+          <span><span class="opt-name">同じデータを定期的に取り直す</span><span class="opt-part">data/diff-cache</span>
+          <span class="opt-func">前回データを再利用して取得量を減らす</span></span></label>
+      </fieldset>
+
+      <fieldset class="block" data-block="3">
+        <legend><span class="bno">③</span>PROCESS <span class="cat">中核の処理</span></legend>
+        <p class="q">ツールの「本体」に近い動きは？（複数可）</p>
+        <label class="opt"><input type="checkbox" data-part="process/stress-test">
+          <span><span class="opt-name">出した案の弱点・失敗理由も出してほしい</span><span class="opt-part">process/stress-test</span>
+          <span class="opt-func">カテゴリ別に失敗理由と回避行動を強制生成する</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="process/debate-engine">
+          <span><span class="opt-name">賛成・反対を討論させて検証してほしい</span><span class="opt-part">process/debate-engine</span>
+          <span class="opt-func">討論者2名＋審判のターン制討論で穴を壊す</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="process/action-design">
+          <span><span class="opt-name">結論を「すぐやる行動」に落としてほしい</span><span class="opt-part">process/action-design</span>
+          <span class="opt-func">誰に・何を・どうやって・いつまでに、の即実行形式</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="__custom__">
+          <span><span class="opt-name">独自の計算・スコアリングがある</span><span class="opt-part new">新造（固有ロジック）</span>
+          <span class="opt-func">例：EV計算のような案件固有の処理。下の補足欄に内容を書く</span></span></label>
+      </fieldset>
+
+      <fieldset class="block" data-block="2">
+        <legend><span class="bno">②</span>QUALITY <span class="cat">品質の担保</span></legend>
+        <p class="q">出力の質をどう守る？（複数可）</p>
+        <label class="opt"><input type="checkbox" data-part="quality/fact-check">
+          <span><span class="opt-name">数字はWeb検索で裏取りしてほしい</span><span class="opt-part">quality/fact-check</span>
+          <span class="opt-func">重要数値を検索で照合し、補正値だけを使わせる</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="quality/confidence-score">
+          <span><span class="opt-name">結論の信頼度を採点してほしい</span><span class="opt-part">quality/confidence-score</span>
+          <span class="opt-func">A〜Eで自己採点し、A未満は改善ロードマップを出す</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="quality/concreteness-rules">
+          <span><span class="opt-name">抽象論禁止。固有名詞と数値で語らせたい</span><span class="opt-part">quality/concreteness-rules</span>
+          <span class="opt-func">「一般的には」等を禁止し具体性を強制する</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="quality/branch-table">
+          <span><span class="opt-name">途中に合否ゲートを置いて足切りしたい</span><span class="opt-part">quality/branch-table</span>
+          <span class="opt-func">多軸チェック→結果で機械的に分岐・停止する</span></span></label>
+      </fieldset>
+
+      <fieldset class="block" data-block="5">
+        <legend><span class="bno">⑤</span>OUTPUT <span class="cat">出力の形</span></legend>
+        <p class="q">最後に何が出てきてほしい？（複数可）</p>
+        <label class="opt"><input type="checkbox" data-part="output/summary-table">
+          <span><span class="opt-name">1画面のサマリー表</span><span class="opt-part">output/summary-table</span>
+          <span class="opt-func">全工程の結論を7行以内の表に圧縮する</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="output/html-report">
+          <span><span class="opt-name">HTMLレポート</span><span class="opt-part">output/html-report</span>
+          <span class="opt-func">注目上位＋全データ表＋注記の標準構成レポート</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="output/secretary-tone">
+          <span><span class="opt-name">秘書口調の短い報告</span><span class="opt-part">output/secretary-tone</span>
+          <span class="opt-func">要点先出し・箇条書き・先回りの一言</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="output/meta-evolution">
+          <span><span class="opt-name">毎回「次回の改良ポイント」も出してほしい</span><span class="opt-part">output/meta-evolution</span>
+          <span class="opt-func">出力末尾に改良ヒントを1つ出し、進化サイクルを回す</span></span></label>
+      </fieldset>
+
+      <fieldset class="block" data-block="6">
+        <legend><span class="bno">⑥</span>INTEGRATION <span class="cat">連携</span></legend>
+        <p class="q">他のサービス・ツールとつなぐ？（複数可）</p>
+        <label class="opt"><input type="checkbox" data-part="integration/notion-task">
+          <span><span class="opt-name">結果をNotionに登録・記録したい</span><span class="opt-part">integration/notion-task</span>
+          <span class="opt-func">NotionのDBへ登録・ステータス更新する定型処理</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="integration/scheduled-task">
+          <span><span class="opt-name">毎日・毎週など定期実行したい</span><span class="opt-part">integration/scheduled-task</span>
+          <span class="opt-func">朝キャッシュ／日中分析／夜突合の3分割で自動化</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="integration/skill-handoff">
+          <span><span class="opt-name">条件次第で別ツールに引き継ぎたい</span><span class="opt-part">integration/skill-handoff</span>
+          <span class="opt-func">要否を判定し、起動コマンドと合流コマンドを生成</span></span></label>
+      </fieldset>
+
+      <fieldset class="block" data-block="7">
+        <legend><span class="bno">⑦</span>SAFETY <span class="cat">安全</span></legend>
+        <p class="q">事故防止（複数可・迷ったら両方）</p>
+        <label class="opt"><input type="checkbox" data-part="safety/irreversible-confirm">
+          <span><span class="opt-name">送信・削除など取り返しのつかない操作がある</span><span class="opt-part">safety/irreversible-confirm</span>
+          <span class="opt-func">不可逆操作の前だけ必ず確認を挟む</span></span></label>
+        <label class="opt"><input type="checkbox" data-part="safety/hallucination-guard" checked>
+          <span><span class="opt-name">推定と事実をはっきり分けてほしい</span><span class="opt-part">safety/hallucination-guard</span>
+          <span class="opt-func">AIが補完した前提を【推定前提】として明示させる</span></span></label>
+      </fieldset>
+
+      <fieldset class="block">
+        <legend><span class="bno">＋</span>補足</legend>
+        <p class="q">固有ロジックの内容・参考にしたい既存ツール・こだわり等</p>
+        <p style="margin-bottom:0"><textarea id="notes" placeholder="例：スコアは「割安度 = 周辺相場 − 提示価格」で計算したい。keiba-yosoのレポートの見た目が好き。"></textarea></p>
+      </fieldset>
+    </form>
+
+    <aside class="preview">
+      <div class="panel">
+        <h2>ツールキャンバス（ライブ）</h2>
+        <table class="canvas" id="canvas-table">
+          <tr><td class="b">① INPUT</td><td class="v" data-cat="input"><span class="none">—</span></td></tr>
+          <tr><td class="b">② QUALITY</td><td class="v" data-cat="quality"><span class="none">—</span></td></tr>
+          <tr><td class="b">③ PROCESS</td><td class="v" data-cat="process"><span class="none">—</span></td></tr>
+          <tr><td class="b">④ DATA</td><td class="v" data-cat="data"><span class="none">—</span></td></tr>
+          <tr><td class="b">⑤ OUTPUT</td><td class="v" data-cat="output"><span class="none">—</span></td></tr>
+          <tr><td class="b">⑥ INTEGRATION</td><td class="v" data-cat="integration"><span class="none">—</span></td></tr>
+          <tr><td class="b">⑦ SAFETY</td><td class="v" data-cat="safety"><span class="none">—</span></td></tr>
+        </table>
+        <p class="hint">再利用部品：<span class="count" id="part-count">0</span> 個 ／ 新造：<span class="count" id="custom-count">0</span> 件</p>
+      </div>
+      <div class="panel">
+        <h2>発注書（Claudeに貼る）</h2>
+        <pre class="order" id="order-text"></pre>
+        <button type="button" class="copybtn" id="copy">発注書をコピー</button>
+        <p class="hint">コピーしたらClaudeのチャットに貼るだけ。noe-tool-factoryスキルが起動して製造が始まります。</p>
+      </div>
+      <span class="stamp">NOE FACTORY 受付印</span>
+    </aside>
+  </div>
+</div>
+
+<script>
+(function () {
+  var form = document.getElementById('form');
+  var boxes = Array.prototype.slice.call(form.querySelectorAll('input[type="checkbox"]'));
+
+  function selectedParts() {
+    var parts = [], custom = 0;
+    boxes.forEach(function (b) {
+      if (!b.checked) return;
+      b.getAttribute('data-part').split(' ').forEach(function (p) {
+        if (p === '__custom__') { custom++; }
+        else if (parts.indexOf(p) < 0) { parts.push(p); }
+      });
+    });
+    return { parts: parts, custom: custom };
+  }
+
+  function byCat(parts) {
+    var map = { input: [], quality: [], process: [], data: [], output: [], integration: [], safety: [] };
+    parts.forEach(function (p) {
+      var cat = p.split('/')[0];
+      if (map[cat]) map[cat].push(p.split('/')[1]);
+    });
+    return map;
+  }
+
+  function update() {
+    boxes.forEach(function (b) {
+      b.closest('label').classList.toggle('checked', b.checked);
+    });
+    var sel = selectedParts();
+    var map = byCat(sel.parts);
+    var hasCustom = sel.custom > 0;
+
+    Object.keys(map).forEach(function (cat) {
+      var cell = document.querySelector('#canvas-table td[data-cat="' + cat + '"]');
+      var items = map[cat].slice();
+      if (cat === 'process' && hasCustom) items.push('★新造');
+      cell.innerHTML = items.length
+        ? items.join(', ')
+        : '<span class="none">なし</span>';
+    });
+    document.getElementById('part-count').textContent = sel.parts.length;
+    document.getElementById('custom-count').textContent = sel.custom;
+
+    var name = document.getElementById('toolname').value.trim() || '（未定・工場が提案）';
+    var one = document.getElementById('oneliner').value.trim() || '（未記入・工場が最初に1問だけ確認）';
+    var notes = document.getElementById('notes').value.trim() || 'なし';
+
+    var lines = [];
+    lines.push('noe-tool-factory を起動せよ。以下の発注書に基づき製造すること。');
+    lines.push('');
+    lines.push('【ツール発注書】');
+    lines.push('ツール名（仮）：' + name);
+    lines.push('一言定義：' + one);
+    lines.push('');
+    lines.push('キャンバス指定：');
+    var labels = { input: '① INPUT', quality: '② QUALITY', process: '③ PROCESS', data: '④ DATA', output: '⑤ OUTPUT', integration: '⑥ INTEGRATION', safety: '⑦ SAFETY' };
+    Object.keys(labels).forEach(function (cat) {
+      var items = map[cat].map(function (n) { return cat + '/' + n; });
+      if (cat === 'process' && hasCustom) items.push('新造（固有ロジック）');
+      lines.push(labels[cat] + '：' + (items.length ? items.join(', ') : 'なし'));
+    });
+    lines.push('');
+    lines.push('補足・固有ロジック：' + notes);
+    lines.push('');
+    lines.push('※部品はリポジトリ tatsumi611216-source/noe-match の tool-factory/parts/ を参照。');
+    lines.push('※キャンバス確認（STEP 3）は発注書の内容で了承済みとして進めてよい。重大な矛盾がある場合のみ質問すること。');
+
+    document.getElementById('order-text').textContent = lines.join('\n');
+  }
+
+  form.addEventListener('input', update);
+  form.addEventListener('change', update);
+
+  document.getElementById('copy').addEventListener('click', function () {
+    var text = document.getElementById('order-text').textContent;
+    var btn = this;
+    function done() {
+      btn.textContent = 'コピーしました ✓';
+      setTimeout(function () { btn.textContent = '発注書をコピー'; }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function () { fallback(); });
+    } else { fallback(); }
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+      done();
+    }
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
