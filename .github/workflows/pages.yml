@@ -21,9 +21,11 @@ permissions:
   pages: write
   id-token: write
 
-# 進行中のデプロイは止めない（止めると errored 状態を招きやすい）
+# 進行中のデプロイは止めない（止めると errored 状態を招きやすい）。
+# グループ名を "pages" にすると GitHub 組み込みの pages-build-deployment と
+# 同じグループになり、そちらのロック解放を延々待つ。必ず別名にすること。
 concurrency:
-  group: pages
+  group: pages-deploy
   cancel-in-progress: false
 
 jobs:
