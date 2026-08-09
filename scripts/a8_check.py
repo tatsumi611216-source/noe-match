@@ -17,9 +17,19 @@ import csv
 import glob
 import io
 import os
+import re
 import sys
 
 DESKTOP = os.path.expanduser(r"~\OneDrive\デスクトップ")
+
+# CSVの置き場所。ブラウザの既定の保存先はダウンロードフォルダなので、
+# デスクトップだけを見ていると「書き出したのに見つからない」が起きる
+# （2026-08-01に実際に発生し、8/1分の差分を丸ごと取りこぼしかけた）。
+SEARCH_DIRS = [
+    DESKTOP,
+    os.path.expanduser(r"~\Downloads"),
+    os.path.expanduser(r"~\Desktop"),
+]
 
 # noe-match にとって価値のあるカテゴリ（ここに入るものだけを「要検討」として強調する）
 PRIORITY_CATEGORIES = {"婚活", "恋愛", "ウエディング"}
@@ -33,8 +43,17 @@ RELEVANT_CATEGORIES = PRIORITY_CATEGORIES | {
 EXCLUDED_CATEGORIES = {"占い", "在宅ワーク", "ASP", "ポイントサービス・懸賞"}
 
 # 収益化できていない記事の受け皿として不足しているジャンル（agent/affiliate_gaps.md）。
-# カテゴリ名はA8側の表記揺れがあるため、カテゴリではなく
-# プログラム名・広告主名へのキーワード一致で拾う。
+#
+# 判定は「カテゴリ列 → 除外カテゴリ → 語句」の順に行う。CSVの4列目（カテゴリ）が
+# 最も信頼できるので、まずそれを見る。プログラム名への単一キーワード部分一致は
+# 誤爆するため使わない（「楽天」だけで拾うと『楽天グルメ大賞受賞のおせち等…
+# 【ちこり村本店サイト】』がクレジットカード案件として報告されてしまう）。
+# ブランド名は必ずカテゴリ語との共起でのみ該当とする。
+#
+#   categories      : カテゴリ列がこれなら、プログラム名を見るまでもなく該当
+#   deny_categories : カテゴリ名にこの語を含むなら、語句が一致しても該当としない
+#   phrases         : 単独で該当と断定できるジャンル固有の複合語
+#   brands×qualifiers : ブランド名は「カード」等のカテゴリ語と同時に出た時だけ該当
 #
 # 目的は2つ:
 #   1. 提携済みなのに台帳（AGENT.md）に載っておらず、使われていない案件を発見する
@@ -42,23 +61,44 @@ EXCLUDED_CATEGORIES = {"占い", "在宅ワーク", "ASP", "ポイントサー�
 #   2. 申請後、承認されたかを確認する
 GAP_GENRES = {
     "クレジットカード": {
-        "keywords": ("カード", "card", "クレジット", "JCB", "VISA", "アメックス",
-                     "セゾン", "楽天", "三井住友", "エポス", "オリコ", "ジャックス"),
+        # A8の正式カテゴリ名。カードローン・保険等の金融カテゴリは別物なので入れない
+        "categories": ("クレジットカード",),
+        "deny_categories": ("グルメ", "食品", "ファッション", "服", "コスメ",
+                            "スキンケア", "インテリア", "グッズ", "写真"),
+        "phrases": ("クレジットカード", "クレジット決済", "ゴールドカード",
+                    "カード発行", "年会費無料", "クレカ"),
+        "brands": ("JCB", "VISA", "アメックス", "セゾン", "楽天", "三井住友",
+                   "エポス", "オリコ", "ジャックス", "ダイナース", "イオン", "ライフ"),
+        "qualifiers": ("カード", "card", "クレジット"),
         "articles": ("fuufu-credit-kanri", "gosyugi-shiharai-houhou",
                      "shinkon-ryokou-credit", "futari-kouza-kanri"),
     },
     "妊活サプリ": {
-        "keywords": ("妊活", "葉酸", "マカ", "亜鉛", "サプリ", "ミトコ", "マイシード",
-                     "mitas", "ミタス", "プレコンセプション"),
+        # 「サプリメント」カテゴリはダイエット等も含むため、カテゴリ単独では該当にしない
+        "categories": (),
+        "deny_categories": ("就職", "仕事情報", "婚活", "恋愛"),
+        "phrases": ("妊活", "葉酸", "不妊", "プレコンセプション", "マイシード",
+                    "ミトコア", "mitas", "ミタス"),
+        "brands": ("マカ", "亜鉛", "ルイボス"),
+        "qualifiers": ("サプリ", "妊活", "栄養"),
         "articles": ("dansei-ninkatsu-guide", "mitas-formen-kuchikomi",
                      "mitocore-kuchikomi", "myseed-kuchikomi"),
     },
     "ブライダルインナー": {
-        "keywords": ("インナー", "下着", "ランジェリー", "ブライダルインナー", "補正"),
+        # 「下着・インナー」カテゴリは一般下着も含むため、カテゴリ単独では該当にしない
+        "categories": (),
+        "deny_categories": ("就職", "仕事情報", "グルメ", "食品"),
+        "phrases": ("ブライダルインナー", "ウェディングインナー", "ブライダル下着"),
+        "brands": ("ブライダル", "ウエディング", "ウェディング", "花嫁", "結婚式"),
+        "qualifiers": ("インナー", "下着", "ランジェリー", "補正"),
         "articles": ("bridal-inner-guide",),
     },
     "国際結婚・ビザ": {
-        "keywords": ("行政書士", "ビザ", "在留", "国際結婚"),
+        "categories": (),
+        "deny_categories": ("就職", "仕事情報", "グルメ", "食品"),
+        "phrases": ("国際結婚", "配偶者ビザ", "在留資格", "帰化申請", "入管"),
+        "brands": ("行政書士", "弁護士", "司法書士"),
+        "qualifiers": ("ビザ", "在留", "国際結婚", "配偶者"),
         "articles": ("kokusai-kekkon-guide",),
     },
 }
@@ -75,9 +115,60 @@ LEDGER_HINTS = (
 )
 
 
-def in_ledger(advertiser, name):
-    blob = (advertiser or "") + (name or "")
-    return any(h.lower() in blob.lower() for h in LEDGER_HINTS)
+def ledger_names():
+    """AGENT.md の台帳テーブルから登録済みブランド名を読む。
+
+    LEDGER_HINTS は手で保守すると台帳への追記に追従できず、配置済みの案件を
+    「新規」と誤報する（2026-08-02に4件で発生）。実ファイルを正とし、
+    読めないときだけ定数にフォールバックする。
+    """
+    path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                        "agent", "AGENT.md")
+    names = set(LEDGER_HINTS)
+    try:
+        with io.open(path, encoding="utf-8") as f:
+            text = f.read()
+    except (IOError, OSError):
+        return names
+    # 例: | ウェルスマ（A8） | https://px.a8.net/... | 説明 |
+    for row in re.findall(r"^\|\s*([^|]+?)\s*\|\s*https://(?:px\.a8\.net|t\.afi-b\.com)",
+                          text, re.M):
+        brand = re.split(r"[（(]", row)[0].strip()
+        if len(brand) >= 3:
+            names.add(brand)
+    return names
+
+
+def in_ledger(advertiser, name, names=None):
+    blob = ((advertiser or "") + (name or "")).lower()
+    for h in (names if names is not None else ledger_names()):
+        if h.lower() in blob:
+            return True
+    return False
+
+
+def match_genre(cat, adv, name, spec):
+    """プログラムがジャンルに該当すれば判定理由を、しなければ None を返す。
+
+    信頼できるカテゴリ列を最優先し、プログラム名は補助にとどめる。
+    """
+    cat = cat or ""
+    if cat in spec["categories"]:
+        return "カテゴリ"
+    if any(d in cat for d in spec["deny_categories"]):
+        return None
+
+    blob = ((adv or "") + (name or "")).lower()
+    for phrase in spec["phrases"]:
+        if phrase.lower() in blob:
+            return "語句:%s" % phrase
+    for brand in spec["brands"]:
+        if brand.lower() not in blob:
+            continue
+        for qual in spec["qualifiers"]:
+            if qual.lower() in blob:
+                return "%s×%s" % (brand, qual)
+    return None
 
 
 def report_gaps(programs):
@@ -89,17 +180,18 @@ def report_gaps(programs):
         for pid, (cat, adv, name) in programs.items():
             if cat in EXCLUDED_CATEGORIES:
                 continue
-            blob = (adv or "") + (name or "")
-            if any(k.lower() in blob.lower() for k in spec["keywords"]):
-                hits.append((pid, cat, adv, name, in_ledger(adv, name)))
+            why = match_genre(cat, adv, name, spec)
+            if why:
+                hits.append((pid, cat, adv, name, in_ledger(adv, name), why))
         print("■ %s（受け皿記事: %s）" % (genre, "・".join(spec["articles"])))
         if not hits:
             print("   提携済み案件なし → A8のプログラム検索で新規申請が必要\n")
             continue
         any_hit = True
-        for pid, cat, adv, name, known in sorted(hits, key=lambda x: x[4]):
+        for pid, cat, adv, name, known, why in sorted(hits, key=lambda x: x[4]):
             mark = "台帳済" if known else "★未使用"
-            print("   [%s] %s | %s | %s | %s" % (mark, pid, cat, adv, name[:46]))
+            print("   [%s] %s | %s | %s | %s（判定: %s）"
+                  % (mark, pid, cat, adv, name[:46], why))
         print()
     if any_hit:
         print("★未使用 の案件は、提携済みなのに AGENT.md の台帳に載っておらず")
@@ -116,9 +208,18 @@ def load(path):
 
 
 def find_csvs():
-    pattern = os.path.join(DESKTOP, "programs_*.csv")
-    files = sorted(glob.glob(pattern), key=os.path.getmtime)
-    return files
+    """置き場所を横断して集め、更新時刻順に並べる。
+
+    同じファイルがデスクトップとダウンロードの両方にある場合は、
+    ファイル名（書き出し時刻を含む）で重複を除く。
+    """
+    found = {}
+    for d in SEARCH_DIRS:
+        for p in glob.glob(os.path.join(d, "programs_*.csv")):
+            name = os.path.basename(p)
+            if name not in found or os.path.getmtime(p) > os.path.getmtime(found[name]):
+                found[name] = p
+    return sorted(found.values(), key=os.path.getmtime)
 
 
 def classify(category):
@@ -135,7 +236,7 @@ def main():
     files = find_csvs()
     if not files:
         print("CSVが見つかりません。A8管理画面から提携中プログラムを書き出してください。")
-        print("  保存先の想定: %s" % DESKTOP)
+        print("  探した場所: %s" % " / ".join(SEARCH_DIRS))
         return 1
 
     if "--gaps" in sys.argv:
@@ -169,11 +270,19 @@ def main():
         # 最優先 → 検討 → 対象外 → 除外 の順に並べる
         order = {"最優先": 0, "検討": 1, "対象外": 2, "除外": 3}
         added.sort(key=lambda k: order[classify(curr[k][0])])
+        names = ledger_names()
         print("=== 新規承認 %d件 ===" % len(added))
+        n_pri = 0
         for pid in added:
             cat, adv, name = curr[pid]
-            print("[%s] %s | %s | %s" % (classify(cat), pid, cat, name[:70]))
-        n_pri = sum(1 for k in added if classify(curr[k][0]) == "最優先")
+            done = in_ledger(adv, name, names)
+            if classify(cat) == "最優先" and not done:
+                n_pri += 1
+            print("[%s]%s %s | %s | %s"
+                  % (classify(cat), " 配置済" if done else "", pid, cat, name[:70]))
+        if any(in_ledger(curr[k][1], curr[k][2], names) for k in added):
+            print("\n→ 「配置済」は台帳（AGENT.md）に登録済み＝リンク配置まで完了している案件です。"
+                  "対応は不要です。")
         if n_pri:
             print("\n→ 最優先が%d件あります。受け皿記事の有無を確認し、"
                   "無ければ keyword_queue.json に積んでください。" % n_pri)

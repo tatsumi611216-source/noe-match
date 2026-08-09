@@ -265,5 +265,157 @@
    "success-rate-data",
    "with-seriousness-data"
   ]
+ },
+ {
+  "period": {
+   "start": "2026-07-03",
+   "end": "2026-07-31"
+  },
+  "fetched_at": "2026-08-02T14:23:14",
+  "totals": {
+   "live_articles": 144,
+   "eligible_articles": 59,
+   "excluded_published_after_window": 0,
+   "articles_with_impressions": 15,
+   "silent_rate": 74.6,
+   "impressions": 428,
+   "clicks": 16,
+   "ctr": 3.74
+  },
+  "cohorts": {
+   "legacy": {
+    "articles": 53,
+    "with_impressions": 11,
+    "reach_rate": 20.8
+   },
+   "in_window": {
+    "articles": 6,
+    "with_impressions": 4,
+    "reach_rate": 66.7
+   },
+   "fresh": {
+    "articles": 85,
+    "with_impressions": 20,
+    "reach_rate": 23.5
+   },
+   "after_window": {
+    "articles": 0,
+    "with_impressions": 0,
+    "reach_rate": null
+   }
+  },
+  "rewrites": {
+   "evaluated": 0,
+   "reached": 0,
+   "pending": 6
+  },
+  "position_bands": {
+   "1-10位": {
+    "impressions": 27,
+    "clicks": 3,
+    "ctr": 11.1
+   },
+   "11-30位": {
+    "impressions": 15,
+    "clicks": 0,
+    "ctr": 0.0
+   },
+   "51位以下": {
+    "impressions": 88,
+    "clicks": 0,
+    "ctr": 0.0
+   },
+   "31-50位": {
+    "impressions": 26,
+    "clicks": 0,
+    "ctr": 0.0
+   }
+  },
+  "clusters": {
+   "データ・統計": {
+    "pages": 4,
+    "impressions": 107,
+    "clicks": 6,
+    "avg_position": 21.0,
+    "clicks_per_page": 1.5,
+    "ctr": 5.6
+   },
+   "地域ガイド": {
+    "pages": 7,
+    "impressions": 119,
+    "clicks": 5,
+    "avg_position": 13.9,
+    "clicks_per_page": 0.71,
+    "ctr": 4.2
+   },
+   "属性別": {
+    "pages": 5,
+    "impressions": 50,
+    "clicks": 1,
+    "avg_position": 41.5,
+    "clicks_per_page": 0.2,
+    "ctr": 2.0
+   },
+   "ノウハウ": {
+    "pages": 5,
+    "impressions": 46,
+    "clicks": 2,
+    "avg_position": 33.9,
+    "clicks_per_page": 0.4,
+    "ctr": 4.3
+   },
+   "アプリ別": {
+    "pages": 4,
+    "impressions": 51,
+    "clicks": 1,
+    "avg_position": 41.0,
+    "clicks_per_page": 0.25,
+    "ctr": 2.0
+   },
+   "結婚準備": {
+    "pages": 3,
+    "impressions": 24,
+    "clicks": 0,
+    "avg_position": 57.2,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "その他": {
+    "pages": 6,
+    "impressions": 21,
+    "clicks": 0,
+    "avg_position": 58.4,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "新生活": {
+    "pages": 1,
+    "impressions": 2,
+    "clicks": 0,
+    "avg_position": 21.5,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   }
+  },
+  "top10_queries": [
+   "omiai 成婚率",
+   "with 結婚率"
+  ],
+  "top10_pages": [
+   "omiai-guide",
+   "with-seriousness-data"
+  ],
+  "pages_with_clicks": [
+   "(top)",
+   "civil-servant-guide",
+   "kekkon-madeno-kikan-data",
+   "kyoto-guide",
+   "message-strategy",
+   "omiai-guide",
+   "profile-photo",
+   "sapporo-guide",
+   "success-rate-data",
+   "with-seriousness-data"
+  ]
  }
 ]

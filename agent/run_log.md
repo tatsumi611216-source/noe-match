@@ -67,6 +67,33 @@
 2. `python scripts\fetch_gsc.py` ← インデックスされた70本に表示が立ったかを測る
 3. note 予約投稿9本 ← 唯一の需要側の打ち手。対照群5本の判定にも必要
 
+## 2026-08-03　週次記事工場ラン｜型A×2本生成（youbride-seikon-data / marrish-saikon-data）
+
+### 実施内容
+
+- `youbride-seikon-data/index.html` 生成完了
+  - タイトル：ユーブライドの成婚率は公表されているか｜成婚退会者数の実数と読み方【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：宮崎さん（33歳・事務職・女性）、北村さん（39歳・フリーランス・男性）
+  - 内部リンク4本 / Phase 4-0によりCTAブロックなし
+  
+- `marrish-saikon-data/index.html` 生成完了
+  - タイトル：マリッシュの再婚成婚データ｜シンパパ・シンママ優遇の実態を公表値で確認する【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：木村さん（39歳・保育士・女性）、坂本さん（44歳・建設業・男性）
+  - 内部リンク4本 / Phase 4-0によりCTAブロックなし
+
+- `sitemap.xml` / `sitemap-all.xml` に2記事分URLを追加
+- `index.html` 更新：全146記事・データ・統計17記事・arc-no 16/17追加
+- `keyword_queue.json` 2件をdoneに更新
+- `factory_audit.py`：FAIL 0件 / 構造エラー 0件 ✅
+
+### Phase 4-0 対応メモ
+
+`asp_results.md` の `last_updated` が「（未記入）」のままのため、新規2記事にはアフィリエイトCTAブロックを設置せず。関連記事ボックスへの内部リンク（CTA記事への誘導）のみ実施。
+
+**人間へのアクション依頼：ASP管理画面（A8.net等）の成果データを `agent/asp_results.md` に転記してください。** これにより Phase 4（収益フィードバック）が開始でき、次回ランからCTA設置が可能になります。
+
 ## 2026-08-01(4)　「待てばよいか」の否定と、インデックス申請による切り分け実験の設計
 
 ### 待っても解消しない（実測）
@@ -688,6 +715,38 @@ AGENT.md の規定（14日以上古い場合はPhase 2をスキップ）に従�
 | クエリ | ページ | 表示回数 | 平均順位 | 対応 |
 |-------|-------|---------|---------|------|
 | マッチング アプリ 東京 | /articles/tokyo-guide/ | 14 | 35.2 | スキップ（前回強化2026-07-25・2日前・2週間未経過） |
+
+Phase 2の強化対象なし（唯一の候補が2週間ルールに抵触）。
+
+---
+
+## 2026-07-30
+
+### Phase 1：記事生成
+
+キューにpending記事がないため、新規データ系キーワードを2件発掘して記事生成。
+
+| slug | タイトル | 生成結果 |
+|------|---------|---------|
+| matching-josei-cost-data | マッチングアプリの女性費用データ【2026年版】無料で使える範囲と有料が必要なケース | 生成完了 |
+| hatsushon-nenmei-data | 初婚年齢の平均データ【2026年版】男女別推移と婚活を始めるべき年齢 | 生成完了 |
+
+- sitemap.xml に matching-josei-cost-data・hatsushon-nenmei-data を追加
+- index.html の「📊 データ・統計」グループに arc-no 14・15 として追加（計15記事）、全体記事数を全142→全144記事に更新
+- keyword_queue.json に新規2件を追加してstatus: "done"
+- note_drafts/matching-josei-cost-data.md・note_drafts/hatsushon-nenmei-data.md を生成
+
+**新規キーワード選定理由**：matching-dansei-cost-data（男性費用）の自然な対記事として女性費用データを選定。初婚年齢データはデータクラスター内で「統計ハブ」として機能する記事が不足していたため、厚生労働省一次ソースを活用した信頼性の高い記事を選定。
+
+### Phase 2：GSCデータに基づく記事強化
+
+**gsc_data.json の状態**：fetched_at 2026-07-26T14:24:00（4日前・有効）
+
+**強化対象の選定**（表示回数5回以上 かつ 掲載順位11〜50位）：
+
+| クエリ | ページ | 表示回数 | 平均順位 | 対応 |
+|-------|-------|---------|---------|------|
+| マッチング アプリ 東京 | /articles/tokyo-guide/ | 14 | 35.2 | スキップ（前回強化2026-07-25・5日前・2週間未経過） |
 
 Phase 2の強化対象なし（唯一の候補が2週間ルールに抵触）。
 

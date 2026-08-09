@@ -1,0 +1,59 @@
+# 営業ソーシングツール: 採用ページの日次クロール
+# GitHub Actions のランナー上で実行する（Cowork環境のネットワーク制限を受けない）。
+# - 毎朝6:00 JST に自動実行 + 手動実行（workflow_dispatch）も可
+# - DBとHTTPキャッシュは actions/cache で前回実行から引き継ぎ（差分クロール）
+# - レポートとDBは artifact としてダウンロード可能（公開リポジトリに成果物はコミットしない）
+name: sourcing-crawl
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 21 * * *'   # 21:00 UTC = 6:00 JST
+  push:
+    branches: [main]
+    paths:
+      - 'sourcing/seeds/**'
+      - 'sourcing/scripts/**'
+      - '.github/workflows/sourcing-crawl.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sourcing-crawl
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 前回のDB・HTTPキャッシュを復元（差分クロールに必要）
+      - name: Restore data cache
+        uses: actions/cache@v4
+        with:
+          path: sourcing/data
+          key: sourcing-data-${{ github.run_id }}
+          restore-keys: |
+            sourcing-data-
+
+      - name: Run daily crawl
+        working-directory: sourcing/scripts
+        run: |
+          python3 run_daily.py --seeds ../seeds/game_companies.csv --workers 4
+          python3 run_daily.py --seeds ../seeds/startups_probe.csv --workers 4
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
+        with:
+          name: sourcing-report-${{ github.run_number }}
+          path: |
+            sourcing/outputs/report.html
+            sourcing/data/sourcing.db
+          retention-days: 30
