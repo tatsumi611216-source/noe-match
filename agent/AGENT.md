@@ -307,6 +307,7 @@ success-rate-data 1本（52表示・平均34.8位・1クリック）が稼いで
 | R婚（A8・シュタインズ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2EXEYI+3LOM+NVHCX | 35歳以上に特化した相談所。35s-strategy・40s系。**年齢を不利として煽らず**「年齢が条件ではなく前提になる構造」として提示 |
 | 結婚相談所フィオーレ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+32QR5M+2RIS+BWVTE | 成婚実績を公表する相談所。相談所比較の文脈（app-tsukare-guide）。**公表していること自体は成果の保証ではない**旨を必ず併記 |
 | ベルロード縁結びサポート（A8・IDM） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EQHCMY+4MPE+61C2P | IBJ加盟のオンライン相談所（月額制）。**併用の2本目・費用が軽い選択肢**として提示（app-plus-agency）。naco-doと同一記事に併置しない |
+| エポスカード（A8・2026-08-09登録） | https://px.a8.net/svt/ejp?a8mat=4B9VHF+30YFKI+38L8+BXQOH | 年会費永久無料のクレジットカード。**新婚・同棲世帯の支払い設計の文脈のみ**（fuufu-credit-kanri・gosyugi-shiharai-houhou・shinkon-ryokou-credit・futari-kouza-kanri）。**YMYL（金融商品）につき1記事1箇所に絞る**（上限3ではなく1）。**禁止**：還元率・付帯保険・年会費・キャンペーン金額の断定（「公式サイトで確認を」を必ず併記）／審査に関する記述全般（「誰でも作れる」「審査が甘い」等は事実確認できない）／「必ず得する」等の断定。**クレカリ賃貸と同一記事に併置しない**（「手数料3.6%で還元は赤字」という既存の論旨と、カード発行の推奨は同じ記事に置くと矛盾して読める）。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 ### 大手アプリ記事の役割定義（2026-07-30制定）
