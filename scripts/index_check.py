@@ -276,6 +276,32 @@ def zero_impression_urls():
     return {u for u in live_urls() if u.rstrip("/") + "/" not in shown}
 
 
+STALE_DAYS = 3
+
+
+def gsc_is_stale():
+    """表示データがインデックス検査より古いと (a)/(b) の切り分けが壊れる。
+
+    2026-08-09に実際に踏んだ：申請で21本が新たにインデックスされた直後に、
+    8日前の表示データと突き合わせて「圏外44本」と出た。その21本は表示データの
+    取得時点でインデックスされていないのだから、表示が無いのは当たり前で、
+    圏外（クエリ選定の失敗）ではない。打ち手を誤らせるので出さない。
+    """
+    if not os.path.exists(GSC_DATA):
+        return True
+    try:
+        with open(GSC_DATA, encoding="utf-8") as f:
+            fetched = json.load(f).get("fetched_at") or ""
+        d = datetime.datetime.fromisoformat(fetched.replace("Z", "+00:00"))
+    except Exception:
+        return True
+    # fetch_gsc.py はタイムゾーンなしで書く。UTCとみなす
+    if d.tzinfo is None:
+        d = d.replace(tzinfo=datetime.timezone.utc)
+    now = datetime.datetime.now(datetime.timezone.utc)
+    return (now - d).days > STALE_DAYS
+
+
 def report(results):
     from collections import Counter
 
@@ -306,6 +332,13 @@ def report(results):
     print("\n" + "=" * 66)
     if zero is None:
         print("agent/gsc_data.json が無いので (a)/(b) の切り分けは省略した。")
+    elif gsc_is_stale():
+        print("agent/gsc_data.json が古いので (a)/(b) の切り分けは出さない。")
+        print("  表示データの取得日より後にインデックスされた記事は、"
+              "「まだ表示が立っていない」のではなく")
+        print("  **表示データの窓に存在していなかった**だけである。"
+              "これを圏外(b)として数えると水増しになる。")
+        print("  先に `python3 scripts/fetch_gsc.py` を回してから読み直すこと。")
     else:
         zero_ok = zero & set(ok)
         a = sorted(zero_ok & not_indexed)
