@@ -1,8 +1,9 @@
-# Noe ツールメイキング工場
+# Noeツールラボ
 
-「既存ツールを部品化 → 部品を組み合わせて新ツールを高速製造」するための工場。
+「既存ツールを部品化 → 部品を組み合わせて新ツールを高速製造」するためのラボ。
+受注・設計・製造・改修・棚卸しまで、AIツールの一生を扱う。
 
-## なぜ工場が必要か
+## なぜラボが必要か
 
 既存5スキル（noe-brain / noe-relay / keiba-yoso / web-data-pipeline / secretary）を
 分解した結果、**同じ機能が別々のスキルで重複製造されていた**：
@@ -20,11 +21,11 @@
 新ツールを作るたびにこれらをゼロから書き直すのは無駄。
 今後は部品ライブラリから取り出して組み立てる。
 
-## 工場の構成
+## ラボの構成
 
 ```
 tool-factory/
-  README.md                 ← このファイル（工場の概要）
+  README.md                 ← このファイル（ラボの概要）
   AI_TOOL_DESIGN_CANVAS.md  ← 理論書（キャンバスの理論→実ツール解剖→読者向け応用手順）
   PARTS_CATALOG.md          ← 部品カタログ（全部品の一覧・既存ツールの分解結果）
   ASSEMBLY_GUIDE.md         ← 組み立てガイド（SKILL.mdテンプレ＋製造手順）
@@ -39,8 +40,10 @@ tool-factory/
     output/            ← 出力系（サマリー表・HTMLレポート・口調）
     integration/       ← 連携系（Notion・スキル間連携・定期タスク）
     safety/            ← 安全系（不可逆確認・ハルシネーション抑制）
+  lab_inventory.py          ← 在庫棚卸し（部品・ツール・カタログの不一致を検知）
   skills/
-    noe-tool-factory/  ← 工場スキル本体（~/.claude/skills/ に配置して使う）
+    noe-tool-lab/           ← ラボ本体（~/.claude/skills/ に配置して使う）
+    gsc-report/             ← 製造済みツール（第1号）
 ```
 
 ## 使い方
@@ -52,18 +55,24 @@ tool-factory/
 Google Form派は `ORDER_FORM.md` の質問セットを転記して使う（回答をそのまま貼ればOK）。
 
 **ルート2：会話発注**
-1. Claude に「〇〇するツールを作って」と依頼する（noe-tool-factory スキルが起動）
-2. 工場スキルが PARTS_CATALOG.md を参照して必要な部品を選定
+1. Claude に「〇〇するツールを作って」と依頼する（noe-tool-lab スキルが起動）
+2. ラボが PARTS_CATALOG.md を参照して必要な部品を選定
 3. ASSEMBLY_GUIDE.md のテンプレに部品を組み込んで SKILL.md を生成
 4. 足りない部品は新造し、**必ず parts/ とカタログに登録**（次回から再利用可能に）
 
-### 工場スキルのインストール
+### ラボのインストール
 
 ```bash
-cp -r tool-factory/skills/noe-tool-factory ~/.claude/skills/
+cp -r tool-factory/skills/noe-tool-lab ~/.claude/skills/
 ```
 
-## 工場の運用ルール（重要）
+### 在庫の確認
+
+```bash
+python3 tool-factory/lab_inventory.py
+```
+
+## ラボの運用ルール（重要）
 
 1. **部品ファースト**：新ツールに書くロジックは、まず「既存部品で賄えないか」をカタログで確認する
 2. **新造したら登録**：新ツールのために新しい機能を書いたら、汎用化して parts/ に登録する

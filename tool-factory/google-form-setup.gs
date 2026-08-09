@@ -108,5 +108,5 @@ function onOrderSubmit(e) {
   });
   body += '回答シート:\nhttps://docs.google.com/spreadsheets/d/1GCjb_S944rh5Pzd2F5RBkJf6gIjiePr1VSpgkzjuCtQ/edit\n\n';
   body += 'この発注で進める場合は、Claudeに\n「Google Formの発注を確認して提案書を作って」と伝えてください。';
-  MailApp.sendEmail(Session.getActiveUser().getEmail(), '【Noe工場】新しいツール発注', body);
+  MailApp.sendEmail(Session.getActiveUser().getEmail(), '【Noeツールラボ】新しいツール発注', body);
 }

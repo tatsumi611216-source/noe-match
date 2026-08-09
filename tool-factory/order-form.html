@@ -132,10 +132,10 @@
 <body>
 <div class="wrap">
   <header class="masthead">
-    <p class="eyebrow">Noe Tool-Making Factory / Hearing Sheet</p>
+    <p class="eyebrow">Noe Tool Lab / Hearing Sheet</p>
     <h1>ツール発注フォーム — 自動化ヒアリングシート</h1>
-    <p class="lead">「自動化したいこと」を軸に作業をブレイクダウンしていくと、右側で実現可否がその場で判定されます。判定を確認してから発注してください。部品の選定は工場が裏側で行います。</p>
-    <p class="flow"><b>❶ ヒアリング</b> → <b>❷ 実現可否判定</b> → <b>❸ 発注</b> → 工場が製造（部品選定・組み立て・試運転）</p>
+    <p class="lead">「自動化したいこと」を軸に作業をブレイクダウンしていくと、右側で実現可否がその場で判定されます。判定を確認してから発注してください。部品の選定はラボが裏側で行います。</p>
+    <p class="flow"><b>❶ ヒアリング</b> → <b>❷ 実現可否判定</b> → <b>❸ 発注</b> → ラボが製造（部品選定・組み立て・試運転）</p>
   </header>
 
   <div class="cols">
@@ -243,9 +243,9 @@
         <h2>❸ 発注書（Claudeに貼る）</h2>
         <pre class="order" id="order-text"></pre>
         <button type="button" class="copybtn" id="copy" disabled>発注書をコピー</button>
-        <p class="hint" id="copyhint">Q1（自動化したいこと）を書くと発注できます。工場側でも実現可否を正式判定してから製造に入ります。</p>
+        <p class="hint" id="copyhint">Q1（自動化したいこと）を書くと発注できます。ラボ側でも実現可否を正式判定してから製造に入ります。</p>
       </div>
-      <span class="stamp">NOE FACTORY 受付印</span>
+      <span class="stamp">NOE LAB 受付印</span>
     </aside>
   </div>
 </div>
@@ -342,7 +342,7 @@
       });
     });
     document.getElementById('partsline').textContent =
-      partSet.length ? '想定部品（参考・工場が最終決定）: ' + partSet.join(', ') : '';
+      partSet.length ? '想定部品（参考・ラボが最終決定）: ' + partSet.join(', ') : '';
 
     function labelList(g) {
       var arr = sel[g].map(function (v) { return LABELS[g][v]; });
@@ -350,7 +350,7 @@
     }
     var verdictLabel = !answered ? '未判定' : ngs > 0 ? '△要相談' : conds > 0 ? '○条件付き可' : '◎自動化可能';
     var lines = [];
-    lines.push('noe-tool-factory を起動せよ。以下のヒアリングシートに基づき、');
+    lines.push('noe-tool-lab を起動せよ。以下のヒアリングシートに基づき、');
     lines.push('実現可否を正式判定してから製造すること。');
     lines.push('');
     lines.push('【自動化ヒアリングシート】');
@@ -367,14 +367,14 @@
       if (r.t !== 'ok') lines.push('・' + (r.t === 'ng' ? '[ネック] ' : '[条件] ') + r.m);
     });
     lines.push('');
-    lines.push('※部品選定は tool-factory/ORDER_FORM.md のマッピング表を参照して工場が行う。');
+    lines.push('※部品選定は tool-factory/ORDER_FORM.md のマッピング表を参照してラボが行う。');
     lines.push('※正式判定が△の場合は製造前にネックと代替案を提示して止まること。');
     document.getElementById('order-text').textContent = lines.join('\n');
 
     var btn = document.getElementById('copy');
     btn.disabled = !want;
     document.getElementById('copyhint').textContent = want
-      ? 'コピーしたらClaudeに貼るだけ。工場側でも実現可否を正式判定してから製造に入ります。'
+      ? 'コピーしたらClaudeに貼るだけ。ラボ側でも実現可否を正式判定してから製造に入ります。'
       : 'Q1（自動化したいこと）を書くと発注できます。';
   }
 

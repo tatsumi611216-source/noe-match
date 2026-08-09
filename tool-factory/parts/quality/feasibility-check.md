@@ -1,6 +1,6 @@
 # 部品: feasibility-check（実現可否判定）
 
-- カテゴリ: quality ／ 由来: ツール発注フォーム（order-form.html / ORDER_FORM.md） ／ 使用実績: noe-tool-factory
+- カテゴリ: quality ／ 由来: ツール発注フォーム（order-form.html / ORDER_FORM.md） ／ 使用実績: noe-tool-lab
 
 ## 何をする部品か
 
