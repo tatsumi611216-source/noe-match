@@ -104,6 +104,7 @@
 | data/auto-parse | 取得テキストのフォーマット自動判定パース | web-data-pipeline | web-data-pipeline, keiba-yoso |
 | data/diff-cache | 差分キャッシュで再取得を削減 | web-data-pipeline | web-data-pipeline, keiba-yoso |
 | data/screening | 詳細取得前のスクリーニングでコスト削減 | web-data-pipeline | web-data-pipeline, keiba-yoso |
+| data/file-intake | 手元・Drive上のファイル（Excel/PDF/CSV）の取り込み | 欠品補充 | — |
 
 ### output（出力系）
 
@@ -114,6 +115,7 @@
 | output/secretary-tone | 秘書口調・先回り報告フォーマット | secretary | secretary |
 | output/meta-evolution | 出力末尾に次回改良ポイントを自動出力 | noe-brain | noe-brain |
 | output/proposal-doc | 製造前の提案書（出力サンプル・スコープ外・検収条件） | ツール発注フロー | noe-tool-lab |
+| output/notify | 結果を届ける（下書き／実送信／定期通知の使い分け） | 欠品補充 | — |
 
 ### integration（連携系）
 
@@ -122,6 +124,7 @@
 | integration/notion-task | NotionのDBへタスク登録・ステータス更新 | secretary, keiba-yoso | secretary, keiba-yoso |
 | integration/skill-handoff | 別スキルへの起動コマンド生成と結果合流 | noe-brain | noe-brain⇔noe-relay |
 | integration/scheduled-task | 定期タスク化（朝キャッシュ/日中分析/夜突合の3分割） | web-data-pipeline | web-data-pipeline, keiba-yoso, morning |
+| integration/spreadsheet | Googleスプレッドシートの読み書き（追記はGASブリッジ経由） | 欠品補充 | — |
 
 ### safety（安全系）
 

@@ -83,12 +83,14 @@
 | 材料＝公開Webサイト | ○可 | web-scraping 一式で対応 |
 | 材料＝ログインが必要なサイト | ▲条件付き | ブラウザ操作で対応。サイトにより不安定な場合あり |
 | 材料＝Gmail/カレンダー/Notion/Drive | ○可 | 接続済み |
-| 材料＝手元のファイル | ○可 | そのまま読み書き可能 |
+| 材料＝手元のファイル | ○可 | data/file-intake で対応（Drive／ローカルとも可） |
 | 材料＝社内システム・専用ソフト | ✕要相談 | 直接接続不可。CSV等のエクスポートで「手元ファイル」化できれば可に変わる |
 | 加工＝収集/判定/文章/思考 | ○可 | 既存部品＋固有ロジックで対応 |
 | 加工＝感覚的判断 | ▲条件付き | 製造前に基準を引き出すヒアリング（context-intake）が必要 |
-| 成果＝報告/レポート/記録 | ○可 | secretary-tone ／ html-report ／ notion-task で対応 |
-| 成果＝メール送信・投稿 | ▲条件付き | 不可逆操作。直前に本人確認（irreversible-confirm）を必須化 |
+| 成果＝報告/レポート/記録（チャット・レポート・Notion） | ○可 | secretary-tone ／ html-report ／ notion-task で対応 |
+| 成果＝スプレッドシートに蓄積 | ▲条件付き | 読み取りは可。**行の追記には Apps Script ブリッジ（gas/lab_bridge.gs）の初回設定が必要**。使い捨ての一覧なら新規ファイル作成で即可 |
+| 成果＝メール送信 | ▲条件付き | 下書き作成は即可。**実送信は Apps Script ブリッジが必要**。直前に本人確認（irreversible-confirm）を必須化。無人送信は本人宛に限る |
+| 成果＝SNS投稿 | ✕要相談 | 投稿先との接続がない。**下書きをファイル/シートに出して人が投稿する**形なら可 |
 
 **総合判定：**
 - ✕が1つでもある → **△要相談**：ネックと代替案を提示して製造前に停止し、ユーザーの判断を仰ぐ
@@ -111,7 +113,9 @@
 | チャット報告 | output/secretary-tone | ⑤ OUTPUT |
 | レポート・一覧表 | output/html-report + summary-table | ⑤ OUTPUT |
 | Notion等に記録 | integration/notion-task | ⑥ INTEGRATION |
-| メール送信・投稿 | safety/irreversible-confirm | ⑦ SAFETY |
+| スプレッドシートに記録 | integration/spreadsheet | ⑥ INTEGRATION |
+| 手元・Driveのファイルを読む | data/file-intake | ④ DATA |
+| メール送信・通知 | output/notify ＋ safety/irreversible-confirm | ⑤／⑦ |
 | 最後に本人確認／途中判断は本人 | safety/irreversible-confirm ／ quality/branch-table | ⑦／② |
 | （全案件共通） | safety/hallucination-guard | ⑦ SAFETY |
 

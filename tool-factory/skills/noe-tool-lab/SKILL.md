@@ -34,6 +34,7 @@ AIツールの**一生**（受注 → 設計 → 製造 → 運用 → 改修 �
 | `order-form.html` / `google-form-setup.gs` | 発注フォーム（Web版／Google Form版） |
 | `canvas.html` | キャンバス可視化（内部資料） |
 | `lab_inventory.py` | 在庫棚卸し（部品・ツール・カタログとの不一致を検知） |
+| `gas/lab_bridge.gs` | Apps Scriptブリッジ。MCPでできない**シート追記**と**メール実送信**を担う（案件で必要になったら1回デプロイ） |
 | `skills/` | 製造済みツールの正本 |
 
 リポジトリが手元にない場合は GitHub の `tatsumi611216-source/noe-match` から取得する。
