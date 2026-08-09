@@ -52,7 +52,30 @@ python3 scripts/score.py
 
 # 5. HTMLレポート生成 → outputs/report.html
 python3 scripts/generate_report.py
+
+# 6. Consul OS（コンサル管理ツール）のパイプラインへ流し込む
+python3 scripts/export_consul.py --consul-data C:\Users\tatsu\consul-os\data
 ```
+
+## Consul OS との連携
+
+集めた「採用に困っている企業」を、Consul OS（`localhost:8877`）の案件パイプラインに
+`phase=リード` / `channel=ソーシング` として登録する。`source_key`（`sourcing|企業名`）で
+重複排除するため、毎日実行しても同じ企業が二重登録されない。
+
+```bash
+# 未上場（成長スタートアップ）のみ・既定
+python3 scripts/export_consul.py --consul-data <consul-os>/data
+
+# 上場企業も含める / スコアで絞る
+python3 scripts/export_consul.py --consul-data <consul-os>/data --include-listed --min-score 40
+```
+
+書き込み前に `projects.json.bak-YYYYMMDD-sourcing` を自動作成する。
+媒体マスタ（platforms.json）に「ソーシング」が無ければ自動追加する。
+
+クラウド実行（GitHub Actions）の場合は成果物 `exports/consul_leads.json` に
+同じ形式で書き出されるので、ダウンロードしてローカルで取り込む。
 
 ## スクリプト構成
 
