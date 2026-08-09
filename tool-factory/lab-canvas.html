@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noeツールラボ・キャンバス</title>
+<style>
+  :root {
+    --board: #EDEFEC;
+    --block: #FBFCFA;
+    --rule: #1F2A2E;
+    --hair: #C3CBC6;
+    --ink: #1F2A2E;
+    --dim: #5F6C70;
+    --petrol: #1C6B72;
+    --petrol-soft: #DCEAEA;
+    --amber: #B5711A;
+    --amber-soft: #F6EAD6;
+    --moss: #4A7A46;
+    --moss-soft: #E2EEDE;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --jp: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --board: #10171A; --block: #182226; --rule: #7FA9A9; --hair: #2F3F44;
+      --ink: #E3EAE8; --dim: #93A3A6;
+      --petrol: #6FBDBF; --petrol-soft: #163439;
+      --amber: #E0A45C; --amber-soft: #3A2C18;
+      --moss: #86BC7E; --moss-soft: #1D3020;
+    }
+  }
+  :root[data-theme="dark"] {
+    --board: #10171A; --block: #182226; --rule: #7FA9A9; --hair: #2F3F44;
+    --ink: #E3EAE8; --dim: #93A3A6;
+    --petrol: #6FBDBF; --petrol-soft: #163439;
+    --amber: #E0A45C; --amber-soft: #3A2C18;
+    --moss: #86BC7E; --moss-soft: #1D3020;
+  }
+  :root[data-theme="light"] {
+    --board: #EDEFEC; --block: #FBFCFA; --rule: #1F2A2E; --hair: #C3CBC6;
+    --ink: #1F2A2E; --dim: #5F6C70;
+    --petrol: #1C6B72; --petrol-soft: #DCEAEA;
+    --amber: #B5711A; --amber-soft: #F6EAD6;
+    --moss: #4A7A46; --moss-soft: #E2EEDE;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--board); color: var(--ink);
+    font-family: var(--jp); font-size: 14px; line-height: 1.55;
+  }
+  .sheet { max-width: 1400px; margin: 0 auto; padding: 24px 18px 60px; }
+
+  header.mast {
+    display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 24px;
+    border-bottom: 3px solid var(--rule); padding-bottom: 12px; margin-bottom: 4px;
+  }
+  .no { font-family: var(--mono); font-size: 10px; letter-spacing: .22em; color: var(--petrol); display: block; }
+  h1 { margin: 2px 0 0; font-size: 26px; font-weight: 800; letter-spacing: .03em; }
+  h1 small { display: block; font-family: var(--mono); font-size: 10px; font-weight: 400;
+             letter-spacing: .28em; color: var(--petrol); margin-top: 3px; }
+  .mast p { margin: 0; max-width: 34em; font-size: 12.5px; color: var(--dim); }
+  .counts { margin-left: auto; display: flex; gap: 18px; font-family: var(--mono); }
+  .counts div { text-align: right; }
+  .counts .n { font-size: 22px; font-weight: 800; color: var(--petrol); font-variant-numeric: tabular-nums; }
+  .counts .l { font-size: 9px; letter-spacing: .16em; color: var(--dim); }
+
+  .canvas {
+    display: grid; gap: 0; margin-top: 18px;
+    border: 2px solid var(--rule);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-areas:
+      "kp kp ka ka vp vp vp cr cs cs"
+      "kp kp kr kr vp vp vp ch cs cs"
+      "cost cost cost cost cost out out out out out";
+  }
+  .b { border: 1px solid var(--hair); margin: -0.5px; background: var(--block); padding: 12px 14px 14px; }
+  .kp { grid-area: kp } .ka { grid-area: ka } .kr { grid-area: kr } .vp { grid-area: vp }
+  .cr { grid-area: cr } .ch { grid-area: ch } .cs { grid-area: cs }
+  .cost { grid-area: cost } .out { grid-area: out }
+  .vp { background: var(--petrol-soft); }
+
+  @media (max-width: 1080px) {
+    .canvas { grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "vp vp" "ka kr" "kp cs" "ch cr" "cost out"; }
+  }
+  @media (max-width: 620px) {
+    .canvas { grid-template-columns: 1fr;
+      grid-template-areas: "vp" "ka" "kr" "kp" "cs" "ch" "cr" "cost" "out"; }
+  }
+
+  .b h2 { margin: 0 0 2px; font-size: 12.5px; font-weight: 800; letter-spacing: .04em;
+          display: flex; align-items: baseline; gap: 7px; }
+  .b h2 .idx { font-family: var(--mono); font-size: 10px; color: var(--petrol); font-weight: 700; }
+  .b .ask { margin: 0 0 9px; font-size: 10.5px; color: var(--dim); }
+  .vp h2, .vp h2 .idx { color: var(--petrol); }
+
+  ul.notes { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  ul.notes li {
+    background: transparent; border-left: 3px solid var(--hair);
+    padding: 3px 0 3px 9px; font-size: 12.5px;
+  }
+  ul.notes li b { font-weight: 700; }
+  ul.notes li span { display: block; font-size: 11px; color: var(--dim); }
+  li.on { border-left-color: var(--moss); }
+  li.warn { border-left-color: var(--amber); }
+  li.key { border-left-color: var(--petrol); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+  .chip {
+    font-family: var(--mono); font-size: 10.5px; border: 1px solid var(--hair);
+    border-radius: 2px; padding: 2px 7px; white-space: nowrap;
+  }
+  .chip b { color: var(--petrol); font-variant-numeric: tabular-nums; }
+  .chip.mute { color: var(--dim); border-style: dashed; }
+  .chip.amber { color: var(--amber); border-color: var(--amber); background: var(--amber-soft); }
+
+  .vp .lead { font-size: 15px; font-weight: 800; line-height: 1.5; margin: 0 0 10px; }
+  .vp .formula {
+    font-family: var(--mono); font-size: 11px; background: var(--block);
+    border: 1px dashed var(--hair); border-radius: 3px; padding: 8px 10px; margin: 10px 0 0;
+    color: var(--dim); line-height: 1.7;
+  }
+  .vp .formula b { color: var(--petrol); }
+
+  .flow { display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 11.5px; }
+  .flow .st { border: 1px solid var(--hair); border-radius: 2px; padding: 2px 7px; background: var(--block); }
+  .flow .ar { color: var(--dim); font-family: var(--mono); }
+  .flow .st.gate { border-color: var(--amber); color: var(--amber); font-weight: 700; }
+
+  .legend { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 16px;
+            font-size: 11px; color: var(--dim); font-family: var(--mono); }
+  .legend i { display: inline-block; width: 18px; height: 3px; vertical-align: 2px; margin-right: 5px; }
+  .foot { margin-top: 16px; font-size: 12px; color: var(--dim); }
+  .foot code { font-family: var(--mono); font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="mast">
+    <div>
+      <span class="no">NOE TOOL LAB — BUSINESS MODEL CANVAS</span>
+      <h1>Noeツールラボ・キャンバス<small>THE LAB, ON ONE SHEET</small></h1>
+      <p>AIツールを部品の組み合わせで製造するラボを、ビジネスモデル・キャンバスの9ブロックに載せた1枚。</p>
+    </div>
+    <div class="counts">
+      <div><div class="n">30</div><div class="l">PARTS</div></div>
+      <div><div class="n">7</div><div class="l">TOOLS</div></div>
+      <div><div class="n">6</div><div class="l">MODES</div></div>
+    </div>
+  </header>
+
+  <div class="canvas">
+
+    <section class="b kp">
+      <h2><span class="idx">KP</span>外部資源・パートナー</h2>
+      <p class="ask">自前で持たず、借りているもの</p>
+      <ul class="notes">
+        <li class="on"><b>接続済みサービス</b><span>Drive・Gmail・カレンダー・Notion。認証済みで即使える</span></li>
+        <li class="on"><b>WebSearch</b><span>数値の裏取り。討論・検証系ツールの生命線</span></li>
+        <li class="warn"><b>Apps Scriptブリッジ</b><span>連携でできないシート追記とメール実送信を担う。案件ごとに1回デプロイ</span></li>
+        <li><b>標準スキル</b><span>xlsx・pdf・docx・pptx。ファイル処理は作らず借りる</span></li>
+        <li class="warn"><b>提携先（未着手）</b><span>上流を差し込む座組。補助金の構成員としての参画にも要る</span></li>
+      </ul>
+    </section>
+
+    <section class="b ka">
+      <h2><span class="idx">KA</span>主要活動 — 6つのモード</h2>
+      <p class="ask">ラボが実際にやっていること</p>
+      <ul class="notes">
+        <li class="key"><b>① 受注</b> — 発注を読み、可否判定から契約まで</li>
+        <li class="key"><b>② 設計</b> — 作らずキャンバスだけ埋める</li>
+        <li class="key"><b>③ 製造</b> — 部品を組み、試運転し、部品を還元する</li>
+        <li><b>④ 棚卸し</b> — 在庫と抜けを機械が報告</li>
+        <li><b>⑤ 改修</b> — 部品側かツール側かを切り分けて直す</li>
+        <li><b>⑥ 取り込み</b> — 外で生まれたツールを分解して資産化</li>
+      </ul>
+    </section>
+
+    <section class="b kr">
+      <h2><span class="idx">KR</span>主要資源 — 部品ライブラリ 30点</h2>
+      <p class="ask">製造の元手。増えるほど次が速くなる</p>
+      <div class="chips" style="margin-bottom:9px">
+        <span class="chip">① INPUT <b>3</b></span>
+        <span class="chip">② QUALITY <b>5</b></span>
+        <span class="chip">③ PROCESS <b>4</b></span>
+        <span class="chip">④ DATA <b>6</b></span>
+        <span class="chip">⑤ OUTPUT <b>6</b></span>
+        <span class="chip">⑥ INTEGRATION <b>4</b></span>
+        <span class="chip">⑦ SAFETY <b>2</b></span>
+      </div>
+      <ul class="notes">
+        <li><b>部品カタログ</b><span>名前・機能・カテゴリ・由来・使用実績</span></li>
+        <li><b>AIツールデザインキャンバス</b><span>7ブロックの設計フレーム＋理論書</span></li>
+        <li class="on"><b>棚卸しスクリプト</b><span>在庫・未取り込み・記録のズレを自動検知</span></li>
+      </ul>
+    </section>
+
+    <section class="b vp">
+      <h2><span class="idx">VP</span>価値提案</h2>
+      <p class="ask">このラボが在ることで、何が変わるのか</p>
+      <p class="lead">同じ部品を、二度作らない。</p>
+      <ul class="notes">
+        <li class="key"><b>ツールの7〜8割は汎用部品でできている</b>
+          <span>固有ロジックは2〜3割。そこだけ作れば1本立ち上がる</span></li>
+        <li class="key"><b>作るほど速くなる</b>
+          <span>新造した機能は必ず部品として還元される。2本目は1本目より速い</span></li>
+        <li class="key"><b>改良が全ツールに波及する</b>
+          <span>部品を直せば、その部品を使う全ツールが同時に良くなる</span></li>
+        <li><b>作る前に、作れるか判定する</b>
+          <span>できない案件に工数をかけない。できる案件は条件を明示して着手する</span></li>
+        <li><b>試運転までが製造</b>
+          <span>実データで1回動かし、検収条件を満たすまで納品しない</span></li>
+      </ul>
+      <p class="formula">
+        keiba-yoso を分解すると —<br>
+        <b>汎用部品 8</b> ＋ 固有ロジック 1（EV計算）<br>
+        gsc-report を製造すると —<br>
+        <b>再利用 6</b> ＋ 新造 1（gap-scoring → 還元済み）
+      </p>
+    </section>
+
+    <section class="b cr">
+      <h2><span class="idx">CR</span>関係の作り方</h2>
+      <p class="ask">受注から納品までの約束事</p>
+      <div class="flow" style="margin-bottom:9px">
+        <span class="st">ヒアリング</span><span class="ar">→</span>
+        <span class="st gate">可否判定</span><span class="ar">→</span>
+        <span class="st">追加質問</span><span class="ar">→</span>
+        <span class="st">提案書</span><span class="ar">→</span>
+        <span class="st gate">契約</span><span class="ar">→</span>
+        <span class="st">製造</span><span class="ar">→</span>
+        <span class="st gate">検収</span>
+      </div>
+      <ul class="notes">
+        <li class="warn"><b>オーナー承認型</b><span>発注を勝手に拾って動き出さない</span></li>
+        <li class="warn"><b>契約前に作らない</b><span>提案書の承認をもって仕様が確定する</span></li>
+      </ul>
+    </section>
+
+    <section class="b ch">
+      <h2><span class="idx">CH</span>受注チャネル</h2>
+      <p class="ask">発注が入ってくる口</p>
+      <ul class="notes">
+        <li class="on"><b>Google Form</b><span>回答はシートに蓄積、内容つきメールで通知</span></li>
+        <li class="on"><b>Webフォーム</b><span>回答に連動して可否判定と発注書を自動生成</span></li>
+        <li class="on"><b>会話</b><span>直接依頼。受付を飛ばして要件確定から入る</span></li>
+      </ul>
+    </section>
+
+    <section class="b cs">
+      <h2><span class="idx">CS</span>顧客</h2>
+      <p class="ask">誰のために動くラボか</p>
+      <ul class="notes">
+        <li class="on"><b>オーナー本人</b><span>いまの唯一の発注者。自分の業務を自分で自動化する</span></li>
+        <li class="warn"><b>メディアを持つ中小法人</b>
+          <span>討論の検証で判明した、支払い能力のある層。共感する層（個人）とは別</span></li>
+        <li class="warn"><b>提携先の座組</b>
+          <span>上流工程だけを差し込む相手。単体販売より成立しやすい</span></li>
+      </ul>
+    </section>
+
+    <section class="b cost">
+      <h2><span class="idx">$</span>投入（コスト構造）</h2>
+      <p class="ask">何にコストがかかるか</p>
+      <ul class="notes">
+        <li><b>固有ロジックの新造</b><span>1ツールあたり全体の2〜3割。ここだけが本当の開発</span></li>
+        <li><b>部品ライブラリの維持</b><span>還元・カタログ更新・棚卸し。怠ると重複製造が復活する</span></li>
+        <li><b>試運転と検収</b><span>実データで動かすまでが製造なので、その分の時間</span></li>
+        <li class="warn"><b>欠品の補充（残5点）</b>
+          <span>change-detection・api-fetch・content-template・failure-handling・pii-guard</span></li>
+      </ul>
+      <div class="chips" style="margin-top:9px">
+        <span class="chip amber">未使用部品 3（file-intake・notify・spreadsheet）</span>
+        <span class="chip mute">＝ 作ったが、まだ実案件で回していない</span>
+      </div>
+    </section>
+
+    <section class="b out">
+      <h2><span class="idx">＝</span>産出（成果）</h2>
+      <p class="ask">ラボが生み出したもの</p>
+      <div class="chips" style="margin-bottom:9px">
+        <span class="chip">noe-brain <b>11</b></span>
+        <span class="chip">web-data-pipeline <b>9</b></span>
+        <span class="chip">keiba-yoso <b>8</b></span>
+        <span class="chip">noe-relay <b>7</b></span>
+        <span class="chip">gsc-report <b>6</b></span>
+        <span class="chip">noe-tool-lab <b>6</b></span>
+        <span class="chip">secretary <b>4</b></span>
+      </div>
+      <ul class="notes">
+        <li class="on"><b>稼働ツール 7点</b><span>数字は各ツールが使っている部品の数</span></li>
+        <li class="on"><b>製造第1号：gsc-report</b>
+          <span>取りこぼしクリック数で記事の改善優先度を出す。再利用6・新造1</span></li>
+        <li class="key"><b>逓増する生産性</b>
+          <span>部品が貯まるほど、次のツールの製造コストが下がる。これがラボ最大の産出物</span></li>
+        <li><b>外に出せる資産</b><span>理論書・キャンバス・発注フォーム。受注インフラとしてそのまま使える</span></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="legend">
+    <span><i style="background:var(--moss)"></i>稼働中</span>
+    <span><i style="background:var(--petrol)"></i>ラボの核</span>
+    <span><i style="background:var(--amber)"></i>未着手・要注意</span>
+    <span><i style="background:var(--hair)"></i>通常</span>
+  </div>
+
+  <p class="foot">
+    在庫の実数は <code>python3 tool-factory/lab_inventory.py</code> で確認できる。
+    ツール1本ずつの設計（7ブロックの内訳）は <code>canvas.html</code>、
+    考え方の全体は <code>AI_TOOL_DESIGN_CANVAS.md</code>（理論書）にある。
+  </p>
+</div>
+</body>
+</html>
