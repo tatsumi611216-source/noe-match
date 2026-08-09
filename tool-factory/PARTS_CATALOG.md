@@ -93,6 +93,7 @@
 | process/debate-engine | キャスティング→ターン制討論→審判介入の討論エンジン | noe-relay | noe-relay |
 | process/stress-test | カテゴリ別に失敗理由と回避行動を強制生成 | noe-brain | noe-brain |
 | process/action-design | 「誰に・何を・どうやって・いつまでに」形式の即実行アクション | noe-brain | noe-brain, noe-relay |
+| process/gap-scoring | 期待値と実績の差分で改善・投資の優先度を機械的に決める | gsc-report, keiba-yoso | gsc-report |
 
 ### data（データ系）
 

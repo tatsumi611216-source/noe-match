@@ -1,0 +1,186 @@
+[
+ {
+  "recorded_at": "2026-08-09T01:33:56",
+  "period": {
+   "start": "2026-07-03",
+   "end": "2026-07-31"
+  },
+  "totals": {
+   "pages_with_impressions": 36,
+   "impressions": 428,
+   "clicks": 16,
+   "lost_clicks_total": 14.1,
+   "ctr": 3.74
+  },
+  "rows": [
+   {
+    "slug": "success-rate-data",
+    "position": 33.3,
+    "clicks": 1,
+    "impressions": 55,
+    "lost_clicks": 2.3
+   },
+   {
+    "slug": "tokyo-guide",
+    "position": 13.8,
+    "clicks": 0,
+    "impressions": 38,
+    "lost_clicks": 2.3
+   },
+   {
+    "slug": "student-guide",
+    "position": 39.6,
+    "clicks": 0,
+    "impressions": 21,
+    "lost_clicks": 1.3
+   },
+   {
+    "slug": "marrish-guide",
+    "position": 65,
+    "clicks": 0,
+    "impressions": 19,
+    "lost_clicks": 1.1
+   },
+   {
+    "slug": "fraud-detection",
+    "position": 36.7,
+    "clicks": 0,
+    "impressions": 16,
+    "lost_clicks": 1.0
+   },
+   {
+    "slug": "nagoya-guide",
+    "position": 18.1,
+    "clicks": 0,
+    "impressions": 13,
+    "lost_clicks": 0.8
+   },
+   {
+    "slug": "over50-guide",
+    "position": 75.1,
+    "clicks": 0,
+    "impressions": 13,
+    "lost_clicks": 0.8
+   },
+   {
+    "slug": "fukuoka-guide",
+    "position": 8.9,
+    "clicks": 0,
+    "impressions": 11,
+    "lost_clicks": 0.7
+   },
+   {
+    "slug": "nurse-guide",
+    "position": 43.7,
+    "clicks": 0,
+    "impressions": 11,
+    "lost_clicks": 0.7
+   },
+   {
+    "slug": "shikijo-erabi-guide",
+    "position": 69.9,
+    "clicks": 0,
+    "impressions": 11,
+    "lost_clicks": 0.7
+   },
+   {
+    "slug": "osaka-guide",
+    "position": 16.1,
+    "clicks": 0,
+    "impressions": 8,
+    "lost_clicks": 0.5
+   },
+   {
+    "slug": "propose-guide",
+    "position": 31.4,
+    "clicks": 0,
+    "impressions": 8,
+    "lost_clicks": 0.5
+   },
+   {
+    "slug": "bachelor-date-guide",
+    "position": 48,
+    "clicks": 0,
+    "impressions": 7,
+    "lost_clicks": 0.4
+   },
+   {
+    "slug": "batsuichi-guide",
+    "position": 88.8,
+    "clicks": 0,
+    "impressions": 6,
+    "lost_clicks": 0.4
+   },
+   {
+    "slug": "omiai-guide",
+    "position": 15.4,
+    "clicks": 1,
+    "impressions": 22,
+    "lost_clicks": 0.3
+   },
+   {
+    "slug": "bridal-esthe-guide",
+    "position": 70.4,
+    "clicks": 0,
+    "impressions": 5,
+    "lost_clicks": 0.3
+   },
+   {
+    "slug": "with-seriousness-data",
+    "position": 5.0,
+    "clicks": 4,
+    "impressions": 44,
+    "lost_clicks": 0.0
+   },
+   {
+    "slug": "kyoto-guide",
+    "position": 13.3,
+    "clicks": 3,
+    "impressions": 27,
+    "lost_clicks": 0.0
+   },
+   {
+    "slug": "sapporo-guide",
+    "position": 12.2,
+    "clicks": 2,
+    "impressions": 19,
+    "lost_clicks": 0.0
+   },
+   {
+    "slug": "www.noe-match.com",
+    "position": 20.8,
+    "clicks": 1,
+    "impressions": 8,
+    "lost_clicks": 0.0
+   },
+   {
+    "slug": "civil-servant-guide",
+    "position": 18.4,
+    "clicks": 1,
+    "impressions": 11,
+    "lost_clicks": 0.0
+   },
+   {
+    "slug": "kekkon-madeno-kikan-data",
+    "position": 15.9,
+    "clicks": 1,
+    "impressions": 7,
+    "lost_clicks": 0.0
+   },
+   {
+    "slug": "message-strategy",
+    "position": 10.3,
+    "clicks": 1,
+    "impressions": 12,
+    "lost_clicks": 0.0
+   },
+   {
+    "slug": "profile-photo",
+    "position": 44.5,
+    "clicks": 1,
+    "impressions": 12,
+    "lost_clicks": 0.0
+   }
+  ]
+ }
+]
