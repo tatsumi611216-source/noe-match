@@ -37,7 +37,10 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
-（なし）
+```
+https://www.noe-match.com/articles/konkatsu-soudan-saki/
+```
+（2026-08-09 公開。**Day 3 の10本とは別枠で申請してよい**）
 
 ### 申請済み
 
