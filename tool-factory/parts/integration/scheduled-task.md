@@ -1,6 +1,6 @@
 # 部品: scheduled-task（定期タスク組み込み）
 
-- カテゴリ: integration ／ 由来: web-data-pipeline, morning ／ 使用実績: web-data-pipeline, keiba-yoso, morning
+- カテゴリ: integration ／ 由来: web-data-pipeline, morning ／ 使用実績: web-data-pipeline, gsc-report
 
 ## 何をする部品か
 

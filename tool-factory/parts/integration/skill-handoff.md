@@ -1,6 +1,6 @@
 # 部品: skill-handoff（スキル間連携）
 
-- カテゴリ: integration ／ 由来: noe-brain STEP 5/5-R ／ 使用実績: noe-brain⇔noe-relay
+- カテゴリ: integration ／ 由来: noe-brain STEP 5/5-R ／ 使用実績: noe-brain, noe-relay
 
 ## 何をする部品か
 

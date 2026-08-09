@@ -1,6 +1,6 @@
 # 部品: hallucination-guard（推定と事実の区別）
 
-- カテゴリ: safety ／ 由来: noe-brain ハルシネーション抑制ルール ／ 使用実績: noe-brain, web-data-pipeline
+- カテゴリ: safety ／ 由来: noe-brain ハルシネーション抑制ルール ／ 使用実績: noe-brain, keiba-yoso, web-data-pipeline, gsc-report
 
 ## 何をする部品か
 

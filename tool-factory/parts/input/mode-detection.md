@@ -1,6 +1,6 @@
 # 部品: mode-detection（モード自動判定・キーワードトリガー）
 
-- カテゴリ: input ／ 由来: noe-brain STEP 0-A, secretary ①宿題処理 ／ 使用実績: noe-brain, secretary
+- カテゴリ: input ／ 由来: noe-brain STEP 0-A, secretary ①宿題処理 ／ 使用実績: noe-brain, secretary, gsc-report, noe-tool-lab
 
 ## 何をする部品か
 

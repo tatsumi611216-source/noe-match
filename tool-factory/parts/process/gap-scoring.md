@@ -1,6 +1,6 @@
 # 部品: gap-scoring（期待値との差分で優先度をつける）
 
-- カテゴリ: process ／ 由来: gsc-report（取りこぼしクリック数）、keiba-yoso（EV計算）の共通構造 ／ 使用実績: gsc-report
+- カテゴリ: process ／ 由来: gsc-report（取りこぼしクリック数）、keiba-yoso（EV計算）の共通構造 ／ 使用実績: gsc-report, keiba-yoso
 
 ## 何をする部品か
 

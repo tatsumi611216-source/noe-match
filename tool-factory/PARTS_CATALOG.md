@@ -37,10 +37,16 @@
 | ブラウザ取得ルール（javascript_tool vs find+read_page） | data/web-scraping |
 | 1件1ファイル＋並行取得 | data/file-per-item |
 | 差分キャッシュ | data/diff-cache |
-| スコアリング（EV計算） | ※案件固有ロジック（部品化対象外、構造は quality/branch-table を参照） |
+| スコアリング（EV計算） | process/gap-scoring（期待値差分の原型。gsc-report と同一構造） |
+| フォーマット自動判定パース | data/auto-parse |
+| スクリーニング（人気による足切り） | data/screening |
 | HTMLレポート生成 | output/html-report |
-| Notionログ | integration/notion-task |
-| 結果突合・振り返り | integration/scheduled-task（夜の突合タスク） |
+| 実データ主義（推測での回答禁止） | safety/hallucination-guard |
+
+※ 取り込み時（2026-08）の精査で判明：`scripts/notion_logger.py` は存在するが
+SKILL.md の手順から呼ばれていない。定期タスク化の記述も SKILL.md にない。
+そのため notion-task・scheduled-task は**使用実績から除外**した。
+組み込むなら⑤改修モードで別途行う。
 
 ### web-data-pipeline（汎用パイプライン）を分解すると
 
@@ -73,7 +79,7 @@
 | 部品ID | 機能 | 由来 | 使用実績 |
 |---|---|---|---|
 | input/context-intake | ユーザーから質の高い文脈を引き出す質問テンプレ＋品質スコア | noe-brain | noe-brain |
-| input/mode-detection | 入力内容からモード・トリガーを自動判定して分岐 | noe-brain, secretary | noe-brain, secretary |
+| input/mode-detection | 入力内容からモード・トリガーを自動判定して分岐 | noe-brain, secretary | noe-brain, secretary, gsc-report, noe-tool-lab |
 | input/spec-drilldown | ヒアリング後に案件専用の追加質問を生成して要件確定 | ツール発注フロー | noe-tool-lab |
 
 ### quality（品質系）
@@ -93,7 +99,7 @@
 | process/debate-engine | キャスティング→ターン制討論→審判介入の討論エンジン | noe-relay | noe-relay |
 | process/stress-test | カテゴリ別に失敗理由と回避行動を強制生成 | noe-brain | noe-brain |
 | process/action-design | 「誰に・何を・どうやって・いつまでに」形式の即実行アクション | noe-brain | noe-brain, noe-relay |
-| process/gap-scoring | 期待値と実績の差分で改善・投資の優先度を機械的に決める | gsc-report, keiba-yoso | gsc-report |
+| process/gap-scoring | 期待値と実績の差分で改善・投資の優先度を機械的に決める | keiba-yoso（EV計算）, gsc-report | gsc-report, keiba-yoso |
 
 ### data（データ系）
 
@@ -102,41 +108,53 @@
 | data/web-scraping | ブラウザツールの使い分け（javascript_tool / find+read_page） | web-data-pipeline | web-data-pipeline, keiba-yoso |
 | data/file-per-item | 1件1ファイル保存＋並行エージェント取得 | web-data-pipeline | web-data-pipeline, keiba-yoso |
 | data/auto-parse | 取得テキストのフォーマット自動判定パース | web-data-pipeline | web-data-pipeline, keiba-yoso |
-| data/diff-cache | 差分キャッシュで再取得を削減 | web-data-pipeline | web-data-pipeline, keiba-yoso |
+| data/diff-cache | 差分キャッシュで再取得を削減 | web-data-pipeline | web-data-pipeline, keiba-yoso, gsc-report |
 | data/screening | 詳細取得前のスクリーニングでコスト削減 | web-data-pipeline | web-data-pipeline, keiba-yoso |
-| data/file-intake | 手元・Drive上のファイル（Excel/PDF/CSV）の取り込み | 欠品補充 | — |
+| data/file-intake | 手元・Drive上のファイル（Excel/PDF/CSV）の取り込み | 欠品補充 | 未使用 |
 
 ### output（出力系）
 
 | 部品ID | 機能 | 由来 | 使用実績 |
 |---|---|---|---|
 | output/summary-table | 全工程の結果を1画面のサマリー表に圧縮 | noe-brain, noe-relay | noe-brain, noe-relay |
-| output/html-report | HTMLレポートの標準構成とスタイル指針 | web-data-pipeline | web-data-pipeline, keiba-yoso |
+| output/html-report | HTMLレポートの標準構成とスタイル指針 | web-data-pipeline | web-data-pipeline, keiba-yoso, gsc-report |
 | output/secretary-tone | 秘書口調・先回り報告フォーマット | secretary | secretary |
-| output/meta-evolution | 出力末尾に次回改良ポイントを自動出力 | noe-brain | noe-brain |
+| output/meta-evolution | 出力末尾に次回改良ポイントを自動出力 | noe-brain | noe-brain, web-data-pipeline, noe-tool-lab |
 | output/proposal-doc | 製造前の提案書（出力サンプル・スコープ外・検収条件） | ツール発注フロー | noe-tool-lab |
-| output/notify | 結果を届ける（下書き／実送信／定期通知の使い分け） | 欠品補充 | — |
+| output/notify | 結果を届ける（下書き／実送信／定期通知の使い分け） | 欠品補充 | 未使用 |
 
 ### integration（連携系）
 
 | 部品ID | 機能 | 由来 | 使用実績 |
 |---|---|---|---|
-| integration/notion-task | NotionのDBへタスク登録・ステータス更新 | secretary, keiba-yoso | secretary, keiba-yoso |
+| integration/notion-task | NotionのDBへタスク登録・ステータス更新 | secretary | secretary |
 | integration/skill-handoff | 別スキルへの起動コマンド生成と結果合流 | noe-brain | noe-brain⇔noe-relay |
-| integration/scheduled-task | 定期タスク化（朝キャッシュ/日中分析/夜突合の3分割） | web-data-pipeline | web-data-pipeline, keiba-yoso, morning |
-| integration/spreadsheet | Googleスプレッドシートの読み書き（追記はGASブリッジ経由） | 欠品補充 | — |
+| integration/scheduled-task | 定期タスク化（朝キャッシュ/日中分析/夜突合の3分割） | web-data-pipeline, morning | web-data-pipeline, gsc-report |
+| integration/spreadsheet | Googleスプレッドシートの読み書き（追記はGASブリッジ経由） | 欠品補充 | 未使用 |
 
 ### safety（安全系）
 
 | 部品ID | 機能 | 由来 | 使用実績 |
 |---|---|---|---|
 | safety/irreversible-confirm | 不可逆操作の実行前確認ルール | secretary | secretary |
-| safety/hallucination-guard | 推定と事実を区別して明示するルール | noe-brain | noe-brain |
+| safety/hallucination-guard | 推定と事実を区別して明示するルール | noe-brain | noe-brain, keiba-yoso, web-data-pipeline, gsc-report |
+
+---
+
+## 取り込み記録
+
+| 取り込み日 | ツール | 結果 |
+|---|---|---|
+| 2026-08 | keiba-yoso / noe-brain / noe-relay / secretary / web-data-pipeline | 正本を `skills/` に配置。使用実績を実装と突き合わせて精査し、keiba-yoso の notion-task・scheduled-task の過大記載を訂正 |
+| 2026-08 | gsc-report | ラボ製造第1号。gap-scoring を新造して還元 |
 
 ---
 
 ## カタログの更新ルール
 
+- **使用実績は部品ファイルの見出しが正**。この表はその写しなので、片方を直したら両方直す
+  （ズレは `lab_inventory.py` が検知する）
+- 使用実績の欄にはツール名だけを書く。注記を混ぜるとズレ検知が誤作動する
 - 新部品を parts/ に追加したら、必ずこのカタログの該当カテゴリ表に1行追加する
 - 既存スキルで重複実装を見つけたら「既存ツールの分解結果」に追記して部品に切り出す
 - 使用実績列は、新ツールがその部品を採用するたびに更新する（利用頻度＝部品の価値）

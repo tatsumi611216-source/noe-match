@@ -85,6 +85,21 @@ def scan_skills():
     return skills
 
 
+def usage_from_parts(parts):
+    """部品ファイルの「使用実績」見出しから、部品→ツールの対応を拾う。
+
+    取り込んだツールは SKILL.md 本文に部品IDを書いていないため、
+    本文の走査だけでは利用実績を数えられない。**部品ファイルの見出しが正の記録**。
+    （PARTS_CATALOG.md の使用実績列はその写し。ズレは check_usage_drift が検知する）
+    """
+    usage = {}
+    for pid, meta in parts.items():
+        used = meta.get('used_by', '')
+        names = re.findall(r'[a-z][a-z0-9-]{2,}', used)
+        usage[pid] = sorted({n for n in names if n not in ('未使用',)})
+    return usage
+
+
 def check_intake():
     """インストール済みだがラボに取り込まれていないツールを検知する。
 
@@ -100,6 +115,28 @@ def check_intake():
         'untracked': sorted(installed - tracked - STOCK_SKILLS),
         'not_installed': sorted(tracked - installed),
     }
+
+
+def check_usage_drift(parts):
+    """部品ファイルの使用実績と、カタログ表の使用実績のズレを検知する。
+
+    同じことを2箇所に書いている以上ズレる。片方を直したらもう片方も直す。
+    """
+    if not os.path.exists(CATALOG):
+        return []
+    with open(CATALOG, encoding='utf-8') as f:
+        catalog = f.read()
+    drift = []
+    for pid, meta in parts.items():
+        row = re.search(r'^\|\s*' + re.escape(pid) + r'\s*\|[^|]*\|[^|]*\|\s*([^|]+?)\s*\|',
+                        catalog, re.M)
+        if not row:
+            continue
+        cat_names = set(re.findall(r'[a-z][a-z0-9-]{2,}', row.group(1)))
+        file_names = set(re.findall(r'[a-z][a-z0-9-]{2,}', meta.get('used_by', '')))
+        if cat_names != file_names:
+            drift.append((pid, sorted(file_names), sorted(cat_names)))
+    return drift
 
 
 def check_catalog(parts):
@@ -124,17 +161,22 @@ def main():
     skills = scan_skills()
     issues = check_catalog(parts)
     intake = check_intake()
+    drift = check_usage_drift(parts)
 
-    # 部品の利用回数（スキル側からの参照を数える。利用頻度＝部品の価値）
-    usage = {pid: 0 for pid in parts}
-    for s in skills:
-        for pid in s['parts_referenced']:
-            if pid in usage:
-                usage[pid] += 1
+    # 部品の利用回数。SKILL.md本文の参照とカタログの使用実績を統合して数える
+    # （取り込んだツールは本文に部品IDを書いていないため、カタログ側が主な情報源になる）
+    cat_usage = usage_from_parts(parts)
+    usage = {}
+    for pid in parts:
+        names = set(cat_usage.get(pid, []))
+        for s in skills:
+            if pid in s['parts_referenced']:
+                names.add(s['name'])
+        usage[pid] = len(names)
 
     if args.json:
         print(json.dumps({'parts': parts, 'skills': skills, 'issues': issues,
-                          'intake': intake, 'usage': usage},
+                          'intake': intake, 'usage': usage, 'usage_drift': drift},
                          ensure_ascii=False, indent=1))
         return
 
@@ -152,9 +194,11 @@ def main():
             print(f'  {pid:32s} {mark:3s} {parts[pid]["summary"]}')
         print()
 
-    print('製造済みツール')
+    print('ラボ管理下のツール')
     for s in skills:
-        print(f'  {s["name"]:22s} 参照部品 {len(s["parts_referenced"])}点')
+        n = len({pid for pid, u in cat_usage.items() if s['name'] in u}
+                | set(s['parts_referenced']))
+        print(f'  {s["name"]:22s} 使用部品 {n}点')
 
     print()
     if intake['untracked']:
@@ -168,13 +212,19 @@ def main():
             print(f'  {name} → cp -r tool-factory/skills/{name} ~/.claude/skills/')
         print()
 
+    if drift:
+        print('⚠ 使用実績のズレ（部品ファイルが正。カタログ表を合わせること）')
+        for pid, f, c in drift:
+            print(f'  {pid}: 部品ファイル={f} / カタログ={c}')
+        print()
+
     if issues['missing_in_catalog'] or issues['missing_file']:
         print('⚠ カタログとの不一致')
         for pid in issues['missing_in_catalog']:
             print(f'  カタログ未登録: {pid} → PARTS_CATALOG.md に追記が必要')
         for pid in issues['missing_file']:
             print(f'  ファイル不在  : {pid} → parts/ に実体がない')
-    elif not intake['untracked'] and not intake['not_installed']:
+    elif not intake['untracked'] and not intake['not_installed'] and not drift:
         print('✓ カタログ・部品・ツールはすべて一致している')
     else:
         print('✓ カタログと部品ファイルは一致している')

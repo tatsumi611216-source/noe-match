@@ -1,6 +1,6 @@
 # 部品: diff-cache（差分キャッシュ）
 
-- カテゴリ: data ／ 由来: web-data-pipeline ／ 使用実績: web-data-pipeline, keiba-yoso
+- カテゴリ: data ／ 由来: web-data-pipeline ／ 使用実績: web-data-pipeline, keiba-yoso, gsc-report
 
 ## 何をする部品か
 

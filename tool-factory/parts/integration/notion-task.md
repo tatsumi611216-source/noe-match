@@ -1,6 +1,6 @@
 # 部品: notion-task（Notion登録・更新）
 
-- カテゴリ: integration ／ 由来: secretary（宿題DB）, keiba-yoso（notion_logger.py） ／ 使用実績: secretary, keiba-yoso
+- カテゴリ: integration ／ 由来: secretary（宿題DB）, keiba-yoso（notion_logger.py） ／ 使用実績: secretary
 
 ## 何をする部品か
 
