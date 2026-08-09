@@ -3,307 +3,247 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AIツールデザインキャンバス</title>
+<title>AIツールデザインキャンバス — 全ツール因数分解表</title>
 <style>
   :root {
     --ground: #F4F6F7;
     --grid-line: rgba(50, 94, 133, 0.10);
     --frame: #26303A;
     --ink: #26303A;
-    --ink-dim: #6B7885;
+    --dim: #6B7885;
     --accent: #1D5E8F;
+    --accent-soft: #E3EDF6;
     --hot: #C2571A;
-    --hot-soft: rgba(194, 87, 26, 0.12);
-    --cell: rgba(255, 255, 255, 0.72);
+    --hot-soft: rgba(194, 87, 26, 0.10);
+    --cell: #FFFFFF;
     --chip-line: #A9BCCB;
     --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
     --jp: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
-      --ground: #0A2140;
-      --grid-line: rgba(140, 190, 235, 0.10);
-      --frame: #8FBBDD;
-      --ink: #DCEBF7;
-      --ink-dim: #7E9DB8;
-      --accent: #6FC3E8;
-      --hot: #FFB454;
-      --hot-soft: rgba(255, 180, 84, 0.14);
-      --cell: rgba(10, 40, 74, 0.55);
-      --chip-line: #3C6285;
+      --ground: #0A2140; --grid-line: rgba(140,190,235,0.10); --frame: #8FBBDD;
+      --ink: #DCEBF7; --dim: #7E9DB8; --accent: #6FC3E8; --accent-soft: #16324F;
+      --hot: #FFB454; --hot-soft: rgba(255,180,84,0.12);
+      --cell: rgba(12,42,76,0.6); --chip-line: #3C6285;
     }
   }
   :root[data-theme="dark"] {
     --ground: #0A2140; --grid-line: rgba(140,190,235,0.10); --frame: #8FBBDD;
-    --ink: #DCEBF7; --ink-dim: #7E9DB8; --accent: #6FC3E8;
-    --hot: #FFB454; --hot-soft: rgba(255,180,84,0.14);
-    --cell: rgba(10,40,74,0.55); --chip-line: #3C6285;
+    --ink: #DCEBF7; --dim: #7E9DB8; --accent: #6FC3E8; --accent-soft: #16324F;
+    --hot: #FFB454; --hot-soft: rgba(255,180,84,0.12);
+    --cell: rgba(12,42,76,0.6); --chip-line: #3C6285;
   }
   :root[data-theme="light"] {
     --ground: #F4F6F7; --grid-line: rgba(50,94,133,0.10); --frame: #26303A;
-    --ink: #26303A; --ink-dim: #6B7885; --accent: #1D5E8F;
-    --hot: #C2571A; --hot-soft: rgba(194,87,26,0.12);
-    --cell: rgba(255,255,255,0.72); --chip-line: #A9BCCB;
+    --ink: #26303A; --dim: #6B7885; --accent: #1D5E8F; --accent-soft: #E3EDF6;
+    --hot: #C2571A; --hot-soft: rgba(194,87,26,0.10);
+    --cell: #FFFFFF; --chip-line: #A9BCCB;
   }
   * { box-sizing: border-box; }
   body {
-    margin: 0; color: var(--ink); font-family: var(--jp); font-size: 14px; line-height: 1.6;
+    margin: 0; color: var(--ink); font-family: var(--jp); font-size: 13px; line-height: 1.55;
     background:
       repeating-linear-gradient(0deg, var(--grid-line) 0 1px, transparent 1px 24px),
       repeating-linear-gradient(90deg, var(--grid-line) 0 1px, transparent 1px 24px),
       var(--ground);
   }
-  .sheet { max-width: 1240px; margin: 26px auto 60px; padding: 0 18px; }
+  .sheet { max-width: 1380px; margin: 24px auto 60px; padding: 0 16px; }
 
-  .masthead {
-    display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 20px;
-    border: 2px solid var(--frame); border-bottom-width: 0;
-    padding: 16px 20px 12px; background: var(--cell);
-  }
-  .masthead .no { font-family: var(--mono); font-size: 10px; letter-spacing: .22em; color: var(--accent); }
-  h1 { margin: 0; font-size: 27px; font-weight: 800; letter-spacing: .04em; text-wrap: balance; }
-  h1 small { display: block; font-family: var(--mono); font-size: 11px; font-weight: 400; letter-spacing: .3em; color: var(--accent); margin-top: 2px; }
-  .masthead .desc { margin-left: auto; max-width: 30em; font-size: 12px; color: var(--ink-dim); }
+  .mast { border: 2px solid var(--frame); background: var(--cell); padding: 16px 20px 14px;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 26px; }
+  .mast .no { font-family: var(--mono); font-size: 10px; letter-spacing: .22em; color: var(--accent); display: block; }
+  h1 { margin: 2px 0 0; font-size: 24px; font-weight: 800; letter-spacing: .03em; }
+  h1 small { display: block; font-family: var(--mono); font-size: 10px; font-weight: 400; letter-spacing: .28em; color: var(--accent); margin-top: 2px; }
+  .factored { margin-left: auto; font-family: var(--mono); font-size: 12px; color: var(--dim); text-align: right; }
+  .factored b { color: var(--hot); font-size: 16px; }
+  .hint { border: 2px solid var(--frame); border-top: 0; background: var(--accent-soft);
+    padding: 8px 20px; font-size: 12px; color: var(--ink); }
+  .hint b { color: var(--accent); }
+  #tally { font-weight: 700; color: var(--hot); }
 
-  .toolbar {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
-    border: 2px solid var(--frame); border-bottom-width: 0;
-    padding: 10px 20px; background: var(--cell);
-  }
-  .toolbar .lbl { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; color: var(--ink-dim); margin-right: 6px; }
-  .tbtn {
-    font-family: var(--mono); font-size: 12px; letter-spacing: .05em;
-    color: var(--ink); background: transparent;
-    border: 1px solid var(--chip-line); border-radius: 3px;
-    padding: 5px 12px; cursor: pointer;
-  }
-  .tbtn:hover { border-color: var(--accent); color: var(--accent); }
-  .tbtn.active { background: var(--accent); border-color: var(--accent); color: var(--ground); font-weight: 700; }
-  .tbtn:focus-visible { outline: 2px solid var(--hot); outline-offset: 2px; }
-  .tally { margin-left: auto; font-family: var(--mono); font-size: 11px; color: var(--ink-dim); }
-  .tally b { color: var(--hot); font-weight: 700; font-variant-numeric: tabular-nums; }
-
-  .canvas {
-    display: grid; border: 2px solid var(--frame);
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-areas:
-      "input  process output"
-      "quality data    integ"
-      "safety safety  safety";
-  }
-  .cell {
-    border: 1px solid var(--frame); margin: -0.5px;
-    background: var(--cell); padding: 14px 16px 16px; min-height: 190px;
-  }
-  .c-input { grid-area: input; } .c-quality { grid-area: quality; }
-  .c-process { grid-area: process; } .c-data { grid-area: data; }
-  .c-output { grid-area: output; } .c-integ { grid-area: integ; }
-  .c-safety { grid-area: safety; min-height: 0; }
-  @media (max-width: 760px) {
-    .canvas { grid-template-columns: 1fr 1fr;
-      grid-template-areas: "input process" "quality data" "output integ" "safety safety"; }
-  }
-  @media (max-width: 480px) {
-    .canvas { grid-template-columns: 1fr;
-      grid-template-areas: "input" "quality" "process" "data" "output" "integ" "safety"; }
-  }
-  .cell header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 2px; }
-  .cell .num { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--accent); }
-  .cell .en { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: .18em; }
-  .cell .ja { font-size: 11px; color: var(--ink-dim); }
-  .cell .ask { font-size: 11px; color: var(--ink-dim); margin: 0 0 10px; border-bottom: 1px dashed var(--chip-line); padding-bottom: 6px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .matrix-wrap { border: 2px solid var(--frame); border-top: 0; overflow-x: auto; background: var(--cell); }
+  table.matrix { border-collapse: collapse; min-width: 1150px; width: 100%; }
+  .matrix th, .matrix td { border: 1px solid var(--chip-line); padding: 7px 8px; vertical-align: top; text-align: left; }
+  .matrix thead th { background: var(--accent-soft); font-size: 12px; position: sticky; top: 0; }
+  .matrix thead th .t-name { font-family: var(--mono); font-weight: 700; font-size: 12px; }
+  .matrix thead th .t-desc { display: block; font-weight: 400; font-size: 10px; color: var(--dim); }
+  .matrix th.blk { width: 118px; min-width: 118px; background: var(--accent-soft); position: sticky; left: 0; z-index: 2; }
+  .matrix thead th.blk { z-index: 3; }
+  .blk .num { font-family: var(--mono); font-weight: 700; color: var(--accent); font-size: 13px; }
+  .blk .en { display: block; font-family: var(--mono); font-size: 10px; letter-spacing: .12em; font-weight: 700; }
+  .blk .ja { display: block; font-size: 10px; color: var(--dim); }
   .chip {
-    font-family: var(--mono); font-size: 11px; line-height: 1.35;
-    border: 1px solid var(--chip-line); border-radius: 3px;
-    padding: 4px 8px; color: var(--ink); background: transparent;
+    display: inline-block; margin: 2px 3px 2px 0; padding: 2px 7px;
+    font-family: var(--mono); font-size: 10.5px; line-height: 1.5;
+    border: 1px solid var(--chip-line); border-radius: 3px; cursor: pointer;
+    background: transparent; color: var(--ink);
   }
-  .chip .fn { display: block; font-family: var(--jp); font-size: 10px; color: var(--ink-dim); letter-spacing: 0; }
-  .chip.custom { border-style: dashed; color: var(--hot); border-color: var(--hot); display: none; }
-  .chip.custom .fn { color: var(--hot); opacity: .8; }
-  body.focused .chip { opacity: .28; }
-  body.focused .chip.on {
-    opacity: 1; border-color: var(--hot); background: var(--hot-soft);
-    box-shadow: 0 0 0 1px var(--hot);
-  }
-  body.focused .chip.custom.on { display: block; }
-  @media (prefers-reduced-motion: no-preference) {
-    .chip { transition: opacity .25s, box-shadow .25s, border-color .25s; }
-  }
+  .chip.custom { border-style: dashed; border-color: var(--hot); color: var(--hot); font-family: var(--jp); font-weight: 700; }
+  .none { color: var(--dim); font-size: 11px; }
+  body.focused .chip { opacity: .22; }
+  body.focused .chip.on { opacity: 1; border-color: var(--hot); background: var(--hot-soft); box-shadow: 0 0 0 1.5px var(--hot); }
+  @media (prefers-reduced-motion: no-preference) { .chip { transition: opacity .2s, box-shadow .2s; } }
 
-  .titleblock {
-    display: grid; grid-template-columns: 1fr auto auto; gap: 0;
-    border: 2px solid var(--frame); border-top-width: 0; background: var(--cell);
-    font-family: var(--mono); font-size: 10px;
-  }
-  .titleblock > div { padding: 8px 14px; border-left: 1px solid var(--chip-line); }
-  .titleblock > div:first-child { border-left: 0; }
-  .titleblock .k { display: block; letter-spacing: .2em; color: var(--ink-dim); font-size: 9px; }
-  .titleblock .v { font-size: 11px; color: var(--ink); }
-  .titleblock .v.hot { color: var(--hot); font-weight: 700; }
-  .foot { margin-top: 14px; font-size: 12px; color: var(--ink-dim); }
-  .foot a { color: var(--accent); }
+  .shelf { border: 2px solid var(--frame); border-top: 0; background: var(--cell); padding: 10px 20px 12px;
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; }
+  .shelf h3 { margin: 0 8px 0 0; font-family: var(--mono); font-size: 10px; letter-spacing: .2em; color: var(--dim); }
+  .foot { margin-top: 12px; font-size: 11px; color: var(--dim); }
+  .legend { display: inline-flex; gap: 14px; margin-left: 12px; font-size: 11px; color: var(--dim); }
+  .legend .chip { cursor: default; }
 </style>
 </head>
 <body>
 <div class="sheet">
-  <div class="masthead">
+
+  <header class="mast">
     <div>
-      <span class="no">NOE TOOL-MAKING FACTORY — DWG. NO. NTF-001</span>
-      <h1>AIツールデザインキャンバス<small>AI TOOL DESIGN CANVAS</small></h1>
+      <span class="no">NOE TOOL LAB — DWG. NO. NTL-001 ／ 全ツール因数分解表</span>
+      <h1>AIツールデザインキャンバス<small>AI TOOL DESIGN CANVAS — FACTORIZATION SHEET</small></h1>
     </div>
-    <p class="desc">ツールの機能を7ブロックに因数分解する設計図。ブロックに部品を埋めれば、それがそのまま新ツールの仕様になる。下のボタンで既存ツールの設計を投影できる。</p>
+    <div class="factored">
+      7 tools ＝ <b>30 parts</b> × 固有ロジック<br>
+      <span style="font-size:10px">6x＋9y ＝ 3(2x＋3y) — 共通因数をくくり出す</span>
+    </div>
+  </header>
+
+  <div class="hint">
+    <b>部品をクリック</b>すると、同じ部品を使っている箇所がすべて点灯します。<span id="tally"></span>
+    <span class="legend"><span class="chip">共通部品</span><span class="chip custom">★固有ロジック</span></span>
   </div>
 
-  <div class="toolbar" role="group" aria-label="既存ツールの設計を表示">
-    <span class="lbl">PROJECT:</span>
-    <button class="tbtn active" data-tool="">全部品</button>
-    <button class="tbtn" data-tool="keiba">keiba-yoso</button>
-    <button class="tbtn" data-tool="brain">noe-brain</button>
-    <button class="tbtn" data-tool="relay">noe-relay</button>
-    <button class="tbtn" data-tool="sec">secretary</button>
-    <span class="tally" id="tally">部品ライブラリ 21点</span>
+  <div class="matrix-wrap">
+    <table class="matrix" id="mx">
+      <thead>
+        <tr>
+          <th class="blk"></th>
+          <th><span class="t-name">noe-brain</span><span class="t-desc">事業仮説設計・11部品</span></th>
+          <th><span class="t-name">noe-relay</span><span class="t-desc">討論検証・7部品</span></th>
+          <th><span class="t-name">keiba-yoso</span><span class="t-desc">競馬予想・8部品</span></th>
+          <th><span class="t-name">web-data-pipeline</span><span class="t-desc">収集基盤・9部品</span></th>
+          <th><span class="t-name">gsc-report</span><span class="t-desc">検索分析・6部品</span></th>
+          <th><span class="t-name">secretary</span><span class="t-desc">個人秘書・4部品</span></th>
+          <th><span class="t-name">noe-tool-lab</span><span class="t-desc">製造ラボ・5部品</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th class="blk"><span class="num">①</span><span class="en">INPUT</span><span class="ja">入力</span></th>
+          <td><button class="chip" data-p="mode-detection">mode-detection</button><button class="chip" data-p="context-intake">context-intake</button></td>
+          <td><span class="none">論題1行のみ</span></td>
+          <td><span class="none">レース指定</span></td>
+          <td><span class="none">案件側に委譲</span></td>
+          <td><button class="chip" data-p="mode-detection">mode-detection</button></td>
+          <td><button class="chip" data-p="mode-detection">mode-detection</button></td>
+          <td><button class="chip" data-p="mode-detection">mode-detection</button><button class="chip" data-p="spec-drilldown">spec-drilldown</button></td>
+        </tr>
+        <tr>
+          <th class="blk"><span class="num">②</span><span class="en">QUALITY</span><span class="ja">品質</span></th>
+          <td><button class="chip" data-p="branch-table">branch-table</button><button class="chip" data-p="concreteness-rules">concreteness-rules</button><button class="chip" data-p="confidence-score">confidence-score</button></td>
+          <td><button class="chip" data-p="concreteness-rules">concreteness-rules</button><button class="chip" data-p="fact-check">fact-check</button><button class="chip" data-p="confidence-score">confidence-score</button></td>
+          <td><button class="chip custom" data-p="k-ev-cut">★EV足切り基準</button></td>
+          <td><span class="none">案件側で定義</span></td>
+          <td><button class="chip custom" data-p="g-ctr">★期待CTR表</button></td>
+          <td><span class="none">なし</span></td>
+          <td><button class="chip" data-p="feasibility-check">feasibility-check</button></td>
+        </tr>
+        <tr>
+          <th class="blk"><span class="num">③</span><span class="en">PROCESS</span><span class="ja">中核処理</span></th>
+          <td><button class="chip custom" data-p="b-3kata">★3型設計（逆張り・接続・除去）</button><button class="chip" data-p="stress-test">stress-test</button><button class="chip" data-p="action-design">action-design</button></td>
+          <td><button class="chip" data-p="debate-engine">debate-engine</button><button class="chip" data-p="action-design">action-design</button></td>
+          <td><button class="chip" data-p="gap-scoring">gap-scoring</button><button class="chip custom" data-p="k-ev">★EV計算・レース選定</button></td>
+          <td><span class="none">案件側で定義</span></td>
+          <td><button class="chip" data-p="gap-scoring">gap-scoring</button></td>
+          <td><button class="chip custom" data-p="s-triage">★依頼の仕分け</button></td>
+          <td><button class="chip custom" data-p="l-modes">★6モード運用</button></td>
+        </tr>
+        <tr>
+          <th class="blk"><span class="num">④</span><span class="en">DATA</span><span class="ja">データ</span></th>
+          <td><span class="none">なし</span></td>
+          <td><span class="none">なし（Web検索のみ）</span></td>
+          <td><button class="chip" data-p="web-scraping">web-scraping</button><button class="chip" data-p="file-per-item">file-per-item</button><button class="chip" data-p="auto-parse">auto-parse</button><button class="chip" data-p="diff-cache">diff-cache</button><button class="chip" data-p="screening">screening</button></td>
+          <td><button class="chip" data-p="web-scraping">web-scraping</button><button class="chip" data-p="file-per-item">file-per-item</button><button class="chip" data-p="auto-parse">auto-parse</button><button class="chip" data-p="diff-cache">diff-cache</button><button class="chip" data-p="screening">screening</button></td>
+          <td><button class="chip" data-p="diff-cache">diff-cache</button><button class="chip custom" data-p="g-gsc">★GSC API取得</button></td>
+          <td><span class="none">接続サービス直接参照</span></td>
+          <td><span class="none">なし</span></td>
+        </tr>
+        <tr>
+          <th class="blk"><span class="num">⑤</span><span class="en">OUTPUT</span><span class="ja">出力</span></th>
+          <td><button class="chip" data-p="summary-table">summary-table</button><button class="chip" data-p="meta-evolution">meta-evolution</button></td>
+          <td><button class="chip" data-p="summary-table">summary-table</button></td>
+          <td><button class="chip" data-p="html-report">html-report</button></td>
+          <td><button class="chip" data-p="html-report">html-report</button><button class="chip" data-p="meta-evolution">meta-evolution</button></td>
+          <td><button class="chip" data-p="html-report">html-report</button></td>
+          <td><button class="chip" data-p="secretary-tone">secretary-tone</button></td>
+          <td><button class="chip" data-p="proposal-doc">proposal-doc</button><button class="chip" data-p="meta-evolution">meta-evolution</button></td>
+        </tr>
+        <tr>
+          <th class="blk"><span class="num">⑥</span><span class="en">INTEGRATION</span><span class="ja">連携</span></th>
+          <td><button class="chip" data-p="skill-handoff">skill-handoff</button><span class="none">→noe-relay</span></td>
+          <td><button class="chip" data-p="skill-handoff">skill-handoff</button><span class="none">←noe-brain</span></td>
+          <td><span class="none">なし</span></td>
+          <td><button class="chip" data-p="scheduled-task">scheduled-task</button></td>
+          <td><button class="chip" data-p="scheduled-task">scheduled-task</button></td>
+          <td><button class="chip" data-p="notion-task">notion-task</button></td>
+          <td><span class="none">GASブリッジ（必要時）</span></td>
+        </tr>
+        <tr>
+          <th class="blk"><span class="num">⑦</span><span class="en">SAFETY</span><span class="ja">安全</span></th>
+          <td><button class="chip" data-p="hallucination-guard">hallucination-guard</button></td>
+          <td><span class="none">審判が兼務</span></td>
+          <td><button class="chip" data-p="hallucination-guard">hallucination-guard</button></td>
+          <td><button class="chip" data-p="hallucination-guard">hallucination-guard</button></td>
+          <td><button class="chip" data-p="hallucination-guard">hallucination-guard</button></td>
+          <td><button class="chip" data-p="irreversible-confirm">irreversible-confirm</button></td>
+          <td><button class="chip" data-p="irreversible-confirm">irreversible-confirm</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="canvas">
-    <section class="cell c-input">
-      <header><span class="num">①</span><span class="en">INPUT</span><span class="ja">入力</span></header>
-      <p class="ask">入力をどう受け取り、分岐するか</p>
-      <div class="chips">
-        <span class="chip" data-id="mode-detection">mode-detection<span class="fn">モード・キーワード自動判定</span></span>
-        <span class="chip" data-id="context-intake">context-intake<span class="fn">質問で文脈を引き出し採点</span></span>
-      </div>
-    </section>
-
-    <section class="cell c-process">
-      <header><span class="num">③</span><span class="en">PROCESS</span><span class="ja">中核処理</span></header>
-      <p class="ask">このツールの本体は何をするか</p>
-      <div class="chips">
-        <span class="chip" data-id="stress-test">stress-test<span class="fn">失敗理由と回避行動を強制生成</span></span>
-        <span class="chip" data-id="debate-engine">debate-engine<span class="fn">討論2名＋審判で穴を壊す</span></span>
-        <span class="chip" data-id="action-design">action-design<span class="fn">72時間の即実行アクション</span></span>
-        <span class="chip custom" data-id="custom">★ 固有ロジック<span class="fn" id="custom-fn">このツールだけの独自処理</span></span>
-      </div>
-    </section>
-
-    <section class="cell c-output">
-      <header><span class="num">⑤</span><span class="en">OUTPUT</span><span class="ja">出力</span></header>
-      <p class="ask">何を、どんな形で出すか</p>
-      <div class="chips">
-        <span class="chip" data-id="summary-table">summary-table<span class="fn">結論を1画面の表に圧縮</span></span>
-        <span class="chip" data-id="html-report">html-report<span class="fn">HTMLレポート標準構成</span></span>
-        <span class="chip" data-id="secretary-tone">secretary-tone<span class="fn">秘書口調・要点先出し</span></span>
-        <span class="chip" data-id="meta-evolution">meta-evolution<span class="fn">次回改良ポイントを毎回出す</span></span>
-      </div>
-    </section>
-
-    <section class="cell c-quality">
-      <header><span class="num">②</span><span class="en">QUALITY</span><span class="ja">品質</span></header>
-      <p class="ask">出力の質を何で担保するか</p>
-      <div class="chips">
-        <span class="chip" data-id="concreteness-rules">concreteness-rules<span class="fn">抽象論禁止・具体性強制</span></span>
-        <span class="chip" data-id="fact-check">fact-check<span class="fn">Web検索で数字を裏取り補正</span></span>
-        <span class="chip" data-id="confidence-score">confidence-score<span class="fn">信頼度A〜E採点＋改善策</span></span>
-        <span class="chip" data-id="branch-table">branch-table<span class="fn">多軸チェック→機械的分岐</span></span>
-      </div>
-    </section>
-
-    <section class="cell c-data">
-      <header><span class="num">④</span><span class="en">DATA</span><span class="ja">データ</span></header>
-      <p class="ask">外部データをどう取り・貯め・捌くか</p>
-      <div class="chips">
-        <span class="chip" data-id="web-scraping">web-scraping<span class="fn">ブラウザ取得の使い分け</span></span>
-        <span class="chip" data-id="file-per-item">file-per-item<span class="fn">1件1ファイル＋並行取得</span></span>
-        <span class="chip" data-id="auto-parse">auto-parse<span class="fn">フォーマット自動判定パース</span></span>
-        <span class="chip" data-id="diff-cache">diff-cache<span class="fn">差分キャッシュで取得削減</span></span>
-        <span class="chip" data-id="screening">screening<span class="fn">取得前の足切りでコスト減</span></span>
-      </div>
-    </section>
-
-    <section class="cell c-integ">
-      <header><span class="num">⑥</span><span class="en">INTEGRATION</span><span class="ja">連携</span></header>
-      <p class="ask">他ツール・外部サービスとどうつなぐか</p>
-      <div class="chips">
-        <span class="chip" data-id="notion-task">notion-task<span class="fn">Notion DBへ登録・更新</span></span>
-        <span class="chip" data-id="scheduled-task">scheduled-task<span class="fn">朝/日中/夜の定期実行</span></span>
-        <span class="chip" data-id="skill-handoff">skill-handoff<span class="fn">別ツールへの起動・合流</span></span>
-      </div>
-    </section>
-
-    <section class="cell c-safety">
-      <header><span class="num">⑦</span><span class="en">SAFETY</span><span class="ja">安全</span></header>
-      <p class="ask">何を確認し、何を推定と明示し、どこで止まるか</p>
-      <div class="chips">
-        <span class="chip" data-id="irreversible-confirm">irreversible-confirm<span class="fn">不可逆操作の前だけ確認</span></span>
-        <span class="chip" data-id="hallucination-guard">hallucination-guard<span class="fn">推定前提を明示し断定しない</span></span>
-      </div>
-    </section>
+  <div class="shelf">
+    <h3>SPARE PARTS — 在庫（未使用・次の製造待ち）</h3>
+    <button class="chip" data-p="file-intake">file-intake</button>
+    <button class="chip" data-p="notify">notify</button>
+    <button class="chip" data-p="spreadsheet">spreadsheet</button>
+    <span class="none">＋ Apps Scriptブリッジ（シート追記・メール実送信）</span>
   </div>
 
-  <div class="titleblock">
-    <div><span class="k">SYSTEM</span><span class="v">Noe Tool-Making Factory ／ tool-factory/</span></div>
-    <div><span class="k">PROJECT</span><span class="v hot" id="tb-project">— 全部品表示 —</span></div>
-    <div><span class="k">SCALE</span><span class="v">部品21点／7ブロック</span></div>
-  </div>
-
-  <p class="foot">部品の詳細は <code>tool-factory/PARTS_CATALOG.md</code>、発注は「ツール発注フォーム」から。ブロックが埋まらない＝不要か新造。新造したら部品ライブラリに還元する。</p>
+  <p class="foot">
+    数値・使用実績は 2026-08 の棚卸し（lab_inventory.py）による。★＝そのツールにしかない固有ロジック——各ツールの代替不可能な核であり、残りはすべて共通部品。
+    横に読むと「このブロックを各ツールがどう解いたか」、縦に読むと「このツールが何でできているか」、部品をクリックすると「この部品がどれだけ働いているか」が見える。
+  </p>
 </div>
 
 <script>
 (function () {
-  var TOOLS = {
-    keiba: {
-      name: 'keiba-yoso（競馬予想）',
-      parts: ['mode-detection','web-scraping','file-per-item','auto-parse','diff-cache','screening','html-report','notion-task','scheduled-task','hallucination-guard','custom'],
-      customFn: 'EV計算（推定勝率×オッズ−1）'
-    },
-    brain: {
-      name: 'noe-brain（事業仮説設計）',
-      parts: ['mode-detection','context-intake','branch-table','concreteness-rules','confidence-score','stress-test','action-design','skill-handoff','summary-table','meta-evolution','hallucination-guard','custom'],
-      customFn: '3型設計（逆張り・接続・除去）'
-    },
-    relay: {
-      name: 'noe-relay（多エージェント討論）',
-      parts: ['debate-engine','concreteness-rules','fact-check','confidence-score','summary-table','action-design'],
-      customFn: ''
-    },
-    sec: {
-      name: 'secretary（個人秘書）',
-      parts: ['mode-detection','notion-task','secretary-tone','irreversible-confirm'],
-      customFn: ''
-    }
-  };
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip'));
-  var btns = Array.prototype.slice.call(document.querySelectorAll('.tbtn'));
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.chip[data-p]'));
   var tally = document.getElementById('tally');
-  var tbProject = document.getElementById('tb-project');
-  var customFn = document.getElementById('custom-fn');
+  var current = null;
 
-  function show(toolId) {
-    btns.forEach(function (b) { b.classList.toggle('active', b.getAttribute('data-tool') === toolId); });
-    if (!toolId) {
-      document.body.classList.remove('focused');
-      chips.forEach(function (c) { c.classList.remove('on'); });
-      tally.textContent = '部品ライブラリ 21点';
-      tbProject.textContent = '— 全部品表示 —';
-      return;
-    }
-    var t = TOOLS[toolId];
-    document.body.classList.add('focused');
-    var reused = 0;
-    chips.forEach(function (c) {
-      var on = t.parts.indexOf(c.getAttribute('data-id')) >= 0;
-      c.classList.toggle('on', on);
-      if (on && c.getAttribute('data-id') !== 'custom') reused++;
+  chips.forEach(function (c) {
+    c.addEventListener('click', function () {
+      var p = c.getAttribute('data-p');
+      if (current === p) {
+        current = null;
+        document.body.classList.remove('focused');
+        chips.forEach(function (x) { x.classList.remove('on'); });
+        tally.textContent = '';
+        return;
+      }
+      current = p;
+      document.body.classList.add('focused');
+      var n = 0;
+      chips.forEach(function (x) {
+        var on = x.getAttribute('data-p') === p;
+        x.classList.toggle('on', on);
+        if (on) n++;
+      });
+      var isCustom = c.classList.contains('custom');
+      tally.textContent = isCustom
+        ? '「' + c.textContent.replace('★','') + '」は固有ロジック——このツールだけの核（もう一度クリックで解除）'
+        : '「' + p + '」は ' + n + ' 箇所で稼働中（もう一度クリックで解除）';
     });
-    if (t.customFn) customFn.textContent = t.customFn;
-    var hasCustom = t.parts.indexOf('custom') >= 0;
-    tally.innerHTML = t.name + '：再利用部品 <b>' + reused + '</b> 点＋固有ロジック <b>' + (hasCustom ? 1 : 0) + '</b>';
-    tbProject.textContent = t.name;
-  }
-
-  btns.forEach(function (b) {
-    b.addEventListener('click', function () { show(b.getAttribute('data-tool')); });
   });
 })();
 </script>
