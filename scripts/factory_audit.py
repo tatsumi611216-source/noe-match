@@ -204,6 +204,50 @@ def audit_article(slug):
     }
 
 
+def audit_index_groups():
+    """index.html の記事一覧グループを検査する（2026-08-09追加）。
+
+    なぜ必要か：index.html には生成スクリプトが無く、エージェントが手で編集している。
+    **グループを2つに分割したとき、arc-no の通し番号を振り直さず、
+    件数表記も分割前の合計のまま残る**という事故が起きていた。
+    2026-08-09時点で7グループが壊れていた（例：プロフィール10本に「19記事」と表記され、
+    続くデート・交際9本の番号が 11〜19 から始まっていた。10+9=19 が前半に付いていた）。
+
+    見た目の破損なので記事の中身では気づけない。機械で止める。
+    """
+    errors = []
+    with open(os.path.join(ROOT, 'index.html'), encoding='utf-8') as f:
+        html = f.read()
+
+    parts = re.split(r'(<h3 [^>]*>.*?</h3>)', html, flags=re.S)
+    cur = None
+    total = 0
+    for seg in parts:
+        m = re.match(r'<h3 [^>]*>(.*?)<span[^>]*>（(\d+)記事）</span></h3>', seg, re.S)
+        if m:
+            cur = (re.sub(r'<[^>]+>', '', m.group(1)).strip(), int(m.group(2)))
+            continue
+        if cur is None:
+            continue
+        name, declared = cur
+        cur = None
+        nos = [int(x) for x in re.findall(
+            r'class="arc-link"><span class="arc-no">(\d+)</span>', seg)]
+        total += len(nos)
+        if declared != len(nos):
+            errors.append(
+                f'index.html「{name}」の件数表記が{declared}記事だが実数は{len(nos)}本')
+        if nos and nos != list(range(1, len(nos) + 1)):
+            errors.append(
+                f'index.html「{name}」の通し番号が連番でない（{nos[0]}〜{nos[-1]}／{len(nos)}本）'
+                'グループを分割したら番号を1から振り直すこと')
+
+    m = re.search(r'全(\d+)記事', html)
+    if m and int(m.group(1)) != total:
+        errors.append(f'index.html の「全{m.group(1)}記事」が実数{total}本と不一致')
+    return errors
+
+
 def audit_structure():
     """記事ディレクトリ / sitemap / index.html / redirects.json の整合を検査"""
     errors = []
@@ -226,6 +270,8 @@ def audit_structure():
     # 稼働記事がリダイレクト元として登録されていると server.py が301で飛ばしてしまう
     for slug in sorted(sitemap & set(redirects)):
         errors.append(f'稼働記事が redirects.json のリダイレクト元になっている: {slug}')
+
+    errors.extend(audit_index_groups())
 
     # sitemap-all.xml は sitemap.xml と同一URL集合であることが前提
     all_path = os.path.join(ROOT, 'sitemap-all.xml')
