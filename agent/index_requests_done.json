@@ -1,0 +1,16 @@
+{
+  "_comment": "Googleインデックス申請を実際に出した日。人間の報告が取れた日だけを入れる。憶測で埋めると index_diff.py の群分けが壊れ、申請の効果を測れなくなる。キーは index_request_batches.md の Day 番号（Day 0 は index_experiment.md 側の10本）。",
+  "days": {
+    "0": "2026-08-01",
+    "1": "2026-08-02",
+    "2": "2026-08-08"
+  },
+  "pending": [3, 4, 5, 6, 7, 8],
+  "note_group_must_not_be_requested": [
+    "kaden-rental-vs-kounyu",
+    "nurse-konkatsu-soudanjo",
+    "soudanjo-hikaku",
+    "tantei-erabikata",
+    "yachin-credit-shiharai"
+  ]
+}
