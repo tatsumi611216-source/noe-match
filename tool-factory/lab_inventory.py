@@ -18,6 +18,16 @@ LAB = os.path.dirname(os.path.abspath(__file__))
 PARTS = os.path.join(LAB, 'parts')
 SKILLS = os.path.join(LAB, 'skills')
 CATALOG = os.path.join(LAB, 'PARTS_CATALOG.md')
+INSTALLED = os.path.expanduser('~/.claude/skills')
+
+# 標準装備のスキル。ラボが作ったものではないので取り込み対象外。
+STOCK_SKILLS = {
+    'docx', 'pdf', 'pptx', 'xlsx', 'morning', 'skill-creator',
+    'session-start-hook', 'artifact-design', 'artifact-diagramming',
+    'artifact-capabilities', 'dataviz', 'update-config', 'keybindings-help',
+    'simplify', 'loop', 'claude-api', 'run', 'init', 'security-review',
+    'fewer-permission-prompts', 'code-review',
+}
 
 BLOCKS = [
     ('input', '① INPUT', '入力'),
@@ -75,6 +85,23 @@ def scan_skills():
     return skills
 
 
+def check_intake():
+    """インストール済みだがラボに取り込まれていないツールを検知する。
+
+    ラボの外で作った・もらったツールは、分解して部品化するまで資産にならない。
+    黙って増えていくと重複製造が復活するので、棚卸しのたびに炙り出す。
+    """
+    if not os.path.isdir(INSTALLED):
+        return {'untracked': [], 'not_installed': []}
+    installed = {d for d in os.listdir(INSTALLED)
+                 if os.path.exists(os.path.join(INSTALLED, d, 'SKILL.md'))}
+    tracked = {d for d in os.listdir(SKILLS)} if os.path.isdir(SKILLS) else set()
+    return {
+        'untracked': sorted(installed - tracked - STOCK_SKILLS),
+        'not_installed': sorted(tracked - installed),
+    }
+
+
 def check_catalog(parts):
     """カタログに載っていない部品／ファイルのない部品を検知する"""
     if not os.path.exists(CATALOG):
@@ -96,6 +123,7 @@ def main():
     parts = scan_parts()
     skills = scan_skills()
     issues = check_catalog(parts)
+    intake = check_intake()
 
     # 部品の利用回数（スキル側からの参照を数える。利用頻度＝部品の価値）
     usage = {pid: 0 for pid in parts}
@@ -105,7 +133,8 @@ def main():
                 usage[pid] += 1
 
     if args.json:
-        print(json.dumps({'parts': parts, 'skills': skills, 'issues': issues, 'usage': usage},
+        print(json.dumps({'parts': parts, 'skills': skills, 'issues': issues,
+                          'intake': intake, 'usage': usage},
                          ensure_ascii=False, indent=1))
         return
 
@@ -128,12 +157,25 @@ def main():
         print(f'  {s["name"]:22s} 参照部品 {len(s["parts_referenced"])}点')
 
     print()
+    if intake['untracked']:
+        print('⚠ 未取り込みのツール（ラボの外で作られ、まだ部品化されていない）')
+        for name in intake['untracked']:
+            print(f'  {name} → 取り込みモードで分解し、部品をライブラリに還元すること')
+        print()
+    if intake['not_installed']:
+        print('⚠ 正本はあるが未インストール')
+        for name in intake['not_installed']:
+            print(f'  {name} → cp -r tool-factory/skills/{name} ~/.claude/skills/')
+        print()
+
     if issues['missing_in_catalog'] or issues['missing_file']:
         print('⚠ カタログとの不一致')
         for pid in issues['missing_in_catalog']:
             print(f'  カタログ未登録: {pid} → PARTS_CATALOG.md に追記が必要')
         for pid in issues['missing_file']:
             print(f'  ファイル不在  : {pid} → parts/ に実体がない')
+    elif not intake['untracked'] and not intake['not_installed']:
+        print('✓ カタログ・部品・ツールはすべて一致している')
     else:
         print('✓ カタログと部品ファイルは一致している')
 
