@@ -417,5 +417,167 @@
    "success-rate-data",
    "with-seriousness-data"
   ]
+ },
+ {
+  "period": {
+   "start": "2026-07-10",
+   "end": "2026-08-07"
+  },
+  "fetched_at": "2026-08-09T13:41:11",
+  "totals": {
+   "live_articles": 154,
+   "eligible_articles": 70,
+   "excluded_published_after_window": 1,
+   "articles_with_impressions": 32,
+   "silent_rate": 54.3,
+   "impressions": 729,
+   "clicks": 22,
+   "ctr": 3.02
+  },
+  "cohorts": {
+   "legacy": {
+    "articles": 60,
+    "with_impressions": 24,
+    "reach_rate": 40.0
+   },
+   "in_window": {
+    "articles": 10,
+    "with_impressions": 8,
+    "reach_rate": 80.0
+   },
+   "fresh": {
+    "articles": 83,
+    "with_impressions": 27,
+    "reach_rate": 32.5
+   },
+   "after_window": {
+    "articles": 1,
+    "with_impressions": 0,
+    "reach_rate": 0.0
+   }
+  },
+  "rewrites": {
+   "evaluated": 0,
+   "reached": 0,
+   "pending": 6
+  },
+  "position_bands": {
+   "1-10位": {
+    "impressions": 31,
+    "clicks": 4,
+    "ctr": 12.9
+   },
+   "11-30位": {
+    "impressions": 38,
+    "clicks": 0,
+    "ctr": 0.0
+   },
+   "51位以下": {
+    "impressions": 183,
+    "clicks": 0,
+    "ctr": 0.0
+   },
+   "31-50位": {
+    "impressions": 39,
+    "clicks": 0,
+    "ctr": 0.0
+   }
+  },
+  "clusters": {
+   "データ・統計": {
+    "pages": 7,
+    "impressions": 175,
+    "clicks": 8,
+    "avg_position": 17.4,
+    "clicks_per_page": 1.14,
+    "ctr": 4.6
+   },
+   "地域ガイド": {
+    "pages": 7,
+    "impressions": 154,
+    "clicks": 5,
+    "avg_position": 16.0,
+    "clicks_per_page": 0.71,
+    "ctr": 3.2
+   },
+   "属性別": {
+    "pages": 11,
+    "impressions": 103,
+    "clicks": 2,
+    "avg_position": 49.7,
+    "clicks_per_page": 0.18,
+    "ctr": 1.9
+   },
+   "その他": {
+    "pages": 10,
+    "impressions": 66,
+    "clicks": 2,
+    "avg_position": 44.4,
+    "clicks_per_page": 0.2,
+    "ctr": 3.0
+   },
+   "ノウハウ": {
+    "pages": 6,
+    "impressions": 56,
+    "clicks": 2,
+    "avg_position": 35.0,
+    "clicks_per_page": 0.33,
+    "ctr": 3.6
+   },
+   "アプリ別": {
+    "pages": 5,
+    "impressions": 67,
+    "clicks": 1,
+    "avg_position": 42.9,
+    "clicks_per_page": 0.2,
+    "ctr": 1.5
+   },
+   "相談所": {
+    "pages": 2,
+    "impressions": 7,
+    "clicks": 0,
+    "avg_position": 93.0,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "結婚準備": {
+    "pages": 9,
+    "impressions": 62,
+    "clicks": 0,
+    "avg_position": 45.0,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "新生活": {
+    "pages": 2,
+    "impressions": 9,
+    "clicks": 0,
+    "avg_position": 17.6,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   }
+  },
+  "top10_queries": [
+   "with 結婚率",
+   "ユー ブライド 地方"
+  ],
+  "top10_pages": [
+   "inaka-guide",
+   "with-seriousness-data"
+  ],
+  "pages_with_clicks": [
+   "(top)",
+   "appkon-wariai-data",
+   "civil-servant-guide",
+   "kekkon-madeno-kikan-data",
+   "kyoto-guide",
+   "message-strategy",
+   "okinawa-guide",
+   "omiai-guide",
+   "profile-photo",
+   "sapporo-guide",
+   "success-rate-data",
+   "with-seriousness-data"
+  ]
  }
 ]
