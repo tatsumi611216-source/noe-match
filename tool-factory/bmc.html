@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Noeツールラボ — ビジネスモデルキャンバス</title>
+<style>
+  :root {
+    --paper: #F4F5F3;
+    --card: #FFFFFF;
+    --ink: #1B2530;
+    --dim: #5C6773;
+    --line: #D6DBDA;
+    --steel: #33618F;
+    --steel-soft: #E5EDF5;
+    --amber: #D8641F;
+    --amber-soft: #FBEDE1;
+    --green: #2E7D4F;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #14181F; --card: #1C222C; --ink: #E7EAED; --dim: #97A2AF;
+      --line: #313B47; --steel: #7FA9D4; --steel-soft: #223349;
+      --amber: #E8834A; --amber-soft: #3E2C1B; --green: #6FBF8F;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14181F; --card: #1C222C; --ink: #E7EAED; --dim: #97A2AF;
+    --line: #313B47; --steel: #7FA9D4; --steel-soft: #223349;
+    --amber: #E8834A; --amber-soft: #3E2C1B; --green: #6FBF8F;
+  }
+  :root[data-theme="light"] {
+    --paper: #F4F5F3; --card: #FFFFFF; --ink: #1B2530; --dim: #5C6773;
+    --line: #D6DBDA; --steel: #33618F; --steel-soft: #E5EDF5;
+    --amber: #D8641F; --amber-soft: #FBEDE1; --green: #2E7D4F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", "Yu Gothic UI", Meiryo, sans-serif;
+    font-size: 13px; line-height: 1.6;
+  }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 26px 18px 70px; }
+
+  header.mast { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 24px;
+    border-bottom: 3px solid var(--ink); padding-bottom: 14px; margin-bottom: 18px; }
+  .eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: .24em; color: var(--steel); font-weight: 700; }
+  h1 { margin: 2px 0 0; font-size: 26px; font-weight: 800; letter-spacing: .02em; text-wrap: balance; }
+  .stats { margin-left: auto; display: flex; gap: 18px; font-family: var(--mono); font-size: 11px; color: var(--dim); }
+  .stats b { display: block; font-size: 20px; color: var(--amber); font-variant-numeric: tabular-nums; }
+
+  .bmc { display: grid; gap: 10px;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-areas:
+      "kp kp ka ka vp vp cr cr cs cs"
+      "kp kp kr kr vp vp ch ch cs cs"
+      "co co co co co re re re re re"; }
+  @media (max-width: 900px) {
+    .bmc { grid-template-columns: 1fr 1fr;
+      grid-template-areas: "vp vp" "cs cs" "ka kr" "cr ch" "kp kp" "co re"; }
+  }
+  @media (max-width: 520px) {
+    .bmc { grid-template-columns: 1fr;
+      grid-template-areas: "vp" "cs" "ka" "kr" "cr" "ch" "kp" "co" "re"; }
+  }
+  .b { background: var(--card); border: 1.5px solid var(--line); border-radius: 8px;
+    padding: 13px 15px 14px; display: flex; flex-direction: column; min-height: 150px; }
+  .b.kp { grid-area: kp; } .b.ka { grid-area: ka; } .b.kr { grid-area: kr; }
+  .b.vp { grid-area: vp; border-color: var(--amber); border-width: 2px; background: linear-gradient(180deg, var(--amber-soft), var(--card) 55%); }
+  .b.cr { grid-area: cr; } .b.ch { grid-area: ch; }
+  .b.cs { grid-area: cs; } .b.co { grid-area: co; } .b.re { grid-area: re; }
+  .b header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .b .ico { flex: none; width: 30px; height: 30px; color: var(--steel); }
+  .b.vp .ico { color: var(--amber); }
+  .b h2 { margin: 0; font-size: 13px; font-weight: 800; letter-spacing: .03em; }
+  .b h2 small { display: block; font-family: var(--mono); font-size: 9px; letter-spacing: .18em; color: var(--dim); font-weight: 400; }
+  .b ul { margin: 0; padding: 0; list-style: none; font-size: 12px; }
+  .b li { padding: 3px 0 3px 14px; position: relative; }
+  .b li::before { content: "▸"; position: absolute; left: 0; color: var(--steel); font-size: 10px; top: 5px; }
+  .b.vp li::before { color: var(--amber); }
+  .b li b { font-weight: 700; }
+  .b li .n { font-family: var(--mono); font-size: 10.5px; color: var(--dim); }
+  .tag { display: inline-block; font-family: var(--mono); font-size: 9.5px; padding: 0 6px;
+    border-radius: 3px; background: var(--steel-soft); color: var(--steel); margin-left: 4px; vertical-align: 1px; }
+  .tag.now { background: var(--amber-soft); color: var(--amber); }
+
+  .flowband { margin-top: 14px; background: var(--card); border: 1.5px solid var(--line);
+    border-radius: 8px; padding: 12px 16px; }
+  .flowband h3 { margin: 0 0 6px; font-family: var(--mono); font-size: 10px; letter-spacing: .2em; color: var(--dim); font-weight: 700; }
+  .flowband svg { width: 100%; height: auto; display: block; }
+  .foot { margin-top: 12px; font-size: 11px; color: var(--dim); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="mast">
+    <div>
+      <div class="eyebrow">NOE TOOL LAB — BUSINESS MODEL CANVAS</div>
+      <h1>Noeツールラボ・ビジネスモデルキャンバス</h1>
+    </div>
+    <div class="stats">
+      <span><b>30</b>部品</span>
+      <span><b>7</b>ツール</span>
+      <span><b>6</b>モード</span>
+    </div>
+  </header>
+
+  <div class="bmc">
+
+    <section class="b kp">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="10" cy="11" r="4"/><circle cx="22" cy="11" r="4"/>
+          <path d="M3 27c0-4 3-6.5 7-6.5s7 2.5 7 6.5M15 27c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/>
+        </svg>
+        <h2>パートナー<small>KEY PARTNERS</small></h2>
+      </header>
+      <ul>
+        <li><b>Google連携</b><span class="n"> Gmail・Drive・Calendar・Form</span></li>
+        <li><b>Notion</b><span class="n"> タスク・記録の置き場</span></li>
+        <li><b>Apps Scriptブリッジ</b><span class="n"> シート追記・メール実送信</span></li>
+        <li>データ源<span class="n"> netkeiba・GSC・公開Web</span></li>
+        <li>IT導入支援事業者<span class="tag">将来</span><span class="n"> コンソーシアム構成員として参画（法人幹事社が必要）</span></li>
+      </ul>
+    </section>
+
+    <section class="b ka">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="16" cy="16" r="5"/>
+          <path d="M16 3v4M16 25v4M3 16h4M25 16h4M6.8 6.8l2.8 2.8M22.4 22.4l2.8 2.8M25.2 6.8l-2.8 2.8M9.6 22.4l-2.8 2.8"/>
+        </svg>
+        <h2>主要活動<small>KEY ACTIVITIES</small></h2>
+      </header>
+      <ul>
+        <li>受注 → 実現可否判定 → 提案書 → 契約 → 製造 → 検収</li>
+        <li><b>部品の還元</b>（新造は必ずライブラリへ）</li>
+        <li>棚卸し・改修・外部ツールの取り込み</li>
+      </ul>
+    </section>
+
+    <section class="b kr">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 10l12-6 12 6-12 6-12-6z"/>
+          <path d="M4 16l12 6 12-6M4 22l12 6 12-6"/>
+        </svg>
+        <h2>主要リソース<small>KEY RESOURCES</small></h2>
+      </header>
+      <ul>
+        <li><b>部品ライブラリ30点</b>（7ブロック分類）</li>
+        <li>AIツールデザインキャンバス＝方法論＋理論書</li>
+        <li>オーナーの言語化力<span class="n"> BPO5年×AI実装2年</span></li>
+        <li>実運用の現場<span class="n"> noe-match（当事者性＝信用の材料）</span></li>
+      </ul>
+    </section>
+
+    <section class="b vp">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 3l3.2 6.9 7.3.9-5.4 5.1 1.4 7.3L16 19.6l-6.5 3.6 1.4-7.3-5.4-5.1 7.3-.9L16 3z"/>
+        </svg>
+        <h2>価値提案<small>VALUE PROPOSITIONS</small></h2>
+      </header>
+      <ul>
+        <li><b>「自動化したいこと」を話すだけでツールが届く</b>——部品・技術の知識は不要</li>
+        <li><b>作るほど速くなる</b>——部品再利用で2つ目以降の製造コストが逓減</li>
+        <li><b>できるかどうかを先に言う</b>——実現可否判定＋提案書＋契約。作ってから「違う」が起きない</li>
+        <li>納品して終わらない——メタ進化と改修モードで育つ</li>
+      </ul>
+    </section>
+
+    <section class="b cr">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 27s-10-6.2-10-13.2C6 9.6 9 7 12.2 7c1.9 0 3.1.9 3.8 2 .7-1.1 1.9-2 3.8-2C23 7 26 9.6 26 13.8 26 20.8 16 27 16 27z"/>
+        </svg>
+        <h2>顧客との関係<small>RELATIONSHIPS</small></h2>
+      </header>
+      <ul>
+        <li>受託型<span class="n"> ヒアリング→追加質問→提案書→契約→検収</span></li>
+        <li>オーナー承認制<span class="n"> 勝手に作り始めない</span></li>
+        <li>継続改善<span class="n"> 改修は次サイクルの発注として受ける</span></li>
+      </ul>
+    </section>
+
+    <section class="b ch">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 8h24v14H14l-6 5v-5H4V8z"/><path d="M9 13h14M9 17h9"/>
+        </svg>
+        <h2>チャネル<small>CHANNELS</small></h2>
+      </header>
+      <ul>
+        <li><b>Google Form発注</b><span class="n"> 通知メール→オーナー確認</span><span class="tag now">稼働中</span></li>
+        <li>会話発注<span class="n"> 「〇〇するツールを作って」</span><span class="tag now">稼働中</span></li>
+        <li>理論書→フォーム導線<span class="n"> note/Kindle公開から集客</span><span class="tag">将来</span></li>
+      </ul>
+    </section>
+
+    <section class="b cs">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="16" cy="10" r="5"/><path d="M6 27c0-5.5 4.5-9 10-9s10 3.5 10 9"/>
+        </svg>
+        <h2>顧客セグメント<small>CUSTOMER SEGMENTS</small></h2>
+      </header>
+      <ul>
+        <li><b>いま：オーナー自身</b><span class="n"> noe-match運営・競馬・秘書業務の自動化</span><span class="tag now">稼働中</span></li>
+        <li>メディアを持つ中小法人<span class="n"> 支払い能力のある層。アフィリ個人は共感層であって顧客ではない（討論検証済み）</span><span class="tag">将来</span></li>
+        <li>小規模事業者・士業<span class="n"> 顧問月12万×3社＝月30万モデル</span><span class="tag">将来</span></li>
+      </ul>
+    </section>
+
+    <section class="b co">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M6 22c3-1.5 5 1.5 8 0s5 1.5 8 0M6 27c3-1.5 5 1.5 8 0s5 1.5 8 0"/>
+          <path d="M16 4v12M12 12l4 4 4-4"/>
+        </svg>
+        <h2>コスト構造<small>COST STRUCTURE</small></h2>
+      </header>
+      <ul>
+        <li>金銭コストはほぼゼロ<span class="n"> Claude利用料のみ。初期投資0円</span></li>
+        <li><b>実コストはオーナーの確認時間</b><span class="n"> 発注確認・契約承認・検収</span></li>
+        <li>部品化により製造コストは案件ごとに<b>逓減</b><span class="n"> gsc-report実績：固有ロジックは全体の2割</span></li>
+      </ul>
+    </section>
+
+    <section class="b re">
+      <header>
+        <svg class="ico" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 28V10M10 28V16M22 28V20M4 28h24"/>
+          <path d="M8 9l8-5 8 5"/>
+        </svg>
+        <h2>収益の流れ<small>REVENUE STREAMS</small></h2>
+      </header>
+      <ul>
+        <li><b>いま：時間の回収</b><span class="n"> 手作業の自動化＋noe-match収益の底上げ（GSCレポ等）</span><span class="tag now">稼働中</span></li>
+        <li>受託製造<span class="n"> 初期3〜10万＋顧問月8〜12万。座組は「他社案件に上流を差し込む」</span><span class="tag">将来</span></li>
+        <li>コンテンツ<span class="n"> 理論書（note/Kindle）＝受託への導線を兼ねる</span><span class="tag">将来</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="flowband">
+    <h3>THE ENGINE — ラボが回るほど速くなる循環</h3>
+    <svg viewBox="0 0 900 120" role="img" aria-label="発注から部品還元までの循環図">
+      <defs>
+        <marker id="ah" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+          <path d="M0 0L8 4L0 8z" fill="currentColor"/>
+        </marker>
+      </defs>
+      <g fill="none" stroke="currentColor" stroke-width="1.6" color="var(--steel)">
+        <rect x="10"  y="35" width="130" height="44" rx="8"/>
+        <rect x="190" y="35" width="130" height="44" rx="8"/>
+        <rect x="370" y="35" width="130" height="44" rx="8"/>
+        <rect x="550" y="35" width="130" height="44" rx="8"/>
+        <rect x="730" y="35" width="160" height="44" rx="8" stroke="var(--amber)"/>
+        <path d="M140 57h44" marker-end="url(#ah)"/>
+        <path d="M320 57h44" marker-end="url(#ah)"/>
+        <path d="M500 57h44" marker-end="url(#ah)"/>
+        <path d="M680 57h44" marker-end="url(#ah)"/>
+        <path d="M810 79c0 26-330 30-560 30-120 0-175-10-175-25" stroke="var(--amber)" stroke-dasharray="4 4" marker-end="url(#ah)" color="var(--amber)"/>
+      </g>
+      <g font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="13" font-weight="700" fill="var(--ink)" text-anchor="middle">
+        <text x="75"  y="61">発注</text>
+        <text x="255" y="61">可否判定・契約</text>
+        <text x="435" y="61">部品で製造</text>
+        <text x="615" y="61">検収・納品</text>
+        <text x="810" y="61" fill="var(--amber)">部品を還元</text>
+      </g>
+      <text x="450" y="116" font-family="Hiragino Kaku Gothic ProN, Noto Sans JP, sans-serif" font-size="11" fill="var(--dim)" text-anchor="middle">還元された部品が次の発注の材料になる —— 30部品はこの循環が5ツール＋2製造から生んだ在庫</text>
+    </svg>
+  </div>
+
+  <p class="foot">数値は 2026-08 の棚卸し実績（lab_inventory.py）。将来タグはNOE RELAY討論（信頼度B）で検証した仮説に基づく。詳細：tool-factory/PARTS_CATALOG.md ／ AI_TOOL_DESIGN_CANVAS.md</p>
+</div>
+</body>
+</html>
