@@ -746,8 +746,15 @@ python3 scripts/index_check.py --report  # 取得済み結果の集計だけ（A
 **やってはいけないこと**
 
 - **Indexing API を使う**：公式に JobPosting / BroadcastEvent 限定。記事には使えない
-- **note専用テスト群5本に申請する**：noteの効果測定が壊れる
-  （`agent/index_request_batches.md` 参照）
+- **申請リストを単価やクエリの重要度だけで並べる。**
+  **リストを作る前に必ず `agent/index_requests_done.json` の
+  `note_group_must_not_be_requested` を読むこと。**
+  2026-08-09、別セッションがこの確認を飛ばして機械的にリストを作り、
+  **note専用テスト群5本中4本に申請してしまい、実験が成立しなくなった**
+  （記録：`agent/note_group_final_state_20260809.md`）。
+  **このリポジトリは複数セッションが同時に触る。先行する実験設計が存在する前提で確認する**
+- **除外群に申請する**：対照群が壊れると、何が効いたか永久に分からなくなる
+  （`agent/index_request_batches.md` / `agent/index_experiment.md` を参照）
 - **未インデックスの記事のタイトルを寄せ直す**：読まれていないのだから効果はゼロで、
   寄せ直しの効果測定を汚染する
 
