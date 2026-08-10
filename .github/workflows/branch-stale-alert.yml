@@ -1,0 +1,67 @@
+name: Stale Branch Alert
+
+# 作業ブランチ滞留の検知。2026-08-09、工場の成果物が作業ブランチに8日間滞留し、
+# 本番404のまま気づけなかった。マージ漏れは人間の注意ではなく機械で拾う。
+# mainに入っていないコミットを持つブランチが48時間以上放置されていたら、
+# Issueを立てて（既にあれば更新して）知らせる。解消したらIssueは自動で閉じる。
+
+on:
+  schedule:
+    - cron: '0 0 * * *'   # 毎朝 9:00 JST
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const {owner, repo} = context.repo;
+            const branches = await github.paginate(github.rest.repos.listBranches, {owner, repo, per_page: 100});
+            const now = Date.now();
+            const H48 = 48 * 3600 * 1000;
+            const D30 = 30 * 24 * 3600 * 1000;
+            const stale = [];
+            let ancient = 0;
+            for (const b of branches) {
+              if (b.name === 'main') continue;
+              const cmp = await github.rest.repos.compareCommitsWithBasehead({owner, repo, basehead: `main...${b.name}`});
+              if (cmp.data.ahead_by === 0) continue;   // mainに全部入っている＝滞留なし
+              const commit = await github.rest.repos.getCommit({owner, repo, ref: b.commit.sha});
+              const age = now - new Date(commit.data.commit.committer.date).getTime();
+              if (age < H48) continue;                  // 48時間以内は作業中とみなす
+              if (age > D30) { ancient++; continue; }   // 30日超は放棄とみなし、件数だけ報告
+              stale.push({name: b.name, ahead: cmp.data.ahead_by, days: Math.floor(age / 86400000)});
+            }
+            const title = '⚠️ 作業ブランチ滞留：mainに出ていないコミットがある';
+            const open = await github.rest.issues.listForRepo({owner, repo, state: 'open', creator: 'github-actions[bot]', per_page: 100});
+            const existing = open.data.find(i => i.title === title);
+            if (stale.length === 0) {
+              if (existing) {
+                await github.rest.issues.createComment({owner, repo, issue_number: existing.number, body: '滞留は解消された。クローズする。'});
+                await github.rest.issues.update({owner, repo, issue_number: existing.number, state: 'closed'});
+              }
+              console.log(`滞留なし（放棄扱い ${ancient} 本は除外）`);
+              return;
+            }
+            const lines = stale.map(s => `- \`${s.name}\`：main未反映 ${s.ahead} コミット・最終更新から ${s.days} 日`);
+            const body = [
+              '2026-08-09の「8日間404」事故の再発防止アラート。',
+              '以下のブランチに、mainへ出ていないコミットが48時間以上滞留している。',
+              '',
+              ...lines,
+              '',
+              ancient ? `（最終更新から30日を超えたブランチ ${ancient} 本は放棄扱いで省いた。不要ならブランチごと削除すること）` : '',
+              '**対応**：内容を確認して main へマージするか、不要ならブランチを削除する。',
+              '対応すればこのIssueは翌朝の実行で自動クローズされる。',
+            ].filter(Boolean).join('\n');
+            if (existing) {
+              await github.rest.issues.update({owner, repo, issue_number: existing.number, body});
+            } else {
+              await github.rest.issues.create({owner, repo, title, body});
+            }

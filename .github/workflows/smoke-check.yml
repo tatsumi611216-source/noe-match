@@ -1,0 +1,70 @@
+name: Smoke Check
+
+# 出荷スモークチェック。2026-08-09に「生成した記事2本が8日間本番404」という
+# 事故が起きた（作業ブランチ滞留でmainに出ていなかった）。
+# AGENT.md 手順8を「本番URLが200を返すこと」に改定したが、人間とエージェントの
+# 確認忘れに備えて、機械でも同じ検査をする。
+# リポジトリのsitemapにあるURL全件へ本番リクエストを送り、200以外があれば落とす。
+
+on:
+  workflow_run:
+    workflows: ["Deploy to Pages"]
+    types: [completed]
+  schedule:
+    - cron: '0 22 * * *'   # 毎朝 7:00 JST。デプロイが無い日も配信状態を監視する
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    # デプロイ自体が失敗した回は検査しても意味がないのでスキップ
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: sitemapのURL全件が本番で200を返すか
+        run: |
+          set -eu
+          # sitemap.xml と sitemap-all.xml の <loc> を重複排除して全件検査する。
+          # 「sitemapに載っているのに本番に無い」が8/9事故の形なので、
+          # 正はリポジトリのsitemap、実測は本番URLとする。
+          grep -ho '<loc>[^<]*</loc>' sitemap.xml sitemap-all.xml \
+            | sed -e 's/<loc>//' -e 's|</loc>||' | sort -u > /tmp/urls.txt
+          for u in https://www.noe-match.com/ \
+                   https://www.noe-match.com/about.html \
+                   https://www.noe-match.com/disclaimer.html \
+                   https://www.noe-match.com/privacy-policy.html; do
+            echo "$u" >> /tmp/urls.txt
+          done
+          sort -u /tmp/urls.txt -o /tmp/urls.txt
+          echo "検査対象: $(wc -l < /tmp/urls.txt) URL"
+
+          check() {
+            url="$1"
+            # 一時的な失敗と切り分けるため、200以外は5秒おいて1回だけ再試行する
+            code=$(curl -sL -o /dev/null -w '%{http_code}' --max-time 20 "$url" || echo 000)
+            if [ "$code" != "200" ]; then
+              sleep 5
+              code=$(curl -sL -o /dev/null -w '%{http_code}' --max-time 20 "$url" || echo 000)
+            fi
+            [ "$code" = "200" ] || echo "$code $url"
+          }
+          export -f check
+          xargs -P 8 -I{} bash -c 'check "$@"' _ {} < /tmp/urls.txt > /tmp/failures.txt || true
+
+          if [ -s /tmp/failures.txt ]; then
+            echo "::error::本番で200を返さないURLがある（sitemapに載っているのに配信されていない）"
+            cat /tmp/failures.txt
+            {
+              echo '## ❌ スモークチェック失敗（本番で200以外）'
+              echo '```'
+              cat /tmp/failures.txt
+              echo '```'
+              echo 'マージ漏れ・Pagesの配信漏れ・redirects.json の不整合を疑うこと。'
+              echo '切り分けは AGENT.md の「404と無応答の切り分け」を参照。'
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 1
+          fi
+          echo "## ✅ スモークチェック通過：全 $(wc -l < /tmp/urls.txt) URLが本番で200" >> "$GITHUB_STEP_SUMMARY"
