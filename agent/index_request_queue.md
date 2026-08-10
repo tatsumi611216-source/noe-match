@@ -40,8 +40,10 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 ```
 https://www.noe-match.com/articles/konkatsu-soudan-saki/
 https://www.noe-match.com/articles/pocchari-konkatsu/
+https://www.noe-match.com/articles/zexy-enmusubi-data/
+https://www.noe-match.com/articles/pairs-kaiin-data/
 ```
-（どちらも 2026-08-09 公開。**Day 3 の10本とは別枠で申請してよい**）
+（konkatsu-soudan-saki / pocchari-konkatsu は 2026-08-09 公開。zexy-enmusubi-data / pairs-kaiin-data は 2026-08-10 公開。Day バックログとは別枠で申請してよい）
 
 ### 申請済み
 

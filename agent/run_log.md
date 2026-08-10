@@ -1,5 +1,59 @@
 # Agent Run Log
 
+## 2026-08-10　週次記事工場ラン｜型A×2本生成（zexy-enmusubi-data / pairs-kaiin-data）+ 寄せ直し2本
+
+### Phase 4-0 計測ゲート
+
+`asp_results.md` の `last_updated` が 2026-08-09（7日以内）のため、**ゲート開放**。CTAブロックを設置した。
+
+### 実施内容
+
+- `zexy-enmusubi-data/index.html` 生成完了
+  - タイトル：ゼクシィ縁結びの成婚率｜リクルートが公表している数字と、していない数字【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：藤原さん（35歳・看護師・女性）、田辺さん（41歳・管理職・男性）
+  - 内部リンク5本 / CTAブロック2本（ユーブライド afb・結婚相談所比較ネット A8）
+
+- `pairs-kaiin-data/index.html` 生成完了
+  - タイトル：Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：中村さん（28歳・エンジニア・男性）、上野さん（34歳・教師・女性）
+  - 内部リンク5本 / CTAブロック2本（ユーブライド afb・結婚相談所比較ネット A8）
+  - Pairsアフィリエイトは禁止のため設置なし
+
+- `sitemap.xml` / `sitemap-all.xml` に2記事分URLを追加（lastmod 2026-08-10）
+- `index.html` 更新：全154→156記事（hero-badge）、全151→153記事（見出し）、データ・統計17→19記事、arc-no 18/19追加
+- `keyword_queue.json` 2件を done + published 2026-08-10 に更新
+- `factory_audit.py`：FAIL 0件 / 構造エラー 0件 ✅
+
+### 寄せ直し（silent_scan.py 結果から2本・無修飾ヘッドタームを優先）
+
+| slug | from（変更前） | to（変更後） |
+|------|-------------|------------|
+| compare-popular | Pairs vs with vs Omiai 徹底比較｜総合人気アプリの違いと選び方2026 | 30代が婚活で使うPairs・with・Omiai比較｜目的別の違いと選び方【2026年版】 |
+| compare-price | マッチングアプリ料金比較2026｜月額コスパ最高のアプリを徹底検証 | マッチングアプリ料金を男女・目的別に比較｜30代のコスパ最高プランを整理【2026年版】 |
+
+変更したのはタイトル・h1・breadcrumb・dateModified のみ。本文・構成は変更なし。
+
+### インデックス申請キュー追加
+
+`agent/index_request_queue.md` に以下2件を追記（申請は人間の作業）：
+- https://www.noe-match.com/articles/zexy-enmusubi-data/
+- https://www.noe-match.com/articles/pairs-kaiin-data/
+
+### note下書き作成
+
+- `agent/note_drafts/zexy-enmusubi-data.md`
+- `agent/note_drafts/pairs-kaiin-data.md`
+
+### 次にやること（人間の作業）
+
+1. **インデックス申請**：zexy-enmusubi-data / pairs-kaiin-data の2件（Search Console から申請）
+2. **note 下書き投稿**：`agent/note_drafts/` の2件を確認・予約投稿
+3. **ASP管理画面**：2026-08の成果を `agent/asp_results.md` に転記（月1回・来月頭に）
+
+---
+
 ## 2026-08-09　インデックス申請の効果が確定。工場のボトルネックが特定された
 
 ### 出荷できていなかった（この回の最重要事項）
