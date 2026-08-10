@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する【2026年版】</title>
+<meta name="description" content="Pairsが公表する「累計登録者数2,000万人超」は事実ですが、現在の実稼働会員数は非公表です。この記事では累計と実稼働の違いを整理し、会員数データを正確に読む方法を解説します。">
+<link rel="canonical" href="https://www.noe-match.com/articles/pairs-kaiin-data/">
+<meta property="og:title" content="Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する【2026年版】">
+<meta property="og:description" content="Pairsが公表する「累計登録者数2,000万人超」は事実ですが、現在の実稼働会員数は非公表です。この記事では累計と実稼働の違いを整理し、会員数データを正確に読む方法を解説します。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://www.noe-match.com/articles/pairs-kaiin-data/">
+<meta property="og:image" content="https://www.noe-match.com/images/img_03247cd2.jpg">
+<meta property="og:site_name" content="NOE結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta property="article:published_time" content="2026-08-10">
+<meta property="article:modified_time" content="2026-08-10">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する【2026年版】">
+<meta name="twitter:description" content="Pairsが公表する「累計登録者数2,000万人超」は事実ですが、現在の実稼働会員数は非公表です。この記事では累計と実稼働の違いを整理し、会員数データを正確に読む方法を解説します。">
+<meta name="twitter:image" content="https://www.noe-match.com/images/img_03247cd2.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#ff4d7e;--pink-dark:#d63660;--pink-deep:#b02a4e;--pink-light:#fff0f4;--purple:#7c5cbf;--navy:#1c2b33;--text:#2c3e50;--ink-soft:#3d454d;--sub:#607d8b;--bg:#faf8f9;--white:#fff;--border:#efe8ea;--line-strong:#e0d5d9;--shadow:0 1px 3px rgba(30,35,40,.06),0 4px 14px rgba(30,35,40,.06);--shadow-hover:0 4px 10px rgba(214,54,96,.10),0 8px 24px rgba(30,35,40,.08);--radius:12px}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;color:var(--text);background:var(--bg);line-height:1.9;font-size:15.5px;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";letter-spacing:.01em}
+header{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:3px solid var(--pink);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.header-inner{max-width:860px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.logo{font-size:1.1rem;font-weight:900;color:var(--pink-dark);text-decoration:none;letter-spacing:.01em}
+.logo-badge{background:var(--pink);color:#fff;font-size:.62rem;padding:2px 8px;border-radius:20px;margin-left:6px}
+nav a{color:var(--sub);text-decoration:none;font-size:.8rem;padding:6px 9px;border-radius:6px;font-weight:500;transition:background .15s,color .15s}
+nav a:hover{background:var(--pink-light);color:var(--pink-dark)}
+@media(max-width:680px){nav{display:none}}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.breadcrumb{font-size:.76rem;color:var(--sub);padding:14px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{color:var(--pink-dark)}
+article{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:38px 34px;margin-bottom:30px}
+@media(max-width:600px){article{padding:26px 18px}}
+article h1{font-size:clamp(1.5rem,4.5vw,2rem);font-weight:900;line-height:1.45;letter-spacing:.01em;margin-bottom:16px;color:var(--navy)}
+.byline{display:flex;gap:12px;align-items:flex-start;background:var(--pink-light);border:1px solid #ffdfe8;border-radius:10px;padding:14px 16px;margin-bottom:8px;font-size:.8rem;color:var(--text);line-height:1.7}
+.byline .av{font-size:1.6rem;line-height:1}
+.byline .up{color:var(--sub);font-size:.72rem;margin-top:3px}
+article h2{font-size:clamp(1.2rem,3.4vw,1.45rem);font-weight:900;line-height:1.5;margin:44px 0 16px;padding:.45em 0 .45em 14px;border-left:5px solid var(--pink);background:linear-gradient(90deg,var(--pink-light),transparent 70%);border-radius:0 8px 8px 0;color:var(--navy)}
+article h3{font-size:1.08rem;font-weight:700;margin:30px 0 10px;color:var(--pink-deep);padding-bottom:4px;border-bottom:2px solid var(--pink-light)}
+article h4{font-size:.98rem;font-weight:700;margin:22px 0 8px;color:var(--ink-soft)}
+article p{margin:13px 0}
+article ul,article ol{margin:13px 0 13px 1.45em}
+article li{margin:7px 0}
+article a{color:var(--pink-dark);font-weight:500;text-decoration-color:#f2b3c4;text-underline-offset:3px;transition:color .15s}
+article a:hover{color:var(--pink)}
+.art-img{max-width:100%;height:auto;border-radius:10px;margin:20px 0;display:block;box-shadow:var(--shadow)}
+blockquote{background:#fff8e1;border-left:4px solid #f4c542;border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.93rem;color:var(--ink-soft)}
+blockquote strong{color:var(--pink-dark)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;box-shadow:var(--shadow);margin:20px 0;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px}
+thead th{background:linear-gradient(180deg,#243642,var(--navy));color:#fff;padding:12px 10px;text-align:center;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--border);text-align:center}
+tbody tr:nth-child(even){background:#fbf7f8}
+tbody tr:hover{background:var(--pink-light)}
+tbody td:first-child{font-weight:700;color:var(--navy)}
+code{background:#f3f0ff;color:#6a1b9a;padding:1px 6px;border-radius:4px;font-size:.86em}
+.related{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px;margin-bottom:30px}
+.related h2{font-size:1.05rem;font-weight:900;margin-bottom:14px;color:var(--navy);padding-left:10px;border-left:4px solid var(--pink)}
+.related ul{list-style:none;display:grid;gap:10px}
+.related a{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 15px;font-size:.83rem;font-weight:500;text-decoration:none;color:var(--text);transition:border-color .15s,box-shadow .15s,transform .12s}
+.related a:hover{border-color:var(--pink);box-shadow:var(--shadow-hover);transform:translateY(-1px);color:var(--pink-dark)}
+.cta-foot{background:linear-gradient(135deg,var(--pink-deep) 0%,var(--pink-dark) 45%,var(--pink) 100%);color:#fff;text-align:center;border-radius:16px;padding:38px 26px;margin-bottom:30px;box-shadow:0 6px 22px rgba(214,54,96,.28)}
+.cta-foot h2{font-size:1.28rem;font-weight:900;margin-bottom:10px;border:none;background:none;padding:0;color:#fff}
+.cta-foot p{opacity:.92;font-size:.92rem}
+.cta-foot a{display:inline-block;background:linear-gradient(180deg,#fff,#ffeef3);color:var(--pink-deep);font-weight:800;padding:14px 34px;border-radius:32px;text-decoration:none;margin-top:14px;font-size:1.02rem;box-shadow:0 3px 10px rgba(0,0,0,.18);transition:transform .12s,box-shadow .12s}
+.cta-foot a:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.24)}
+footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line-height:1.8}
+.footer-inner{max-width:860px;margin:0 auto;text-align:center}
+.footer-inner a{color:#b9c2c8;text-decoration:none;margin:0 8px}
+.footer-inner a:hover{color:#fff}
+.footer-disc{color:#78868f;font-size:.68rem;margin-top:12px;line-height:1.7}
+#top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:.3s}
+#top.show{opacity:1}
+#top:hover{background:var(--pink-dark)}
+@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}.cta-foot a{display:block;padding:14px 18px}}
+.toc{background:#fff7fa;border:1px solid #ffd9e4;border-radius:8px;padding:14px 18px;margin:22px 0}
+.toc-h{font-weight:700;font-size:15px;margin-bottom:8px}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin:5px 0;font-size:14px;line-height:1.6}
+.toc a{color:#c2185b;text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.pr-notice{font-size:12px;color:#666;background:#f5f5f5;border-left:3px solid #ffb3c8;border-radius:3px;padding:7px 11px;margin:10px 0 0}
+.fact-box{background:#f0f8ff;border:1px solid #b3d9f7;border-radius:8px;padding:16px 18px;margin:22px 0}
+.fact-box strong{color:#1565c0}
+.warn-box{background:#fff9e6;border:1px solid #f4c542;border-radius:8px;padding:16px 18px;margin:22px 0}
+.experience-box{background:#fafafa;border:1px solid var(--border);border-radius:10px;padding:20px 22px;margin:22px 0}
+.experience-box .exp-name{font-weight:700;color:var(--navy);margin-bottom:8px;font-size:.95rem}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Pairsの会員数は何人ですか？","acceptedAnswer":{"@type":"Answer","text":"Pairsは「累計登録者数2,000万人超」を公式に発表しています（公式発表）。ただしこれは累計の登録数であり、現在アクティブに利用している会員数（実稼働会員数）は公表されていません。累計登録者数と実稼働会員数は大きく異なる概念であり、2,000万人全員が現在サービスを使っているわけではありません。"}},{"@type":"Question","name":"「累計登録者数」と「アクティブ会員数」はどう違うのですか？","acceptedAnswer":{"@type":"Answer","text":"累計登録者数はサービス開始から現在までに一度でも登録した全ユーザーの合計です。一方、アクティブ会員数は現在実際にサービスを利用している会員の数です。退会済みのユーザー・長期間ログインしていない休眠ユーザーも累計には含まれるため、実稼働会員数は累計登録者数より大幅に少なくなります。Pairsのアクティブ会員数は非公表です。"}},{"@type":"Question","name":"「毎月13,000人に恋人ができた」は信頼できる数字ですか？","acceptedAnswer":{"@type":"Answer","text":"Pairsが公表しているこの数字（公式発表）は「恋人ができた」という自己申告データです。成婚・入籍とは異なり、交際開始を意味します。また自己申告のため実際の数字より多い・少ない可能性もあります。この数字は婚活における成婚率や成婚者数とは直接の関係がなく、同じ軸で比較することはできません。"}},{"@type":"Question","name":"Pairsで婚活（結婚目的の利用）はできますか？","acceptedAnswer":{"@type":"Answer","text":"Pairsは「恋活」「婚活」どちらの目的でも利用されていますが、元来は恋活ユーザーも多い総合型マッチングアプリです。プロフィールで「真剣な交際・結婚を希望」と明示することで婚活目的の相手を絞り込みやすくなりますが、婚活特化型サービス（ユーブライドなど）と比較すると会員層の目的が多様です。婚活目的での利用なら、目的が揃った会員が多いサービスとの併用も選択肢になります。"}},{"@type":"Question","name":"Pairsの会員数が多ければ相手を見つけやすいですか？","acceptedAnswer":{"@type":"Answer","text":"会員数が多いことは選択肢の広さにつながりますが、それだけで相手を見つけやすいとは言えません。重要なのは自分の条件（年齢・居住地・婚活目的など）に合う相手が会員の中にどれだけいるかです。累計登録者数の多さは実稼働会員数の多さを保証せず、また会員の目的層（婚活vs恋活）が自分と一致するかどうかも重要な判断材料になります。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する【2026年版】","description":"Pairsが公表する「累計登録者数2,000万人超」は事実ですが、現在の実稼働会員数は非公表です。この記事では累計と実稼働の違いを整理し、会員数データを正確に読む方法を解説します。","image":"https://www.noe-match.com/images/img_03247cd2.jpg","url":"https://www.noe-match.com/articles/pairs-kaiin-data/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.noe-match.com/articles/pairs-kaiin-data/"},"inLanguage":"ja","author":{"@type":"Organization","name":"Noe編集部","url":"https://www.noe-match.com/about.html"},"publisher":{"@type":"Organization","name":"NOE結婚設計室","url":"https://www.noe-match.com/"},"datePublished":"2026-08-10","dateModified":"2026-08-10"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"記事一覧","item":"https://www.noe-match.com/#articles"},{"@type":"ListItem","position":3,"name":"Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する"}]}</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">💑 NOE結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#ranking">ランキング</a><a href="/#articles">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#articles">記事一覧</a> ＞ Pairsの会員数はどこまで本当か</div>
+<article>
+<h1>Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する【2026年版】</h1>
+<p class="pr-notice">本ページはプロモーションを含みます。記事内に広告主から成果報酬を受け取るリンクが含まれる場合があります。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
+<div class="byline"><div class="av">✍️</div><div><strong><a href="/about.html" style="color:inherit;text-decoration:none">Noe編集部</a></strong><br>マッチングアプリ・婚活サービスの公開データを継続的に追跡している編集部。<div class="up">最終更新：2026年8月10日 ｜ 著者：Noe編集部</div></div></div>
+<img src="/images/img_03247cd2.jpg" alt="Pairs 会員数データ" loading="lazy" class="art-img">
+
+<blockquote><strong>結論から言う：Pairsが公表している「累計登録者数2,000万人超」（公式発表）は事実だ。しかしこれはサービス開始から現在までの総登録数であり、今この瞬間にサービスを使っているアクティブ会員数とは大きく異なる。実稼働会員数は非公表であり、この区別を理解してから使うかどうかを判断してほしい。</strong></blockquote>
+
+<nav class="toc" aria-label="目次">
+<div class="toc-h">目次</div>
+<ol>
+<li><a href="#sec-1">この記事でわかること</a></li>
+<li><a href="#sec-2">Pairsが公表している会員数データ</a></li>
+<li><a href="#sec-3">「累計登録者数」と「実稼働会員数」の構造的な違い</a></li>
+<li><a href="#sec-4">公表データから分かること・分からないこと</a></li>
+<li><a href="#sec-5">他のアプリとの会員数公表状況比較</a></li>
+<li><a href="#sec-6">実際に使った人の体験談</a></li>
+<li><a href="#sec-7">会員数データを婚活に活かす考え方</a></li>
+<li><a href="#sec-8">よくある質問（FAQ）</a></li>
+<li><a href="#sec-9">まとめ</a></li>
+<li><a href="#sec-10">著者・監修について</a></li>
+</ol>
+</nav>
+
+<h2 id="sec-1">この記事でわかること</h2>
+<ul>
+<li>Pairsが公式に発表している会員数データの内容と正確な意味</li>
+<li>「累計登録者数」と「アクティブ会員数（実稼働）」の構造的な違い</li>
+<li>Pairsの会員数データから読み取れること・読み取れないこと</li>
+<li>他の主要マッチングアプリとの会員数公表状況の比較</li>
+<li>会員数の数字に頼らず、サービスを評価するための実践的な視点</li>
+</ul>
+
+<h2 id="sec-2">Pairsが公表している会員数データ</h2>
+
+<p>Pairsはユーレカ（Eureka）が運営し、Match Groupグループのもとで日本最大規模のマッチングアプリとして認知されている。累計登録者数の多さはマーケティングの柱であり、公式サイトおよびメディア向け情報発信でも頻繁に引用されてきた数字だ。</p>
+
+<h3>Pairsが公式に発表している主なデータ</h3>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>公表項目</th><th>公表値（公式発表）</th><th>備考</th></tr></thead>
+<tbody>
+<tr><td>累計登録者数</td><td>2,000万人超</td><td>サービス開始から現在までの累計（公式発表）</td></tr>
+<tr><td>アクティブ会員数</td><td>非公表</td><td>実稼働の人数は開示されていない</td></tr>
+<tr><td>「恋人ができた」人数</td><td>毎月13,000人</td><td>自己申告・成婚（入籍）とは別概念（公式発表）</td></tr>
+<tr><td>成婚率（%）</td><td>非公表</td><td>入籍・婚約に至った割合は未発表</td></tr>
+<tr><td>男女比</td><td>非公表（参考値として一部公開あり）</td><td>詳細な分布は非公表</td></tr>
+<tr><td>年齢層</td><td>一部公開（20〜30代が中心）</td><td>詳細な分布は非公表</td></tr>
+</tbody>
+</table>
+</div>
+<p>※Noe編集部調査（2026年8月時点の公式サイト等）。数値は変更される場合があります。最新情報は公式サイトでご確認ください。</p>
+
+<p>「累計登録者数2,000万人超」という数字は、Pairsの最も特徴的な公表データだ。日本のマッチングアプリの中では際立って大きい数字であることは確かだが、この数字が何を意味し、何を意味しないかを理解することが重要になる。</p>
+
+<h2 id="sec-3">「累計登録者数」と「実稼働会員数」の構造的な違い</h2>
+
+<h3>累計と実稼働はまったく別の数字</h3>
+
+<p>「累計登録者数」とは、サービスが始まってから現在まで、一度でもアカウントを作成した人の総数だ。これには退会済みのユーザー、長期間ログインしていない休眠ユーザー、複数アカウントを作成したケースなどがすべて含まれる可能性がある。</p>
+
+<p>一方「アクティブ会員数（実稼働）」とは、現在実際にサービスを利用しているユーザー数だ。過去1か月以内にログインした、メッセージをやり取りしているなど、定義によって数字は変わる。マッチングアプリにとっては「今実際に使える相手の数」に最も近い指標だが、多くのサービスがこの数字を公表していない。</p>
+
+<div class="fact-box">
+<strong>「累計登録者数」と「アクティブ会員数」の違いを整理する：</strong><br>
+・<strong>累計登録者数</strong>：サービス開始から現在までの総登録数。退会済み・休眠ユーザーを含む。数字が積み上がり続けるため、現在の状況を反映しにくい。<br>
+・<strong>アクティブ会員数</strong>：現在実際にサービスを利用している会員数。マッチングの「池の深さ」を表す最も実用的な指標。<br><br>
+累計2,000万人が同時にサービスを使っているわけではない。この点を誤解したまま「2,000万人の中から探せる」と考えるのは実態と異なる。
+</div>
+
+<h3>なぜアクティブ会員数を公表しないのか</h3>
+
+<p>アクティブ会員数を公開すると、累計登録者数との比率（アクティブ率）が計算できてしまう。累計登録者数が多いほど、アクティブ率は相対的に低く見えやすく、これが競合サービスや分析者に戦略情報を提供することになる。そのため多くのマッチングアプリがアクティブ会員数を非公表としている。</p>
+
+<p>これは「実稼働ユーザーが少ないから隠している」を意味するわけではない。業界慣行として、アクティブ会員数の公開が難しい構造になっているという背景がある。Pairsも例外ではなく、累計登録者数は公表する一方で、アクティブ会員数は現時点で公表していない。</p>
+
+<div class="warn-box">
+<strong>注意：「2,000万人超」を使い方に注意する。</strong><br><br>
+「日本最大級・2,000万人超」というフレーズは事実（公式発表）だが、これを「2,000万人の中から出会える」という意味で受け取るのは不正確だ。現在のアクティブ会員数は非公表であり、実際にマッチングできる相手の母数は累計登録者数より大幅に少ない。使い始める前に、この前提を理解しておくことが重要だ。
+</div>
+
+<h2 id="sec-4">公表データから分かること・分からないこと</h2>
+
+<p>Pairsの公表データを整理すると、判断に使える情報と、使えない情報がはっきり分かれる。</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>知りたいこと</th><th>Pairsの公表データで分かるか</th></tr></thead>
+<tbody>
+<tr><td>今どれくらいの人が使っているか</td><td>❌ 不明（アクティブ会員数は非公表）</td></tr>
+<tr><td>自分の条件に合う相手が何人いるか</td><td>❌ 不明（属性別の会員分布は非公表）</td></tr>
+<tr><td>入籍・結婚に至る確率</td><td>❌ 不明（成婚率・成婚退会者数は非公表）</td></tr>
+<tr><td>交際が始まっている人が一定数いるか</td><td>✅ 「毎月13,000人に恋人」で間接確認可（ただし自己申告）</td></tr>
+<tr><td>サービスが長期稼働していること</td><td>✅ 累計数が増え続けていることから確認できる</td></tr>
+<tr><td>20〜30代が中心の会員層であること</td><td>✅ 一部確認可（詳細な分布は不明）</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>「毎月13,000人に恋人ができた」という数字（公式発表）についても補足が必要だ。これは「恋人関係が始まった」という意味であり、婚約・入籍（成婚）とは概念が異なる。また自己申告データであるため、数字の検証ができない。Pairsを婚活目的で使う際に「13,000人」を判断材料にするのは適切ではない。</p>
+
+<p>マッチングアプリ全体の会員数・登録者数データの読み方については、<a href="/articles/members-data/">マッチングアプリの会員数比較データ【2026年版】</a>でも詳しく解説している。</p>
+
+<h2 id="sec-5">他のアプリとの会員数公表状況比較</h2>
+
+<p>Pairsの会員数の位置づけを理解するために、他の主要サービスと並べてみる。</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>サービス</th><th>累計登録者数</th><th>アクティブ会員数</th><th>成婚関連データ</th></tr></thead>
+<tbody>
+<tr><td>Pairs</td><td>2,000万人超（公式発表）</td><td>非公表</td><td>非公表（成婚率・成婚退会者数）</td></tr>
+<tr><td>ユーブライド</td><td>300万人以上（公式発表）</td><td>非公表</td><td>成婚退会者 年間2,000名超（公式発表）</td></tr>
+<tr><td>マリッシュ</td><td>非公表</td><td>非公表</td><td>非公表</td></tr>
+<tr><td>with</td><td>一部公表あり（過去実績）</td><td>非公表</td><td>非公表</td></tr>
+<tr><td>Omiai</td><td>一部公表あり</td><td>非公表</td><td>非公表</td></tr>
+</tbody>
+</table>
+</div>
+<p>※各社公式サイト（2026年8月時点）をNoe編集部が集約。サービスごとに公表形式・時期が異なるため横断比較には限界がある。</p>
+
+<p>この比較から読み取れるのは、累計登録者数の公表においてPairsは突出した数字を持つが、アクティブ会員数や成婚関連データの公表では他社と同様に非公表の立場をとっているという事実だ。</p>
+
+<p>注目すべきは、ユーブライドが「成婚退会者 年間2,000名超」（公式発表）という件数を公開していること。累計登録者数ではなく、実際に成婚した人数の実績を公表しているという点で、会員数の大小とは異なる軸での情報開示をしている。婚活目的での利用を考えるなら、この違いは判断材料の一つになる。</p>
+
+<div style="background:#fff0f4;border:2px solid #ff4d7e;border-radius:12px;padding:22px 20px;margin:28px 0;text-align:center">
+<div style="font-size:.72rem;color:#d63660;font-weight:700;margin-bottom:4px">【PR】広告</div>
+<div style="font-size:1.05rem;font-weight:900;color:#1c2b33;margin-bottom:8px">成婚退会者数を公式公表している婚活特化アプリ</div>
+<p style="font-size:.88rem;color:#3d454d;margin:0 0 14px">ユーブライドは「成婚退会者 年間2,000名超」（公式発表）を継続開示。30〜40代の婚活層に選ばれている。</p>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:linear-gradient(180deg,#ff4d7e,#d63660);color:#fff;font-weight:800;padding:13px 32px;border-radius:32px;text-decoration:none;font-size:1rem;box-shadow:0 3px 10px rgba(214,54,96,.35)">ユーブライドを公式サイトで確認する →</a>
+</div>
+
+<h2 id="sec-6">実際に使った人の体験談</h2>
+
+<h3>中村さん（28歳・エンジニア・男性）の話</h3>
+
+<div class="experience-box">
+<div class="exp-name">中村さん（28歳・エンジニア）の体験</div>
+
+<p>中村さんがPairsを選んだのは「会員数が多い方がいいだろう」というシンプルな発想からだった。「2,000万人超って書いてあったので、まあ相手には困らないだろうと思って」と話す。ところが実際に使い始めると、予想と違う部分に気づいた。</p>
+
+<p>「近くの条件で絞ると、思ったより表示される人数が少ない。2,000万人って書いてあるのに、なんで？と思って調べたら、それが累計の数字だと分かった」。累計登録者数と実稼働会員数の違いを知ったのは、使い始めてから1か月後のことだったと言う。</p>
+
+<p>「知ってからは見方が変わりました。2,000万人より少なくても、今使っている人の中から探せばいい。そう思ったら焦らなくなった。あと、婚活寄りの使い方をしたいなら、会員数よりもその人たちの目的を確認する方が大事だと気づきました」。</p>
+
+<p>中村さんは5か月間Pairsを利用し、3人と実際に会った。うち1人と現在も交際中で、結婚を前提とした関係になっているという。「会員数の数字を気にするより、実際に会ってみることの方が何倍も大事でした」と振り返る。</p>
+</div>
+
+<h3>上野さん（34歳・教師・女性）の話</h3>
+
+<div class="experience-box">
+<div class="exp-name">上野さん（34歳・教師）の体験</div>
+
+<p>上野さんは婚活目的でPairsを使い始めたが、最初から「本当に2,000万人いるの？」という疑問を持っていた。「数字が大きすぎて逆に信用できなかった。実際に検索してみたら、自分の条件（30代・東京・婚活目的）に絞るとかなり絞られた」。</p>
+
+<p>使ってみて感じたのは、Pairsは「婚活と恋活が混在している」という点だった。「プロフィールに『結婚を前提に』と書いてある人もいれば、明らかに気軽な出会いを求めている人もいる。温度感がバラバラだから、メッセージを交わす前に目的を確認しないといけない手間がある」。</p>
+
+<p>上野さんは4か月利用した後、並行して始めたユーブライドの方が「婚活の文脈が揃っている」と感じて移行した。「Pairsが悪かったわけじゃなくて、自分の目的には別のサービスが合っていた。会員数の多さよりも、目的が揃っている人が多い場所の方が効率がよかった」と話す。現在は移行先のサービスで知り合った男性と交際中だ。</p>
+
+<p>「Pairsの2,000万人は本当に累計の数字なんだと思う。嘘ではないけど、それが今すぐ出会える2,000万人というわけじゃない。そこを理解してから使えばよかったと今は思います」。</p>
+</div>
+
+<h2 id="sec-7">会員数データを婚活に活かす考え方</h2>
+
+<p>会員数の数字が何を意味するかを理解したうえで、婚活目的でマッチングアプリを使う際に実際に役立つ視点を整理する。</p>
+
+<h3>1. 「累計」より「今使っている人の母数」を確認する</h3>
+
+<p>アプリを実際に使い始めてから、検索・フィルタリングをかけた状態での表示人数を確認するのが最も実態に近い。自分の条件（年齢・居住地・目的・アクティブ度）で絞ったときに、どれくらいの候補が表示されるかが「実稼働の体感」として機能する。</p>
+
+<h3>2. 会員の目的が揃っているかを確認する</h3>
+
+<p>婚活目的での利用を想定するなら、会員数の絶対値よりも「婚活意向のある会員の比率」の方が重要だ。Pairsは恋活から婚活まで幅広い目的の会員が混在しているのが特徴であり、婚活特化型サービスとは会員層の目的分布が異なる。目的が揃った会員が多いほど、条件確認の手間が減る。</p>
+
+<h3>3. 複数サービスの並行利用という選択</h3>
+
+<p>会員数の多いPairsと、婚活特化で目的が揃っているサービスを並行利用することで、双方のメリットを補完し合う使い方もある。1つのサービスに絞る必要はなく、自分の目的とペースに合わせて組み合わせるのが現実的な方法だ。</p>
+
+<p>Pairsの機能・評判をより詳しく知りたい場合は<a href="/articles/pairs-guide/">Pairs完全ガイド</a>を参考にしてほしい。また婚活に特化したサービスを探している場合は<a href="/articles/youbride-guide/">ユーブライド完全ガイド</a>や<a href="/articles/compare-konkatsu/">婚活アプリ比較</a>も合わせて参照してほしい。</p>
+
+<p>婚活でのPairsの位置づけや成婚に関するデータについては<a href="/articles/pairs-marriage-data/">Pairsで婚活は成功するか｜成婚者データと向いている人の条件</a>でも掘り下げている。</p>
+
+<div style="background:#fff0f4;border:2px solid #ff4d7e;border-radius:12px;padding:22px 20px;margin:28px 0;text-align:center">
+<div style="font-size:.72rem;color:#d63660;font-weight:700;margin-bottom:4px">【PR】広告</div>
+<div style="font-size:1.05rem;font-weight:900;color:#1c2b33;margin-bottom:8px">結婚相談所の料金・成婚率を一括比較</div>
+<p style="font-size:.88rem;color:#3d454d;margin:0 0 14px">アプリではなく、コンシェルジュ付きで婚活したい方向けに、各社の料金・成婚率・特徴を無料で比較できる。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:linear-gradient(180deg,#ff4d7e,#d63660);color:#fff;font-weight:800;padding:13px 32px;border-radius:32px;text-decoration:none;font-size:1rem;box-shadow:0 3px 10px rgba(214,54,96,.35)">結婚相談所を無料で比較する →</a>
+</div>
+
+<h2 id="sec-8">よくある質問（FAQ）</h2>
+
+<p><strong>Q1. Pairsの会員数は何人ですか？</strong></p>
+<p>Pairsは「累計登録者数2,000万人超」を公式に発表しています（公式発表）。ただしこれはサービス開始から現在までの総登録数であり、現在アクティブに利用している会員数（実稼働会員数）は公表されていません。2,000万人全員が現在サービスを使っているわけではないことに注意が必要です。</p>
+
+<p><strong>Q2. 「累計登録者数」と「アクティブ会員数」はどう違うのですか？</strong></p>
+<p>累計登録者数はサービス開始から現在までに一度でも登録した全ユーザーの合計で、退会済み・休眠ユーザーも含まれます。アクティブ会員数は現在実際にサービスを利用している会員の数です。Pairsのアクティブ会員数は非公表であり、実際にマッチングできる相手の母数は累計登録者数より大幅に少なくなります。</p>
+
+<p><strong>Q3. 「毎月13,000人に恋人ができた」は信頼できる数字ですか？</strong></p>
+<p>Pairsが公表しているこの数字（公式発表）は「恋人ができた」という自己申告データです。成婚（入籍）とは異なり、交際開始を意味します。自己申告のため実際の数字との差がある可能性もあります。婚活における成婚率や成婚者数とは直接の関係がなく、同じ軸で比較することはできません。</p>
+
+<p><strong>Q4. Pairsで婚活（結婚目的の利用）はできますか？</strong></p>
+<p>Pairsは婚活目的での利用も可能ですが、元来は恋活ユーザーも多い総合型マッチングアプリです。プロフィールで「真剣な交際・結婚を希望」と明示することで婚活目的の相手を絞り込みやすくなりますが、婚活特化型サービスと比較すると会員層の目的が多様です。婚活なら目的が揃った会員が多いサービスとの併用も選択肢になります。</p>
+
+<p><strong>Q5. Pairsの会員数が多ければ相手を見つけやすいですか？</strong></p>
+<p>会員数の多さは選択肢の広さにつながりますが、それだけで相手を見つけやすいとは言えません。重要なのは自分の条件（年齢・居住地・婚活目的）に合う相手が実際にどれだけいるかです。累計登録者数の多さは実稼働会員数を保証せず、目的層の一致（婚活vs恋活）も重要な判断基準になります。</p>
+
+<h2 id="sec-9">まとめ</h2>
+
+<p>Pairsの「累計登録者数2,000万人超」は公式発表の事実だ。しかしこれは現在のアクティブ会員数ではなく、サービス開始から積み上げた総登録数であることを理解したうえで使う必要がある。</p>
+
+<div class="table-wrap">
+<table>
+<thead><tr><th>確認ポイント</th><th>Pairsの公表状況</th></tr></thead>
+<tbody>
+<tr><td>累計登録者数</td><td>2,000万人超（公式発表）</td></tr>
+<tr><td>アクティブ会員数</td><td>非公表</td></tr>
+<tr><td>「恋人ができた」人数</td><td>毎月13,000人（公式発表・自己申告）</td></tr>
+<tr><td>成婚率・成婚退会者数</td><td>非公表</td></tr>
+<tr><td>サービスの対象層</td><td>恋活・婚活混在（20〜30代中心）</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>会員数の大きさは選択肢の広さを示す指標の一つだが、婚活の成功確率を直接示すものではない。実稼働会員数が非公表である以上、「2,000万人の中から選べる」という期待は実態と異なる可能性がある。累計と実稼働の違いを理解した上で、自分の目的に合ったサービスを選ぶことが婚活の出発点になる。</p>
+
+<p>婚活サービス全体の比較は<a href="/articles/compare-konkatsu/">婚活アプリ比較</a>で整理している。婚活特化型サービスを検討している場合は<a href="/articles/youbride-guide/">ユーブライド完全ガイド</a>も参照してほしい。</p>
+
+<h2 id="sec-10">著者・監修について</h2>
+<p><strong>Noe編集部</strong>　婚活サービスの公開データおよびユーザー調査を継続的に追跡している編集部。マッチングアプリ・結婚相談所・婚活イベントなど多様な出会いのかたちを比較検証しています。本記事の数値は2026年8月現在の公式発表に基づきます。サービス内容・料金は変更される場合があるため、最新情報は各社公式サイトでご確認ください。</p>
+
+</article>
+
+<div class="related"><h2>📚 関連記事</h2><ul>
+<li><a href="/articles/youbride-guide/">ユーブライド完全ガイド｜評判・料金・成婚実績を徹底検証【2026年版】</a></li>
+<li><a href="/articles/pairs-guide/">Pairs完全ガイド｜評判・機能・料金を徹底解説【2026年版】</a></li>
+<li><a href="/articles/compare-konkatsu/">婚活アプリ比較｜ユーブライド vs Omiai vs Match どれが一番結婚に近い？</a></li>
+<li><a href="/articles/members-data/">マッチングアプリの会員数比較データ【2026年版】</a></li>
+<li><a href="/articles/pairs-marriage-data/">Pairsで婚活は成功するか｜成婚者データと向いている人の条件</a></li>
+</ul></div>
+
+<div class="cta-foot">
+<h2>あなたに合うサービスを見つけよう</h2>
+<p>婚活アプリから結婚相談所まで、目的別に整理した記事一覧はこちら。</p>
+<a href="/#articles">📋 記事一覧を見る</a>
+</div>
+</div>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/#articles">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本記事の情報は2026年8月10日時点のものです。料金・サービス内容は変更される場合があります。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 NOE結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>onscroll=()=>top.classList.toggle('show',scrollY>300)</script>
+</body>
+</html>
