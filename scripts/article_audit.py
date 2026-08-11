@@ -57,14 +57,25 @@ def ledger():
     return out
 
 
-def next_move(pos, imp, eff, known, cta, gap, indexed):
+def next_move(pos, imp, eff, known, cta, gap, indexed, role):
     """④ 順位を上げる／収益化するための打ち手を1つに絞って返す。
 
     優先順位は「効果が出るまでの速さ」で決めている。
     インデックス > クエリ不一致 > CTA欠落 > 単価 > 看板 > 一次情報。
+
+    **role で打ち手が変わる**（2026-08-09・CEO指摘）。
+    入口クラスタ（アプリ選び・データ）は主戦場ではない。
+    ここを磨いても収益にならない（主力4アプリに案件が無い）ので、
+    投資は最小限にして「主戦場へ送る」ことに徹する。
     """
     if not indexed:
         return "**GSCで申請**（7〜8日で100%、放置は1.7%）"
+    if role == "入口":
+        # 入口は磨かない。主力4アプリに案件が無く、ここを強化しても収益にならない。
+        # CTAが無い場合だけは例外的に設置する（貼るだけで経路ができるため）。
+        if cta == 0:
+            return "入口だが**案件が無い**。設置するか、主戦場への導線に振り切る"
+        return "入口。**主戦場への導線を維持**（内容の強化はしない）"
     if gap:
         w, c = gap
         return "**「{}」を本文に足す**（現在{}回・順位は付いているが答えていない）".format(w, c)
@@ -81,8 +92,34 @@ def next_move(pos, imp, eff, known, cta, gap, indexed):
     return "**看板を掛け替え**（表示ゼロ＝圏外）"
 
 
+def build_roles():
+    """index.html のグループ分けから、記事の役割（主戦場／入口）を決める。"""
+    p = os.path.join(BASE, "index.html")
+    if not os.path.exists(p):
+        return {}
+    idx = io.open(p, encoding="utf-8", errors="replace").read()
+    pos = [m.start() for m in re.finditer(r"<h3", idx)] + [len(idx)]
+    role = {}
+    for a, b in zip(pos, pos[1:]):
+        blk = idx[a:b]
+        if not re.search(r"（\d+記事）", blk):
+            continue
+        name = re.sub(r"（\d+記事）", "", re.sub("<[^>]+>", "", blk[:blk.find("</h3>")])).strip()
+        slugs = set(re.findall(r"/articles/([\w\-]+)/", blk))
+        if "新生活" in name or "お金" in name:
+            r = "**主戦場**"
+        elif "アプリ選び" in name or "データ" in name:
+            r = "入口"
+        else:
+            r = "その他"
+        for sg in slugs:
+            role[sg] = r
+    return role
+
+
 def main():
     led = ledger()
+    ROLE = build_roles()
 
     # 記事 → 貼られている案件のうち実効単価が最大のもの
     placed, title, cta = {}, {}, {}
@@ -205,8 +242,10 @@ def main():
     L.append("")
     L.append("`③` はCTAの設置数。**①があるのに③が0なら、貼るだけで経路ができる。**")
     L.append("")
-    L.append("| ①順位 | ①表示 | ②キャッシュポイント | ③CTA | ④打ち手 | テーマ | 記事 |")
-    L.append("|---|---|---|---|---|---|---|")
+    L.append("**役割**: 主戦場＝新婚・新生活の実務（ここに投資する）／入口＝アプリ・データ系（磨かず送る）")
+    L.append("")
+    L.append("| ①順位 | ①表示 | 役割 | ②キャッシュポイント | ③CTA | ④打ち手 | テーマ | 記事 |")
+    L.append("|---|---|---|---|---|---|---|---|")
     allrows = []
     for key, items in buckets.items():
         for it in items:
@@ -223,10 +262,11 @@ def main():
             rank, shown = "{:.1f}".format(pos), str(imp)
         two = ("{}／{:,}円".format(best[1][:12], int(eff)) if known
                else ("{}／単価不明".format(best[1][:12]) if best else "**なし**"))
+        role = ROLE.get(slug, "その他")
         move = next_move(pos if (indexed and imp) else None, imp, eff, known,
-                         cta.get(slug, 0), qgap.get(slug), indexed)
-        L.append("| {} | {} | {} | {} | {} | {} | `{}` |".format(
-            rank, shown, two, cta.get(slug, 0), move, title.get(slug, "")[:26], slug))
+                         cta.get(slug, 0), qgap.get(slug), indexed, role)
+        L.append("| {} | {} | {} | {} | {} | {} | {} | `{}` |".format(
+            rank, shown, role, two, cta.get(slug, 0), move, title.get(slug, "")[:24], slug))
     L.append("")
 
     # クエリに答えていない記事の検出（2026-08-09追加）
