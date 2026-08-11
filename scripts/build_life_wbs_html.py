@@ -258,6 +258,16 @@ function ym(base, add){
   return d.getFullYear()+"/"+(d.getMonth()+1);
 }
 let BASE = localStorage.getItem("lifewbs-base") || "2026-10-01";
+let STARTPH = localStorage.getItem("lifewbs-startph") || "P1";
+let BASE0 = BASE;
+function calcBase0(){
+  const ph = D.phases.find(p=>p.id===STARTPH) || D.phases[0];
+  const d = new Date(BASE+"T00:00:00");
+  if(isNaN(d)){ BASE0 = "2026-10-01"; return; }
+  d.setMonth(d.getMonth()-ph.start);
+  BASE0 = d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-01";
+}
+calcBase0();
 
 /* ---------- ① roadmap ---------- */
 function renderRoadmap(){
@@ -266,7 +276,7 @@ function renderRoadmap(){
   const EXAM = D.phases.findIndex(p=>p.id==="P17");
   const cols = [];
   for(let k=0;k<G;k++){
-    const d = new Date(BASE+"T00:00:00"); d.setMonth(d.getMonth()+k);
+    const d = new Date(BASE0+"T00:00:00"); d.setMonth(d.getMonth()+k);
     cols.push({y:d.getFullYear(), jan:d.getMonth()===0, birth:k===BIRTH});
   }
   const gcls = k => "gcell"+(cols[k].jan?" yr":"")+(cols[k].birth?" birth":"");
@@ -297,7 +307,7 @@ function renderRoadmap(){
     h += "<tr><td class='num sticky1'>"+p.id+"</td><td class='sticky2'><strong>"+esc(p.name)+"</strong></td>"
       + "<td class='num'>"+esc(p.age)+"</td>"
       + "<td>"+esc(p.goal)+"</td>"
-      + "<td class='num'>"+ym(BASE,p.start)+"<br>〜"+ym(BASE,end)+"</td>"
+      + "<td class='num'>"+ym(BASE0,p.start)+"<br>〜"+ym(BASE0,end)+"</td>"
       + "<td>"+esc(p.ms)+"</td><td>"+esc(p.decide)+"</td>"
       + "<td class='num'>"+p.lo+"〜"+p.hi+"</td><td>"+esc(p.risk)+"</td>";
     for(let k=0;k<G;k++){
@@ -339,7 +349,7 @@ function renderWbs(){
       + (t.dod?"<span class='rdod'>"+esc(t.dod)+"</span>":"")
       + "</label><div class='meta'>"
       + (law?"<span class='chip c-law'>法定</span>":"")
-      + "<span class='chip c-when'>"+ym(BASE,t.m)+"</span>"
+      + "<span class='chip c-when'>"+ym(BASE0,t.m)+"</span>"
       + "<span class='chip c-who'>"+esc(t.who)+"</span>"
       + (t.eff?"<span class='chip c-eff'>"+esc(t.eff)+"</span>":"")
       + (t.cost&&t.cost!=="-"?"<span class='chip c-cost'>"+esc(t.cost)+"</span>":"")
@@ -427,7 +437,7 @@ function tsvRoadmap(){
     "予定開始","予定完了","主要マイルストーン","このフェーズで決めること","費用下限(万円)","費用上限(万円)","想定される最大リスク","状態"];
   const rows=[head];
   D.phases.forEach(p=>{const e=p.start+p.dur-1;
-    rows.push([p.id,p.name,p.age,p.goal,p.dur,p.start,e,ym(BASE,p.start),ym(BASE,e),p.ms,p.decide,p.lo,p.hi,p.risk,"未着手"]);});
+    rows.push([p.id,p.name,p.age,p.goal,p.dur,p.start,e,ym(BASE0,p.start),ym(BASE0,e),p.ms,p.decide,p.lo,p.hi,p.risk,"未着手"]);});
   return tsv(rows);
 }
 function tsvWbs(){
@@ -435,7 +445,7 @@ function tsvWbs(){
     "選択肢・候補","判断軸・注意点","経過月","目安時期","区分","担当","所要目安","費用目安","先行して終わっていること","状態","メモ"];
   const rows=[head];
   D.tasks.forEach(t=>rows.push([t.id,t.ph,t.cat,t.lv,t.task,t.dod,t.ronten,t.opts,t.axis,t.m,
-    ym(BASE,t.m),t.kind,t.who,t.eff,t.cost,t.dep,done[t.id]?"完了":"未着手",""]));
+    ym(BASE0,t.m),t.kind,t.who,t.eff,t.cost,t.dep,done[t.id]?"完了":"未着手",""]));
   return tsv(rows);
 }
 function tsvRisks(){
@@ -479,11 +489,19 @@ fillSelect($("#r-ph"), [...new Set(D.risks.map(r=>r.ph))], "全フェーズ");
 fillSelect($("#r-cat"), [...new Set(D.risks.map(r=>r.cat))], "全分類");
 fillSelect($("#r-prio"), ["最優先","高","中","低"], "全優先度");
 
+const sp=$("#startph");
+sp.innerHTML = D.phases.map(p=>"<option value='"+p.id+"'>"+p.id+"｜"+esc(p.name)+"</option>").join("");
+sp.value = STARTPH;
+sp.addEventListener("change",()=>{
+  STARTPH = sp.value;
+  try{ localStorage.setItem("lifewbs-startph", STARTPH); }catch(e){}
+  calcBase0(); renderRoadmap(); renderWbs(); progress(); filterWbs();
+});
 $("#base").value = BASE;
 $("#base").addEventListener("change",()=>{
   BASE = $("#base").value || "2026-10-01";
   try{ localStorage.setItem("lifewbs-base", BASE); }catch(e){}
-  renderRoadmap(); renderWbs(); progress(); filterWbs();
+  calcBase0(); renderRoadmap(); renderWbs(); progress(); filterWbs();
 });
 ["f-ph","f-cat","f-kind"].forEach(id=>$("#"+id).addEventListener("change",filterWbs));
 $("#f-q").addEventListener("input",filterWbs);
@@ -530,14 +548,16 @@ def main():
   <button class="tab" data-tab="wbs" aria-selected="false">② WBS</button>
   <button class="tab" data-tab="risk" aria-selected="false">③ リスク管理表</button>
   <span class="spacer"></span>
-  <label class="pnum" for="base">基準日</label>
+  <label class="pnum" for="startph">スタート地点</label>
+  <select id="startph"></select>
+  <label class="pnum" for="base">開始日</label>
   <input type="date" id="base" value="2026-10-01">
 </div></nav>
 
 <main>
 <section class="panel is-on" id="p-rm"><div class="wrap">
   <h2 class="sec">① ロードマップ</h2>
-  <p class="sub">同棲開始から子ども12歳（中学受験の終了）まで。基準日を変えると全フェーズの予定とガントが動きます。
+  <p class="sub">同棲開始から子ども12歳（中学受験の終了）まで。右上の「スタート地点」で、結婚から・妊活から・出産後からなど、途中のフェーズを起点にできます。開始日は「そのフェーズを始める月」で、全体の日付はそこから自動で逆算されます。スタート地点より前のフェーズは読み飛ばしてください。
      期間は標準モデルなので、妊活（P8）を中心に実態に合わせて読み替えてください。
      <strong>P14以降はロードマップのみ</strong>のざっくり粒度で、②WBSと③リスク管理表は P1〜P13（子ども1歳まで）が対象です。
      P15以降の境目は「4月の入学・進級」に合わせてあります（基準日2026年10月＝出産2029年11月の場合）。出産月がずれたら学年の境目も読み替えてください。</p>

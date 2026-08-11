@@ -26,7 +26,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "docs", "同棲から子育てまでのWBS.xlsx")
 
 FONT = "Meiryo"
-BASE = "'はじめに'!$C$5"
+BASE = "'はじめに'!$C$7"
 GANTT_MONTHS = 187
 
 INK = "1F2A24"
@@ -420,17 +420,50 @@ def sheet_intro(wb, wbs_last, risk_last):
     ws.cell(row=4, column=1, value="■ 最初にここだけ入力してください").font = \
         body_font(bold=True, size=11)
     ws.cell(row=5, column=1,
-            value="基準日（＝計画の起点。同棲を始める月の1日を入れる）").font = body_font()
-    base = ws.cell(row=5, column=3, value=datetime.date(2026, 10, 1))
+            value="① どこから使い始めるか（スタート地点）").font = body_font()
+    sp = ws.cell(row=5, column=3, value="P1｜同棲の準備")
+    sp.fill = F_INPUT
+    sp.font = Font(name=FONT, size=11, bold=True, color="0000FF")
+    sp.border = BOX
+    ws.merge_cells(start_row=5, start_column=3, end_row=5, end_column=5)
+    ws.cell(row=6, column=1,
+            value="② スタート地点を始める月（その月の1日を入れる）").font = body_font()
+    base = ws.cell(row=6, column=3, value=datetime.date(2026, 10, 1))
     base.number_format = "yyyy/mm/dd"
     base.fill = F_INPUT
     base.font = Font(name=FONT, size=11, bold=True, color="0000FF")
     base.border = BOX
-    ws.cell(row=6, column=1,
-            value="→ この日付を変えると、①②の「予定開始／予定完了／目安時期」とガントが全部動きます").font = \
+    ws.cell(row=7, column=1,
+            value="計算上の起点（月0。自動計算なので触らない）").font = \
         body_font(size=9, color="6B756E")
+    anchor = ws.cell(row=7, column=3,
+                     value="=EDATE(C6,-VLOOKUP(C5,$I$5:$J$22,2,FALSE))")
+    anchor.number_format = "yyyy/mm/dd"
+    anchor.border = BOX
+    note = ws.cell(row=8, column=1,
+                   value="→ ①②を変えると、全シートの日付とガントが自動で動きます。同棲からなら P1 のまま。"
+                         "結婚（入籍）から使うなら「P4｜入籍・行政手続き」を選んで入籍予定月を、"
+                         "妊活からなら P7、妊娠が分かってからなら P9、出産後からなら P11 を選んでその月を入れる。"
+                         "スタート地点より前のフェーズ・タスクは、状態を「対象外」にして使ってください")
+    note.font = body_font(size=9, color="6B756E")
+    note.alignment = Alignment(wrap_text=True, vertical="top")
+    ws.merge_cells(start_row=8, start_column=1, end_row=8, end_column=7)
+    ws.row_dimensions[8].height = 42
 
-    ws.cell(row=8, column=1, value="■ シートの構成").font = body_font(bold=True, size=11)
+    # スタート地点の一覧（ドロップダウンの元データ。開始月は①ロードマップと連動）
+    ws.cell(row=4, column=9, value="スタート地点一覧（自動・触らない）").font = \
+        body_font(size=9, color="6B756E")
+    for i, ph in enumerate(PHASES):
+        rr = 5 + i
+        ws.cell(row=rr, column=9,
+                value="%s｜%s" % (ph[0], ph[1])).font = body_font(size=9, color="6B756E")
+        ws.cell(row=rr, column=10,
+                value="='①ロードマップ'!F%d" % (4 + i)).font = body_font(size=9, color="6B756E")
+    dv_sp = DataValidation(type="list", formula1="=$I$5:$I$22", allow_blank=False)
+    ws.add_data_validation(dv_sp)
+    dv_sp.add("C5")
+
+    ws.cell(row=10, column=1, value="■ シートの構成").font = body_font(bold=True, size=11)
     rows = [
         ("①ロードマップ", "同棲から子ども12歳（中学受験）までの18フェーズの全体像。期間・費用・意思決定・リスクを1行にまとめ、右側に約15年分のガントチャート"),
         ("②WBS", "①のうち P1〜P13（子ども1歳まで）を分解した実行タスク一覧。濃い行＝タスク、薄い行＝その中の実行ステップ。"
@@ -438,7 +471,7 @@ def sheet_intro(wb, wbs_last, risk_last):
         ("③リスク管理表", "各フェーズで配偶者との関係が悪化する想定リスクと、"
                       "早期サイン・相手側から見えている景色・予防策・初動・再発防止"),
     ]
-    r = 9
+    r = 11
     for name, desc in rows:
         ws.cell(row=r, column=1, value=name).font = body_font(bold=True, color=ACCENT)
         c = ws.cell(row=r, column=3, value=desc)
@@ -469,7 +502,7 @@ def sheet_intro(wb, wbs_last, risk_last):
     ws.cell(row=r, column=1, value="■ 色と表記の意味").font = body_font(bold=True, size=11)
     r += 1
     legend = [
-        ("黄色のセル", "自分たちで書き換える入力欄（基準日・期間・費用・確率・影響・状態・メモ）"),
+        ("黄色のセル", "自分たちで書き換える入力欄（スタート地点・開始月・期間・費用・確率・影響・状態・メモ）"),
         ("白いセル", "そのまま使う内容、または自動計算（数式が入っているので上書きしない）"),
         ("赤い文字・赤い背景", "法定期限があるもの／リスクの優先度が高いもの"),
         ("担当欄の「妊娠する側」",
@@ -566,7 +599,8 @@ def sheet_intro(wb, wbs_last, risk_last):
         ws.row_dimensions[r].height = 30
         r += 1
 
-    set_widths(ws, {"A": 30, "B": 12, "C": 14, "D": 14, "E": 12, "F": 12, "G": 12})
+    set_widths(ws, {"A": 30, "B": 12, "C": 14, "D": 14, "E": 12, "F": 12, "G": 12,
+                "I": 30, "J": 8})
     ws.sheet_view.showGridLines = False
 
 
