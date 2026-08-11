@@ -181,6 +181,46 @@ def main():
             key[0], title.get(slug, "")[:30], rank, shown, clicks, two, cta.get(slug, 0), slug))
     L.append("")
 
+    # クエリに答えていない記事の検出（2026-08-09追加）
+    L.append("## ★クエリに答えていない記事")
+    L.append("")
+    L.append("順位が付いているのに、そのクエリの語が本文にほとんど出てこない記事。")
+    L.append("**開いても答えが見つからないので、順位があってもクリックされない。**")
+    L.append("")
+    L.append("実例（2026-08-09に発見・修正済み）: `with-seriousness-data` は「with 結婚率」で4.2位・30表示だったが、")
+    L.append("本文に「結婚率」が**1回しか無かった**。`over50-guide` は「婚活サイト 50代」で上位なのに")
+    L.append("本文は「マッチングアプリ」16回に対し「婚活サイト」12回で主語が逆だった。")
+    L.append("")
+    L.append("**答えが「その数字は公表されていない」でも構わない。**むしろ事業者は自社の不都合を書けないので空く。")
+    L.append("")
+    L.append("| 順位 | 表示 | クエリ | 本文での出現 | 記事 |")
+    L.append("|---|---|---|---|---|")
+    miss = []
+    for slug, rs in gsc.items():
+        f = os.path.join(BASE, "articles", slug, "index.html")
+        if not os.path.exists(f):
+            continue
+        body = re.sub(r"<[^>]+>", "", re.sub(r"<script.*?</script>", "",
+                      io.open(f, encoding="utf-8", errors="replace").read(), flags=re.S))
+        for r in rs:
+            qy = (r.get("query") or "").strip()
+            if not qy:
+                continue
+            # クエリを語に割り、本文での最小出現回数を見る
+            words = [w for w in re.split(r"[\s　]+", qy) if len(w) >= 2]
+            if not words:
+                continue
+            counts = {w: body.count(w) for w in words}
+            weakest = min(counts, key=counts.get)
+            if counts[weakest] <= 2 and r.get("impressions", 0) >= 1:
+                miss.append((r.get("position", 999), r.get("impressions", 0), qy,
+                             "{}={}回".format(weakest, counts[weakest]), slug))
+    for pos, imp, qy, detail, slug in sorted(miss)[:30]:
+        L.append("| {:.1f} | {} | {} | **{}** | `{}` |".format(pos, imp, qy, detail, slug))
+    if not miss:
+        L.append("| — | — | 該当なし | — | — |")
+    L.append("")
+
     unknown = [s for s, b in placed.items() if b and not b[2]]
     L.append("## ②が測れていない記事（{}本）".format(len(unknown)))
     L.append("")
