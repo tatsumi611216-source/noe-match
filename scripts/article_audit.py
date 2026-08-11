@@ -61,7 +61,7 @@ def main():
     led = ledger()
 
     # 記事 → 貼られている案件のうち実効単価が最大のもの
-    placed = {}
+    placed, title, cta = {}, {}, {}
     for f in glob.glob(os.path.join(BASE, "articles", "*", "index.html")):
         slug = os.path.basename(os.path.dirname(f))
         t = io.open(f, encoding="utf-8", errors="replace").read()
@@ -70,6 +70,9 @@ def main():
         hits = [(y * (r if r is not None else ASSUMED_RATE), n, y, r)
                 for frag, n, y, r in led if frag in t]
         placed[slug] = max(hits) if hits else None
+        m = re.search(r"<title>([^<]*)</title>", t)
+        title[slug] = (m.group(1).split("｜")[0].strip() if m else slug)
+        cta[slug] = len(re.findall(r'rel="nofollow sponsored noopener"', t))
 
     # インデックス状況
     idx = {}
@@ -150,6 +153,33 @@ def main():
             L.append("")
             L.append("※他 {} 本は省略".format(len(items) - 40))
         L.append("")
+
+    L.append("## 全記事一覧（テーマ × ①②③）")
+    L.append("")
+    L.append("`③` はCTAの設置数。**①があるのに③が0なら、貼るだけで経路ができる。**")
+    L.append("")
+    L.append("| 判定 | テーマ | ①順位 | ①表示 | ①クリック | ②実効単価 | ③CTA | 記事 |")
+    L.append("|---|---|---|---|---|---|---|---|")
+    allrows = []
+    for key, items in buckets.items():
+        for it in items:
+            allrows.append((key,) + it)
+    order = {"S": 0, "B": 1, "C": 2, "D": 3, "A": 4}
+    allrows.sort(key=lambda x: (order.get(x[0][0], 9),
+                                x[5] if x[5] else 9999,   # 順位の良い順
+                                -x[3]))                    # 同順位なら表示回数の多い順
+    for key, eff, known, imp, clk, pos, slug, best, cov in allrows:
+        if key.startswith("A"):
+            rank, shown, clicks = "未計測", "—", "—"
+        elif not imp:
+            rank, shown, clicks = "圏外", "0", "0"
+        else:
+            rank = "{:.1f}".format(pos)
+            shown, clicks = str(imp), str(clk)
+        two = "{:,}円".format(int(eff)) if known else ("単価不明" if best else "**なし**")
+        L.append("| {} | {} | {} | {} | {} | {} | {} | `{}` |".format(
+            key[0], title.get(slug, "")[:30], rank, shown, clicks, two, cta.get(slug, 0), slug))
+    L.append("")
 
     unknown = [s for s, b in placed.items() if b and not b[2]]
     L.append("## ②が測れていない記事（{}本）".format(len(unknown)))
