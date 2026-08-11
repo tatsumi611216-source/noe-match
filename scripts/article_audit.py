@@ -169,10 +169,18 @@ def main():
         # 「マチアプ」を記事に足しても読者の役に立たない（検索者の口語であって記事の語ではない）。
         SKIP = {"マチアプ", "アプリ", "サイト", "おすすめ", "比較", "人気", "無料", "口コミ",
                 "ランキング", "使い方", "始め方", "選び方", "とは"}
+        # 表示2回以上のクエリだけを判定に使う。GSCの56%は表示1回以下で、
+        # そこから打ち手を出すのは「1件のデータで結論を出す」失敗の再演になる
+        # （実害: 表示1回の「近く出会い」を根拠に nagoya-guide へ節を足した）。
+        # スペースの無いクエリは語に分割できないため判定しない（丸ごとの部分一致は厳しすぎる）。
         worst = None
         for r in sorted(rs, key=lambda x: x.get("position", 999)):
-            words = [w for w in re.split(r"[\s　]+", (r.get("query") or "").strip())
-                     if len(w) >= 2 and w not in SKIP]
+            if r.get("impressions", 0) < 2:
+                continue
+            q = (r.get("query") or "").strip()
+            words = [w for w in re.split(r"[\s　]+", q) if len(w) >= 2 and w not in SKIP]
+            if len(words) < 2 and "　" not in q and " " not in q:
+                continue
             for w in words:
                 c = body.count(w)
                 if c <= 2 and (worst is None or c < worst[1]):
@@ -246,7 +254,10 @@ def main():
     L.append("")
     L.append("`③` はCTAの設置数。**①があるのに③が0なら、貼るだけで経路ができる。**")
     L.append("")
-    L.append("**役割**: 主戦場＝新婚・新生活の実務（ここに投資する）／入口＝アプリ・データ系（磨かず送る）")
+    L.append("**役割**: 主戦場＝新婚・新生活の実務（成約のために磨く）／入口＝アプリ・データ系（送客と防衛のために磨く）")
+    L.append("")
+    L.append("**順位の読み方**: ①順位は全クエリの最良値。GSCの56%は表示1回以下なので、")
+    L.append("表示の少ない行の順位はノイズを含む。④の「本文に足す」判定は表示2回以上のクエリのみを根拠にしている。")
     L.append("")
     L.append("| ①順位 | ①表示 | 役割 | ②キャッシュポイント | ③CTA | ④打ち手 | テーマ | 記事 |")
     L.append("|---|---|---|---|---|---|---|---|")
