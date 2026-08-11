@@ -20,14 +20,14 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from wbs_data import PHASES, RISKS, TASKS  # noqa: E402
+from wbs_data import PHASE_AGE, PHASES, RISKS, TASKS  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "docs", "同棲から子育てまでのWBS.xlsx")
 
 FONT = "Meiryo"
 BASE = "'はじめに'!$C$5"
-GANTT_MONTHS = 49
+GANTT_MONTHS = 187
 
 INK = "1F2A24"
 ACCENT = "2F6B4F"
@@ -40,6 +40,7 @@ F_LV2 = PatternFill("solid", fgColor="E6EDE7")
 F_BAND = PatternFill("solid", fgColor="F5F7F4")
 F_BAR_PRE = PatternFill("solid", fgColor="E5D3AE")
 F_BAR_POST = PatternFill("solid", fgColor="BFD9C6")
+F_BAR_EXAM = PatternFill("solid", fgColor="8FBBA1")
 F_TOTAL = PatternFill("solid", fgColor="E6ECE6")
 
 THIN = Side(style="thin", color="C9D2C9")
@@ -90,14 +91,14 @@ def add_status_cf(ws, ref):
 def sheet_roadmap(wb):
     ws = wb.create_sheet("①ロードマップ")
     ws.cell(row=1, column=1,
-            value="① ロードマップ｜同棲 → 結婚 → 結婚式 → 妊活 → 出産 → 子1歳").font = \
+            value="① ロードマップ｜同棲 → 結婚 → 結婚式 → 妊活 → 出産 → 子ども12歳（中学受験）").font = \
         Font(name=FONT, size=14, bold=True, color=ACCENT)
-    ws.cell(row=1, column=5,
+    ws.cell(row=1, column=6,
             value="黄色のセルを書き換えると、日付とガントが自動で動きます").font = \
         Font(name=FONT, size=9, color="6B756E")
     ws.row_dimensions[1].height = 24
 
-    heads = ["ID", "フェーズ", "このフェーズのゴール（完了条件）", "期間\n(月)",
+    heads = ["ID", "フェーズ", "子の\n年齢", "このフェーズのゴール（完了条件）", "期間\n(月)",
              "開始\n(経過月)", "終了\n(経過月)", "予定開始", "予定完了",
              "主要マイルストーン", "このフェーズで決めること（意思決定）",
              "費用下限\n(万円)", "費用上限\n(万円)", "想定される最大リスク", "状態"]
@@ -122,72 +123,83 @@ def sheet_roadmap(wb):
         c.font = Font(name=FONT, size=7, bold=True, color="FFFFFF")
         c.fill = F_HEAD
         c.alignment = Alignment(textRotation=90, horizontal="center", vertical="center")
-        ws.column_dimensions[get_column_letter(col)].width = 3.0
+        ws.column_dimensions[get_column_letter(col)].width = 2.2
+
+    ids = [p[0] for p in PHASES]
+    row_pre_end = 4 + ids.index("P8")        # 同棲〜妊活（出産前）
+    row_exam_start = 4 + ids.index("P17")    # 中学受験期
 
     r = 4
     for pid, name, goal, dur, start, ms, decide, lo, hi, risk in PHASES:
         ws.cell(row=r, column=1, value=pid)
         ws.cell(row=r, column=2, value=name)
-        ws.cell(row=r, column=3, value=goal)
-        ws.cell(row=r, column=4, value=dur).fill = F_INPUT
-        ws.cell(row=r, column=5, value=start).fill = F_INPUT
-        ws.cell(row=r, column=6, value="=E%d+D%d-1" % (r, r))
-        g = ws.cell(row=r, column=7, value="=EDATE(%s,E%d)" % (BASE, r))
-        h = ws.cell(row=r, column=8, value="=EDATE(%s,F%d)" % (BASE, r))
+        ws.cell(row=r, column=3, value=PHASE_AGE.get(pid, ""))
+        ws.cell(row=r, column=4, value=goal)
+        ws.cell(row=r, column=5, value=dur).fill = F_INPUT
+        ws.cell(row=r, column=6, value=start).fill = F_INPUT
+        ws.cell(row=r, column=7, value="=F%d+E%d-1" % (r, r))
+        g = ws.cell(row=r, column=8, value="=EDATE(%s,F%d)" % (BASE, r))
+        h = ws.cell(row=r, column=9, value="=EDATE(%s,G%d)" % (BASE, r))
         g.number_format = h.number_format = 'yyyy"年"m"月"'
-        ws.cell(row=r, column=9, value=ms)
-        ws.cell(row=r, column=10, value=decide)
-        ws.cell(row=r, column=11, value=lo).fill = F_INPUT
-        ws.cell(row=r, column=12, value=hi).fill = F_INPUT
-        ws.cell(row=r, column=13, value=risk)
-        ws.cell(row=r, column=14, value="未着手").fill = F_INPUT
+        ws.cell(row=r, column=10, value=ms)
+        ws.cell(row=r, column=11, value=decide)
+        ws.cell(row=r, column=12, value=lo).fill = F_INPUT
+        ws.cell(row=r, column=13, value=hi).fill = F_INPUT
+        ws.cell(row=r, column=14, value=risk)
+        ws.cell(row=r, column=15, value="未着手").fill = F_INPUT
         for c in range(1, ncol + 1):
             cell = ws.cell(row=r, column=c)
             cell.font = body_font(bold=(c == 2))
-            cell.alignment = Alignment(vertical="top", wrap_text=(c in (3, 9, 10, 13)))
+            cell.alignment = Alignment(vertical="top", wrap_text=(c in (4, 10, 11, 14)))
             cell.border = BOX
-        for c in (4, 5, 6, 11, 12):
+        for c in (3, 5, 6, 7, 12, 13):
             ws.cell(row=r, column=c).alignment = Alignment(horizontal="center", vertical="top")
+        for c in (5, 6, 7, 12, 13):
             ws.cell(row=r, column=c).number_format = "#,##0"
-        ws.row_dimensions[r].height = 58
+        ws.row_dimensions[r].height = 62
         r += 1
 
     last = r - 1
     ws.cell(row=r, column=2, value="合計").font = body_font(bold=True)
-    ws.cell(row=r, column=11, value="=SUM(K4:K%d)" % last).font = body_font(bold=True)
     ws.cell(row=r, column=12, value="=SUM(L4:L%d)" % last).font = body_font(bold=True)
-    ws.cell(row=r, column=13,
-            value="※ ご祝儀・親からの援助・各種給付金は差し引く前の総額").font = \
-        body_font(size=9, color="6B756E")
+    ws.cell(row=r, column=13, value="=SUM(M4:M%d)" % last).font = body_font(bold=True)
+    ws.cell(row=r, column=14,
+            value="※ 同棲開始から子ども12歳までの総額。ご祝儀・親からの援助・"
+                  "各種給付金・児童手当は差し引く前").font = body_font(size=9, color="6B756E")
     for c in range(1, ncol + 1):
         ws.cell(row=r, column=c).fill = F_TOTAL
         ws.cell(row=r, column=c).border = BOX
-    for c in (11, 12):
+    for c in (12, 13):
         ws.cell(row=r, column=c).number_format = "#,##0"
         ws.cell(row=r, column=c).alignment = Alignment(horizontal="center")
 
     g0 = get_column_letter(ncol + 1)
     g1 = get_column_letter(ncol + GANTT_MONTHS)
+    bar = "AND(%s$2>=$F4,%s$2<=$G4)" % (g0, g0)
+    # 先に追加したルールが優先されるので、限定範囲のルールから入れる
     ws.conditional_formatting.add(
-        "%s4:%s11" % (g0, g1),
-        FormulaRule(formula=["AND(%s$2>=$E4,%s$2<=$F4)" % (g0, g0)],
-                    fill=F_BAR_PRE, stopIfTrue=True))
+        "%s4:%s%d" % (g0, g1, row_pre_end),
+        FormulaRule(formula=[bar], fill=F_BAR_PRE, stopIfTrue=True))
+    ws.conditional_formatting.add(
+        "%s%d:%s%d" % (g0, row_exam_start, g1, last),
+        FormulaRule(formula=["AND(%s$2>=$F%d,%s$2<=$G%d)" % (g0, row_exam_start, g0, row_exam_start)],
+                    fill=F_BAR_EXAM, stopIfTrue=True))
     ws.conditional_formatting.add(
         "%s4:%s%d" % (g0, g1, last),
-        FormulaRule(formula=["AND(%s$2>=$E4,%s$2<=$F4)" % (g0, g0)],
-                    fill=F_BAR_POST, stopIfTrue=True))
+        FormulaRule(formula=[bar], fill=F_BAR_POST, stopIfTrue=True))
 
-    set_widths(ws, {"A": 5, "B": 20, "C": 34, "D": 6, "E": 7, "F": 7, "G": 12,
-                    "H": 12, "I": 28, "J": 44, "K": 9, "L": 9, "M": 34, "N": 9})
+    set_widths(ws, {"A": 5, "B": 26, "C": 8, "D": 34, "E": 6, "F": 7, "G": 7,
+                    "H": 12, "I": 12, "J": 34, "K": 46, "L": 9, "M": 9,
+                    "N": 34, "O": 9})
 
     dv = DataValidation(type="list", formula1=STATUS, allow_blank=True)
     ws.add_data_validation(dv)
-    dv.add("N4:N%d" % last)
-    add_status_cf(ws, "N4:N%d" % last)
+    dv.add("O4:O%d" % last)
+    add_status_cf(ws, "O4:O%d" % last)
 
     ws.freeze_panes = "%s4" % g0
     ws.auto_filter.ref = "A3:%s%d" % (get_column_letter(ncol), last)
-    ws.sheet_view.zoomScale = 90
+    ws.sheet_view.zoomScale = 80
 
 
 # ===========================================================================
@@ -399,7 +411,7 @@ def sheet_risk(wb):
 def sheet_intro(wb, wbs_last, risk_last):
     ws = wb.create_sheet("はじめに", 0)
     ws.cell(row=1, column=1,
-            value="同棲 → 結婚 → 結婚式 → 妊活 → 出産 → 子1歳 の計画表").font = \
+            value="同棲 → 結婚 → 妊活 → 出産 → 子ども12歳（中学受験）の計画表").font = \
         Font(name=FONT, size=16, bold=True, color=ACCENT)
     ws.cell(row=2, column=1,
             value="作成日：2026-08-11 ／ 制度情報は2026年8月時点").font = \
@@ -420,8 +432,8 @@ def sheet_intro(wb, wbs_last, risk_last):
 
     ws.cell(row=8, column=1, value="■ シートの構成").font = body_font(bold=True, size=11)
     rows = [
-        ("①ロードマップ", "13フェーズの全体像。期間・費用・意思決定・リスクを1行にまとめ、右側に49ヶ月分のガントチャート"),
-        ("②WBS", "①を分解した実行タスク一覧。濃い行＝タスク、薄い行＝その中の実行ステップ。"
+        ("①ロードマップ", "同棲から子ども12歳（中学受験）までの18フェーズの全体像。期間・費用・意思決定・リスクを1行にまとめ、右側に約15年分のガントチャート"),
+        ("②WBS", "①のうち P1〜P13（子ども1歳まで）を分解した実行タスク一覧。濃い行＝タスク、薄い行＝その中の実行ステップ。"
                  "「論点・決めること」「選択肢・候補」「判断軸・注意点」の3列が実際に迷う場所"),
         ("③リスク管理表", "各フェーズで配偶者との関係が悪化する想定リスクと、"
                       "早期サイン・相手側から見えている景色・予防策・初動・再発防止"),
@@ -535,6 +547,7 @@ def sheet_intro(wb, wbs_last, risk_last):
     ws.cell(row=r, column=1, value="■ 前提と注意").font = body_font(bold=True, size=11)
     r += 1
     notes = [
+        "・①ロードマップは子ども12歳（中学受験の終了）まで。②WBSと③リスク管理表が対象とするのは P1〜P13（子ども1歳まで）で、P14以降はロードマップのみのざっくり粒度。",
         "・フェーズの期間はあくまで標準モデル。特に妊活（P8）は個人差が大きく、数ヶ月〜数年の幅がある。①の黄色いセルを実態に合わせて書き換えて使う。",
         "・妊活・妊娠の時期を後ろにずらすと、その後のフェーズも全部後ろにずれる。年齢と妊娠率の関係があるため、結婚式と妊活の順番は意識的に決める。",
         "・費用は目安であり、地域・式場・産院・治療内容で大きく変わる。ご祝儀・親の援助・出産育児一時金50万円・児童手当・育児休業給付金は差し引く前の金額。",

@@ -14,17 +14,18 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from wbs_data import PHASES, RISKS, TASKS  # noqa: E402
+from wbs_data import PHASE_AGE, PHASES, RISKS, TASKS  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "docs", "life-wbs.html")
 
-GANTT_MONTHS = 49
+GANTT_MONTHS = 187
 
 
 def build_data():
     phases = [{
-        "id": p[0], "name": p[1], "goal": p[2], "dur": p[3], "start": p[4],
+        "id": p[0], "name": p[1], "age": PHASE_AGE.get(p[0], ""),
+        "goal": p[2], "dur": p[3], "start": p[4],
         "ms": p[5], "decide": p[6], "lo": p[7], "hi": p[8], "risk": p[9],
     } for p in PHASES]
 
@@ -64,7 +65,7 @@ CSS = """
   --line:#DCE1D6; --line2:#E8EBE3;
   --accent:#2F6B4F; --accent2:#E1EBE2;
   --pre:#966C2E; --pre2:#F0E8D8;
-  --crit:#A93C27; --crit2:#F6E3DD;
+  --crit:#A93C27; --crit2:#F6E3DD; --barexam:#8FBBA1;
   --shadow:0 1px 2px rgba(21,32,26,.05),0 8px 24px -18px rgba(21,32,26,.35);
   --fd:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP","MS PMincho",serif;
   --fb:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,system-ui,sans-serif;
@@ -76,7 +77,7 @@ CSS = """
   --line:#2A322C; --line2:#222926;
   --accent:#74C296; --accent2:#1B2A22;
   --pre:#D2A75F; --pre2:#2A2418;
-  --crit:#E88E75; --crit2:#33201B;
+  --crit:#E88E75; --crit2:#33201B; --barexam:#2E5140;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -20px rgba(0,0,0,.9);
 }}
 :root[data-theme="dark"]{
@@ -85,7 +86,7 @@ CSS = """
   --line:#2A322C; --line2:#222926;
   --accent:#74C296; --accent2:#1B2A22;
   --pre:#D2A75F; --pre2:#2A2418;
-  --crit:#E88E75; --crit2:#33201B;
+  --crit:#E88E75; --crit2:#33201B; --barexam:#2E5140;
   --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px -20px rgba(0,0,0,.9);
 }
 *{box-sizing:border-box}
@@ -137,23 +138,25 @@ input[type=search]{min-width:200px;flex:1}
 .pnum{font-family:var(--fm);font-size:11.5px;color:var(--ink2);font-variant-numeric:tabular-nums;white-space:nowrap}
 
 /* ---- roadmap ---- */
+#p-rm .wrap{width:min(2450px,calc(100% - 32px))}
 .rmwrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--surface);box-shadow:var(--shadow)}
-table.rm{border-collapse:collapse;font-size:12.5px;min-width:1620px}
-table.rm th:nth-child(1),table.rm td:nth-child(1){width:38px}
-table.rm th:nth-child(2),table.rm td:nth-child(2){width:96px}
-table.rm th:nth-child(3),table.rm td:nth-child(3){width:210px}
-table.rm th:nth-child(4),table.rm td:nth-child(4){width:96px}
-table.rm th:nth-child(5),table.rm td:nth-child(5){width:180px}
-table.rm th:nth-child(6),table.rm td:nth-child(6){width:280px}
-table.rm th:nth-child(7),table.rm td:nth-child(7){width:78px}
-table.rm th:nth-child(8),table.rm td:nth-child(8){width:210px}
+table.rm{border-collapse:collapse;font-size:12.5px;table-layout:fixed;width:2390px}
+table.rm td:nth-child(3){text-align:center}
+.yrlab{font-family:var(--fm);font-size:9px;text-align:center;background:var(--accent);
+  color:#fff;padding:2px 0!important;white-space:nowrap;overflow:hidden;
+  border-left:1px solid rgba(255,255,255,.4)}
+.yrgap{background:var(--accent)}
 table.rm th,table.rm td{border-bottom:1px solid var(--line2);padding:8px 10px;vertical-align:top;text-align:left}
-table.rm thead th{background:var(--accent);color:#fff;font-size:11px;letter-spacing:.05em;position:sticky;top:0;z-index:2}
+table.rm thead th{background:var(--accent);color:#fff;font-size:11px;letter-spacing:.05em}
+table.rm td{word-break:break-word}
 table.rm td.num{font-variant-numeric:tabular-nums;text-align:center;white-space:nowrap;font-family:var(--fm);font-size:11.5px}
-.gcell{padding:0!important;width:9px;min-width:9px;border-left:1px solid var(--line2)}
-.gbar{display:block;height:15px}
+.gcell{padding:0!important;border-left:0;overflow:hidden}
+.gcell.yr{border-left:1px solid var(--line)}
+.gcell.birth{border-left:2px solid var(--crit)}
+.gbar{display:block;height:16px}
 .gbar.pre{background:var(--pre2)} .gbar.post{background:var(--accent2)}
-.ghead{writing-mode:vertical-rl;font-family:var(--fm);font-size:8px;color:#fff;padding:3px 0!important;text-align:center}
+.gbar.exam{background:var(--barexam)}
+.ghead{writing-mode:vertical-rl;font-family:var(--fm);font-size:8px;color:#fff;padding:3px 0!important;text-align:center;letter-spacing:.02em}
 
 /* ---- wbs rows ---- */
 .rows{display:flex;flex-direction:column;gap:1px;background:var(--line2);
@@ -252,31 +255,54 @@ let BASE = localStorage.getItem("lifewbs-base") || "2026-10-01";
 /* ---------- ① roadmap ---------- */
 function renderRoadmap(){
   const G = D.gantt;
-  let h = "<table class='rm'><thead><tr>";
-  h += "<th>ID</th><th>フェーズ</th><th>ゴール（完了条件）</th><th>予定</th><th>マイルストーン</th>"
-     + "<th>決めること</th><th>費用(万円)</th><th>最大リスク</th>";
-  for(let k=0;k<G;k++) h += "<th class='gcell ghead'>"+ym(BASE,k)+"</th>";
+  const BIRTH = (D.phases.find(p=>p.id==="P11")||{start:37}).start;
+  const EXAM = D.phases.findIndex(p=>p.id==="P17");
+  const cols = [];
+  for(let k=0;k<G;k++){
+    const d = new Date(BASE+"T00:00:00"); d.setMonth(d.getMonth()+k);
+    cols.push({y:d.getFullYear(), jan:d.getMonth()===0, birth:k===BIRTH});
+  }
+  const gcls = k => "gcell"+(cols[k].jan?" yr":"")+(cols[k].birth?" birth":"");
+  const W = [38,100,56,210,96,200,280,78,210];
+  let h = "<table class='rm'><colgroup>";
+  W.forEach(w=>h+="<col style='width:"+w+"px'>");
+  for(let k=0;k<G;k++) h+="<col style='width:6px'>";
+  h += "</colgroup><thead>";
+  h += "<tr><th colspan='9' class='yrgap'></th>";
+  let k=0;
+  while(k<G){
+    const y=cols[k].y; let n=0;
+    while(k+n<G && cols[k+n].y===y) n++;
+    h += "<th colspan='"+n+"' class='yrlab'>"+(n>=4?y:"")+"</th>";
+    k+=n;
+  }
+  h += "</tr><tr>";
+  h += "<th>ID</th><th>フェーズ</th><th>子の年齢</th><th>ゴール（完了条件）</th><th>予定</th>"
+     + "<th>マイルストーン</th><th>決めること</th><th>費用(万円)</th><th>最大リスク</th>";
+  for(let j=0;j<G;j++)
+    h += "<th class='"+gcls(j)+"'"+(cols[j].birth?" title='出産'":"")+"></th>";
   h += "</tr></thead><tbody>";
   let lo=0, hi=0;
   D.phases.forEach((p,i)=>{
     const end = p.start + p.dur - 1;
     lo += p.lo; hi += p.hi;
-    const tone = i<8 ? "pre" : "post";
+    const tone = i>=EXAM ? "exam" : (i<8 ? "pre" : "post");
     h += "<tr><td class='num'>"+p.id+"</td><td><strong>"+esc(p.name)+"</strong></td>"
+      + "<td class='num'>"+esc(p.age)+"</td>"
       + "<td>"+esc(p.goal)+"</td>"
       + "<td class='num'>"+ym(BASE,p.start)+"<br>〜"+ym(BASE,end)+"</td>"
       + "<td>"+esc(p.ms)+"</td><td>"+esc(p.decide)+"</td>"
       + "<td class='num'>"+p.lo+"〜"+p.hi+"</td><td>"+esc(p.risk)+"</td>";
     for(let k=0;k<G;k++){
       const on = k>=p.start && k<=end;
-      h += "<td class='gcell'>"+(on?"<span class='gbar "+tone+"'></span>":"")+"</td>";
+      h += "<td class='"+gcls(k)+"'>"+(on?"<span class='gbar "+tone+"'></span>":"")+"</td>";
     }
     h += "</tr>";
   });
-  h += "<tr><td></td><td><strong>合計</strong></td><td colspan='4'></td>"
+  h += "<tr><td></td><td><strong>合計</strong></td><td colspan='5'></td>"
      + "<td class='num'><strong>"+lo+"〜"+hi+"</strong></td>"
-     + "<td>※ ご祝儀・親の援助・給付金を差し引く前の総額</td>";
-  for(let k=0;k<G;k++) h += "<td class='gcell'></td>";
+     + "<td>※ 同棲開始から子ども12歳までの総額。ご祝儀・親の援助・給付金は差し引く前</td>";
+  for(let k=0;k<G;k++) h += "<td class='"+gcls(k)+"'></td>";
   h += "</tr></tbody></table>";
   $("#rm").innerHTML = h;
 }
@@ -390,11 +416,11 @@ function filterRisks(){
 /* ---------- export ---------- */
 function tsv(rows){ return rows.map(r=>r.map(c=>String(c==null?"":c).replace(/[\t\n\r]/g," ")).join("\t")).join("\n"); }
 function tsvRoadmap(){
-  const G=D.gantt, head=["ID","フェーズ","ゴール（完了条件）","期間(月)","開始(経過月)","終了(経過月)",
+  const head=["ID","フェーズ","子の年齢","ゴール（完了条件）","期間(月)","開始(経過月)","終了(経過月)",
     "予定開始","予定完了","主要マイルストーン","このフェーズで決めること","費用下限(万円)","費用上限(万円)","想定される最大リスク","状態"];
   const rows=[head];
   D.phases.forEach(p=>{const e=p.start+p.dur-1;
-    rows.push([p.id,p.name,p.goal,p.dur,p.start,e,ym(BASE,p.start),ym(BASE,e),p.ms,p.decide,p.lo,p.hi,p.risk,"未着手"]);});
+    rows.push([p.id,p.name,p.age,p.goal,p.dur,p.start,e,ym(BASE,p.start),ym(BASE,e),p.ms,p.decide,p.lo,p.hi,p.risk,"未着手"]);});
   return tsv(rows);
 }
 function tsvWbs(){
@@ -439,8 +465,7 @@ $$("[data-copy]").forEach(b=>b.addEventListener("click",()=>{
 function fillSelect(sel, vals, label){
   sel.innerHTML = "<option value=''>"+label+"</option>" + vals.map(v=>"<option>"+esc(v)+"</option>").join("");
 }
-const phaseIds = D.phases.map(p=>p.id);
-fillSelect($("#f-ph"), phaseIds, "全フェーズ");
+fillSelect($("#f-ph"), [...new Set(D.tasks.map(t=>t.ph))], "全フェーズ");
 fillSelect($("#f-cat"), [...new Set(D.tasks.map(t=>t.cat))], "全カテゴリ");
 fillSelect($("#f-kind"), ["法定","推奨","任意"], "全区分");
 fillSelect($("#r-ph"), [...new Set(D.risks.map(r=>r.ph))], "全フェーズ");
@@ -472,24 +497,25 @@ def main():
     lv2 = sum(1 for t in data["tasks"] if t["lv"] == 2)
     payload = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
 
-    html = """<title>同棲〜結婚〜妊活〜出産〜子1歳のWBS</title>
+    html = """<title>同棲〜結婚〜妊活〜出産〜子ども12歳のWBS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>%(css)s</style>
 
 <header class="mast"><div class="wrap">
   <p class="eyebrow">Work Breakdown Structure &amp; Risk Register &nbsp;/&nbsp; 2026-08</p>
-  <h1>同棲 → 結婚 → 結婚式 → 妊活 → 出産 → 子1歳</h1>
+  <h1>同棲 → 結婚 → 妊活 → 出産 → 子ども12歳（中学受験）</h1>
   <p class="lede">
-    約4年分を13フェーズに分け、%(tasks)d行のタスク（うち実行ステップ%(steps)d）と
-    %(risks)d件の関係リスクに落とした計画表。各タブの「スプレッドシートにコピー」から、
-    Googleスプレッドシートに貼り付けてそのまま使えます。
+    ①ロードマップは同棲開始から子ども12歳（中学受験の終了）までの約15年・%(phases)dフェーズ。
+    ②WBSと③リスク管理表はそのうち子ども1歳までを詳細化したもので、
+    %(tasks)d行のタスク（うち実行ステップ%(steps)d）と%(risks)d件の関係リスクがあります。
+    各タブの「スプレッドシートにコピー」から、Googleスプレッドシートに貼り付けてそのまま使えます。
   </p>
   <div class="scale" aria-hidden="true">
-    <span class="s-pre">同棲 ── 結婚 ── 結婚式 ── 妊活</span>
+    <span class="s-pre">同棲 ─ 結婚 ─ 式 ─ 妊活</span>
     <span class="s-b">出産</span>
-    <span class="s-post">0ヶ月 ──── 1歳</span>
+    <span class="s-post">0歳 ── 保育園 ── 小学校 ── 中学受験 ── 12歳</span>
   </div>
-  <p class="counts">13フェーズ ／ %(tasks)dタスク ／ %(risks)dリスク</p>
+  <p class="counts">%(phases)dフェーズ ／ %(tasks)dタスク ／ %(risks)dリスク</p>
 </div></header>
 
 <nav class="tabs"><div class="wrap tabs__in">
@@ -504,8 +530,10 @@ def main():
 <main>
 <section class="panel is-on" id="p-rm"><div class="wrap">
   <h2 class="sec">① ロードマップ</h2>
-  <p class="sub">基準日を変えると全フェーズの予定とガントが動きます。期間は標準モデルなので、
-     妊活（P8）を中心に実態に合わせて読み替えてください。</p>
+  <p class="sub">同棲開始から子ども12歳（中学受験の終了）まで。基準日を変えると全フェーズの予定とガントが動きます。
+     期間は標準モデルなので、妊活（P8）を中心に実態に合わせて読み替えてください。
+     <strong>P14以降はロードマップのみ</strong>のざっくり粒度で、②WBSと③リスク管理表は P1〜P13（子ども1歳まで）が対象です。
+     ガントは砂色＝出産前、緑＝育児期、濃い緑＝中学受験期。赤い縦線が出産の月です。</p>
   <div class="filters">
     <button class="btn btn--go" data-copy="rm">スプレッドシートにコピー</button>
   </div>
@@ -513,7 +541,7 @@ def main():
 </div></section>
 
 <section class="panel" id="p-wbs"><div class="wrap">
-  <h2 class="sec">② WBS</h2>
+  <h2 class="sec">② WBS <span class="pnum">（P1〜P13＝子ども1歳まで）</span></h2>
   <p class="sub">濃い行＝タスク、薄い行＝その中の実行ステップ。行をクリックするとチェックが入り、
      この端末に保存されます。意思決定タスクには論点・選択肢・判断軸が付いています。</p>
   <div class="filters">
@@ -571,6 +599,7 @@ def main():
 <script>window.__WBS__=%(data)s;</script>
 <script>%(js)s</script>
 """ % {"css": CSS, "js": JS, "data": payload,
+       "phases": len(data["phases"]),
        "tasks": len(data["tasks"]), "steps": len(data["tasks"]) - lv2,
        "risks": len(data["risks"])}
 
