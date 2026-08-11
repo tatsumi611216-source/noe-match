@@ -1,0 +1,4455 @@
+<title>育児WBS｜妊娠判明から1歳まで</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+  color-scheme: light dark;
+  --paper:      #F4F6F1;
+  --surface:    #FFFFFF;
+  --surface-2:  #EDF0E9;
+  --ink:        #15201A;
+  --ink-2:      #4B564E;
+  --ink-3:      #7B877E;
+  --line:       #DCE1D6;
+  --line-soft:  #E8EBE3;
+  --accent:     #2F6B4F;
+  --accent-2:   #E1EBE2;
+  --pre:        #966C2E;
+  --pre-2:      #F0E8D8;
+  --crit:       #A93C27;
+  --crit-2:     #F6E3DD;
+  --shadow:     0 1px 2px rgba(21,32,26,.05), 0 8px 24px -18px rgba(21,32,26,.35);
+
+  --font-display: "Hiragino Mincho ProN", "Yu Mincho", YuMincho, "Noto Serif JP",
+                  "Source Han Serif JP", "MS PMincho", serif;
+  --font-body:    "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic,
+                  "Noto Sans JP", Meiryo, system-ui, sans-serif;
+  --font-mono:    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:     #0F1310;
+    --surface:   #171C18;
+    --surface-2: #1D2320;
+    --ink:       #E6EAE3;
+    --ink-2:     #A5AFA5;
+    --ink-3:     #79847B;
+    --line:      #2A322C;
+    --line-soft: #222926;
+    --accent:    #74C296;
+    --accent-2:  #1B2A22;
+    --pre:       #D2A75F;
+    --pre-2:     #2A2418;
+    --crit:      #E88E75;
+    --crit-2:    #33201B;
+    --shadow:    0 1px 2px rgba(0,0,0,.4), 0 10px 30px -20px rgba(0,0,0,.9);
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper:     #0F1310;
+  --surface:   #171C18;
+  --surface-2: #1D2320;
+  --ink:       #E6EAE3;
+  --ink-2:     #A5AFA5;
+  --ink-3:     #79847B;
+  --line:      #2A322C;
+  --line-soft: #222926;
+  --accent:    #74C296;
+  --accent-2:  #1B2A22;
+  --pre:       #D2A75F;
+  --pre-2:     #2A2418;
+  --crit:      #E88E75;
+  --crit-2:    #33201B;
+  --shadow:    0 1px 2px rgba(0,0,0,.4), 0 10px 30px -20px rgba(0,0,0,.9);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "palt" 1;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible, input:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px;
+}
+code {
+  font-family: var(--font-mono); font-size: .88em;
+  background: var(--surface-2); padding: .1em .35em; border-radius: 3px;
+}
+strong { font-weight: 700; color: var(--ink); }
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+  padding: 40px 0 28px;
+}
+.wrap { width: min(1080px, calc(100% - 40px)); margin-inline: auto; }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ink-3); margin: 0 0 14px;
+}
+.masthead h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 4.6vw, 44px);
+  line-height: 1.25;
+  letter-spacing: .01em;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+.masthead h1 .rule {
+  display: inline-block; width: 1px; height: .85em; margin: 0 .5em -.08em;
+  background: var(--line); vertical-align: baseline;
+}
+.lede {
+  max-width: 62ch; color: var(--ink-2); margin: 0 0 26px; font-size: 14.5px;
+}
+
+/* 妊娠期 → 出産 → 産後 のスケール */
+.scale { display: flex; align-items: stretch; gap: 0; margin: 0 0 6px; border-radius: 2px; overflow: hidden; }
+.scale span {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .1em;
+  padding: 6px 10px; white-space: nowrap; color: var(--ink);
+}
+.scale .s-pre   { background: var(--pre-2);   flex: 10; }
+.scale .s-birth { background: var(--crit);    flex: 0 0 auto; color: #fff; font-weight: 700; }
+.scale .s-post  { background: var(--accent-2); flex: 12; text-align: right; }
+.scale-note { font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-3); margin: 0; }
+
+/* ---------- toolbar ---------- */
+
+.toolbar {
+  position: sticky; top: 0; z-index: 30;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.toolbar__inner {
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+  padding: 10px 0;
+}
+.progress { display: flex; align-items: center; gap: 10px; min-width: 210px; }
+.progress__bar {
+  flex: 1; height: 5px; background: var(--surface-2); border-radius: 99px; overflow: hidden;
+}
+.progress__fill { height: 100%; width: 0%; background: var(--accent); transition: width .25s ease; }
+.progress__num {
+  font-family: var(--font-mono); font-size: 12px; color: var(--ink-2);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.tools { display: flex; gap: 8px; margin-left: auto; flex-wrap: wrap; }
+.btn {
+  font: inherit; font-size: 12px; font-family: var(--font-body);
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink-2);
+  padding: 5px 12px; border-radius: 99px; cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--paper); }
+
+/* ---------- nav ---------- */
+
+.phasenav { padding: 18px 0 4px; }
+.phasenav ol {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 6px; overflow-x: auto; padding-bottom: 8px;
+}
+.phasenav a {
+  display: block; white-space: nowrap; text-decoration: none;
+  font-size: 12px; padding: 5px 11px; border-radius: 99px;
+  border: 1px solid var(--line); color: var(--ink-2); background: var(--surface);
+}
+.phasenav a:hover { border-color: var(--accent); color: var(--accent); }
+.phasenav .n-pre a      { border-left: 3px solid var(--pre); }
+.phasenav .n-birth a    { border-left: 3px solid var(--crit); }
+.phasenav .n-post a     { border-left: 3px solid var(--accent); }
+.phasenav .n-appendix a { border-left: 3px solid var(--ink-3); }
+
+/* ---------- phases ---------- */
+
+main { padding: 8px 0 90px; }
+
+.phase {
+  position: relative;
+  padding: 30px 0 30px 28px;
+  border-left: 1px solid var(--line);
+  margin-left: 6px;
+  scroll-margin-top: 68px;
+}
+.phase--lead { padding-top: 22px; }
+.phase--pre      { --tone: var(--pre);    --tone-2: var(--pre-2); }
+.phase--birth    { --tone: var(--crit);   --tone-2: var(--crit-2); }
+.phase--post     { --tone: var(--accent); --tone-2: var(--accent-2); }
+.phase--appendix { --tone: var(--ink-3);  --tone-2: var(--surface-2); }
+.phase--meta     { --tone: var(--ink-3);  --tone-2: var(--surface-2); }
+
+.phase__title {
+  font-family: var(--font-display);
+  font-weight: 600; font-size: clamp(20px, 2.8vw, 27px); line-height: 1.4;
+  margin: 0 0 20px; letter-spacing: .01em; text-wrap: balance;
+}
+.phase__dot {
+  position: absolute; left: -6.5px; top: 40px;
+  width: 11px; height: 11px; border-radius: 50%;
+  background: var(--tone); box-shadow: 0 0 0 4px var(--paper);
+}
+.phase--birth { background: linear-gradient(90deg, var(--crit-2), transparent 40%); }
+
+.phase h3 {
+  font-family: var(--font-display); font-weight: 600;
+  font-size: 18px; margin: 34px 0 12px; letter-spacing: .01em;
+  padding-bottom: 6px; border-bottom: 1px solid var(--line-soft);
+}
+.phase h4 {
+  font-size: 13px; font-weight: 700; letter-spacing: .06em; color: var(--tone);
+  margin: 26px 0 10px; text-transform: none;
+}
+.phase h5 { font-size: 13px; margin: 20px 0 8px; }
+.phase p  { max-width: 68ch; color: var(--ink-2); }
+.phase > p:first-of-type { margin-top: 0; }
+
+blockquote {
+  margin: 16px 0; padding: 12px 16px;
+  border-left: 3px solid var(--tone);
+  background: var(--tone-2);
+  color: var(--ink); font-size: 13.5px; border-radius: 0 4px 4px 0;
+}
+blockquote strong { color: var(--ink); }
+
+/* ---------- task rows ---------- */
+
+.tasks {
+  display: flex; flex-direction: column; gap: 1px;
+  background: var(--line-soft); border: 1px solid var(--line);
+  border-radius: 6px; overflow: hidden; margin: 14px 0 22px;
+  box-shadow: var(--shadow);
+}
+.task {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) minmax(0, 250px);
+  align-items: start; gap: 4px 10px;
+  background: var(--surface); padding: 11px 14px 11px 12px;
+  position: relative;
+}
+.task--crit { box-shadow: inset 3px 0 0 var(--crit); }
+.task.is-done { opacity: .45; }
+.task.is-done .task__title { text-decoration: line-through; }
+
+.tick {
+  appearance: none; -webkit-appearance: none;
+  width: 17px; height: 17px; margin: 4px 0 0;
+  border: 1.5px solid var(--ink-3); border-radius: 4px;
+  background: transparent; cursor: pointer; flex: none;
+}
+.tick:checked { background: var(--accent); border-color: var(--accent); }
+.tick:checked::after {
+  content: ""; display: block; width: 4px; height: 8px;
+  border: solid #fff; border-width: 0 2px 2px 0;
+  transform: rotate(42deg); margin: 1.5px 0 0 5px;
+}
+
+.task__main { display: block; cursor: pointer; min-width: 0; }
+.task__id {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .04em;
+  color: var(--ink-3); display: block; margin-bottom: 1px;
+}
+.task__title { display: block; font-size: 14px; line-height: 1.6; }
+.task__title strong { color: var(--crit); }
+.task__memo {
+  display: block; font-size: 12.5px; color: var(--ink-2);
+  line-height: 1.65; margin-top: 3px;
+}
+.task__memo strong { color: var(--ink); }
+.task__meta { display: flex; flex-wrap: wrap; gap: 5px; justify-content: flex-end; padding-top: 12px; }
+
+.chip {
+  font-family: var(--font-mono); font-size: 10.5px; line-height: 1.5;
+  padding: 2px 7px; border-radius: 3px; white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.chip--due { background: var(--tone-2); color: var(--ink); border: 1px solid transparent; }
+.task--crit .chip--due { background: var(--crit-2); color: var(--crit); font-weight: 700; }
+.chip--who { background: var(--surface-2); color: var(--ink-2); }
+.chip--cat { background: transparent; color: var(--ink-3); border: 1px solid var(--line); }
+.chip strong { font-weight: 700; }
+.star { color: var(--crit); }
+
+/* ---------- plain tables ---------- */
+
+.tablewrap { overflow-x: auto; margin: 14px 0 24px; border: 1px solid var(--line); border-radius: 6px; }
+table { border-collapse: collapse; width: 100%; background: var(--surface); font-size: 13px; }
+th, td { text-align: left; padding: 9px 13px; border-bottom: 1px solid var(--line-soft); vertical-align: top; }
+th {
+  background: var(--surface-2); font-size: 11px; letter-spacing: .06em;
+  color: var(--ink-2); font-weight: 700; white-space: nowrap;
+}
+tbody tr:last-child td { border-bottom: 0; }
+td { font-variant-numeric: tabular-nums; }
+
+/* ---------- lists ---------- */
+
+.phase ul, .phase ol { max-width: 68ch; padding-left: 1.3em; color: var(--ink-2); }
+.phase li { margin-bottom: 5px; }
+.phase li strong { color: var(--ink); }
+
+.checklist { list-style: none; padding: 0; max-width: 68ch; }
+.checklist li { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; border-bottom: 1px solid var(--line-soft); }
+.checklist label { cursor: pointer; font-size: 13.5px; }
+.checklist li.is-done label { opacity: .45; text-decoration: line-through; }
+
+/* ---------- filter state ---------- */
+
+body.hide-done .task.is-done,
+body.hide-done .checklist li.is-done { display: none; }
+
+footer {
+  border-top: 1px solid var(--line); padding: 26px 0 60px;
+  color: var(--ink-3); font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .task { grid-template-columns: 26px minmax(0, 1fr); }
+  .task__meta { grid-column: 2; justify-content: flex-start; padding-top: 4px; }
+  .phase { padding-left: 18px; }
+  .wrap { width: calc(100% - 28px); }
+}
+
+@media print {
+  .toolbar, .phasenav { display: none; }
+  body { background: #fff; }
+  .task { break-inside: avoid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">Work Breakdown Structure &nbsp;/&nbsp; 2026-08 版</p>
+    <h1>妊娠判明から1歳まで<span class="rule"></span>やることリスト</h1>
+    <p class="lede">
+      約21ヶ月分のタスクを月単位に分解した実行用WBS。行政手続き・医療・お金・モノの準備・育児実務・
+      イベント・保活を横断し、法定期限のあるものは<strong>朱色</strong>で示している。
+      チェックはこの端末のブラウザに保存される。
+    </p>
+    <div class="scale" aria-hidden="true">
+      <span class="s-pre">妊娠 0w ─────────── 39w</span>
+      <span class="s-birth">出産</span>
+      <span class="s-post">生後 0ヶ月 ─────────── 12ヶ月</span>
+    </div>
+    <p class="scale-note">全 261 タスク</p>
+  </div>
+</header>
+
+<div class="toolbar">
+  <div class="wrap toolbar__inner">
+    <div class="progress">
+      <div class="progress__bar"><div class="progress__fill" id="progress-fill"></div></div>
+      <span class="progress__num" id="progress-num">0 / 261</span>
+    </div>
+    <div class="tools">
+      <button class="btn" id="btn-hide" type="button" aria-pressed="false">未完了だけ表示</button>
+      <button class="btn" id="btn-reset" type="button">チェックを全消去</button>
+    </div>
+  </div>
+</div>
+
+<nav class="phasenav" aria-label="フェーズ">
+  <div class="wrap"><ol><li class="n-meta"><a href="#sec-1">はじめに</a></li>
+<li class="n-pre"><a href="#sec-2">P0 妊娠判明前（妊活期）</a></li>
+<li class="n-pre"><a href="#sec-3">P1 妊娠1〜4ヶ月（0〜15週）</a></li>
+<li class="n-pre"><a href="#sec-4">P2 妊娠5〜7ヶ月（16〜27週）＝ 安定期</a></li>
+<li class="n-pre"><a href="#sec-5">P3 妊娠8〜10ヶ月（28〜39週）</a></li>
+<li class="n-birth"><a href="#sec-6">P4 出産 〜 退院（産後0〜7日）</a></li>
+<li class="n-post"><a href="#sec-7">P5 生後0ヶ月（生後0〜28日）</a></li>
+<li class="n-post"><a href="#sec-8">P6 生後1〜2ヶ月</a></li>
+<li class="n-post"><a href="#sec-9">P7 生後3〜5ヶ月</a></li>
+<li class="n-post"><a href="#sec-10">P8 生後6〜8ヶ月</a></li>
+<li class="n-post"><a href="#sec-11">P9 生後9〜11ヶ月</a></li>
+<li class="n-post"><a href="#sec-12">P10 生後12ヶ月（1歳）</a></li>
+<li class="n-appendix"><a href="#sec-13">付録A 買い物リスト（時期別）</a></li>
+<li class="n-appendix"><a href="#sec-14">付録B お金のタイムライン（会社員世帯の目安）</a></li>
+<li class="n-appendix"><a href="#sec-15">付録C 父の育休の組み方（2026年時点）</a></li>
+<li class="n-appendix"><a href="#sec-16">付録D 離乳食ロードマップ</a></li>
+<li class="n-appendix"><a href="#sec-17">付録E 毎月の定例タスク（ルーティン）</a></li>
+<li class="n-appendix"><a href="#sec-18">付録F 緊急時の連絡先（冷蔵庫に貼る）</a></li>
+<li class="n-appendix"><a href="#sec-19">付録G 確認が必要な「自治体差が大きい」項目チェックリスト</a></li></ol></div>
+</nav>
+
+<main class="wrap">
+<section class="phase phase--meta phase--lead" id="sec-1">
+<h3>0. このドキュメントの使い方</h3>
+<h4>0-1. カテゴリ定義</h4>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>記号</th>
+<th>カテゴリ</th>
+<th>内容</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>手続き（行政）</td>
+<td>市区町村役所・保健センターへの届出</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>手続き（勤務先・保険）</td>
+<td>会社、健保組合、ハローワーク、民間保険</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>医療</td>
+<td>健診、検査、予防接種、通院</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td>準備（モノ・環境）</td>
+<td>購入、設置、安全対策</td>
+</tr>
+<tr>
+<td><strong>E</strong></td>
+<td>育児実務</td>
+<td>日々のオペレーション、離乳食、睡眠、記録</td>
+</tr>
+<tr>
+<td><strong>F</strong></td>
+<td>お金</td>
+<td>給付金、控除、家計、教育資金</td>
+</tr>
+<tr>
+<td><strong>G</strong></td>
+<td>イベント・記録</td>
+<td>行事、写真、内祝い</td>
+</tr>
+<tr>
+<td><strong>H</strong></td>
+<td>保活・キャリア</td>
+<td>保育園、育休、復職</td>
+</tr>
+<tr>
+<td><strong>I</strong></td>
+<td>夫婦運営</td>
+<td>分担、コミュニケーション、メンタル</td>
+</tr>
+</tbody></table></div>
+<h4>0-2. 担当欄の表記</h4>
+<p><code>母</code> / <code>父</code> / <code>2人</code> は一般的な例。 <strong>動ける方が動く</strong>のが原則なので、自分の家庭に合わせて書き換えて使うこと。 特に「A. 行政手続き」「B. 勤務先手続き」「D. 準備」は、産後の母体の状態を考えると <strong>父側に寄せておくほど産後が楽になる</strong>。</p>
+<h4>0-3. ステータス欄</h4>
+<p><code>☐ 未着手</code> → <code>◐ 進行中</code> → <code>☑ 完了</code> → <code>― 対象外</code></p>
+<h4>0-4. 重要な前提</h4>
+<ul>
+<li>日本国内（会社員世帯）を前提。自営業・公務員は一部制度が異なる。</li>
+<li><strong>行政サービスは自治体差が非常に大きい</strong>。金額・回数・対象は必ず住んでいる市区町村の</li>
+</ul>
+<p>公式サイトで確認すること。本WBSは「何を確認すべきか」のリスト。</p>
+<ul>
+<li>制度は毎年4月に変わる。特に2026年4月からの変更（RSVワクチン定期接種化、</li>
+</ul>
+<p>こども誰でも通園制度、子ども・子育て支援金の徴収開始）は本文に反映済み。</p>
+<h3>1. クリティカルパス（絶対に落とせない法定期限）</h3>
+<p>ここだけは期限を過ぎると金銭的・手続き的な実害が出る。</p>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>期限</th>
+<th>タスク</th>
+<th>遅れた場合のリスク</th>
+</tr></thead><tbody>
+<tr>
+<td>妊娠11週頃まで</td>
+<td>妊娠届 → 母子健康手帳の交付</td>
+<td>妊婦健診の公費補助（14回分）を取り逃す</td>
+</tr>
+<tr>
+<td>妊娠8〜12週</td>
+<td>分娩予約</td>
+<td><strong>人気の産院は埋まる。里帰りは特に早く</strong></td>
+</tr>
+<tr>
+<td>妊娠28週0日〜36週6日</td>
+<td>RSV母子免疫ワクチン（2026年4月〜定期接種＝無料）</td>
+<td>窓口が閉じる。乳児の重症化リスク</td>
+</tr>
+<tr>
+<td>妊娠34週0日</td>
+<td>産前休業開始（希望する場合）</td>
+<td>―</td>
+</tr>
+<tr>
+<td>出産日を含めて<strong>14日以内</strong></td>
+<td><strong>出生届</strong></td>
+<td>戸籍未登録。過料の対象</td>
+</tr>
+<tr>
+<td>出産日の翌日から<strong>15日以内</strong></td>
+<td><strong>児童手当の認定請求</strong></td>
+<td><strong>15日特例を外すと申請月の翌月分から。1ヶ月分（1〜3万円）消える</strong></td>
+</tr>
+<tr>
+<td>出生後14日以内</td>
+<td>低体重児出生届（2500g未満の場合）</td>
+<td>支援につながらない</td>
+</tr>
+<tr>
+<td>出生後すみやか</td>
+<td>健康保険の加入（社保は勤務先、国保は14日以内）</td>
+<td>1ヶ月健診・乳児医療証に間に合わない</td>
+</tr>
+<tr>
+<td>産後8週間以内</td>
+<td>産後パパ育休（出生時育児休業）※申出は原則2週間前</td>
+<td>取得機会を失う</td>
+</tr>
+<tr>
+<td>育休開始から4ヶ月を経過する日の属する月末</td>
+<td>育児休業給付金の申請</td>
+<td>給付金が受け取れない</td>
+</tr>
+<tr>
+<td>生後<strong>14週6日</strong>まで</td>
+<td><strong>ロタウイルスワクチン1回目</strong></td>
+<td><strong>これを過ぎると生涯接種不可（腸重積リスクのため）</strong></td>
+</tr>
+<tr>
+<td>生後2ヶ月の誕生日</td>
+<td>予防接種デビュー（同時接種4本）</td>
+<td>以降のスケジュールが全部後ろ倒し</td>
+</tr>
+<tr>
+<td>出産翌年の2〜3月</td>
+<td>確定申告（医療費控除）</td>
+<td>数万円の還付を逃す（5年は遡れる）</td>
+</tr>
+<tr>
+<td>入園前年の10〜12月</td>
+<td>認可保育園の一次申込</td>
+<td><strong>4月入園を1年逃す。育休延長の可否にも直結</strong></td>
+</tr>
+</tbody></table></div>
+<h3>2. フェーズ全体像</h3>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>Phase</th>
+<th>時期</th>
+<th>テーマ</th>
+<th>主な山場</th>
+</tr></thead><tbody>
+<tr>
+<td>P0</td>
+<td>妊娠判明前</td>
+<td>意思決定・体づくり</td>
+<td>葉酸、風疹抗体、家計シミュレーション</td>
+</tr>
+<tr>
+<td>P1</td>
+<td>妊娠1〜4ヶ月（0〜15週）</td>
+<td>立ち上げ</td>
+<td>母子手帳、分娩予約、出生前検査の判断、会社報告</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>妊娠5〜7ヶ月（16〜27週）</td>
+<td>安定期の仕込み</td>
+<td>買い物、両親学級、保活情報収集、里帰り判断</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>妊娠8〜10ヶ月（28〜39週）</td>
+<td>出産準備完了</td>
+<td>RSVワクチン、入院バッグ、産休、名前候補</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>出産〜退院（0〜7日）</td>
+<td>出産オペ</td>
+<td>分娩、出生証明書、退院、チャイルドシート</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>生後0ヶ月（〜28日）</td>
+<td>手続き集中＋新生児期</td>
+<td><strong>出生届・児童手当・保険証・医療証</strong>、新生児訪問</td>
+</tr>
+<tr>
+<td>P6</td>
+<td>生後1〜2ヶ月</td>
+<td>立ち上がり</td>
+<td>1ヶ月健診、お宮参り、内祝い、予防接種デビュー</td>
+</tr>
+<tr>
+<td>P7</td>
+<td>生後3〜5ヶ月</td>
+<td>生活リズム化</td>
+<td>3-4ヶ月健診、BCG、寝返り対策、離乳食準備</td>
+</tr>
+<tr>
+<td>P8</td>
+<td>生後6〜8ヶ月</td>
+<td>離乳食＋保活</td>
+<td>離乳食開始・進行、<strong>保育園申込</strong>、ハーフバースデー</td>
+</tr>
+<tr>
+<td>P9</td>
+<td>生後9〜11ヶ月</td>
+<td>動き出す</td>
+<td>9-10ヶ月健診、安全対策総点検、復職準備</td>
+</tr>
+<tr>
+<td>P10</td>
+<td>生後12ヶ月</td>
+<td>1歳・復職</td>
+<td>1歳健診、MRワクチン、慣らし保育、誕生日</td>
+</tr>
+</tbody></table></div>
+</section>
+<section class="phase phase--pre" id="sec-2">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 0：妊娠判明前（妊活期）</h2>
+<blockquote>該当しない場合は読み飛ばして P1 へ。</blockquote>
+<div class="tasks">
+<div class="task" data-id="P0-C-01">
+<input type="checkbox" class="tick" id="t-P0-C-01" data-key="P0-C-01" aria-label="P0-C-01 完了">
+<label class="task__main" for="t-P0-C-01">
+<span class="task__id">P0-C-01</span>
+<span class="task__title">葉酸サプリの摂取開始（400μg/日）</span>
+<span class="task__memo">神経管閉鎖障害の予防。妊娠12週頃まで継続</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊娠1ヶ月以上前から</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P0-C-02">
+<input type="checkbox" class="tick" id="t-P0-C-02" data-key="P0-C-02" aria-label="P0-C-02 完了">
+<label class="task__main" for="t-P0-C-02">
+<span class="task__id">P0-C-02</span>
+<span class="task__title">風疹抗体検査・必要ならワクチン接種</span>
+<span class="task__memo"><strong>接種後2ヶ月は避妊が必要</strong>。自治体の無料検査あり。父側も必須（家庭内感染源になる）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊活開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P0-C-03">
+<input type="checkbox" class="tick" id="t-P0-C-03" data-key="P0-C-03" aria-label="P0-C-03 完了">
+<label class="task__main" for="t-P0-C-03">
+<span class="task__id">P0-C-03</span>
+<span class="task__title">歯科検診・治療の完了</span>
+<span class="task__memo">妊娠中は治療しにくい。妊娠性歯肉炎・早産リスクの低減</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊活開始時</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P0-C-04">
+<input type="checkbox" class="tick" id="t-P0-C-04" data-key="P0-C-04" aria-label="P0-C-04 完了">
+<label class="task__main" for="t-P0-C-04">
+<span class="task__id">P0-C-04</span>
+<span class="task__title">婦人科でブライダルチェック／基礎疾患の確認</span>
+<span class="task__memo">持病の薬は妊娠可能な薬に変更が必要な場合あり</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊活開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P0-C-05">
+<input type="checkbox" class="tick" id="t-P0-C-05" data-key="P0-C-05" aria-label="P0-C-05 完了">
+<label class="task__main" for="t-P0-C-05">
+<span class="task__id">P0-C-05</span>
+<span class="task__title">禁煙・禁酒、カフェイン減量</span>
+<span class="task__memo">受動喫煙もSIDS（乳幼児突然死症候群）リスク</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊活開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P0-F-01">
+<input type="checkbox" class="tick" id="t-P0-F-01" data-key="P0-F-01" aria-label="P0-F-01 完了">
+<label class="task__main" for="t-P0-F-01">
+<span class="task__id">P0-F-01</span>
+<span class="task__title">家計の年間収支を可視化、出産〜1年のキャッシュフロー試算</span>
+<span class="task__memo">育休中は手取りが下がる。§付録B参照</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊活開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P0-F-02">
+<input type="checkbox" class="tick" id="t-P0-F-02" data-key="P0-F-02" aria-label="P0-F-02 完了">
+<label class="task__main" for="t-P0-F-02">
+<span class="task__id">P0-F-02</span>
+<span class="task__title">生活防衛資金（生活費6ヶ月分）の確保</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊活開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P0-I-01">
+<input type="checkbox" class="tick" id="t-P0-I-01" data-key="P0-I-01" aria-label="P0-I-01 完了">
+<label class="task__main" for="t-P0-I-01">
+<span class="task__id">P0-I-01</span>
+<span class="task__title">働き方・キャリアの方針をすり合わせ</span>
+<span class="task__memo">誰がどれだけ育休を取るか、を先に決めておく</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊活開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+<div class="task" data-id="P0-D-01">
+<input type="checkbox" class="tick" id="t-P0-D-01" data-key="P0-D-01" aria-label="P0-D-01 完了">
+<label class="task__main" for="t-P0-D-01">
+<span class="task__id">P0-D-01</span>
+<span class="task__title">住環境の検討（間取り・引越しの要否）</span>
+<span class="task__memo"><strong>引っ越すなら妊娠中期まで</strong>。産後の引越しは地獄</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊活開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--pre" id="sec-3">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 1：妊娠1〜4ヶ月（0〜15週）</h2>
+<h3>妊娠1〜2ヶ月（0〜7週）— 妊娠判明</h3>
+<div class="tasks">
+<div class="task" data-id="P1-C-01">
+<input type="checkbox" class="tick" id="t-P1-C-01" data-key="P1-C-01" aria-label="P1-C-01 完了">
+<label class="task__main" for="t-P1-C-01">
+<span class="task__id">P1-C-01</span>
+<span class="task__title">市販の妊娠検査薬で確認</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生理予定日1週間後</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P1-C-02">
+<input type="checkbox" class="tick" id="t-P1-C-02" data-key="P1-C-02" aria-label="P1-C-02 完了">
+<label class="task__main" for="t-P1-C-02">
+<span class="task__id">P1-C-02</span>
+<span class="task__title">産婦人科を初診（胎嚢確認）</span>
+<span class="task__memo">早すぎると見えない。生理予定日1〜2週後が目安</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">5〜6週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P1-C-03">
+<input type="checkbox" class="tick" id="t-P1-C-03" data-key="P1-C-03" aria-label="P1-C-03 完了">
+<label class="task__main" for="t-P1-C-03">
+<span class="task__id">P1-C-03</span>
+<span class="task__title"><strong>心拍確認</strong>（＋出産予定日の確定）</span>
+<span class="task__memo">ここで母子手帳の交付案内が出る</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">6〜8週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P1-C-04">
+<input type="checkbox" class="tick" id="t-P1-C-04" data-key="P1-C-04" aria-label="P1-C-04 完了">
+<label class="task__main" for="t-P1-C-04">
+<span class="task__id">P1-C-04</span>
+<span class="task__title">服薬中の薬・サプリを医師に申告</span>
+<span class="task__memo">自己判断で中断しない</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">初診時</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P1-C-05">
+<input type="checkbox" class="tick" id="t-P1-C-05" data-key="P1-C-05" aria-label="P1-C-05 完了">
+<label class="task__main" for="t-P1-C-05">
+<span class="task__id">P1-C-05</span>
+<span class="task__title">感染症・血液検査（初期スクリーニング）</span>
+<span class="task__memo">血液型、貧血、B型/C型肝炎、梅毒、HIV、風疹、HTLV-1、クラミジア等</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">8〜12週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P1-A-01">
+<input type="checkbox" class="tick" id="t-P1-A-01" data-key="P1-A-01" aria-label="P1-A-01 完了">
+<label class="task__main" for="t-P1-A-01">
+<span class="task__id">P1-A-01</span>
+<span class="task__title"><strong>妊娠届の提出 → 母子健康手帳・妊婦健診受診票の交付</strong></span>
+<span class="task__memo">保健センター/市役所。父の代理可の自治体多い。<strong>受診票14回分＝10万円前後の補助</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">心拍確認後すみやか（〜11週）</span>
+<span class="chip chip--who">母 or 父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P1-A-02">
+<input type="checkbox" class="tick" id="t-P1-A-02" data-key="P1-A-02" aria-label="P1-A-02 完了">
+<label class="task__main" for="t-P1-A-02">
+<span class="task__id">P1-A-02</span>
+<span class="task__title"><strong>妊婦のための支援給付（第1回 5万円）の申請</strong></span>
+<span class="task__memo">面談が要件。出産後に第2回（子1人あたり5万円）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊娠届と同時</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P1-A-03">
+<input type="checkbox" class="tick" id="t-P1-A-03" data-key="P1-A-03" aria-label="P1-A-03 完了">
+<label class="task__main" for="t-P1-A-03">
+<span class="task__id">P1-A-03</span>
+<span class="task__title">自治体独自の妊婦支援（タクシー券、家事支援、ギフト等）の確認・申請</span>
+<span class="task__memo"><strong>自治体差が最大の項目</strong>。窓口でまとめて全部聞く</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊娠届と同時</span>
+<span class="chip chip--who">母 or 父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P1-A-04">
+<input type="checkbox" class="tick" id="t-P1-A-04" data-key="P1-A-04" aria-label="P1-A-04 完了">
+<label class="task__main" for="t-P1-A-04">
+<span class="task__id">P1-A-04</span>
+<span class="task__title">産後ケア事業の内容確認・（可能なら）事前申請</span>
+<span class="task__memo"><strong>産後に申請しても間に合わないことが多い。妊娠中の事前登録が鉄則</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">妊娠中に</span>
+<span class="chip chip--who">母 or 父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P1-D-01">
+<input type="checkbox" class="tick" id="t-P1-D-01" data-key="P1-D-01" aria-label="P1-D-01 完了">
+<label class="task__main" for="t-P1-D-01">
+<span class="task__id">P1-D-01</span>
+<span class="task__title">産院の比較・決定（総合病院/クリニック/助産院、無痛の有無）</span>
+<span class="task__memo">NICU併設の有無、立会い可否、面会ルール、費用、距離</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">8〜10週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P1-D-02">
+<input type="checkbox" class="tick" id="t-P1-D-02" data-key="P1-D-02" aria-label="P1-D-02 完了">
+<label class="task__main" for="t-P1-D-02">
+<span class="task__id">P1-D-02</span>
+<span class="task__title"><strong>分娩予約</strong></span>
+<span class="task__memo"><strong>人気院は心拍確認直後に埋まる</strong>。予約金が必要な場合あり</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">8〜12週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P1-C-06">
+<input type="checkbox" class="tick" id="t-P1-C-06" data-key="P1-C-06" aria-label="P1-C-06 完了">
+<label class="task__main" for="t-P1-C-06">
+<span class="task__id">P1-C-06</span>
+<span class="task__title">無痛分娩の希望を決める（する場合は対応院か確認）</span>
+<span class="task__memo">追加10〜20万円。24時間対応か計画無痛か</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">分娩予約前</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P1-B-01">
+<input type="checkbox" class="tick" id="t-P1-B-01" data-key="P1-B-01" aria-label="P1-B-01 完了">
+<label class="task__main" for="t-P1-B-01">
+<span class="task__id">P1-B-01</span>
+<span class="task__title">直属上司へ妊娠報告（つわり・通院配慮）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">安定期前でも体調次第</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P1-B-02">
+<input type="checkbox" class="tick" id="t-P1-B-02" data-key="P1-B-02" aria-label="P1-B-02 完了">
+<label class="task__main" for="t-P1-B-02">
+<span class="task__id">P1-B-02</span>
+<span class="task__title">会社の産休・育休制度、独自手当を人事に確認</span>
+<span class="task__memo">父側の会社も同時に確認</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">報告後</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P1-E-01">
+<input type="checkbox" class="tick" id="t-P1-E-01" data-key="P1-E-01" aria-label="P1-E-01 完了">
+<label class="task__main" for="t-P1-E-01">
+<span class="task__id">P1-E-01</span>
+<span class="task__title">つわり対策（食べられるものの確保、分割食、経口補水）</span>
+<span class="task__memo">水も飲めない/体重5%減は<strong>妊娠悪阻</strong>。受診</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">5〜16週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P1-E-02">
+<input type="checkbox" class="tick" id="t-P1-E-02" data-key="P1-E-02" aria-label="P1-E-02 完了">
+<label class="task__main" for="t-P1-E-02">
+<span class="task__id">P1-E-02</span>
+<span class="task__title">家事の負荷を落とす（宅配・ミールキット・時短家電の導入）</span>
+<span class="task__memo">この時期に「父が家事を巻き取る」型を作れるかが1年を決める</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">すぐ</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P1-I-01">
+<input type="checkbox" class="tick" id="t-P1-I-01" data-key="P1-I-01" aria-label="P1-I-01 完了">
+<label class="task__main" for="t-P1-I-01">
+<span class="task__id">P1-I-01</span>
+<span class="task__title">出生前検査（NIPT/クアトロ/羊水検査）を受けるか話し合う</span>
+<span class="task__memo"><strong>結果が出たらどうするかまで話す</strong>。時期が来てからでは遅い</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜10週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+<div class="task" data-id="P1-F-01">
+<input type="checkbox" class="tick" id="t-P1-F-01" data-key="P1-F-01" aria-label="P1-F-01 完了">
+<label class="task__main" for="t-P1-F-01">
+<span class="task__id">P1-F-01</span>
+<span class="task__title">妊婦健診・出産にかかる自己負担の見積り</span>
+<span class="task__memo">§付録B</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜12週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+</div>
+<h3>妊娠3ヶ月（8〜11週）</h3>
+<div class="tasks">
+<div class="task" data-id="P1-C-07">
+<input type="checkbox" class="tick" id="t-P1-C-07" data-key="P1-C-07" aria-label="P1-C-07 完了">
+<label class="task__main" for="t-P1-C-07">
+<span class="task__id">P1-C-07</span>
+<span class="task__title">妊婦健診（4週に1回のペース開始）</span>
+<span class="task__memo">受診票を毎回持参</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜23週まで4週毎</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P1-C-08">
+<input type="checkbox" class="tick" id="t-P1-C-08" data-key="P1-C-08" aria-label="P1-C-08 完了">
+<label class="task__main" for="t-P1-C-08">
+<span class="task__id">P1-C-08</span>
+<span class="task__title"><strong>NIPT（新型出生前診断）</strong> ※受ける場合</span>
+<span class="task__memo">認証施設で。カウンセリング込みで15〜20万円前後、自費</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">10週以降</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P1-C-09">
+<input type="checkbox" class="tick" id="t-P1-C-09" data-key="P1-C-09" aria-label="P1-C-09 完了">
+<label class="task__main" for="t-P1-C-09">
+<span class="task__id">P1-C-09</span>
+<span class="task__title">絨毛検査 ※受ける場合</span>
+<span class="task__memo">確定検査。流産リスク約1%</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">11〜14週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P1-E-03">
+<input type="checkbox" class="tick" id="t-P1-E-03" data-key="P1-E-03" aria-label="P1-E-03 完了">
+<label class="task__main" for="t-P1-E-03">
+<span class="task__id">P1-E-03</span>
+<span class="task__title">妊娠中のNG食材・行動の共有（生肉、生ハム、ナチュラルチーズ、大型魚、レバー過剰、サウナ等）</span>
+<span class="task__memo">パートナーも把握しておく（外食の店選びに効く）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">すぐ</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P1-D-03">
+<input type="checkbox" class="tick" id="t-P1-D-03" data-key="P1-D-03" aria-label="P1-D-03 完了">
+<label class="task__main" for="t-P1-D-03">
+<span class="task__id">P1-D-03</span>
+<span class="task__title">マタニティウェア・ブラ・タイツの最小限購入</span>
+<span class="task__memo">買いすぎ注意。3ヶ月しか着ない物もある</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">体型変化時</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P1-G-01">
+<input type="checkbox" class="tick" id="t-P1-G-01" data-key="P1-G-01" aria-label="P1-G-01 完了">
+<label class="task__main" for="t-P1-G-01">
+<span class="task__id">P1-G-01</span>
+<span class="task__title">妊娠記録の開始（アプリ／エコー写真の保存）</span>
+<span class="task__memo"><strong>エコー写真は感熱紙で数年で消える。スキャン推奨</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">すぐ</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+</div>
+<h3>妊娠4ヶ月（12〜15週）</h3>
+<div class="tasks">
+<div class="task" data-id="P1-C-10">
+<input type="checkbox" class="tick" id="t-P1-C-10" data-key="P1-C-10" aria-label="P1-C-10 完了">
+<label class="task__main" for="t-P1-C-10">
+<span class="task__id">P1-C-10</span>
+<span class="task__title">妊婦健診</span>
+<span class="task__memo">胎盤完成、つわり軽快の時期</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">4週毎</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P1-C-11">
+<input type="checkbox" class="tick" id="t-P1-C-11" data-key="P1-C-11" aria-label="P1-C-11 完了">
+<label class="task__main" for="t-P1-C-11">
+<span class="task__id">P1-C-11</span>
+<span class="task__title">クアトロテスト ※受ける場合</span>
+<span class="task__memo">非確定検査（確率）。判断の負荷が高い</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">15〜18週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P1-B-03">
+<input type="checkbox" class="tick" id="t-P1-B-03" data-key="P1-B-03" aria-label="P1-B-03 完了">
+<label class="task__main" for="t-P1-B-03">
+<span class="task__id">P1-B-03</span>
+<span class="task__title">職場へ正式報告・業務の引き継ぎ計画着手</span>
+<span class="task__memo">産休開始（34週）から逆算</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">12〜16週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P1-B-04">
+<input type="checkbox" class="tick" id="t-P1-B-04" data-key="P1-B-04" aria-label="P1-B-04 完了">
+<label class="task__main" for="t-P1-B-04">
+<span class="task__id">P1-B-04</span>
+<span class="task__title">母性健康管理指導事項連絡カードの存在を把握</span>
+<span class="task__memo">つわり・切迫等で勤務軽減を会社に義務づけられる。母子手帳に様式あり</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">―</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P1-B-05">
+<input type="checkbox" class="tick" id="t-P1-B-05" data-key="P1-B-05" aria-label="P1-B-05 完了">
+<label class="task__main" for="t-P1-B-05">
+<span class="task__id">P1-B-05</span>
+<span class="task__title">民間の医療保険を確認（<strong>加入するなら妊娠判明前が原則</strong>／帝王切開の給付）</span>
+<span class="task__memo">既加入分の給付条件を確認。妊娠後の新規加入は部位不担保になりがち</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">すぐ</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P1-D-04">
+<input type="checkbox" class="tick" id="t-P1-D-04" data-key="P1-D-04" aria-label="P1-D-04 完了">
+<label class="task__main" for="t-P1-D-04">
+<span class="task__id">P1-D-04</span>
+<span class="task__title">里帰り出産をするか決定</span>
+<span class="task__memo"><strong>里帰り先の分娩予約は20週頃までに必要な院が多い</strong>。里帰り先の健診は自費→後日償還払い</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜20週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P1-I-02">
+<input type="checkbox" class="tick" id="t-P1-I-02" data-key="P1-I-02" aria-label="P1-I-02 完了">
+<label class="task__main" for="t-P1-I-02">
+<span class="task__id">P1-I-02</span>
+<span class="task__title">上の子・ペットの対応方針（該当時）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">―</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--pre" id="sec-4">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 2：妊娠5〜7ヶ月（16〜27週）＝ 安定期</h2>
+<blockquote><strong>この3ヶ月に仕込みを終わらせる。</strong> 8ヶ月以降は体が重くなり、動けなくなる。</blockquote>
+<h3>妊娠5ヶ月（16〜19週）</h3>
+<div class="tasks">
+<div class="task" data-id="P2-C-01">
+<input type="checkbox" class="tick" id="t-P2-C-01" data-key="P2-C-01" aria-label="P2-C-01 完了">
+<label class="task__main" for="t-P2-C-01">
+<span class="task__id">P2-C-01</span>
+<span class="task__title">妊婦健診</span>
+<span class="task__memo">胎動を感じ始める頃</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">4週毎</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P2-G-01">
+<input type="checkbox" class="tick" id="t-P2-G-01" data-key="P2-G-01" aria-label="P2-G-01 完了">
+<label class="task__main" for="t-P2-G-01">
+<span class="task__id">P2-G-01</span>
+<span class="task__title">戌の日の安産祈願（腹帯）</span>
+<span class="task__memo">必須ではない。行くなら混雑日を避ける</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">16週以降の戌の日</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P2-A-05">
+<input type="checkbox" class="tick" id="t-P2-A-05" data-key="P2-A-05" aria-label="P2-A-05 完了">
+<label class="task__main" for="t-P2-A-05">
+<span class="task__id">P2-A-05</span>
+<span class="task__title">母親学級・両親学級の申込</span>
+<span class="task__memo"><strong>沐浴実習は父が出ると効果大</strong>。自治体は土日開催枠が少なく争奪戦</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">早めに（枠が埋まる）</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P2-D-05">
+<input type="checkbox" class="tick" id="t-P2-D-05" data-key="P2-D-05" aria-label="P2-D-05 完了">
+<label class="task__main" for="t-P2-D-05">
+<span class="task__id">P2-D-05</span>
+<span class="task__title">ベビー用品リストの作成（買う/借りる/もらうの仕分け）</span>
+<span class="task__memo">§付録A。<strong>ベビーベッド・バウンサーはレンタル検討</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">16〜20週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P2-D-06">
+<input type="checkbox" class="tick" id="t-P2-D-06" data-key="P2-D-06" aria-label="P2-D-06 完了">
+<label class="task__main" for="t-P2-D-06">
+<span class="task__id">P2-D-06</span>
+<span class="task__title">出産準備品の情報収集（店舗で実物確認）</span>
+<span class="task__memo">抱っこ紐は必ず試着。体格に合う/合わないが激しい</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">16〜24週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P2-F-02">
+<input type="checkbox" class="tick" id="t-P2-F-02" data-key="P2-F-02" aria-label="P2-F-02 完了">
+<label class="task__main" for="t-P2-F-02">
+<span class="task__id">P2-F-02</span>
+<span class="task__title">生命保険の見直し（死亡保障を子の分だけ増やす／収入保障保険）</span>
+<span class="task__memo">掛け捨ての収入保障が合理的なことが多い</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">安定期中</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P2-I-03">
+<input type="checkbox" class="tick" id="t-P2-I-03" data-key="P2-I-03" aria-label="P2-I-03 完了">
+<label class="task__main" for="t-P2-I-03">
+<span class="task__id">P2-I-03</span>
+<span class="task__title">名前の候補出しを開始</span>
+<span class="task__memo"><strong>出生届は14日以内</strong>。産後に揉めると詰む</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">―</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+</div>
+<h3>妊娠6ヶ月（20〜23週）</h3>
+<div class="tasks">
+<div class="task" data-id="P2-C-02">
+<input type="checkbox" class="tick" id="t-P2-C-02" data-key="P2-C-02" aria-label="P2-C-02 完了">
+<label class="task__main" for="t-P2-C-02">
+<span class="task__id">P2-C-02</span>
+<span class="task__title">妊婦健診</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">4週毎（23週まで）</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P2-C-03">
+<input type="checkbox" class="tick" id="t-P2-C-03" data-key="P2-C-03" aria-label="P2-C-03 完了">
+<label class="task__main" for="t-P2-C-03">
+<span class="task__id">P2-C-03</span>
+<span class="task__title">妊娠中のインフルエンザ予防接種（シーズン時）</span>
+<span class="task__memo">妊娠中いつでも可。母子ともに保護</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">10〜12月</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P2-C-04">
+<input type="checkbox" class="tick" id="t-P2-C-04" data-key="P2-C-04" aria-label="P2-C-04 完了">
+<label class="task__main" for="t-P2-C-04">
+<span class="task__id">P2-C-04</span>
+<span class="task__title">体重管理・妊娠高血圧の予防（塩分、体重増加ペース）</span>
+<span class="task__memo">増加の目安は BMI により7〜13kg 程度。医師の指示に従う</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">継続</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P2-H-01">
+<input type="checkbox" class="tick" id="t-P2-H-01" data-key="P2-H-01" aria-label="P2-H-01 完了">
+<label class="task__main" for="t-P2-H-01">
+<span class="task__id">P2-H-01</span>
+<span class="task__title"><strong>保活の情報収集開始</strong>（自治体の入園案内、点数表、昨年の内定最低点）</span>
+<span class="task__memo"><strong>ここが最重要</strong>。0歳4月入園なら申込は生後半年頃の10〜12月</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">20週〜</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P2-H-02">
+<input type="checkbox" class="tick" id="t-P2-H-02" data-key="P2-H-02" aria-label="P2-H-02 完了">
+<label class="task__main" for="t-P2-H-02">
+<span class="task__id">P2-H-02</span>
+<span class="task__title">認可/認可外/小規模/企業主導型の違いと、通える範囲の園をリスト化</span>
+<span class="task__memo">認可外は個別に直接申込＆先着や独自基準。併願前提</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">20〜28週</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P2-D-07">
+<input type="checkbox" class="tick" id="t-P2-D-07" data-key="P2-D-07" aria-label="P2-D-07 完了">
+<label class="task__main" for="t-P2-D-07">
+<span class="task__id">P2-D-07</span>
+<span class="task__title">ベビーカー・チャイルドシートの選定（試乗）</span>
+<span class="task__memo">車があるなら<strong>退院日に必須</strong>。玄関/エレベーター幅を実測してから</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">20〜28週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P2-D-08">
+<input type="checkbox" class="tick" id="t-P2-D-08" data-key="P2-D-08" aria-label="P2-D-08 完了">
+<label class="task__main" for="t-P2-D-08">
+<span class="task__id">P2-D-08</span>
+<span class="task__title">大型家電の導入判断（ドラム式洗濯乾燥機・食洗機・ロボット掃除機）</span>
+<span class="task__memo"><strong>産後最大の時短投資</strong>。設置工事は納期がかかる</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">安定期中</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P2-E-04">
+<input type="checkbox" class="tick" id="t-P2-E-04" data-key="P2-E-04" aria-label="P2-E-04 完了">
+<label class="task__main" for="t-P2-E-04">
+<span class="task__id">P2-E-04</span>
+<span class="task__title">歯科健診（妊婦歯科健診の無料券がある自治体多数）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">安定期中</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+</div>
+<h3>妊娠7ヶ月（24〜27週）</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P2-C-05">
+<input type="checkbox" class="tick" id="t-P2-C-05" data-key="P2-C-05" aria-label="P2-C-05 完了">
+<label class="task__main" for="t-P2-C-05">
+<span class="task__id">P2-C-05</span>
+<span class="task__title">妊婦健診（<strong>2週に1回</strong>に移行）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">24〜35週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P2-C-06">
+<input type="checkbox" class="tick" id="t-P2-C-06" data-key="P2-C-06" aria-label="P2-C-06 完了">
+<label class="task__main" for="t-P2-C-06">
+<span class="task__id">P2-C-06</span>
+<span class="task__title">妊娠糖尿病スクリーニング（50gGCT→75gOGTT）</span>
+<span class="task__memo">陽性なら食事指導・血糖自己測定へ</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">24〜28週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P2-C-07">
+<input type="checkbox" class="tick" id="t-P2-C-07" data-key="P2-C-07" aria-label="P2-C-07 完了">
+<label class="task__main" for="t-P2-C-07">
+<span class="task__id">P2-C-07</span>
+<span class="task__title">貧血再検査（鉄剤処方の可能性）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">24〜28週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P2-B-06">
+<input type="checkbox" class="tick" id="t-P2-B-06" data-key="P2-B-06" aria-label="P2-B-06 完了">
+<label class="task__main" for="t-P2-B-06">
+<span class="task__id">P2-B-06</span>
+<span class="task__title">産休・育休の申出書を会社に提出（母）</span>
+<span class="task__memo">育休は原則1ヶ月前まで</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜産休1ヶ月前</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P2-B-07">
+<input type="checkbox" class="tick" id="t-P2-B-07" data-key="P2-B-07" aria-label="P2-B-07 完了">
+<label class="task__main" for="t-P2-B-07">
+<span class="task__id">P2-B-07</span>
+<span class="task__title"><strong>父の育休プランを確定し会社に申出</strong></span>
+<span class="task__memo">産後パパ育休（8週以内に4週、2回分割可・申出は原則2週間前）＋育休本体の組み合わせを設計。§付録C</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜28週</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P2-D-09">
+<input type="checkbox" class="tick" id="t-P2-D-09" data-key="P2-D-09" aria-label="P2-D-09 完了">
+<label class="task__main" for="t-P2-D-09">
+<span class="task__id">P2-D-09</span>
+<span class="task__title">ベビー用品の本購入開始（肌着・おむつ・寝具）</span>
+<span class="task__memo">おむつは<strong>新生児サイズを1〜2袋だけ</strong>。すぐSサイズになる</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">24〜30週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P2-D-10">
+<input type="checkbox" class="tick" id="t-P2-D-10" data-key="P2-D-10" aria-label="P2-D-10 完了">
+<label class="task__main" for="t-P2-D-10">
+<span class="task__id">P2-D-10</span>
+<span class="task__title">赤ちゃんの寝床の設置場所を決め、部屋を片付ける</span>
+<span class="task__memo">大人ベッドと添い寝は窒息リスク。別寝床が安全</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">24〜32週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P2-G-02">
+<input type="checkbox" class="tick" id="t-P2-G-02" data-key="P2-G-02" aria-label="P2-G-02 完了">
+<label class="task__main" for="t-P2-G-02">
+<span class="task__id">P2-G-02</span>
+<span class="task__title">マタニティフォト ※希望する場合</span>
+<span class="task__memo">お腹が大きく体調も安定している時期</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">26〜32週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P2-H-03">
+<input type="checkbox" class="tick" id="t-P2-H-03" data-key="P2-H-03" aria-label="P2-H-03 完了">
+<label class="task__main" for="t-P2-H-03">
+<span class="task__id">P2-H-03</span>
+<span class="task__title"><strong>保育園見学の予約・実施</strong>（3〜5園）</span>
+<span class="task__memo"><strong>産後は行けない。妊娠中に行くのが正解</strong>。0歳枠の有無を必ず確認</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">24週〜産前</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--pre" id="sec-5">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 3：妊娠8〜10ヶ月（28〜39週）</h2>
+<h3>妊娠8ヶ月（28〜31週）</h3>
+<div class="tasks">
+<div class="task" data-id="P3-C-01">
+<input type="checkbox" class="tick" id="t-P3-C-01" data-key="P3-C-01" aria-label="P3-C-01 完了">
+<label class="task__main" for="t-P3-C-01">
+<span class="task__id">P3-C-01</span>
+<span class="task__title">妊婦健診（2週に1回）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">継続</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P3-C-02">
+<input type="checkbox" class="tick" id="t-P3-C-02" data-key="P3-C-02" aria-label="P3-C-02 完了">
+<label class="task__main" for="t-P3-C-02">
+<span class="task__id">P3-C-02</span>
+<span class="task__title"><strong>RSウイルス母子免疫ワクチン（アブリスボ）接種</strong></span>
+<span class="task__memo"><strong>2026年4月から定期接種＝原則無料</strong>。乳児のRSV重症化を防ぐ。産科・内科で可</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due"><strong>28週0日〜36週6日</strong></span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P3-C-03">
+<input type="checkbox" class="tick" id="t-P3-C-03" data-key="P3-C-03" aria-label="P3-C-03 完了">
+<label class="task__main" for="t-P3-C-03">
+<span class="task__id">P3-C-03</span>
+<span class="task__title">逆子・前置胎盤の確認（帝王切開の可能性を把握）</span>
+<span class="task__memo">帝王切開なら手術日程・限度額適用・保険給付の準備</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">28〜32週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P3-D-11">
+<input type="checkbox" class="tick" id="t-P3-D-11" data-key="P3-D-11" aria-label="P3-D-11 完了">
+<label class="task__main" for="t-P3-D-11">
+<span class="task__id">P3-D-11</span>
+<span class="task__title"><strong>入院バッグの準備開始</strong></span>
+<span class="task__memo">§付録A-3。早産に備え早めに</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">28〜33週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P3-D-12">
+<input type="checkbox" class="tick" id="t-P3-D-12" data-key="P3-D-12" aria-label="P3-D-12 完了">
+<label class="task__main" for="t-P3-D-12">
+<span class="task__id">P3-D-12</span>
+<span class="task__title">チャイルドシートの購入・<strong>車への取付練習</strong></span>
+<span class="task__memo">退院日にぶっつけ本番は事故のもと</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜34週</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P3-B-08">
+<input type="checkbox" class="tick" id="t-P3-B-08" data-key="P3-B-08" aria-label="P3-B-08 完了">
+<label class="task__main" for="t-P3-B-08">
+<span class="task__id">P3-B-08</span>
+<span class="task__title">里帰りする場合：交通手段の確保、里帰り先産院の初診</span>
+<span class="task__memo">32週までに転院を求める院が多い</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">30〜32週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P3-I-04">
+<input type="checkbox" class="tick" id="t-P3-I-04" data-key="P3-I-04" aria-label="P3-I-04 完了">
+<label class="task__main" for="t-P3-I-04">
+<span class="task__id">P3-I-04</span>
+<span class="task__title">陣痛時の連絡フロー・搬送手段を紙に書いて冷蔵庫に貼る</span>
+<span class="task__memo">陣痛タクシーの事前登録。父の勤務中/深夜/不在パターンを想定</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">30週〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+<div class="task" data-id="P3-I-05">
+<input type="checkbox" class="tick" id="t-P3-I-05" data-key="P3-I-05" aria-label="P3-I-05 完了">
+<label class="task__main" for="t-P3-I-05">
+<span class="task__id">P3-I-05</span>
+<span class="task__title">実家・義実家の来訪ルールをすり合わせ（時期、宿泊、頻度）</span>
+<span class="task__memo"><strong>産後の最大の火種</strong>。先に決めて双方の親に伝えるのは各自の実親から</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">30週〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+</div>
+<h3>妊娠9ヶ月（32〜35週）</h3>
+<div class="tasks">
+<div class="task" data-id="P3-C-04">
+<input type="checkbox" class="tick" id="t-P3-C-04" data-key="P3-C-04" aria-label="P3-C-04 完了">
+<label class="task__main" for="t-P3-C-04">
+<span class="task__id">P3-C-04</span>
+<span class="task__title">妊婦健診（2週に1回 → 36週から毎週）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">継続</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P3-C-05">
+<input type="checkbox" class="tick" id="t-P3-C-05" data-key="P3-C-05" aria-label="P3-C-05 完了">
+<label class="task__main" for="t-P3-C-05">
+<span class="task__id">P3-C-05</span>
+<span class="task__title">GBS（B群溶血性連鎖球菌）検査</span>
+<span class="task__memo">陽性なら分娩時に抗菌薬点滴</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">33〜37週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P3-C-06">
+<input type="checkbox" class="tick" id="t-P3-C-06" data-key="P3-C-06" aria-label="P3-C-06 完了">
+<label class="task__main" for="t-P3-C-06">
+<span class="task__id">P3-C-06</span>
+<span class="task__title">バースプラン提出（立会い、カンガルーケア、母乳方針）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">32〜35週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P3-B-09">
+<input type="checkbox" class="tick" id="t-P3-B-09" data-key="P3-B-09" aria-label="P3-B-09 完了">
+<label class="task__main" for="t-P3-B-09">
+<span class="task__id">P3-B-09</span>
+<span class="task__title"><strong>産前休業の開始</strong>（出産予定日の6週前＝34週0日〜／多胎は14週前）</span>
+<span class="task__memo">任意。働き続けても可</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">34週0日</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P3-B-10">
+<input type="checkbox" class="tick" id="t-P3-B-10" data-key="P3-B-10" aria-label="P3-B-10 完了">
+<label class="task__main" for="t-P3-B-10">
+<span class="task__id">P3-B-10</span>
+<span class="task__title">業務引き継ぎの完了、社内連絡先の共有</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜34週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P3-B-11">
+<input type="checkbox" class="tick" id="t-P3-B-11" data-key="P3-B-11" aria-label="P3-B-11 完了">
+<label class="task__main" for="t-P3-B-11">
+<span class="task__id">P3-B-11</span>
+<span class="task__title">出産育児一時金「直接支払制度」の合意文書に署名</span>
+<span class="task__memo"><strong>50万円が病院に直接支払われる</strong>（2026年度時点）。差額のみ精算</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">入院手続き時</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P3-B-12">
+<input type="checkbox" class="tick" id="t-P3-B-12" data-key="P3-B-12" aria-label="P3-B-12 完了">
+<label class="task__main" for="t-P3-B-12">
+<span class="task__id">P3-B-12</span>
+<span class="task__title">帝王切開の可能性がある場合：限度額適用認定証の準備</span>
+<span class="task__memo"><strong>マイナ保険証があればオンライン資格確認で不要</strong>。窓口負担が上限まで</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜35週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P3-D-13">
+<input type="checkbox" class="tick" id="t-P3-D-13" data-key="P3-D-13" aria-label="P3-D-13 完了">
+<label class="task__main" for="t-P3-D-13">
+<span class="task__id">P3-D-13</span>
+<span class="task__title">新生児の生活導線を整える（おむつ替えステーション、授乳スペース、夜間照明）</span>
+<span class="task__memo">夜中に片手で全部届く配置にする</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜36週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P3-D-14">
+<input type="checkbox" class="tick" id="t-P3-D-14" data-key="P3-D-14" aria-label="P3-D-14 完了">
+<label class="task__main" for="t-P3-D-14">
+<span class="task__id">P3-D-14</span>
+<span class="task__title">産後1ヶ月の食料備蓄（レトルト、冷凍、飲料の箱買い）</span>
+<span class="task__memo">買い物に行けない前提で組む</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">34〜38週</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P3-E-05">
+<input type="checkbox" class="tick" id="t-P3-E-05" data-key="P3-E-05" aria-label="P3-E-05 完了">
+<label class="task__main" for="t-P3-E-05">
+<span class="task__id">P3-E-05</span>
+<span class="task__title">沐浴・おむつ替え・抱っこの練習（両親学級 or 動画）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜38週</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P3-I-06">
+<input type="checkbox" class="tick" id="t-P3-I-06" data-key="P3-I-06" aria-label="P3-I-06 完了">
+<label class="task__main" for="t-P3-I-06">
+<span class="task__id">P3-I-06</span>
+<span class="task__title">出生届の記入内容を下書き（<strong>名前を確定させる</strong>）</span>
+<span class="task__memo">使える漢字か法務省の人名用漢字を確認</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜38週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+</div>
+<h3>妊娠10ヶ月（36〜39週）＝ 臨月</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P3-C-07">
+<input type="checkbox" class="tick" id="t-P3-C-07" data-key="P3-C-07" aria-label="P3-C-07 完了">
+<label class="task__main" for="t-P3-C-07">
+<span class="task__id">P3-C-07</span>
+<span class="task__title">妊婦健診（<strong>毎週</strong>）／NST（ノンストレステスト）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">36週〜</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P3-D-15">
+<input type="checkbox" class="tick" id="t-P3-D-15" data-key="P3-D-15" aria-label="P3-D-15 完了">
+<label class="task__main" for="t-P3-D-15">
+<span class="task__id">P3-D-15</span>
+<span class="task__title">入院バッグを玄関に配置。母子手帳・保険証・診察券を常時携帯</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">36週</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P3-A-06">
+<input type="checkbox" class="tick" id="t-P3-A-06" data-key="P3-A-06" aria-label="P3-A-06 完了">
+<label class="task__main" for="t-P3-A-06">
+<span class="task__id">P3-A-06</span>
+<span class="task__title">出生届の用紙を入手（産院でもらえることが多い）</span>
+<span class="task__memo">出生証明書と一体の用紙。医師が記入</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">36週〜</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P3-A-07">
+<input type="checkbox" class="tick" id="t-P3-A-07" data-key="P3-A-07" aria-label="P3-A-07 完了">
+<label class="task__main" for="t-P3-A-07">
+<span class="task__id">P3-A-07</span>
+<span class="task__title"><strong>提出書類パックを事前に作っておく</strong>（出生届／児童手当請求書／乳幼児医療／出生連絡票）</span>
+<span class="task__memo"><strong>記入できる欄は全部埋めておく</strong>。産後の父は消耗している</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">36週〜</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P3-F-03">
+<input type="checkbox" class="tick" id="t-P3-F-03" data-key="P3-F-03" aria-label="P3-F-03 完了">
+<label class="task__main" for="t-P3-F-03">
+<span class="task__id">P3-F-03</span>
+<span class="task__title">産後1年の資金繰り表を最終確認（給付金の入金は遅い）</span>
+<span class="task__memo">出産手当金・育休給付は<strong>入金まで2〜4ヶ月かかる</strong>。その間の現金を用意</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">36週〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P3-G-03">
+<input type="checkbox" class="tick" id="t-P3-G-03" data-key="P3-G-03" aria-label="P3-G-03 完了">
+<label class="task__main" for="t-P3-G-03">
+<span class="task__id">P3-G-03</span>
+<span class="task__title">出産報告リスト（誰に、いつ、どの手段で）を作成</span>
+<span class="task__memo">内祝いの管理表も同時に作る</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">36週〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P3-E-06">
+<input type="checkbox" class="tick" id="t-P3-E-06" data-key="P3-E-06" aria-label="P3-E-06 完了">
+<label class="task__main" for="t-P3-E-06">
+<span class="task__id">P3-E-06</span>
+<span class="task__title">陣痛の間隔計測アプリ・タクシー会社の登録確認</span>
+<span class="task__memo">初産は10分間隔で連絡が目安（産院の指示に従う）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">36週〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P3-H-04">
+<input type="checkbox" class="tick" id="t-P3-H-04" data-key="P3-H-04" aria-label="P3-H-04 完了">
+<label class="task__main" for="t-P3-H-04">
+<span class="task__id">P3-H-04</span>
+<span class="task__title">産後の「保留通知」戦略を確認（育休延長を狙う場合）</span>
+<span class="task__memo"><strong>2025年4月から延長要件が厳格化</strong>。「速やかな復職意思」を示す書類等が必要。自治体・ハローワークに要確認</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">36週〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--birth" id="sec-6">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 4：出産 〜 退院（産後0〜7日）</h2>
+<div class="tasks">
+<div class="task" data-id="P4-C-01">
+<input type="checkbox" class="tick" id="t-P4-C-01" data-key="P4-C-01" aria-label="P4-C-01 完了">
+<label class="task__main" for="t-P4-C-01">
+<span class="task__id">P4-C-01</span>
+<span class="task__title">入院・分娩</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 0</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P4-C-02">
+<input type="checkbox" class="tick" id="t-P4-C-02" data-key="P4-C-02" aria-label="P4-C-02 完了">
+<label class="task__main" for="t-P4-C-02">
+<span class="task__id">P4-C-02</span>
+<span class="task__title">新生児の初期処置（K2シロップ、点眼、計測）</span>
+<span class="task__memo">K2シロップは<strong>生後3ヶ月まで週1回</strong>の「3ヶ月法」が現在の主流。退院後も継続</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 0</span>
+<span class="chip chip--who">病院</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P4-C-03">
+<input type="checkbox" class="tick" id="t-P4-C-03" data-key="P4-C-03" aria-label="P4-C-03 完了">
+<label class="task__main" for="t-P4-C-03">
+<span class="task__id">P4-C-03</span>
+<span class="task__title">新生児聴覚スクリーニング検査</span>
+<span class="task__memo">公費助成のある自治体多い。<strong>要refer（要再検）でも過度に慌てない</strong>が必ず再検査へ</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 0〜4</span>
+<span class="chip chip--who">病院</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P4-C-04">
+<input type="checkbox" class="tick" id="t-P4-C-04" data-key="P4-C-04" aria-label="P4-C-04 完了">
+<label class="task__main" for="t-P4-C-04">
+<span class="task__id">P4-C-04</span>
+<span class="task__title">先天性代謝異常等検査（新生児マススクリーニング）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 4〜6</span>
+<span class="chip chip--who">病院</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P4-A-08">
+<input type="checkbox" class="tick" id="t-P4-A-08" data-key="P4-A-08" aria-label="P4-A-08 完了">
+<label class="task__main" for="t-P4-A-08">
+<span class="task__id">P4-A-08</span>
+<span class="task__title"><strong>出生証明書を受け取る</strong>（出生届と一体）</span>
+<span class="task__memo">紛失厳禁。コピーを取っておく</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">退院時</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P4-B-13">
+<input type="checkbox" class="tick" id="t-P4-B-13" data-key="P4-B-13" aria-label="P4-B-13 完了">
+<label class="task__main" for="t-P4-B-13">
+<span class="task__id">P4-B-13</span>
+<span class="task__title">会社への出生報告（母・父の両方）</span>
+<span class="task__memo">育休給付・扶養手続きが動き出す</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 0〜2</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P4-B-14">
+<input type="checkbox" class="tick" id="t-P4-B-14" data-key="P4-B-14" aria-label="P4-B-14 完了">
+<label class="task__main" for="t-P4-B-14">
+<span class="task__id">P4-B-14</span>
+<span class="task__title"><strong>産後パパ育休（出生時育児休業）の開始</strong></span>
+<span class="task__memo">出生後8週以内に最大4週、2回に分割可</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 0〜</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P4-E-07">
+<input type="checkbox" class="tick" id="t-P4-E-07" data-key="P4-E-07" aria-label="P4-E-07 完了">
+<label class="task__main" for="t-P4-E-07">
+<span class="task__id">P4-E-07</span>
+<span class="task__title">授乳（母乳/混合/ミルク）の方針決めと手技の習得</span>
+<span class="task__memo">入院中に助産師から徹底的に教わる。<strong>ミルクは負けではない</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">入院中</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P4-E-08">
+<input type="checkbox" class="tick" id="t-P4-E-08" data-key="P4-E-08" aria-label="P4-E-08 完了">
+<label class="task__main" for="t-P4-E-08">
+<span class="task__id">P4-E-08</span>
+<span class="task__title">沐浴指導・おむつ替え・げっぷの実習を受ける</span>
+<span class="task__memo">父も参加できる院なら必ず参加</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">入院中</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P4-D-16">
+<input type="checkbox" class="tick" id="t-P4-D-16" data-key="P4-D-16" aria-label="P4-D-16 完了">
+<label class="task__main" for="t-P4-D-16">
+<span class="task__id">P4-D-16</span>
+<span class="task__title">退院日の準備（退院着、おくるみ、<strong>チャイルドシート</strong>、車 or タクシー）</span>
+<span class="task__memo">チャイルドシートなしでは車に乗せられない（6歳未満は法定義務）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 4〜5</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P4-F-04">
+<input type="checkbox" class="tick" id="t-P4-F-04" data-key="P4-F-04" aria-label="P4-F-04 完了">
+<label class="task__main" for="t-P4-F-04">
+<span class="task__id">P4-F-04</span>
+<span class="task__title">出産費用の精算（一時金50万円との差額）</span>
+<span class="task__memo">差額はクレカ払い可の院が多い。<strong>領収書は医療費控除で使うので全部保管</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">退院時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P4-G-04">
+<input type="checkbox" class="tick" id="t-P4-G-04" data-key="P4-G-04" aria-label="P4-G-04 完了">
+<label class="task__main" for="t-P4-G-04">
+<span class="task__id">P4-G-04</span>
+<span class="task__title">ニューボーンフォト／手形・足形 ※希望する場合</span>
+<span class="task__memo">生後2週間までが「まるまる期」</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 0〜14</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P4-G-05">
+<input type="checkbox" class="tick" id="t-P4-G-05" data-key="P4-G-05" aria-label="P4-G-05 完了">
+<label class="task__main" for="t-P4-G-05">
+<span class="task__id">P4-G-05</span>
+<span class="task__title">出産報告（P3-G-03のリストに沿って）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">Day 1〜3</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P4-I-07">
+<input type="checkbox" class="tick" id="t-P4-I-07" data-key="P4-I-07" aria-label="P4-I-07 完了">
+<label class="task__main" for="t-P4-I-07">
+<span class="task__id">P4-I-07</span>
+<span class="task__title">母体の状態を父が把握（会陰切開/帝王切開、出血、貧血）</span>
+<span class="task__memo"><strong>産後の体は全治1〜2ヶ月の重傷</strong>。動かせない前提で家を回す</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">退院時</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+</div>
+<h4>帝王切開・NICU入院になった場合の追加タスク</h4>
+<div class="tasks">
+<div class="task" data-id="P4-X-01">
+<input type="checkbox" class="tick" id="t-P4-X-01" data-key="P4-X-01" aria-label="P4-X-01 完了">
+<label class="task__main" for="t-P4-X-01">
+<span class="task__id">P4-X-01</span>
+<span class="task__title">高額療養費 or 限度額適用の適用</span>
+<span class="task__memo">手術は保険適用。自己負担は上限まで</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P4-X-02">
+<input type="checkbox" class="tick" id="t-P4-X-02" data-key="P4-X-02" aria-label="P4-X-02 完了">
+<label class="task__main" for="t-P4-X-02">
+<span class="task__id">P4-X-02</span>
+<span class="task__title">民間医療保険の入院・手術給付金を請求</span>
+<span class="task__memo">診断書が必要。退院後すみやかに</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P4-X-03">
+<input type="checkbox" class="tick" id="t-P4-X-03" data-key="P4-X-03" aria-label="P4-X-03 完了">
+<label class="task__main" for="t-P4-X-03">
+<span class="task__id">P4-X-03</span>
+<span class="task__title"><strong>未熟児養育医療給付</strong>の申請（出生体重2000g以下、または医師が入院養育を必要と認めた場合）</span>
+<span class="task__memo">入院医療費の自己負担が軽減</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P4-X-04">
+<input type="checkbox" class="tick" id="t-P4-X-04" data-key="P4-X-04" aria-label="P4-X-04 完了">
+<label class="task__main" for="t-P4-X-04">
+<span class="task__id">P4-X-04</span>
+<span class="task__title"><strong>低体重児出生届</strong>（2500g未満、14日以内）</span>
+<span class="task__memo">母子保健法に基づく届出。保健師の支援につながる</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P4-X-05">
+<input type="checkbox" class="tick" id="t-P4-X-05" data-key="P4-X-05" aria-label="P4-X-05 完了">
+<label class="task__main" for="t-P4-X-05">
+<span class="task__id">P4-X-05</span>
+<span class="task__title">搾乳・冷凍母乳の運搬（NICU）</span>
+<span class="task__memo">病院の指示に従う</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--post" id="sec-7">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 5：生後0ヶ月（生後0〜28日）</h2>
+<blockquote><strong>手続きの山場。父が全部やる想定で組む。</strong> 出生届を出した日に児童手当・乳幼児医療の申請も同時にできる自治体が多い。<strong>1回で終わらせる。</strong></blockquote>
+<h3>5-1. 行政手続き（役所ワンストップ）</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P5-A-01">
+<input type="checkbox" class="tick" id="t-P5-A-01" data-key="P5-A-01" aria-label="P5-A-01 完了">
+<label class="task__main" for="t-P5-A-01">
+<span class="task__id">P5-A-01</span>
+<span class="task__title"><strong>出生届の提出</strong></span>
+<span class="task__memo">出生地/本籍地/住所地のいずれか。夜間・休日窓口も可。持ち物：出生届（出生証明書付）、母子手帳、届出人の本人確認書類</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due"><strong>出生日を含めて14日以内</strong></span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-A-02">
+<input type="checkbox" class="tick" id="t-P5-A-02" data-key="P5-A-02" aria-label="P5-A-02 完了">
+<label class="task__main" for="t-P5-A-02">
+<span class="task__id">P5-A-02</span>
+<span class="task__title"><strong>児童手当の認定請求</strong></span>
+<span class="task__memo">住所地の市区町村（公務員は勤務先）。3歳未満は月15,000円、第3子以降は30,000円。<strong>所得制限なし（2024年10月〜）</strong>。振込は年6回（偶数月）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due"><strong>出生日の翌日から15日以内</strong></span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P5-A-03">
+<input type="checkbox" class="tick" id="t-P5-A-03" data-key="P5-A-03" aria-label="P5-A-03 完了">
+<label class="task__main" for="t-P5-A-03">
+<span class="task__id">P5-A-03</span>
+<span class="task__title">母子手帳への出生届出済証明の記入</span>
+<span class="task__memo">窓口でやってもらう</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">出生届と同時</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-A-04">
+<input type="checkbox" class="tick" id="t-P5-A-04" data-key="P5-A-04" aria-label="P5-A-04 完了">
+<label class="task__main" for="t-P5-A-04">
+<span class="task__id">P5-A-04</span>
+<span class="task__title"><strong>乳幼児医療費助成（マル乳等）の申請</strong></span>
+<span class="task__memo">医療証が届くまでの受診分は後日償還払い。<strong>領収書を保管</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">保険証取得後すみやか</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-A-05">
+<input type="checkbox" class="tick" id="t-P5-A-05" data-key="P5-A-05" aria-label="P5-A-05 完了">
+<label class="task__main" for="t-P5-A-05">
+<span class="task__id">P5-A-05</span>
+<span class="task__title"><strong>出生連絡票／新生児訪問の依頼</strong>を提出</span>
+<span class="task__memo">これを出さないと新生児訪問が来ない自治体がある</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">出生後すみやか</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-A-06">
+<input type="checkbox" class="tick" id="t-P5-A-06" data-key="P5-A-06" aria-label="P5-A-06 完了">
+<label class="task__main" for="t-P5-A-06">
+<span class="task__id">P5-A-06</span>
+<span class="task__title"><strong>妊婦のための支援給付（第2回・子1人あたり5万円）</strong>の申請</span>
+<span class="task__memo">面談（新生児訪問等）とセットの自治体が多い</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">出生後</span>
+<span class="chip chip--who">母 or 父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-A-07">
+<input type="checkbox" class="tick" id="t-P5-A-07" data-key="P5-A-07" aria-label="P5-A-07 完了">
+<label class="task__main" for="t-P5-A-07">
+<span class="task__id">P5-A-07</span>
+<span class="task__title">マイナンバーカードの申請（1歳未満は<strong>顔写真不要</strong>）</span>
+<span class="task__memo">有効期限は5回目の誕生日まで。<strong>公金受取口座の登録</strong>も併せて</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">出生後1ヶ月以内目安</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P5-A-08">
+<input type="checkbox" class="tick" id="t-P5-A-08" data-key="P5-A-08" aria-label="P5-A-08 完了">
+<label class="task__main" for="t-P5-A-08">
+<span class="task__id">P5-A-08</span>
+<span class="task__title">世帯全員の住民票・戸籍謄本を必要枚数取得</span>
+<span class="task__memo">戸籍への反映には時間がかかる。会社提出用に数通</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">出生届の1〜2週間後</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task" data-id="P5-A-09">
+<input type="checkbox" class="tick" id="t-P5-A-09" data-key="P5-A-09" aria-label="P5-A-09 完了">
+<label class="task__main" for="t-P5-A-09">
+<span class="task__id">P5-A-09</span>
+<span class="task__title">自治体の出産祝い金・紙おむつ券・ごみ袋支給等の申請</span>
+<span class="task__memo">窓口で「他に受けられるものは全部教えてください」と聞く</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">出生後</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+</div>
+<h3>5-2. 保険・勤務先</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P5-B-01">
+<input type="checkbox" class="tick" id="t-P5-B-01" data-key="P5-B-01" aria-label="P5-B-01 完了">
+<label class="task__main" for="t-P5-B-01">
+<span class="task__id">P5-B-01</span>
+<span class="task__title"><strong>健康保険への加入（扶養追加）</strong></span>
+<span class="task__memo">社保は勤務先へ。<strong>1ヶ月健診までに保険証が要る</strong>。マイナ保険証利用登録も</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">出生後すみやか（国保は14日以内）</span>
+<span class="chip chip--who">父 or 母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P5-B-02">
+<input type="checkbox" class="tick" id="t-P5-B-02" data-key="P5-B-02" aria-label="P5-B-02 完了">
+<label class="task__main" for="t-P5-B-02">
+<span class="task__id">P5-B-02</span>
+<span class="task__title">出産育児一時金の差額申請（直接支払で50万円未満だった場合）</span>
+<span class="task__memo">差額が戻る</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">出産後2年以内</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-B-03">
+<input type="checkbox" class="tick" id="t-P5-B-03" data-key="P5-B-03" aria-label="P5-B-03 完了">
+<label class="task__main" for="t-P5-B-03">
+<span class="task__id">P5-B-03</span>
+<span class="task__title"><strong>出産手当金の申請</strong></span>
+<span class="task__memo">標準報酬日額の2/3 ×（産前42日＋産後56日）。会社経由。入金は申請から1〜2ヶ月</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">産後56日経過後</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P5-B-04">
+<input type="checkbox" class="tick" id="t-P5-B-04" data-key="P5-B-04" aria-label="P5-B-04 完了">
+<label class="task__main" for="t-P5-B-04">
+<span class="task__id">P5-B-04</span>
+<span class="task__title">社会保険料免除の手続き（産休・育休中）</span>
+<span class="task__memo">本人・会社分ともに免除。<strong>将来の年金額は減らない</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">会社が実施</span>
+<span class="chip chip--who">母/父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P5-B-05">
+<input type="checkbox" class="tick" id="t-P5-B-05" data-key="P5-B-05" aria-label="P5-B-05 完了">
+<label class="task__main" for="t-P5-B-05">
+<span class="task__id">P5-B-05</span>
+<span class="task__title">育児休業給付金の初回申請</span>
+<span class="task__memo">開始180日は賃金の67%、以降50%。2ヶ月ごとに支給</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">育休開始から4ヶ月を経過する日の属する月末まで</span>
+<span class="chip chip--who">母/父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-B-06">
+<input type="checkbox" class="tick" id="t-P5-B-06" data-key="P5-B-06" aria-label="P5-B-06 完了">
+<label class="task__main" for="t-P5-B-06">
+<span class="task__id">P5-B-06</span>
+<span class="task__title"><strong>出生後休業支援給付金</strong>の申請（2025年4月〜）</span>
+<span class="task__memo"><strong>両親ともに14日以上育休を取ると最大28日分13%上乗せ → 手取り実質10割</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">育休申請と同時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P5-B-07">
+<input type="checkbox" class="tick" id="t-P5-B-07" data-key="P5-B-07" aria-label="P5-B-07 完了">
+<label class="task__main" for="t-P5-B-07">
+<span class="task__id">P5-B-07</span>
+<span class="task__title">学資・医療の子ども向け保険を検討（急がない）</span>
+<span class="task__memo">判断は落ち着いてから。新NISAとの比較を先に</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後3ヶ月まで</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+</div>
+<h3>5-3. 医療・育児実務</h3>
+<div class="tasks">
+<div class="task" data-id="P5-C-01">
+<input type="checkbox" class="tick" id="t-P5-C-01" data-key="P5-C-01" aria-label="P5-C-01 完了">
+<label class="task__main" for="t-P5-C-01">
+<span class="task__id">P5-C-01</span>
+<span class="task__title">K2シロップの継続投与（3ヶ月法の場合）</span>
+<span class="task__memo">飲ませ忘れ注意。カレンダーに固定</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">週1回 × 3ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P5-C-02">
+<input type="checkbox" class="tick" id="t-P5-C-02" data-key="P5-C-02" aria-label="P5-C-02 完了">
+<label class="task__main" for="t-P5-C-02">
+<span class="task__id">P5-C-02</span>
+<span class="task__title">産後2週間健診（母：EPDS等の産後うつスクリーニング／子：体重）</span>
+<span class="task__memo">助成のある自治体多い。<strong>必ず行く</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">産後14日前後</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P5-C-03">
+<input type="checkbox" class="tick" id="t-P5-C-03" data-key="P5-C-03" aria-label="P5-C-03 完了">
+<label class="task__main" for="t-P5-C-03">
+<span class="task__id">P5-C-03</span>
+<span class="task__title">新生児訪問（助産師・保健師の家庭訪問）</span>
+<span class="task__memo">体重測定、授乳相談、育児相談。無料</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後28日以内</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P5-C-04">
+<input type="checkbox" class="tick" id="t-P5-C-04" data-key="P5-C-04" aria-label="P5-C-04 完了">
+<label class="task__main" for="t-P5-C-04">
+<span class="task__id">P5-C-04</span>
+<span class="task__title">臍帯（へその緒）ケア、乾燥するまで消毒</span>
+<span class="task__memo">取れたへその緒は保管</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜生後2週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P5-E-01">
+<input type="checkbox" class="tick" id="t-P5-E-01" data-key="P5-E-01" aria-label="P5-E-01 完了">
+<label class="task__main" for="t-P5-E-01">
+<span class="task__id">P5-E-01</span>
+<span class="task__title">授乳・睡眠・排泄の記録開始（アプリ推奨）</span>
+<span class="task__memo"><strong>健診・受診時に必ず聞かれる</strong>。夫婦で同期できるアプリを使う</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">毎日</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P5-E-02">
+<input type="checkbox" class="tick" id="t-P5-E-02" data-key="P5-E-02" aria-label="P5-E-02 完了">
+<label class="task__main" for="t-P5-E-02">
+<span class="task__id">P5-E-02</span>
+<span class="task__title">沐浴（1日1回）</span>
+<span class="task__memo">ベビーバスは生後1ヶ月まで。以降は大人と一緒の風呂へ</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">毎日</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-E-03">
+<input type="checkbox" class="tick" id="t-P5-E-03" data-key="P5-E-03" aria-label="P5-E-03 完了">
+<label class="task__main" for="t-P5-E-03">
+<span class="task__id">P5-E-03</span>
+<span class="task__title">SIDS対策の徹底（<strong>仰向け寝</strong>、硬い敷寝具、顔まわりに物を置かない、禁煙、適温）</span>
+<span class="task__memo">添い寝・ソファ寝落ちは高リスク</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">常時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P5-E-04">
+<input type="checkbox" class="tick" id="t-P5-E-04" data-key="P5-E-04" aria-label="P5-E-04 完了">
+<label class="task__main" for="t-P5-E-04">
+<span class="task__id">P5-E-04</span>
+<span class="task__title">3時間ごとの授乳サイクルに家全体を合わせる</span>
+<span class="task__memo"><strong>父が夜間1回を担当する</strong>だけで母の睡眠が変わる</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">常時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-E-05">
+<input type="checkbox" class="tick" id="t-P5-E-05" data-key="P5-E-05" aria-label="P5-E-05 完了">
+<label class="task__main" for="t-P5-E-05">
+<span class="task__id">P5-E-05</span>
+<span class="task__title">「泣き止まない」への対応方針の共有（<strong>絶対に揺さぶらない</strong>）</span>
+<span class="task__memo">乳児揺さぶられ症候群。無理なら安全な場所に寝かせて数分離れてよい</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">常時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P5-D-01">
+<input type="checkbox" class="tick" id="t-P5-D-01" data-key="P5-D-01" aria-label="P5-D-01 完了">
+<label class="task__main" for="t-P5-D-01">
+<span class="task__id">P5-D-01</span>
+<span class="task__title">消耗品の定期購入設定（おむつ・おしりふき・ミルク）</span>
+<span class="task__memo">Amazon定期便等。<strong>買いに行く時間はない</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1週</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P5-I-01">
+<input type="checkbox" class="tick" id="t-P5-I-01" data-key="P5-I-01" aria-label="P5-I-01 完了">
+<label class="task__main" for="t-P5-I-01">
+<span class="task__id">P5-I-01</span>
+<span class="task__title">母の産褥期を守る（<strong>産後3週間は横になっているのが仕事</strong>）</span>
+<span class="task__memo">家事・上の子・来客対応は全部父側</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜産後1ヶ月</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+<div class="task" data-id="P5-I-02">
+<input type="checkbox" class="tick" id="t-P5-I-02" data-key="P5-I-02" aria-label="P5-I-02 完了">
+<label class="task__main" for="t-P5-I-02">
+<span class="task__id">P5-I-02</span>
+<span class="task__title">来客のコントロール（滞在は短く、感染対策、手土産より手伝い）</span>
+<span class="task__memo">断るのは父の役目</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">常時</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+<div class="task" data-id="P5-I-03">
+<input type="checkbox" class="tick" id="t-P5-I-03" data-key="P5-I-03" aria-label="P5-I-03 完了">
+<label class="task__main" for="t-P5-I-03">
+<span class="task__id">P5-I-03</span>
+<span class="task__title">産後うつの兆候チェック（眠れない、涙が止まらない、赤ちゃんが可愛く思えない）</span>
+<span class="task__memo">2週間続くなら<strong>すぐ保健センター・産科へ</strong>。マタニティブルーズは通常2週間で軽快</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">毎週</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+<div class="task" data-id="P5-G-01">
+<input type="checkbox" class="tick" id="t-P5-G-01" data-key="P5-G-01" aria-label="P5-G-01 完了">
+<label class="task__main" for="t-P5-G-01">
+<span class="task__id">P5-G-01</span>
+<span class="task__title">お七夜・命名書</span>
+<span class="task__memo">省略しても全く問題ない。やるなら簡易に</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後7日</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P5-G-02">
+<input type="checkbox" class="tick" id="t-P5-G-02" data-key="P5-G-02" aria-label="P5-G-02 完了">
+<label class="task__main" for="t-P5-G-02">
+<span class="task__id">P5-G-02</span>
+<span class="task__title">出産内祝いのリスト化と手配開始</span>
+<span class="task__memo">いただいてから1ヶ月以内、生後1ヶ月頃の発送が目安。相場は半返し</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後2〜4週</span>
+<span class="chip chip--who">母/父</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--post" id="sec-8">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 6：生後1〜2ヶ月</h2>
+<h3>生後1ヶ月</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P6-C-01">
+<input type="checkbox" class="tick" id="t-P6-C-01" data-key="P6-C-01" aria-label="P6-C-01 完了">
+<label class="task__main" for="t-P6-C-01">
+<span class="task__id">P6-C-01</span>
+<span class="task__title"><strong>1ヶ月健診</strong>（子：体重・黄疸・股関節／母：子宮回復・悪露・傷）</span>
+<span class="task__memo">保険証・医療証・母子手帳を持参。<strong>ここで母の性交渉・運動・入浴の再開許可が出る</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P6-C-02">
+<input type="checkbox" class="tick" id="t-P6-C-02" data-key="P6-C-02" aria-label="P6-C-02 完了">
+<label class="task__main" for="t-P6-C-02">
+<span class="task__id">P6-C-02</span>
+<span class="task__title">ビタミンD・鉄の補足について医師に相談（完全母乳の場合）</span>
+<span class="task__memo">完全母乳児はビタミンD不足になりやすい</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1ヶ月健診時</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P6-C-03">
+<input type="checkbox" class="tick" id="t-P6-C-03" data-key="P6-C-03" aria-label="P6-C-03 完了">
+<label class="task__main" for="t-P6-C-03">
+<span class="task__id">P6-C-03</span>
+<span class="task__title">大人と一緒の入浴に移行</span>
+<span class="task__memo">ベビーバス卒業。バスチェア/マットの用意</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1ヶ月健診後</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P6-C-04">
+<input type="checkbox" class="tick" id="t-P6-C-04" data-key="P6-C-04" aria-label="P6-C-04 完了">
+<label class="task__main" for="t-P6-C-04">
+<span class="task__id">P6-C-04</span>
+<span class="task__title">母の骨盤ケア・産後ケア教室の利用</span>
+<span class="task__memo">産後ケア事業（宿泊/デイ/訪問）は産後1年まで利用可</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1ヶ月〜</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P6-A-01">
+<input type="checkbox" class="tick" id="t-P6-A-01" data-key="P6-A-01" aria-label="P6-A-01 完了">
+<label class="task__main" for="t-P6-A-01">
+<span class="task__id">P6-A-01</span>
+<span class="task__title">産後ケア事業を実際に予約・利用</span>
+<span class="task__memo"><strong>「限界が来てから」ではなく予防的に使う</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1ヶ月〜</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">A</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P6-G-01">
+<input type="checkbox" class="tick" id="t-P6-G-01" data-key="P6-G-01" aria-label="P6-G-01 完了">
+<label class="task__main" for="t-P6-G-01">
+<span class="task__id">P6-G-01</span>
+<span class="task__title"><strong>お宮参り</strong></span>
+<span class="task__memo">男児31〜32日、女児32〜33日が伝統だが、<strong>気候と母子の体調優先で後ろ倒しでよい</strong>（真夏・真冬は避ける）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1ヶ月前後</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P6-G-02">
+<input type="checkbox" class="tick" id="t-P6-G-02" data-key="P6-G-02" aria-label="P6-G-02 完了">
+<label class="task__main" for="t-P6-G-02">
+<span class="task__id">P6-G-02</span>
+<span class="task__title">内祝いの発送</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1ヶ月頃</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P6-G-03">
+<input type="checkbox" class="tick" id="t-P6-G-03" data-key="P6-G-03" aria-label="P6-G-03 完了">
+<label class="task__main" for="t-P6-G-03">
+<span class="task__id">P6-G-03</span>
+<span class="task__title">記念写真（お宮参り／1ヶ月フォト）</span>
+<span class="task__memo">スタジオは平日が空いている</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P6-E-01">
+<input type="checkbox" class="tick" id="t-P6-E-01" data-key="P6-E-01" aria-label="P6-E-01 完了">
+<label class="task__main" for="t-P6-E-01">
+<span class="task__id">P6-E-01</span>
+<span class="task__title">昼夜のリズムづくり開始（朝はカーテンを開ける、夜は暗く静かに）</span>
+<span class="task__memo">生後3〜4ヶ月で体内時計ができる</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P6-E-02">
+<input type="checkbox" class="tick" id="t-P6-E-02" data-key="P6-E-02" aria-label="P6-E-02 完了">
+<label class="task__main" for="t-P6-E-02">
+<span class="task__id">P6-E-02</span>
+<span class="task__title">外気浴 → 短時間の散歩を開始</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P6-D-01">
+<input type="checkbox" class="tick" id="t-P6-D-01" data-key="P6-D-01" aria-label="P6-D-01 完了">
+<label class="task__main" for="t-P6-D-01">
+<span class="task__id">P6-D-01</span>
+<span class="task__title">ベビーカー・抱っこ紐の実運用開始、外出セットの常備化</span>
+<span class="task__memo">おむつ・着替え・ミルク・ビニール袋を入れっぱなしにする</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P6-C-05">
+<input type="checkbox" class="tick" id="t-P6-C-05" data-key="P6-C-05" aria-label="P6-C-05 完了">
+<label class="task__main" for="t-P6-C-05">
+<span class="task__id">P6-C-05</span>
+<span class="task__title"><strong>予防接種スケジュールの作成と予約</strong>（生後2ヶ月ちょうどの日を押さえる）</span>
+<span class="task__memo"><strong>人気小児科は埋まる。1ヶ月健診の帰りに予約するのが最適</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due"><strong>生後1ヶ月中に予約</strong></span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P6-H-01">
+<input type="checkbox" class="tick" id="t-P6-H-01" data-key="P6-H-01" aria-label="P6-H-01 完了">
+<label class="task__main" for="t-P6-H-01">
+<span class="task__id">P6-H-01</span>
+<span class="task__title">かかりつけ小児科を決める（夜間・休日対応、予防接種枠、駐車場）</span>
+<span class="task__memo">予防接種と病児で使い分ける手もある</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P6-I-01">
+<input type="checkbox" class="tick" id="t-P6-I-01" data-key="P6-I-01" aria-label="P6-I-01 完了">
+<label class="task__main" for="t-P6-I-01">
+<span class="task__id">P6-I-01</span>
+<span class="task__title">夫婦の週次15分ミーティングを開始（家事分担・体調・予定）</span>
+<span class="task__memo"><strong>産後クライシスの最大の予防策</strong>。定例化しないと消える</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">毎週</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+</div>
+<h3>生後2ヶ月</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P6-C-06">
+<input type="checkbox" class="tick" id="t-P6-C-06" data-key="P6-C-06" aria-label="P6-C-06 完了">
+<label class="task__main" for="t-P6-C-06">
+<span class="task__id">P6-C-06</span>
+<span class="task__title"><strong>予防接種デビュー（同時接種）</strong>：ロタ①／B型肝炎①／五種混合①／小児用肺炎球菌①</span>
+<span class="task__memo"><strong>ロタ①は生後14週6日までに開始しないと生涯接種不可</strong>。同時接種は世界標準で安全</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due"><strong>生後2ヶ月の誕生日</strong>（2ヶ月後の同日）</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P6-C-07">
+<input type="checkbox" class="tick" id="t-P6-C-07" data-key="P6-C-07" aria-label="P6-C-07 完了">
+<label class="task__main" for="t-P6-C-07">
+<span class="task__id">P6-C-07</span>
+<span class="task__title">接種後の発熱・接種部位の観察（当日〜翌日）</span>
+<span class="task__memo">38.5℃以上、ぐったり、けいれんは受診</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">接種後</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P6-C-08">
+<input type="checkbox" class="tick" id="t-P6-C-08" data-key="P6-C-08" aria-label="P6-C-08 完了">
+<label class="task__main" for="t-P6-C-08">
+<span class="task__id">P6-C-08</span>
+<span class="task__title">予防接種証明の母子手帳記入確認</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">接種毎</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P6-B-01">
+<input type="checkbox" class="tick" id="t-P6-B-01" data-key="P6-B-01" aria-label="P6-B-01 完了">
+<label class="task__main" for="t-P6-B-01">
+<span class="task__id">P6-B-01</span>
+<span class="task__title">父の産後パパ育休が終了する場合の引き継ぎ／育休本体への切替</span>
+<span class="task__memo"><strong>ここで父が抜けると母が潰れる</strong>。分割2回目を後ろに残す設計も有効</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">産後8週前後</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P6-B-02">
+<input type="checkbox" class="tick" id="t-P6-B-02" data-key="P6-B-02" aria-label="P6-B-02 完了">
+<label class="task__main" for="t-P6-B-02">
+<span class="task__id">P6-B-02</span>
+<span class="task__title">母の育休開始（産後休業8週の翌日から）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">産後57日目</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P6-E-03">
+<input type="checkbox" class="tick" id="t-P6-E-03" data-key="P6-E-03" aria-label="P6-E-03 完了">
+<label class="task__main" for="t-P6-E-03">
+<span class="task__id">P6-E-03</span>
+<span class="task__title">睡眠の記録から生活パターンを把握（まとまって寝始める頃）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">継続</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P6-E-04">
+<input type="checkbox" class="tick" id="t-P6-E-04" data-key="P6-E-04" aria-label="P6-E-04 完了">
+<label class="task__main" for="t-P6-E-04">
+<span class="task__id">P6-E-04</span>
+<span class="task__title">「たそがれ泣き（コリック）」のピークに備える</span>
+<span class="task__memo">生後3ヶ月頃に自然に収まる。原因不明で正常</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後1〜3ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P6-F-01">
+<input type="checkbox" class="tick" id="t-P6-F-01" data-key="P6-F-01" aria-label="P6-F-01 完了">
+<label class="task__main" for="t-P6-F-01">
+<span class="task__id">P6-F-01</span>
+<span class="task__title">育児休業給付金の初回入金を確認、家計の実績と照合</span>
+<span class="task__memo">想定より遅い/少ないことが多い</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後2〜3ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P6-D-02">
+<input type="checkbox" class="tick" id="t-P6-D-02" data-key="P6-D-02" aria-label="P6-D-02 完了">
+<label class="task__main" for="t-P6-D-02">
+<span class="task__id">P6-D-02</span>
+<span class="task__title">おむつのサイズアップ（新生児→S）と在庫調整</span>
+<span class="task__memo">漏れ始めたらサイズアップのサイン</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">体重4〜5kg</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--post" id="sec-9">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 7：生後3〜5ヶ月</h2>
+<h3>生後3ヶ月</h3>
+<div class="tasks">
+<div class="task" data-id="P7-C-01">
+<input type="checkbox" class="tick" id="t-P7-C-01" data-key="P7-C-01" aria-label="P7-C-01 完了">
+<label class="task__main" for="t-P7-C-01">
+<span class="task__id">P7-C-01</span>
+<span class="task__title">予防接種2回目：ロタ②／B型肝炎②／五種混合②／肺炎球菌②</span>
+<span class="task__memo">前回から27日以上あける</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後3ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P7-C-02">
+<input type="checkbox" class="tick" id="t-P7-C-02" data-key="P7-C-02" aria-label="P7-C-02 完了">
+<label class="task__main" for="t-P7-C-02">
+<span class="task__id">P7-C-02</span>
+<span class="task__title"><strong>3〜4ヶ月児健診</strong>（自治体・集団または個別）</span>
+<span class="task__memo">首すわり、追視、股関節脱臼、体重。<strong>問診票は事前記入</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後3〜4ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P7-C-03">
+<input type="checkbox" class="tick" id="t-P7-C-03" data-key="P7-C-03" aria-label="P7-C-03 完了">
+<label class="task__main" for="t-P7-C-03">
+<span class="task__id">P7-C-03</span>
+<span class="task__title">K2シロップ投与の終了（3ヶ月法の場合）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後3ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P7-E-01">
+<input type="checkbox" class="tick" id="t-P7-E-01" data-key="P7-E-01" aria-label="P7-E-01 完了">
+<label class="task__main" for="t-P7-E-01">
+<span class="task__id">P7-E-01</span>
+<span class="task__title">首すわりの確認 → 縦抱き・おんぶの開始</span>
+<span class="task__memo">おんぶができると家事効率が激変する</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後3〜4ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P7-E-02">
+<input type="checkbox" class="tick" id="t-P7-E-02" data-key="P7-E-02" aria-label="P7-E-02 完了">
+<label class="task__main" for="t-P7-E-02">
+<span class="task__id">P7-E-02</span>
+<span class="task__title">授乳間隔の調整（3時間 → 4時間へ）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後3ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P7-D-01">
+<input type="checkbox" class="tick" id="t-P7-D-01" data-key="P7-D-01" aria-label="P7-D-01 完了">
+<label class="task__main" for="t-P7-D-01">
+<span class="task__id">P7-D-01</span>
+<span class="task__title">寝返り前の環境点検（ベッドからの転落、周囲の窒息物の撤去）</span>
+<span class="task__memo"><strong>突然寝返る</strong>。目を離す場所を先に安全にしておく</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後3ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P7-G-01">
+<input type="checkbox" class="tick" id="t-P7-G-01" data-key="P7-G-01" aria-label="P7-G-01 完了">
+<label class="task__main" for="t-P7-G-01">
+<span class="task__id">P7-G-01</span>
+<span class="task__title"><strong>お食い初め（百日祝い）</strong></span>
+<span class="task__memo">自宅で仕出し／簡易セットで十分。歯固め石は神社で借りる</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後100日前後</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P7-I-01">
+<input type="checkbox" class="tick" id="t-P7-I-01" data-key="P7-I-01" aria-label="P7-I-01 完了">
+<label class="task__main" for="t-P7-I-01">
+<span class="task__id">P7-I-01</span>
+<span class="task__title">母の職場と復職時期の初回すり合わせ</span>
+<span class="task__memo">保活の申込月から逆算</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後3〜4ヶ月</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+</div>
+<h3>生後4ヶ月</h3>
+<div class="tasks">
+<div class="task" data-id="P7-C-04">
+<input type="checkbox" class="tick" id="t-P7-C-04" data-key="P7-C-04" aria-label="P7-C-04 完了">
+<label class="task__main" for="t-P7-C-04">
+<span class="task__id">P7-C-04</span>
+<span class="task__title">予防接種3回目：ロタ③（ロタテックの場合）／五種混合③／肺炎球菌③</span>
+<span class="task__memo">ロタリックスは2回で完了。<strong>ロタは生後32週（ロタテック）/24週（ロタリックス）までに完了</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後4ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P7-C-05">
+<input type="checkbox" class="tick" id="t-P7-C-05" data-key="P7-C-05" aria-label="P7-C-05 完了">
+<label class="task__main" for="t-P7-C-05">
+<span class="task__id">P7-C-05</span>
+<span class="task__title">乳児家庭全戸訪問（こんにちは赤ちゃん事業）の受け入れ</span>
+<span class="task__memo">未実施なら自治体に連絡</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜生後4ヶ月</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P7-E-03">
+<input type="checkbox" class="tick" id="t-P7-E-03" data-key="P7-E-03" aria-label="P7-E-03 完了">
+<label class="task__main" for="t-P7-E-03">
+<span class="task__id">P7-E-03</span>
+<span class="task__title">生活リズムの固定（起床・昼寝・入浴・就寝の時刻を毎日同じに）</span>
+<span class="task__memo">「4ヶ月の睡眠退行」が来ることがある。焦らない</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後4ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P7-E-04">
+<input type="checkbox" class="tick" id="t-P7-E-04" data-key="P7-E-04" aria-label="P7-E-04 完了">
+<label class="task__main" for="t-P7-E-04">
+<span class="task__id">P7-E-04</span>
+<span class="task__title">よだれ・手しゃぶりの増加を観察（離乳食開始のサイン）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後4〜5ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P7-D-02">
+<input type="checkbox" class="tick" id="t-P7-D-02" data-key="P7-D-02" aria-label="P7-D-02 完了">
+<label class="task__main" for="t-P7-D-02">
+<span class="task__id">P7-D-02</span>
+<span class="task__title"><strong>離乳食用品の準備</strong>（ハイチェア、食器、フィーディングスプーン、ブレンダー、小分け冷凍容器、シリコンビブ）</span>
+<span class="task__memo">§付録A-4。<strong>ブレンダーは初期の2ヶ月しか使わないので過剰投資注意</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後4〜5ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P7-H-01">
+<input type="checkbox" class="tick" id="t-P7-H-01" data-key="P7-H-01" aria-label="P7-H-01 完了">
+<label class="task__main" for="t-P7-H-01">
+<span class="task__id">P7-H-01</span>
+<span class="task__title">保育園の申込書類・必要書類（就労証明書）を洗い出す</span>
+<span class="task__memo"><strong>就労証明書は会社発行に2〜4週間かかる</strong>。10月申込なら9月には依頼</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後4〜5ヶ月</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+</div>
+<h3>生後5ヶ月</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P7-C-06">
+<input type="checkbox" class="tick" id="t-P7-C-06" data-key="P7-C-06" aria-label="P7-C-06 完了">
+<label class="task__main" for="t-P7-C-06">
+<span class="task__id">P7-C-06</span>
+<span class="task__title"><strong>BCG接種</strong>（標準は生後5〜8ヶ月未満）</span>
+<span class="task__memo">自治体の集団接種の場合は日程が固定。<strong>1歳未満が期限</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後5〜8ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P7-C-07">
+<input type="checkbox" class="tick" id="t-P7-C-07" data-key="P7-C-07" aria-label="P7-C-07 完了">
+<label class="task__main" for="t-P7-C-07">
+<span class="task__id">P7-C-07</span>
+<span class="task__title">6〜7ヶ月児健診の申込（実施自治体の場合）</span>
+<span class="task__memo">任意健診で自費の自治体もある</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後5〜6ヶ月</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P7-E-05">
+<input type="checkbox" class="tick" id="t-P7-E-05" data-key="P7-E-05" aria-label="P7-E-05 完了">
+<label class="task__main" for="t-P7-E-05">
+<span class="task__id">P7-E-05</span>
+<span class="task__title"><strong>離乳食スタート（ゴックン期）</strong></span>
+<span class="task__memo">§付録D。10倍がゆ小さじ1から。<strong>1日1回、午前中（何かあれば病院に行ける時間）</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後5〜6ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P7-E-06">
+<input type="checkbox" class="tick" id="t-P7-E-06" data-key="P7-E-06" aria-label="P7-E-06 完了">
+<label class="task__main" for="t-P7-E-06">
+<span class="task__id">P7-E-06</span>
+<span class="task__title">アレルギー確認の進め方を決める（新食材は1日1種類・少量・午前中）</span>
+<span class="task__memo"><strong>卵は生後5〜6ヶ月から固ゆで卵黄を耳かき1杯から</strong>。遅らせるほうがアレルギーリスクは上がる</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">離乳食開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P7-E-07">
+<input type="checkbox" class="tick" id="t-P7-E-07" data-key="P7-E-07" aria-label="P7-E-07 完了">
+<label class="task__main" for="t-P7-E-07">
+<span class="task__id">P7-E-07</span>
+<span class="task__title">食物アレルギー発症時の対応フローを共有（発疹・嘔吐・呼吸苦→受診/119）</span>
+<span class="task__memo">かかりつけ小児科の診療時間を把握</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">離乳食開始時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P7-D-03">
+<input type="checkbox" class="tick" id="t-P7-D-03" data-key="P7-D-03" aria-label="P7-D-03 完了">
+<label class="task__main" for="t-P7-D-03">
+<span class="task__id">P7-D-03</span>
+<span class="task__title">寝返り・ずりばい対応：床の安全化、ジョイントマット、誤飲物の撤去</span>
+<span class="task__memo"><strong>トイレットペーパーの芯（直径39mm）を通るものは全部誤飲する</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後5ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P7-G-02">
+<input type="checkbox" class="tick" id="t-P7-G-02" data-key="P7-G-02" aria-label="P7-G-02 完了">
+<label class="task__main" for="t-P7-G-02">
+<span class="task__id">P7-G-02</span>
+<span class="task__title">5〜6ヶ月の成長記録・写真</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">随時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--post" id="sec-10">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 8：生後6〜8ヶ月</h2>
+<h3>生後6ヶ月</h3>
+<div class="tasks">
+<div class="task" data-id="P8-C-01">
+<input type="checkbox" class="tick" id="t-P8-C-01" data-key="P8-C-01" aria-label="P8-C-01 完了">
+<label class="task__main" for="t-P8-C-01">
+<span class="task__id">P8-C-01</span>
+<span class="task__title">6〜7ヶ月児健診（実施自治体）</span>
+<span class="task__memo">お座り、寝返り、離乳食の進み</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後6〜7ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P8-C-02">
+<input type="checkbox" class="tick" id="t-P8-C-02" data-key="P8-C-02" aria-label="P8-C-02 完了">
+<label class="task__main" for="t-P8-C-02">
+<span class="task__id">P8-C-02</span>
+<span class="task__title">インフルエンザ予防接種（<strong>生後6ヶ月から可</strong>、シーズン時は2回）</span>
+<span class="task__memo">家族全員で受けるのが本人保護に効く</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">10〜12月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P8-C-03">
+<input type="checkbox" class="tick" id="t-P8-C-03" data-key="P8-C-03" aria-label="P8-C-03 完了">
+<label class="task__main" for="t-P8-C-03">
+<span class="task__id">P8-C-03</span>
+<span class="task__title">乳歯が生え始めたら歯磨き（ガーゼ→乳児用歯ブラシ）開始</span>
+<span class="task__memo">就寝前の授乳後は特に</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後6〜9ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P8-C-04">
+<input type="checkbox" class="tick" id="t-P8-C-04" data-key="P8-C-04" aria-label="P8-C-04 完了">
+<label class="task__main" for="t-P8-C-04">
+<span class="task__id">P8-C-04</span>
+<span class="task__title">突発性発疹に備える（生後6ヶ月〜1歳に多い初めての高熱）</span>
+<span class="task__memo"><strong>母由来の免疫が切れる時期＝初めての発熱が来る</strong>。#8000（小児救急電話相談）を登録</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">随時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P8-E-01">
+<input type="checkbox" class="tick" id="t-P8-E-01" data-key="P8-E-01" aria-label="P8-E-01 完了">
+<label class="task__main" for="t-P8-E-01">
+<span class="task__id">P8-E-01</span>
+<span class="task__title">離乳食：1日2回食へ（モグモグ期の入口）</span>
+<span class="task__memo">§付録D</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後6〜7ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P8-E-02">
+<input type="checkbox" class="tick" id="t-P8-E-02" data-key="P8-E-02" aria-label="P8-E-02 完了">
+<label class="task__main" for="t-P8-E-02">
+<span class="task__id">P8-E-02</span>
+<span class="task__title">麦茶・白湯などの水分補給をコップ/ストローで練習</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後6ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P8-G-01">
+<input type="checkbox" class="tick" id="t-P8-G-01" data-key="P8-G-01" aria-label="P8-G-01 完了">
+<label class="task__main" for="t-P8-G-01">
+<span class="task__id">P8-G-01</span>
+<span class="task__title"><strong>ハーフバースデー</strong></span>
+<span class="task__memo">自宅撮影で十分</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後6ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P8-H-01">
+<input type="checkbox" class="tick" id="t-P8-H-01" data-key="P8-H-01" aria-label="P8-H-01 完了">
+<label class="task__main" for="t-P8-H-01">
+<span class="task__id">P8-H-01</span>
+<span class="task__title"><strong>こども誰でも通園制度の利用検討</strong>（2026年4月〜本格実施）</span>
+<span class="task__memo"><strong>生後6ヶ月〜満3歳未満の未就園児が月一定時間まで利用可</strong>。育休中でも使える。自治体の受付方法を確認</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後6ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P8-H-02">
+<input type="checkbox" class="tick" id="t-P8-H-02" data-key="P8-H-02" aria-label="P8-H-02 完了">
+<label class="task__main" for="t-P8-H-02">
+<span class="task__id">P8-H-02</span>
+<span class="task__title">保育園の<strong>最終候補と希望順位</strong>を確定</span>
+<span class="task__memo">見学未実施の園があれば急いで行く</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後6〜7ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P8-D-01">
+<input type="checkbox" class="tick" id="t-P8-D-01" data-key="P8-D-01" aria-label="P8-D-01 完了">
+<label class="task__main" for="t-P8-D-01">
+<span class="task__id">P8-D-01</span>
+<span class="task__title">お座り期の安全対策（クッション、テーブル角、後頭部）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後6ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+</div>
+<h3>生後7ヶ月</h3>
+<div class="tasks">
+<div class="task" data-id="P8-C-05">
+<input type="checkbox" class="tick" id="t-P8-C-05" data-key="P8-C-05" aria-label="P8-C-05 完了">
+<label class="task__main" for="t-P8-C-05">
+<span class="task__id">P8-C-05</span>
+<span class="task__title">予防接種：B型肝炎③（1回目から139日以上あける）</span>
+<span class="task__memo">忘れやすい。母子手帳で確認</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後7〜8ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P8-E-03">
+<input type="checkbox" class="tick" id="t-P8-E-03" data-key="P8-E-03" aria-label="P8-E-03 完了">
+<label class="task__main" for="t-P8-E-03">
+<span class="task__id">P8-E-03</span>
+<span class="task__title">離乳食：たんぱく質のレパートリー拡大（白身魚→赤身魚→鶏ささみ→豆腐→卵）</span>
+<span class="task__memo">§付録D</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後7〜8ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P8-E-04">
+<input type="checkbox" class="tick" id="t-P8-E-04" data-key="P8-E-04" aria-label="P8-E-04 完了">
+<label class="task__main" for="t-P8-E-04">
+<span class="task__id">P8-E-04</span>
+<span class="task__title">手づかみ食べの準備（つかめる硬さの野菜スティック）</span>
+<span class="task__memo">汚れるが発達に重要。レジャーシートを敷く</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後7〜9ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P8-E-05">
+<input type="checkbox" class="tick" id="t-P8-E-05" data-key="P8-E-05" aria-label="P8-E-05 完了">
+<label class="task__main" for="t-P8-E-05">
+<span class="task__id">P8-E-05</span>
+<span class="task__title">人見知り・後追いへの対応</span>
+<span class="task__memo">正常な発達。トイレにも付いてくる時期</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後7〜10ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P8-B-01">
+<input type="checkbox" class="tick" id="t-P8-B-01" data-key="P8-B-01" aria-label="P8-B-01 完了">
+<label class="task__main" for="t-P8-B-01">
+<span class="task__id">P8-B-01</span>
+<span class="task__title"><strong>就労証明書を会社に依頼</strong>（保育園申込用）</span>
+<span class="task__memo">夫婦<strong>両方</strong>必要。自治体指定様式</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">申込の1〜2ヶ月前</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P8-H-03">
+<input type="checkbox" class="tick" id="t-P8-H-03" data-key="P8-H-03" aria-label="P8-H-03 完了">
+<label class="task__main" for="t-P8-H-03">
+<span class="task__id">P8-H-03</span>
+<span class="task__title">認可外保育園への個別申込（併願・保険として）</span>
+<span class="task__memo">認可外の在園実績が認可申込の加点になる自治体あり</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後7〜9ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+</div>
+<h3>生後8ヶ月</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P8-H-04">
+<input type="checkbox" class="tick" id="t-P8-H-04" data-key="P8-H-04" aria-label="P8-H-04 完了">
+<label class="task__main" for="t-P8-H-04">
+<span class="task__id">P8-H-04</span>
+<span class="task__title"><strong><span class="star">★</span>認可保育園の一次申込（4月入園）</strong></span>
+<span class="task__memo"><strong>本WBS最大のイベント。締切厳守（郵送必着/持参のみ等）</strong>。書類不備での不承諾が実際にある</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due"><strong>自治体により10〜12月</strong></span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P8-H-05">
+<input type="checkbox" class="tick" id="t-P8-H-05" data-key="P8-H-05" aria-label="P8-H-05 完了">
+<label class="task__main" for="t-P8-H-05">
+<span class="task__id">P8-H-05</span>
+<span class="task__title">申込内容のセルフチェック（点数計算、希望順、記入漏れ、添付漏れ）</span>
+<span class="task__memo">提出前に2人でダブルチェック</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">提出前</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P8-C-06">
+<input type="checkbox" class="tick" id="t-P8-C-06" data-key="P8-C-06" aria-label="P8-C-06 完了">
+<label class="task__main" for="t-P8-C-06">
+<span class="task__id">P8-C-06</span>
+<span class="task__title">BCG未接種ならこの時期までに完了</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">〜生後8ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P8-E-06">
+<input type="checkbox" class="tick" id="t-P8-E-06" data-key="P8-E-06" aria-label="P8-E-06 完了">
+<label class="task__main" for="t-P8-E-06">
+<span class="task__id">P8-E-06</span>
+<span class="task__title">離乳食：3回食への移行準備</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後8〜9ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P8-E-07">
+<input type="checkbox" class="tick" id="t-P8-E-07" data-key="P8-E-07" aria-label="P8-E-07 完了">
+<label class="task__main" for="t-P8-E-07">
+<span class="task__id">P8-E-07</span>
+<span class="task__title">鉄分を意識（母乳・ミルクだけでは足りなくなる時期）</span>
+<span class="task__memo">赤身肉、レバー、鉄強化ベビーフード</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後8ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P8-D-02">
+<input type="checkbox" class="tick" id="t-P8-D-02" data-key="P8-D-02" aria-label="P8-D-02 完了">
+<label class="task__main" for="t-P8-D-02">
+<span class="task__id">P8-D-02</span>
+<span class="task__title"><strong>ハイハイ・つかまり立ち対策</strong>：ベビーゲート、家具転倒防止、コンセントカバー、引き出しロック、階段、浴室（<strong>残し湯をしない</strong>）</span>
+<span class="task__memo">家中を子どもの目線（床から40cm）で1周して点検</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後8ヶ月</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+<div class="task" data-id="P8-D-03">
+<input type="checkbox" class="tick" id="t-P8-D-03" data-key="P8-D-03" aria-label="P8-D-03 完了">
+<label class="task__main" for="t-P8-D-03">
+<span class="task__id">P8-D-03</span>
+<span class="task__title">誤飲・やけど対策（電気ケトル、炊飯器の蒸気、テーブルクロス、加熱式たばこ、電池）</span>
+<span class="task__memo"><strong>ボタン電池・磁石・タバコは緊急度が最も高い</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後8ヶ月</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--post" id="sec-11">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 9：生後9〜11ヶ月</h2>
+<h3>生後9ヶ月</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P9-C-01">
+<input type="checkbox" class="tick" id="t-P9-C-01" data-key="P9-C-01" aria-label="P9-C-01 完了">
+<label class="task__main" for="t-P9-C-01">
+<span class="task__id">P9-C-01</span>
+<span class="task__title"><strong>9〜10ヶ月児健診</strong></span>
+<span class="task__memo">つかまり立ち、指先の動き（つまむ）、離乳食の進み、言語</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後9〜10ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P9-C-02">
+<input type="checkbox" class="tick" id="t-P9-C-02" data-key="P9-C-02" aria-label="P9-C-02 完了">
+<label class="task__main" for="t-P9-C-02">
+<span class="task__id">P9-C-02</span>
+<span class="task__title">貧血の指摘があれば鉄剤・食事指導</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">健診時</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P9-E-01">
+<input type="checkbox" class="tick" id="t-P9-E-01" data-key="P9-E-01" aria-label="P9-E-01 完了">
+<label class="task__main" for="t-P9-E-01">
+<span class="task__id">P9-E-01</span>
+<span class="task__title">離乳食：<strong>3回食（カミカミ期）</strong>へ</span>
+<span class="task__memo">§付録D。歯ぐきでつぶせる硬さ（バナナ程度）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後9ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P9-E-02">
+<input type="checkbox" class="tick" id="t-P9-E-02" data-key="P9-E-02" aria-label="P9-E-02 完了">
+<label class="task__main" for="t-P9-E-02">
+<span class="task__id">P9-E-02</span>
+<span class="task__title">フォローアップミルクの要否を判断</span>
+<span class="task__memo">離乳食が順調なら必須ではない</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後9ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P9-E-03">
+<input type="checkbox" class="tick" id="t-P9-E-03" data-key="P9-E-03" aria-label="P9-E-03 完了">
+<label class="task__main" for="t-P9-E-03">
+<span class="task__id">P9-E-03</span>
+<span class="task__title">食事の時間を家族と合わせる（同じ食卓につく）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後9ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P9-I-01">
+<input type="checkbox" class="tick" id="t-P9-I-01" data-key="P9-I-01" aria-label="P9-I-01 完了">
+<label class="task__main" for="t-P9-I-01">
+<span class="task__id">P9-I-01</span>
+<span class="task__title">復職に向けた家事育児タスクの棚卸しと再分担</span>
+<span class="task__memo"><strong>朝の出発、送り、迎え、発熱時の早退、病児保育</strong>を誰がやるかを明文化</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後9〜10ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+<div class="task" data-id="P9-H-01">
+<input type="checkbox" class="tick" id="t-P9-H-01" data-key="P9-H-01" aria-label="P9-H-01 完了">
+<label class="task__main" for="t-P9-H-01">
+<span class="task__id">P9-H-01</span>
+<span class="task__title">保育園の選考結果を待つ／認可外の確保状況を確認</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1〜2月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+</div>
+<h3>生後10ヶ月</h3>
+<div class="tasks">
+<div class="task task--crit" data-id="P9-H-02">
+<input type="checkbox" class="tick" id="t-P9-H-02" data-key="P9-H-02" aria-label="P9-H-02 完了">
+<label class="task__main" for="t-P9-H-02">
+<span class="task__id">P9-H-02</span>
+<span class="task__title"><strong>保育園の内定通知／不承諾通知を受領</strong></span>
+<span class="task__memo"><strong>不承諾（保留）通知は育休延長の必須書類。絶対に紛失しない</strong></span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1〜2月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P9-H-03">
+<input type="checkbox" class="tick" id="t-P9-H-03" data-key="P9-H-03" aria-label="P9-H-03 完了">
+<label class="task__main" for="t-P9-H-03">
+<span class="task__id">P9-H-03</span>
+<span class="task__title">【内定時】入園説明会、健康診断、必要書類（アレルギー、既往歴）の提出</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">2〜3月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P9-H-04">
+<input type="checkbox" class="tick" id="t-P9-H-04" data-key="P9-H-04" aria-label="P9-H-04 完了">
+<label class="task__main" for="t-P9-H-04">
+<span class="task__id">P9-H-04</span>
+<span class="task__title">【内定時】入園準備品の作成（<strong>大量の名前つけ</strong>、お昼寝布団、コップ袋、着替え6セット等）</span>
+<span class="task__memo"><strong>想像の3倍時間がかかる</strong>。お名前スタンプを買う</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">2〜3月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P9-H-05">
+<input type="checkbox" class="tick" id="t-P9-H-05" data-key="P9-H-05" aria-label="P9-H-05 完了">
+<label class="task__main" for="t-P9-H-05">
+<span class="task__id">P9-H-05</span>
+<span class="task__title">【不承諾時】育児休業給付金の延長申請（1歳6ヶ月まで）</span>
+<span class="task__memo"><strong>2025年4月から要件厳格化</strong>。ハローワークに必要書類を早めに確認</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳到達前</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P9-B-01">
+<input type="checkbox" class="tick" id="t-P9-B-01" data-key="P9-B-01" aria-label="P9-B-01 完了">
+<label class="task__main" for="t-P9-B-01">
+<span class="task__id">P9-B-01</span>
+<span class="task__title">復職日の確定と会社への正式連絡</span>
+<span class="task__memo">時短勤務の申出も同時に</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後10ヶ月</span>
+<span class="chip chip--who">母/父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P9-B-02">
+<input type="checkbox" class="tick" id="t-P9-B-02" data-key="P9-B-02" aria-label="P9-B-02 完了">
+<label class="task__main" for="t-P9-B-02">
+<span class="task__id">P9-B-02</span>
+<span class="task__title"><strong>育児時短就業給付</strong>（2025年4月〜）の確認</span>
+<span class="task__memo">2歳未満の子で時短勤務する場合、賃金の10%が支給</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">復職前</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P9-C-03">
+<input type="checkbox" class="tick" id="t-P9-C-03" data-key="P9-C-03" aria-label="P9-C-03 完了">
+<label class="task__main" for="t-P9-C-03">
+<span class="task__id">P9-C-03</span>
+<span class="task__title">病児保育・ファミリーサポート・シッターの登録</span>
+<span class="task__memo"><strong>登録には面談が必要で当日申込は不可</strong>。復職後に必ず使う</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">復職2ヶ月前</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P9-E-04">
+<input type="checkbox" class="tick" id="t-P9-E-04" data-key="P9-E-04" aria-label="P9-E-04 完了">
+<label class="task__main" for="t-P9-E-04">
+<span class="task__id">P9-E-04</span>
+<span class="task__title">卒乳・断乳の方針を検討（急がなくてよい）</span>
+<span class="task__memo">保育園入園と同時にやると負荷が重なる。ずらす</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後10ヶ月〜</span>
+<span class="chip chip--who">母</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P9-D-01">
+<input type="checkbox" class="tick" id="t-P9-D-01" data-key="P9-D-01" aria-label="P9-D-01 完了">
+<label class="task__main" for="t-P9-D-01">
+<span class="task__id">P9-D-01</span>
+<span class="task__title">歩行開始に備えたファーストシューズの計測・購入</span>
+<span class="task__memo">計測してから買う。すぐサイズアウトする</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">歩き始めたら</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">D</span>
+</div>
+</div>
+</div>
+<h3>生後11ヶ月</h3>
+<div class="tasks">
+<div class="task" data-id="P9-E-05">
+<input type="checkbox" class="tick" id="t-P9-E-05" data-key="P9-E-05" aria-label="P9-E-05 完了">
+<label class="task__main" for="t-P9-E-05">
+<span class="task__id">P9-E-05</span>
+<span class="task__title">離乳食：完了期（パクパク期）への移行準備、幼児食を意識</span>
+<span class="task__memo"><strong>1歳まではちみつ禁止（乳児ボツリヌス症）</strong> を最後まで徹底</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後11〜12ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task" data-id="P9-E-06">
+<input type="checkbox" class="tick" id="t-P9-E-06" data-key="P9-E-06" aria-label="P9-E-06 完了">
+<label class="task__main" for="t-P9-E-06">
+<span class="task__id">P9-E-06</span>
+<span class="task__title">手づかみ食べ中心へ、スプーンの練習</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後11ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P9-C-04">
+<input type="checkbox" class="tick" id="t-P9-C-04" data-key="P9-C-04" aria-label="P9-C-04 完了">
+<label class="task__main" for="t-P9-C-04">
+<span class="task__id">P9-C-04</span>
+<span class="task__title"><strong>1歳の予防接種を予約</strong>（MR／水痘／おたふく／肺炎球菌追加／五種混合追加／ヒブ追加）</span>
+<span class="task__memo"><strong>1歳の誕生日当日に打てるよう1ヶ月前に予約</strong>。同時接種で回数を減らす</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳の誕生日</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P9-G-01">
+<input type="checkbox" class="tick" id="t-P9-G-01" data-key="P9-G-01" aria-label="P9-G-01 完了">
+<label class="task__main" for="t-P9-G-01">
+<span class="task__id">P9-G-01</span>
+<span class="task__title">1歳の誕生日の企画（一升餅、選び取り、写真、ケーキ）</span>
+<span class="task__memo">1歳児が食べられるケーキは要注文/自作</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後11ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P9-F-01">
+<input type="checkbox" class="tick" id="t-P9-F-01" data-key="P9-F-01" aria-label="P9-F-01 完了">
+<label class="task__main" for="t-P9-F-01">
+<span class="task__id">P9-F-01</span>
+<span class="task__title">教育資金の方針決定（新NISA／学資保険／児童手当の全額貯蓄）</span>
+<span class="task__memo"><strong>児童手当を0〜18歳まで全額貯めると約230万円</strong>（第1子・第2子の場合）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">生後11ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P9-F-02">
+<input type="checkbox" class="tick" id="t-P9-F-02" data-key="P9-F-02" aria-label="P9-F-02 完了">
+<label class="task__main" for="t-P9-F-02">
+<span class="task__id">P9-F-02</span>
+<span class="task__title">年末調整で「16歳未満の扶養親族」欄に記入</span>
+<span class="task__memo">所得税の控除はないが<strong>住民税の非課税判定に影響する</strong>。書き忘れ多発</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">11〜12月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P9-H-06">
+<input type="checkbox" class="tick" id="t-P9-H-06" data-key="P9-H-06" aria-label="P9-H-06 完了">
+<label class="task__main" for="t-P9-H-06">
+<span class="task__id">P9-H-06</span>
+<span class="task__title">復職後の1日のタイムテーブルを紙に書いて夫婦で確認</span>
+<span class="task__memo">起床〜登園〜勤務〜迎え〜夕食〜入浴〜就寝を分単位で</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">復職1ヶ月前</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--post" id="sec-12">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>Phase 10：生後12ヶ月（1歳）</h2>
+<div class="tasks">
+<div class="task task--crit" data-id="P10-C-01">
+<input type="checkbox" class="tick" id="t-P10-C-01" data-key="P10-C-01" aria-label="P10-C-01 完了">
+<label class="task__main" for="t-P10-C-01">
+<span class="task__id">P10-C-01</span>
+<span class="task__title"><strong>1歳の予防接種</strong>：MR①／水痘①／おたふくかぜ①（任意）／肺炎球菌④／五種混合④／ヒブ追加</span>
+<span class="task__memo"><strong>MRは1歳になったらすぐ</strong>。麻疹は流行時の重症度が高い</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳の誕生日〜すみやか</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P10-C-02">
+<input type="checkbox" class="tick" id="t-P10-C-02" data-key="P10-C-02" aria-label="P10-C-02 完了">
+<label class="task__main" for="t-P10-C-02">
+<span class="task__id">P10-C-02</span>
+<span class="task__title">水痘②（①から3ヶ月以上あけて）</span>
+<span class="task__memo">忘れやすい2回目</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳3ヶ月〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P10-C-03">
+<input type="checkbox" class="tick" id="t-P10-C-03" data-key="P10-C-03" aria-label="P10-C-03 完了">
+<label class="task__main" for="t-P10-C-03">
+<span class="task__id">P10-C-03</span>
+<span class="task__title">1歳児健診（実施自治体）</span>
+<span class="task__memo">歩行、指差し、意味のある言葉、卒乳状況</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task" data-id="P10-C-04">
+<input type="checkbox" class="tick" id="t-P10-C-04" data-key="P10-C-04" aria-label="P10-C-04 完了">
+<label class="task__main" for="t-P10-C-04">
+<span class="task__id">P10-C-04</span>
+<span class="task__title">歯科健診・フッ素塗布の開始</span>
+<span class="task__memo">自治体の無料歯科健診がある場合あり</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳〜</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">C</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P10-E-01">
+<input type="checkbox" class="tick" id="t-P10-E-01" data-key="P10-E-01" aria-label="P10-E-01 完了">
+<label class="task__main" for="t-P10-E-01">
+<span class="task__id">P10-E-01</span>
+<span class="task__title">離乳食完了 → <strong>幼児食へ移行</strong>（1日3食＋おやつ2回）</span>
+<span class="task__memo">牛乳を飲料として開始できるのは1歳から</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳〜1歳6ヶ月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P10-E-02">
+<input type="checkbox" class="tick" id="t-P10-E-02" data-key="P10-E-02" aria-label="P10-E-02 完了">
+<label class="task__main" for="t-P10-E-02">
+<span class="task__id">P10-E-02</span>
+<span class="task__title">牛乳・卵白・ナッツ類（<strong>丸ごとは5歳まで禁止・窒息</strong>）の扱いを確認</span>
+<span class="task__memo">ミニトマト・ぶどうは4等分。もち・ナッツ・こんにゃくゼリーはNG</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">E</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P10-G-01">
+<input type="checkbox" class="tick" id="t-P10-G-01" data-key="P10-G-01" aria-label="P10-G-01 完了">
+<label class="task__main" for="t-P10-G-01">
+<span class="task__id">P10-G-01</span>
+<span class="task__title"><strong>1歳の誕生日</strong>（一升餅／選び取り／記念撮影）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">誕生日</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task" data-id="P10-G-02">
+<input type="checkbox" class="tick" id="t-P10-G-02" data-key="P10-G-02" aria-label="P10-G-02 完了">
+<label class="task__main" for="t-P10-G-02">
+<span class="task__id">P10-G-02</span>
+<span class="task__title">1年分の写真・動画の整理、フォトブック作成</span>
+<span class="task__memo">クラウドの二重バックアップ</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">G</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P10-H-01">
+<input type="checkbox" class="tick" id="t-P10-H-01" data-key="P10-H-01" aria-label="P10-H-01 完了">
+<label class="task__main" for="t-P10-H-01">
+<span class="task__id">P10-H-01</span>
+<span class="task__title"><strong>慣らし保育</strong>（初日2時間 → 2週間かけて延長）</span>
+<span class="task__memo"><strong>最初の1ヶ月は月の半分休むと思っておく</strong>。復職日は慣らし後に設定</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">3月末〜4月</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task task--crit" data-id="P10-H-02">
+<input type="checkbox" class="tick" id="t-P10-H-02" data-key="P10-H-02" aria-label="P10-H-02 完了">
+<label class="task__main" for="t-P10-H-02">
+<span class="task__id">P10-H-02</span>
+<span class="task__title"><strong>復職</strong></span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">4月</span>
+<span class="chip chip--who">母/父</span>
+<span class="chip chip--cat">H</span>
+</div>
+</div>
+<div class="task" data-id="P10-B-01">
+<input type="checkbox" class="tick" id="t-P10-B-01" data-key="P10-B-01" aria-label="P10-B-01 完了">
+<label class="task__main" for="t-P10-B-01">
+<span class="task__id">P10-B-01</span>
+<span class="task__title">育休終了手続き、社会保険料の育休終了時改定、時短勤務の適用</span>
+<span class="task__memo">「養育期間標準報酬月額特例」の申出を忘れずに（<strong>時短で給料が下がっても年金額を下げない制度</strong>）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">復職時</span>
+<span class="chip chip--who">母/父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P10-B-02">
+<input type="checkbox" class="tick" id="t-P10-B-02" data-key="P10-B-02" aria-label="P10-B-02 完了">
+<label class="task__main" for="t-P10-B-02">
+<span class="task__id">P10-B-02</span>
+<span class="task__title">児童手当の現況確認（自治体から通知があれば対応）</span>
+<span class="task__memo">原則不要になったが、対象者には案内が来る</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">6月頃</span>
+<span class="chip chip--who">父</span>
+<span class="chip chip--cat">B</span>
+</div>
+</div>
+<div class="task" data-id="P10-F-01">
+<input type="checkbox" class="tick" id="t-P10-F-01" data-key="P10-F-01" aria-label="P10-F-01 完了">
+<label class="task__main" for="t-P10-F-01">
+<span class="task__id">P10-F-01</span>
+<span class="task__title">1年間の育児費用の実績集計、2年目の予算組み</span>
+<span class="task__memo">保育料が新たに発生（3歳から無償化）</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">F</span>
+</div>
+</div>
+<div class="task" data-id="P10-I-01">
+<input type="checkbox" class="tick" id="t-P10-I-01" data-key="P10-I-01" aria-label="P10-I-01 完了">
+<label class="task__main" for="t-P10-I-01">
+<span class="task__id">P10-I-01</span>
+<span class="task__title">第2子の希望・タイミングについて話す</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳前後</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+<div class="task" data-id="P10-I-02">
+<input type="checkbox" class="tick" id="t-P10-I-02" data-key="P10-I-02" aria-label="P10-I-02 完了">
+<label class="task__main" for="t-P10-I-02">
+<span class="task__id">P10-I-02</span>
+<span class="task__title">1年の振り返り（うまくいった分担／限界だった点）</span>
+<span class="task__memo">―</span>
+</label>
+<div class="task__meta">
+<span class="chip chip--due">1歳</span>
+<span class="chip chip--who">2人</span>
+<span class="chip chip--cat">I</span>
+</div>
+</div>
+</div>
+</section>
+<section class="phase phase--appendix" id="sec-13">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>付録A：買い物リスト（時期別）</h2>
+<h3>A-1. 出産前に必ず要るもの（〜妊娠9ヶ月）</h3>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>品目</th>
+<th>数量目安</th>
+<th>目安価格</th>
+<th>備考</th>
+</tr></thead><tbody>
+<tr>
+<td>短肌着・コンビ肌着</td>
+<td>各5〜6枚</td>
+<td>5,000円</td>
+<td>季節に合わせる</td>
+</tr>
+<tr>
+<td>ツーウェイオール／新生児服</td>
+<td>3〜5枚</td>
+<td>6,000円</td>
+<td>―</td>
+</tr>
+<tr>
+<td>紙おむつ（新生児）</td>
+<td>1〜2袋</td>
+<td>3,000円</td>
+<td><strong>買いだめ厳禁</strong>。1ヶ月でSに移行</td>
+</tr>
+<tr>
+<td>おしりふき</td>
+<td>1箱</td>
+<td>2,000円</td>
+<td>大量消費するので箱買いでよい</td>
+</tr>
+<tr>
+<td>ベビーバス</td>
+<td>1</td>
+<td>3,000円</td>
+<td>1ヶ月しか使わない。レンタル/衣装ケース代用も</td>
+</tr>
+<tr>
+<td>ベビー用ボディソープ・保湿剤</td>
+<td>各1</td>
+<td>2,000円</td>
+<td><strong>新生児期からの保湿はアトピー予防に有効</strong></td>
+</tr>
+<tr>
+<td>授乳クッション</td>
+<td>1</td>
+<td>4,000円</td>
+<td>抱っこの補助にも</td>
+</tr>
+<tr>
+<td>哺乳瓶・乳首・消毒用品</td>
+<td>2本〜</td>
+<td>5,000円</td>
+<td>完母予定でも1本は用意</td>
+</tr>
+<tr>
+<td>粉ミルク/液体ミルク</td>
+<td>少量</td>
+<td>3,000円</td>
+<td><strong>液体ミルクは災害・外出・夜間に極めて有効</strong></td>
+</tr>
+<tr>
+<td>ガーゼハンカチ</td>
+<td>10枚</td>
+<td>1,500円</td>
+<td>―</td>
+</tr>
+<tr>
+<td>ベビー布団セット</td>
+<td>1</td>
+<td>15,000円</td>
+<td>硬めのマットレス。<strong>柔らかい寝具は窒息リスク</strong></td>
+</tr>
+<tr>
+<td><strong>チャイルドシート</strong></td>
+<td>1</td>
+<td>30,000〜60,000円</td>
+<td><strong>車利用なら退院日に必須</strong></td>
+</tr>
+<tr>
+<td>抱っこ紐（新生児対応）</td>
+<td>1</td>
+<td>20,000〜40,000円</td>
+<td><strong>必ず試着</strong></td>
+</tr>
+<tr>
+<td>体温計（非接触 or 予測式）</td>
+<td>1</td>
+<td>3,000円</td>
+<td>―</td>
+</tr>
+<tr>
+<td>爪切りはさみ</td>
+<td>1</td>
+<td>800円</td>
+<td>―</td>
+</tr>
+<tr>
+<td>鼻吸い器（電動推奨）</td>
+<td>1</td>
+<td>3,000〜12,000円</td>
+<td><strong>電動は生後半年以降の中耳炎予防で神器になる</strong></td>
+</tr>
+</tbody></table></div>
+<h3>A-2. 1ヶ月以降で買えばよいもの</h3>
+<p>ベビーカー（A型）／バウンサー・ハイローチェア（レンタル向き）／おむつ用ゴミ箱／プレイマット／ベビーモニター／おもちゃ／お食事エプロン</p>
+<h3>A-3. 入院バッグ（妊娠33週までに完成）</h3>
+<p><strong>すぐ持ち出す用（陣痛バッグ）</strong>：母子手帳／保険証／診察券／印鑑／産院の書類／スマホ＋長い充電ケーブル／飲み物（ストローキャップ）／軽食／ペットボトルストロー／タオル／リップ／ヘアゴム／使い捨てカイロ／テニスボール（腰押し用）</p>
+<p><strong>あとで持ってきてもらう用（入院バッグ）</strong>：産褥ショーツ2〜3／授乳ブラ2〜3／産褥パッド／授乳しやすいパジャマ2／洗面用具／スリッパ／退院時の母子の服／おくるみ／現金／メガネ／耳栓・アイマスク</p>
+<h3>A-4. 離乳食グッズ（生後4〜5ヶ月）</h3>
+<p>ハイチェア（テーブル付）／離乳食用食器・スプーン／すり鉢・裏ごし器（初期のみ）／ブレンダー（あれば時短）／製氷皿型の小分け冷凍容器／シリコンビブ／食洗機対応のプラ食器／レジャーシート（床の防御）</p>
+</section>
+<section class="phase phase--appendix" id="sec-14">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>付録B：お金のタイムライン（会社員世帯の目安）</h2>
+<h3>入ってくるお金</h3>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>制度</th>
+<th>金額</th>
+<th>いつ</th>
+<th>手続き先</th>
+<th>備考</th>
+</tr></thead><tbody>
+<tr>
+<td>妊婦のための支援給付</td>
+<td>5万円＋子1人あたり5万円</td>
+<td>妊娠届出時／出生後</td>
+<td>市区町村</td>
+<td>面談が要件</td>
+</tr>
+<tr>
+<td>妊婦健診の公費補助</td>
+<td>計10万円前後（14回分）</td>
+<td>妊娠中</td>
+<td>市区町村</td>
+<td>全額無料ではなく差額自己負担あり</td>
+</tr>
+<tr>
+<td><strong>出産育児一時金</strong></td>
+<td><strong>50万円</strong></td>
+<td>出産時（直接支払）</td>
+<td>健保</td>
+<td>2026年度時点。出産費用の保険適用化は2027〜2028年度見込み</td>
+</tr>
+<tr>
+<td>出産手当金</td>
+<td>標準報酬日額の2/3 ×98日程度</td>
+<td>産後56日以降に申請→1〜2ヶ月後</td>
+<td>健保（会社経由）</td>
+<td>産休中の所得補償</td>
+</tr>
+<tr>
+<td><strong>育児休業給付金</strong></td>
+<td>賃金の67%（180日）→50%</td>
+<td>2ヶ月ごと</td>
+<td>ハローワーク（会社経由）</td>
+<td>非課税＋社保免除で手取り約8割</td>
+</tr>
+<tr>
+<td>出生後休業支援給付金</td>
+<td>＋13%（最大28日分）</td>
+<td>育休給付と同時</td>
+<td>同上</td>
+<td><strong>両親とも14日以上の育休が要件 → 手取り実質10割</strong></td>
+</tr>
+<tr>
+<td>育児時短就業給付</td>
+<td>賃金の10%</td>
+<td>時短勤務中</td>
+<td>同上</td>
+<td>2歳未満の子</td>
+</tr>
+<tr>
+<td><strong>児童手当</strong></td>
+<td>月15,000円（3歳未満）／第3子以降30,000円</td>
+<td>偶数月に年6回</td>
+<td>市区町村</td>
+<td>所得制限なし（2024年10月〜）</td>
+</tr>
+<tr>
+<td>医療費控除の還付</td>
+<td>数万円</td>
+<td>翌年3〜4月</td>
+<td>税務署</td>
+<td>年10万円超の医療費。<strong>通院交通費も対象</strong></td>
+</tr>
+<tr>
+<td>高額療養費</td>
+<td>上限超過分</td>
+<td>帝王切開等</td>
+<td>健保</td>
+<td>―</td>
+</tr>
+</tbody></table></div>
+<h3>出ていくお金（1年目の目安）</h3>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>項目</th>
+<th>目安</th>
+</tr></thead><tbody>
+<tr>
+<td>妊婦健診の自己負担</td>
+<td>3〜7万円</td>
+</tr>
+<tr>
+<td>出産費用の差額（一時金50万円との差）</td>
+<td>0〜20万円（無痛分娩・個室で増）</td>
+</tr>
+<tr>
+<td>マタニティ・ベビー用品の初期投資</td>
+<td>15〜30万円</td>
+</tr>
+<tr>
+<td>おむつ・ミルク・衣類（年間）</td>
+<td>12〜20万円</td>
+</tr>
+<tr>
+<td>行事・写真（お宮参り／お食い初め／1歳）</td>
+<td>5〜20万円</td>
+</tr>
+<tr>
+<td>内祝い</td>
+<td>もらった額の半分程度</td>
+</tr>
+</tbody></table></div>
+<blockquote><strong>注意：給付金の入金は遅い。</strong> 出産手当金・育休給付の初回入金は産後2〜4ヶ月かかることが多い。 <strong>その間を無収入で耐えられる現金</strong>（生活費3〜4ヶ月分）を妊娠中に確保しておくこと。</blockquote>
+</section>
+<section class="phase phase--appendix" id="sec-15">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>付録C：父の育休の組み方（2026年時点）</h2>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>制度</th>
+<th>期間</th>
+<th>分割</th>
+<th>ポイント</th>
+</tr></thead><tbody>
+<tr>
+<td>産後パパ育休（出生時育児休業）</td>
+<td>産後8週以内に最大4週</td>
+<td>2回まで</td>
+<td>申出は原則2週間前。労使協定があれば就業も可</td>
+</tr>
+<tr>
+<td>育児休業（本体）</td>
+<td>原則1歳まで</td>
+<td>2回まで</td>
+<td>申出は原則1ヶ月前</td>
+</tr>
+<tr>
+<td>出生後休業支援給付金</td>
+<td>最大28日</td>
+<td>―</td>
+<td><strong>両親とも14日以上取得で13%上乗せ</strong></td>
+</tr>
+</tbody></table></div>
+<p><strong>おすすめの型（例）</strong></p>
+<ol>
+<li><strong>退院〜産後3週</strong>：産後パパ育休（1回目）。母は横になっているのが仕事。父が家事・手続き・沐浴を全部やる。</li>
+<li><strong>母の里帰りから戻るタイミング</strong> or <strong>父の産後パパ育休2回目</strong>：生活が二人体制に戻る時期を支える。</li>
+<li><strong>生後2〜3ヶ月</strong>：母のワンオペが本格化する時期。育休本体を1〜2ヶ月あてる。</li>
+<li><strong>復職直前の3月</strong>：慣らし保育は日中に何度も呼び出される。ここに育休を残しておくと極めて強い。</li>
+</ol>
+<blockquote><strong>落とし穴</strong>：父が産後すぐの2週間だけ取って終わると、<strong>一番きついのは生後1〜3ヶ月</strong>なので支援が空白になる。 分割を使って「産後直後」と「後半」に分けるのが実務的に強い。</blockquote>
+</section>
+<section class="phase phase--appendix" id="sec-16">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>付録D：離乳食ロードマップ</h2>
+<blockquote>厚生労働省「授乳・離乳の支援ガイド」ベース。<strong>進度は子どもによって全く違う。表は目安</strong>。</blockquote>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>期</th>
+<th>月齢</th>
+<th>回数</th>
+<th>固さ</th>
+<th>主な食材</th>
+<th>1回量の目安</th>
+</tr></thead><tbody>
+<tr>
+<td><strong>ゴックン期（初期）</strong></td>
+<td>5〜6ヶ月</td>
+<td>1日1回→2回</td>
+<td>なめらかにすりつぶす（ポタージュ状）</td>
+<td>10倍がゆ→野菜（にんじん、かぼちゃ、ほうれん草）→豆腐、白身魚、<strong>固ゆで卵黄</strong></td>
+<td>小さじ1から開始し徐々に増やす</td>
+</tr>
+<tr>
+<td><strong>モグモグ期（中期）</strong></td>
+<td>7〜8ヶ月</td>
+<td>1日2回</td>
+<td>舌でつぶせる（豆腐くらい）</td>
+<td>7倍がゆ、赤身魚、鶏ささみ、卵黄→全卵、ヨーグルト、納豆</td>
+<td>主食50〜80g、野菜20〜30g、たんぱく質10〜15g</td>
+</tr>
+<tr>
+<td><strong>カミカミ期（後期）</strong></td>
+<td>9〜11ヶ月</td>
+<td><strong>1日3回</strong></td>
+<td>歯ぐきでつぶせる（バナナくらい）</td>
+<td>5倍がゆ→軟飯、<strong>赤身肉（鉄）</strong>、レバー、青魚、チーズ</td>
+<td>主食90g、野菜30〜40g、たんぱく質15g</td>
+</tr>
+<tr>
+<td><strong>パクパク期（完了期）</strong></td>
+<td>12〜18ヶ月</td>
+<td>1日3回＋おやつ</td>
+<td>歯ぐきで噛める（肉団子くらい）</td>
+<td>軟飯→ごはん、大人の取り分け（薄味）</td>
+<td>主食軟飯90g、野菜40〜50g、たんぱく質15〜20g</td>
+</tr>
+</tbody></table></div>
+<h3>進め方のルール</h3>
+<ol>
+<li><strong>新しい食材は1日1種類・小さじ1から・午前中</strong>（何かあれば小児科が開いている時間に）</li>
+<li>アレルギー特定原材料（卵・乳・小麦・そば・落花生・えび・かに・くるみ）は特に慎重に、しかし<strong>遅らせない</strong></li>
+<li>味付けはほぼ不要。1歳までは薄味。</li>
+<li><strong>1歳未満ははちみつ禁止</strong>（乳児ボツリヌス症、死亡例あり）</li>
+<li><strong>生もの（刺身・生卵）は3歳頃まで避ける</strong></li>
+<li><strong>窒息リスク食材</strong>：もち、ナッツ類（5歳未満は丸ごとNG）、ミニトマト・ぶどう（4等分）、こんにゃくゼリー、飴</li>
+<li><strong>ベビーフードは積極的に使う</strong>。手作りが偉いわけではない。栄養設計は市販品のほうが安定している</li>
+<li>冷凍ストック運用：まとめて作る → 製氷皿型容器で小分け冷凍 → 1週間以内に使い切る</li>
+</ol>
+</section>
+<section class="phase phase--appendix" id="sec-17">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>付録E：毎月の定例タスク（ルーティン）</h2>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>頻度</th>
+<th>タスク</th>
+<th>担当</th>
+</tr></thead><tbody>
+<tr>
+<td>毎日</td>
+<td>授乳・睡眠・排泄の記録／体調観察</td>
+<td>2人</td>
+</tr>
+<tr>
+<td>毎週</td>
+<td>夫婦15分ミーティング（分担・体調・翌週の予定）</td>
+<td>2人</td>
+</tr>
+<tr>
+<td>毎週</td>
+<td>消耗品の在庫確認（おむつ・おしりふき・ミルク・洗剤）</td>
+<td>父</td>
+</tr>
+<tr>
+<td>毎月</td>
+<td>母子手帳への成長記録（身長・体重）、月齢フォト</td>
+<td>2人</td>
+</tr>
+<tr>
+<td>毎月</td>
+<td><strong>予防接種スケジュールの次回確認と予約</strong></td>
+<td>父</td>
+</tr>
+<tr>
+<td>毎月</td>
+<td>家計の実績確認（給付金の入金、育児費用）</td>
+<td>2人</td>
+</tr>
+<tr>
+<td>毎月</td>
+<td>子ども服・おむつのサイズ確認</td>
+<td>2人</td>
+</tr>
+<tr>
+<td>四半期</td>
+<td>安全対策の再点検（発達に伴って危険箇所が変わる）</td>
+<td>父</td>
+</tr>
+<tr>
+<td>四半期</td>
+<td>写真・動画のバックアップ</td>
+<td>2人</td>
+</tr>
+</tbody></table></div>
+</section>
+<section class="phase phase--appendix" id="sec-18">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>付録F：緊急時の連絡先（冷蔵庫に貼る）</h2>
+<div class="tablewrap"><table>
+<thead><tr>
+<th>相手</th>
+<th>連絡先</th>
+<th>用途</th>
+</tr></thead><tbody>
+<tr>
+<td>かかりつけ小児科</td>
+<td>＿＿＿＿＿</td>
+<td>平日日中</td>
+</tr>
+<tr>
+<td>夜間・休日急病診療所</td>
+<td>＿＿＿＿＿</td>
+<td>夜間</td>
+</tr>
+<tr>
+<td><strong>#8000</strong></td>
+<td>短縮ダイヤル</td>
+<td><strong>小児救急電話相談（全国・夜間休日）</strong></td>
+</tr>
+<tr>
+<td><strong>#7119</strong></td>
+<td>短縮ダイヤル</td>
+<td>救急安心センター（救急車を呼ぶか迷ったとき／実施地域のみ）</td>
+</tr>
+<tr>
+<td>中毒110番（大阪）</td>
+<td>072-727-2499</td>
+<td>24時間・誤飲</td>
+</tr>
+<tr>
+<td>中毒110番（つくば）</td>
+<td>029-852-9999</td>
+<td>9〜21時・誤飲</td>
+</tr>
+<tr>
+<td>産院</td>
+<td>＿＿＿＿＿</td>
+<td>産後の母体トラブル</td>
+</tr>
+<tr>
+<td>保健センター</td>
+<td>＿＿＿＿＿</td>
+<td>育児相談・産後うつ</td>
+</tr>
+<tr>
+<td>陣痛タクシー</td>
+<td>＿＿＿＿＿</td>
+<td>出産時</td>
+</tr>
+</tbody></table></div>
+<h4>迷わず救急車（119）を呼ぶ状態</h4>
+<p>けいれんが5分以上続く／意識がおかしい／唇や顔が青白い／呼吸が苦しそう（肩で息、陥没呼吸）／ 生後3ヶ月未満の38℃以上の発熱／頭を強く打って嘔吐・意識障害／ ボタン電池・磁石・タバコ・強アルカリ洗剤の誤飲</p>
+</section>
+<section class="phase phase--appendix" id="sec-19">
+<h2 class="phase__title"><span class="phase__dot" aria-hidden="true"></span>付録G：確認が必要な「自治体差が大きい」項目チェックリスト</h2>
+<p>引っ越し・里帰りがある場合は特に、以下を<strong>住んでいる市区町村の公式サイト</strong>で確認すること。</p>
+<ul class="checklist">
+<li><input type="checkbox" class="tick" id="chk-1" data-key="chk-1"><label for="chk-1">妊婦健診補助券の回数と金額</label></li>
+<li><input type="checkbox" class="tick" id="chk-2" data-key="chk-2"><label for="chk-2">妊婦歯科健診の有無</label></li>
+<li><input type="checkbox" class="tick" id="chk-3" data-key="chk-3"><label for="chk-3">産後ケア事業の内容・回数・自己負担・<strong>申請時期</strong></label></li>
+<li><input type="checkbox" class="tick" id="chk-4" data-key="chk-4"><label for="chk-4">産後2週間健診の助成</label></li>
+<li><input type="checkbox" class="tick" id="chk-5" data-key="chk-5"><label for="chk-5">1ヶ月児健診の公費化（自治体により無料化が進行中）</label></li>
+<li><input type="checkbox" class="tick" id="chk-6" data-key="chk-6"><label for="chk-6">乳幼児医療費助成の対象年齢・所得制限・自己負担</label></li>
+<li><input type="checkbox" class="tick" id="chk-7" data-key="chk-7"><label for="chk-7">6〜7ヶ月／1歳児健診の実施有無（法定は1歳6ヶ月と3歳のみ）</label></li>
+<li><input type="checkbox" class="tick" id="chk-8" data-key="chk-8"><label for="chk-8">BCGが集団接種か個別接種か</label></li>
+<li><input type="checkbox" class="tick" id="chk-9" data-key="chk-9"><label for="chk-9">おたふくかぜワクチンへの独自助成</label></li>
+<li><input type="checkbox" class="tick" id="chk-10" data-key="chk-10"><label for="chk-10">出産祝い金・紙おむつ助成・ごみ袋支給</label></li>
+<li><input type="checkbox" class="tick" id="chk-11" data-key="chk-11"><label for="chk-11">家事育児支援ヘルパー、産前産後ヘルパー</label></li>
+<li><input type="checkbox" class="tick" id="chk-12" data-key="chk-12"><label for="chk-12">ファミリーサポートセンター、病児保育の登録方法</label></li>
+<li><input type="checkbox" class="tick" id="chk-13" data-key="chk-13"><label for="chk-13">ベビーシッター利用助成（東京都など独自制度あり）</label></li>
+<li><input type="checkbox" class="tick" id="chk-14" data-key="chk-14"><label for="chk-14">こども誰でも通園制度の受付方法（2026年4月〜）</label></li>
+<li><input type="checkbox" class="tick" id="chk-15" data-key="chk-15"><label for="chk-15">認可保育園の<strong>申込締切</strong>・選考点数表・過去の内定最低点</label></li>
+</ul>
+<h3>出典（制度情報の裏取り）</h3>
+<ul>
+<li><a href="https://joseikin-insight.com/grants/grant-new-shussanhiyou-mushouka-itsukara-20260704005730/" target="_blank" rel="noopener noreferrer">出産費用無償化はいつから｜一時金50万円はどうなる（令和8年）</a></li>
+<li><a href="https://www.sodaten.com/articles/shussan-hiyou-hoken-tekiyou-ichijikin-chigai" target="_blank" rel="noopener noreferrer">出産費用の保険適用化で手出しは減る？一時金50万円との違い（2026年最新）</a></li>
+<li><a href="https://www.jpeds.or.jp/modules/activity/index.php?content_id=138" target="_blank" rel="noopener noreferrer">日本小児科学会が推奨する予防接種スケジュール 2026.4.1版</a></li>
+<li><a href="https://id-info.jihs.go.jp/relevant/vaccine/topics/040/schedule.html" target="_blank" rel="noopener noreferrer">定期予防接種スケジュール（国立健康危機管理研究機構）</a></li>
+<li><a href="https://www.jpeds.or.jp/society-activities/pediatric-medical-care/vaccination/opinion/post-155697.html" target="_blank" rel="noopener noreferrer">2026年4月からの妊婦を対象としたRSウイルス母子免疫ワクチンの定期接種化にあたって（日本小児科学会）</a></li>
+<li><a href="https://keiyaku-watch.jp/media/hourei/202604-kosodate-shienho/" target="_blank" rel="noopener noreferrer">【2026年4月施行分】子ども・子育て支援法改正とは？</a></li>
+<li><a href="https://kodomonosora.jp/sora-news/article/2026%E5%B9%B44%E6%9C%88%E3%81%8B%E3%82%89%E3%80%8C%E5%AD%90%E3%81%A9%E3%82%82%E3%83%BB%E5%AD%90%E8%82%B2%E3%81%A6%E6%94%AF%E6%8F%B4%E9%87%91%E5%88%B6%E5%BA%A6%E3%80%8D%E3%81%8C%E5%A7%8B%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%99%E3%80%90%E3%81%93%E3%81%A9%E3%82%82%E5%AE%B6%E5%BA%AD%E5%BA%81%E3%80%91" target="_blank" rel="noopener noreferrer">2026年4月から「子ども・子育て支援金制度」が始まります（こども家庭庁関連）</a></li>
+</ul>
+<blockquote><strong>免責</strong>：本WBSは2026年8月時点の一般的な情報に基づく計画テンプレートであり、医療上の助言ではありません。 健康・治療・接種の判断は必ず主治医に、制度の適用可否は必ず自治体・健保・勤務先・ハローワークに確認してください。</blockquote>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    本ページは2026年8月時点の一般的な情報に基づく計画テンプレートであり、医療上の助言ではありません。
+    健康・治療・接種の判断は主治医に、制度の適用可否は自治体・健保・勤務先・ハローワークに確認してください。
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'childcare-wbs-v1';
+  var state = {};
+  try { state = JSON.parse(localStorage.getItem(KEY) || '{}'); } catch (e) { state = {}; }
+
+  var ticks = Array.prototype.slice.call(document.querySelectorAll('.tick'));
+  var fill = document.getElementById('progress-fill');
+  var num  = document.getElementById('progress-num');
+
+  function rowOf(el) { return el.closest('.task') || el.closest('li'); }
+
+  function paint(el) {
+    var row = rowOf(el);
+    if (row) row.classList.toggle('is-done', el.checked);
+  }
+
+  function update() {
+    var done = ticks.filter(function (t) { return t.checked; }).length;
+    var pct = ticks.length ? Math.round(done / ticks.length * 100) : 0;
+    fill.style.width = pct + '%';
+    num.textContent = done + ' / ' + ticks.length + '  (' + pct + '%)';
+  }
+
+  ticks.forEach(function (t) {
+    var k = t.dataset.key;
+    if (state[k]) t.checked = true;
+    paint(t);
+    t.addEventListener('change', function () {
+      state[k] = t.checked;
+      if (!t.checked) delete state[k];
+      try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {}
+      paint(t);
+      update();
+    });
+  });
+  update();
+
+  var hide = document.getElementById('btn-hide');
+  hide.addEventListener('click', function () {
+    var on = document.body.classList.toggle('hide-done');
+    hide.setAttribute('aria-pressed', on ? 'true' : 'false');
+    hide.textContent = on ? '完了も表示' : '未完了だけ表示';
+  });
+
+  document.getElementById('btn-reset').addEventListener('click', function () {
+    if (!confirm('チェックを全部消します。よろしいですか？')) return;
+    ticks.forEach(function (t) { t.checked = false; paint(t); });
+    state = {};
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    update();
+  });
+})();
+</script>
