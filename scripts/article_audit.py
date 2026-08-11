@@ -307,15 +307,17 @@ def main():
                       io.open(f, encoding="utf-8", errors="replace").read(), flags=re.S))
         for r in rs:
             qy = (r.get("query") or "").strip()
-            if not qy:
+            # 表示2回以上のみ。分割できないクエリは判定しない（④側の判定と同じ基準に揃える）
+            if not qy or r.get("impressions", 0) < 2:
                 continue
-            # クエリを語に割り、本文での最小出現回数を見る
             words = [w for w in re.split(r"[\s　]+", qy) if len(w) >= 2]
-            if not words:
+            if len(words) < 2 and " " not in qy and "　" not in qy:
                 continue
             counts = {w: body.count(w) for w in words}
+            if not counts:
+                continue
             weakest = min(counts, key=counts.get)
-            if counts[weakest] <= 2 and r.get("impressions", 0) >= 1:
+            if counts[weakest] <= 2:
                 miss.append((r.get("position", 999), r.get("impressions", 0), qy,
                              "{}={}回".format(weakest, counts[weakest]), slug))
     for pos, imp, qy, detail, slug in sorted(miss)[:30]:
