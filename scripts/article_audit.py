@@ -57,6 +57,30 @@ def ledger():
     return out
 
 
+def next_move(pos, imp, eff, known, cta, gap, indexed):
+    """④ 順位を上げる／収益化するための打ち手を1つに絞って返す。
+
+    優先順位は「効果が出るまでの速さ」で決めている。
+    インデックス > クエリ不一致 > CTA欠落 > 単価 > 看板 > 一次情報。
+    """
+    if not indexed:
+        return "**GSCで申請**（7〜8日で100%、放置は1.7%）"
+    if gap:
+        w, c = gap
+        return "**「{}」を本文に足す**（現在{}回・順位は付いているが答えていない）".format(w, c)
+    if cta == 0:
+        return "**案件を設置**（①はあるが③が無い。貼るだけで経路ができる）"
+    if pos is not None and pos <= 10:
+        return "**②を最大化**（流入がある。より高単価の案件に差し替えられないか）"
+    if known and eff and eff < 3000:
+        return "実効{:,}円は低い。**高単価案件への差し替えを検討**".format(int(eff))
+    if pos is not None and pos <= 50:
+        return "**一次情報を足す**（実測値・体験・競合が持たない節）"
+    if pos is not None:
+        return "**看板を掛け替え**（本文は活かし、固有修飾へ寄せる）"
+    return "**看板を掛け替え**（表示ゼロ＝圏外）"
+
+
 def main():
     led = ledger()
 
@@ -91,6 +115,29 @@ def main():
             m = re.search(r"/articles/([\w\-]+)/", r.get("page", "") or "")
             if m:
                 gsc[m.group(1)].append(r)
+
+    # クエリに答えていない記事（④の判定に使う）
+    qgap = {}
+    for slug, rs in gsc.items():
+        f = os.path.join(BASE, "articles", slug, "index.html")
+        if not os.path.exists(f):
+            continue
+        body = re.sub(r"<[^>]+>", "", re.sub(r"<script.*?</script>", "",
+                      io.open(f, encoding="utf-8", errors="replace").read(), flags=re.S))
+        # 略語・表記ゆれ・固有名詞の一部は本文に入れても不自然なので除外する。
+        # 「マチアプ」を記事に足しても読者の役に立たない（検索者の口語であって記事の語ではない）。
+        SKIP = {"マチアプ", "アプリ", "サイト", "おすすめ", "比較", "人気", "無料", "口コミ",
+                "ランキング", "使い方", "始め方", "選び方", "とは"}
+        worst = None
+        for r in sorted(rs, key=lambda x: x.get("position", 999)):
+            words = [w for w in re.split(r"[\s　]+", (r.get("query") or "").strip())
+                     if len(w) >= 2 and w not in SKIP]
+            for w in words:
+                c = body.count(w)
+                if c <= 2 and (worst is None or c < worst[1]):
+                    worst = (w, c)
+        if worst:
+            qgap[slug] = worst
 
     buckets = collections.defaultdict(list)
     for slug, best in placed.items():
@@ -158,27 +205,28 @@ def main():
     L.append("")
     L.append("`③` はCTAの設置数。**①があるのに③が0なら、貼るだけで経路ができる。**")
     L.append("")
-    L.append("| 判定 | テーマ | ①順位 | ①表示 | ①クリック | ②実効単価 | ③CTA | 記事 |")
-    L.append("|---|---|---|---|---|---|---|---|")
+    L.append("| ①順位 | ①表示 | ②キャッシュポイント | ③CTA | ④打ち手 | テーマ | 記事 |")
+    L.append("|---|---|---|---|---|---|---|")
     allrows = []
     for key, items in buckets.items():
         for it in items:
             allrows.append((key,) + it)
-    order = {"S": 0, "B": 1, "C": 2, "D": 3, "A": 4}
-    allrows.sort(key=lambda x: (order.get(x[0][0], 9),
-                                x[5] if x[5] else 9999,   # 順位の良い順
-                                -x[3]))                    # 同順位なら表示回数の多い順
+    # 順位の良い順（未計測・圏外は末尾）
+    allrows.sort(key=lambda x: (x[5] if x[5] and x[5] < 999 else 9999, -x[3]))
     for key, eff, known, imp, clk, pos, slug, best, cov in allrows:
-        if key.startswith("A"):
-            rank, shown, clicks = "未計測", "—", "—"
+        indexed = not key.startswith("A")
+        if not indexed:
+            rank, shown = "未計測", "—"
         elif not imp:
-            rank, shown, clicks = "圏外", "0", "0"
+            rank, shown = "圏外", "0"
         else:
-            rank = "{:.1f}".format(pos)
-            shown, clicks = str(imp), str(clk)
-        two = "{:,}円".format(int(eff)) if known else ("単価不明" if best else "**なし**")
-        L.append("| {} | {} | {} | {} | {} | {} | {} | `{}` |".format(
-            key[0], title.get(slug, "")[:30], rank, shown, clicks, two, cta.get(slug, 0), slug))
+            rank, shown = "{:.1f}".format(pos), str(imp)
+        two = ("{}／{:,}円".format(best[1][:12], int(eff)) if known
+               else ("{}／単価不明".format(best[1][:12]) if best else "**なし**"))
+        move = next_move(pos if (indexed and imp) else None, imp, eff, known,
+                         cta.get(slug, 0), qgap.get(slug), indexed)
+        L.append("| {} | {} | {} | {} | {} | {} | `{}` |".format(
+            rank, shown, two, cta.get(slug, 0), move, title.get(slug, "")[:26], slug))
     L.append("")
 
     # クエリに答えていない記事の検出（2026-08-09追加）
