@@ -151,6 +151,13 @@ table.rm thead th{background:var(--accent);color:#fff;font-size:11px;letter-spac
 table.rm td{word-break:break-word}
 table.rm td.num{font-variant-numeric:tabular-nums;text-align:center;white-space:nowrap;font-family:var(--fm);font-size:11.5px}
 .gcell{padding:0!important;border-left:0;overflow:hidden}
+.sticky1{position:sticky;left:0;z-index:5}
+.sticky2{position:sticky;left:38px;z-index:5;box-shadow:1px 0 0 var(--line)}
+table.rm tbody .sticky1,table.rm tbody .sticky2{background:var(--surface);z-index:4}
+.lgd{display:inline-flex;align-items:center;gap:5px;font-family:var(--fm);font-size:10.5px;color:var(--ink2)}
+.lgd i{display:inline-block;width:14px;height:10px;border-radius:2px}
+.lgd .i-pre{background:var(--pre2)} .lgd .i-post{background:var(--accent2)}
+.lgd .i-exam{background:var(--barexam)} .lgd .i-birth{width:2px;height:12px;background:var(--crit)}
 .gcell.yr{border-left:1px solid var(--line)}
 .gcell.birth{border-left:2px solid var(--crit)}
 .gbar{display:block;height:16px}
@@ -268,7 +275,7 @@ function renderRoadmap(){
   W.forEach(w=>h+="<col style='width:"+w+"px'>");
   for(let k=0;k<G;k++) h+="<col style='width:6px'>";
   h += "</colgroup><thead>";
-  h += "<tr><th colspan='9' class='yrgap'></th>";
+  h += "<tr><th colspan='9' class='yrgap sticky1'></th>";
   let k=0;
   while(k<G){
     const y=cols[k].y; let n=0;
@@ -277,7 +284,7 @@ function renderRoadmap(){
     k+=n;
   }
   h += "</tr><tr>";
-  h += "<th>ID</th><th>フェーズ</th><th>子の年齢</th><th>ゴール（完了条件）</th><th>予定</th>"
+  h += "<th class='sticky1'>ID</th><th class='sticky2'>フェーズ</th><th>子の年齢</th><th>ゴール（完了条件）</th><th>予定</th>"
      + "<th>マイルストーン</th><th>決めること</th><th>費用(万円)</th><th>最大リスク</th>";
   for(let j=0;j<G;j++)
     h += "<th class='"+gcls(j)+"'"+(cols[j].birth?" title='出産'":"")+"></th>";
@@ -287,7 +294,7 @@ function renderRoadmap(){
     const end = p.start + p.dur - 1;
     lo += p.lo; hi += p.hi;
     const tone = i>=EXAM ? "exam" : (i<8 ? "pre" : "post");
-    h += "<tr><td class='num'>"+p.id+"</td><td><strong>"+esc(p.name)+"</strong></td>"
+    h += "<tr><td class='num sticky1'>"+p.id+"</td><td class='sticky2'><strong>"+esc(p.name)+"</strong></td>"
       + "<td class='num'>"+esc(p.age)+"</td>"
       + "<td>"+esc(p.goal)+"</td>"
       + "<td class='num'>"+ym(BASE,p.start)+"<br>〜"+ym(BASE,end)+"</td>"
@@ -299,7 +306,7 @@ function renderRoadmap(){
     }
     h += "</tr>";
   });
-  h += "<tr><td></td><td><strong>合計</strong></td><td colspan='5'></td>"
+  h += "<tr><td class='sticky1'></td><td class='sticky2'><strong>合計</strong></td><td colspan='5'></td>"
      + "<td class='num'><strong>"+lo+"〜"+hi+"</strong></td>"
      + "<td>※ 同棲開始から子ども12歳までの総額。ご祝儀・親の援助・給付金は差し引く前</td>";
   for(let k=0;k<G;k++) h += "<td class='"+gcls(k)+"'></td>";
@@ -533,8 +540,13 @@ def main():
   <p class="sub">同棲開始から子ども12歳（中学受験の終了）まで。基準日を変えると全フェーズの予定とガントが動きます。
      期間は標準モデルなので、妊活（P8）を中心に実態に合わせて読み替えてください。
      <strong>P14以降はロードマップのみ</strong>のざっくり粒度で、②WBSと③リスク管理表は P1〜P13（子ども1歳まで）が対象です。
-     ガントは砂色＝出産前、緑＝育児期、濃い緑＝中学受験期。赤い縦線が出産の月です。</p>
+     P15以降の境目は「4月の入学・進級」に合わせてあります（基準日2026年10月＝出産2029年11月の場合）。出産月がずれたら学年の境目も読み替えてください。</p>
   <div class="filters">
+    <span class="lgd"><i class="i-pre"></i>出産前</span>
+    <span class="lgd"><i class="i-post"></i>育児期</span>
+    <span class="lgd"><i class="i-exam"></i>中学受験期</span>
+    <span class="lgd"><i class="i-birth"></i>出産の月</span>
+    <span class="spacer"></span>
     <button class="btn btn--go" data-copy="rm">スプレッドシートにコピー</button>
   </div>
   <div class="rmwrap" id="rm"></div>
