@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>結婚相談所 料金シミュレーター｜活動期間×タイプ別の総額を試算【2026年版】</title>
+<meta name="description" content="活動期間・タイプ（オンライン型/ハイブリッド/店舗型）・お見合い回数を選ぶだけで、結婚相談所の総額レンジ（初期費用＋月会費＋お見合い料＋成婚料）を試算できる無料ツール。3タイプの比較表つき。">
+<link rel="canonical" href="https://www.noe-match.com/tools/soudanjo-simulator/">
+<meta property="og:title" content="結婚相談所 料金シミュレーター｜活動期間×タイプ別の総額を試算【2026年版】">
+<meta property="og:description" content="活動期間・タイプ・お見合い回数を選ぶだけで、結婚相談所の総額レンジを試算できる無料ツール。3タイプの比較表つき。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.noe-match.com/tools/soudanjo-simulator/">
+<meta property="og:site_name" content="NOE結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="結婚相談所 料金シミュレーター【2026年版】">
+<meta name="twitter:description" content="活動期間・タイプ・お見合い回数を選ぶだけで、結婚相談所の総額レンジを試算できる無料ツール。">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--pink:#ff4d7e;--pink-dark:#d63660;--pink-deep:#b02a4e;--pink-light:#fff0f4;--purple:#7c5cbf;--navy:#1c2b33;--text:#2c3e50;--ink-soft:#3d454d;--sub:#607d8b;--bg:#faf8f9;--white:#fff;--border:#efe8ea;--line-strong:#e0d5d9;--shadow:0 1px 3px rgba(30,35,40,.06),0 4px 14px rgba(30,35,40,.06);--shadow-hover:0 4px 10px rgba(214,54,96,.10),0 8px 24px rgba(30,35,40,.08);--radius:12px}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;color:var(--text);background:var(--bg);line-height:1.9;font-size:15.5px;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";letter-spacing:.01em}
+header{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:3px solid var(--pink);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.header-inner{max-width:860px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.logo{font-size:1.1rem;font-weight:900;color:var(--pink-dark);text-decoration:none;letter-spacing:.01em}
+.logo-badge{background:var(--pink);color:#fff;font-size:.62rem;padding:2px 8px;border-radius:20px;margin-left:6px}
+nav a{color:var(--sub);text-decoration:none;font-size:.8rem;padding:6px 9px;border-radius:6px;font-weight:500;transition:background .15s,color .15s}
+nav a:hover{background:var(--pink-light);color:var(--pink-dark)}
+@media(max-width:680px){nav{display:none}}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.breadcrumb{font-size:.76rem;color:var(--sub);padding:14px 0}
+.breadcrumb a{color:var(--sub);text-decoration:none}
+.breadcrumb a:hover{color:var(--pink-dark)}
+article{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:38px 34px;margin-bottom:30px}
+@media(max-width:600px){article{padding:26px 18px}}
+article h1{font-size:clamp(1.5rem,4.5vw,2rem);font-weight:900;line-height:1.45;letter-spacing:.01em;margin-bottom:16px;color:var(--navy)}
+article h2{font-size:clamp(1.2rem,3.4vw,1.45rem);font-weight:900;line-height:1.5;margin:44px 0 16px;padding:.45em 0 .45em 14px;border-left:5px solid var(--pink);background:linear-gradient(90deg,var(--pink-light),transparent 70%);border-radius:0 8px 8px 0;color:var(--navy)}
+article h3{font-size:1.08rem;font-weight:700;margin:30px 0 10px;color:var(--pink-deep);padding-bottom:4px;border-bottom:2px solid var(--pink-light)}
+article p{margin:13px 0}
+article ul,article ol{margin:13px 0 13px 1.45em}
+article li{margin:7px 0}
+article a{color:var(--pink-dark);font-weight:500;text-decoration-color:#f2b3c4;text-underline-offset:3px;transition:color .15s}
+article a:hover{color:var(--pink)}
+blockquote{background:#fff8e1;border-left:4px solid #f4c542;border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.93rem;color:var(--ink-soft)}
+blockquote strong{color:var(--pink-dark)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;box-shadow:var(--shadow);margin:20px 0;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:480px}
+thead th{background:linear-gradient(180deg,#243642,var(--navy));color:#fff;padding:12px 10px;text-align:center;font-weight:700;letter-spacing:.02em;white-space:nowrap}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--border);text-align:center}
+tbody tr:nth-child(even){background:#fbf7f8}
+tbody td:first-child{font-weight:700;color:var(--navy);text-align:left}
+footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line-height:1.8}
+.footer-inner{max-width:860px;margin:0 auto;text-align:center}
+.footer-inner a{color:#b9c2c8;text-decoration:none;margin:0 8px}
+.footer-inner a:hover{color:#fff}
+.footer-disc{color:#78868f;font-size:.68rem;margin-top:12px;line-height:1.7}
+.related{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px;margin-bottom:30px}
+.related h2{font-size:1.05rem;font-weight:900;margin-bottom:14px;color:var(--navy);padding-left:10px;border-left:4px solid var(--pink)}
+.related ul{list-style:none;display:grid;gap:10px}
+.related a{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 15px;font-size:.83rem;font-weight:500;text-decoration:none;color:var(--text);transition:border-color .15s,box-shadow .15s,transform .12s}
+.related a:hover{border-color:var(--pink);box-shadow:var(--shadow-hover);transform:translateY(-1px);color:var(--pink-dark)}
+/* ツール用フォーム */
+.calc{background:var(--pink-light);border:1px solid #ffdfe8;border-radius:12px;padding:22px 20px;margin:22px 0}
+.calc .fld{margin:14px 0}
+.calc label{display:block;font-weight:700;font-size:.88rem;margin-bottom:6px;color:var(--navy)}
+.calc select{width:100%;padding:11px 12px;font-size:16px;border:1px solid var(--line-strong);border-radius:8px;background:#fff;color:var(--text);font-family:inherit}
+.calc select:focus{outline:2px solid var(--pink);border-color:var(--pink)}
+.calc .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.calc .row2{grid-template-columns:1fr}}
+.calc .hint{font-size:.74rem;color:var(--sub);margin-top:4px;font-weight:400}
+.calc-btn{display:block;width:100%;background:linear-gradient(135deg,var(--pink-dark),var(--pink));color:#fff;font-weight:800;font-size:1.05rem;padding:15px;border:none;border-radius:32px;cursor:pointer;margin-top:18px;box-shadow:0 3px 10px rgba(214,54,96,.3);font-family:inherit;transition:transform .12s}
+.calc-btn:hover{transform:translateY(-1px)}
+.result{display:none;background:#fff;border:2px solid var(--pink);border-radius:12px;padding:22px 20px;margin:22px 0}
+.result.show{display:block}
+.result .big{text-align:center;padding:10px 0 16px}
+.result .big .lbl{font-size:.82rem;color:var(--sub);font-weight:700}
+.result .big .num{font-size:clamp(1.6rem,5.5vw,2.2rem);font-weight:900;color:var(--pink-dark);line-height:1.3}
+.result .big .num small{font-size:.55em;font-weight:700}
+.result .sub-num{text-align:center;font-size:.88rem;color:var(--ink-soft);margin-bottom:10px}
+.note-src{font-size:.76rem;color:var(--sub);background:#f7f4f5;border-radius:8px;padding:12px 14px;margin:18px 0;line-height:1.8}
+.hl{background:var(--pink-light)!important}
+#top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:.3s}
+#top.show{opacity:1}
+#top:hover{background:var(--pink-dark)}
+@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "結婚相談所の総額はいくら見ておけばいい？", "acceptedAnswer": {"@type": "Answer", "text": "1年活動を前提に、店舗型なら30〜50万円、オンライン型なら10〜20万円が目安です（各社公開情報より）。成婚料の有無で総額が大きく変わるため、このシミュレーターでは成婚料込み・抜きの両方を表示します。"}}, {"@type": "Question", "name": "シミュレーターの金額はどのくらい正確？", "acceptedAnswer": {"@type": "Answer", "text": "各社公式サイトの公開情報に基づく一般的な料金レンジ（2026年8月時点・編集部調べ）を使った概算です。実際の金額は相談所・プランにより異なるため、必ず無料相談や公式サイトで確認してください。"}}, {"@type": "Question", "name": "成婚料がない方がお得？", "acceptedAnswer": {"@type": "Answer", "text": "短期的にはそうですが、成婚料がある相談所は「成婚しないと収益にならない」ためサポートが手厚くなる傾向があります。総額と本気度のバランスで判断してください。"}}, {"@type": "Question", "name": "活動期間はどのくらいで見積もるべき？", "acceptedAnswer": {"@type": "Answer", "text": "まず12ヶ月で試算し、6ヶ月と比較するのがおすすめです。月会費型の料金体系では活動が延びるほど総額が膨らむため、「半年で決める」くらいの活動密度が費用面では有利になります。"}}, {"@type": "Question", "name": "お見合い料はどのくらいかかる？", "acceptedAnswer": {"@type": "Answer", "text": "1回あたり0〜1万円が相場です。無料の相談所も多い一方、店舗型では1回ごとに費用がかかるプランもあります。月2回×12ヶ月なら最大24万円前後の差になるため、回数を多くこなしたい人は無料の相談所が有利です。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "結婚相談所 料金シミュレーター", "url": "https://www.noe-match.com/tools/soudanjo-simulator/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "NOE結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-08-13", "dateModified": "2026-08-13"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "無料ツール", "item": "https://www.noe-match.com/tools/soudanjo-simulator/"}, {"@type": "ListItem", "position": 3, "name": "結婚相談所 料金シミュレーター"}]}</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">💑 NOE結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#ranking">ランキング</a><a href="/#articles">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ 無料ツール ＞ 結婚相談所 料金シミュレーター</div>
+<article>
+<h1>結婚相談所 料金シミュレーター｜期間×タイプ別の総額を30秒で試算【2026年版】</h1>
+<p class="pr-notice" style="font-size:12px;color:#666;background:#f5f5f5;border-left:3px solid #ffb3c8;border-radius:3px;padding:7px 11px;margin:10px 0 0">本ページはプロモーションを含みます。ページ内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
+<blockquote><strong>結婚相談所の費目は「初期費用・月会費・お見合い料・成婚料」の4つだけ。</strong>活動期間とタイプを選べば、総額レンジと3タイプの比較が一度に出ます。月会費の安さではなく成婚料込みの総額で比べるのがコツ。</blockquote>
+<p>相談所の料金はプラン表が複雑に見えるが、構造は4費目に分解すれば単純だ。料金体系の読み解き方は<a href="/articles/soudanjo-hikaku/">結婚相談所の料金比較｜オンライン型は本当に安いのか検証</a>で詳しく解説している。まずは自分の活動イメージで総額を出してみてほしい。</p>
+
+<h2>条件を選ぶ</h2>
+<div class="calc" id="calcForm">
+<div class="fld">
+<label for="type">相談所のタイプ</label>
+<select id="type">
+<option value="tenpo">店舗型（大手・専任仲人あり）</option>
+<option value="hybrid" selected>ハイブリッド型（オンライン＋サポート）</option>
+<option value="online">オンライン型（データマッチング中心）</option>
+</select>
+<div class="hint">料金差の正体はほぼ人件費（仲人の代行範囲）です</div>
+</div>
+<div class="row2">
+<div class="fld">
+<label for="months">活動想定期間</label>
+<select id="months">
+<option value="6">6ヶ月</option>
+<option value="12" selected>12ヶ月</option>
+<option value="18">18ヶ月</option>
+<option value="24">24ヶ月</option>
+</select>
+</div>
+<div class="fld">
+<label for="omiai">お見合い回数（月あたり）</label>
+<select id="omiai">
+<option value="1">月1回</option>
+<option value="2" selected>月2回</option>
+<option value="3">月3回</option>
+<option value="4">月4回</option>
+<option value="5">月5回</option>
+</select>
+</div>
+</div>
+<button type="button" class="calc-btn" id="calcBtn">総額を試算する</button>
+</div>
+
+<div class="result" id="result" aria-live="polite">
+<div class="big">
+<div class="lbl" id="rTitle">総額の目安（成婚料込み）</div>
+<div class="num" id="rTotal">—</div>
+</div>
+<div class="sub-num" id="rNoSeikon">—</div>
+<h3>費目の内訳</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>費目</th><th>金額の目安</th></tr></thead>
+<tbody id="rBreakdown"></tbody>
+</table></div>
+<h3>同じ条件で3タイプを比較</h3>
+<div class="table-wrap"><table>
+<thead><tr><th>タイプ</th><th>活動費（成婚料抜き）</th><th>成婚料</th><th>総額（成婚時）</th></tr></thead>
+<tbody id="rCompare"></tbody>
+</table></div>
+<p style="font-size:.82rem;color:var(--sub)">※連盟加盟の相談所同士は会員データベースを共有しているケースがあり、「同じ人に違う価格で出会う」ことが起こり得ます。その場合は安いタイプを選ぶのが合理的です。詳細は<a href="/articles/soudanjo-hikaku/">料金比較の記事</a>で。</p>
+
+<div style="background:#fff0f4;border:2px solid #ff4d7e;border-radius:12px;padding:20px 22px;margin:26px 0;text-align:center">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
+<p style="font-weight:700;margin:0 0 12px">いきなり数十万円を払う前に、まず年5万円弱の婚活アプリで自走力を測るのも合理的な順番</p>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#ff4d7e;color:#fff;font-weight:700;padding:13px 32px;border-radius:30px;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
+</div>
+
+<div style="background:#f3f0ff;border:2px solid #7c5cbf;border-radius:12px;padding:20px 22px;margin:26px 0;text-align:center">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
+<p style="font-weight:700;margin:0 0 12px">総額の目安が見えたら、次は自分の条件に合う相談所の実際の料金表を集める段階</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c5cbf;color:#fff;font-weight:700;padding:13px 32px;border-radius:30px;text-decoration:none">結婚相談所比較ネットで無料診断する</a>
+<p style="font-size:.74rem;color:#888;margin:10px 0 0">複数の相談所の資料をまとめて取り寄せられる無料の比較サービス（掲載社数・条件は公式サイトでご確認ください）</p>
+</div>
+</div>
+
+<h2>試算のあとに読む</h2>
+<p>数字が出たら、次は「その差額が何に払われているのか」を理解する番だ。店舗型とオンライン型の料金差の正体・連盟の仕組み・アプリとの費用対効果は<a href="/articles/soudanjo-hikaku/">結婚相談所の料金比較【2026年版】</a>にまとめている。相談所とアプリのどちらから始めるか迷っているなら<a href="/articles/agency-vs-app/">結婚相談所vsアプリ</a>、結婚後のお金まで見通したい人は<a href="/tools/kekkon-shikin-keisanki/">結婚資金計算機</a>もあわせてどうぞ。</p>
+
+<h2>よくある質問（FAQ）</h2>
+<p><strong>Q1. 結婚相談所の総額はいくら見ておけばいい？</strong></p><p>1年活動を前提に、店舗型なら30〜50万円、オンライン型なら10〜20万円が目安です（各社公開情報より）。成婚料の有無で総額が大きく変わるため、このシミュレーターでは成婚料込み・抜きの両方を表示します。</p>
+<p><strong>Q2. シミュレーターの金額はどのくらい正確？</strong></p><p>各社公式サイトの公開情報に基づく一般的な料金レンジ（2026年8月時点・編集部調べ）を使った概算です。実際の金額は相談所・プランにより異なるため、必ず無料相談や公式サイトで確認してください。</p>
+<p><strong>Q3. 成婚料がない方がお得？</strong></p><p>短期的にはそうですが、成婚料がある相談所は「成婚しないと収益にならない」ためサポートが手厚くなる傾向があります。総額と本気度のバランスで判断してください。</p>
+<p><strong>Q4. 活動期間はどのくらいで見積もるべき？</strong></p><p>まず12ヶ月で試算し、6ヶ月と比較するのがおすすめです。月会費型の料金体系では活動が延びるほど総額が膨らむため、「半年で決める」くらいの活動密度が費用面では有利になります。</p>
+<p><strong>Q5. お見合い料はどのくらいかかる？</strong></p><p>1回あたり0〜1万円が相場です。無料の相談所も多い一方、店舗型では1回ごとに費用がかかるプランもあります。月2回×12ヶ月なら最大24万円前後の差になるため、回数を多くこなしたい人は無料の相談所が有利です。</p>
+
+<h2>計算ロジックと数字の出典</h2>
+<div class="note-src">
+<strong>計算方法</strong>：総額＝初期費用（入会金・登録料）＋月会費×活動月数＋お見合い料×（月あたり回数×活動月数）＋成婚料。各費目は下限・上限のレンジで計算し、「活動費（成婚料抜き）」と「総額（成婚時）」を分けて表示しています。<br>
+<strong>使用レンジ</strong>（編集部調べ・2026年8月時点）：店舗型＝初期10〜15万円・月会費1.3〜2万円・お見合い料0〜1万円/回・成婚料20〜30万円／ハイブリッド型＝初期6〜10万円・月会費1〜1.5万円・お見合い料0〜0.5万円/回・成婚料5〜20万円／オンライン型＝初期3〜6万円・月会費0.8〜1.2万円・お見合い料0円・成婚料0〜5万円。<br>
+<strong>数字の出典</strong>：当サイト<a href="/articles/soudanjo-hikaku/">「結婚相談所の料金比較【2026年版】」</a>に掲載の費目相場（入会金・初期費用3〜15万円／月会費1〜2万円／お見合い料0〜1万円/回／成婚料0〜30万円。各社公式サイトの公開情報に基づく一般的なレンジ）。タイプ別の細分は同レンジ内での編集部按分です。実際の金額はプラン・相談所により異なります。
+</div>
+</article>
+<div class="related"><h2>📚 関連記事</h2><ul>
+<li><a href="/articles/soudanjo-hikaku/">結婚相談所の料金比較｜オンライン型は本当に安いのか検証【2026年版】</a></li>
+<li><a href="/tools/kekkon-shikin-keisanki/">結婚資金計算機</a></li>
+<li><a href="/articles/agency-vs-app/">結婚相談所vsアプリ</a></li>
+<li><a href="/articles/app-plus-agency/">アプリ＋相談所の併用戦略</a></li>
+<li><a href="/articles/konkatsu-roadmap/">婚活ロードマップ</a></li>
+</ul></div>
+</div>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/#articles">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本ツールの試算は2026年8月時点の編集部調べに基づく概算です。料金・サービス内容は変更される場合があります。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 NOE結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+(function(){
+"use strict";
+// 金額はすべて万円。出典: /articles/soudanjo-hikaku/ の費目相場（編集部按分・2026年8月時点）
+var TYPES={
+  tenpo:{label:"店舗型（仲人あり）",init:[10,15],monthly:[1.3,2],omiai:[0,1],seikon:[20,30]},
+  hybrid:{label:"ハイブリッド型",init:[6,10],monthly:[1,1.5],omiai:[0,0.5],seikon:[5,20]},
+  online:{label:"オンライン型",init:[3,6],monthly:[0.8,1.2],omiai:[0,0],seikon:[0,5]}
+};
+function $(id){return document.getElementById(id);}
+function r1(n){return Math.round(n*10)/10;}
+function fmtR(lo,hi){
+  lo=r1(lo);hi=r1(hi);
+  if(lo===0&&hi===0)return "0円";
+  if(lo===hi)return lo+"万円";
+  return lo+"〜"+hi+"万円";
+}
+function calcType(t,months,omiaiPerMonth){
+  var m=[t.monthly[0]*months,t.monthly[1]*months];
+  var o=[t.omiai[0]*omiaiPerMonth*months,t.omiai[1]*omiaiPerMonth*months];
+  var act=[t.init[0]+m[0]+o[0],t.init[1]+m[1]+o[1]];
+  var tot=[act[0]+t.seikon[0],act[1]+t.seikon[1]];
+  return {monthlyTotal:m,omiaiTotal:o,activity:act,total:tot};
+}
+function calc(){
+  var key=$("type").value;
+  var months=parseInt($("months").value,10);
+  var omiai=parseInt($("omiai").value,10);
+  if(isNaN(months)||months<1)months=12;
+  if(isNaN(omiai)||omiai<0)omiai=0;
+  var t=TYPES[key];
+  var c=calcType(t,months,omiai);
+  $("rTitle").textContent=t.label+"・"+months+"ヶ月・お見合い月"+omiai+"回 の総額目安（成婚料込み）";
+  $("rTotal").innerHTML=Math.round(c.total[0])+"〜"+Math.round(c.total[1])+"<small>万円</small>";
+  $("rNoSeikon").textContent="成婚料を除いた活動費のみ： "+fmtR(c.activity[0],c.activity[1]);
+  var tb=$("rBreakdown");tb.textContent="";
+  [["初期費用（入会金・登録料）",t.init],
+   ["月会費（"+months+"ヶ月分）",c.monthlyTotal],
+   ["お見合い料（"+(omiai*months)+"回分）",c.omiaiTotal],
+   ["成婚料（成婚退会時のみ）",t.seikon]].forEach(function(row){
+    var tr=document.createElement("tr");
+    var td1=document.createElement("td");td1.textContent=row[0];
+    var td2=document.createElement("td");td2.textContent=fmtR(row[1][0],row[1][1]);
+    tr.appendChild(td1);tr.appendChild(td2);tb.appendChild(tr);
+  });
+  var cb=$("rCompare");cb.textContent="";
+  Object.keys(TYPES).forEach(function(k){
+    var tt=TYPES[k];
+    var cc=calcType(tt,months,omiai);
+    var tr=document.createElement("tr");
+    if(k===key)tr.className="hl";
+    var td1=document.createElement("td");td1.textContent=tt.label+(k===key?"（選択中）":"");
+    var td2=document.createElement("td");td2.textContent=fmtR(cc.activity[0],cc.activity[1]);
+    var td3=document.createElement("td");td3.textContent=fmtR(tt.seikon[0],tt.seikon[1]);
+    var td4=document.createElement("td");td4.textContent=fmtR(cc.total[0],cc.total[1]);
+    td4.style.fontWeight="700";
+    tr.appendChild(td1);tr.appendChild(td2);tr.appendChild(td3);tr.appendChild(td4);
+    cb.appendChild(tr);
+  });
+  $("result").classList.add("show");
+}
+$("calcBtn").addEventListener("click",function(){
+  calc();
+  $("result").scrollIntoView({behavior:"smooth",block:"start"});
+});
+["type","months","omiai"].forEach(function(id){
+  $(id).addEventListener("change",function(){
+    if($("result").classList.contains("show"))calc();
+  });
+});
+})();
+onscroll=function(){document.getElementById("top").classList.toggle('show',scrollY>300)};
+</script>
+</body>
+</html>
