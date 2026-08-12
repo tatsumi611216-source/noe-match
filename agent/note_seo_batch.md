@@ -11,13 +11,13 @@
 
 | # | ターゲットクエリ | タイトル | ファイル | note URL | 投稿日 | 送り先 | 2週間後 |
 |---|---|---|---|---|---|---|---|
-| 1 | 長男 結婚（家・苗字・同居） | 長男の結婚で揉めるのは3点だけ｜家を継ぐ・苗字・同居を決める順番 | 01-chonan-kekkon.html | | | propose-guide | |
-| 2 | 非正規 結婚 反対 | 非正規だから結婚に反対される？親の不安を3つに翻訳して答える方法 | 02-hiseiki-kekkon-hantai.html | | | seishain-igai-guide | |
-| 3 | 実家暮らし 婚活 不利 | 実家暮らしは婚活で不利？分かれ目は「理由の一言」と2つの答え方 | 03-jikkagurashi-konkatsu.html | | | soudanjo-hikaku | |
-| 4 | 持病 結婚 諦めた | 持病があると結婚は諦めるしかないのか｜伝える時期と場の選び方 | 04-jibyou-kekkon.html | | | soudanjo-hikaku | |
-| 5 | 親の介護 結婚 諦める | 親の介護で結婚を諦める前に。「できない」を3つに分解して考える | 05-oyakaigo-kekkon.html | | | soudanjo-hikaku | |
-| 6 | マッチングアプリ 疲れた | マッチングアプリに疲れた——原因3分類でわかる休み方と次の選択肢 | 06-app-tsukareta.html | | | app-tsukare-guide | |
-| 7 | オタク 婚活（場の選び方） | オタクの婚活はどこでやる？アプリ・パーティー・専門相談所の使い分け | 07-otaku-konkatsu-basho.html | | | otaku-konkatsu | |
+| 1 | 長男 結婚（家・苗字・同居） | 長男の結婚で揉めるのは3点だけ｜家を継ぐ・苗字・同居を決める順番 | 01-chonan-kekkon.html | https://note.com/hachimitsu88812/n/n7dc486fed0d2 | 2026-08-12（下書き） | propose-guide | |
+| 2 | 非正規 結婚 反対 | 非正規だから結婚に反対される？親の不安を3つに翻訳して答える方法 | 02-hiseiki-kekkon-hantai.html | https://note.com/hachimitsu88812/n/n6466fe30c305 | 2026-08-12（下書き） | seishain-igai-guide | |
+| 3 | 実家暮らし 婚活 不利 | 実家暮らしは婚活で不利？分かれ目は「理由の一言」と2つの答え方 | 03-jikkagurashi-konkatsu.html | https://note.com/hachimitsu88812/n/n6adcd52efb33 | 2026-08-12（下書き） | soudanjo-hikaku | |
+| 4 | 持病 結婚 諦めた | 持病があると結婚は諦めるしかないのか｜伝える時期と場の選び方 | 04-jibyou-kekkon.html | https://note.com/hachimitsu88812/n/naa733257d3f3 | 2026-08-12（下書き） | soudanjo-hikaku | |
+| 5 | 親の介護 結婚 諦める | 親の介護で結婚を諦める前に。「できない」を3つに分解して考える | 05-oyakaigo-kekkon.html | https://note.com/hachimitsu88812/n/nb998a29df1f3 | 2026-08-12（下書き） | soudanjo-hikaku | |
+| 6 | マッチングアプリ 疲れた | マッチングアプリに疲れた——原因3分類でわかる休み方と次の選択肢 | 06-app-tsukareta.html | https://note.com/hachimitsu88812/n/nabb6ef6313ed | 2026-08-12（下書き） | app-tsukare-guide | |
+| 7 | オタク 婚活（場の選び方） | オタクの婚活はどこでやる？アプリ・パーティー・専門相談所の使い分け | 07-otaku-konkatsu-basho.html | https://note.com/hachimitsu88812/n/n664e5eb62dcf | 2026-08-12（下書き） | otaku-konkatsu | |
 
 ## ゲート不合格（再挑戦しない・理由つき）
 
