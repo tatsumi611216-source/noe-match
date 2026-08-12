@@ -41,6 +41,7 @@ jobs:
           # ディレクトリ
           cp -r articles _site/
           cp -r images _site/
+          cp -r tools _site/
           # ページ本体
           cp index.html about.html disclaimer.html privacy-policy.html _site/
           # クローラ向け
