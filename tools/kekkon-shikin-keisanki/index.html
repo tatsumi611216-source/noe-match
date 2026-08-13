@@ -19,79 +19,85 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="結婚資金計算機｜総額と実質自己負担を試算【2026年版】">
 <meta name="twitter:description" content="挙式スタイル・指輪・新生活のグレードを選ぶだけで、結婚の総額とご祝儀差引後の実質自己負担を試算できる無料ツール。">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
 <style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{--pink:#ff4d7e;--pink-dark:#d63660;--pink-deep:#b02a4e;--pink-light:#fff0f4;--purple:#7c5cbf;--navy:#1c2b33;--text:#2c3e50;--ink-soft:#3d454d;--sub:#607d8b;--bg:#faf8f9;--white:#fff;--border:#efe8ea;--line-strong:#e0d5d9;--shadow:0 1px 3px rgba(30,35,40,.06),0 4px 14px rgba(30,35,40,.06);--shadow-hover:0 4px 10px rgba(214,54,96,.10),0 8px 24px rgba(30,35,40,.08);--radius:12px}
+:root{--ink:#1d242b;--body:#3a4148;--gray:#8a9097;--hair:#e6e2dc;--acc:#7c2e42;--acc-dark:#5c2131;--alt:#f7f5f2;--serif:'Noto Serif JP',serif;--sans:'Noto Sans JP',-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+--pink:#7c2e42;--pink-dark:#7c2e42;--pink-deep:#5c2131;--pink-light:#f3ecee;--purple:#4a4458;--navy:#1d242b;--text:#3a4148;--ink-soft:#454b52;--sub:#757c83;--bg:#faf9f7;--white:#fff;--border:#e6e2dc;--line-strong:#d9d2c8;--shadow:0 1px 2px rgba(29,36,43,.04);--shadow-hover:0 2px 8px rgba(29,36,43,.07);--radius:6px;
+--safe:#3e7d57;--mid:#a1761f;--high:#a24e2a;--crit:#7c2e42;--safe-bg:#edf3ee;--mid-bg:#f6f0e1;--high-bg:#f6ebe3;--crit-bg:#f3e8eb}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;color:var(--text);background:var(--bg);line-height:1.9;font-size:15.5px;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";letter-spacing:.01em}
-header{background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:3px solid var(--pink);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-.header-inner{max-width:860px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
-.logo{font-size:1.1rem;font-weight:900;color:var(--pink-dark);text-decoration:none;letter-spacing:.01em}
-.logo-badge{background:var(--pink);color:#fff;font-size:.62rem;padding:2px 8px;border-radius:20px;margin-left:6px}
-nav a{color:var(--sub);text-decoration:none;font-size:.8rem;padding:6px 9px;border-radius:6px;font-weight:500;transition:background .15s,color .15s}
-nav a:hover{background:var(--pink-light);color:var(--pink-dark)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.9;font-size:15.5px;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";letter-spacing:.01em}
+header{background:#fff;border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:100}
+.header-inner{max-width:860px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.logo{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:.06em}
+.logo-badge{background:#fff;color:var(--gray);border:1px solid var(--hair);font-size:.6rem;padding:2px 7px;border-radius:2px;margin-left:8px;letter-spacing:.08em;vertical-align:2px}
+nav a{color:var(--gray);text-decoration:none;font-size:.78rem;padding:6px 9px;font-weight:500;letter-spacing:.04em;transition:color .15s}
+nav a:hover{color:var(--acc)}
 @media(max-width:680px){nav{display:none}}
-.wrap{max-width:860px;margin:0 auto;padding:0 20px}
-.breadcrumb{font-size:.76rem;color:var(--sub);padding:14px 0}
-.breadcrumb a{color:var(--sub);text-decoration:none}
-.breadcrumb a:hover{color:var(--pink-dark)}
-article{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:38px 34px;margin-bottom:30px}
-@media(max-width:600px){article{padding:26px 18px}}
-article h1{font-size:clamp(1.5rem,4.5vw,2rem);font-weight:900;line-height:1.45;letter-spacing:.01em;margin-bottom:16px;color:var(--navy)}
-article h2{font-size:clamp(1.2rem,3.4vw,1.45rem);font-weight:900;line-height:1.5;margin:44px 0 16px;padding:.45em 0 .45em 14px;border-left:5px solid var(--pink);background:linear-gradient(90deg,var(--pink-light),transparent 70%);border-radius:0 8px 8px 0;color:var(--navy)}
-article h3{font-size:1.08rem;font-weight:700;margin:30px 0 10px;color:var(--pink-deep);padding-bottom:4px;border-bottom:2px solid var(--pink-light)}
+.breadcrumb{font-size:.74rem;color:var(--gray);padding:16px 0;letter-spacing:.03em}
+.breadcrumb a{color:var(--gray);text-decoration:none}
+.breadcrumb a:hover{color:var(--acc)}
+article{background:#fff;border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);padding:44px 38px;margin-bottom:30px}
+@media(max-width:600px){article{padding:28px 18px}}
+article h1{font-family:var(--serif);font-size:clamp(1.45rem,4.2vw,1.95rem);font-weight:600;line-height:1.65;letter-spacing:.03em;margin-bottom:18px;color:var(--ink)}
+article h2{font-family:var(--serif);font-size:clamp(1.2rem,3.2vw,1.4rem);font-weight:600;line-height:1.7;margin:52px 0 18px;padding:0 0 .45em;border:none;border-bottom:1px solid var(--ink);background:none;border-radius:0;color:var(--ink);letter-spacing:.05em}
+article h3{font-size:1.02rem;font-weight:700;margin:30px 0 10px;color:var(--ink);padding-bottom:5px;border-bottom:1px solid var(--hair)}
 article p{margin:13px 0}
 article ul,article ol{margin:13px 0 13px 1.45em}
 article li{margin:7px 0}
-article a{color:var(--pink-dark);font-weight:500;text-decoration-color:#f2b3c4;text-underline-offset:3px;transition:color .15s}
-article a:hover{color:var(--pink)}
-blockquote{background:#fff8e1;border-left:4px solid #f4c542;border-radius:0 10px 10px 0;padding:14px 18px;margin:20px 0;font-size:.93rem;color:var(--ink-soft)}
-blockquote strong{color:var(--pink-dark)}
-.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;box-shadow:var(--shadow);margin:20px 0;border:1px solid var(--border)}
+article a{color:var(--acc);font-weight:500;text-decoration-color:#c8a4b0;text-underline-offset:3px;transition:color .15s}
+article a:hover{color:var(--acc-dark)}
+blockquote{background:var(--alt);border-left:3px solid var(--acc);border-radius:0 4px 4px 0;padding:14px 18px;margin:20px 0;font-size:.93rem;color:var(--ink-soft)}
+blockquote strong{color:var(--ink)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:6px;margin:20px 0;border:1px solid var(--hair)}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:420px}
-thead th{background:linear-gradient(180deg,#243642,var(--navy));color:#fff;padding:12px 10px;text-align:center;font-weight:700;letter-spacing:.02em;white-space:nowrap}
-tbody td{padding:11px 10px;border-bottom:1px solid var(--border);text-align:center}
-tbody tr:nth-child(even){background:#fbf7f8}
-tbody td:first-child{font-weight:700;color:var(--navy);text-align:left}
-footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line-height:1.8}
+thead th{background:var(--ink);color:#fff;padding:11px 10px;text-align:center;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--hair);text-align:center}
+tbody tr:nth-child(even){background:var(--alt)}
+tbody td:first-child{font-weight:700;color:var(--ink);text-align:left}
+footer{background:var(--ink);color:#9aa3aa;padding:34px 20px;font-size:.76rem;line-height:1.8}
 .footer-inner{max-width:860px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b9c2c8;text-decoration:none;margin:0 8px}
 .footer-inner a:hover{color:#fff}
 .footer-disc{color:#78868f;font-size:.68rem;margin-top:12px;line-height:1.7}
-.related{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px;margin-bottom:30px}
-.related h2{font-size:1.05rem;font-weight:900;margin-bottom:14px;color:var(--navy);padding-left:10px;border-left:4px solid var(--pink)}
+.related{background:#fff;border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px;margin-bottom:30px}
+.related h2{font-family:var(--serif);font-size:1.02rem;font-weight:600;margin-bottom:14px;color:var(--ink);letter-spacing:.05em;padding:0 0 .4em;border:none;border-bottom:1px solid var(--ink)}
 .related ul{list-style:none;display:grid;gap:10px}
-.related a{display:block;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 15px;font-size:.83rem;font-weight:500;text-decoration:none;color:var(--text);transition:border-color .15s,box-shadow .15s,transform .12s}
-.related a:hover{border-color:var(--pink);box-shadow:var(--shadow-hover);transform:translateY(-1px);color:var(--pink-dark)}
+.related a{display:block;background:#fff;border:1px solid var(--hair);border-radius:4px;padding:12px 15px;font-size:.83rem;font-weight:500;text-decoration:none;color:var(--text);transition:border-color .15s,color .15s}
+.related a:hover{border-color:var(--acc);color:var(--acc)}
+a[style*="#7c2e42"]:hover{background:#5c2131!important}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
 /* ツール用フォーム */
-.calc{background:var(--pink-light);border:1px solid #ffdfe8;border-radius:12px;padding:22px 20px;margin:22px 0}
+.calc{background:var(--alt);border:1px solid var(--hair);border-radius:6px;padding:22px 20px;margin:22px 0}
 .calc .fld{margin:14px 0}
-.calc label{display:block;font-weight:700;font-size:.88rem;margin-bottom:6px;color:var(--navy)}
-.calc select,.calc input[type=number]{width:100%;padding:11px 12px;font-size:16px;border:1px solid var(--line-strong);border-radius:8px;background:#fff;color:var(--text);font-family:inherit}
-.calc select:focus,.calc input:focus{outline:2px solid var(--pink);border-color:var(--pink)}
+.calc label{display:block;font-weight:700;font-size:.88rem;margin-bottom:6px;color:var(--ink)}
+.calc select,.calc input[type=number]{width:100%;padding:11px 12px;font-size:16px;border:1px solid var(--line-strong);border-radius:4px;background:#fff;color:var(--text);font-family:inherit}
+.calc select:focus,.calc input:focus{outline:2px solid var(--acc);border-color:var(--acc)}
 .calc .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:520px){.calc .row2{grid-template-columns:1fr}}
 .calc .hint{font-size:.74rem;color:var(--sub);margin-top:4px;font-weight:400}
-.calc-btn{display:block;width:100%;background:linear-gradient(135deg,var(--pink-dark),var(--pink));color:#fff;font-weight:800;font-size:1.05rem;padding:15px;border:none;border-radius:32px;cursor:pointer;margin-top:18px;box-shadow:0 3px 10px rgba(214,54,96,.3);font-family:inherit;transition:transform .12s}
-.calc-btn:hover{transform:translateY(-1px)}
-.result{display:none;background:#fff;border:2px solid var(--pink);border-radius:12px;padding:22px 20px;margin:22px 0}
+.calc-btn{display:block;width:100%;background:var(--acc);color:#fff;font-weight:700;font-size:1rem;padding:15px;border:none;border-radius:4px;cursor:pointer;margin-top:18px;font-family:inherit;letter-spacing:.08em;transition:background .15s}
+.calc-btn:hover{background:var(--acc-dark)}
+.result{display:none;background:#fff;border:1px solid var(--acc);border-radius:6px;padding:22px 20px;margin:22px 0}
 .result.show{display:block}
 .result .big{text-align:center;padding:10px 0 16px}
 .result .big .lbl{font-size:.82rem;color:var(--sub);font-weight:700}
-.result .big .num{font-size:clamp(1.7rem,6vw,2.3rem);font-weight:900;color:var(--pink-dark);line-height:1.3}
+.result .big .num{font-size:clamp(1.7rem,6vw,2.3rem);font-weight:800;color:var(--acc);line-height:1.3}
 .result .big .num small{font-size:.55em;font-weight:700}
 .result .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:6px 0 14px}
 @media(max-width:560px){.result .grid3{grid-template-columns:1fr}}
-.result .cell{background:var(--pink-light);border-radius:10px;padding:12px;text-align:center}
+.result .cell{background:var(--alt);border-radius:4px;padding:12px;text-align:center}
 .result .cell .lbl{font-size:.72rem;color:var(--sub);font-weight:700}
-.result .cell .num{font-size:1.15rem;font-weight:900;color:var(--navy)}
+.result .cell .num{font-size:1.15rem;font-weight:800;color:var(--ink)}
+.result .sub-num{text-align:center;font-size:.88rem;color:var(--ink-soft);margin-bottom:10px}
 .cutlist li{margin:9px 0;font-size:.9rem}
-.cutlist .amt{font-weight:900;color:var(--pink-dark)}
-.note-src{font-size:.76rem;color:var(--sub);background:#f7f4f5;border-radius:8px;padding:12px 14px;margin:18px 0;line-height:1.8}
-#top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:var(--pink);color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 14px rgba(255,77,126,.4);opacity:0;transition:.3s}
+.cutlist .amt{font-weight:800;color:var(--acc)}
+.note-src{font-size:.76rem;color:var(--sub);background:var(--alt);border-radius:6px;padding:12px 14px;margin:18px 0;line-height:1.8}
+.hl{background:#f3ecee!important}
+#top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:#3a4148;color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 2px 10px rgba(29,36,43,.25);opacity:0;transition:.3s}
 #top.show{opacity:1}
-#top:hover{background:var(--pink-dark)}
-@media(max-width:600px){body{font-size:14.5px}article h2{margin:34px 0 12px}}
+#top:hover{background:var(--ink)}
+@media(max-width:600px){body{font-size:14.5px}article h2{margin:40px 0 14px}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "この計算機の金額はどのくらい正確？", "acceptedAnswer": {"@type": "Answer", "text": "各種ブライダル調査の公開データおよび各社公式情報をもとにした一般的なレンジ（2026年8月時点・編集部調べ）を使った概算です。地域・会場・時期により大きく変動するため、実際の金額は必ず見積もりで確認してください。"}}, {"@type": "Question", "name": "自己負担額はどう計算している？", "acceptedAnswer": {"@type": "Answer", "text": "費目の合計（総額）から、ご祝儀見込み（招待人数×1人あたり単価）を差し引いた金額です。親からの援助は家庭差が大きいため計算に含めていません。あれば余裕分と考えるのが安全です。"}}, {"@type": "Question", "name": "ご祝儀の単価はいくらで見ればいい？", "acceptedAnswer": {"@type": "Answer", "text": "招待客1人あたり3万円前後が目安です。親族比率が高いと単価が上がり、友人中心だと下がる傾向があるため、この計算機では2.5万円・3万円・3.5万円から選べます。"}}, {"@type": "Question", "name": "一番削りやすい費目はどこ？", "acceptedAnswer": {"@type": "Answer", "text": "装花・演出・引出物のグレードです。招待人数の削減はご祝儀も一緒に減るため、想定より削減効果が小さい点に注意してください。計算機の「削るならここ」に、選んだ条件での節約幅の目安を表示します。"}}, {"@type": "Question", "name": "ナシ婚（入籍のみ）だと総額はいくら？", "acceptedAnswer": {"@type": "Answer", "text": "挙式費用がゼロになるため、指輪・新婚旅行・新生活を含めて100〜200万円程度が目安です。この計算機で挙式スタイルを「挙式なし」にすると試算できます。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "結婚資金計算機", "url": "https://www.noe-match.com/tools/kekkon-shikin-keisanki/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@id": "https://www.noe-match.com/#organization"}, "datePublished": "2026-08-13", "dateModified": "2026-08-13"}</script>
@@ -208,12 +214,12 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <ul class="cutlist" id="rCuts"></ul>
 <p style="font-size:.82rem;color:var(--sub)">※招待人数の削減はご祝儀も一緒に減るため、削減効果は見た目より小さくなりがちです。削って後悔しやすいのは写真・映像と言われます。</p>
 
-<div style="background:#eef7f2;border:2px solid #2f8f6f;border-radius:12px;padding:20px 22px;margin:26px 0 6px;text-align:center">
+<div style="background:#f7f5f2;border:1px solid #e3ddd3;border-radius:6px;padding:20px 22px;margin:26px 0 6px;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 6px">新生活費用は「初期費用」より、毎月ずっと続く固定費の設定で差がつく</p>
 <p style="font-size:.85rem;color:var(--ink-soft);margin:0 0 12px">引越しを機に回線契約を決め直すのが最も手間が少ないタイミング。入り切らない荷物は処分を焦らずトランクルームに逃がす手もあります。</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#2f8f6f;color:#fff;font-weight:700;padding:13px 28px;border-radius:30px;text-decoration:none;margin:4px 6px">ビジモ光の提供エリアを確認する</a>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5SDUD6+1I9M+669JL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#ff4d7e;color:#fff;font-weight:700;padding:13px 28px;border-radius:30px;text-decoration:none;margin:4px 6px">ハローストレージの空き状況を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 28px;border-radius:2px;text-decoration:none;margin:4px 6px">ビジモ光の提供エリアを確認する</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5SDUD6+1I9M+669JL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 28px;border-radius:2px;text-decoration:none;margin:4px 6px">ハローストレージの空き状況を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">ビジモ光は光回線サービスの一つ（キャッシュバック条件・提供エリア・工事の要否は物件により異なります）。ハローストレージは屋内外型トランクルーム（料金・空き状況はエリアにより異なります）。いずれも公式サイトでご確認ください</p>
 </div>
 </div>
