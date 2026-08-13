@@ -182,7 +182,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 潜在ガルガル度チェック診断</div>
 
 <div class="tool-hero" style="background-image:url('../../images/lp/hands-touch.jpg')"><div class="tool-hero-inner">
-<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><g fill="none" stroke="#7c2e42" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="16.5"/><path d="M36 22c-5.5 0-9.5 3.8-9.5 9 0 1.8-.9 3-2.1 4.4-.7.8-.4 1.8.7 1.9l2.9.3c.3 4.6 3.6 7.4 8 7.4"/><path d="M36.5 22c1.1-1.9 3.3-2.6 5-2"/><path d="M43.7 20.3l2.8-2.8M47.5 26.4l3.5-1.3M48.5 32h4M47.5 37.6l3.5 1.3M43.7 43.7l2.8 2.8"/><circle cx="30.5" cy="29.5" r="1.1" fill="#7c2e42" stroke="none"/></g></svg>
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/lion.png" x="9" y="9" width="46" height="46"/></svg>
 <h1>潜在ガルガル度チェック診断</h1>
 <p>産後、あなた（の妻・彼女）の中のライオンはどれくらい目を覚ますのか。53問でいまのうちに見積もる無料診断。</p>
 </div></div>
@@ -438,7 +438,7 @@ const SECTIONS = [
 
 const TIERS = [
   {
-    max: 10, emoji: "🐈", label: "ガルガル度：低", name: "ひだまりの猫",
+    max: 10, emoji: "🐈", img: "cat.png", label: "ガルガル度：低", name: "ひだまりの猫",
     color: "var(--safe)", bg: "var(--safe-bg)",
     catch: "産後も「ちょっと機嫌の悪い猫」程度で収まる公算。牙はあるが、めったに抜かない。",
     stars: 1, damageLevel: "かすり傷",
@@ -451,7 +451,7 @@ const TIERS = [
     note: "スコアが低い最大の理由は保護因子か、そもそも負荷経験のデータ不足かのどちらか。旅行・引っ越しなど負荷イベントを一緒に通過してから再測定すると精度が上がります。",
   },
   {
-    max: 25, emoji: "🦁", label: "ガルガル度：中", name: "昼寝ライオン",
+    max: 25, emoji: "🦁", img: "lion-calm.png", label: "ガルガル度：中", name: "昼寝ライオン",
     color: "var(--mid)", bg: "var(--mid-bg)",
     catch: "普段は穏やか。ただし睡眠不足と空腹という二大トリガーで牙が見える、ごく正常なライオン。",
     stars: 3, damageLevel: "軽傷〜中等傷",
@@ -464,7 +464,7 @@ const TIERS = [
     note: "この帯域は「気質」より「運用」で結果が決まるゾーン。対策のリターンが最も大きいタイプです。",
   },
   {
-    max: 40, emoji: "🦁🔥", label: "ガルガル度：高", name: "飢えたライオン",
+    max: 40, emoji: "🦁🔥", img: "lion-hungry.png", label: "ガルガル度：高", name: "飢えたライオン",
     color: "var(--high)", bg: "var(--high-bg)",
     catch: "防衛本能フル装備。産後は縄張り（赤ちゃん）に近づくすべてが敵に見える時期が来る想定。",
     stars: 4, damageLevel: "重傷",
@@ -478,7 +478,7 @@ const TIERS = [
     note: "高スコア＝ダメな母親、ではありません。防衛システムが高性能なだけです。設計次第で吸収できる範囲はまだ広い帯域です。",
   },
   {
-    max: Infinity, emoji: "🐯⚡", label: "ガルガル度：極", name: "伝説のサーベルタイガー",
+    max: Infinity, emoji: "🐯⚡", img: "tiger.png", label: "ガルガル度：極", name: "伝説のサーベルタイガー",
     color: "var(--crit)", bg: "var(--crit-bg)",
     catch: "絶滅級の牙。もはや個人の気合いと愛情でどうにかする領域ではない。",
     stars: 5, damageLevel: "野戦病院",
@@ -596,7 +596,11 @@ document.getElementById("diagBtn").addEventListener("click", () => {
   const card = document.getElementById("resultCard");
   card.style.setProperty("--tier-color", tier.color);
   card.style.setProperty("--tier-bg", tier.bg);
-  document.getElementById("rEmoji").textContent = tier.emoji;
+  if (tier.img) {
+    document.getElementById("rEmoji").innerHTML = '<img src="../../images/emblems/' + tier.img + '" alt="" style="height:64px">';
+  } else {
+    document.getElementById("rEmoji").textContent = tier.emoji;
+  }
   document.getElementById("rTierLabel").textContent = tier.label + (mode === 'short' ? "（簡易版）" : "");
   document.getElementById("rName").textContent = tier.name;
   document.getElementById("rCatch").textContent = tier.catch;

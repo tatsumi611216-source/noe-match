@@ -181,7 +181,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 妻源病危険度チェック診断</div>
 
 <div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
-<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><g fill="none" stroke="#7c2e42" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="26" r="6.5"/><path d="M18.7 28v5M31.3 28v5"/><path d="M13 47c0-7.5 5.4-12.5 12-12.5S37 39.5 37 47"/><circle cx="41.5" cy="27.5" r="5.5"/><path d="M33.5 47c.6-6.5 3.8-10.5 8-10.5 4.6 0 8.6 4.4 9 10.5"/></g></svg>
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/couple.png" x="9" y="9" width="46" height="46" style="transform:scaleX(-1);transform-origin:32px 32px"/></svg>
 <h1>妻源病危険度チェック診断</h1>
 <p>帰宅時間が近づくと気が重い——その不調、「妻」が関係しているかもしれない。45問（簡易15問）で危険度を測る無料診断。</p>
 </div></div>
@@ -418,7 +418,7 @@ const SECTIONS = [
 ];
 const TIERS = [
   {
-    emoji: "☀️", label: "妻源病危険度：低", name: "そよ風夫婦",
+    emoji: "☀️", img: "sun.png", label: "妻源病危険度：低", name: "そよ風夫婦",
     color: "var(--safe)", bg: "var(--safe-bg)",
     catch: "妻の存在はいまのところ無風〜そよ風。家はまだ、帰る場所として機能しています。",
     stars: 1, damageLevel: "微風",
@@ -431,7 +431,7 @@ const TIERS = [
     note: "低スコアでも、産後・在宅勤務化・同居開始などのイベントで一気に進むことがあります。定期的な再診断を。",
   },
   {
-    emoji: "🌥", label: "妻源病危険度：中", name: "曇りときどき妻",
+    emoji: "🌥", img: "cloud.png", label: "妻源病危険度：中", name: "曇りときどき妻",
     color: "var(--mid)", bg: "var(--mid-bg)",
     catch: "家の空気が、そろそろ低気圧になり始めています。「気を張る家」では回復できません。",
     stars: 2, damageLevel: "気圧低下中",
@@ -444,7 +444,7 @@ const TIERS = [
     note: "この段階が一番動かしやすい時期です。「察し合い」をやめて、お互いの要求を仕様で交換すれば晴れ間は戻ります。",
   },
   {
-    emoji: "🌧", label: "妻源病危険度：高", name: "低気圧停滞中",
+    emoji: "🌧", img: "rain.png", label: "妻源病危険度：高", name: "低気圧停滞中",
     color: "var(--high)", bg: "var(--high-bg)",
     catch: "家にいることと体調が連動し始めています。帰宅恐怖症の入口に立っている状態。",
     stars: 4, damageLevel: "連続降雨",
@@ -458,7 +458,7 @@ const TIERS = [
     note: "「男だから我慢」は症状を慢性化させるだけです。あなたの体調は家族の土台であって、削っていい予備費ではありません。",
   },
   {
-    emoji: "🌪", label: "妻源病危険度：極", name: "警報級・台風妻",
+    emoji: "🌪", img: "storm.png", label: "妻源病危険度：極", name: "警報級・台風妻",
     color: "var(--crit)", bg: "var(--crit-bg)",
     catch: "警報級です。距離の設計を「あるといいもの」ではなく「治療の一部」として扱う段階。",
     stars: 5, damageLevel: "警報発令中",
@@ -575,7 +575,11 @@ document.getElementById("diagBtn").addEventListener("click", () => {
   const card = document.getElementById("resultCard");
   card.style.setProperty("--tier-color", tier.color);
   card.style.setProperty("--tier-bg", tier.bg);
-  document.getElementById("rEmoji").textContent = tier.emoji;
+  if (tier.img) {
+    document.getElementById("rEmoji").innerHTML = '<img src="../../images/emblems/' + tier.img + '" alt="" style="height:64px">';
+  } else {
+    document.getElementById("rEmoji").textContent = tier.emoji;
+  }
   document.getElementById("rTierLabel").textContent = tier.label + (mode === 'short' ? "（簡易版）" : "");
   document.getElementById("rName").textContent = tier.name;
   document.getElementById("rCatch").textContent = tier.catch;
