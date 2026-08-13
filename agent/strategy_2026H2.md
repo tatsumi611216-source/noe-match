@@ -1,5 +1,10 @@
 # noe-match 戦略（2026年下期・2026-08-09 精査）
 
+> **上位理念（2026-08-13制定）**: 本サイトはNoe Heartsの基本理念「Noe Decision」
+> （FACT→OPTIONS→JUDGMENT AXES→DECISION→ACTION。答えを教えるのではなく、選ぶための材料を）の
+> 「人生の意思決定」実装である。正本は noe-org `ops/noe-decision-strategy.md`。
+> 収益ルール＝判断材料ゾーンでは誘導しない。収益はDECISION後のACTION段階（PR明記）で得る。
+
 `blank_spot_theory.md`（どこを狙うか）と `seo_strategy_2026.md`（検索環境の現状）を踏まえ、
 **何をやり、何をやらないか**を決める。
 
