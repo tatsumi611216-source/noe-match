@@ -37,6 +37,9 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
+- https://www.noe-match.com/articles/garugaru-ki-itsumade/ （2026-08-13公開）
+- https://www.noe-match.com/articles/sango-crisis-guide/ （2026-08-13公開）
+
 
 ```
 https://www.noe-match.com/articles/konkatsu-soudan-saki/
