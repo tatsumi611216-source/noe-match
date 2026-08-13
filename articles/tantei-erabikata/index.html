@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "着手金なしの探偵事務所は信頼できる？", "acceptedAnswer": {"@type": "Answer", "text": "「着手金なし・完全成功報酬」は一見親切に見えますが、成功の定義が曖昧だったり、成功報酬の単価が相場より高く設定されていたりするケースがあるとされます。着手金の有無だけでなく、総額の見積もりと成功の定義を必ず確認することが大切です。"}}, {"@type": "Question", "name": "無料相談だけ受けても契約しなくていい？", "acceptedAnswer": {"@type": "Answer", "text": "はい。無料相談はあくまで見積もりと方針確認の場であり、その場で契約する義務はありません。複数社の無料相談を比較してから決めることが一般的に推奨されています。"}}, {"@type": "Question", "name": "調査費用の相場はどのくらい？", "acceptedAnswer": {"@type": "Answer", "text": "浮気・不倫調査で1日あたり数万円〜10万円台、総額では10万円台後半〜50万円程度が目安とされます（各社公式サイトの公開情報より）。調査日数・調査員の人数・地域により変動するため、必ず個別見積もりで確認してください。"}}, {"@type": "Question", "name": "都道府県公安委員会の届出は必ず確認すべき？", "acceptedAnswer": {"@type": "Answer", "text": "探偵業法により、探偵業を営むには都道府県公安委員会への届出が義務付けられています。届出番号は公式サイトや契約書に記載されているのが通常で、記載がない、または確認をはぐらかす事務所は避けるべき対象です。"}}, {"@type": "Question", "name": "契約前に一番確認すべき項目は？", "acceptedAnswer": {"@type": "Answer", "text": "総額の見積書（追加費用の発生条件を含む）、成功の定義、キャンセル・途中解約時の返金規定の3点です。口頭説明だけでなく、必ず書面で残してもらうことが基本とされています。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "探偵事務所の選び方・料金相場比較｜依頼前に確認すべきポイント", "description": "探偵事務所の料金体系（着手金・成功報酬・時間制）の違い、費用相場、悪徳業者の見分け方、無料相談の活用法を中立的に整理。依頼前に確認すべき契約条件も解説します。", "image": "https://www.noe-match.com/images/img_a7e85e8e.jpg", "url": "https://www.noe-match.com/articles/tantei-erabikata/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/tantei-erabikata/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "探偵事務所の選び方・料金相場比較｜依頼前に確認すべきポイント"}]}</script>
@@ -157,7 +157,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">関東以外にお住まいなら、全国対応の事務所から相場を確認する手もある</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3F8UUY+1T7S+TZE0X" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">原一探偵事務所の無料相談を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3F8UUY+1T7S+TZE0X" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">原一探偵事務所の無料相談を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">24時間365日・全国対応（公式サイトより）／相談内容と費用は必ず公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-4">調査内容別の費用相場</h2>
@@ -184,7 +184,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">無料相談で「調査可能な範囲」「概算費用」「調査の限界」を確認するところから</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3DGK1M+3IKY+64RJ6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ALG探偵社の無料相談を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3DGK1M+3IKY+64RJ6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ALG探偵社の無料相談を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">対応エリアは東京・埼玉・千葉・横浜（公式サイトより）／弁護士法人が運営。相談内容・費用は必ず公式サイトで確認を</p>
 </div>
 <h2 id="sec-6">無料相談を最大限に活用する方法</h2>
@@ -209,7 +209,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">料金体系を理解したうえで、複数社の無料相談を比較するのが基本</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3DGK1M+3IKY+64RJ6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ALG探偵社の無料相談を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3DGK1M+3IKY+64RJ6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ALG探偵社の無料相談を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">対応エリアは東京・埼玉・千葉・横浜（公式サイトより）／弁護士法人が運営。相談内容・費用は必ず公式サイトで確認を</p>
 </div>
 <h2 id="sec-9">まとめ</h2>

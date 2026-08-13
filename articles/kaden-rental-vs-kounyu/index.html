@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "家電レンタルと購入の損益分岐点は何年目ですか？", "acceptedAnswer": {"@type": "Answer", "text": "新生活家電4点セットを月額6,000円でレンタルし、購入した場合の総額を13万円（本体約12万円＋将来の処分費約1万円）と仮定すると、分岐点はおよそ21〜22ヶ月、つまり1年10ヶ月前後になります。月額4,000円のプランなら約32ヶ月、月額8,000円なら約16ヶ月と大きく動くため、契約する月額と想定利用期間の2つを先に決めることが判断の出発点になります（大手家電レンタルサービス公式サイトの公開料金・大手量販店の公開価格をもとにした試算・2026年7月時点）。"}}, {"@type": "Question", "name": "家電を処分するときの費用はいくらかかりますか？", "acceptedAnswer": {"@type": "Answer", "text": "冷蔵庫・洗濯機・テレビ・エアコンは家電リサイクル法の対象で、リサイクル料金に加えて収集運搬料金がかかります。リサイクル料金はメーカーとサイズにより異なり、1点あたり数千円程度が目安です（一般財団法人家電製品協会 家電リサイクル券センターの公表料金より）。収集運搬料金は依頼先で異なり、別途数千円かかるのが一般的です。電子レンジや炊飯器は家電リサイクル法の対象外で、多くの自治体では粗大ごみとして数百円〜千円台で処分できます。"}}, {"@type": "Question", "name": "レンタル家電が壊れた場合の費用は誰が負担しますか？", "acceptedAnswer": {"@type": "Answer", "text": "通常使用の範囲で発生した故障は、サービス側が無償で修理・交換する規定を設けている事業者が多いとされます。一方、落下・水没・改造など利用者の過失による破損は弁償の対象になるのが一般的です。負担の線引きと上限額は事業者ごとに規約が異なるため、契約前に「通常使用による故障」の定義と、過失時の請求上限を必ず確認してください。"}}, {"@type": "Question", "name": "レンタルには最低利用期間や解約金がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "多くのサービスで最低利用期間が設定されており、期間内に解約すると残月分の支払いや違約金が発生する規定があるのが一般的です。また、返却時の送料・引き取り費用を利用者が負担する形式も少なくありません。「月額だけを見て安いと判断する」と実質負担を読み違えるため、最低利用期間・中途解約時の扱い・返却費用の3点をセットで確認する必要があります。"}}, {"@type": "Question", "name": "新婚の場合、レンタルと購入のどちらを選ぶ人が多いですか？", "acceptedAnswer": {"@type": "Answer", "text": "新居に長く住む前提であれば購入が選ばれやすく、転勤の可能性がある、社宅や賃貸の更新時期が近い、しばらく単身赴任の見込みがあるといった不確実性がある場合にレンタルが検討されやすい傾向があります。実際には全点を統一する必要はなく、長く使う冷蔵庫・洗濯機は購入し、置き場所や必要性が変わりやすいテレビや季節家電をレンタルにする、といった併用も選択肢になります。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "新婚の家電はレンタルと購入どちらが得か｜損益分岐点をデータで検証", "description": "新生活の家電はレンタル（サブスク）と購入のどちらが得か。利用年数別（1年・2年・3年・5年）の総額比較表と損益分岐点、処分費まで含めた前提条件を明示して中立的に検証します。", "image": "https://www.noe-match.com/images/img_f6ec23bb.jpg", "url": "https://www.noe-match.com/articles/kaden-rental-vs-kounyu/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/kaden-rental-vs-kounyu/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-28", "dateModified": "2026-07-28"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "新婚の家電はレンタルと購入どちらが得か｜損益分岐点をデータで検証"}]}</script>
@@ -205,7 +205,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">転勤の可能性がある・数年で買い替える前提なら、レンタルが合理的になる</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5IUWOQ+5MMG+5ZEMP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">家電レンタルの料金プランを見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5IUWOQ+5MMG+5ZEMP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">家電レンタルの料金プランを見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">生活家電のレンタル・サブスクサービス（料金・対応エリア・最低利用期間は公式サイトでご確認ください）</p>
 </div>
 <h2 id="sec-7">どちらが向くかの判断基準</h2>
@@ -230,7 +230,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">5項目を確認するなら、実際のプラン内容を見ながらの方が早い</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5IUWOQ+5MMG+5ZEMP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">家電レンタルの料金プランを見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5IUWOQ+5MMG+5ZEMP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">家電レンタルの料金プランを見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">生活家電のレンタル・サブスクサービス（契約期間・故障時の対応は公式サイトでご確認ください）</p>
 </div>
 <h2 id="sec-9">契約前に必ず確認する5項目</h2>

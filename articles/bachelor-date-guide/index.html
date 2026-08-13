@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "バチェラーデート完全ガイド｜審査制AIデーティングの評判と向き不向き【2026年版】", "description": "バチェラーデートの評判・審査基準・料金を検証。週1回AIが自動でデートをセッティングする仕組み、メッセージ不要という設計の利点と欠点、向いている人・向いていない人を解説。", "image": "https://www.noe-match.com/images/img_ef8979b9.jpg", "url": "https://www.noe-match.com/articles/bachelor-date-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/bachelor-date-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "バチェラーデート完全ガイド｜審査制AIデーティングの評判と向き不向き【2026年版】"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "バチェラーデートの審査に落ちることはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "あります。バチェラーデートは登録時に審査があり、通過しないと利用できない設計です（公式サイトの案内より）。審査の具体的な配点や合否基準は公表されていないため、当サイトとしても「この条件なら通る」と断定することはできません。一般に、写真の鮮明さ・プロフィールの記入量・年齢確認書類の不備の有無といった、運営が確認できる要素が影響すると考えられます。落ちた場合でも、写真を撮り直しプロフィールを埋めたうえで再申請して通ったという声はあります。まずは書類不備と写真の質という、自分で改善できる部分から見直すのが現実的です。"}}, {"@type": "Question", "name": "本当にメッセージのやり取りは一切不要ですか？", "acceptedAnswer": {"@type": "Answer", "text": "「相手を口説くための事前メッセージ」は不要という設計です。マッチングが成立するとAIが日程と店舗を含むデート内容を組んでくれるため、会う前に長い雑談を重ねる工程がありません。ただし完全にゼロというわけではなく、当日の待ち合わせ確認や、やむを得ない日程変更の連絡など、必要最小限のやり取りが発生する場面はあります。「メッセージが好きではない人向け」であって「一言も打たなくていい」ではない、と理解しておくと期待値のズレが起きません。"}}, {"@type": "Question", "name": "地方在住でも使えますか？", "acceptedAnswer": {"@type": "Answer", "text": "サービスの性質上、都市部に強く偏ります。バチェラーデートは「AIが実際の店舗を予約してデートを設定する」仕組みのため、提携店舗と会員が一定数集まるエリアでないと成立しにくいからです。東京・大阪・名古屋など主要都市とその周辺が中心で、地方都市では候補が出るまでに時間がかかったり、そもそも設定が難しかったりする可能性があります。地方在住の場合は、会員数の多い一般的なアプリを軸にしたほうが確実です。当サイトの各地域ガイドも参考にしてください。"}}, {"@type": "Question", "name": "料金はどのくらいかかりますか？デート代は別ですか？", "acceptedAnswer": {"@type": "Answer", "text": "月額のサービス利用料と、当日のデート代（飲食代）は別で考える必要があります。サービス利用料はプランや契約期間によって変わるため、最新の金額は公式サイトで確認してください。重要なのは総額での比較です。仮に週1回のデートが設定されるとすると、1か月で4回分の飲食代が発生します。一般的なマッチングアプリの月額に加えてデート代が確実に乗る構造なので、「月にいくらまでなら出会いに使えるか」を先に決めてから登録するのが安全です。"}}, {"@type": "Question", "name": "じっくり相手を選びたい人には向きませんか？", "acceptedAnswer": {"@type": "Answer", "text": "向きにくいと考えられます。このサービスの価値は「選ぶ工程を省略して、会う回数を増やす」ことにあるため、条件を細かく絞り込んで納得してから会いたいタイプの人とは設計思想が逆です。年収・価値観・結婚観まで事前にすり合わせたい場合は、プロフィール項目が細かい婚活寄りのアプリや結婚相談所のほうが満足度が高くなりやすいです。逆に「考えても分からないから会って判断したい」という人には、この省略が最大のメリットになります。"}}]}</script>
@@ -191,7 +191,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">「探す時間がない」に当てはまったら、審査だけ先に出しておく手もある</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">バチェラーデート公式サイトを見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">バチェラーデート公式サイトを見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">完全審査制×AIおまかせマッチング／審査基準・料金の最新情報は公式サイトで</p>
 </div>
 <h2 id="sec-7">料金の考え方｜月額だけで判断しない</h2>
@@ -228,7 +228,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">探す工程を丸ごと外したい人のための選択肢</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">バチェラーデート公式サイトを見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">バチェラーデート公式サイトを見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">週1回、AIが自動でデートを設定／詳細は公式サイトで確認を</p>
 </div>
 

@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ペアリングは婚約指輪の代わりになりますか？", "acceptedAnswer": {"@type": "Answer", "text": "役割が異なるため、完全な代わりとは言えません。ペアリングは交際中の2人が対で身につける装身具で、婚約指輪はプロポーズや婚約の証として贈られるものです。ただし近年は「婚約指輪は不要」と考えるカップルも一定数おり、婚約指輪を用意せずペアリングや結婚指輪だけで進める選択も珍しくありません（各種ブライダル調査の公開データより）。どちらが正しいということはなく、2人の価値観と予算で決めて問題ありません。"}}, {"@type": "Question", "name": "ペアリングはどの指につけるのが一般的ですか？", "acceptedAnswer": {"@type": "Answer", "text": "交際中のカップルでは右手の薬指が選ばれることが多いとされます。左手の薬指は婚約・結婚の象徴として広く認識されているため、未婚の段階で左手薬指につけると既婚と受け取られる場面があるからです。ただし指ごとの意味づけは西洋の言い伝えに由来するもので、決まりごとではありません。仕事の都合で指輪をつけられない場合、チェーンに通して首から下げる人もいます。"}}, {"@type": "Question", "name": "ペアリングの予算はいくらが多いですか？", "acceptedAnswer": {"@type": "Answer", "text": "素材によって大きく変わります。シルバーやステンレスであればペア2本で1万〜3万円程度、K10ゴールドで3万〜6万円程度、プラチナでは8万円以上が一つの目安です（各ブランド公式オンラインストアの公開価格をもとにした推計・2026年7月時点）。記念日に長く使う想定なら、変色しにくい素材を選ぶために予算を上げる判断もあります。"}}, {"@type": "Question", "name": "金属アレルギーが心配な場合はどの素材を選べばよいですか？", "acceptedAnswer": {"@type": "Answer", "text": "一般にサージカルステンレスやチタンはアレルギーが起きにくい素材として扱われますが、体質には個人差があり、絶対に反応しないとは言えません。過去にアクセサリーで肌トラブルが出た経験がある場合は、購入前に皮膚科で相談するのが確実です。また、金メッキ製品は表面が摩耗すると下地の金属が露出することがあるため、日常的に着け続ける想定なら無垢素材を検討する価値があります。"}}, {"@type": "Question", "name": "相手のサイズが分からないままサプライズで贈れますか？", "acceptedAnswer": {"@type": "Answer", "text": "可能ですが、サイズ直しの可否と費用、期間を事前に確認しておくことをおすすめします。刻印を入れた商品や特殊な形状のリングはサイズ直しや返品ができないケースがあります。相手が普段つけている指輪の内径を測る、購入店のリングゲージを借りるといった方法のほか、あえてサイズ確認を一緒に行い「選ぶ過程を共有する」形にするカップルも少なくありません。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "ペアリングの選び方と相場データ｜婚約指輪との違い・つける指の意味", "description": "ペアリングの価格相場を素材別（シルバー・ステンレス・K10・K18・プラチナ）に整理し、婚約指輪・結婚指輪との違い、つける指の意味、サイズ選びと刻印の注意点を中立的に解説します。", "image": "https://www.noe-match.com/images/img_1256f57a.jpg", "url": "https://www.noe-match.com/articles/pair-ring-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/pair-ring-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-28", "dateModified": "2026-07-28"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "ペアリングの選び方と相場データ｜婚約指輪との違い・つける指の意味"}]}</script>
@@ -204,7 +204,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">ペアリングを実際に見比べるなら、ペア商品の品揃えが多いブランドから</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+633N96+1O28+IISMP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">THE KISSのペアリングを見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+633N96+1O28+IISMP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">THE KISSのペアリングを見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">ペアジュエリー専門ブランドの公式通販（価格・在庫・刻印対応は公式サイトでご確認ください）</p>
 </div>
 <h2 id="sec-7">購入場所ごとの違い</h2>
@@ -221,7 +221,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">ペアジュエリーを扱うブランドの一つ。素材と価格帯を並べて見比べたい</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4FKARE+4UT2+5YJRM" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">L&amp;Co.のペアジュエリーを見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4FKARE+4UT2+5YJRM" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">L&amp;Co.のペアジュエリーを見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">レディース・ペアジュエリーのブランド。素材・価格・刻印やサイズ直しの対応は公式サイトでご確認ください</p>
 </div>
 

@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "50代の婚活サイトはどれを選ぶ？アプリ・結婚相談所との違いと中高年の現実", "description": "50代で婚活サイトを探すときに迷うのは、婚活サイト・マッチングアプリ・結婚相談所のどれを使うか。年齢層の分布、費用の違い、50代が実際に直面する壁を整理し、目的別の選び方をまとめました。", "image": "https://www.noe-match.com/images/img_832b721a.jpg", "url": "https://www.noe-match.com/articles/over50-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/over50-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-08-06"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "50代の婚活サイトはどれを選ぶ？アプリ・結婚相談所との違いと中高年の現実"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "50代からマッチングアプリを始めても遅くないですか？", "acceptedAnswer": {"@type": "Answer", "text": "遅くはありません。ただし「同年代の会員が多いアプリを選ぶ」という条件が40代以上に厳密につきます。20〜30代中心のアプリで50代が活動すると、検索結果に表示される機会そのものが少なくなり、努力の量と成果が結びつきにくくなります。マリッシュのように40〜50代の会員層が厚いサービス（各社公式発表）から始めるのが現実的です。"}}, {"@type": "Question", "name": "50代でもマッチングアプリで結婚まで進む人はいますか？", "acceptedAnswer": {"@type": "Answer", "text": "います。国の統計でも50代以上の婚姻件数は毎年一定数が記録されており（厚生労働省の人口動態統計より推計）、再婚も含めれば決して珍しい事例ではありません。ただし50代の場合、必ずしも「入籍」だけがゴールではなく、事実婚や週末婚など、財産・相続・子どもの事情を踏まえた形を選ぶ人も少なくない点が20〜30代との違いです。"}}, {"@type": "Question", "name": "死別であることはプロフィールに書くべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "書くことをおすすめします。50代の婚活では独身・離別・死別のいずれかであることが前提として共有されており、隠す情報ではありません。ただし書き方は「事実を短く」が基本です。経緯を長く書くと、相手は追悼の文章として読んでしまい、次の関係を想像しにくくなります。事実と、いま前を向いていることの2点で足りると考えてください。"}}, {"@type": "Question", "name": "子どもがまだ大学生ですが、婚活を始めても構いませんか？", "acceptedAnswer": {"@type": "Answer", "text": "構いませんが、順番の設計はしておいた方がスムーズです。50代の再婚では、子どもの学費負担が終わる時期・相続の考え方・同居の有無が現実的な論点になります。交際初期に全部を話す必要はありませんが、「入籍を具体的に検討する段階では家族に伝える」という自分なりの線を先に決めておくと、相手にも説明しやすくなります。"}}, {"@type": "Question", "name": "親の介護がありますが、婚活と両立できますか？", "acceptedAnswer": {"@type": "Answer", "text": "両立している人は多いですが、条件を先に共有することが前提になります。介護の有無を伏せたまま交際が進むと、会える頻度の少なさが「気がない」と誤解されがちです。プロフィールや初期のメッセージで「親の通院付き添いがあるため会えるのは月2回程度」といった形で具体的に書いておくと、事情を理解できる相手だけが残るため、結果的に消耗が減ります。"}}]}</script>
@@ -172,7 +172,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">アプリで同年代の反応が薄いなら、相談所も比較対象に入れておきたい</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+30YGCA+5UBE+5YZ75" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">P!っと縁結びのサービス内容を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+30YGCA+5UBE+5YZ75" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">P!っと縁結びのサービス内容を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">全国対応をうたう結婚相談所。料金・対応エリア・面談方法・年齢層は公式サイトでご確認ください</p>
 </div>
 
@@ -190,7 +190,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">再婚・シンパパシンママの婚活なら、再婚者を優遇する専用設計のアプリを</p>
-<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">再婚・シングルマザー優遇プログラムあり／40代以上の利用者層が厚い</p>
 </div>
 
@@ -243,7 +243,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">再婚・シンパパシンママの婚活なら、再婚者を優遇する専用設計のアプリを</p>
-<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">再婚・シングルマザー優遇プログラムあり／40代以上の利用者層が厚い</p>
 </div>
 

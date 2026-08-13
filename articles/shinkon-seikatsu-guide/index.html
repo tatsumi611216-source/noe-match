@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト", "description": "入籍前後の手続きから新居選び、引越し費用の相場、家具家電の予算配分、2人のお金の管理方法まで。新婚生活・同棲のスタートに必要な段取りをチェックリスト形式で整理しました。", "image": "https://www.noe-match.com/images/img_3ef2a51d.jpg", "url": "https://www.noe-match.com/articles/shinkon-seikatsu-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/shinkon-seikatsu-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-08-06"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "新婚の引越し費用はどのくらいかかりますか？", "acceptedAnswer": {"@type": "Answer", "text": "2人分の荷物を運ぶ引越し作業そのものは、同一市区町村内で概ね8〜15万円、遠距離なら15〜30万円程度が一般的なレンジです（各引越し会社の公式サイト掲載料金より推計）。ただしこれは通常期の目安で、3月〜4月上旬の繁忙期は同じ条件でも2倍近くになることがあります。加えて敷金・礼金・仲介手数料などの初期費用が別途かかるため、住居関連の総額としては30〜60万円程度を見ておくと現実的です。"}}, {"@type": "Question", "name": "引越しの時期はいつが安いですか？", "acceptedAnswer": {"@type": "Answer", "text": "一般に3月〜4月上旬が最も高く、その後の5月〜6月、11月〜1月は比較的落ち着く傾向があります（各引越し会社の公式サイトの繁忙期表示より）。同じ月でも土日祝・月末・大安は割高になりやすく、平日の午後便やフリー便を選べば費用が下がることがあります。日程に融通が利くかどうかが、費用差に最も効く条件です。"}}, {"@type": "Question", "name": "入籍後の名義変更は何から手をつければいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "順序があります。まず戸籍・住民票の手続きを済ませ、次に運転免許証やマイナンバーカードなど本人確認書類を更新します。銀行口座やクレジットカード、保険、携帯電話などの民間手続きは、更新済みの本人確認書類がないと進められないことが多いためです。この順序を逆にすると同じ窓口に二度行くことになります。"}}, {"@type": "Question", "name": "家具家電はいくらくらい見ておけばいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "新規に一式を揃える場合、家具・家電あわせて30〜70万円程度が一つの目安です（各種ブライダル調査の公開データおよび量販店の公開価格より推計）。ただし、どちらかが使っていたものを持ち込めば大きく下がります。入居直後に必要なのは冷蔵庫・洗濯機・寝具・照明・カーテン程度で、それ以外は住んでみてから判断しても支障が出にくい項目です。"}}, {"@type": "Question", "name": "2人のお金はどう管理するのが良いですか？", "acceptedAnswer": {"@type": "Answer", "text": "唯一の正解はなく、共通口座に一定額を入れる方式、費目ごとに分担する方式、収入比で按分する方式などがあります。重要なのは方式そのものより、家計として何を共通費に含めるかを最初に定義しておくことです。定義が曖昧なまま運用を始めると、後から支出のたびに判断が必要になり、それ自体が摩擦の原因になります。"}}]}</script>
@@ -256,7 +256,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">引越し費用は同じ条件でも業者間で差が出やすい費目</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">引越し侍で一括見積もりする</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">引越し侍で一括見積もりする</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">繁忙期（3〜4月）は特に差が開きやすい。複数社の見積もりを一度に依頼できる無料サービス（対応業者・料金は時期と地域により異なります）</p>
 </div>
 <h2 id="sec-6">家具家電の予算配分と「後から買う」判断</h2>
@@ -305,7 +305,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">荷物が新居に入りきらない場合、処分を急ぐ前に一時保管という選択肢もある</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5SDUD6+1I9M+669JL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ハローストレージの空き状況を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5SDUD6+1I9M+669JL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ハローストレージの空き状況を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">料金・初期費用・空き状況は店舗と時期により異なります。最新条件は公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-7">2人のお金の管理方法</h2>

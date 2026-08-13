@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "40代でマッチングアプリを使うのは恥ずかしい？", "acceptedAnswer": {"@type": "Answer", "text": "自分も最初はそう思っていた。でもユーブライドやOmiaiを実際に見てみると、40代のユーザーが最もアクティブな層のひとつだという事実がある（各社公式発表）。「アプリで知り合った」という出会い方への社会的な偏見はここ数年で薄れており、特に婚活目的のアプリでは40代が主力ユーザー層だ。まずは無料登録から始めて、同世代がどのくらい活動しているかを自分の目で確かめてほしい。"}}, {"@type": "Question", "name": "子どもがいる場合、プロフィールに書くべき？", "acceptedAnswer": {"@type": "Answer", "text": "書いた方がいい。後から発覚するより、子どもがいることを知った上でいいねしてくれる相手を最初から集めた方が、会ってからの話がスムーズに進む。特にマリッシュは子どもがいることへの理解がある相手が集まるアプリで、最初から前向きな相手と出会いやすい。子どもの年齢や同居状況も簡潔に書いておくとミスマッチが減る。"}}, {"@type": "Question", "name": "40代男性でも「年下の女性」を探せる？", "acceptedAnswer": {"@type": "Answer", "text": "探せる。ただ10歳以上の年齢差を求めると選択肢が極端に少なくなる。実際に40代男性がマッチングしやすいのは35〜45歳の女性層で、この層は40代男性の安定感や人生経験を高く評価する傾向がある。メインターゲットは同年代に設定するのが現実的だ。"}}, {"@type": "Question", "name": "40代でPairsを使う意味はある？", "acceptedAnswer": {"@type": "Answer", "text": "補助的には使える。ただ20代の恋活層が多いためミスマッチが起きやすく、40代の婚活メインツールとしてはユーブライドやマリッシュを優先すべきだ。どうしても試したい場合は短期プランで始め、マッチング率を確認した上で継続判断するとよい。"}}, {"@type": "Question", "name": "ビデオ通話を提案した方がいい？", "acceptedAnswer": {"@type": "Answer", "text": "積極的に提案した方がいい。「顔を見て話したい」という提案は誠実な印象を与え、相手からの信頼を得やすい。また詐欺師やサクラを見分ける手段としても有効で、詐欺師はビデオ通話を毎回断る傾向がある。アプリ内のビデオ通話機能を使えば個人情報を守りながら安全に利用できる。デートの前にビデオ通話を1回挟む流れを標準にするといい。"}}, {"@type": "Question", "name": "活動期間はどのくらいを目安にすればいい？", "acceptedAnswer": {"@type": "Answer", "text": "6ヶ月〜1年。ただし同じ方法を漫然と続けるのではなく、3ヶ月に1回はプロフィールを見直す必要がある。最初の3ヶ月で反応が全くない場合は、根本的に刷新するタイミングだ。うまくいかない場合は結婚相談所への移行も検討に値する。"}}, {"@type": "Question", "name": "結婚相談所との違いは？40代にはどちらがいい？", "acceptedAnswer": {"@type": "Answer", "text": "コスト面ではアプリが圧倒的に安い。アプリの月額4,000円前後に対し、結婚相談所は月3〜5万円が相場だ（各社公式発表）。まずアプリで6ヶ月〜1年活動して、成果が出なければ相談所も検討するという流れが現実的だと思う。ただし結婚相談所には仲人によるサポートやお見合いシステムが整っており、初対面のコミュニケーションに不安がある人や婚活に時間を割くのが難しい人には大きなメリットがある。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "40代のマッチングアプリ活用法｜再婚・新しい出会いのための現実的な戦略", "description": "40代のアプリ利用を恥ずかしいと思う気持ちはわかる。でも実際には同じ状況の人がたくさんいる。ユーブライドなんかは40代が一番多いアプリで、恥ずかしい場所どころかアウェイじゃない場所だ。", "image": "https://www.noe-match.com/images/img_38da1651.jpg", "url": "https://www.noe-match.com/articles/40s-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/40s-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-05-31", "dateModified": "2026-05-31"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "40代のマッチングアプリ活用法｜再婚・新しい出会いのための現実的な戦略"}]}</script>
@@ -151,7 +151,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <p>Pairsは会員数が多い一方、20代の恋活層も多くミスマッチが生じやすい。40代の婚活には補助的に使う程度が現実的だ。</p>
 <h2 id="sec-4">40代向けアプリ料金比較</h2>
 <p>40代が使いやすいアプリの月額料金を確認しておこう。複数のアプリを並行使用する場合は、費用面を考慮して選択したい。</p>
-<div class="table-wrap"><table><thead><tr><th>アプリ名</th><th>男性（1ヶ月）</th><th>男性（3ヶ月）</th><th>男性（6ヶ月）</th><th>女性</th></tr></thead><tbody><tr><td>ユーブライド<br><a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:0;text-decoration:none;margin-top:4px">公式サイト</a></td><td>4,200円</td><td>3,600円</td><td>3,000円</td><td>無料〜</td></tr><tr><td>Omiai</td><td>4,980円</td><td>4,380円</td><td>3,480円</td><td>無料</td></tr><tr><td>Pairs</td><td>4,490円</td><td>3,590円</td><td>2,790円</td><td>無料</td></tr><tr><td>with</td><td>3,600円</td><td>3,400円</td><td>3,000円</td><td>無料</td></tr><tr><td>Tapple</td><td>4,300円</td><td>3,700円</td><td>3,100円</td><td>無料〜</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>アプリ名</th><th>男性（1ヶ月）</th><th>男性（3ヶ月）</th><th>男性（6ヶ月）</th><th>女性</th></tr></thead><tbody><tr><td>ユーブライド<br><a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:0;text-decoration:none;margin-top:4px">公式サイト</a></td><td>4,200円</td><td>3,600円</td><td>3,000円</td><td>無料〜</td></tr><tr><td>Omiai</td><td>4,980円</td><td>4,380円</td><td>3,480円</td><td>無料</td></tr><tr><td>Pairs</td><td>4,490円</td><td>3,590円</td><td>2,790円</td><td>無料</td></tr><tr><td>with</td><td>3,600円</td><td>3,400円</td><td>3,000円</td><td>無料</td></tr><tr><td>Tapple</td><td>4,300円</td><td>3,700円</td><td>3,100円</td><td>無料〜</td></tr></tbody></table></div>
 <blockquote><strong>ポイント</strong>：40代の婚活では6ヶ月程度の活動期間を見込み、6ヶ月プランを選ぶとコストを抑えられる。結婚相談所の月額3〜5万円と比較すると、アプリは圧倒的にコストパフォーマンスが高い。</blockquote>
 <h2 id="sec-5">40代向けプロフィール戦略</h2>
 <h3>「安定感」と「誠実さ」を伝える</h3>
@@ -199,14 +199,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">真剣な婚活を始めるなら、成婚実績を公表している定番から</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
 </div>
 
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">再婚・シンパパシンママの婚活なら、再婚者を優遇する専用設計のアプリを</p>
-<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">再婚・シングルマザー優遇プログラムあり／40代以上の利用者層が厚い</p>
 </div>
 

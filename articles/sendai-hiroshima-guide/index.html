@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "仙台・広島でどのアプリが一番出会いやすい？", "acceptedAnswer": {"@type": "Answer", "text": "候補の母数で見るとPairs（2,700万人・各社公式発表）が最多で、仙台・広島のような人口100万人規模の都市でも十分な候補が表示されます。婚活目的ならOmiaiやユーブライドの真剣層が集まりやすく、地方中核都市では『結婚前提』を明記しているユーザーの比率が東京より高い傾向があるとされています（各社ユーザー属性データより推計）。まずPairsで母数を確保し、婚活を強く意識するならユーブライドを併用する形が効率的です。"}}, {"@type": "Question", "name": "転勤で仙台・広島に来たばかりで友人がいない。マッチングアプリで出会えるか？", "acceptedAnswer": {"@type": "Answer", "text": "十分に出会えます。むしろ支店経済都市である仙台・広島は転勤族が一定数存在するため、『転勤で来たばかりで土地勘がない』という自己紹介が不自然に響きません。地元在住者にとっても『地元を案内できる』という役割が生まれやすく、会話のきっかけになりやすいです。プロフィールに転勤である旨と、知りたいエリアを具体的に書くことをおすすめします。"}}, {"@type": "Question", "name": "転勤族は数年で異動してしまうので真剣な出会いは難しいのでは？", "acceptedAnswer": {"@type": "Answer", "text": "異動の可能性はマイナス要因になり得ますが、致命的ではありません。実際に交際・結婚に至った転勤族のケースでは、早い段階で今後の異動予定や結婚後の居住地についての考えをすり合わせている傾向があります。曖昧にせず、『次の異動は数年後の見込み』『結婚となれば転居も検討する』のように率直に共有する方が、後のトラブルを避けやすいです。"}}, {"@type": "Question", "name": "国分町・流川エリアは初デートに向いている？", "acceptedAnswer": {"@type": "Answer", "text": "国分町（仙台）・流川（広島）はどちらも夜の繁華街としての性格が強く、1回目の初デートよりも2回目以降、関係が進んでからの利用が向いています。1回目は昼間・カフェ中心の落ち着いたエリア（仙台なら青葉通り周辺、広島なら八丁堀・紙屋町のカフェ）を選び、距離が縮まってから夜の街に誘う流れが自然です。"}}, {"@type": "Question", "name": "地方都市は競争が少ない分、出会いやすいという理解でいい？", "acceptedAnswer": {"@type": "Answer", "text": "候補数そのものは東京より少ないものの、1人あたりに届くいいねの数も少なくなる傾向があるため、プロフィールが埋もれにくいというメリットがあります。一方で候補が少ない分、マッチングした相手との相性を見極める前に会話が終わってしまうと、次の候補までの間隔が空きやすいという面もあります。1人ずつ丁寧にやり取りする姿勢が地方都市では特に成果につながりやすいです。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略", "description": "仙台に転勤してきた友人がこう漏らした。「東京と違って候補は少ないのに、なぜか話が続く人が多い」と。支店経済都市ならではの転勤族需要と、地元密着のコミュニティが同居する仙台・広島の攻略法を整理した。", "image": "https://www.noe-match.com/images/img_3bfd143d.jpg", "url": "https://www.noe-match.com/articles/sendai-hiroshima-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/sendai-hiroshima-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略"}]}</script>
@@ -223,7 +223,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">結婚を見据えた出会いを探すなら、成婚実績を公表している婚活アプリという選択肢も</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
 </div>
 <h2 id="sec-11">まとめ</h2>

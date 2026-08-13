@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"タップルの真剣度は本当に低いのですか？","acceptedAnswer":{"@type":"Answer","text":"「低い」というより「目的が違う」というのが正確な表現だ。タップルの利用目的の内訳は気軽な出会いが約60%、恋活が約30%、婚活が約10%とされる（各社公式発表・Noe編集部調べ推計）。婚活目的の比率だけを見ればOmiai（約78%）と比べて明らかに低いが、これは「不真面目な人が多い」のではなく「恋活・カジュアル出会いのためのアプリとして設計されている」ためだ。恋人を作りたい20代にとっては、この設計はむしろ合理的に機能する。"}},{"@type":"Question","name":"タップルで彼女・彼氏はできますか？","acceptedAnswer":{"@type":"Answer","text":"できる。特に20代前半〜中盤の恋活目的であれば相性は良い。マッチングから初デートまでの平均期間が3日と国内最速クラスで（各社公式発表）、行動が早いユーザーが多いためスピード感のある関係構築がしやすい。ただし「すぐ会える」ことと「すぐ真剣な交際になる」ことは別問題で、プロフィールに趣味・価値観を具体的に書き、初期のやり取りで方向性を確認する一手間が交際化の分かれ目になる。"}},{"@type":"Question","name":"タップルは遊び目的の人が多いというのは本当ですか？","acceptedAnswer":{"@type":"Answer","text":"完全な誤解ではないが、正確でもない。カジュアルな出会いを求める層が約60%を占めるのは事実だが、これは「遊び」というより「まずは気軽に会ってみたい」という初期段階の目的であることが多い。実際に交際・結婚に至ったカップルも一定数報告されており（各社公式発表）、遊び目的と真剣な出会いを求める層が混在しているのが実態だ。相手のプロフィールで結婚観・将来観への言及があるかを確認することで、真剣度の高い相手を見極めやすくなる。"}},{"@type":"Question","name":"タップルとOmiaiではどちらが婚活に向いていますか？","acceptedAnswer":{"@type":"Answer","text":"婚活が目的ならOmiaiが向いている。Omiaiの婚活ユーザー比率は約78%（Noe編集部・2025年ユーザー調査より推計）で、30代を中心に結婚を前提とした交際を求める層が厚い。一方タップルは18〜29歳が全体の75%以上を占め（各社公式発表）、恋活・カジュアルな出会いに強い設計だ。20代で「まずは恋人が欲しい」段階ならタップル、結婚を具体的なタイムラインで考えているならOmiaiという住み分けが現実的だ。"}},{"@type":"Question","name":"タップルの年齢層は何歳が中心ですか？","acceptedAnswer":{"@type":"Answer","text":"18〜23歳が約40%、24〜28歳が約35%、29〜35歳が約20%、35歳以上が約5%という分布だ（各社公式発表）。事実上「20代のためのアプリ」として機能しており、同世代の相手を探す20代にとっては候補の母数が多いというメリットがある。30代以上で利用する場合は、年齢層のミスマッチを理解した上で使う必要がある。"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"タップルの真剣度は低い？｜ユーザー層データと目的別の向き不向き【2026年版】","description":"「タップルは遊び目的が多い」という評判は本当か。年代分布・利用目的の内訳データを公平に検証し、20代恋活には最適だが婚活には不向きという結論に至った理由を具体的に解説する。","image":"https://www.noe-match.com/images/img_eb8685cb.jpg","url":"https://www.noe-match.com/articles/tapple-seriousness-data/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.noe-match.com/articles/tapple-seriousness-data/"},"inLanguage":"ja","author":{"@type":"Organization","name":"Noe編集部","url":"https://www.noe-match.com/about.html"},"publisher":{"@type":"Organization","name":"Noe結婚設計室","url":"https://www.noe-match.com/"},"datePublished":"2026-07-26","dateModified":"2026-07-26"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"記事一覧","item":"https://www.noe-match.com/#articles"},{"@type":"ListItem","position":3,"name":"タップルの真剣度は低い？｜ユーザー層データと目的別の向き不向き【2026年版】"}]}</script>
@@ -226,7 +226,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">結婚を意識した出会いを探すなら、婚活特化型から</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／婚活ユーザー比率の高さが特徴</p>
 </div>
 

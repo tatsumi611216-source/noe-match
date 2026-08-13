@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"京都ではどのマッチングアプリが一番出会いやすいですか？","acceptedAnswer":{"@type":"Answer","text":"候補数ではPairs（会員2,700万人・各社公式発表）が最多で、京都でも最も使われているアプリとみられます。20代前半・大学生層にはTappleが機能しやすく、価値観・趣味を重視するならwithがおすすめです。婚活目的ならOmiai・ユーブライドが向いています。まずPairsで母数を確保しながら、目的に応じてもう1本追加する2本立てが効率的です。"}},{"@type":"Question","name":"京都は学生が多いと聞きましたが、社会人でも出会えますか？","acceptedAnswer":{"@type":"Answer","text":"十分に出会えます。京都には京都大学・立命館大学・同志社大学など多数の大学があり学生比率が高いのは事実ですが、社会人ユーザーも相応にいます。アプリの検索条件で「社会人のみ」「年齢範囲」を絞れば社会人層に絞り込めます。また社会人の場合、学生と比べてメッセージや会話の質が安定しやすい傾向があります。"}},{"@type":"Question","name":"鴨川や嵐山など観光地でのデートはアリですか？","acceptedAnswer":{"@type":"Answer","text":"2回目以降なら非常に効果的です。初回デートで観光名所を選ぶと移動が多くなり会話が落ち着かない場合があります。まず河原町・烏丸エリアのカフェで初回の距離感を確認し、2回目に鴨川の夕暮れ散歩や嵐山の竹林といった京都らしい場所に進む流れが自然です。"}},{"@type":"Question","name":"大阪や神戸からの利用者ともマッチングできますか？","acceptedAnswer":{"@type":"Answer","text":"できます。距離設定を20〜40kmに広げれば大阪・神戸・滋賀の相手も候補に入ります。京都駅は新幹線・JR・近鉄・地下鉄が集まるため、関西全域からのアクセスが良く、デート場所の提案もしやすい立地です。"}},{"@type":"Question","name":"京都で婚活アプリを使う場合、どのアプリを選べばよいですか？","acceptedAnswer":{"@type":"Answer","text":"OmiaiかユーブライドがPairsより婚活向きです。どちらも「結婚を前提とした交際を希望」と設定しているユーザー比率が高く、京都でも30代の真剣層が一定数います。Pairs内の「婚活」コミュニティを活用する方法もありますが、ダイレクトに進めたい場合はOmiai・ユーブライドからスタートするのが効率的です。"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"京都でマッチングアプリを使うなら｜出会えるアプリTOP3と河原町・烏丸エリア攻略法","description":"京都でマッチングアプリを使うならどれがいい？大学生比率が高い学生都市ならではの使い方・鴨川/河原町/烏丸エリア別の活用法・観光地デートと生活圏デートの使い分けを、実際に使った経験をもとに解説。","image":"https://www.noe-match.com/images/img_03247cd2.jpg","url":"https://www.noe-match.com/articles/kyoto-guide/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.noe-match.com/articles/kyoto-guide/"},"inLanguage":"ja","author":{"@type":"Organization","name":"Noe編集部","url":"https://www.noe-match.com/about.html"},"publisher":{"@type":"Organization","name":"Noe結婚設計室","url":"https://www.noe-match.com/"},"datePublished":"2026-07-06","dateModified":"2026-07-28"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"記事一覧","item":"https://www.noe-match.com/#articles"},{"@type":"ListItem","position":3,"name":"京都でマッチングアプリを使うなら｜出会えるアプリTOP3と河原町・烏丸エリア攻略法"}]}</script>
@@ -342,7 +342,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">結婚を見据えた出会いを探すなら、成婚実績を公表している婚活アプリという選択肢も</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
 </div>
 <h2 id="sec-13">まとめ</h2>

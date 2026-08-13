@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "自分の年代に最適なアプリの選び方は？", "acceptedAnswer": {"@type": "Answer", "text": "年代別の最適アプリは、20代前半はTapple・with・Pairs、25-29歳はPairs・with、30-34歳はPairs・Omiai、35-40歳はOmiai・youbride、40代以上はyoubride・ユーブライドが中心です。「その年代が最も利用しているアプリ」を選ぶことが出発点で、同年代のユーザーが多いほどメッセージの温度感や目的意識が合いやすく、初デートまでの流れがスムーズになります。複数アプリの併用も有効で、25-29歳であればPairsをメインにwithをサブで使う戦略は実績が多いです。"}}, {"@type": "Question", "name": "20代と30代で利用すべきアプリは違う？", "acceptedAnswer": {"@type": "Answer", "text": "大きく違います。20代は即デート系（Tapple・Tinderなど）が人気ですが、30代は真剣系（Omiai・youbrideなど）が優位です。同じPairsでも20代は「恋活」、30代は「婚活前提」という利用姿勢の違いがあります。30代がTappleを使うと「遊び目的」の相手と当たりやすく、すれ違いが起きやすいため、30代で本気の出会いを求めるならOmiaiかユーブライドから始めることを勧めます。"}}, {"@type": "Question", "name": "年上・年下との出会いは年代別アプリで可能？", "acceptedAnswer": {"@type": "Answer", "text": "可能ですが、工夫が必要です。年の差に寛容なのは全年代が混在しているPairsのような総合型アプリで、特定の年代が集中している特化型アプリは年の差マッチングには向きません。40代女性が20代男性を狙う場合、youbrideよりPairsの方が成功率が高いのはその理由からです。年の差15歳以上を希望するなら年の差特化アプリを併用することを勧めます。"}}, {"@type": "Question", "name": "40代以上向けアプリの選択肢は？", "acceptedAnswer": {"@type": "Answer", "text": "youbride、ユーブライド、マリッシュの三択が基本です。Pairs・Omiaiにも40代ユーザーはいますが、40代の密度が低くマッチ率が30-40%低下します（各社公式発表・Noe編集部調べ推計）。再婚を考えているならマリッシュが最適で、シングルマザーや子持ちの方への理解度も高く安心して利用できます。まずユーブライドに無料登録してプロフィールを丁寧に整え、再婚希望であればマリッシュを並行させるのが現実的です。"}}, {"@type": "Question", "name": "年代別でマッチ確率の違いはどのくらい？", "acceptedAnswer": {"@type": "Answer", "text": "かなり大きいです。20代女性のマッチ率は80-90%、30代女性は60-70%、40代女性は40-50%という統計があります（各社公式発表・Noe編集部・2025年ユーザー調査より推計）。男性は20代で50%、30代で30-40%、40代で20-30%です。ただし写真と自己紹介文の質を上げることで年代による不利は大幅にカバーできます。プロの写真撮影を活用した30代男性がマッチ率2倍以上を達成した実例は珍しくありません。"}}, {"@type": "Question", "name": "シングルマザー・バツイチ向けアプリは年代別にある？", "acceptedAnswer": {"@type": "Answer", "text": "あります。マリッシュ（再婚・シングルマザー特化）は年代問わず対応しています。20代バツイチはPairs・withでも問題ないですが、30代以上のシングルマザーはマリッシュの方が圧倒的に成功率が高いです（マッチ率が2倍以上）（Noe編集部・2025年ユーザー調査より推計）。バツイチを正直にプロフィールに書くことで同じ境遇の誠実な相手を引き寄せるフィルター効果があります。30代以上のシングルマザーには「マリッシュ＋ユーブライド」の組み合わせが特に効果的です。"}}, {"@type": "Question", "name": "年代ミスマッチを避けるための設定は？", "acceptedAnswer": {"@type": "Answer", "text": "各アプリの「年代フィルター」を登録直後に設定することを先に済ませてください。20代なら「20-29歳」、30代なら「25-40歳」など目的に応じた範囲を設定します。フィルターを絞りすぎると選択肢が極端に減るため、まず±7〜10歳程度で設定してメッセージのやり取りで相性を確かめる方法が現実的です。「居住地フィルター」も合わせて設定すると初デートのハードルが下がります。年代フィルターと居住地フィルター、この二つを登録当日に設定するだけで無駄なマッチングが大幅に減ります。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "マッチングアプリの年齢層分布【各年代の利用率比較】", "description": "年齢層のデータを見て一番驚いたのは、25〜29歳が32%と最大層だということだ。「マッチングアプリ＝若い人のもの」というイメージがあるが、実際には20代後半がメインユーザーで、しかも婚活意識も高い。20代前半より30代前", "image": "https://www.noe-match.com/images/img_0207096b.jpg", "url": "https://www.noe-match.com/articles/age-data/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/age-data/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-05-31", "dateModified": "2026-05-31"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "マッチングアプリの年齢層分布【各年代の利用率比較】"}]}</script>
@@ -181,7 +181,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">年代によって向くサービスが変わる。30代以上は婚活寄りの選択肢も</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライドの年齢層を見る</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライドの年齢層を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">会員構成・料金は変動します。最新情報は公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-6">【世代別の人気アプリ】</h2>

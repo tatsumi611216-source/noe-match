@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"夜勤があると恋愛できない？看護師のシフト×デート調整の実務【2026年版】","description":"夜勤・3交代勤務の看護師でもマッチングアプリで出会えるのか？シフトに合わせたデート調整術、看護師に向くアプリTOP3、プロフィールへの職業の書き方をNoe編集部が実体験をもとに解説。","image":"https://www.noe-match.com/images/img_409cbfd0.jpg","url":"https://www.noe-match.com/articles/nurse-guide/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.noe-match.com/articles/nurse-guide/"},"inLanguage":"ja","author":{"@type":"Organization","name":"Noe編集部","url":"https://www.noe-match.com/about.html"},"publisher":{"@type":"Organization","name":"Noe結婚設計室","url":"https://www.noe-match.com/"},"datePublished":"2026-07-20","dateModified":"2026-07-20"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"記事一覧","item":"https://www.noe-match.com/#articles"},{"@type":"ListItem","position":3,"name":"夜勤があると恋愛できない？看護師のシフト×デート調整の実務【2026年版】"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"看護師はマッチングアプリで出会えるのか？","acceptedAnswer":{"@type":"Answer","text":"はい、出会えます。ただし「シフトが合わない」「返信が遅くなる」という壁があるため、プロフィールに勤務スタイルを正直に書いておくことが大切です。理解のある相手と早期に絞り込めれば、出会いの質は高まります。看護師という職業は相手から信頼感・安定感を持たれやすく、いいねを受け取りやすい傾向があります（Noe編集部・2025年ユーザー調査より推計）。"}},{"@type":"Question","name":"どのアプリが夜勤ありの看護師に向いている？","acceptedAnswer":{"@type":"Answer","text":"会員数の多さを活かしてマッチング数を稼ぐならPairs、価値観の合う相手を見つけてゆっくりやりとりしたいならwith、婚活目的で真剣な相手と出会いたいならOmiaiが向いています。夜勤明けに長文返信が難しい場合は、withの心理テスト機能でプロフィールを補完すると、メッセージが少なくても相性を伝えられます。"}},{"@type":"Question","name":"プロフィールに「看護師」と書いた方がいい？","acceptedAnswer":{"@type":"Answer","text":"基本的に書くことをおすすめします。看護師という職業は、安定・誠実・思いやりがあるというイメージを与えやすく、いいねが増える傾向があります。ただし「看護師と分かったとたん目的が変わる人」や「医療ハラスメント的な質問をする人」が一定数いるため、職場名や具体的な所属は書かないことが身バレ防止にもつながります。詳しくは身バレ対策の記事も参照してください。"}},{"@type":"Question","name":"シフトが合わない相手とのデートはどうする？","acceptedAnswer":{"@type":"Answer","text":"「夜勤明けのランチ」という選択肢が看護師には有効です。夜勤が終わった午前9〜10時から駅近のカフェでランチは、相手にとっても「珍しい体験」として記憶に残りやすく、話題にもなります。事前に「夜勤があるので急な変更になる場合もある」と伝えておくと、相手も予定を組みやすくなります。理解のある相手なら、シフトを教えてもらったうえで提案してくれることもあります。"}},{"@type":"Question","name":"看護師はモテるって本当？アプリでの実態は？","acceptedAnswer":{"@type":"Answer","text":"アプリでの反応は確かに良い傾向があります（Noe編集部・2025年ユーザー調査より推計）。ただし「モテる＝すぐに良い人と出会える」ではありません。いいねが来ても、返信が遅いことで自然消滅するケースや、シフトを理由に断られることもあります。いいねの数より「理解してくれる相手との関係を丁寧に育てる」姿勢の方が、最終的な出会いの質が高まります。"}}]}</script>
@@ -236,7 +236,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">そもそもシフトが合わないなら、働き方自体を見直すという解き方もある</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=35LLMU+8OKM56+2JK4+601S1" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">レバウェル看護で求人を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=35LLMU+8OKM56+2JK4+601S1" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">レバウェル看護で求人を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">看護師専門の求人・転職支援サービス／登録・相談は無料（詳細は公式サイトで）</p>
 </div>
 <h2 id="sec-5">シフト勤務×デート調整の具体戦略</h2>
@@ -255,7 +255,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">不規則な休日でも進めやすい、看護師に特化した結婚相談プランもある</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=35LVUH+7YYZ4Q+32P0+BXQOH" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">白衣コンの詳細を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=35LVUH+7YYZ4Q+32P0+BXQOH" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">白衣コンの詳細を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">看護師の勤務事情を前提に組まれた結婚相談サービス／料金・サポート内容は公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-6">プロフィールの書き方：看護師特有のポイント</h2>
@@ -300,13 +300,13 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">結婚を見据えた出会いを探すなら、成婚実績を公表している婚活アプリという選択肢も</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
 </div>
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">アプリで合う人が見つからないときの、もう一段サポートの厚い選択肢</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=35LVUH+7YYZ4Q+32P0+BXQOH" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">白衣コンの詳細を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=35LVUH+7YYZ4Q+32P0+BXQOH" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">白衣コンの詳細を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">看護師特化の結婚相談プラン（入会条件・費用は公式サイトでご確認ください）</p>
 </div>
 <h2 id="sec-9">まとめ</h2>

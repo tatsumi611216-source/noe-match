@@ -41,7 +41,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -53,7 +53,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -71,8 +71,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -92,14 +92,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "産後クライシスとは何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "出産後、数年のうちに夫婦の愛情が急速に冷え込んでいく現象を指す言葉です。2012年にNHKの情報番組で提唱されて広まりました。医学用語ではありませんが、産後の離婚や家庭内別居の背景として広く語られるようになっています。一時的なイライラであるガルガル期と違い、関係そのものの冷却であることが特徴です。"}}, {"@type": "Question", "name": "産後クライシスはいつからいつまで続きますか？", "acceptedAnswer": {"@type": "Answer", "text": "産後まもなくから始まり、産後2〜3年ごろまでが特に語られる時期です。ガルガル期のように自然に「終わる」ものではなく、要因を放置すると冷えたまま固定化し、改善に動けば回復するという性質のものです。期間よりも、恨みの蓄積を止められるかどうかが本質です。"}}, {"@type": "Question", "name": "産後クライシスとガルガル期はどう違いますか？", "acceptedAnswer": {"@type": "Answer", "text": "ガルガル期は産後数週間〜数ヶ月の、防衛本能による一時的な警戒・攻撃性の高まりで、ホルモンと環境の回復とともに落ち着きます。産後クライシスは数年単位で進む夫婦関係の冷却で、自然には戻りにくいものです。ガルガル期の「怒り」に対し、クライシスの主症状は「冷え・無関心・諦め」です。ガルガル期の対応を誤って恨みが蓄積すると、クライシスに移行しやすくなります。"}}, {"@type": "Question", "name": "産後クライシスの原因は何ですか？", "acceptedAnswer": {"@type": "Answer", "text": "単一の原因ではなく、睡眠不足と余力の消耗、家事育児の負担の偏り、「手伝う」スタンスの夫と「当事者」の妻の温度差、労いの欠如、産後の身体・ホルモンの回復期に無理を重ねること、経済不安などが積み重なって起こります。核心は個々の出来事ではなく「対応されなかった記憶」が恨みとして複利で蓄積することです。"}}, {"@type": "Question", "name": "産後クライシスは離婚につながりますか？", "acceptedAnswer": {"@type": "Answer", "text": "つながるケースはあります。母子家庭になった時期の統計では子どもが0〜2歳の時期が多いことが知られており、産後数年が夫婦関係の危険水域であること自体は確かです。ただし、負担の再分配・労いの回復・外部サポートの導入で立て直した家庭も多くあります。危機のサインに早く気づいて動けるかが分かれ目です。"}}, {"@type": "Question", "name": "産後クライシスを予防するには？", "acceptedAnswer": {"@type": "Answer", "text": "最大の予防は産後最初の数ヶ月＝ガルガル期の対応です。母親の睡眠を確保する夜間分担、夫が「手伝う」でなく「担当する」体制、労いを言葉にする習慣、義実家との距離調整、家計の見える化。この時期に「ちゃんと対応してもらえた」という記憶を作れるかどうかが、その後数年の夫婦関係の土台になります。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "産後クライシスとは？いつからいつまで・原因と乗り越え方｜ガルガル期との違いから設計する", "description": "産後クライシス（産後数年で夫婦の愛情が急速に冷え込む現象）はなぜ起こるのか。ガルガル期との違い、進行のサイン、原因の分解、夫側・妻側それぞれの乗り越え方を整理。「ガルガル期の対応ミスがクライシスの入口になる」構造から、予防の設計を解説します。", "image": "https://www.noe-match.com/images/garugaru-og.png", "url": "https://www.noe-match.com/articles/sango-crisis-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/sango-crisis-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-08-13", "dateModified": "2026-08-13"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "産後クライシスとは？いつからいつまで・原因と乗り越え方｜ガルガル期との違いから設計する"}]}</script>
@@ -188,7 +188,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:22px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">お金の不安は夫婦仲の燃料になる前に「見える化」しておく</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">保険ランドリーの無料相談を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">保険ランドリーの無料相談を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">保険の見直し・無料相談サービス（内容は時期により変わります。公式サイトでご確認ください）</p>
 </div>
 <h3>5. 家事の物量そのものを減らす</h3>
@@ -196,7 +196,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:22px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">ミールキットが生活リズムに合うかは、1週間試すのが一番早い</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">Oisixのおためしセットを見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">Oisixのおためしセットを見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">ミールキット・食材宅配のおためしセット（内容・価格は時期により変わります。公式サイトでご確認ください）</p>
 </div>
 <h2 id="wife">妻側にできること</h2>
@@ -262,7 +262,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <h2 id="prevent">最大の予防は「ガルガル期の過ごし方」</h2>
 <p>最後に、これから出産を迎える夫婦へ。産後クライシスの種は、産後最初の数ヶ月＝ガルガル期に蒔かれます。この時期に「ちゃんと対応してもらえた」という記憶を作れた夫婦は、恨みの複利が始まりません。</p>
 <p>そのガルガル期がどれくらい強く出そうかは、産前にある程度見積もれます。無料の診断で牙の鋭さと弱点を把握して、<a href="/articles/garugaru-ki-guide/">対処法の設計</a>につなげてください。</p>
-<p style="text-align:center;margin:26px 0"><a href="/tools/garugaru-check/" style="display:inline-block;background:#1d242b;color:#fff;font-weight:800;padding:16px 40px;border-radius:0;text-decoration:none">潜在ガルガル度チェック診断をやってみる（無料）</a></p>
+<p style="text-align:center;margin:26px 0"><a href="/tools/garugaru-check/" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:800;padding:16px 40px;border-radius:0;text-decoration:none">潜在ガルガル度チェック診断をやってみる（無料）</a></p>
 <h2 id="faq">よくある質問</h2>
 <h3>Q1. 産後クライシスとは？</h3>
 <p>出産後数年のうちに夫婦の愛情が急速に冷え込む現象を指す言葉です。2012年にNHKの番組で提唱されました。</p>

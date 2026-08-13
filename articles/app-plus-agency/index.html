@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "アプリと相談所を同時に使うことを相談所に伝えるべき？", "acceptedAnswer": {"@type": "Answer", "text": "伝える義務はない。多くの結婚相談所はアプリとの併用を規約で禁止していないが、入会前に必ず規約を確認してほしい。無料相談の段階で「アプリと併用しても大丈夫ですか？」と直接確認しておくと安心だ。どちらかで交際が決まった場合は他方の活動を終了させること。相談所によっては「活動専念」を求める契約条項が入っていることもあるため、契約書の細部まで目を通す習慣をつけてほしい。"}}, {"@type": "Question", "name": "相談所に入ったらアプリはやめるべき？", "acceptedAnswer": {"@type": "Answer", "text": "やめなくていい。相談所の紹介はマッチングが成立するまでに時間がかかるケースがある。その間もアプリで動き続けることが婚活の停滞を防ぐ。ただし各チャネルで2〜3人を目安にするのが現実的だ。"}}, {"@type": "Question", "name": "アプリで1年活動した人が相談所に入るタイミングは？", "acceptedAnswer": {"@type": "Answer", "text": "「デートはあるが交際に至らない状態が6ヶ月以上続いている」なら、相談所への入会を真剣に検討するタイミングだ。自分では気づけなかったプロフィールの問題が、カウンセラーとの面談で明確になるケースが多い。なぜうまくいかないのかに答えてくれる存在がいるかどうかが、アプリと相談所の最も本質的な違いだ。複数社の無料相談を受けて比較することをすすめる。"}}, {"@type": "Question", "name": "結婚相談所は高すぎる。もっと安い方法はある？", "acceptedAnswer": {"@type": "Answer", "text": "「婚活パーティー・お見合いパーティー」（1回3,000〜8,000円）という中間の選択肢がある。アプリ＋パーティーの組み合わせは、コストを抑えながら出会いの量を確保できる。相談所の中にも月会費1〜2万円程度の比較的安価なプランを持つところがある（IBJの一部加盟店、オーネット等）。「婚活コーチ」への単発相談（1回5,000〜3万円程度）もプロフィール改善に効果がある。段階的にコストを上げていく戦略が賢明だ。"}}, {"@type": "Question", "name": "40代で相談所に入るのは手遅れ？", "acceptedAnswer": {"@type": "Answer", "text": "全く手遅れではない。IBJ等の大手相談所には40〜50代のユーザーが多く活動しており、同世代の真剣な相手と出会える環境が整っている（IBJ公式発表）。40代は目的意識が高い人が多く、相談所のサポートが最も活きる年代とも言える。アプリでも40代向けのもの（ユーブライド・Omiai・マリッシュ等）を選べば十分な出会いを得られる。"}}, {"@type": "Question", "name": "男性と女性で「両方使う」の費用差はある？", "acceptedAnswer": {"@type": "Answer", "text": "費用差は大きく、男性の方が負担が重い。マッチングアプリが男性有料・女性ほぼ無料という料金構造のためだ。女性は「アプリ（無料）＋相談所（月2〜3万）」という形で月2〜3万円程度から始められる。男性はアプリ月4,000〜5,000円＋相談所月2〜3万円で月2.5〜3.5万円の負担になる。男性はアプリを1〜2つに絞って費用を最小化する戦略が有効だ。"}}, {"@type": "Question", "name": "相談所の成婚率とアプリの成婚率はどちらが高い？", "acceptedAnswer": {"@type": "Answer", "text": "大手相談所の成婚率は30〜50%とされている（IBJ・オーネット等各社公式発表）。ただしこれは活動期間1〜2年の結果であり、入会後すぐに成婚できるわけではない。そもそも「結婚目的の人しか入会しない」という母集団の違いが数字に反映されているため、アプリとの単純比較はできない。最終的には活動の質と継続性が最も成果を左右する。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "結婚相談所に入らなくていい人の条件｜アプリだけで足りるかの判断基準【2026年版】", "description": "相談所を扱う記事は相談所を勧めるものばかりだが、実際にはアプリだけで足りる人もいる。費用と時間の使い方から、相談所が必要になる条件と、必要ないまま進められる条件を分けて整理する。", "image": "https://www.noe-match.com/images/img_8a9214c5.jpg", "url": "https://www.noe-match.com/articles/app-plus-agency/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/app-plus-agency/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-06-01", "dateModified": "2026-07-30"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "結婚相談所に入らなくていい人の条件｜アプリだけで足りるかの判断基準【2026年版】"}]}</script>
@@ -158,7 +158,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <p>（各社公式料金・Noe編集部推計）</p>
 <h3>主要アプリの料金一覧（2026年最新）</h3>
 <p>婚活目的で特に人気の高いマッチングアプリの月額料金は以下の通りだ。</p>
-<div class="table-wrap"><table><thead><tr><th>アプリ</th><th>男性（1ヶ月/3ヶ月/6ヶ月）</th><th>女性</th></tr></thead><tbody><tr><td>Pairs</td><td>4,490円 / 3,590円 / 2,790円</td><td>無料</td></tr><tr><td>Tapple</td><td>4,300円 / 3,700円 / 3,100円</td><td>無料〜</td></tr><tr><td>with</td><td>3,600円 / 3,400円 / 3,000円</td><td>無料</td></tr><tr><td>Omiai</td><td>4,980円 / 4,380円 / 3,480円</td><td>無料</td></tr><tr><td>ユーブライド<br><a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:0;text-decoration:none;margin-top:4px">公式サイト</a></td><td>4,200円 / 3,600円 / 3,000円</td><td>無料</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>アプリ</th><th>男性（1ヶ月/3ヶ月/6ヶ月）</th><th>女性</th></tr></thead><tbody><tr><td>Pairs</td><td>4,490円 / 3,590円 / 2,790円</td><td>無料</td></tr><tr><td>Tapple</td><td>4,300円 / 3,700円 / 3,100円</td><td>無料〜</td></tr><tr><td>with</td><td>3,600円 / 3,400円 / 3,000円</td><td>無料</td></tr><tr><td>Omiai</td><td>4,980円 / 4,380円 / 3,480円</td><td>無料</td></tr><tr><td>ユーブライド<br><a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:0;text-decoration:none;margin-top:4px">公式サイト</a></td><td>4,200円 / 3,600円 / 3,000円</td><td>無料</td></tr></tbody></table></div>
 <p>（各社公式サイト。料金は変更となる場合があります）</p>
 <p>長期プランほど月額が安くなる。最初は1ヶ月プランで様子を見て、継続するなら3〜6ヶ月プランに切り替えるとコストを抑えられる。女性はほぼ無料で使えるため、アプリ＋相談所の組み合わせは特にコストパフォーマンスが高い。</p>
 <h3>大手結婚相談所の比較（IBJ・パートナーエージェント・オーネット）</h3>
@@ -193,7 +193,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">併用の2本目にするなら、月額制の料金体系を先に確認したい</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B88SU+EQHCMY+4MPE+61C2P" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ベルロード縁結びサポートの料金を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B88SU+EQHCMY+4MPE+61C2P" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ベルロード縁結びサポートの料金を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">IBJ加盟のオンライン結婚相談所。料金・サポート範囲・紹介人数は公式サイトでご確認ください</p>
 </div>
 
@@ -235,7 +235,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">真剣な婚活を始めるなら、成婚実績を公表している定番から</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
 </div>
 <h2 id="sec-10">まとめ</h2>

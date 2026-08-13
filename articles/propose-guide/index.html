@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "結婚の段取り完全ガイド｜プロポーズから入籍・入籍後の手続きまで整理【2026年版】", "description": "結婚の段取りをプロポーズから入籍後の行政手続きまで一覧で整理。交際期間の目安・逆算スケジュール表・婚約指輪の選び方・場所選び・両親挨拶の順番・入籍後の氏名変更手続きまで実務を網羅。", "image": "https://www.noe-match.com/images/img_31f1d040.jpg", "url": "https://www.noe-match.com/articles/propose-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/propose-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-08-03"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "プロポーズ準備完全ガイド｜タイミング・場所・指輪の段取りをデータで整理"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "付き合ってどれくらいでプロポーズするのが一般的ですか？", "acceptedAnswer": {"@type": "Answer", "text": "各種の結婚意識調査では、交際期間1〜3年でプロポーズに至るケースが多いとされています（各種調査より推計）。ただしこれは平均であって基準ではありません。マッチングアプリ経由の場合は交際期間が半年〜1年台と短めになる傾向もあり、出会った時点で結婚を前提にしているかどうかで適正な期間は変わります。目安として、相手の生活習慣・お金の考え方・家族との距離感の3つが把握できていれば、期間の長短にかかわらず判断材料は揃っています。"}}, {"@type": "Question", "name": "プロポーズから入籍まではどれくらいかかりますか？", "acceptedAnswer": {"@type": "Answer", "text": "挙式を行わない場合は1〜3ヶ月、挙式を行う場合は式の準備期間を含めて半年〜1年程度を見込むのが一般的です。式場は人気日程だと1年前から埋まることがあり（各式場公式の予約状況より）、プロポーズから逆算する形になります。入籍日を先に決めてしまい、挙式はその後にする夫婦も増えています。"}}, {"@type": "Question", "name": "婚約指輪は先に買うべきですか、2人で選ぶべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "どちらにも合理性があります。プロポーズの場に指輪を用意したいならサプライズ購入、デザインとサイズの失敗を避けたいなら後日2人で選ぶ形です。近年は折衷案として、プロポーズ時はダイヤのみやサイズ調整前のリング、あるいは指輪の代わりに花束を渡し、後日2人で本番の指輪を選ぶという方法が広く使われています。サイズ直しやデザイン変更には日数と費用がかかるため、確実性を重視するなら折衷案が扱いやすい選択です。"}}, {"@type": "Question", "name": "プロポーズの場所は特別なところを用意すべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "必須ではありません。実際の体験談で多く挙がるのは、夜景やレストランよりも「落ち着いて話せたかどうか」が満足度を左右したという声です。周囲の音が大きい店、店員の出入りが多い席、人通りの多い屋外は、言葉が届きにくく相手も反応しづらくなります。自宅や、2人で何度も行った静かな場所が選ばれるケースも多くあります。"}}, {"@type": "Question", "name": "両親への挨拶はプロポーズの前と後、どちらが正しいですか？", "acceptedAnswer": {"@type": "Answer", "text": "現在は「2人で合意してから、双方の両親に報告・挨拶に行く」順番が一般的です。プロポーズ前に相手の親へ許可を得に行く形は、家庭の考え方によっては歓迎されますが、本人を飛び越した印象を与えることもあります。迷う場合は、プロポーズ後に相手へ直接「ご両親にはどう伝えるのがいいか」を聞くのが最も安全です。一般に女性側の家に先に挨拶するのが慣例とされますが、地域や家庭で異なります。"}}]}</script>
@@ -163,7 +163,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">式場探しは、逆算スケジュールの中で最も早く動く必要がある</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3K0BP6+3DOK+60OXF" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ハナユメで式場を探す</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3K0BP6+3DOK+60OXF" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ハナユメで式場を探す</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">式場探しの相談カウンター。特典の金額・適用条件・対象会場は時期により変わるため、<strong>必ず公式サイトで最新条件をご確認ください</strong></p>
 </div>
 <h2 id="sec-4">婚約指輪｜先に買うか、後で2人で選ぶか</h2>
@@ -180,7 +180,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">納期とサイズ直しの条件は店ごとに違う。早めに実物と保証内容を見ておきたい</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+633N96+1O28+IISMP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">THE KISSで指輪を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+633N96+1O28+IISMP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">THE KISSで指輪を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">ジュエリーブランドの一つ。価格・納期・サイズ直しや刻印の対応条件は公式サイトでご確認ください</p>
 </div>
 
@@ -188,7 +188,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">2人で選ぶなら、手作りという選択肢もある</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4EDFJU+49DE+5YRHE" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">鎌倉彫金工房の来店予約を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4EDFJU+49DE+5YRHE" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">鎌倉彫金工房の来店予約を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">手作り結婚指輪・婚約指輪の工房。<strong>店舗は神奈川・東京・大阪など。来店が前提のサービスです</strong>。所在地・料金・予約枠は公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-5">場所選び｜派手さより「落ち着いて話せるか」</h2>

@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ゼクシィ縁結びの成婚率は何%ですか？","acceptedAnswer":{"@type":"Answer","text":"ゼクシィ縁結びは「成婚率」という%表記の数字を公式サイトで公表していません。リクルートが運営するこのサービスでは成婚実績の詳細な開示は行われておらず、ネット上に見られる独自試算の数字は分母となる有効会員数が非公表のため検証できません。本記事では推測値を引用せず、公表データの範囲のみで解説しています。"}},{"@type":"Question","name":"ゼクシィ縁結びは会員数を公表していますか？","acceptedAnswer":{"@type":"Answer","text":"詳細な会員数・アクティブ会員数は公表されていません。リクルートはゼクシィブランドの婚活サービスとして展開していますが、具体的な会員数の数字は現時点で公式サイトに明示されていない状況です。サービスの最新状況は公式サイトでご確認ください。"}},{"@type":"Question","name":"ゼクシィ縁結びとPairs・ユーブライドの成婚率を比較できますか？","acceptedAnswer":{"@type":"Answer","text":"比較は困難です。これらのサービスはいずれも「成婚率（%）」を公表していません。Pairsは「毎月13,000人に恋人ができた」などの数字を公開していますが、これは成婚率ではありません。ユーブライドは「成婚退会者数 年間2,000名超」（公式発表）を公開しています。各社で公表する数字の種類が異なるため、横断的な成婚率比較はできません。"}},{"@type":"Question","name":"リクルートが運営していることは信頼性の根拠になりますか？","acceptedAnswer":{"@type":"Answer","text":"運営会社の規模は一定の参考材料にはなりますが、それだけで成婚の可能性を判断することはできません。リクルートはゼクシィブランドで結婚・婚活関連サービスを長年展開しており、ブランドの認知度は高いですが、サービスの成婚実績データは非公表の状況です。企業規模と個々のサービスの成婚しやすさは別の話です。"}},{"@type":"Question","name":"成婚率が非公表のサービスを選ぶ際の判断基準は何ですか？","acceptedAnswer":{"@type":"Answer","text":"成婚率（%）が分からない場合、代わりに確認できる材料として①会員の目的の明示度（婚活意向を設定できるか）②料金設計（有料・無料かどうか）③会員の年齢層・目的層とのマッチング④実際の利用者の口コミなどがあります。単一の数字だけに頼らず、自分の希望する結婚時期・相手像とサービスの会員層が合っているかどうかを軸に判断することが重要です。"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"ゼクシィ縁結びの成婚率｜リクルートが公表している数字と、していない数字【2026年版】","description":"ゼクシィ縁結びの「成婚率」は現在非公表です。この記事ではリクルートが実際に公表しているデータと、公表していない数字を整理し、公開情報の範囲で正確に読み解く方法を解説します。","image":"https://www.noe-match.com/images/img_0207096b.jpg","url":"https://www.noe-match.com/articles/zexy-enmusubi-data/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.noe-match.com/articles/zexy-enmusubi-data/"},"inLanguage":"ja","author":{"@type":"Organization","name":"Noe編集部","url":"https://www.noe-match.com/about.html"},"publisher":{"@type":"Organization","name":"Noe結婚設計室","url":"https://www.noe-match.com/"},"datePublished":"2026-08-10","dateModified":"2026-08-10"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"記事一覧","item":"https://www.noe-match.com/#articles"},{"@type":"ListItem","position":3,"name":"ゼクシィ縁結びの成婚率｜リクルートが公表している数字と、していない数字"}]}</script>
@@ -226,7 +226,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="font-size:.72rem;color:#7c2e42;font-weight:700;margin-bottom:4px">【PR】広告</div>
 <div style="font-size:1.05rem;font-weight:900;color:#1d242b;margin-bottom:8px">成婚退会者 年間2,000名超のユーブライド</div>
 <p style="font-size:.88rem;color:#3d454d;margin:0 0 14px">公式データを継続公表している婚活特化型アプリ。30〜40代の真剣婚活層に支持されている。</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:800;padding:13px 32px;border-radius:0;text-decoration:none;font-size:1rem">ユーブライドを公式サイトで確認する →</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:800;padding:13px 32px;border-radius:0;text-decoration:none;font-size:1rem">ユーブライドを公式サイトで確認する →</a>
 </div>
 
 <h2 id="sec-5">成婚率が非公表であることの背景</h2>
@@ -311,7 +311,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="font-size:.72rem;color:#7c2e42;font-weight:700;margin-bottom:4px">【PR】広告</div>
 <div style="font-size:1.05rem;font-weight:900;color:#1d242b;margin-bottom:8px">結婚相談所の料金・成婚率を一括比較</div>
 <p style="font-size:.88rem;color:#3d454d;margin:0 0 14px">マッチングアプリではなく、サポート付きで婚活したい方向けに、相談所各社の料金・成婚率・特徴を無料で比較できる。</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:800;padding:13px 32px;border-radius:0;text-decoration:none;font-size:1rem">結婚相談所を無料で比較する →</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:800;padding:13px 32px;border-radius:0;text-decoration:none;font-size:1rem">結婚相談所を無料で比較する →</a>
 </div>
 
 <p>婚活を本格的に進める上で、アプリか相談所かという選択も重要な分岐点だ。成婚率データを重視するなら、業界団体として実績を公表している結婚相談所も選択肢になる。詳しくは<a href="/articles/youbride-guide/">ユーブライド完全ガイド</a>や<a href="/articles/soudanjo-hikaku/">結婚相談所の料金比較</a>で整理している。</p>

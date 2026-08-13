@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "月額料金が一番安いアプリはどれ？", "acceptedAnswer": {"@type": "Answer", "text": "長期プランで比較するとPairsの12ヶ月プラン（2,490円/月）が最安です。1ヶ月単位で比較するとwith（3,600円）が最安水準です。ただし、「料金が安い＝自分に合っている」とは限りません。まず無料登録で候補者の数や質を確認してから、自分の目的に合ったアプリを選ぶと、結果的にコスパが高くなります。地方在住の場合は会員数と料金のバランスで判断することが重要で、最終的には自分がマッチできる環境かどうかを無料で確認してから課金するのが損をしないコツです（各社公式サイト）。"}}, {"@type": "Question", "name": "年間でいくらかかる計算になる？", "acceptedAnswer": {"@type": "Answer", "text": "1アプリを6ヶ月間使う場合、Pairsなら約16,740円（2,790円×6）、Omiaiなら約20,880円（3,480円×6）です。婚活の場合は半年〜1年の活動期間を見込んで長期プランを選ぶと、総費用を20〜40%削減できます。途中退会時も残り期間は返金されないため、まず1〜3ヶ月プランで試してから長期プランに移行する段階的アプローチがおすすめです（各社公式発表）。"}}, {"@type": "Question", "name": "女性はどのアプリも無料で使える？", "acceptedAnswer": {"@type": "Answer", "text": "Pairs・Tapple・with・Omiai・ユーブライドは基本無料で使えます（プレミアム機能は有料）。Matchは女性も有料です。無料で使えるアプリが多い女性は、複数アプリに同時登録して「どのアプリに自分好みの相手が多いか」を比較するのが最も効率的な使い方です。PairsとwithやOmiaiを同時登録して2〜3週間様子を見ることで、費用ゼロで自分に合ったアプリを見極められます。"}}, {"@type": "Question", "name": "途中で解約したら返金される？", "acceptedAnswer": {"@type": "Answer", "text": "返金はされません。App Store・Google Play経由の課金は、解約後も有効期限まで使えますが、残り期間の料金は返金されません。解約は「次回更新のキャンセル」という操作で行うため、有料期間終了後に自動更新されないように設定します。長期プランを一括で支払った場合は途中変更時の損失が大きくなるため、1〜3ヶ月の利用実績をもとに確信を持ってから申し込むことをおすすめします。"}}, {"@type": "Question", "name": "「安いから」という理由でwithを選んでいいの？", "acceptedAnswer": {"@type": "Answer", "text": "はい、問題ありません。withは価格面だけでなく、心理テスト機能が充実しており「価値観重視の出会い」に強いという機能面の優位性もあります。月3,600円という最安水準の料金でコスパと機能の両方が優秀なアプリです。ただし地方在住の場合はPairsをメインにする方が候補の選択肢が広がりやすくなります（各社公式発表）。"}}, {"@type": "Question", "name": "Pairsの12ヶ月プランはお得すぎる？注意点は？", "acceptedAnswer": {"@type": "Answer", "text": "月単価は最安（2,490円）ですが、12ヶ月分（約30,000円）を一括払いする必要があります。途中退会しても返金はなく、アプリを変更したくなった場合でも損失が大きくなります。6ヶ月プラン（2,790円/月）との差は月300円しかないため、まず6ヶ月プランで始める選択肢も現実的です。確実に長期間使う確信があるときのみ選ぶことをおすすめします。"}}, {"@type": "Question", "name": "学生で予算が少ない場合、どうすればいい？", "acceptedAnswer": {"@type": "Answer", "text": "with（月3,600円）が最安水準で機能も充実しており、学生にもおすすめです。「まず無料で登録して候補を確認→良さそうなら1ヶ月だけ課金」という方法が損失を最小化できます。複数アプリを無料で比較してから一番可能性の高いアプリに1ヶ月だけ課金するという戦略が予算を抑えながら成果を上げるコツです。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "マッチングアプリ料金比較2026｜月額コスパ最高のアプリを徹底検証", "description": "「どれが一番安いか」を比較サイトで調べ回った結果、私はちょっと違う結論に行き着いた。月額の数字だけ追っていると、肝心なことを見落とす。", "image": "https://www.noe-match.com/images/img_48ad9413.jpg", "url": "https://www.noe-match.com/articles/compare-price/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/compare-price/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-05-31", "dateModified": "2026-05-31"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "マッチングアプリ料金比較2026｜月額コスパ最高のアプリを徹底検証"}]}</script>
@@ -204,7 +204,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">アプリの月額を積み上げる前に、仲人がつく場合の料金体系も見ておく</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2YKPX6+5BUE+5YJRM" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ウェルスマの料金・サポート内容を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2YKPX6+5BUE+5YJRM" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ウェルスマの料金・サポート内容を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">オンライン仲人型の結婚相談所。料金プラン・紹介人数・サポート範囲は公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-11">よくある質問（FAQ）</h2>

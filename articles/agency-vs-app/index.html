@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "結婚相談所は何歳から入れる？", "acceptedAnswer": {"@type": "Answer", "text": "成人（18歳以上）から入会できますが、実際にアクティブなユーザー層は25〜45歳が中心です。20代前半であれば、まずマッチングアプリで婚活の基礎（プロフィール作成・メッセージのやりとり・デートの経験）を積む方が効率的です。相談所に入ってからの活動もスムーズになり、カウンセラーへの相談内容も具体的になります。費用対効果を最大化するためにも、20代前半はアプリからスタートするのがおすすめです。一方、30代後半以降であれば相談所の環境のメリットが大きくなるため、アプリと並行して検討する価値があります。"}}, {"@type": "Question", "name": "結婚相談所に入ると本当に結婚できる？", "acceptedAnswer": {"@type": "Answer", "text": "「入れば確実」ではありませんが、環境はアプリより有利です。大手の成婚率はIBJで約47%、パートナーエージェントで約64%（成婚退会率）とされていますが（各社公式発表）、活動姿勢・カウンセラーとの相性・希望条件の柔軟性によって結果は大きく変わります。希望条件が極端に高い場合は相談所でも成婚率は下がるため、条件を柔軟にする姿勢も必要です。"}}, {"@type": "Question", "name": "アプリと相談所を同時に使ってもいい？", "acceptedAnswer": {"@type": "Answer", "text": "問題ありません。「アプリで幅広く出会い、相談所で精度高く絞り込む」という使い分けをしている人もいます。特にアプリでの経験が相談所での活動に活かされるケースが多く、同時進行は有効な戦略の一つです。ただし、費用が合計で月5〜10万円程度になることと、複数の婚活を並行して管理する手間が増える点は念頭に置いておきましょう。余裕があれば同時進行、そうでなければ段階的に切り替えるのが現実的です。"}}, {"@type": "Question", "name": "相談所の「成婚料」は本当に払う必要がある？", "acceptedAnswer": {"@type": "Answer", "text": "成婚料は「結婚が決まったときに払うお金」であり、多くの大手相談所で設定されています。この仕組みはカウンセラーが成婚させることにインセンティブを持つための設計でもあります。「成婚料なし」の相談所も存在しますが、その場合は月会費が高めに設定される傾向があり、トータルコストで比較することが重要です。入会前に「トータルでいくらかかるか」を必ず確認してから契約しましょう。"}}, {"@type": "Question", "name": "相談所のカウンセラーとの相性が悪かった場合は？", "acceptedAnswer": {"@type": "Answer", "text": "担当変更を申し出ることができます（大手の相談所の場合）。最初の担当者と合わないと感じたら、遠慮せず早めに相談しましょう。カウンセラーとの関係は婚活の成否に直結します。相談所選びの段階で、担当変更制度があるかどうかを確認しておくと安心です。また、初回無料相談を複数の相談所で受けてみて、カウンセラーの雰囲気を比較してから入会を決めるのが失敗を防ぐ有効な方法です。"}}, {"@type": "Question", "name": "「お見合いパーティー」も選択肢になる？", "acceptedAnswer": {"@type": "Answer", "text": "選択肢の一つになります。費用は1回3,000〜8,000円程度で、その場で複数の異性と話せる手軽さが特徴です。ただし1人と話せる時間が3〜5分程度と短いため、本格的な婚活としては補助的な手段として位置づけるのが一般的です。アプリを始める前の「対面での会話慣れ」のために活用するのは効果的な使い方です。"}}, {"@type": "Question", "name": "アプリで1年うまくいかなかった。原因は？", "acceptedAnswer": {"@type": "Answer", "text": "最も多い原因は「プロフィール写真・文章の質」と「メッセージの個別対応不足」の2点です。写真は明るい自然光で撮影した清潔感のある1枚が基本で、暗い室内写真や無表情の写真はマッチ率を大きく下げます。メッセージについては、定型文ではなく相手のプロフィールに具体的に言及することで返信率が大幅に上がります。相談所に移る前に、まずこの2点を改善してみることをおすすめします。それでも半年改善して変化がない場合は、相談所への移行またはプロのコーチングを検討する段階と考えてください。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "結婚相談所とマッチングアプリの違い｜費用・成婚率・サポートを徹底比較", "description": "アプリで1年間活動して成果がゼロだった人が、相談所に移った途端に3ヶ月で出会えた話を聞いたとき、正直「費用の差が結果の差になる」という当たり前のことを改めて実感した。ただ同時に、相談所に早まって30万円を払い「まだ準備で", "image": "https://www.noe-match.com/images/img_b38165da.jpg", "url": "https://www.noe-match.com/articles/agency-vs-app/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/agency-vs-app/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-06-01", "dateModified": "2026-06-01"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "結婚相談所とマッチングアプリの違い｜費用・成婚率・サポートを徹底比較"}]}</script>
@@ -161,7 +161,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">店舗型の費用が重いと感じるなら、オンライン完結型の料金体系を先に見ておく</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2ZRL4Q+4HHW+61RI9" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">naco-doの料金・サポート内容を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2ZRL4Q+4HHW+61RI9" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">naco-doの料金・サポート内容を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">オンライン完結型の結婚相談所。料金・紹介人数・サポート範囲は公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-6">結婚相談所のメリット・デメリット</h2>
@@ -182,7 +182,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">相談所を選ぶ側に進むなら、まず複数社の条件を横並びで見るところから</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">結婚相談所比較ネットで無料診断する</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">結婚相談所比較ネットで無料診断する</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">複数の相談所の資料をまとめて取り寄せられる無料の比較サービス（掲載社数・条件は公式サイトでご確認ください）</p>
 </div>
 <h2 id="sec-9">現実的な進め方</h2>
@@ -193,7 +193,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">アプリと相談所の中間を試すなら、婚活目的に限定されたサイトから</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+39VYEY+FOG+6PJZL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ブライダルネットの料金・機能を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+39VYEY+FOG+6PJZL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ブライダルネットの料金・機能を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">IBJが運営する婚活サイト。料金プラン・提出書類・サポート内容は公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-10">体験談</h2>
@@ -236,7 +236,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">真剣な婚活を始めるなら、成婚実績を公表している定番から</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
 </div>
 <h2 id="sec-12">まとめ</h2>

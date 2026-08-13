@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "35歳からアプリを始めるのは遅い？", "acceptedAnswer": {"@type": "Answer", "text": "遅くありません。OmiaiとユーブライドはF35歳前後のユーザーが多く活動しています（各社公式発表）。20代と比べて候補の絶対数は減りますが、真剣に結婚を考えている相手の比率は上がるため、質という観点では決して不利ではありません。むしろ35歳前後は「同じように真剣に婚活している相手が集まるゾーン」であり、マッチングした相手の多くが結婚を本気で考えているという環境は20代にはない強みです。気になっているなら早めに始める方が選択肢が広がるのは事実なので、まず無料登録だけでもしてプロフィールを眺めることからスタートしましょう。"}}, {"@type": "Question", "name": "35歳男性で「年下女性と出会いたい」。可能？", "acceptedAnswer": {"@type": "Answer", "text": "可能ですが、大きな年齢差（10歳以上）を求めるほど選択肢は狭くなります。同年代（±5〜7歳）を中心に活動しながら、縁があれば年下という気持ちが現実的です。また、年下の女性に選ばれるプロフィールをつくるには「生活力・安定感・価値観の成熟」を自然に伝えることが必要になります。年収欄を正確に入力しつつ、プロフィール文には人柄と生活の豊かさを書くことで、年下女性からの好感度が上がります。実際にOmiaiでは28〜33歳の婚活女性が35歳前後の男性を積極的に探しているケースが多く、「安定感のある年上」へのニーズは確実に存在します（Noe編集部・2025年ユーザー調査より推計）。"}}, {"@type": "Question", "name": "「バツイチを隠してから会ってみて、良ければ話す」ではいけない？", "acceptedAnswer": {"@type": "Answer", "text": "やめましょう。実際に会って「好きかも」と感じたタイミングで発覚すると、「なぜ言わなかったの」という不信感が生まれます。せっかく築いた好意が一瞬で崩れ、その後の関係修復が非常に難しくなります。最初からプロフィールに正直に書いておけば、理解ある相手だけが集まり、会ったときから信頼関係をスタートできます。バツイチをオープンにしたことでマッチング数が増えたという声も多く、正直さが武器になります。とくにユーブライドはバツイチ・再婚希望ユーザーが多いため、プロフィールへの記載が同じ境遇の相手に刺さりやすい環境です。"}}, {"@type": "Question", "name": "仕事が忙しくて返信が遅くなる。どう対処する？", "acceptedAnswer": {"@type": "Answer", "text": "プロフィールに「仕事が忙しく返信が遅れることがありますが、必ず返します」と書いておきましょう。事前の一言が返信遅れへの不安を大幅に和らげます。また、メッセージの最後に「次の返信は金曜夜頃になります」と一言添えるだけでも、相手の不安を大きく軽減できます。ペースが同じく忙しい相手とマッチングすると、お互いに無理なく関係を進められるので、「仕事優先の生活スタイル」はむしろ共感してもらえる個性として書くのがおすすめです。毎日15分の隙間時間（通勤中など）をアプリ専用タイムと決めるだけで、1ヶ月後には2〜3回のデートにつながるペースで活動できます。"}}, {"@type": "Question", "name": "35歳でOmiaiとPairs、どちらから始めるべき？", "acceptedAnswer": {"@type": "Answer", "text": "婚活目的が明確なら Omiai から始めることをおすすめします。真剣度の高いユーザーが集まっており、35歳前後の層も厚いため、目的に合った出会いにたどり着きやすいです。一方、「まず試してみたい・選択肢を広く持ちたい」なら Pairs から始め、物足りなければ Omiai を追加するのが自然な流れです。Pairsはコミュニティ機能があるため、趣味を通じて自然な会話のきっかけをつくりやすい点も魅力です。最初の3ヶ月はOmiaiに集中して活動し、手応えが得られたら継続、物足りなければPairsも並行するという戦略が多くの35歳に合っています。"}}, {"@type": "Question", "name": "結婚相談所の方が35歳には向いている？", "acceptedAnswer": {"@type": "Answer", "text": "コストが大きく違います（アプリ月4,000円 vs 相談所月3〜5万円）。まずアプリで3〜6ヶ月活動して、うまくいかなければ相談所も検討するという段階的なアプローチが多くの人に合っています。相談所のメリットは担当カウンセラーによるサポートと、成婚保証に近い仕組みですが、費用対効果を考えると、アプリでの活動経験を積んでからの方が相談所でも動きやすくなります。まずはアプリで自分の魅力を整理しながら活動し、それでもご縁に恵まれなければ相談所を視野に入れましょう。"}}, {"@type": "Question", "name": "「年収」はプロフィールに書くべき？", "acceptedAnswer": {"@type": "Answer", "text": "年収欄がある場合は正確に入力しましょう。プロフィール文に自分で書くと「自慢」に見えることがあります。年収よりも「どんな仕事にやりがいを感じているか」「どんな生活スタイルを大切にしているか」の方が、相手に好印象を与えやすいです。年収は数字が示してくれるので、プロフィール文ではあえて触れず、人柄や価値観を中心に書くことで「スペックだけでなく人として素敵」という印象を与えられます。年収を意図的に低く設定すると出会いの質が下がる可能性があるため、正確な入力が基本です。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "35歳前後のマッチングアプリ戦略｜キャリア重視・再婚希望の人向け完全ガイド", "description": "私が実際に感じたのは、35歳を超えてアプリを使う場合、時間の使い方が20代と全然違うということだ。毎日見るよりも、週2〜3回質の高いいいねを送る方が自分にも相手にもフェアだと思う。毎日ログインしてスクロールしているだけで", "image": "https://www.noe-match.com/images/img_9c7ee8c3.jpg", "url": "https://www.noe-match.com/articles/35s-strategy/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/35s-strategy/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-06-01", "dateModified": "2026-06-01"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "35歳前後のマッチングアプリ戦略｜キャリア重視・再婚希望の人向け完全ガイド"}]}</script>
@@ -151,7 +151,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">年齢で弾かれる構造そのものを避けたいときの選択肢</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2EXEYI+3LOM+NVHCX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">R婚（35歳以上専門）を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2EXEYI+3LOM+NVHCX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">R婚（35歳以上専門）を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">35歳以上に特化した結婚相談所。料金・対応エリア・入会条件は公式サイトでご確認ください</p>
 </div>
 
@@ -223,14 +223,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">真剣な婚活を始めるなら、成婚実績を公表している定番から</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
 </div>
 
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">再婚・シンパパシンママの婚活なら、再婚者を優遇する専用設計のアプリを</p>
-<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">再婚・シングルマザー優遇プログラムあり／40代以上の利用者層が厚い</p>
 </div>
 

@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "結婚前の身元・素行調査は必要か｜費用相場と依頼前に自分でできる確認", "description": "結婚前の身元調査を検討する前に、自分でできる確認方法を整理しました。SNS照合・画像の逆検索・言動の一貫性チェックの手順、調査会社に依頼すべき限られたケース、費用相場と業者選びの注意点まで解説します。", "image": "https://www.noe-match.com/images/img_92b55a38.jpg", "url": "https://www.noe-match.com/articles/kekkon-sokou-chousa/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/kekkon-sokou-chousa/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "結婚前の身元・素行調査は必要か｜費用相場と依頼前に自分でできる確認"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "結婚前の身元調査は、みんなやっているもの？", "acceptedAnswer": {"@type": "Answer", "text": "一般的な手続きではありません。多くの人は調査会社に依頼せず結婚しています。まずは自分でできる確認――名前や勤務先の話に一貫性があるか、共通の知人がいるか、公開されている情報と食い違いがないか――で十分に足りることがほとんどです。依頼を検討するのは、それでも具体的な違和感が消えない場合に限られます。"}}, {"@type": "Question", "name": "自分でできる確認には何がある？", "acceptedAnswer": {"@type": "Answer", "text": "公開情報の範囲で行える確認がいくつかあります。プロフィール写真をGoogleの画像検索にかけて他人の写真の転用でないかを見る、SNSアカウントの投稿履歴が長期間にわたって自然に積み上がっているかを見る、過去に聞いた話と最近の話に食い違いがないかを振り返る、共通の知人や同僚がいれば会う機会をつくる、といった方法です。いずれも相手の公開情報を見る範囲にとどめ、私的な領域には踏み込まないのが前提です。"}}, {"@type": "Question", "name": "婚前調査の費用相場はどれくらい？", "acceptedAnswer": {"@type": "Answer", "text": "一般に10〜30万円程度とされています（調査会社各社が公開している料金表より）。調査項目の数、対象地域、期間によって幅があり、素行の実地確認が入る場合は上振れしやすい傾向があります。金額だけでなく、何をどこまで調べる契約なのかを書面で確認することが重要です。"}}, {"@type": "Question", "name": "どんな場合なら依頼を検討してよい？", "acceptedAnswer": {"@type": "Answer", "text": "金銭のやり取りや投資・保証人の話が出ている場合、勤務先や家族構成の説明が会うたびに変わる場合、結婚式や入籍の日程が具体的に迫っているのに基本的な事実が確認できない場合などです。共通するのは『取り返しがつきにくい判断が近づいており、かつ自分で確認しても事実が固まらない』という状況で、漠然とした不安だけを理由に依頼するケースとは区別されます。"}}, {"@type": "Question", "name": "調査会社を選ぶときは何を見ればいい？", "acceptedAnswer": {"@type": "Answer", "text": "探偵業の届出番号が明示されているか、契約前に見積書と契約書が書面で交付されるか、調査項目と料金の内訳が明確か、追加料金の発生条件が説明されているかを確認してください。探偵業法では契約時の書面交付が定められています（探偵業の業務の適正化に関する法律より）。極端に安い料金の提示や、その場での契約を急がせる対応があった場合は、いったん持ち帰って比較検討することをおすすめします。"}}]}</script>
@@ -239,7 +239,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">第4段階（入籍直前で不安が残る場合）まで来たときの選択肢のひとつ</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3DGK1M+3IKY+64RJ6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ALG探偵社の無料相談を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3DGK1M+3IKY+64RJ6" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ALG探偵社の無料相談を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">対応エリアは東京・埼玉・千葉・横浜（公式サイトより）／弁護士法人が運営。相談内容・費用は必ず公式サイトで確認を</p>
 </div>
 <h2 id="sec-8">調査会社を選ぶ際に確認したい項目</h2>
@@ -259,7 +259,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">1社の見積もりだけで決めないために、比較の窓口をひとつ持っておく</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3BO98A+5BYA+5Z6WX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">街角相談所-探偵で見積もりを比較する</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3BO98A+5BYA+5Z6WX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">街角相談所-探偵で見積もりを比較する</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">探偵事務所の比較・見積もりサービス。提携社数・対応エリア・費用の仕組みは公式サイトでご確認ください</p>
 </div>
 

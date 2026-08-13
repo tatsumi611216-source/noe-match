@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "写真は何枚登録すべき？", "acceptedAnswer": {"@type": "Answer", "text": "最低3枚、理想は5枚です。1枚だけだと「情報が少ない」と感じられ、いいねをためらう人が多いです。5枚で「メイン・全身・趣味・旅行・ペット」の構成が最も効果的で、推計では5枚登録のユーザーは1枚のみより約2倍マッチしやすいとされています。"}}, {"@type": "Question", "name": "自撮りでも大丈夫？", "acceptedAnswer": {"@type": "Answer", "text": "自撮りでも問題ありません。ただし他撮りの方が自然な印象を与えやすく、推計では約30%マッチ率が高いとされています。スマートフォン三脚とタイマー機能を活用すると他撮りに近い自然な写真が撮れます。"}}, {"@type": "Question", "name": "スーツ姿の写真は有効？", "acceptedAnswer": {"@type": "Answer", "text": "男性の場合、清潔感のあるスーツ姿は「仕事ができそう・真面目そう」という印象プラスになります。ただし1枚だけにして、カジュアルな写真も混ぜると親しみやすくなります。スーツ1枚＋カジュアル2〜3枚のバランスが理想的です。"}}, {"@type": "Question", "name": "美肌フィルターは使っていい？", "acceptedAnswer": {"@type": "Answer", "text": "肌の色味を少し補正する程度ならOKです。顔の輪郭・目のサイズを変えるレベルの加工は、会ったときのギャップが生まれるため避けましょう。基準は「会ったときに同一人物だとわかるレベル」です。"}}, {"@type": "Question", "name": "体型に自信がないのに全身写真を入れるべき？", "acceptedAnswer": {"@type": "Answer", "text": "入れた方が誠実な印象を与えます。会ったときのギャップがない方が、その後の関係がスムーズです。清潔感のある服装で撮ることで、体型より「身なり」の印象を良くできます。"}}, {"@type": "Question", "name": "写真はどのくらいの頻度で更新すべき？", "acceptedAnswer": {"@type": "Answer", "text": "見た目が変わったタイミングで更新するのが基本です。3〜4ヶ月に1回の定期更新はアクティブユーザーとして評価されやすくなる効果もあります。季節感のある写真は相手の共感を呼びやすく、会話のきっかけにもなります。"}}, {"@type": "Question", "name": "「顔に自信がないからマッチしない」と思っている。どうすれば？", "acceptedAnswer": {"@type": "Answer", "text": "顔より表情・雰囲気の方が印象を決めます。笑顔・清潔感・自然な雰囲気が伝わる写真は、「好みのタイプではないけど話しかけてみたい」と感じさせる力があります。「顔」は変えられませんが、「表情」「服装」「撮影環境」は今日からでも改善できます。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "マッチングアプリのプロフィール写真｜マッチ率が上がる写真の選び方・撮り方", "description": "写真の話をすると「顔に自信がない」という人が多い。でも私が見てきた体験談で一番変化が大きいのは、加工を外した写真に変えた人だ。自然な表情の方が絶対に反応がいい。", "image": "https://www.noe-match.com/images/img_7f89e5de.jpg", "url": "https://www.noe-match.com/articles/profile-photo/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/profile-photo/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-06-01", "dateModified": "2026-06-01"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "マッチングアプリのプロフィール写真｜マッチ率が上がる写真の選び方・撮り方"}]}</script>
@@ -183,7 +183,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">自力で撮るのが難しいときの選択肢。まず自分に近い属性の作例を見るのが早い</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+38P37E+4HMW+5YZ77" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">Photojoyの作例・料金を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+38P37E+4HMW+5YZ77" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">Photojoyの作例・料金を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">マッチングアプリ向けのプロフィール写真撮影サービス。料金・対応エリア・納品枚数は公式サイトでご確認ください</p>
 </div>
 

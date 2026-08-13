@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "結婚を機に転職すべきか｜収入・勤務地・働き方を見直すタイミングと判断基準", "description": "結婚をきっかけに転職を考える人向けに、住宅ローン審査への影響、入籍前と入籍後どちらが有利か、共働き前提での働き方の見直し、転職時期の判断手順を整理しました。", "image": "https://www.noe-match.com/images/img_ff1997d4.jpg", "url": "https://www.noe-match.com/articles/kekkon-tenshoku-guide/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/kekkon-tenshoku-guide/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "結婚を機に転職すべきか｜収入・勤務地・働き方を見直すタイミングと判断基準"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "結婚と転職はどちらを先にすべき？", "acceptedAnswer": {"@type": "Answer", "text": "住宅購入の予定が数年以内にあるなら、先に転職を済ませて勤続年数を積み始めるほうが、後の住宅ローン審査では扱いやすくなる傾向があります（各金融機関の公開する審査項目より）。逆に住宅購入の予定がなく、当面は賃貸で暮らす前提なら、結婚生活を数か月動かして生活リズムを把握してから転職先を決めるほうが、条件の設定を間違えにくくなります。"}}, {"@type": "Question", "name": "転職直後だと住宅ローンは組めない？", "acceptedAnswer": {"@type": "Answer", "text": "組めないと断定はできません。国土交通省の民間住宅ローン実態調査では、審査で考慮する項目として勤続年数を挙げる金融機関が9割超とされています（国土交通省の同調査より）。ただし勤続年数は複数ある考慮項目の一つで、年収・返済負担率・健康状態なども併せて見られます。転職直後は不利に働きやすい、という理解が実態に近いところです。"}}, {"@type": "Question", "name": "入籍前と入籍後、どちらで転職するのが有利？", "acceptedAnswer": {"@type": "Answer", "text": "手続きの手間だけで言えば、入籍と転職の時期をずらしたほうが楽です。同時期に重なると、姓の変更・社会保険の切り替え・年末調整の書類がまとめて発生します。一方で条件交渉の観点では、入籍後のほうが世帯の生活設計が固まっており、勤務地や残業許容度を具体的に決めやすい面があります。"}}, {"@type": "Question", "name": "収入を上げる転職と、時間を確保する転職はどちらを選ぶべき？", "acceptedAnswer": {"@type": "Answer", "text": "世帯単位でどちらが不足しているかで決めるのが現実的です。二人分の収入で当面の生活費と貯蓄計画が成り立つなら、時間を確保する側の転職が世帯全体の満足度を上げやすくなります。逆に片方の収入に依存する構造なら、収入面の改善が優先されやすくなります。まず世帯の収支を書き出してから条件を決める順番をおすすめします。"}}, {"@type": "Question", "name": "転職エージェントは使ったほうがいい？", "acceptedAnswer": {"@type": "Answer", "text": "選択肢の一つとして考えてよいものです。勤務地や残業時間といった条件を第三者に伝えて絞り込んでもらえる点、在職中でも面接日程の調整を任せられる点が利点として挙げられます。一方で、担当者との相性や紹介案件の幅には差があるため、求人サイトや直接応募と併用しながら判断するのが無難です。"}}]}</script>
@@ -239,7 +239,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">看護師の場合は、業界特化のエージェントの方が条件交渉まで進みやすい</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=35LLMU+8OKM56+2JK4+601S1" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">レバウェル看護で求人を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=35LLMU+8OKM56+2JK4+601S1" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">レバウェル看護で求人を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">看護師専門の求人・転職支援サービス／登録・相談は無料（詳細は公式サイトで）</p>
 </div>
 <h2 id="sec-8">転職活動の進め方と、手段ごとの向き不向き</h2>

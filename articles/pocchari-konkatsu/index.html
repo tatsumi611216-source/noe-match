@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "ぽっちゃり女性の婚活で体型はどう書くか｜プロフィールの実務と場所の選び方", "description": "ぽっちゃり体型を婚活のプロフィールに書くか書かないかで、コストが発生する段階が変わります。マッチ数と「会ってからの継続率」のどちらを優先するかという判断軸と、写真での具体的な伝え方を整理しました。", "image": "https://www.noe-match.com/images/img_fa932a62.jpg", "url": "https://www.noe-match.com/articles/pocchari-konkatsu/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/pocchari-konkatsu/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-08-09", "dateModified": "2026-08-09"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "ぽっちゃり女性の婚活で体型はどう書くか｜プロフィールの実務と場所の選び方"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ぽっちゃりは婚活で不利ですか？", "acceptedAnswer": {"@type": "Answer", "text": "有利・不利という問いは行動に変換できないため、この記事では扱いません。代わりに「体型の情報をいつ・どこで相手に渡すか」を考えることをおすすめします。会えば分かる情報なので、渡さない選択肢はなく、渡すタイミングを自分で決めるかどうかの違いしかありません。"}}, {"@type": "Question", "name": "プロフィールに体型を書かないほうがマッチしますか？", "acceptedAnswer": {"@type": "Answer", "text": "マッチング数だけを見れば増えやすいのは事実です。ただしコストが消えるのではなく、初回対面以降に移動します。断られた理由が分からないまま回数だけ積み上がるため、消耗しやすい形になります。"}}, {"@type": "Question", "name": "全身写真は載せるべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "すでにデートまで進めているのに続かない場合は、載せたほうが機能しやすいです。まだ数回しか会っていない段階なら、まず母数を作ることを優先しても構いません。どちらの指標が足りていないかで判断してください。"}}, {"@type": "Question", "name": "プロフィール文に「ぽっちゃりですが」と書くべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "書かないことをおすすめします。自分でその属性を欠点として提示する形になり、逆効果になりやすいためです。事実は写真で渡し、文章は趣味や生活など人物を伝えることに使うほうが機能します。"}}, {"@type": "Question", "name": "体型を指定できる婚活サービスはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "体型を前提に人が集まる結婚相談所があります。毎回の説明コストが不要になる一方、会員数は一般的なサービスより少なくなります。母数と前提のどちらを優先するかの交換だと考えてください。"}}, {"@type": "Question", "name": "結婚相談所とマッチングアプリでは扱いが違いますか？", "acceptedAnswer": {"@type": "Answer", "text": "違います。相談所はお見合い写真の提出が前提のため、隠す選択肢が実質ありません。その代わり、会う前にフィルタリングが済んだ状態でお見合いが組まれます。会ってから終わることを繰り返している場合は、この構造の違いが効きます。"}}, {"@type": "Question", "name": "痩せてから婚活を始めたほうがいいですか？", "acceptedAnswer": {"@type": "Answer", "text": "体型の変化には時間がかかり、婚活の期間内に間に合うとは限りません。また健康の話と婚活の話は別のものです。この記事では、現在の状態で結果を変えられる部分だけを扱っています。"}}]}</script>
@@ -201,7 +201,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">体型を前提に人が集まる場を、選択肢の一つとして見てみる場合</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2G4A62+3LOM+614CX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ぽちゃ婚を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2G4A62+3LOM+614CX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ぽちゃ婚を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">料金・対応エリア・入会条件は変更される場合があります。公式サイトでご確認ください。成婚を保証するものではありません</p>
 </div>
 

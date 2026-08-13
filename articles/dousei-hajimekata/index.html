@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール", "description": "同棲を始める前に決めておくべき物件探し・初期費用の相場・お金の分担ルールを整理。契約者名義の選び方から家事分担の決め方まで、失敗しない同棲の始め方を解説します。", "image": "https://www.noe-match.com/images/img_1e5e067b.jpg", "url": "https://www.noe-match.com/articles/dousei-hajimekata/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/dousei-hajimekata/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-07-26", "dateModified": "2026-07-26"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "同棲の初期費用はいくら用意すればいい？", "acceptedAnswer": {"@type": "Answer", "text": "賃貸契約費用（敷金礼金・仲介手数料・前家賃など）で家賃の4〜5倍、家具家電で20〜40万円が目安です。二人で合計40〜70万円、1人あたり20〜35万円程度を見込んでおくと安心です（各種賃貸業界データより推計）。"}}, {"@type": "Question", "name": "賃貸契約は連名にすべき？", "acceptedAnswer": {"@type": "Answer", "text": "同棲段階では収入が高い方の単独名義にするケースが一般的です。連名契約は退去時の手続きが煩雑になりやすく、多くの不動産会社も単独名義を勧める傾向にあります。ただし双方の同意と生活費負担割合は書面かメモで残しておくと安心です。"}}, {"@type": "Question", "name": "生活費はどう分担するのが公平？", "acceptedAnswer": {"@type": "Answer", "text": "収入比例制（収入の割合に応じて負担）が最もトラブルが少ないとされます。折半は収入差が大きいカップルには不満が出やすく、片方全額負担は依存関係になりやすいため推奨されません。"}}, {"@type": "Question", "name": "同棲する前に何を決めておくべき？", "acceptedAnswer": {"@type": "Answer", "text": "お金の分担ルール、家事の分担、将来の結婚に対する時期感の3つは同棲前にすり合わせておくべきです。同棲後に話し合うと感情的な衝突になりやすく、事前のすり合わせが同棲継続の分かれ目になります。"}}, {"@type": "Question", "name": "同棲を始めるベストなタイミングは？", "acceptedAnswer": {"@type": "Answer", "text": "交際期間の長さより、上記3点についてすでに話し合えているかどうかの方が重要だとされます。交際1年未満でも準備ができていれば問題ないケースが多く、逆に交際が長くてもお金の話を避けてきたカップルはトラブルが起きやすい傾向があります。"}}]}</script>
@@ -163,13 +163,13 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">新居のネット回線は入居前に段取りしておくと、引っ越し直後の「ネットが使えない期間」を避けられる</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ビジモ光の申込条件を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ビジモ光の申込条件を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">キャッシュバック等の特典条件・提供エリア・工事の要否は物件により異なります。必ず公式サイトで最新条件をご確認ください</p>
 </div>
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">2人分の荷物をまとめて運ぶ場合、業者によって見積もりが大きく変わる</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">引越し侍で一括見積もりする</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">引越し侍で一括見積もりする</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">複数社を比較すると相場感がつかめる。複数社の見積もりを一度に依頼できる無料サービス（対応業者・料金は時期と地域により異なります）</p>
 </div>
 <h2 id="sec-4">お金の分担ルール3パターン</h2>

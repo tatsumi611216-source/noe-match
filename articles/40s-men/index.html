@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "40代でユーブライドを使うと同年代の女性と出会える？", "acceptedAnswer": {"@type": "Answer", "text": "十分に可能です。ユーブライドは30代後半〜40代のユーザー比率が高く、婚活目的で登録している人が多いため、同年代で真剣度の高い女性と出会いやすい環境が整っています。登録者の約40%が30代以上という統計もあります（各社公式発表）。地方エリアでは候補数が少なくなる傾向があるため、その場合はOmiaiやマリッシュも並行して活用するのがおすすめです。"}}, {"@type": "Question", "name": "バツイチを隠していいか？", "acceptedAnswer": {"@type": "Answer", "text": "隠すべきではありません。後から発覚すると「なぜ言わなかったのか」という不信感が一気に生まれ、それまでのやり取りが全部崩れるリスクがあります。最初から正直に書くことで、バツイチに理解のある相手だけが集まる効果があり、結果的に相性の良い出会いにつながります。自分の状況を受け入れてくれる相手と出会う確率を上げるには、冒頭での開示が最も合理的な方法です。"}}, {"@type": "Question", "name": "40代で年下（30代前半）と出会うことは可能？", "acceptedAnswer": {"@type": "Answer", "text": "可能ですが、現実的な戦略が必要です。10歳以上の差を求めるとマッチ率は著しく低下します（Noe編集部・2025年ユーザー調査より推計）。まず同年代（35〜45歳）を中心にアプローチしながらプロフィールの質を高めていくことで、自然と縁が広がっていきます。年齢差よりも価値観・ライフスタイルの相性を軸に探す方が、長続きする関係に発展しやすくなります。"}}, {"@type": "Question", "name": "40代でPairsを使うのは効果的？", "acceptedAnswer": {"@type": "Answer", "text": "婚活メインなら、Pairsはサブ扱いが現実的です。会員数は多いですが、20代の恋活目的のユーザーも混在しており、婚活志向のミスマッチが生じやすい構成です。ユーブライドやOmiaiをメインに据えて、Pairsは補助的に使う程度にとどめておくのが賢明です。"}}, {"@type": "Question", "name": "写真はスーツ姿が良い？", "acceptedAnswer": {"@type": "Answer", "text": "スーツ1枚は入れた方がいいですが、全部スーツはマイナスになります。スーツだけだと私生活が見えず、「仕事はできそうだけど普段どんな人か分からない」という印象を与えてしまいます。スーツ1枚＋趣味や休日の場面が伝わるカジュアルな写真1〜2枚の組み合わせが、立体的な人柄を伝えるのに最も効果的です。写真は過去12ヶ月以内のものを使ってください。"}}, {"@type": "Question", "name": "結婚相談所との使い分けは？", "acceptedAnswer": {"@type": "Answer", "text": "アプリで6ヶ月〜1年続けてデートが月1回以下なら、結婚相談所を並行して検討する時期です。費用はアプリの5〜10倍かかりますが、身元確認が徹底されていて真剣度の高い相手としか会えない環境は時間効率の面で大きなメリットがあります。アプリで出会いの量を確保しながら相談所でプロのサポートを受けるという組み合わせが、40代婚活では特に有効です。"}}, {"@type": "Question", "name": "「年齢で不利」と思うと活動意欲が下がる。どうすれば？", "acceptedAnswer": {"@type": "Answer", "text": "プロフィールを書き直すたびに反応が少しずつ変わる体験をすることで、「年齢の問題ではないかもしれない」と気づいていくプロセスが大切です。40代でうまくいっている男性に共通しているのは、年齢を言い訳にしていないことです。「40代だから伝えられる安定感・人生経験の深さ・焦らない余裕」を具体的なエピソードとして文章にしている人が、着実に成果を出しています。まずは写真1枚と自己紹介文の書き方を変えるところから始めてみてください。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略", "description": "40代でマッチングアプリを始めたとき、私が最初に感じたのは「何をどう書けばいいのかまったく分からない」という戸惑いだった。若い頃の感覚で書いたプロフィールは、どこか浮いていた。", "image": "https://www.noe-match.com/images/img_5ba98b48.jpg", "url": "https://www.noe-match.com/articles/40s-men/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.noe-match.com/articles/40s-men/"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}, "datePublished": "2026-05-31", "dateModified": "2026-05-31"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "記事一覧", "item": "https://www.noe-match.com/#articles"}, {"@type": "ListItem", "position": 3, "name": "40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略"}]}</script>
@@ -153,7 +153,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <h3>Pairsについて</h3>
 <p>会員数は多いが、20代の恋活層も混在している。婚活がメインの目的なら、ユーブライドをメインに据えてPairsは補助的に使う程度が現実的だ。</p>
 <h3>婚活アプリ横断比較表（40代男性向け）</h3>
-<div class="table-wrap"><table><thead><tr><th>アプリ名</th><th>月額料金（男性）</th><th>女性料金</th><th>40代向け適性</th><th>特徴</th></tr></thead><tbody><tr><td>ユーブライド<br><a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:0;text-decoration:none;margin-top:4px">公式サイト</a></td><td>3,000〜4,200円（1〜6ヶ月）</td><td>無料</td><td>◎</td><td>30〜40代婚活層が中心。結婚前提の真剣な相手が多い</td></tr><tr><td>Omiai</td><td>3,480〜4,980円（1〜6ヶ月）</td><td>無料</td><td>○</td><td>条件詳細検索が可能。25〜40歳の婚活層が厚い</td></tr><tr><td>マリッシュ</td><td>2,980〜3,980円（1〜6ヶ月）</td><td>無料〜</td><td>○</td><td>バツイチ・再婚希望に特化。40代ユーザーが豊富</td></tr><tr><td>Pairs</td><td>2,790〜4,490円（1〜6ヶ月）</td><td>無料</td><td>△</td><td>会員数最多だが20代も多く、婚活目的なら補助的な利用を推奨</td></tr><tr><td>with</td><td>3,000〜3,600円（1〜6ヶ月）</td><td>無料</td><td>△</td><td>性格診断機能あり。20〜30代がメイン層</td></tr></tbody></table></div>
+<div class="table-wrap"><table><thead><tr><th>アプリ名</th><th>月額料金（男性）</th><th>女性料金</th><th>40代向け適性</th><th>特徴</th></tr></thead><tbody><tr><td>ユーブライド<br><a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:0;text-decoration:none;margin-top:4px">公式サイト</a></td><td>3,000〜4,200円（1〜6ヶ月）</td><td>無料</td><td>◎</td><td>30〜40代婚活層が中心。結婚前提の真剣な相手が多い</td></tr><tr><td>Omiai</td><td>3,480〜4,980円（1〜6ヶ月）</td><td>無料</td><td>○</td><td>条件詳細検索が可能。25〜40歳の婚活層が厚い</td></tr><tr><td>マリッシュ</td><td>2,980〜3,980円（1〜6ヶ月）</td><td>無料〜</td><td>○</td><td>バツイチ・再婚希望に特化。40代ユーザーが豊富</td></tr><tr><td>Pairs</td><td>2,790〜4,490円（1〜6ヶ月）</td><td>無料</td><td>△</td><td>会員数最多だが20代も多く、婚活目的なら補助的な利用を推奨</td></tr><tr><td>with</td><td>3,000〜3,600円（1〜6ヶ月）</td><td>無料</td><td>△</td><td>性格診断機能あり。20〜30代がメイン層</td></tr></tbody></table></div>
 <p>（各社公式発表・Noe編集部2025年ユーザー調査より推計）</p>
 <h2 id="sec-4">40代男性の「強み」をプロフィールで伝える方法</h2>
 <p>40代男性が評価される要素を並べると、生活の安定感、人生経験から来る話の深さ、焦らない余裕のある姿勢、料理・趣味など私生活が充実している証拠、そしてバツイチの場合は前向きな経験として語れる誠実さ、この5つに集約される。</p>
@@ -193,7 +193,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">プロフィールを直しても反応が変わらないなら、母数の条件から見直す</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+31JVY2+32P0+HVV0H" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">Bridalチューリップの料金・サポートを見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+31JVY2+32P0+HVV0H" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">Bridalチューリップの料金・サポートを見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">30〜40代男性を主な対象とする結婚相談所。料金・会員構成・サポート範囲は公式サイトでご確認ください</p>
 </div>
 <h2 id="sec-7">よくある質問（FAQ）</h2>
@@ -221,14 +221,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">真剣な婚活を始めるなら、成婚実績を公表している定番から</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／30〜40代の真剣婚活層が中心</p>
 </div>
 
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">再婚・シンパパシンママの婚活なら、再婚者を優遇する専用設計のアプリを</p>
-<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">マリッシュ公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">再婚・シングルマザー優遇プログラムあり／40代以上の利用者層が厚い</p>
 </div>
 

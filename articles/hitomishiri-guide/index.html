@@ -42,7 +42,7 @@ nav a:hover{color:var(--acc)}
 article{background:none;border:none;border-radius:0;padding:44px 0 8px;margin-bottom:0}
 article h1{font-family:var(--serif);font-size:clamp(1.5rem,4.2vw,2.05rem);font-weight:600;line-height:1.75;letter-spacing:.04em;margin-bottom:26px;color:var(--ink)}
 .byline{display:flex;gap:14px;align-items:flex-start;background:none;border:none;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);border-radius:0;padding:16px 2px;margin-bottom:14px;font-size:.78rem;color:var(--body);line-height:1.9}
-.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--acc);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.byline .av{font-family:var(--serif);font-weight:600;font-size:.95rem;color:var(--ink);border:1px solid var(--hair);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .byline .up{color:var(--gray);font-size:.7rem;margin-top:3px;letter-spacing:.04em}
 article h2{font-family:var(--serif);font-size:clamp(1.25rem,3.2vw,1.5rem);font-weight:600;line-height:1.8;margin:72px 0 26px;padding-bottom:.5em;border-bottom:1px solid var(--ink);color:var(--ink);letter-spacing:.05em}
 article h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin:44px 0 14px;color:var(--ink);letter-spacing:.04em;line-height:1.8}
@@ -54,7 +54,7 @@ article a{color:var(--acc);font-weight:500;text-decoration-color:#cbaab2;text-un
 article a:hover{color:var(--acc-dark)}
 .art-img{max-width:100%;height:auto;border-radius:0;margin:30px 0;display:block;filter:saturate(.9)}
 blockquote{background:var(--alt);border-left:2px solid var(--hair);border-radius:0;padding:18px 22px;margin:26px 0;font-size:.9rem;color:var(--body)}
-blockquote strong{color:var(--acc)}
+blockquote strong{color:var(--ink)}
 .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:none;border-radius:0;margin:28px 0}
 table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:520px;border-top:1px solid var(--ink)}
 thead th{background:none;color:var(--ink);padding:13px 10px;text-align:center;font-weight:600;letter-spacing:.06em;white-space:nowrap;border-bottom:1px solid var(--ink);font-family:var(--serif)}
@@ -72,8 +72,8 @@ code{background:var(--alt);color:var(--acc-dark);padding:1px 6px;border-radius:0
 .cta-foot{background:var(--alt);color:var(--ink);text-align:center;border-radius:0;padding:64px 28px;margin-bottom:76px}
 .cta-foot h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;margin-bottom:12px;border:none;background:none;padding:0;color:var(--ink);letter-spacing:.06em}
 .cta-foot p{color:#6a7178;font-size:.86rem;line-height:2.1}
-.cta-foot a{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
-.cta-foot a:hover{background:var(--acc)}
+.cta-foot a{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:16px 44px;border-radius:0;text-decoration:none;margin-top:24px;font-size:.86rem;letter-spacing:.12em;transition:background .15s}
+.cta-foot a:hover{background:var(--acc-dark)}
 footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;line-height:1.9}
 .footer-inner{max-width:1080px;margin:0 auto;text-align:center}
 .footer-inner a{color:#b7bcc2;text-decoration:none;margin:0 10px}
@@ -93,14 +93,14 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 .cta-mid{background:var(--alt);border:none;border-left:2px solid var(--acc);border-radius:0;padding:20px 24px;margin:30px 0}
 .cta-mid-pr{display:inline-block;font-size:.6rem;color:var(--gray);background:none;border:1px solid var(--hair);border-radius:0;padding:1px 8px;margin-bottom:8px;letter-spacing:.2em}
 .cta-mid-t{margin:0 0 12px;font-size:.9rem;line-height:1.9}
-.cta-mid-b{display:inline-block;background:var(--ink);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
-.cta-mid-b:hover{background:var(--acc)}
+.cta-mid-b{display:inline-block;background:var(--acc);color:#fff;font-weight:500;padding:11px 28px;border-radius:0;text-decoration:none;font-size:.84rem;letter-spacing:.1em;transition:background .15s}
+.cta-mid-b:hover{background:var(--acc-dark)}
 .fact-box{background:var(--alt);border:none;border-left:2px solid var(--ink);border-radius:0;padding:18px 22px;margin:26px 0}
 .fact-box strong{color:var(--ink)}
 .warn-box{background:#faf7f0;border:none;border-left:2px solid #b39352;border-radius:0;padding:18px 22px;margin:26px 0}
 .experience-box{background:none;border:1px solid var(--hair);border-radius:0;padding:22px 26px;margin:26px 0}
 .experience-box .exp-name{font-family:var(--serif);font-weight:600;color:var(--ink);margin-bottom:8px;font-size:.92rem}
-@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}</style>
+@media(max-width:600px){body{font-size:15px}article{padding:30px 0 4px}article h2{margin:52px 0 20px}.cta-foot{padding:48px 20px}.cta-foot a{display:block;padding:15px 18px}}a[style*="background:#7c2e42;color:#fff"]:hover{background:#5c2131}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"人見知りでもマッチングアプリで出会えますか？","acceptedAnswer":{"@type":"Answer","text":"出会える。むしろマッチングアプリは、対面での自己紹介やその場での会話力が求められる従来の出会いと比べて、人見知りの人にとって有利に働く設計になっている場面が多い。テキストでじっくり考えてから返信できる、プロフィールで自分を事前に説明できる、共通の話題（心理テストの結果や趣味）から会話を始められる、という3点が、対面のハードルを下げてくれる。実際に人見知りを自認するユーザーの成婚・交際事例は珍しくない。"}},{"@type":"Question","name":"会話が続かない場合、どう対処すればいいですか？","acceptedAnswer":{"@type":"Answer","text":"「質問で終わらせる」「相手のプロフィールの具体的な部分に言及する」という2点を意識するだけで会話の継続率は大きく変わる。人見知りの人が陥りやすいのは、返信自体は丁寧なのに「そうなんですね」で終わってしまうパターンだ。一言でも自分の話を添えた上で質問を返す形にすると、キャッチボールが成立しやすくなる。テンプレート的な返信集をあらかじめ複数用意しておくと、その場で考える負担が減り、返信のハードルが下がる。"}},{"@type":"Question","name":"内向型に向いているアプリはどれですか？","acceptedAnswer":{"@type":"Answer","text":"心理テスト・相性診断機能があるアプリが向いている。withの心理テスト機能は、性格や価値観をあらかじめ可視化してくれるため、初対面の緊張感を減らし、共通の話題を自然に作れる。Omiaiの結婚観診断も同様に、価値観の一致を事前に確認できる機能で、人見知りが苦手とする「何を話せばいいか分からない」という初期の壁を下げてくれる。"}},{"@type":"Question","name":"人見知りは初デートでどう振る舞えばいいですか？","acceptedAnswer":{"@type":"Answer","text":"「沈黙が怖い」と思う必要はない。会話が途切れた瞬間に無理に埋めようとせず、カフェや美術館など「何かを見ながら話せる」場所を選ぶと、話題が自然に生まれやすくなる。事前にメッセージで話していた内容をメモしておき、会話の糸口として持っておくと安心感が生まれる。人見知りであることを最初に軽く伝えておくと、相手も配慮してくれるケースが多い。"}},{"@type":"Question","name":"プロフィール写真は人見知りでも重要ですか？","acceptedAnswer":{"@type":"Answer","text":"重要だ。人見知りの人ほど「会う前の情報」で相手に安心感を与えることが有効なため、自然な表情の写真・具体的な自己紹介文を用意することが、対面での緊張を減らす前提になる。プロフィールの情報量が多いほど、初対面でも話す材料に困らなくなる。"}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"人見知り・内向型のためのマッチングアプリ攻略｜会話が苦手でも出会える設計","description":"人見知り・内向的な性格でもマッチングアプリで出会えるのか。会話が続かない不安を前提にしたメッセージ戦略、心理テスト機能の活用法、内向型に向いたアプリの選び方を具体的に解説する。","image":"https://www.noe-match.com/images/img_e0033fa9.jpg","url":"https://www.noe-match.com/articles/hitomishiri-guide/","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.noe-match.com/articles/hitomishiri-guide/"},"inLanguage":"ja","author":{"@type":"Organization","name":"Noe編集部","url":"https://www.noe-match.com/about.html"},"publisher":{"@type":"Organization","name":"Noe結婚設計室","url":"https://www.noe-match.com/"},"datePublished":"2026-07-26","dateModified":"2026-07-26"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"記事一覧","item":"https://www.noe-match.com/#articles"},{"@type":"ListItem","position":3,"name":"人見知り・内向型のためのマッチングアプリ攻略｜会話が苦手でも出会える設計"}]}</script>
@@ -205,7 +205,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">交際経験の少なさを説明しなくていい場所、という選び方</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+35PX6I+3LOM+1BO6EP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ピュア婚のサービス内容を見る</a>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+35PX6I+3LOM+1BO6EP" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ピュア婚のサービス内容を見る</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">恋愛経験が少ない層に特化した結婚相談所。料金・対応エリア・入会条件は公式サイトでご確認ください</p>
 </div>
 
@@ -216,7 +216,7 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 12px">価値観の一致を可視化してから話せる婚活アプリなら</p>
-<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#1d242b;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
+<a href="https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ユーブライド公式サイトを見る（登録無料）</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">成婚退会者 年間2,000名超（公式発表）／プロフィール重視で価値観を確認しやすい設計</p>
 </div>
 
