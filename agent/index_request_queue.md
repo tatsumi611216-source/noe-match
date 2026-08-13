@@ -37,6 +37,8 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
+- https://www.noe-match.com/tools/saigenbyo-check/ （2026-08-13公開・妻源病診断ツール）
+
 
 
 
