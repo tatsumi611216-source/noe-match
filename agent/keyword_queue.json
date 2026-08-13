@@ -1,1575 +1,1610 @@
 {
-  "description": "記事工場の生成キュー。エージェントは毎回pendingの先頭2件を処理する。優先度順に並んでいる。",
-  "queue": [
-    {
-      "slug": "youbride-seikon-data",
-      "title_hint": "ユーブライドの成婚率は公表されているか｜成婚退会者数の実数と読み方",
-      "target_queries": [
-        "ユーブライド 成婚率",
-        "ユーブライド 成婚 実績",
-        "youbride 成婚退会"
-      ],
-      "type": "app-data",
-      "status": "done",
-      "published": "2026-08-03",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "marrish-saikon-data",
-      "title_hint": "マリッシュの再婚成婚データ｜シンパパ・シンママ優遇の実態を公表値で確認する",
-      "target_queries": [
-        "マリッシュ 成婚率",
-        "マリッシュ 再婚 実績",
-        "marrish 成婚"
-      ],
-      "type": "app-data",
-      "status": "done",
-      "published": "2026-08-03",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "zexy-enmusubi-data",
-      "title_hint": "ゼクシィ縁結びの成婚率｜リクルートが公表している数字と、していない数字",
-      "target_queries": [
-        "ゼクシィ縁結び 成婚率",
-        "ゼクシィ縁結び 実績",
-        "ゼクシィ縁結び 会員数"
-      ],
-      "type": "app-data",
-      "status": "done",
-      "published": "2026-08-10",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "pairs-kaiin-data",
-      "title_hint": "Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する",
-      "target_queries": [
-        "pairs 会員数",
-        "ペアーズ 会員数 推移",
-        "pairs 累計"
-      ],
-      "type": "app-data",
-      "status": "done",
-      "published": "2026-08-10",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "omiai-danjohi-data",
-      "title_hint": "Omiaiの男女比｜公表データと、比率が体感と食い違う理由",
-      "target_queries": [
-        "omiai 男女比",
-        "omiai 女性 割合",
-        "おみあい 男女比"
-      ],
-      "type": "app-data",
-      "status": "pending",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "with-nenreiso-data",
-      "title_hint": "withの年齢層｜20代中心と言われる根拠を公表データで確認する",
-      "target_queries": [
-        "with 年齢層",
-        "with 20代",
-        "with 会員 年齢"
-      ],
-      "type": "app-data",
-      "status": "pending",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "tapple-kaiin-data",
-      "title_hint": "Tappleの会員数と年齢構成｜「20代が多い」は数字で言えるのか",
-      "target_queries": [
-        "タップル 会員数",
-        "タップル 年齢層",
-        "tapple 会員"
-      ],
-      "type": "app-data",
-      "status": "pending",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "bachelor-shinsa-data",
-      "title_hint": "バチェラーデートの審査通過率は公表されているか｜審査制の実態を確認する",
-      "target_queries": [
-        "バチェラーデート 審査",
-        "バチェラーデート 通過率",
-        "バチェラーデート 落ちた"
-      ],
-      "type": "app-data",
-      "status": "pending",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "app-ryokin-kaitei-data",
-      "title_hint": "主要マッチングアプリの料金改定履歴｜いつ・いくら上がったかの実データ",
-      "target_queries": [
-        "マッチングアプリ 値上げ",
-        "pairs 料金 改定",
-        "マッチングアプリ 料金 推移"
-      ],
-      "type": "app-data",
-      "status": "pending",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "app-taikai-riyu-data",
-      "title_hint": "マッチングアプリの退会理由データ｜公表調査から見る「やめる人」の内訳",
-      "target_queries": [
-        "マッチングアプリ 退会 理由",
-        "マッチングアプリ やめた",
-        "マッチングアプリ 継続率"
-      ],
-      "type": "app-data",
-      "status": "pending",
-      "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
-    },
-    {
-      "slug": "yakuzaishi-konkatsu",
-      "title_hint": "薬剤師の婚活｜職場に出会いがない構造と、勤務形態別の現実的な進め方",
-      "target_queries": [
-        "薬剤師 婚活",
-        "薬剤師 出会い",
-        "薬剤師 結婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "hoikushi-konkatsu",
-      "title_hint": "保育士の婚活｜女性中心の職場で出会いをどこに作るか",
-      "target_queries": [
-        "保育士 婚活",
-        "保育士 出会い",
-        "保育士 結婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "kaigo-konkatsu",
-      "title_hint": "介護職の婚活｜シフト勤務と収入の話をどう扱うか",
-      "target_queries": [
-        "介護士 婚活",
-        "介護職 出会い",
-        "介護 結婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "kyoushi-konkatsu",
-      "title_hint": "教員の婚活｜部活・保護者対応で時間が取れない人の進め方",
-      "target_queries": [
-        "教師 婚活",
-        "教員 出会い",
-        "先生 結婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "keisatsu-shoubou-konkatsu",
-      "title_hint": "警察官・消防士の婚活｜身分の伝え方と当直勤務の調整",
-      "target_queries": [
-        "警察官 婚活",
-        "消防士 出会い",
-        "警察官 結婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "bank-konkatsu",
-      "title_hint": "銀行員・金融職の婚活｜転勤前提のキャリアをどう説明するか",
-      "target_queries": [
-        "銀行員 婚活",
-        "金融 出会い",
-        "銀行員 結婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "tenkinzoku-konkatsu",
-      "title_hint": "転勤族の婚活｜数年で動く前提の相手探しと、遠距離の扱い",
-      "target_queries": [
-        "転勤族 婚活",
-        "転勤 結婚 不安",
-        "転勤族 出会い"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "jikka-gurashi-konkatsu",
-      "title_hint": "実家暮らしは婚活で不利か｜データと、プロフィールでの書き方",
-      "target_queries": [
-        "実家暮らし 婚活",
-        "実家暮らし 結婚 不利",
-        "実家 一人暮らし 婚活"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "chounan-chojo-konkatsu",
-      "title_hint": "長男・長女の結婚｜同居と介護の話をいつ切り出すか",
-      "target_queries": [
-        "長男 結婚 同居",
-        "長女 結婚 実家",
-        "跡継ぎ 婚活"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "bishoushi-konkatsu",
-      "title_hint": "美容師・理容師の婚活｜土日休みでない職業の相手探し",
-      "target_queries": [
-        "美容師 婚活",
-        "美容師 出会い",
-        "土日 休みじゃない 婚活"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
-    },
-    {
-      "slug": "kanazawa-toyama-guide",
-      "title_hint": "金沢・富山の婚活｜北陸で相手を探すときのエリアと移動の現実",
-      "target_queries": [
-        "金沢 婚活",
-        "富山 婚活",
-        "北陸 出会い"
-      ],
-      "type": "region",
-      "status": "pending",
-      "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
-    },
-    {
-      "slug": "okayama-takamatsu-guide",
-      "title_hint": "岡山・高松の婚活｜瀬戸内エリアの人口動態と出会いの場",
-      "target_queries": [
-        "岡山 婚活",
-        "高松 婚活",
-        "瀬戸内 出会い"
-      ],
-      "type": "region",
-      "status": "pending",
-      "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
-    },
-    {
-      "slug": "kumamoto-kagoshima-guide",
-      "title_hint": "熊本・鹿児島の婚活｜九州南部で選択肢を広げる方法",
-      "target_queries": [
-        "熊本 婚活",
-        "鹿児島 婚活",
-        "九州 出会い"
-      ],
-      "type": "region",
-      "status": "pending",
-      "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
-    },
-    {
-      "slug": "kitakanto-guide",
-      "title_hint": "北関東（宇都宮・前橋・水戸）の婚活｜東京に吸われないエリアの使い方",
-      "target_queries": [
-        "宇都宮 婚活",
-        "前橋 婚活",
-        "水戸 出会い"
-      ],
-      "type": "region",
-      "status": "pending",
-      "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
-    },
-    {
-      "slug": "nagano-gifu-guide",
-      "title_hint": "長野・岐阜の婚活｜移動距離が長い地域での相手探し",
-      "target_queries": [
-        "長野 婚活",
-        "岐阜 婚活",
-        "中部 出会い"
-      ],
-      "type": "region",
-      "status": "pending",
-      "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
-    },
-    {
-      "slug": "tohoku-guide",
-      "title_hint": "東北（青森・岩手・秋田・山形・福島）の婚活｜人口減エリアの現実的な戦略",
-      "target_queries": [
-        "東北 婚活",
-        "青森 婚活",
-        "福島 出会い"
-      ],
-      "type": "region",
-      "status": "pending",
-      "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
-    },
-    {
-      "slug": "nurse-osaka-konkatsu",
-      "title_hint": "大阪の看護師が婚活するなら｜夜勤ありのシフトで会える場所と時間帯",
-      "target_queries": [
-        "看護師 婚活 大阪",
-        "大阪 看護師 出会い",
-        "看護師 夜勤 婚活"
-      ],
-      "type": "attribute-region",
-      "status": "pending",
-      "notes": "【型B: 属性×地域】最も競合が薄い掛け算。両方の検索意図を満たす。属性側の実務（勤務形態・出会いの場）と地域側の実務（エリア・交通）を両方入れる。"
-    },
-    {
-      "slug": "nurse-fukuoka-konkatsu",
-      "title_hint": "福岡の看護師の婚活｜勤務先エリア別の動きやすさで選ぶ",
-      "target_queries": [
-        "看護師 婚活 福岡",
-        "福岡 看護師 出会い"
-      ],
-      "type": "attribute-region",
-      "status": "pending",
-      "notes": "【型B: 属性×地域】最も競合が薄い掛け算。両方の検索意図を満たす。属性側の実務（勤務形態・出会いの場）と地域側の実務（エリア・交通）を両方入れる。"
-    },
-    {
-      "slug": "civil-servant-nagoya-konkatsu",
-      "title_hint": "名古屋の公務員の婚活｜身バレを避けながら進める方法",
-      "target_queries": [
-        "公務員 婚活 名古屋",
-        "名古屋 公務員 出会い"
-      ],
-      "type": "attribute-region",
-      "status": "pending",
-      "notes": "【型B: 属性×地域】最も競合が薄い掛け算。両方の検索意図を満たす。属性側の実務（勤務形態・出会いの場）と地域側の実務（エリア・交通）を両方入れる。"
-    },
-    {
-      "slug": "engineer-tokyo-konkatsu",
-      "title_hint": "東京のエンジニアの婚活｜リモート勤務で出会いが減った人の設計",
-      "target_queries": [
-        "エンジニア 婚活 東京",
-        "IT 出会い 東京",
-        "リモート 出会いがない"
-      ],
-      "type": "attribute-region",
-      "status": "pending",
-      "notes": "【型B: 属性×地域】最も競合が薄い掛け算。両方の検索意図を満たす。属性側の実務（勤務形態・出会いの場）と地域側の実務（エリア・交通）を両方入れる。"
-    },
-    {
-      "slug": "kounyuu-dansei-konkatsu",
-      "title_hint": "年収600万以上の男性と結婚したい人へ｜公的データで見る「実際の割合」と現実的な戦略",
-      "target_queries": [
-        "高収入 男性 婚活",
-        "年収 600万 結婚",
-        "ハイスペ 男性 出会い"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "A8提携済【セレブ婚】(s00000016807005)の受け皿。国税庁『民間給与実態統計調査』で年収帯の実数を出す。玉の輿を煽る書き方は禁止。母数の少なさを正直に示した上で、属性特化型の相談所という選択肢を比較の1つとして置く"
-    },
-    {
-      "slug": "osake-konkatsu",
-      "title_hint": "お酒好き同士の婚活｜「飲み方の価値観」が合わないと結婚後に何が起きるか",
-      "target_queries": [
-        "お酒好き 婚活",
-        "飲み会 出会い 結婚",
-        "お酒 価値観 結婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "A8提携済【お酒婚】(s00000016807007)の受け皿。競合ほぼ不在だが検索需要は小さいので優先度は低め。飲酒量・家計・同居後のトラブルという実務論点を主軸にし、飲酒を推奨する書き方はしない"
-    },
-    {
-      "slug": "pocchari-konkatsu",
-      "title_hint": "ぽっちゃり女性の婚活は不利なのか｜データと「体型を書く/書かない」の判断",
-      "target_queries": [
-        "ぽっちゃり 婚活",
-        "ぽっちゃり マッチングアプリ",
-        "体型 プロフィール 婚活"
-      ],
-      "type": "attribute",
-      "status": "done",
-      "notes": "A8提携済【ぽちゃ婚】(s00000016807001)の受け皿。体型を欠点として扱う書き方は禁止。プロフィールに体型をどう書くかの実務に徹する",
-      "published": "2026-08-09"
-    },
-    {
-      "slug": "otaku-konkatsu",
-      "title_hint": "オタク趣味は婚活で隠すべきか｜同じ趣味の相手を探す場所の選び方",
-      "target_queries": [
-        "オタク 婚活",
-        "アニメ好き 結婚相談所",
-        "趣味 婚活 アプリ"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "A8提携済【ヲタ婚】(s00000016807002)の受け皿。趣味を隠す前提で書かない。属性特化の相談所という選択肢を比較の1つとして置く"
-    },
-    {
-      "slug": "kodure-saikon-guide",
-      "title_hint": "子連れ再婚のリアル｜相手の子どもとの関係・養育費・タイミングをどう扱うか",
-      "target_queries": [
-        "子連れ 再婚",
-        "子持ち 婚活",
-        "シングルマザー 再婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "A8提携済【子持ち婚】(s00000016807009)の受け皿。batsuichi-guideは離婚歴の伝え方が主題なので、こちらは子どもを軸に分ける。不安を煽らない"
-    },
-    {
-      "slug": "pet-konkatsu",
-      "title_hint": "ペット可の相手をどう探すか｜動物好き同士の婚活と同居後に揉める論点",
-      "target_queries": [
-        "ペット 婚活",
-        "犬好き 出会い",
-        "猫 同棲 結婚"
-      ],
-      "type": "attribute",
-      "status": "pending",
-      "notes": "A8提携済【ペット婚】(s00000016807006)の受け皿。競合ほぼ不在。同居後のアレルギー・費用・世話分担という実務論点を主軸に"
-    },
-    {
-      "slug": "sapporo-guide",
-      "title_hint": "札幌でマッチングアプリを使うなら｜出会えるアプリTOP3とすすきの・大通エリア攻略法",
-      "target_queries": [
-        "マッチングアプリ 札幌",
-        "札幌 出会い アプリ"
-      ],
-      "type": "regional",
-      "notes": "冬デート（屋内スポット）・車社会・すすきの/大通/札幌駅のエリア分け",
-      "status": "done",
-      "published": "2026-07-04"
-    },
-    {
-      "slug": "pairs-marriage-data",
-      "title_hint": "ペアーズの成婚率・結婚データ【2026年版】本当に結婚できるのか公式数値で検証",
-      "target_queries": [
-        "ペアーズ 成婚率",
-        "pairs 結婚率",
-        "ペアーズ 結婚 データ"
-      ],
-      "type": "data",
-      "notes": "公式発表（毎月約13,000人に恋人）を軸に。成婚率は非公表であることを正直に書く。success-rate-dataへ内部リンク",
-      "status": "done",
-      "published": "2026-07-04"
-    },
-    {
-      "slug": "kyoto-guide",
-      "title_hint": "京都でマッチングアプリを使うなら｜出会えるアプリTOP3と河原町・烏丸エリア攻略法",
-      "target_queries": [
-        "マッチングアプリ 京都",
-        "京都 出会い アプリ"
-      ],
-      "type": "regional",
-      "notes": "学生都市（大学生比率高）・観光地デートの使い分け・鴨川/河原町/烏丸",
-      "status": "done",
-      "published": "2026-07-06"
-    },
-    {
-      "slug": "with-seriousness-data",
-      "title_hint": "withの真剣度・結婚データ【2026年版】恋活アプリで婚活はできるのか検証",
-      "target_queries": [
-        "with 真剣度",
-        "with 結婚率",
-        "ウィズ 婚活 できる"
-      ],
-      "type": "data",
-      "notes": "心理テスト機能と真剣度の関係。20代後半の婚活転用がテーマ",
-      "status": "done",
-      "published": "2026-07-06"
-    },
-    {
-      "slug": "kobe-yokohama-guide",
-      "title_hint": "神戸・横浜でマッチングアプリを使うなら｜港町2都市の出会いエリア攻略法",
-      "target_queries": [
-        "マッチングアプリ 神戸",
-        "マッチングアプリ 横浜"
-      ],
-      "type": "regional",
-      "notes": "大都市隣接都市の共通戦略（大阪/東京に吸われない使い方）。三宮・元町/みなとみらい・関内",
-      "status": "done",
-      "published": "2026-07-13"
-    },
-    {
-      "slug": "civil-servant-guide",
-      "title_hint": "公務員向けマッチングアプリガイド｜身バレを防ぎつつ堅実に出会う方法",
-      "target_queries": [
-        "公務員 マッチングアプリ",
-        "公務員 出会い"
-      ],
-      "type": "attribute",
-      "notes": "身バレ対策記事（privacy-protection）へ内部リンク。公務員が人気属性である事実と注意点",
-      "status": "done",
-      "published": "2026-07-13"
-    },
-    {
-      "slug": "nurse-guide",
-      "title_hint": "看護師向けマッチングアプリガイド｜不規則勤務でも出会える使い方",
-      "target_queries": [
-        "看護師 マッチングアプリ",
-        "看護師 出会い ない"
-      ],
-      "type": "attribute",
-      "notes": "シフト勤務×デート調整の具体戦略。夜勤明けデートのリアル",
-      "status": "done",
-      "published": "2026-07-20"
-    },
-    {
-      "slug": "batsuichi-guide",
-      "title_hint": "バツイチ・再婚向けマッチングアプリガイド｜再婚に強いアプリと書き方",
-      "target_queries": [
-        "バツイチ マッチングアプリ",
-        "再婚 アプリ おすすめ"
-      ],
-      "type": "attribute",
-      "notes": "マリッシュ（再婚優遇）を軸に。離婚歴のプロフィール開示タイミング",
-      "status": "done",
-      "published": "2026-07-20"
-    },
-    {
-      "slug": "youbride-guide",
-      "title_hint": "ユーブライド完全ガイド【2026年版】評判・料金・成婚実績を徹底検証",
-      "target_queries": [
-        "ユーブライド 評判",
-        "ユーブライド 料金",
-        "youbride 口コミ",
-        "ユーブライド 成婚率"
-      ],
-      "type": "app-guide",
-      "notes": "収益最重要記事。成婚退会者年間2,000名超（公式）を軸に。30代後半〜40代の真剣婚活層向け。success-rate-data・compare-konkatsu・30s-konkatsu・40s-guideへ内部リンク。既存記事20本からこの記事への内部リンクも追加すること",
-      "status": "done",
-      "published": "2026-07-24"
-    },
-    {
-      "slug": "marrish-guide",
-      "title_hint": "マリッシュ完全ガイド【2026年版】バツイチ・再婚に強い理由と評判・料金",
-      "target_queries": [
-        "マリッシュ 評判",
-        "マリッシュ バツイチ",
-        "marrish 口コミ",
-        "再婚 マッチングアプリ"
-      ],
-      "type": "app-guide",
-      "notes": "収益重要記事。シンパパシンママ優遇プログラム・再婚成婚報告の多さを軸に。batsuichi-guide・40s-guide・app-plus-agencyへ内部リンク。既存の言及9記事からこの記事への内部リンクも追加すること",
-      "status": "done",
-      "published": "2026-07-24"
-    },
-    {
-      "slug": "youbride-marrish-hikaku",
-      "title_hint": "ユーブライドとマリッシュを徹底比較｜年代・目的別にどちらを選ぶべきか",
-      "target_queries": [
-        "ユーブライド マリッシュ 比較",
-        "ユーブライド マリッシュ どっち"
-      ],
-      "type": "data",
-      "notes": "提携済み2商材の指名比較＝最高転換率が狙える記事。両CTA設置",
-      "status": "done",
-      "published": "2026-07-25"
-    },
-    {
-      "slug": "app-tsukare-guide",
-      "title_hint": "マッチングアプリ疲れの原因と対処法｜やめる前に試す3つの選択肢",
-      "target_queries": [
-        "マッチングアプリ 疲れた",
-        "アプリ疲れ 婚活"
-      ],
-      "type": "attribute",
-      "notes": "疲れ→相談所・サポート型サービスへの導線記事。ユーブライドCTA＋相談所比較へ内部リンク",
-      "status": "done",
-      "published": "2026-07-25"
-    },
-    {
-      "slug": "soudanjo-hikaku",
-      "title_hint": "結婚相談所の料金比較【2026年版】オンライン型は本当に安いのか検証",
-      "target_queries": [
-        "結婚相談所 料金 比較",
-        "オンライン結婚相談所 比較"
-      ],
-      "type": "data",
-      "notes": "高単価案件の受け皿。naco-do・スマリッジ・ブライダルネット比較。承認後にリンク挿入",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kekkon-okane-data",
-      "title_hint": "結婚にかかるお金の総額データ【2026年版】婚約から新生活までの費用を全部見える化",
-      "target_queries": [
-        "結婚 費用 総額",
-        "結婚 お金 いくら"
-      ],
-      "type": "data",
-      "notes": "ライフイベント軸のハブ記事。婚約指輪・式・新婚旅行・新生活の費用を公的調査（ゼクシィ結婚トレンド調査等・出典明記）で表化。全ブライダル記事から内部リンクを集める",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "shikijo-erabi-guide",
-      "title_hint": "結婚式場探し完全ガイド【2026年版】見学予約サイトの特典比較と失敗しない回り方",
-      "target_queries": [
-        "式場探し いつから",
-        "式場見学 特典 比較",
-        "ハナユメ ゼクシィ どっち"
-      ],
-      "type": "app-guide",
-      "notes": "高単価案件（ハナユメ・ゼクシィ等＝見学予約1〜2万円級）の受け皿。承認前でも公式リンクで公開し承認後にCTA差し替え",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "konyaku-yubiwa-data",
-      "title_hint": "婚約指輪の相場データ【2026年版】「給料3ヶ月分」は本当か統計で検証",
-      "target_queries": [
-        "婚約指輪 相場",
-        "婚約指輪 平均 いくら"
-      ],
-      "type": "data",
-      "notes": "データ型の勝ちパターン。年代別・地域別相場表。指輪ブランド資料請求案件の受け皿",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kekkon-tenshoku-guide",
-      "title_hint": "結婚を機に転職すべきか｜収入・勤務地・働き方を見直すタイミングと判断基準",
-      "target_queries": [
-        "結婚 転職 タイミング",
-        "結婚 きっかけ 転職",
-        "婚約 転職 いつ"
-      ],
-      "type": "attribute",
-      "notes": "【高単価】転職エージェント案件（1〜3万円）の受け皿。婚活/結婚文脈に完全接続。住宅ローン審査への影響・入籍前後どちらが有利かを軸に。konkatsu-roadmap・kekkon-okane-dataへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kekkon-sokou-chousa",
-      "title_hint": "結婚前の身元・素行調査は必要か｜費用相場と依頼前に自分でできる確認",
-      "target_queries": [
-        "結婚前 身元調査",
-        "婚前調査 費用",
-        "マッチングアプリ 相手 調べる"
-      ],
-      "type": "attribute",
-      "notes": "【高単価】探偵・調査会社案件（1〜3万円）の受け皿。煽らず「まず自分でできる確認」を主軸にし、依頼は最終手段として提示。fraud-detection・safety-guideへ内部リンク。断定・不安煽り表現は厳禁",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "bachelor-date-guide",
-      "title_hint": "バチェラーデート完全ガイド【2026年版】審査制AIデーティングの評判と向き不向き",
-      "target_queries": [
-        "バチェラーデート 評判",
-        "バチェラーデート 審査"
-      ],
-      "type": "app-guide",
-      "notes": "A8申請中の受け皿を先行準備。承認後にCTA挿入",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "konkatsu-photo-guide",
-      "title_hint": "婚活・マッチングアプリのプロフィール写真戦略｜プロ撮影は投資に値するか",
-      "target_queries": [
-        "マッチングアプリ 写真 プロ",
-        "婚活 写真 撮影"
-      ],
-      "type": "data",
-      "notes": "Photojoy等の写真サービス案件の受け皿。profile-photoと差別化（プロ撮影の費用対効果検証軸）",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "over50-guide",
-      "title_hint": "50代のマッチングアプリ・婚活ガイド｜中高年の出会いの現実と最適解",
-      "target_queries": [
-        "50代 マッチングアプリ",
-        "50代 婚活 現実"
-      ],
-      "type": "attribute",
-      "notes": "マリッシュ主役（40-50代層）。40s-guideと差別化",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "propose-guide",
-      "title_hint": "プロポーズ準備完全ガイド｜タイミング・場所・指輪の段取りをデータで整理",
-      "target_queries": [
-        "プロポーズ 準備",
-        "プロポーズ タイミング 付き合ってどれくらい"
-      ],
-      "type": "attribute",
-      "notes": "アプリ→交際→婚約の橋渡し記事。konyaku-yubiwa-dataとshikijo-erabiへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "bridal-esthe-guide",
-      "title_hint": "ブライダルエステはいつから？費用・回数の相場データと選び方",
-      "target_queries": [
-        "ブライダルエステ いつから",
-        "ブライダルエステ 費用"
-      ],
-      "type": "data",
-      "notes": "美容系の参入点（ブライダル文脈なら自然）。エステ体験系案件の受け皿",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "maedori-photo-guide",
-      "title_hint": "前撮り・フォトウェディングの費用比較【2026年版】後悔しないスタジオ選び",
-      "target_queries": [
-        "前撮り 相場",
-        "フォトウェディング 安い"
-      ],
-      "type": "data",
-      "notes": "ナシ婚トレンドと合わせて需要増領域。写真スタジオ系案件の受け皿",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "nashikon-data",
-      "title_hint": "結婚式をしない「ナシ婚」の割合データ｜後悔する人・しない人の分かれ目",
-      "target_queries": [
-        "結婚式 しない 割合",
-        "ナシ婚 後悔"
-      ],
-      "type": "data",
-      "notes": "統計型。フォトウェディングへの導線。maedori-photo-guideと相互リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "shinkon-seikatsu-guide",
-      "title_hint": "新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト",
-      "target_queries": [
-        "新婚 引越し 費用",
-        "同棲 準備 リスト"
-      ],
-      "type": "attribute",
-      "notes": "ライフイベント軸の終点。引越し見積もり・家具サブスク案件の将来受け皿",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "tapple-seriousness-data",
-      "title_hint": "タップルの真剣度は低い？【2026年版】ユーザー層データと目的別の向き不向き",
-      "target_queries": [
-        "タップル 真剣度",
-        "tapple 遊び",
-        "タップル 彼女できた"
-      ],
-      "type": "data",
-      "notes": "「遊び」評判の実態を公平に検証。20代恋活には最適という結論への導線",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "omiai-30s-women-data",
-      "title_hint": "Omiaiは30代女性に向いている？【2026年版】年齢層データと婚活実績で検証",
-      "target_queries": [
-        "omiai 30代 女性",
-        "omiai 年齢層",
-        "オミアイ 婚活 評判"
-      ],
-      "type": "data",
-      "notes": "age-data・success-rate-dataへ内部リンク。30代女性の婚活導線のハブ記事",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "sendai-hiroshima-guide",
-      "title_hint": "仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略",
-      "target_queries": [
-        "マッチングアプリ 仙台",
-        "マッチングアプリ 広島"
-      ],
-      "type": "regional",
-      "notes": "支店経済都市の転勤族需要。国分町/流川エリアは2回目以降",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "inaka-guide",
-      "title_hint": "地方・田舎でマッチングアプリは使える？【人口10万人以下】出会うための現実的戦略",
-      "target_queries": [
-        "田舎 マッチングアプリ",
-        "地方 マッチングアプリ 出会えない"
-      ],
-      "type": "attribute",
-      "notes": "距離設定50km・県庁所在地合流・身バレ率の高さへの対策。正直な期待値調整",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "saitama-chiba-guide",
-      "title_hint": "埼玉・千葉でマッチングアプリを使うなら｜都心依存しない出会い戦略",
-      "target_queries": [
-        "マッチングアプリ 埼玉",
-        "マッチングアプリ 千葉"
-      ],
-      "type": "regional",
-      "notes": "大宮・浦和・船橋・柏。都内合流とのハイブリッド戦略",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "shizuoka-niigata-guide",
-      "title_hint": "静岡・新潟でマッチングアプリを使うなら｜地方中核県の出会い戦略",
-      "target_queries": [
-        "マッチングアプリ 静岡",
-        "マッチングアプリ 新潟"
-      ],
-      "type": "regional",
-      "notes": "車社会×距離設定。浜松/静岡市・新潟市の2極構造",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "okinawa-guide",
-      "title_hint": "沖縄でマッチングアプリを使うなら｜移住者・地元の出会い事情と攻略法",
-      "target_queries": [
-        "マッチングアプリ 沖縄",
-        "沖縄 出会い アプリ"
-      ],
-      "type": "regional",
-      "notes": "移住者需要・狭いコミュニティでの身バレ対策を厚く",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kaiin-age-cross-data",
-      "title_hint": "マッチングアプリの年齢層×目的マップ【2026年版】どの年代がどこにいるかデータで見る",
-      "target_queries": [
-        "マッチングアプリ 年齢層 比較",
-        "婚活アプリ 年代別"
-      ],
-      "type": "data",
-      "notes": "age-dataの発展版。全アプリ×年代マトリクス表が核",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kekkon-madeno-kikan-data",
-      "title_hint": "マッチングアプリから結婚までの期間データ｜出会って何ヶ月で結婚している？",
-      "target_queries": [
-        "マッチングアプリ 結婚まで 期間",
-        "アプリ婚 期間"
-      ],
-      "type": "data",
-      "notes": "success-rate-dataと相互リンク。交際期間統計が核",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "hitomishiri-guide",
-      "title_hint": "人見知り・内向型のためのマッチングアプリ攻略｜会話が苦手でも出会える設計",
-      "target_queries": [
-        "人見知り マッチングアプリ",
-        "内向的 婚活"
-      ],
-      "type": "attribute",
-      "notes": "メッセージ戦略・with心理テストとの相性。message-strategyへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "engineer-guide",
-      "title_hint": "エンジニア・理系向けマッチングアプリガイド｜論理派の強みを活かす戦略",
-      "target_queries": [
-        "エンジニア マッチングアプリ",
-        "理系 婚活"
-      ],
-      "type": "attribute",
-      "notes": "データ好き層に刺さる書き味。公務員記事の成功パターンを踏襲",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "seishain-igai-guide",
-      "title_hint": "非正規・フリーランスの婚活戦略｜雇用形態の壁をどう越えるか",
-      "target_queries": [
-        "フリーランス 婚活",
-        "非正規 結婚できない"
-      ],
-      "type": "attribute",
-      "notes": "検索者の悩みが深い=転換率高。誠実な現実解を提示",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kekkon-hoken-minaoshi",
-      "title_hint": "結婚したら保険はどう見直す？加入タイミングと必要保障額の考え方",
-      "target_queries": [
-        "結婚 保険 見直し",
-        "新婚 保険 いくら"
-      ],
-      "type": "attribute",
-      "notes": "【高単価】保険相談案件（1〜2万円）の受け皿。YMYL領域のため断定を避け「相談先の選び方」を主軸に。shinkon-seikatsu-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kekkon-jutaku-loan",
-      "title_hint": "結婚後の住まい選び｜賃貸か購入か・ペアローンの判断材料をデータで整理",
-      "target_queries": [
-        "結婚 家 買う タイミング",
-        "新婚 賃貸 購入 どっち"
-      ],
-      "type": "data",
-      "notes": "【高単価】住宅ローン比較・不動産案件の受け皿。転職記事と相互リンク（ローン審査と転職の関係）",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kokusai-kekkon-guide",
-      "title_hint": "国際結婚・外国人パートナーとの出会いと手続きガイド",
-      "target_queries": [
-        "国際結婚 出会い",
-        "外国人 マッチングアプリ"
-      ],
-      "type": "attribute",
-      "notes": "ニッチだが競合が薄い。手続き系の情報需要が高い",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "ouchi-date-guide",
-      "title_hint": "おうちデート完全ガイド｜付き合う前・付き合った後の過ごし方と失敗しない準備",
-      "target_queries": [
-        "おうちデート 何する",
-        "付き合う前 家デート",
-        "おうちデート 準備"
-      ],
-      "type": "attribute",
-      "notes": "【VOD案件の主力受け皿】映画・ドラマ鑑賞の文脈で動画配信サービスを自然に紹介。付き合う前のおうちデートの是非（安全面）にも誠実に触れる。first-date-guide・first-date-spotへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "amenohi-date-guide",
-      "title_hint": "雨の日デートプラン｜屋内で楽しめる過ごし方と当日の切り替え方",
-      "target_queries": [
-        "雨の日 デート",
-        "デート 雨 どうする"
-      ],
-      "type": "attribute",
-      "notes": "【VOD＋屋内施設案件】急な雨でのプラン変更対応が主軸。おうち時間の選択肢としてVODに接続。ouchi-date-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "enkyori-renai-guide",
-      "title_hint": "遠距離恋愛・遠距離婚活の続け方｜オンラインで距離を縮める具体策",
-      "target_queries": [
-        "遠距離恋愛 続け方",
-        "マッチングアプリ 遠距離"
-      ],
-      "type": "attribute",
-      "notes": "【VOD案件】同じ作品を同時視聴する等のオンラインデート手法。地方在住者の婚活（inaka-guide）とも接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "date-plan-2kaime",
-      "title_hint": "2回目・3回目のデートプラン｜関係が進む人と止まる人の違い",
-      "target_queries": [
-        "2回目 デート プラン",
-        "3回目 デート 告白"
-      ],
-      "type": "attribute",
-      "notes": "first-date-guideの続編にあたる需要。おうちデートへの移行タイミングも扱いouchi-date-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "ouchi-date-sakuhin",
-      "title_hint": "おうちデートで見る作品の選び方｜関係性の段階別・会話が生まれる作品の条件",
-      "target_queries": [
-        "おうちデート 映画 何見る",
-        "デート 映画 おすすめ 家",
-        "カップル 映画 選び方"
-      ],
-      "type": "attribute",
-      "notes": "【VOD案件の主力】作品レビューではなく『2人の関係にどう作用するか』が主語。付き合う前/交際直後/長期交際の段階別に選び方の条件を提示。作品名は例示にとどめ、あらすじの詳細引用はしない（著作権配慮）。ouchi-date-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "date-sakuhin-ng",
-      "title_hint": "デートで見ると気まずくなる作品の共通点｜避け方と代わりの選択肢",
-      "target_queries": [
-        "デート 映画 気まずい",
-        "カップル 見ちゃいけない映画"
-      ],
-      "type": "attribute",
-      "notes": "【VOD案件】失敗回避型。生々しい描写・重いテーマ・価値観が割れる作品のパターンを分類。作品名の名指し批判はせず『傾向』として扱う。ouchi-date-sakuhinと相互リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "sakuhin-kachikan",
-      "title_hint": "作品の感想でわかる相手の結婚観｜見終わったあとの会話の使い方",
-      "target_queries": [
-        "価値観 確認 デート",
-        "相手の結婚観 見極め"
-      ],
-      "type": "attribute",
-      "notes": "【VOD＋婚活の交点】作品を『価値観のリトマス紙』として使う切り口。婚活の実用記事として成立させる。message-strategy・konkatsu-roadmapへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "tenshoku-riyu-honne",
-      "title_hint": "転職理由ランキング｜結婚を意識すると重みが変わる8つの本音",
-      "target_queries": [
-        "転職理由 ランキング",
-        "転職理由 本音",
-        "結婚 転職 理由"
-      ],
-      "type": "data",
-      "notes": "【広間口パターン】給与・人間関係・WLB・勤務地・将来性・評価・独立の8理由を対等に解説しつつ、各セクション末尾は必ず『結婚を意識すると重みが変わる』という一文で着地。転職メディア顔負けの網羅性を保ちつつ主語は結婚に戻す。kekkon-tenshoku-guide・nurse-guide・civil-servant-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "shinkon-koteihi-minaoshi",
-      "title_hint": "新婚生活の固定費見直し完全ガイド｜携帯・回線・保険をまとめて最適化する",
-      "target_queries": [
-        "新婚 固定費 見直し",
-        "結婚 携帯 プラン 見直し",
-        "新生活 節約"
-      ],
-      "type": "data",
-      "notes": "【広間口パターン・ハブ記事】家族割・回線・保険を横断する固定費見直しのハブ。shinkon-seikatsu-guideの発展版として位置づけ、以下3本へ内部リンクで接続する",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kazoku-simhikaku",
-      "title_hint": "結婚後のスマホ代・格安SIM比較｜家族割・シェアプランの最適構成",
-      "target_queries": [
-        "家族割 スマホ 比較",
-        "結婚 スマホ プラン 見直し",
-        "格安sim 夫婦"
-      ],
-      "type": "data",
-      "notes": "【他サイト型移植：sim-site kazoku-sumaho-dai】2人暮らし・家族割視点を厚く。一般的な比較情報も網羅しつつ新婚読者向けセクションで差別化。shinkon-koteihi-minaoshiへ接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "futari-hikari-kaisen",
-      "title_hint": "2人暮らしの光回線選び｜賃貸の工事可否問題と結婚前後の切り替えタイミング",
-      "target_queries": [
-        "同棲 光回線",
-        "結婚 ネット回線 どうする",
-        "賃貸 光回線 工事不可"
-      ],
-      "type": "data",
-      "notes": "【他サイト型移植：sim-site chintai-hikari】賃貸の工事不可問題・名義変更のタイミングを軸に。shinkon-koteihi-minaoshiへ接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "keiyaku-jisshitsu-wana",
-      "title_hint": "新生活の契約で見落としがちな「実質」表記の罠｜携帯・保険・引越しに共通する読み解き方",
-      "target_queries": [
-        "実質無料 罠",
-        "キャッシュバック 罠",
-        "新生活 契約 注意"
-      ],
-      "type": "data",
-      "notes": "【他サイト型移植：sim-site cashback-wana】暴露型記事。携帯だけでなく保険・引越し業者の契約全般に応用可能な『実質表記の読み解き方』を提示。shinkon-koteihi-minaoshi・kekkon-hoken-minaoshiへ接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "dousei-hajimekata",
-      "title_hint": "同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール",
-      "target_queries": [
-        "同棲 始め方",
-        "同棲 初期費用",
-        "同棲 お金 分担"
-      ],
-      "type": "attribute",
-      "notes": "【新クラスタ：同棲＝結婚×引っ越しの交点】物件探し・初期費用相場・家事/生活費の分担ルールを整理。shinkon-seikatsu-guide・futari-hikari-kaisenへ内部リンク。引っ越し業者案件の受け皿にもなる",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "dousei-kekkon-hikaku",
-      "title_hint": "同棲か結婚か｜先に一緒に住むメリット・デメリットをデータで比較",
-      "target_queries": [
-        "同棲 結婚 メリット デメリット",
-        "同棲してから結婚 割合"
-      ],
-      "type": "data",
-      "notes": "【広間口パターン】同棲経由の結婚割合等の一般データを扱いつつ、結婚を意識する読者への判断材料として構成。propose-guideへ接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "dousei-kekkon-timing",
-      "title_hint": "同棲中の結婚のタイミング｜何をきっかけに入籍する人が多いか",
-      "target_queries": [
-        "同棲 結婚 タイミング",
-        "同棲何年 結婚"
-      ],
-      "type": "data",
-      "notes": "【他サイト型移植なし・純粋新規】同棲からの入籍タイミングの実態整理。propose-guide・konyaku-yubiwa-dataへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "dousei-kaisho",
-      "title_hint": "同棲解消のリアル｜うまくいかなかった時どうするか",
-      "target_queries": [
-        "同棲解消",
-        "同棲 うまくいかない"
-      ],
-      "type": "attribute",
-      "notes": "【暴露型・大手が書けない切り口】同棲メディアは基本ポジティブな話しか書かない。解消時の引っ越し・お金の精算・気まずさへの対処を率直に扱う",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kekkon-chokin-mokuhyou",
-      "title_hint": "結婚までにいくら貯めるべきか｜世帯年収別の貯金目標データ",
-      "target_queries": [
-        "結婚 貯金 いくら",
-        "結婚資金 目標額"
-      ],
-      "type": "data",
-      "notes": "【お金軸の核】婚約〜新生活までの必要額を年収別に逆算。kekkon-okane-data・konyaku-yubiwa-dataと直結するハブ的位置づけ",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "futari-kouza-kanri",
-      "title_hint": "結婚後の口座・お金の管理方法｜共通口座と費目分担の実例パターン",
-      "target_queries": [
-        "夫婦 お金 管理方法",
-        "結婚後 口座 分ける"
-      ],
-      "type": "data",
-      "notes": "shinkon-seikatsu-guideの発展。共働き前提の分担パターンを類型化",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kinsen-kachikan-check",
-      "title_hint": "結婚前に確認すべき金銭感覚のすり合わせ｜聞きにくいお金の話を切り出す方法",
-      "target_queries": [
-        "結婚前 お金の話",
-        "金銭感覚 合わない 結婚"
-      ],
-      "type": "attribute",
-      "notes": "【広間口＋暴露型】婚活で最も避けられがちな話題。message-strategy・konkatsu-roadmapへ接続。断定を避け『聞き方』を主軸に",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "rikon-okane-genjitsu",
-      "title_hint": "離婚した場合のお金の現実｜財産分与・慰謝料の基礎知識と備え方",
-      "target_queries": [
-        "離婚 財産分与 いくら",
-        "離婚 お金 現実"
-      ],
-      "type": "data",
-      "notes": "【暴露型・大手が書きにくい】結婚情報メディアはほぼ扱わない領域。不安煽りは厳禁、事実整理に徹する。kinsen-kachikan-checkと相互リンクし『備えとしての金銭感覚共有』に着地させる",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "uwaki-chousa-kiso",
-      "title_hint": "浮気・不倫調査の基礎知識｜証拠になるもの・ならないものを正しく理解する",
-      "target_queries": [
-        "浮気調査 証拠",
-        "不倫 証拠 何が必要"
-      ],
-      "type": "data",
-      "notes": "【探偵案件の本命受け皿】法律上有効な証拠の要件（決定的瞬間の写真等）と、自分で集める場合の限界・リスクを整理。感情的な煽りは一切禁止。kekkon-sokou-chousa（結婚前調査）と対になる位置づけとして相互リンク。rikon-okane-genjitsuへも接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "rikon-junbi-jyunban",
-      "title_hint": "離婚を考えたら最初にすること｜証拠集め・お金の整理・相談先の順番",
-      "target_queries": [
-        "離婚 準備 何から",
-        "離婚したい 最初にすること"
-      ],
-      "type": "attribute",
-      "notes": "rikon-okane-genjitsu・uwaki-chousa-kisoの橋渡しハブ。感情的な決断を急がせない構成にし、順序立てた実務ガイドに徹する",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "koninhiyou-guide",
-      "title_hint": "婚姻費用とは｜別居中の生活費分担の仕組みと相手が支払わない時の対処法",
-      "target_queries": [
-        "婚姻費用 相場",
-        "婚姻費用 支払わない",
-        "婚姻費用 調停"
-      ],
-      "type": "data",
-      "notes": "【離婚クラスタの重要記事】民法760条に基づく婚姻費用の基礎（算定表の考え方・請求方法）と、相手が引き延ばす場合の実務（内容証明・調停申立て）を整理。断定的な法律助言は避け『一般的な流れ』として記述し、詳細は弁護士へ相談を促す。rikon-okane-genjitsu・rikon-junbi-jyunbanと相互リンク。離婚問題に強い弁護士紹介案件の受け皿",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "usuge-konkatsu-eikyou",
-      "title_hint": "薄毛は婚活・マッチングアプリで本当に不利か｜第一印象への影響と対策の選び方",
-      "target_queries": [
-        "薄毛 婚活 不利",
-        "薄毛 マッチングアプリ 写真",
-        "薄毛 出会い 影響"
-      ],
-      "type": "attribute",
-      "notes": "【他サイト型移植：ikumo-site全般を婚活男性属性記事として統合】AGAクリニック・育毛剤メーカーどちらも中立に語れない領域。①第一印象データ②対策の費用対効果比較（クリニック/育毛剤/坊主等）③『隠すより対策して堂々と』という論点④詐欺広告の見抜き方（ikumo-site sagi-koukoku-mikata型を安全に統合）。profile-photo・40s-men・civil-servant-guideへ内部リンク。AGA/医療系リンクはYMYL慎重に扱い断定表現厳禁",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "tantei-erabikata",
-      "title_hint": "探偵事務所の選び方・料金相場比較｜依頼前に確認すべきポイント",
-      "target_queries": [
-        "探偵 料金相場",
-        "探偵事務所 選び方",
-        "探偵 比較"
-      ],
-      "type": "data",
-      "notes": "【探偵クラスタの核・大手不在領域】業界に中立比較メディアがほぼ存在しない。料金体系（着手金・成功報酬・時間制）の違い、悪徳業者の見分け方、無料相談の活用法を整理。uwaki-chousa-kiso・kekkon-sokou-chousaへ相互リンク。探偵社アフィリの本命受け皿",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "tanshin-uwaki-mikiwame",
-      "title_hint": "別居・単身赴任中の浮気の見抜き方｜物理的に離れていても分かるサイン",
-      "target_queries": [
-        "単身赴任 浮気 見抜く",
-        "別居中 浮気 サイン"
-      ],
-      "type": "attribute",
-      "notes": "uwaki-chousa-kisoの発展形・ロングテール。物理的に確認できない状況特有の視点（連絡頻度の変化・SNSの使い方等）。不安煽り厳禁、まず自分でできる観察を主軸に。tantei-erabikataへ接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "shinkon-ryokou-credit",
-      "title_hint": "新婚旅行の支払いはどのクレジットカードが得か｜旅行保険・マイル還元率で比較",
-      "target_queries": [
-        "新婚旅行 クレジットカード おすすめ",
-        "新婚旅行 クレカ 保険"
-      ],
-      "type": "data",
-      "notes": "【クレカ案件の本命受け皿】旅行保険の自動付帯条件・マイル還元率・海外利用時の為替手数料を比較。kekkon-okane-data・shinkon-koteihi-minaoshiへ内部リンク。断定を避け『比較の軸』を提示する形に",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "fuufu-credit-kanri",
-      "title_hint": "夫婦のクレジットカードは家族カードか別々か｜メリット・デメリットを整理",
-      "target_queries": [
-        "夫婦 クレジットカード 家族カード",
-        "結婚 クレカ 分ける"
-      ],
-      "type": "data",
-      "notes": "futari-kouza-kanri（口座管理）の隣接記事。家族カードの年会費優遇・利用履歴の共有可否・別々にするメリットを整理。相互リンク必須",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "gosyugi-shiharai-houhou",
-      "title_hint": "結婚式のご祝儀・支払いはクレジットカードでできる？現金以外の選択肢を整理",
-      "target_queries": [
-        "結婚式 ご祝儀 クレジットカード",
-        "ご祝儀 現金以外"
-      ],
-      "type": "data",
-      "notes": "shikijo-erabi-guide・kekkon-okane-dataへ接続。マナー面（ご祝儀は基本的に新札現金が慣習）と実務面（式場費用のクレカ払い可否）を分けて整理",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "dansei-ninkatsu-guide",
-      "title_hint": "男性の妊活準備ガイド｜「妊活は2人でするもの」検査・生活習慣・サプリの基礎知識",
-      "target_queries": [
-        "男性 妊活 何をする",
-        "妊活 男性 準備",
-        "男性不妊 検査 いつ"
-      ],
-      "type": "attribute",
-      "notes": "【新クラスタのハブ・競合弱検証済み】不妊の約半分は男性側要因という事実から。①まず検査（ブライダルチェック）②生活習慣③サプリは補助、の順で誠実に。効果断定禁止・受診勧奨必須。kekkon-madeno-kikan-data・shinkon-seikatsu-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "myseed-kuchikomi",
-      "title_hint": "マイシード（男性妊活サプリ）の口コミ・成分を検証｜亜鉛・コエンザイムQ10配合の実際",
-      "target_queries": [
-        "マイシード 口コミ",
-        "マイシード 効果 なし",
-        "マイシード 成分"
-      ],
-      "type": "data",
-      "notes": "【商品名×競合弱（無料ブログのみ）検証済み】成分の事実（亜鉛・還元型CoQ10・ソイポリア）と公式の訴求を分離して整理。効果断定禁止・薬機法厳守・「新しい精子の生成に約74日」等は一般論として出典付きで。dansei-ninkatsu-guideへ接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "mitocore-kuchikomi",
-      "title_hint": "ミトコア300mgの口コミ・成分を検証｜ミトコンドリアサプリの実際と選び方",
-      "target_queries": [
-        "ミトコア 口コミ",
-        "ミトコア 効果",
-        "ミトコンドリア サプリ 妊活"
-      ],
-      "type": "data",
-      "notes": "【商品名×競合弱】イースタティックミネラル等の成分事実を整理。夫婦で飲むタイプという特徴。薬機法厳守。dansei-ninkatsu-guideへ接続",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "mitas-formen-kuchikomi",
-      "title_hint": "mitas for men（ミタス男性用）の口コミ・成分検証｜夫婦で始める妊活サプリ",
-      "target_queries": [
-        "mitas for men 口コミ",
-        "ミタス 男性用",
-        "mitas 夫婦"
-      ],
-      "type": "data",
-      "notes": "【afb案件確認済み＝収益直結】女性用mitasとの夫婦セット訴求が特徴。承認後CTA設置予定。dansei-ninkatsu-guide・myseed-kuchikomiと相互リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "bridal-inner-guide",
-      "title_hint": "ブライダルインナーはどこで買う？必要性・選び方・専門店比較【後悔しない準備】",
-      "target_queries": [
-        "ブライダルインナー どこで買う",
-        "ブライダルインナー 必要",
-        "ブライダルインナー 安い"
-      ],
-      "type": "data",
-      "notes": "【競合弱検証済み（アメブロ・小規模アフィリ主体）】ユニクロ等で代用できるか・専門店（tu-hacci/LuXY等）の価格帯比較・試着交換条件の整理。shikijo-erabi-guide・bridal-esthe-guide・maedori-photo-guideへ内部リンク。EC案件確認後にリンク設置",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "mens-make-konkatsu",
-      "title_hint": "婚活・マッチングアプリ写真のためのメンズメイク入門｜BBクリーム1本から始める第一印象改善",
-      "target_queries": [
-        "メンズメイク 婚活",
-        "マッチングアプリ 写真 メイク 男",
-        "BBクリーム メンズ 自然"
-      ],
-      "type": "attribute",
-      "notes": "【交差点空白検証済み（個人note程度しか競合なし）】青髭・クマ・ニキビ跡のカバーという実用軸。「メイクは女性のもの」という抵抗感への丁寧な導入。konkatsu-photo-guide・profile-photo・usuge-konkatsu-eikyouへ内部リンク。メンズコスメ案件の受け皿",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "shinkon-osechi",
-      "title_hint": "新婚夫婦の初めてのおせち｜ふたり用おせち通販の選び方と早割カレンダー",
-      "target_queries": [
-        "おせち 二人用 おすすめ",
-        "新婚 おせち どうする",
-        "おせち 早割 いつから"
-      ],
-      "type": "data",
-      "notes": "【季節仕込み・12月末需要を7〜9月に先回り】ふたり用サイズの選び方・早割時期（9月開始が多い）・冷凍/冷蔵の違い。「初めての正月をどう過ごすか」という新婚文脈で。shinkon-seikatsu-guide・futari-kouza-kanri（お金）へ内部リンク。おせち通販案件（博多久松・Oisix等）の受け皿",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kekkon-houkoku-nengajou",
-      "title_hint": "結婚報告はがき・年賀状の作り方｜文例・写真選び・出す範囲のマナー",
-      "target_queries": [
-        "結婚報告 年賀状 文例",
-        "結婚報告はがき いつ",
-        "年賀状 結婚報告 写真なし"
-      ],
-      "type": "attribute",
-      "notes": "【季節仕込み・年賀状印刷案件の本命受け皿】文例・出す範囲（職場/親族/友人）・写真あり/なしの判断・喪中との重なり対応。maedori-photo-guide（前撮り写真の活用）と自然に接続。印刷案件（しまうまプリント等）は9月頃から開始",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "kisei-kekkon-aisatsu",
-      "title_hint": "年末年始の帰省と結婚挨拶・手土産ガイド｜両家との初めての正月の乗り切り方",
-      "target_queries": [
-        "帰省 結婚挨拶 手土産",
-        "義実家 正月 手土産",
-        "結婚後 初めての正月"
-      ],
-      "type": "attribute",
-      "notes": "【季節仕込み】婚約中〜新婚1年目の「両家との正月」の悩みに応える。手土産の相場・滞在マナー・どちらの実家を優先するか問題。propose-guide・shinkon-seikatsu-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-26"
-    },
-    {
-      "slug": "appkon-wariai-data",
-      "title_hint": "アプリ婚・マッチングアプリ経由の婚姻割合データ【2026年版】出会い方別の推移と現状",
-      "target_queries": [
-        "アプリ婚 割合",
-        "マッチングアプリ 結婚 割合",
-        "アプリで出会った 結婚"
-      ],
-      "type": "data",
-      "notes": "NIPSSR調査・ブライダル総研データをもとに婚姻割合推移を表化。success-rate-dataとの差別化は全体割合推移vs.アプリ内成功率。inaka-guide・kekkon-madeno-kikan-dataへ内部リンク",
-      "status": "done",
-      "published": "2026-07-27"
-    },
-    {
-      "slug": "matching-dansei-cost-data",
-      "title_hint": "マッチングアプリの男性費用データ【2026年版】月額・利用期間・総額の実態と節約策",
-      "target_queries": [
-        "マッチングアプリ 男性 費用",
-        "マッチングアプリ 月額 男性",
-        "マッチングアプリ いくらかかった"
-      ],
-      "type": "data",
-      "notes": "主要アプリの男性月額・利用期間・総費用シミュレーション表。youbride-guide・konkatsu-photo-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-27"
-    },
-    {
-      "slug": "konkatsu-party-guide",
-      "title_hint": "婚活パーティーの選び方と料金相場【2026年版】アプリ・相談所との使い分け",
-      "target_queries": [
-        "婚活パーティー 相場",
-        "婚活パーティー 選び方",
-        "お見合いパーティー 料金"
-      ],
-      "type": "data",
-      "notes": "【提携済み案件の受け皿：IBJ PARTY☆PARTY・OTOCON】アプリ/相談所と並ぶ第3の選択肢として料金体系・形式（個室/着席/立食）・年齢層別の選び方を整理。compare-konkatsu・soudanjo-hikaku・app-plus-agencyへ内部リンク",
-      "status": "done",
-      "published": "2026-07-28"
-    },
-    {
-      "slug": "kekkon-uchiiwai-guide",
-      "title_hint": "結婚内祝いのマナー完全ガイド｜相場・時期・のし・品物の選び方",
-      "target_queries": [
-        "結婚内祝い 相場",
-        "内祝い いつまで",
-        "結婚祝い お返し"
-      ],
-      "type": "attribute",
-      "notes": "【提携済み案件の受け皿：シャディギフトモール】金額の半返し原則・贈る時期（1ヶ月以内）・のし/表書き・職場や連名でもらった場合の対応。kekkon-houkoku-nengajou・gosyugi-shiharai-houhouへ内部リンク",
-      "status": "done",
-      "published": "2026-07-28"
-    },
-    {
-      "slug": "pair-ring-guide",
-      "title_hint": "ペアリングの選び方と相場データ｜婚約指輪との違い・つける指の意味",
-      "target_queries": [
-        "ペアリング 相場",
-        "ペアリング 選び方",
-        "カップル 指輪 意味"
-      ],
-      "type": "data",
-      "notes": "【提携済み案件の受け皿：THE KISS・L&Co.・ZEXIMO】交際段階のペアリングと婚約指輪の役割の違いを整理。価格帯別の素材（シルバー/ステンレス/K10）・刻印・サイズ選び。konyaku-yubiwa-data・propose-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-28"
-    },
-    {
-      "slug": "kaden-rental-vs-kounyu",
-      "title_hint": "新婚の家電はレンタルと購入どちらが得か｜損益分岐点をデータで検証",
-      "target_queries": [
-        "家電 レンタル 購入 どっち",
-        "新婚 家電 費用",
-        "家電サブスク 比較"
-      ],
-      "type": "data",
-      "notes": "【提携済み案件の受け皿：家電レンタルみんなのHappy】利用年数別の総額比較表が核。転勤族・同棲から結婚に移行する層の判断材料。shinkon-seikatsu-guide・dousei-hajimekata・kekkon-okane-dataへ内部リンク",
-      "status": "done",
-      "published": "2026-07-28"
-    },
-    {
-      "slug": "tomobataraki-shokuji-data",
-      "title_hint": "共働き夫婦の食事はどうしている？自炊・ミールキット・外食の費用と時間データ",
-      "target_queries": [
-        "共働き 夫婦 食事",
-        "ミールキット 高い",
-        "共働き 自炊 時間"
-      ],
-      "type": "data",
-      "notes": "【提携済み案件の受け皿：Oisixおためしセット・Kit Oisix】自炊/ミールキット/惣菜/外食の1食あたり費用と所要時間の比較表。家事分担の話にも接続。futari-kouza-kanri・shinkon-koteihi-minaoshiへ内部リンク",
-      "status": "done",
-      "published": "2026-07-28"
-    },
-    {
-      "slug": "dousei-nimotsu-trunkroom",
-      "title_hint": "同棲・結婚で荷物が入らない問題｜処分とトランクルームの料金相場",
-      "target_queries": [
-        "同棲 荷物 多い",
-        "トランクルーム 料金 相場",
-        "二人暮らし 収納 足りない"
-      ],
-      "type": "data",
-      "notes": "【提携済み案件の受け皿：ハローストレージ】2人の荷物が合流する時の実務。処分/実家/トランクルームの判断基準とサイズ別料金相場表。dousei-hajimekata・shinkon-seikatsu-guideへ内部リンク",
-      "status": "done",
-      "published": "2026-07-28"
-    },
-    {
-      "slug": "shinkyo-kagu-yosan",
-      "title_hint": "新居の家具・インテリア予算データ｜二人暮らしで最初に買うものと後回しでいいもの",
-      "target_queries": [
-        "新婚 家具 予算",
-        "二人暮らし 家具 いくら",
-        "新生活 家具 買う順番"
-      ],
-      "type": "data",
-      "notes": "【提携済み案件の受け皿：カヴァース・ベッドスタイル・輸入雑貨イエ・RIVERET等デザイン食器】品目別の相場表と『最初に買う/後回し』の優先順位が核。ベッド・ソファ・食器の選び方で2人の生活スタイル差をどう埋めるか。shinkon-seikatsu-guide・dousei-hajimekata・kekkon-chokin-mokuhyouへ内部リンク",
-      "status": "done",
-      "published": "2026-07-28"
-    },
-    {
-      "slug": "yachin-credit-shiharai",
-      "title_hint": "家賃はクレジットカードで払える？手数料とポイント還元の損得を計算",
-      "target_queries": [
-        "家賃 クレジットカード 払える",
-        "家賃 クレカ 手数料",
-        "家賃 ポイント 還元"
-      ],
-      "type": "data",
-      "notes": "【提携済み案件の受け皿：クレカリ賃貸】手数料率とポイント還元率の損益分岐計算が核（多くは手数料が還元を上回るが、条件次第で逆転）。管理会社が対応していない場合の代行サービスという選択肢。fuufu-credit-kanri・shinkon-koteihi-minaoshi・dousei-hajimekataへ内部リンク",
-      "status": "done",
-      "published": "2026-07-28"
-    },
-    {
-      "slug": "matching-josei-cost-data",
-      "title_hint": "マッチングアプリの女性費用データ【2026年版】無料で使える範囲と有料が必要なケース",
-      "target_queries": [
-        "マッチングアプリ 女性 費用",
-        "マッチングアプリ 女性 無料",
-        "婚活アプリ 女性 料金"
-      ],
-      "type": "data",
-      "notes": "matching-dansei-cost-dataの対になるデータ記事。女性向け料金設計の非対称性（恋活系無料・婚活特化有料）を整理。ユーブライドCTA×2。",
-      "status": "done",
-      "published": "2026-07-30"
-    },
-    {
-      "slug": "hatsushon-nenmei-data",
-      "title_hint": "初婚年齢の平均データ【2026年版】男女別推移と婚活を始めるべき年齢",
-      "target_queries": [
-        "初婚年齢 平均",
-        "結婚 平均年齢 2026",
-        "婚活 年齢 データ"
-      ],
-      "type": "data",
-      "notes": "厚生労働省 人口動態調査を一次ソースとする統計ハブ記事。晩婚化トレンドと年代別婚活戦略を解説。ユーブライドCTA×2。",
-      "status": "done",
-      "published": "2026-07-30"
-    }
-  ]
+ "description": "記事工場の生成キュー。エージェントは毎回pendingの先頭2件を処理する。優先度順に並んでいる。",
+ "queue": [
+  {
+   "slug": "youbride-seikon-data",
+   "title_hint": "ユーブライドの成婚率は公表されているか｜成婚退会者数の実数と読み方",
+   "target_queries": [
+    "ユーブライド 成婚率",
+    "ユーブライド 成婚 実績",
+    "youbride 成婚退会"
+   ],
+   "type": "app-data",
+   "status": "done",
+   "published": "2026-08-03",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "marrish-saikon-data",
+   "title_hint": "マリッシュの再婚成婚データ｜シンパパ・シンママ優遇の実態を公表値で確認する",
+   "target_queries": [
+    "マリッシュ 成婚率",
+    "マリッシュ 再婚 実績",
+    "marrish 成婚"
+   ],
+   "type": "app-data",
+   "status": "done",
+   "published": "2026-08-03",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "zexy-enmusubi-data",
+   "title_hint": "ゼクシィ縁結びの成婚率｜リクルートが公表している数字と、していない数字",
+   "target_queries": [
+    "ゼクシィ縁結び 成婚率",
+    "ゼクシィ縁結び 実績",
+    "ゼクシィ縁結び 会員数"
+   ],
+   "type": "app-data",
+   "status": "done",
+   "published": "2026-08-10",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "pairs-kaiin-data",
+   "title_hint": "Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する",
+   "target_queries": [
+    "pairs 会員数",
+    "ペアーズ 会員数 推移",
+    "pairs 累計"
+   ],
+   "type": "app-data",
+   "status": "done",
+   "published": "2026-08-10",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "omiai-danjohi-data",
+   "title_hint": "Omiaiの男女比｜公表データと、比率が体感と食い違う理由",
+   "target_queries": [
+    "omiai 男女比",
+    "omiai 女性 割合",
+    "おみあい 男女比"
+   ],
+   "type": "app-data",
+   "status": "pending",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "with-nenreiso-data",
+   "title_hint": "withの年齢層｜20代中心と言われる根拠を公表データで確認する",
+   "target_queries": [
+    "with 年齢層",
+    "with 20代",
+    "with 会員 年齢"
+   ],
+   "type": "app-data",
+   "status": "pending",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "tapple-kaiin-data",
+   "title_hint": "Tappleの会員数と年齢構成｜「20代が多い」は数字で言えるのか",
+   "target_queries": [
+    "タップル 会員数",
+    "タップル 年齢層",
+    "tapple 会員"
+   ],
+   "type": "app-data",
+   "status": "pending",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "bachelor-shinsa-data",
+   "title_hint": "バチェラーデートの審査通過率は公表されているか｜審査制の実態を確認する",
+   "target_queries": [
+    "バチェラーデート 審査",
+    "バチェラーデート 通過率",
+    "バチェラーデート 落ちた"
+   ],
+   "type": "app-data",
+   "status": "pending",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "app-ryokin-kaitei-data",
+   "title_hint": "主要マッチングアプリの料金改定履歴｜いつ・いくら上がったかの実データ",
+   "target_queries": [
+    "マッチングアプリ 値上げ",
+    "pairs 料金 改定",
+    "マッチングアプリ 料金 推移"
+   ],
+   "type": "app-data",
+   "status": "pending",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "app-taikai-riyu-data",
+   "title_hint": "マッチングアプリの退会理由データ｜公表調査から見る「やめる人」の内訳",
+   "target_queries": [
+    "マッチングアプリ 退会 理由",
+    "マッチングアプリ やめた",
+    "マッチングアプリ 継続率"
+   ],
+   "type": "app-data",
+   "status": "pending",
+   "notes": "【型A: アプリ指名×公表データ】2026-08-01の実測で唯一1ページ目に入っている型（with-seriousness-data 5.0位・omiai-guide 6.7位）。**公表されていなければ「非公表である」と正直に書くこと自体が価値**。推測値・独自試算を成婚率として提示するのは禁止。アプリ自体に案件はないので、CTAはユーブライド/マリッシュ/相談所へ。"
+  },
+  {
+   "slug": "yakuzaishi-konkatsu",
+   "title_hint": "薬剤師の婚活｜職場に出会いがない構造と、勤務形態別の現実的な進め方",
+   "target_queries": [
+    "薬剤師 婚活",
+    "薬剤師 出会い",
+    "薬剤師 結婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "hoikushi-konkatsu",
+   "title_hint": "保育士の婚活｜女性中心の職場で出会いをどこに作るか",
+   "target_queries": [
+    "保育士 婚活",
+    "保育士 出会い",
+    "保育士 結婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "kaigo-konkatsu",
+   "title_hint": "介護職の婚活｜シフト勤務と収入の話をどう扱うか",
+   "target_queries": [
+    "介護士 婚活",
+    "介護職 出会い",
+    "介護 結婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "kyoushi-konkatsu",
+   "title_hint": "教員の婚活｜部活・保護者対応で時間が取れない人の進め方",
+   "target_queries": [
+    "教師 婚活",
+    "教員 出会い",
+    "先生 結婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "keisatsu-shoubou-konkatsu",
+   "title_hint": "警察官・消防士の婚活｜身分の伝え方と当直勤務の調整",
+   "target_queries": [
+    "警察官 婚活",
+    "消防士 出会い",
+    "警察官 結婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "bank-konkatsu",
+   "title_hint": "銀行員・金融職の婚活｜転勤前提のキャリアをどう説明するか",
+   "target_queries": [
+    "銀行員 婚活",
+    "金融 出会い",
+    "銀行員 結婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "tenkinzoku-konkatsu",
+   "title_hint": "転勤族の婚活｜数年で動く前提の相手探しと、遠距離の扱い",
+   "target_queries": [
+    "転勤族 婚活",
+    "転勤 結婚 不安",
+    "転勤族 出会い"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "jikka-gurashi-konkatsu",
+   "title_hint": "実家暮らしは婚活で不利か｜データと、プロフィールでの書き方",
+   "target_queries": [
+    "実家暮らし 婚活",
+    "実家暮らし 結婚 不利",
+    "実家 一人暮らし 婚活"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "chounan-chojo-konkatsu",
+   "title_hint": "長男・長女の結婚｜同居と介護の話をいつ切り出すか",
+   "target_queries": [
+    "長男 結婚 同居",
+    "長女 結婚 実家",
+    "跡継ぎ 婚活"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "bishoushi-konkatsu",
+   "title_hint": "美容師・理容師の婚活｜土日休みでない職業の相手探し",
+   "target_queries": [
+    "美容師 婚活",
+    "美容師 出会い",
+    "土日 休みじゃない 婚活"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "【型B: 属性×婚活】インデックス率100%の型（2026-08-01実測）。競合が薄く検索意図が明確。職業や属性を有利/不利で語らず、実務論点に徹する。属性特化の高単価案件（白衣コン等）の受け皿。"
+  },
+  {
+   "slug": "kanazawa-toyama-guide",
+   "title_hint": "金沢・富山の婚活｜北陸で相手を探すときのエリアと移動の現実",
+   "target_queries": [
+    "金沢 婚活",
+    "富山 婚活",
+    "北陸 出会い"
+   ],
+   "type": "region",
+   "status": "pending",
+   "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
+  },
+  {
+   "slug": "okayama-takamatsu-guide",
+   "title_hint": "岡山・高松の婚活｜瀬戸内エリアの人口動態と出会いの場",
+   "target_queries": [
+    "岡山 婚活",
+    "高松 婚活",
+    "瀬戸内 出会い"
+   ],
+   "type": "region",
+   "status": "pending",
+   "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
+  },
+  {
+   "slug": "kumamoto-kagoshima-guide",
+   "title_hint": "熊本・鹿児島の婚活｜九州南部で選択肢を広げる方法",
+   "target_queries": [
+    "熊本 婚活",
+    "鹿児島 婚活",
+    "九州 出会い"
+   ],
+   "type": "region",
+   "status": "pending",
+   "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
+  },
+  {
+   "slug": "kitakanto-guide",
+   "title_hint": "北関東（宇都宮・前橋・水戸）の婚活｜東京に吸われないエリアの使い方",
+   "target_queries": [
+    "宇都宮 婚活",
+    "前橋 婚活",
+    "水戸 出会い"
+   ],
+   "type": "region",
+   "status": "pending",
+   "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
+  },
+  {
+   "slug": "nagano-gifu-guide",
+   "title_hint": "長野・岐阜の婚活｜移動距離が長い地域での相手探し",
+   "target_queries": [
+    "長野 婚活",
+    "岐阜 婚活",
+    "中部 出会い"
+   ],
+   "type": "region",
+   "status": "pending",
+   "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
+  },
+  {
+   "slug": "tohoku-guide",
+   "title_hint": "東北（青森・岩手・秋田・山形・福島）の婚活｜人口減エリアの現実的な戦略",
+   "target_queries": [
+    "東北 婚活",
+    "青森 婚活",
+    "福島 出会い"
+   ],
+   "type": "region",
+   "status": "pending",
+   "notes": "【型B: 地域×婚活】インデックス率91%の型（2026-08-01実測）。人口・婚姻率などの公的データとエリア分けの実務で書く。地方を不利な立場として描かない。"
+  },
+  {
+   "slug": "nurse-osaka-konkatsu",
+   "title_hint": "大阪の看護師が婚活するなら｜夜勤ありのシフトで会える場所と時間帯",
+   "target_queries": [
+    "看護師 婚活 大阪",
+    "大阪 看護師 出会い",
+    "看護師 夜勤 婚活"
+   ],
+   "type": "attribute-region",
+   "status": "pending",
+   "notes": "【型B: 属性×地域】最も競合が薄い掛け算。両方の検索意図を満たす。属性側の実務（勤務形態・出会いの場）と地域側の実務（エリア・交通）を両方入れる。"
+  },
+  {
+   "slug": "nurse-fukuoka-konkatsu",
+   "title_hint": "福岡の看護師の婚活｜勤務先エリア別の動きやすさで選ぶ",
+   "target_queries": [
+    "看護師 婚活 福岡",
+    "福岡 看護師 出会い"
+   ],
+   "type": "attribute-region",
+   "status": "pending",
+   "notes": "【型B: 属性×地域】最も競合が薄い掛け算。両方の検索意図を満たす。属性側の実務（勤務形態・出会いの場）と地域側の実務（エリア・交通）を両方入れる。"
+  },
+  {
+   "slug": "civil-servant-nagoya-konkatsu",
+   "title_hint": "名古屋の公務員の婚活｜身バレを避けながら進める方法",
+   "target_queries": [
+    "公務員 婚活 名古屋",
+    "名古屋 公務員 出会い"
+   ],
+   "type": "attribute-region",
+   "status": "pending",
+   "notes": "【型B: 属性×地域】最も競合が薄い掛け算。両方の検索意図を満たす。属性側の実務（勤務形態・出会いの場）と地域側の実務（エリア・交通）を両方入れる。"
+  },
+  {
+   "slug": "engineer-tokyo-konkatsu",
+   "title_hint": "東京のエンジニアの婚活｜リモート勤務で出会いが減った人の設計",
+   "target_queries": [
+    "エンジニア 婚活 東京",
+    "IT 出会い 東京",
+    "リモート 出会いがない"
+   ],
+   "type": "attribute-region",
+   "status": "pending",
+   "notes": "【型B: 属性×地域】最も競合が薄い掛け算。両方の検索意図を満たす。属性側の実務（勤務形態・出会いの場）と地域側の実務（エリア・交通）を両方入れる。"
+  },
+  {
+   "slug": "kounyuu-dansei-konkatsu",
+   "title_hint": "年収600万以上の男性と結婚したい人へ｜公的データで見る「実際の割合」と現実的な戦略",
+   "target_queries": [
+    "高収入 男性 婚活",
+    "年収 600万 結婚",
+    "ハイスペ 男性 出会い"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "A8提携済【セレブ婚】(s00000016807005)の受け皿。国税庁『民間給与実態統計調査』で年収帯の実数を出す。玉の輿を煽る書き方は禁止。母数の少なさを正直に示した上で、属性特化型の相談所という選択肢を比較の1つとして置く"
+  },
+  {
+   "slug": "osake-konkatsu",
+   "title_hint": "お酒好き同士の婚活｜「飲み方の価値観」が合わないと結婚後に何が起きるか",
+   "target_queries": [
+    "お酒好き 婚活",
+    "飲み会 出会い 結婚",
+    "お酒 価値観 結婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "A8提携済【お酒婚】(s00000016807007)の受け皿。競合ほぼ不在だが検索需要は小さいので優先度は低め。飲酒量・家計・同居後のトラブルという実務論点を主軸にし、飲酒を推奨する書き方はしない"
+  },
+  {
+   "slug": "pocchari-konkatsu",
+   "title_hint": "ぽっちゃり女性の婚活は不利なのか｜データと「体型を書く/書かない」の判断",
+   "target_queries": [
+    "ぽっちゃり 婚活",
+    "ぽっちゃり マッチングアプリ",
+    "体型 プロフィール 婚活"
+   ],
+   "type": "attribute",
+   "status": "done",
+   "notes": "A8提携済【ぽちゃ婚】(s00000016807001)の受け皿。体型を欠点として扱う書き方は禁止。プロフィールに体型をどう書くかの実務に徹する",
+   "published": "2026-08-09"
+  },
+  {
+   "slug": "otaku-konkatsu",
+   "title_hint": "オタク趣味は婚活で隠すべきか｜同じ趣味の相手を探す場所の選び方",
+   "target_queries": [
+    "オタク 婚活",
+    "アニメ好き 結婚相談所",
+    "趣味 婚活 アプリ"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "A8提携済【ヲタ婚】(s00000016807002)の受け皿。趣味を隠す前提で書かない。属性特化の相談所という選択肢を比較の1つとして置く"
+  },
+  {
+   "slug": "kodure-saikon-guide",
+   "title_hint": "子連れ再婚のリアル｜相手の子どもとの関係・養育費・タイミングをどう扱うか",
+   "target_queries": [
+    "子連れ 再婚",
+    "子持ち 婚活",
+    "シングルマザー 再婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "A8提携済【子持ち婚】(s00000016807009)の受け皿。batsuichi-guideは離婚歴の伝え方が主題なので、こちらは子どもを軸に分ける。不安を煽らない"
+  },
+  {
+   "slug": "pet-konkatsu",
+   "title_hint": "ペット可の相手をどう探すか｜動物好き同士の婚活と同居後に揉める論点",
+   "target_queries": [
+    "ペット 婚活",
+    "犬好き 出会い",
+    "猫 同棲 結婚"
+   ],
+   "type": "attribute",
+   "status": "pending",
+   "notes": "A8提携済【ペット婚】(s00000016807006)の受け皿。競合ほぼ不在。同居後のアレルギー・費用・世話分担という実務論点を主軸に"
+  },
+  {
+   "slug": "sapporo-guide",
+   "title_hint": "札幌でマッチングアプリを使うなら｜出会えるアプリTOP3とすすきの・大通エリア攻略法",
+   "target_queries": [
+    "マッチングアプリ 札幌",
+    "札幌 出会い アプリ"
+   ],
+   "type": "regional",
+   "notes": "冬デート（屋内スポット）・車社会・すすきの/大通/札幌駅のエリア分け",
+   "status": "done",
+   "published": "2026-07-04"
+  },
+  {
+   "slug": "pairs-marriage-data",
+   "title_hint": "ペアーズの成婚率・結婚データ【2026年版】本当に結婚できるのか公式数値で検証",
+   "target_queries": [
+    "ペアーズ 成婚率",
+    "pairs 結婚率",
+    "ペアーズ 結婚 データ"
+   ],
+   "type": "data",
+   "notes": "公式発表（毎月約13,000人に恋人）を軸に。成婚率は非公表であることを正直に書く。success-rate-dataへ内部リンク",
+   "status": "done",
+   "published": "2026-07-04"
+  },
+  {
+   "slug": "kyoto-guide",
+   "title_hint": "京都でマッチングアプリを使うなら｜出会えるアプリTOP3と河原町・烏丸エリア攻略法",
+   "target_queries": [
+    "マッチングアプリ 京都",
+    "京都 出会い アプリ"
+   ],
+   "type": "regional",
+   "notes": "学生都市（大学生比率高）・観光地デートの使い分け・鴨川/河原町/烏丸",
+   "status": "done",
+   "published": "2026-07-06"
+  },
+  {
+   "slug": "with-seriousness-data",
+   "title_hint": "withの真剣度・結婚データ【2026年版】恋活アプリで婚活はできるのか検証",
+   "target_queries": [
+    "with 真剣度",
+    "with 結婚率",
+    "ウィズ 婚活 できる"
+   ],
+   "type": "data",
+   "notes": "心理テスト機能と真剣度の関係。20代後半の婚活転用がテーマ",
+   "status": "done",
+   "published": "2026-07-06"
+  },
+  {
+   "slug": "kobe-yokohama-guide",
+   "title_hint": "神戸・横浜でマッチングアプリを使うなら｜港町2都市の出会いエリア攻略法",
+   "target_queries": [
+    "マッチングアプリ 神戸",
+    "マッチングアプリ 横浜"
+   ],
+   "type": "regional",
+   "notes": "大都市隣接都市の共通戦略（大阪/東京に吸われない使い方）。三宮・元町/みなとみらい・関内",
+   "status": "done",
+   "published": "2026-07-13"
+  },
+  {
+   "slug": "civil-servant-guide",
+   "title_hint": "公務員向けマッチングアプリガイド｜身バレを防ぎつつ堅実に出会う方法",
+   "target_queries": [
+    "公務員 マッチングアプリ",
+    "公務員 出会い"
+   ],
+   "type": "attribute",
+   "notes": "身バレ対策記事（privacy-protection）へ内部リンク。公務員が人気属性である事実と注意点",
+   "status": "done",
+   "published": "2026-07-13"
+  },
+  {
+   "slug": "nurse-guide",
+   "title_hint": "看護師向けマッチングアプリガイド｜不規則勤務でも出会える使い方",
+   "target_queries": [
+    "看護師 マッチングアプリ",
+    "看護師 出会い ない"
+   ],
+   "type": "attribute",
+   "notes": "シフト勤務×デート調整の具体戦略。夜勤明けデートのリアル",
+   "status": "done",
+   "published": "2026-07-20"
+  },
+  {
+   "slug": "batsuichi-guide",
+   "title_hint": "バツイチ・再婚向けマッチングアプリガイド｜再婚に強いアプリと書き方",
+   "target_queries": [
+    "バツイチ マッチングアプリ",
+    "再婚 アプリ おすすめ"
+   ],
+   "type": "attribute",
+   "notes": "マリッシュ（再婚優遇）を軸に。離婚歴のプロフィール開示タイミング",
+   "status": "done",
+   "published": "2026-07-20"
+  },
+  {
+   "slug": "youbride-guide",
+   "title_hint": "ユーブライド完全ガイド【2026年版】評判・料金・成婚実績を徹底検証",
+   "target_queries": [
+    "ユーブライド 評判",
+    "ユーブライド 料金",
+    "youbride 口コミ",
+    "ユーブライド 成婚率"
+   ],
+   "type": "app-guide",
+   "notes": "収益最重要記事。成婚退会者年間2,000名超（公式）を軸に。30代後半〜40代の真剣婚活層向け。success-rate-data・compare-konkatsu・30s-konkatsu・40s-guideへ内部リンク。既存記事20本からこの記事への内部リンクも追加すること",
+   "status": "done",
+   "published": "2026-07-24"
+  },
+  {
+   "slug": "marrish-guide",
+   "title_hint": "マリッシュ完全ガイド【2026年版】バツイチ・再婚に強い理由と評判・料金",
+   "target_queries": [
+    "マリッシュ 評判",
+    "マリッシュ バツイチ",
+    "marrish 口コミ",
+    "再婚 マッチングアプリ"
+   ],
+   "type": "app-guide",
+   "notes": "収益重要記事。シンパパシンママ優遇プログラム・再婚成婚報告の多さを軸に。batsuichi-guide・40s-guide・app-plus-agencyへ内部リンク。既存の言及9記事からこの記事への内部リンクも追加すること",
+   "status": "done",
+   "published": "2026-07-24"
+  },
+  {
+   "slug": "youbride-marrish-hikaku",
+   "title_hint": "ユーブライドとマリッシュを徹底比較｜年代・目的別にどちらを選ぶべきか",
+   "target_queries": [
+    "ユーブライド マリッシュ 比較",
+    "ユーブライド マリッシュ どっち"
+   ],
+   "type": "data",
+   "notes": "提携済み2商材の指名比較＝最高転換率が狙える記事。両CTA設置",
+   "status": "done",
+   "published": "2026-07-25"
+  },
+  {
+   "slug": "app-tsukare-guide",
+   "title_hint": "マッチングアプリ疲れの原因と対処法｜やめる前に試す3つの選択肢",
+   "target_queries": [
+    "マッチングアプリ 疲れた",
+    "アプリ疲れ 婚活"
+   ],
+   "type": "attribute",
+   "notes": "疲れ→相談所・サポート型サービスへの導線記事。ユーブライドCTA＋相談所比較へ内部リンク",
+   "status": "done",
+   "published": "2026-07-25"
+  },
+  {
+   "slug": "soudanjo-hikaku",
+   "title_hint": "結婚相談所の料金比較【2026年版】オンライン型は本当に安いのか検証",
+   "target_queries": [
+    "結婚相談所 料金 比較",
+    "オンライン結婚相談所 比較"
+   ],
+   "type": "data",
+   "notes": "高単価案件の受け皿。naco-do・スマリッジ・ブライダルネット比較。承認後にリンク挿入",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kekkon-okane-data",
+   "title_hint": "結婚にかかるお金の総額データ【2026年版】婚約から新生活までの費用を全部見える化",
+   "target_queries": [
+    "結婚 費用 総額",
+    "結婚 お金 いくら"
+   ],
+   "type": "data",
+   "notes": "ライフイベント軸のハブ記事。婚約指輪・式・新婚旅行・新生活の費用を公的調査（ゼクシィ結婚トレンド調査等・出典明記）で表化。全ブライダル記事から内部リンクを集める",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "shikijo-erabi-guide",
+   "title_hint": "結婚式場探し完全ガイド【2026年版】見学予約サイトの特典比較と失敗しない回り方",
+   "target_queries": [
+    "式場探し いつから",
+    "式場見学 特典 比較",
+    "ハナユメ ゼクシィ どっち"
+   ],
+   "type": "app-guide",
+   "notes": "高単価案件（ハナユメ・ゼクシィ等＝見学予約1〜2万円級）の受け皿。承認前でも公式リンクで公開し承認後にCTA差し替え",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "konyaku-yubiwa-data",
+   "title_hint": "婚約指輪の相場データ【2026年版】「給料3ヶ月分」は本当か統計で検証",
+   "target_queries": [
+    "婚約指輪 相場",
+    "婚約指輪 平均 いくら"
+   ],
+   "type": "data",
+   "notes": "データ型の勝ちパターン。年代別・地域別相場表。指輪ブランド資料請求案件の受け皿",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kekkon-tenshoku-guide",
+   "title_hint": "結婚を機に転職すべきか｜収入・勤務地・働き方を見直すタイミングと判断基準",
+   "target_queries": [
+    "結婚 転職 タイミング",
+    "結婚 きっかけ 転職",
+    "婚約 転職 いつ"
+   ],
+   "type": "attribute",
+   "notes": "【高単価】転職エージェント案件（1〜3万円）の受け皿。婚活/結婚文脈に完全接続。住宅ローン審査への影響・入籍前後どちらが有利かを軸に。konkatsu-roadmap・kekkon-okane-dataへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kekkon-sokou-chousa",
+   "title_hint": "結婚前の身元・素行調査は必要か｜費用相場と依頼前に自分でできる確認",
+   "target_queries": [
+    "結婚前 身元調査",
+    "婚前調査 費用",
+    "マッチングアプリ 相手 調べる"
+   ],
+   "type": "attribute",
+   "notes": "【高単価】探偵・調査会社案件（1〜3万円）の受け皿。煽らず「まず自分でできる確認」を主軸にし、依頼は最終手段として提示。fraud-detection・safety-guideへ内部リンク。断定・不安煽り表現は厳禁",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "bachelor-date-guide",
+   "title_hint": "バチェラーデート完全ガイド【2026年版】審査制AIデーティングの評判と向き不向き",
+   "target_queries": [
+    "バチェラーデート 評判",
+    "バチェラーデート 審査"
+   ],
+   "type": "app-guide",
+   "notes": "A8申請中の受け皿を先行準備。承認後にCTA挿入",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "konkatsu-photo-guide",
+   "title_hint": "婚活・マッチングアプリのプロフィール写真戦略｜プロ撮影は投資に値するか",
+   "target_queries": [
+    "マッチングアプリ 写真 プロ",
+    "婚活 写真 撮影"
+   ],
+   "type": "data",
+   "notes": "Photojoy等の写真サービス案件の受け皿。profile-photoと差別化（プロ撮影の費用対効果検証軸）",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "over50-guide",
+   "title_hint": "50代のマッチングアプリ・婚活ガイド｜中高年の出会いの現実と最適解",
+   "target_queries": [
+    "50代 マッチングアプリ",
+    "50代 婚活 現実"
+   ],
+   "type": "attribute",
+   "notes": "マリッシュ主役（40-50代層）。40s-guideと差別化",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "propose-guide",
+   "title_hint": "プロポーズ準備完全ガイド｜タイミング・場所・指輪の段取りをデータで整理",
+   "target_queries": [
+    "プロポーズ 準備",
+    "プロポーズ タイミング 付き合ってどれくらい"
+   ],
+   "type": "attribute",
+   "notes": "アプリ→交際→婚約の橋渡し記事。konyaku-yubiwa-dataとshikijo-erabiへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "bridal-esthe-guide",
+   "title_hint": "ブライダルエステはいつから？費用・回数の相場データと選び方",
+   "target_queries": [
+    "ブライダルエステ いつから",
+    "ブライダルエステ 費用"
+   ],
+   "type": "data",
+   "notes": "美容系の参入点（ブライダル文脈なら自然）。エステ体験系案件の受け皿",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "maedori-photo-guide",
+   "title_hint": "前撮り・フォトウェディングの費用比較【2026年版】後悔しないスタジオ選び",
+   "target_queries": [
+    "前撮り 相場",
+    "フォトウェディング 安い"
+   ],
+   "type": "data",
+   "notes": "ナシ婚トレンドと合わせて需要増領域。写真スタジオ系案件の受け皿",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "nashikon-data",
+   "title_hint": "結婚式をしない「ナシ婚」の割合データ｜後悔する人・しない人の分かれ目",
+   "target_queries": [
+    "結婚式 しない 割合",
+    "ナシ婚 後悔"
+   ],
+   "type": "data",
+   "notes": "統計型。フォトウェディングへの導線。maedori-photo-guideと相互リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "shinkon-seikatsu-guide",
+   "title_hint": "新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト",
+   "target_queries": [
+    "新婚 引越し 費用",
+    "同棲 準備 リスト"
+   ],
+   "type": "attribute",
+   "notes": "ライフイベント軸の終点。引越し見積もり・家具サブスク案件の将来受け皿",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "tapple-seriousness-data",
+   "title_hint": "タップルの真剣度は低い？【2026年版】ユーザー層データと目的別の向き不向き",
+   "target_queries": [
+    "タップル 真剣度",
+    "tapple 遊び",
+    "タップル 彼女できた"
+   ],
+   "type": "data",
+   "notes": "「遊び」評判の実態を公平に検証。20代恋活には最適という結論への導線",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "omiai-30s-women-data",
+   "title_hint": "Omiaiは30代女性に向いている？【2026年版】年齢層データと婚活実績で検証",
+   "target_queries": [
+    "omiai 30代 女性",
+    "omiai 年齢層",
+    "オミアイ 婚活 評判"
+   ],
+   "type": "data",
+   "notes": "age-data・success-rate-dataへ内部リンク。30代女性の婚活導線のハブ記事",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "sendai-hiroshima-guide",
+   "title_hint": "仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略",
+   "target_queries": [
+    "マッチングアプリ 仙台",
+    "マッチングアプリ 広島"
+   ],
+   "type": "regional",
+   "notes": "支店経済都市の転勤族需要。国分町/流川エリアは2回目以降",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "inaka-guide",
+   "title_hint": "地方・田舎でマッチングアプリは使える？【人口10万人以下】出会うための現実的戦略",
+   "target_queries": [
+    "田舎 マッチングアプリ",
+    "地方 マッチングアプリ 出会えない"
+   ],
+   "type": "attribute",
+   "notes": "距離設定50km・県庁所在地合流・身バレ率の高さへの対策。正直な期待値調整",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "saitama-chiba-guide",
+   "title_hint": "埼玉・千葉でマッチングアプリを使うなら｜都心依存しない出会い戦略",
+   "target_queries": [
+    "マッチングアプリ 埼玉",
+    "マッチングアプリ 千葉"
+   ],
+   "type": "regional",
+   "notes": "大宮・浦和・船橋・柏。都内合流とのハイブリッド戦略",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "shizuoka-niigata-guide",
+   "title_hint": "静岡・新潟でマッチングアプリを使うなら｜地方中核県の出会い戦略",
+   "target_queries": [
+    "マッチングアプリ 静岡",
+    "マッチングアプリ 新潟"
+   ],
+   "type": "regional",
+   "notes": "車社会×距離設定。浜松/静岡市・新潟市の2極構造",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "okinawa-guide",
+   "title_hint": "沖縄でマッチングアプリを使うなら｜移住者・地元の出会い事情と攻略法",
+   "target_queries": [
+    "マッチングアプリ 沖縄",
+    "沖縄 出会い アプリ"
+   ],
+   "type": "regional",
+   "notes": "移住者需要・狭いコミュニティでの身バレ対策を厚く",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kaiin-age-cross-data",
+   "title_hint": "マッチングアプリの年齢層×目的マップ【2026年版】どの年代がどこにいるかデータで見る",
+   "target_queries": [
+    "マッチングアプリ 年齢層 比較",
+    "婚活アプリ 年代別"
+   ],
+   "type": "data",
+   "notes": "age-dataの発展版。全アプリ×年代マトリクス表が核",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kekkon-madeno-kikan-data",
+   "title_hint": "マッチングアプリから結婚までの期間データ｜出会って何ヶ月で結婚している？",
+   "target_queries": [
+    "マッチングアプリ 結婚まで 期間",
+    "アプリ婚 期間"
+   ],
+   "type": "data",
+   "notes": "success-rate-dataと相互リンク。交際期間統計が核",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "hitomishiri-guide",
+   "title_hint": "人見知り・内向型のためのマッチングアプリ攻略｜会話が苦手でも出会える設計",
+   "target_queries": [
+    "人見知り マッチングアプリ",
+    "内向的 婚活"
+   ],
+   "type": "attribute",
+   "notes": "メッセージ戦略・with心理テストとの相性。message-strategyへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "engineer-guide",
+   "title_hint": "エンジニア・理系向けマッチングアプリガイド｜論理派の強みを活かす戦略",
+   "target_queries": [
+    "エンジニア マッチングアプリ",
+    "理系 婚活"
+   ],
+   "type": "attribute",
+   "notes": "データ好き層に刺さる書き味。公務員記事の成功パターンを踏襲",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "seishain-igai-guide",
+   "title_hint": "非正規・フリーランスの婚活戦略｜雇用形態の壁をどう越えるか",
+   "target_queries": [
+    "フリーランス 婚活",
+    "非正規 結婚できない"
+   ],
+   "type": "attribute",
+   "notes": "検索者の悩みが深い=転換率高。誠実な現実解を提示",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kekkon-hoken-minaoshi",
+   "title_hint": "結婚したら保険はどう見直す？加入タイミングと必要保障額の考え方",
+   "target_queries": [
+    "結婚 保険 見直し",
+    "新婚 保険 いくら"
+   ],
+   "type": "attribute",
+   "notes": "【高単価】保険相談案件（1〜2万円）の受け皿。YMYL領域のため断定を避け「相談先の選び方」を主軸に。shinkon-seikatsu-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kekkon-jutaku-loan",
+   "title_hint": "結婚後の住まい選び｜賃貸か購入か・ペアローンの判断材料をデータで整理",
+   "target_queries": [
+    "結婚 家 買う タイミング",
+    "新婚 賃貸 購入 どっち"
+   ],
+   "type": "data",
+   "notes": "【高単価】住宅ローン比較・不動産案件の受け皿。転職記事と相互リンク（ローン審査と転職の関係）",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kokusai-kekkon-guide",
+   "title_hint": "国際結婚・外国人パートナーとの出会いと手続きガイド",
+   "target_queries": [
+    "国際結婚 出会い",
+    "外国人 マッチングアプリ"
+   ],
+   "type": "attribute",
+   "notes": "ニッチだが競合が薄い。手続き系の情報需要が高い",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "ouchi-date-guide",
+   "title_hint": "おうちデート完全ガイド｜付き合う前・付き合った後の過ごし方と失敗しない準備",
+   "target_queries": [
+    "おうちデート 何する",
+    "付き合う前 家デート",
+    "おうちデート 準備"
+   ],
+   "type": "attribute",
+   "notes": "【VOD案件の主力受け皿】映画・ドラマ鑑賞の文脈で動画配信サービスを自然に紹介。付き合う前のおうちデートの是非（安全面）にも誠実に触れる。first-date-guide・first-date-spotへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "amenohi-date-guide",
+   "title_hint": "雨の日デートプラン｜屋内で楽しめる過ごし方と当日の切り替え方",
+   "target_queries": [
+    "雨の日 デート",
+    "デート 雨 どうする"
+   ],
+   "type": "attribute",
+   "notes": "【VOD＋屋内施設案件】急な雨でのプラン変更対応が主軸。おうち時間の選択肢としてVODに接続。ouchi-date-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "enkyori-renai-guide",
+   "title_hint": "遠距離恋愛・遠距離婚活の続け方｜オンラインで距離を縮める具体策",
+   "target_queries": [
+    "遠距離恋愛 続け方",
+    "マッチングアプリ 遠距離"
+   ],
+   "type": "attribute",
+   "notes": "【VOD案件】同じ作品を同時視聴する等のオンラインデート手法。地方在住者の婚活（inaka-guide）とも接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "date-plan-2kaime",
+   "title_hint": "2回目・3回目のデートプラン｜関係が進む人と止まる人の違い",
+   "target_queries": [
+    "2回目 デート プラン",
+    "3回目 デート 告白"
+   ],
+   "type": "attribute",
+   "notes": "first-date-guideの続編にあたる需要。おうちデートへの移行タイミングも扱いouchi-date-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "ouchi-date-sakuhin",
+   "title_hint": "おうちデートで見る作品の選び方｜関係性の段階別・会話が生まれる作品の条件",
+   "target_queries": [
+    "おうちデート 映画 何見る",
+    "デート 映画 おすすめ 家",
+    "カップル 映画 選び方"
+   ],
+   "type": "attribute",
+   "notes": "【VOD案件の主力】作品レビューではなく『2人の関係にどう作用するか』が主語。付き合う前/交際直後/長期交際の段階別に選び方の条件を提示。作品名は例示にとどめ、あらすじの詳細引用はしない（著作権配慮）。ouchi-date-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "date-sakuhin-ng",
+   "title_hint": "デートで見ると気まずくなる作品の共通点｜避け方と代わりの選択肢",
+   "target_queries": [
+    "デート 映画 気まずい",
+    "カップル 見ちゃいけない映画"
+   ],
+   "type": "attribute",
+   "notes": "【VOD案件】失敗回避型。生々しい描写・重いテーマ・価値観が割れる作品のパターンを分類。作品名の名指し批判はせず『傾向』として扱う。ouchi-date-sakuhinと相互リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "sakuhin-kachikan",
+   "title_hint": "作品の感想でわかる相手の結婚観｜見終わったあとの会話の使い方",
+   "target_queries": [
+    "価値観 確認 デート",
+    "相手の結婚観 見極め"
+   ],
+   "type": "attribute",
+   "notes": "【VOD＋婚活の交点】作品を『価値観のリトマス紙』として使う切り口。婚活の実用記事として成立させる。message-strategy・konkatsu-roadmapへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "tenshoku-riyu-honne",
+   "title_hint": "転職理由ランキング｜結婚を意識すると重みが変わる8つの本音",
+   "target_queries": [
+    "転職理由 ランキング",
+    "転職理由 本音",
+    "結婚 転職 理由"
+   ],
+   "type": "data",
+   "notes": "【広間口パターン】給与・人間関係・WLB・勤務地・将来性・評価・独立の8理由を対等に解説しつつ、各セクション末尾は必ず『結婚を意識すると重みが変わる』という一文で着地。転職メディア顔負けの網羅性を保ちつつ主語は結婚に戻す。kekkon-tenshoku-guide・nurse-guide・civil-servant-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "shinkon-koteihi-minaoshi",
+   "title_hint": "新婚生活の固定費見直し完全ガイド｜携帯・回線・保険をまとめて最適化する",
+   "target_queries": [
+    "新婚 固定費 見直し",
+    "結婚 携帯 プラン 見直し",
+    "新生活 節約"
+   ],
+   "type": "data",
+   "notes": "【広間口パターン・ハブ記事】家族割・回線・保険を横断する固定費見直しのハブ。shinkon-seikatsu-guideの発展版として位置づけ、以下3本へ内部リンクで接続する",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kazoku-simhikaku",
+   "title_hint": "結婚後のスマホ代・格安SIM比較｜家族割・シェアプランの最適構成",
+   "target_queries": [
+    "家族割 スマホ 比較",
+    "結婚 スマホ プラン 見直し",
+    "格安sim 夫婦"
+   ],
+   "type": "data",
+   "notes": "【他サイト型移植：sim-site kazoku-sumaho-dai】2人暮らし・家族割視点を厚く。一般的な比較情報も網羅しつつ新婚読者向けセクションで差別化。shinkon-koteihi-minaoshiへ接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "futari-hikari-kaisen",
+   "title_hint": "2人暮らしの光回線選び｜賃貸の工事可否問題と結婚前後の切り替えタイミング",
+   "target_queries": [
+    "同棲 光回線",
+    "結婚 ネット回線 どうする",
+    "賃貸 光回線 工事不可"
+   ],
+   "type": "data",
+   "notes": "【他サイト型移植：sim-site chintai-hikari】賃貸の工事不可問題・名義変更のタイミングを軸に。shinkon-koteihi-minaoshiへ接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "keiyaku-jisshitsu-wana",
+   "title_hint": "新生活の契約で見落としがちな「実質」表記の罠｜携帯・保険・引越しに共通する読み解き方",
+   "target_queries": [
+    "実質無料 罠",
+    "キャッシュバック 罠",
+    "新生活 契約 注意"
+   ],
+   "type": "data",
+   "notes": "【他サイト型移植：sim-site cashback-wana】暴露型記事。携帯だけでなく保険・引越し業者の契約全般に応用可能な『実質表記の読み解き方』を提示。shinkon-koteihi-minaoshi・kekkon-hoken-minaoshiへ接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "dousei-hajimekata",
+   "title_hint": "同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール",
+   "target_queries": [
+    "同棲 始め方",
+    "同棲 初期費用",
+    "同棲 お金 分担"
+   ],
+   "type": "attribute",
+   "notes": "【新クラスタ：同棲＝結婚×引っ越しの交点】物件探し・初期費用相場・家事/生活費の分担ルールを整理。shinkon-seikatsu-guide・futari-hikari-kaisenへ内部リンク。引っ越し業者案件の受け皿にもなる",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "dousei-kekkon-hikaku",
+   "title_hint": "同棲か結婚か｜先に一緒に住むメリット・デメリットをデータで比較",
+   "target_queries": [
+    "同棲 結婚 メリット デメリット",
+    "同棲してから結婚 割合"
+   ],
+   "type": "data",
+   "notes": "【広間口パターン】同棲経由の結婚割合等の一般データを扱いつつ、結婚を意識する読者への判断材料として構成。propose-guideへ接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "dousei-kekkon-timing",
+   "title_hint": "同棲中の結婚のタイミング｜何をきっかけに入籍する人が多いか",
+   "target_queries": [
+    "同棲 結婚 タイミング",
+    "同棲何年 結婚"
+   ],
+   "type": "data",
+   "notes": "【他サイト型移植なし・純粋新規】同棲からの入籍タイミングの実態整理。propose-guide・konyaku-yubiwa-dataへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "dousei-kaisho",
+   "title_hint": "同棲解消のリアル｜うまくいかなかった時どうするか",
+   "target_queries": [
+    "同棲解消",
+    "同棲 うまくいかない"
+   ],
+   "type": "attribute",
+   "notes": "【暴露型・大手が書けない切り口】同棲メディアは基本ポジティブな話しか書かない。解消時の引っ越し・お金の精算・気まずさへの対処を率直に扱う",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kekkon-chokin-mokuhyou",
+   "title_hint": "結婚までにいくら貯めるべきか｜世帯年収別の貯金目標データ",
+   "target_queries": [
+    "結婚 貯金 いくら",
+    "結婚資金 目標額"
+   ],
+   "type": "data",
+   "notes": "【お金軸の核】婚約〜新生活までの必要額を年収別に逆算。kekkon-okane-data・konyaku-yubiwa-dataと直結するハブ的位置づけ",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "futari-kouza-kanri",
+   "title_hint": "結婚後の口座・お金の管理方法｜共通口座と費目分担の実例パターン",
+   "target_queries": [
+    "夫婦 お金 管理方法",
+    "結婚後 口座 分ける"
+   ],
+   "type": "data",
+   "notes": "shinkon-seikatsu-guideの発展。共働き前提の分担パターンを類型化",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kinsen-kachikan-check",
+   "title_hint": "結婚前に確認すべき金銭感覚のすり合わせ｜聞きにくいお金の話を切り出す方法",
+   "target_queries": [
+    "結婚前 お金の話",
+    "金銭感覚 合わない 結婚"
+   ],
+   "type": "attribute",
+   "notes": "【広間口＋暴露型】婚活で最も避けられがちな話題。message-strategy・konkatsu-roadmapへ接続。断定を避け『聞き方』を主軸に",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "rikon-okane-genjitsu",
+   "title_hint": "離婚した場合のお金の現実｜財産分与・慰謝料の基礎知識と備え方",
+   "target_queries": [
+    "離婚 財産分与 いくら",
+    "離婚 お金 現実"
+   ],
+   "type": "data",
+   "notes": "【暴露型・大手が書きにくい】結婚情報メディアはほぼ扱わない領域。不安煽りは厳禁、事実整理に徹する。kinsen-kachikan-checkと相互リンクし『備えとしての金銭感覚共有』に着地させる",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "uwaki-chousa-kiso",
+   "title_hint": "浮気・不倫調査の基礎知識｜証拠になるもの・ならないものを正しく理解する",
+   "target_queries": [
+    "浮気調査 証拠",
+    "不倫 証拠 何が必要"
+   ],
+   "type": "data",
+   "notes": "【探偵案件の本命受け皿】法律上有効な証拠の要件（決定的瞬間の写真等）と、自分で集める場合の限界・リスクを整理。感情的な煽りは一切禁止。kekkon-sokou-chousa（結婚前調査）と対になる位置づけとして相互リンク。rikon-okane-genjitsuへも接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "rikon-junbi-jyunban",
+   "title_hint": "離婚を考えたら最初にすること｜証拠集め・お金の整理・相談先の順番",
+   "target_queries": [
+    "離婚 準備 何から",
+    "離婚したい 最初にすること"
+   ],
+   "type": "attribute",
+   "notes": "rikon-okane-genjitsu・uwaki-chousa-kisoの橋渡しハブ。感情的な決断を急がせない構成にし、順序立てた実務ガイドに徹する",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "koninhiyou-guide",
+   "title_hint": "婚姻費用とは｜別居中の生活費分担の仕組みと相手が支払わない時の対処法",
+   "target_queries": [
+    "婚姻費用 相場",
+    "婚姻費用 支払わない",
+    "婚姻費用 調停"
+   ],
+   "type": "data",
+   "notes": "【離婚クラスタの重要記事】民法760条に基づく婚姻費用の基礎（算定表の考え方・請求方法）と、相手が引き延ばす場合の実務（内容証明・調停申立て）を整理。断定的な法律助言は避け『一般的な流れ』として記述し、詳細は弁護士へ相談を促す。rikon-okane-genjitsu・rikon-junbi-jyunbanと相互リンク。離婚問題に強い弁護士紹介案件の受け皿",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "usuge-konkatsu-eikyou",
+   "title_hint": "薄毛は婚活・マッチングアプリで本当に不利か｜第一印象への影響と対策の選び方",
+   "target_queries": [
+    "薄毛 婚活 不利",
+    "薄毛 マッチングアプリ 写真",
+    "薄毛 出会い 影響"
+   ],
+   "type": "attribute",
+   "notes": "【他サイト型移植：ikumo-site全般を婚活男性属性記事として統合】AGAクリニック・育毛剤メーカーどちらも中立に語れない領域。①第一印象データ②対策の費用対効果比較（クリニック/育毛剤/坊主等）③『隠すより対策して堂々と』という論点④詐欺広告の見抜き方（ikumo-site sagi-koukoku-mikata型を安全に統合）。profile-photo・40s-men・civil-servant-guideへ内部リンク。AGA/医療系リンクはYMYL慎重に扱い断定表現厳禁",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "tantei-erabikata",
+   "title_hint": "探偵事務所の選び方・料金相場比較｜依頼前に確認すべきポイント",
+   "target_queries": [
+    "探偵 料金相場",
+    "探偵事務所 選び方",
+    "探偵 比較"
+   ],
+   "type": "data",
+   "notes": "【探偵クラスタの核・大手不在領域】業界に中立比較メディアがほぼ存在しない。料金体系（着手金・成功報酬・時間制）の違い、悪徳業者の見分け方、無料相談の活用法を整理。uwaki-chousa-kiso・kekkon-sokou-chousaへ相互リンク。探偵社アフィリの本命受け皿",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "tanshin-uwaki-mikiwame",
+   "title_hint": "別居・単身赴任中の浮気の見抜き方｜物理的に離れていても分かるサイン",
+   "target_queries": [
+    "単身赴任 浮気 見抜く",
+    "別居中 浮気 サイン"
+   ],
+   "type": "attribute",
+   "notes": "uwaki-chousa-kisoの発展形・ロングテール。物理的に確認できない状況特有の視点（連絡頻度の変化・SNSの使い方等）。不安煽り厳禁、まず自分でできる観察を主軸に。tantei-erabikataへ接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "shinkon-ryokou-credit",
+   "title_hint": "新婚旅行の支払いはどのクレジットカードが得か｜旅行保険・マイル還元率で比較",
+   "target_queries": [
+    "新婚旅行 クレジットカード おすすめ",
+    "新婚旅行 クレカ 保険"
+   ],
+   "type": "data",
+   "notes": "【クレカ案件の本命受け皿】旅行保険の自動付帯条件・マイル還元率・海外利用時の為替手数料を比較。kekkon-okane-data・shinkon-koteihi-minaoshiへ内部リンク。断定を避け『比較の軸』を提示する形に",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "fuufu-credit-kanri",
+   "title_hint": "夫婦のクレジットカードは家族カードか別々か｜メリット・デメリットを整理",
+   "target_queries": [
+    "夫婦 クレジットカード 家族カード",
+    "結婚 クレカ 分ける"
+   ],
+   "type": "data",
+   "notes": "futari-kouza-kanri（口座管理）の隣接記事。家族カードの年会費優遇・利用履歴の共有可否・別々にするメリットを整理。相互リンク必須",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "gosyugi-shiharai-houhou",
+   "title_hint": "結婚式のご祝儀・支払いはクレジットカードでできる？現金以外の選択肢を整理",
+   "target_queries": [
+    "結婚式 ご祝儀 クレジットカード",
+    "ご祝儀 現金以外"
+   ],
+   "type": "data",
+   "notes": "shikijo-erabi-guide・kekkon-okane-dataへ接続。マナー面（ご祝儀は基本的に新札現金が慣習）と実務面（式場費用のクレカ払い可否）を分けて整理",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "dansei-ninkatsu-guide",
+   "title_hint": "男性の妊活準備ガイド｜「妊活は2人でするもの」検査・生活習慣・サプリの基礎知識",
+   "target_queries": [
+    "男性 妊活 何をする",
+    "妊活 男性 準備",
+    "男性不妊 検査 いつ"
+   ],
+   "type": "attribute",
+   "notes": "【新クラスタのハブ・競合弱検証済み】不妊の約半分は男性側要因という事実から。①まず検査（ブライダルチェック）②生活習慣③サプリは補助、の順で誠実に。効果断定禁止・受診勧奨必須。kekkon-madeno-kikan-data・shinkon-seikatsu-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "myseed-kuchikomi",
+   "title_hint": "マイシード（男性妊活サプリ）の口コミ・成分を検証｜亜鉛・コエンザイムQ10配合の実際",
+   "target_queries": [
+    "マイシード 口コミ",
+    "マイシード 効果 なし",
+    "マイシード 成分"
+   ],
+   "type": "data",
+   "notes": "【商品名×競合弱（無料ブログのみ）検証済み】成分の事実（亜鉛・還元型CoQ10・ソイポリア）と公式の訴求を分離して整理。効果断定禁止・薬機法厳守・「新しい精子の生成に約74日」等は一般論として出典付きで。dansei-ninkatsu-guideへ接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "mitocore-kuchikomi",
+   "title_hint": "ミトコア300mgの口コミ・成分を検証｜ミトコンドリアサプリの実際と選び方",
+   "target_queries": [
+    "ミトコア 口コミ",
+    "ミトコア 効果",
+    "ミトコンドリア サプリ 妊活"
+   ],
+   "type": "data",
+   "notes": "【商品名×競合弱】イースタティックミネラル等の成分事実を整理。夫婦で飲むタイプという特徴。薬機法厳守。dansei-ninkatsu-guideへ接続",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "mitas-formen-kuchikomi",
+   "title_hint": "mitas for men（ミタス男性用）の口コミ・成分検証｜夫婦で始める妊活サプリ",
+   "target_queries": [
+    "mitas for men 口コミ",
+    "ミタス 男性用",
+    "mitas 夫婦"
+   ],
+   "type": "data",
+   "notes": "【afb案件確認済み＝収益直結】女性用mitasとの夫婦セット訴求が特徴。承認後CTA設置予定。dansei-ninkatsu-guide・myseed-kuchikomiと相互リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "bridal-inner-guide",
+   "title_hint": "ブライダルインナーはどこで買う？必要性・選び方・専門店比較【後悔しない準備】",
+   "target_queries": [
+    "ブライダルインナー どこで買う",
+    "ブライダルインナー 必要",
+    "ブライダルインナー 安い"
+   ],
+   "type": "data",
+   "notes": "【競合弱検証済み（アメブロ・小規模アフィリ主体）】ユニクロ等で代用できるか・専門店（tu-hacci/LuXY等）の価格帯比較・試着交換条件の整理。shikijo-erabi-guide・bridal-esthe-guide・maedori-photo-guideへ内部リンク。EC案件確認後にリンク設置",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "mens-make-konkatsu",
+   "title_hint": "婚活・マッチングアプリ写真のためのメンズメイク入門｜BBクリーム1本から始める第一印象改善",
+   "target_queries": [
+    "メンズメイク 婚活",
+    "マッチングアプリ 写真 メイク 男",
+    "BBクリーム メンズ 自然"
+   ],
+   "type": "attribute",
+   "notes": "【交差点空白検証済み（個人note程度しか競合なし）】青髭・クマ・ニキビ跡のカバーという実用軸。「メイクは女性のもの」という抵抗感への丁寧な導入。konkatsu-photo-guide・profile-photo・usuge-konkatsu-eikyouへ内部リンク。メンズコスメ案件の受け皿",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "shinkon-osechi",
+   "title_hint": "新婚夫婦の初めてのおせち｜ふたり用おせち通販の選び方と早割カレンダー",
+   "target_queries": [
+    "おせち 二人用 おすすめ",
+    "新婚 おせち どうする",
+    "おせち 早割 いつから"
+   ],
+   "type": "data",
+   "notes": "【季節仕込み・12月末需要を7〜9月に先回り】ふたり用サイズの選び方・早割時期（9月開始が多い）・冷凍/冷蔵の違い。「初めての正月をどう過ごすか」という新婚文脈で。shinkon-seikatsu-guide・futari-kouza-kanri（お金）へ内部リンク。おせち通販案件（博多久松・Oisix等）の受け皿",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kekkon-houkoku-nengajou",
+   "title_hint": "結婚報告はがき・年賀状の作り方｜文例・写真選び・出す範囲のマナー",
+   "target_queries": [
+    "結婚報告 年賀状 文例",
+    "結婚報告はがき いつ",
+    "年賀状 結婚報告 写真なし"
+   ],
+   "type": "attribute",
+   "notes": "【季節仕込み・年賀状印刷案件の本命受け皿】文例・出す範囲（職場/親族/友人）・写真あり/なしの判断・喪中との重なり対応。maedori-photo-guide（前撮り写真の活用）と自然に接続。印刷案件（しまうまプリント等）は9月頃から開始",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "kisei-kekkon-aisatsu",
+   "title_hint": "年末年始の帰省と結婚挨拶・手土産ガイド｜両家との初めての正月の乗り切り方",
+   "target_queries": [
+    "帰省 結婚挨拶 手土産",
+    "義実家 正月 手土産",
+    "結婚後 初めての正月"
+   ],
+   "type": "attribute",
+   "notes": "【季節仕込み】婚約中〜新婚1年目の「両家との正月」の悩みに応える。手土産の相場・滞在マナー・どちらの実家を優先するか問題。propose-guide・shinkon-seikatsu-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-26"
+  },
+  {
+   "slug": "appkon-wariai-data",
+   "title_hint": "アプリ婚・マッチングアプリ経由の婚姻割合データ【2026年版】出会い方別の推移と現状",
+   "target_queries": [
+    "アプリ婚 割合",
+    "マッチングアプリ 結婚 割合",
+    "アプリで出会った 結婚"
+   ],
+   "type": "data",
+   "notes": "NIPSSR調査・ブライダル総研データをもとに婚姻割合推移を表化。success-rate-dataとの差別化は全体割合推移vs.アプリ内成功率。inaka-guide・kekkon-madeno-kikan-dataへ内部リンク",
+   "status": "done",
+   "published": "2026-07-27"
+  },
+  {
+   "slug": "matching-dansei-cost-data",
+   "title_hint": "マッチングアプリの男性費用データ【2026年版】月額・利用期間・総額の実態と節約策",
+   "target_queries": [
+    "マッチングアプリ 男性 費用",
+    "マッチングアプリ 月額 男性",
+    "マッチングアプリ いくらかかった"
+   ],
+   "type": "data",
+   "notes": "主要アプリの男性月額・利用期間・総費用シミュレーション表。youbride-guide・konkatsu-photo-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-27"
+  },
+  {
+   "slug": "konkatsu-party-guide",
+   "title_hint": "婚活パーティーの選び方と料金相場【2026年版】アプリ・相談所との使い分け",
+   "target_queries": [
+    "婚活パーティー 相場",
+    "婚活パーティー 選び方",
+    "お見合いパーティー 料金"
+   ],
+   "type": "data",
+   "notes": "【提携済み案件の受け皿：IBJ PARTY☆PARTY・OTOCON】アプリ/相談所と並ぶ第3の選択肢として料金体系・形式（個室/着席/立食）・年齢層別の選び方を整理。compare-konkatsu・soudanjo-hikaku・app-plus-agencyへ内部リンク",
+   "status": "done",
+   "published": "2026-07-28"
+  },
+  {
+   "slug": "kekkon-uchiiwai-guide",
+   "title_hint": "結婚内祝いのマナー完全ガイド｜相場・時期・のし・品物の選び方",
+   "target_queries": [
+    "結婚内祝い 相場",
+    "内祝い いつまで",
+    "結婚祝い お返し"
+   ],
+   "type": "attribute",
+   "notes": "【提携済み案件の受け皿：シャディギフトモール】金額の半返し原則・贈る時期（1ヶ月以内）・のし/表書き・職場や連名でもらった場合の対応。kekkon-houkoku-nengajou・gosyugi-shiharai-houhouへ内部リンク",
+   "status": "done",
+   "published": "2026-07-28"
+  },
+  {
+   "slug": "pair-ring-guide",
+   "title_hint": "ペアリングの選び方と相場データ｜婚約指輪との違い・つける指の意味",
+   "target_queries": [
+    "ペアリング 相場",
+    "ペアリング 選び方",
+    "カップル 指輪 意味"
+   ],
+   "type": "data",
+   "notes": "【提携済み案件の受け皿：THE KISS・L&Co.・ZEXIMO】交際段階のペアリングと婚約指輪の役割の違いを整理。価格帯別の素材（シルバー/ステンレス/K10）・刻印・サイズ選び。konyaku-yubiwa-data・propose-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-28"
+  },
+  {
+   "slug": "kaden-rental-vs-kounyu",
+   "title_hint": "新婚の家電はレンタルと購入どちらが得か｜損益分岐点をデータで検証",
+   "target_queries": [
+    "家電 レンタル 購入 どっち",
+    "新婚 家電 費用",
+    "家電サブスク 比較"
+   ],
+   "type": "data",
+   "notes": "【提携済み案件の受け皿：家電レンタルみんなのHappy】利用年数別の総額比較表が核。転勤族・同棲から結婚に移行する層の判断材料。shinkon-seikatsu-guide・dousei-hajimekata・kekkon-okane-dataへ内部リンク",
+   "status": "done",
+   "published": "2026-07-28"
+  },
+  {
+   "slug": "tomobataraki-shokuji-data",
+   "title_hint": "共働き夫婦の食事はどうしている？自炊・ミールキット・外食の費用と時間データ",
+   "target_queries": [
+    "共働き 夫婦 食事",
+    "ミールキット 高い",
+    "共働き 自炊 時間"
+   ],
+   "type": "data",
+   "notes": "【提携済み案件の受け皿：Oisixおためしセット・Kit Oisix】自炊/ミールキット/惣菜/外食の1食あたり費用と所要時間の比較表。家事分担の話にも接続。futari-kouza-kanri・shinkon-koteihi-minaoshiへ内部リンク",
+   "status": "done",
+   "published": "2026-07-28"
+  },
+  {
+   "slug": "dousei-nimotsu-trunkroom",
+   "title_hint": "同棲・結婚で荷物が入らない問題｜処分とトランクルームの料金相場",
+   "target_queries": [
+    "同棲 荷物 多い",
+    "トランクルーム 料金 相場",
+    "二人暮らし 収納 足りない"
+   ],
+   "type": "data",
+   "notes": "【提携済み案件の受け皿：ハローストレージ】2人の荷物が合流する時の実務。処分/実家/トランクルームの判断基準とサイズ別料金相場表。dousei-hajimekata・shinkon-seikatsu-guideへ内部リンク",
+   "status": "done",
+   "published": "2026-07-28"
+  },
+  {
+   "slug": "shinkyo-kagu-yosan",
+   "title_hint": "新居の家具・インテリア予算データ｜二人暮らしで最初に買うものと後回しでいいもの",
+   "target_queries": [
+    "新婚 家具 予算",
+    "二人暮らし 家具 いくら",
+    "新生活 家具 買う順番"
+   ],
+   "type": "data",
+   "notes": "【提携済み案件の受け皿：カヴァース・ベッドスタイル・輸入雑貨イエ・RIVERET等デザイン食器】品目別の相場表と『最初に買う/後回し』の優先順位が核。ベッド・ソファ・食器の選び方で2人の生活スタイル差をどう埋めるか。shinkon-seikatsu-guide・dousei-hajimekata・kekkon-chokin-mokuhyouへ内部リンク",
+   "status": "done",
+   "published": "2026-07-28"
+  },
+  {
+   "slug": "yachin-credit-shiharai",
+   "title_hint": "家賃はクレジットカードで払える？手数料とポイント還元の損得を計算",
+   "target_queries": [
+    "家賃 クレジットカード 払える",
+    "家賃 クレカ 手数料",
+    "家賃 ポイント 還元"
+   ],
+   "type": "data",
+   "notes": "【提携済み案件の受け皿：クレカリ賃貸】手数料率とポイント還元率の損益分岐計算が核（多くは手数料が還元を上回るが、条件次第で逆転）。管理会社が対応していない場合の代行サービスという選択肢。fuufu-credit-kanri・shinkon-koteihi-minaoshi・dousei-hajimekataへ内部リンク",
+   "status": "done",
+   "published": "2026-07-28"
+  },
+  {
+   "slug": "matching-josei-cost-data",
+   "title_hint": "マッチングアプリの女性費用データ【2026年版】無料で使える範囲と有料が必要なケース",
+   "target_queries": [
+    "マッチングアプリ 女性 費用",
+    "マッチングアプリ 女性 無料",
+    "婚活アプリ 女性 料金"
+   ],
+   "type": "data",
+   "notes": "matching-dansei-cost-dataの対になるデータ記事。女性向け料金設計の非対称性（恋活系無料・婚活特化有料）を整理。ユーブライドCTA×2。",
+   "status": "done",
+   "published": "2026-07-30"
+  },
+  {
+   "slug": "hatsushon-nenmei-data",
+   "title_hint": "初婚年齢の平均データ【2026年版】男女別推移と婚活を始めるべき年齢",
+   "target_queries": [
+    "初婚年齢 平均",
+    "結婚 平均年齢 2026",
+    "婚活 年齢 データ"
+   ],
+   "type": "data",
+   "notes": "厚生労働省 人口動態調査を一次ソースとする統計ハブ記事。晩婚化トレンドと年代別婚活戦略を解説。ユーブライドCTA×2。",
+   "status": "done",
+   "published": "2026-07-30"
+  },
+  {
+   "slug": "garugaru-ki-guide",
+   "title_hint": "ガルガル期とは？いつからいつまで続くか・原因・夫の対処法【セルフ診断つき】",
+   "target_queries": [
+    "ガルガル期 いつまで",
+    "ガルガル期 夫",
+    "ガルガル期 対処法"
+   ],
+   "type": "know-how",
+   "status": "done",
+   "published": "2026-08-13",
+   "notes": "【ガルガル期クラスタの支柱】/tools/garugaru-check/（潜在ガルガル度診断）とセットで面を取る。診断は競合ゼロ実査済み（2026-08-13）。CTAは診断ツール＋Oisix/保険ランドリー。無修飾『ガルガル期』単騎は狙わず修飾クエリで取る。"
+  },
+  {
+   "slug": "garugaru-ki-uenoko",
+   "title_hint": "ガルガル期に上の子へイライラしてしまう｜二人目出産後の心理と家庭内の設計",
+   "target_queries": [
+    "ガルガル期 上の子",
+    "二人目 出産 上の子 イライラ"
+   ],
+   "type": "know-how",
+   "status": "pending",
+   "notes": "【ガルガル期クラスタ】支柱garugaru-ki-guideと診断ツールへ内部リンク必須。医学的断定をしない・受診サインを必ず併記。"
+  },
+  {
+   "slug": "garugaru-ki-gibo",
+   "title_hint": "ガルガル期に義母・実母へ会わせたくない｜罪悪感との付き合い方と夫の調整術",
+   "target_queries": [
+    "ガルガル期 義母",
+    "産後 義実家 会わせたくない"
+   ],
+   "type": "know-how",
+   "status": "pending",
+   "notes": "【ガルガル期クラスタ】支柱garugaru-ki-guideと診断ツールへ内部リンク必須。義実家批判に寄せず「調整の設計」で書く。"
+  }
+ ]
 }
