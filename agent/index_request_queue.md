@@ -37,8 +37,6 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
-- https://www.noe-match.com/articles/garugaru-ki-guide/ （2026-08-13公開・ガルガル期クラスタ支柱）
-- https://www.noe-match.com/tools/garugaru-check/ （2026-08-13公開・潜在ガルガル度診断ツール）
 
 ```
 https://www.noe-match.com/articles/konkatsu-soudan-saki/
@@ -52,6 +50,8 @@ https://www.noe-match.com/articles/pairs-kaiin-data/
 
 | URL | 公開日 | 申請日 | 7日後の状態 |
 |-----|-------|-------|-----------|
+| /articles/garugaru-ki-guide/ | 2026-08-13 | 2026-08-13 | |
+| /tools/garugaru-check/ | 2026-08-13 | 2026-08-13 | |
 | | | | |
 
 ---
