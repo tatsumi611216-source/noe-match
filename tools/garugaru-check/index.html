@@ -119,6 +119,14 @@ blockquote strong{color:var(--pink-dark)}
 .medical li{margin-bottom:2px}
 .r-disclaimer{font-size:.76rem;color:var(--sub);margin-top:18px}
 .result-actions{text-align:center;margin-top:22px}
+.share-block{text-align:center;margin-top:24px;padding-top:20px;border-top:1px solid var(--border)}
+.share-title{font-size:.82rem;font-weight:700;color:var(--sub);margin-bottom:12px}
+.share-btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.share-btn{display:inline-flex;align-items:center;gap:7px;border-radius:32px;padding:10px 22px;font-size:.86rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-family:inherit;transition:transform .12s,box-shadow .12s;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.share-btn:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.18)}
+.share-btn.x{background:#0f1419;color:#fff}
+.share-btn.line{background:#06C755;color:#fff}
+.share-btn.copy{background:#fff;color:var(--text);border:1.5px solid var(--line-strong)}
 
 /* ---- related ---- */
 .related{background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 26px;margin-bottom:30px}
@@ -202,6 +210,13 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <h3>📝 補足</h3>
 <p id="rNote" style="margin:0;font-size:.9rem"></p>
 </div>
+<div style="background:#f0f6ec;border:2px solid #5b8c3e;border-radius:12px;padding:20px 22px;margin:26px 0;text-align:center">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
+<p style="font-weight:700;margin:0 0 12px">どのタイプでも効く共通対策は「食事の補給線を先に敷いておく」こと</p>
+<p style="font-size:.84rem;color:var(--ink-soft);margin:0 0 14px;text-align:left">産後に最初に消えるのは「食事を作る余力」です。空腹はガルガルの二大トリガーのひとつ——ミールキットが自分たちの生活リズムに合うかは、産前に1週間試しておくのが一番早い。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#5b8c3e;color:#fff;font-weight:700;padding:13px 32px;border-radius:30px;text-decoration:none">Oisixのおためしセットを見る</a>
+<p style="font-size:.74rem;color:#888;margin:10px 0 0">ミールキット・食材宅配のおためしセット（内容・価格は時期により変わります。公式サイトでご確認ください）</p>
+</div>
 <hr class="r-divider">
 <div class="medical">
 <strong>🏥 これが出たら「ガルガル」ではなく受診のサイン</strong>
@@ -215,6 +230,14 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 </ul>
 </div>
 <p class="r-disclaimer">※本診断は医学的診断・心理検査ではありません。産後の経過は出産体験や支援環境など状況要因に大きく左右されるため、低スコアでも油断せず、高スコアでも運用設計で吸収できる範囲は広い、が実務上の結論です。</p>
+<div class="share-block">
+<div class="share-title">結果をシェアする</div>
+<div class="share-btns">
+<a class="share-btn x" id="shareX" href="#" target="_blank" rel="noopener">𝕏 でポスト</a>
+<a class="share-btn line" id="shareLine" href="#" target="_blank" rel="noopener">LINEで送る</a>
+<button class="share-btn copy" id="shareCopy" type="button">🔗 リンクをコピー</button>
+</div>
+</div>
 <div class="result-actions">
 <button class="btn-ghost" id="resetBtn" type="button">リセットしてもう一度</button>
 </div>
@@ -462,8 +485,24 @@ document.getElementById("diagBtn").addEventListener("click", () => {
   const clamped = Math.max(0, Math.min(total, 54));
   document.getElementById("rPin").style.left = `${(clamped / 54) * 100}%`;
 
+  // シェア導線（訪問者自身のアカウントで投稿される通常のシェアボタン）
+  const PAGE_URL = "https://www.noe-match.com/tools/garugaru-check/";
+  const shareText = `診断結果：${tier.name}${tier.emoji}（${tier.label}）｜潜在ガルガル度チェック診断【無料53問】 #ガルガル期`;
+  document.getElementById("shareX").href =
+    `https://x.com/intent/post?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(PAGE_URL)}`;
+  document.getElementById("shareLine").href =
+    `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(PAGE_URL)}&text=${encodeURIComponent(shareText)}`;
+
   document.getElementById("result").classList.add("show");
   document.getElementById("result").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+});
+
+document.getElementById("shareCopy").addEventListener("click", () => {
+  const btn = document.getElementById("shareCopy");
+  navigator.clipboard.writeText("https://www.noe-match.com/tools/garugaru-check/").then(() => {
+    btn.textContent = "✅ コピーしました";
+    setTimeout(() => { btn.textContent = "🔗 リンクをコピー"; }, 2000);
+  }).catch(() => { btn.textContent = "コピーできませんでした"; });
 });
 
 document.getElementById("resetBtn").addEventListener("click", () => {
