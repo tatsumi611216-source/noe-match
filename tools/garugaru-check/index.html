@@ -94,13 +94,14 @@ blockquote strong{color:var(--pink-dark)}
 .score-num.plus{color:var(--high)}
 .score-num.minus{color:var(--safe)}
 .meter{margin:6px 0 22px}
+.meter-track-wrap{position:relative}
 .meter-track{display:flex;height:12px;border-radius:99px;overflow:hidden;position:relative}
 .meter-seg{height:100%}
 .meter-seg.s1{background:var(--safe);flex:10}
 .meter-seg.s2{background:var(--mid);flex:15}
 .meter-seg.s3{background:var(--high);flex:15}
 .meter-seg.s4{background:var(--crit);flex:14}
-.meter-pin{position:absolute;top:-6px;width:4px;height:24px;border-radius:2px;background:var(--navy);transform:translateX(-2px)}
+.meter-pin{position:absolute;top:-6px;width:4px;height:24px;border-radius:2px;background:var(--navy);transform:translateX(-2px);box-shadow:0 0 0 1.5px #fff}
 .meter-labels{display:flex;font-size:.68rem;color:var(--sub);margin-top:6px}
 .meter-labels span{text-align:center}
 .meter-labels .l1{flex:10}.meter-labels .l2{flex:15}.meter-labels .l3{flex:15}.meter-labels .l4{flex:14}
@@ -184,9 +185,11 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <div class="score-box"><div class="score-num minus" id="rMinus"></div><div class="score-cap">保護因子（減点）</div></div>
 </div>
 <div class="meter">
+<div class="meter-track-wrap">
 <div class="meter-track">
 <div class="meter-seg s1"></div><div class="meter-seg s2"></div>
 <div class="meter-seg s3"></div><div class="meter-seg s4"></div>
+</div>
 <div class="meter-pin" id="rPin"></div>
 </div>
 <div class="meter-labels">
@@ -483,7 +486,7 @@ document.getElementById("diagBtn").addEventListener("click", () => {
 
   // メーター位置（0〜54点をレンジとして表示、区間比率は 10/15/15/14）
   const clamped = Math.max(0, Math.min(total, 54));
-  document.getElementById("rPin").style.left = `${(clamped / 54) * 100}%`;
+  document.getElementById("rPin").style.left = `${Math.max(2, Math.min(98, (clamped / 54) * 100))}%`;
 
   // シェア導線（訪問者自身のアカウントで投稿される通常のシェアボタン）
   const PAGE_URL = "https://www.noe-match.com/tools/garugaru-check/";
