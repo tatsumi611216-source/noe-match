@@ -1,5 +1,61 @@
 # Agent Run Log
 
+## 2026-08-13　週次記事工場ラン｜型A×2本生成（omiai-danjohi-data / with-nenreiso-data）+ Phase 2 GSC強化2本
+
+### Phase 4-0 計測ゲート
+
+`asp_results.md` の `last_updated` が 2026-08-09（7日以内）のため、**ゲート開放**。CTAブロックを設置した。
+
+### 実施内容（Phase 1：新規記事生成）
+
+- `omiai-danjohi-data/index.html` 生成完了
+  - タイトル：Omiaiの男女比｜公表データと、比率が体感と食い違う理由【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：菅原さん（28歳・会社員）、市川さん（33歳・営業）
+  - 内部リンク5本 / CTAブロック2本（ユーブライド afb・結婚相談所比較ネット A8）
+
+- `with-nenreiso-data/index.html` 生成完了
+  - タイトル：withの年齢層｜20代中心と言われる根拠を公表データで確認する【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（5問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：鎌田さん（24歳・大学院生）、木下さん（27歳・デザイナー）
+  - 内部リンク5本 / CTAブロック2本（ユーブライド afb・結婚相談所比較ネット A8）
+
+- `sitemap.xml` / `sitemap-all.xml` に2記事分URLを追加（lastmod 2026-08-13）
+- `index.html` 更新：全160記事（hero-badge）、全155記事（見出し）、データ・統計21記事、arc-no 20/21追加
+- `keyword_queue.json` 2件を done + published 2026-08-13 に更新
+- `factory_audit.py`：FAIL 0件（新規）/ 既知バックログ 27本登録 / 構造エラー 0件 ✅
+- age-data / first-date-spot の pr-notice 欠落を修正（バックログ外で対応）
+
+### 実施内容（Phase 2：GSC強化）
+
+対象クエリの選定条件：表示回数5回以上 かつ 平均掲載順位11〜30位
+
+| 記事 slug | 対象クエリ | 現在順位 | 追記内容 |
+|----------|----------|---------|---------|
+| shinkon-seikatsu-guide | 新婚生活 引越し | 21.0位（6表示） | sec-8b「新婚の引越し段取り｜入居日から逆算するタスク整理」+ dateModified 2026-08-13 |
+| propose-guide | 結婚 段取り | 27.1位（14表示） | sec-8c「結婚の段取りでつまずきやすい3つのタイミング」+ dateModified 2026-08-13 |
+
+両記事とも今回が初回強化（通算1回目）。次回強化可能日は2026-08-27以降。
+
+### インデックス申請キュー追加
+
+`agent/index_request_queue.md` に以下2件を追記（申請は人間の作業）：
+- https://www.noe-match.com/articles/omiai-danjohi-data/
+- https://www.noe-match.com/articles/with-nenreiso-data/
+
+### note下書き作成
+
+- `agent/note_drafts/omiai-danjohi-data.md`
+- `agent/note_drafts/with-nenreiso-data.md`
+
+### 次にやること（人間の作業）
+
+1. **インデックス申請**：omiai-danjohi-data / with-nenreiso-data の2件（Search Console から申請）
+2. **note 下書き投稿**：`agent/note_drafts/` の2件を確認・予約投稿
+3. **品質バックログ対応**：`agent/quality_backlog.md` の27本を次回以降Phase 3で順次対応
+
+---
+
 ## 2026-08-10　週次記事工場ラン｜型A×2本生成（zexy-enmusubi-data / pairs-kaiin-data）+ 寄せ直し2本
 
 ### Phase 4-0 計測ゲート
