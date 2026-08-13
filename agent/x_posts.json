@@ -1,5 +1,5 @@
 {
- "description": "NOE結婚設計室のX定時投稿キュー。決定式 index = (JST日数差×2 + slot) % 50 で配信する。",
+ "description": "Noe結婚設計室のX定時投稿キュー。決定式 index = (JST日数差×2 + slot) % 50 で配信する。",
  "startDate": "2026-08-04",
  "posts": [
   {
