@@ -37,7 +37,6 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
-- https://www.noe-match.com/tools/fugenbyo-check/ （2026-08-13公開・夫源病診断ツール）
 
 
 
@@ -57,6 +56,7 @@ https://www.noe-match.com/articles/pairs-kaiin-data/
 | /tools/garugaru-check/ | 2026-08-13 | 2026-08-13 | |
 | /articles/garugaru-ki-itsumade/ | 2026-08-13 | 2026-08-13 | |
 | /articles/sango-crisis-guide/ | 2026-08-13 | 2026-08-13 | |
+| /tools/fugenbyo-check/ | 2026-08-13 | 2026-08-13 | |
 | | | | |
 
 ---
