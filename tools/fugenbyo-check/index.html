@@ -157,6 +157,16 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 .share-btn.x{background:#0f1419;color:#fff}
 .share-btn.line{background:#06C755;color:#fff}
 .share-btn.copy{background:#fff;color:var(--text);border:1px solid var(--line-strong)}
+
+/* ---- photo ambience ---- */
+.tool-hero{position:relative;min-height:220px;display:flex;align-items:flex-end;background-size:cover;background-position:center;background-color:#1d242b;border-radius:6px;overflow:hidden;margin-bottom:26px}
+.tool-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(22,18,20,.38),rgba(22,18,20,.68))}
+.tool-hero-inner{position:relative;padding:24px 34px 24px}
+.hero-mark{display:block;width:52px;height:52px;margin-bottom:12px}
+.tool-hero h1{font-family:var(--serif);font-size:clamp(1.35rem,3.8vw,1.8rem);font-weight:600;line-height:1.6;letter-spacing:.04em;color:#fff;margin:0}
+.tool-hero p{color:rgba(255,255,255,.88);font-size:.86rem;line-height:1.8;margin:8px 0 0;max-width:46em}
+@media(max-width:600px){.tool-hero{min-height:190px}.tool-hero-inner{padding:18px 18px 16px}.hero-mark{width:44px;height:44px;margin-bottom:10px}}
+.result-head{background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/room-light.jpg') center/cover;padding:30px 24px 24px;text-align:center;border-bottom:1px solid var(--hair)}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "夫源病危険度チェック診断", "url": "https://www.noe-match.com/tools/fugenbyo-check/", "applicationCategory": "LifestyleApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "description": "夫源病の危険度を45問（簡易15問）で診断する無料ツール。天気4段階判定＋夫に渡せる処方箋つき。", "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "無料ツール", "item": "https://www.noe-match.com/#tools"}, {"@type": "ListItem", "position": 3, "name": "夫源病危険度チェック診断"}]}</script>
@@ -164,15 +174,18 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </head>
 <body>
 <header><div class="header-inner">
-<a href="/" class="logo">💑 Noe結婚設計室<span class="logo-badge">2026</span></a>
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
 <nav><a href="/#ranking">ランキング</a><a href="/#articles">記事一覧</a><a href="/#tools">無料ツール</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
 </div></header>
 <div class="wrap">
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 夫源病危険度チェック診断</div>
 
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><g fill="none" stroke="#7c2e42" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="25" cy="26" r="6.5"/><path d="M13 47c0-7.5 5.4-12.5 12-12.5S37 39.5 37 47"/><circle cx="41.5" cy="27.5" r="5.5"/><path d="M36.2 29.5v4.5M46.8 29.5v4.5"/><path d="M33.5 47c.6-6.5 3.8-10.5 8-10.5 4.6 0 8.6 4.4 9 10.5"/></g></svg>
+<h1>夫源病危険度チェック診断</h1>
+<p>その頭痛・その不調、天気のせいじゃなくて「夫」のせいかもしれない。45問（簡易15問）で危険度を測る無料診断。</p>
+</div></div>
 <article>
-<h1>夫源病危険度チェック診断 🌤</h1>
-<p style="color:var(--sub);font-size:.9rem;margin-top:-6px">その頭痛・その不調、天気のせいじゃなくて「夫」のせいかもしれない。45問（簡易15問）で危険度を測る無料診断。</p>
 
 <h2>この診断について</h2>
 <p>「夫源病（ふげんびょう）」とは、夫の言動や存在がストレス源となって、妻に頭痛・動悸・めまい・不眠などの心身の不調が現れる状態の俗称です。医師の石蔵文信氏が提唱した言葉で、<strong>正式な病名ではありませんが、現象としては広く知られています</strong>。</p>
@@ -186,8 +199,8 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </div>
 
 <div class="mode-switch" id="modeSwitch">
-<button type="button" data-mode="short" class="active">⚡ サクッと15問<span>約2分・要点だけ測る</span></button>
-<button type="button" data-mode="full">🔬 ちゃんと測る45問<span>約4分・フル計測</span></button>
+<button type="button" data-mode="short" class="active">サクッと15問<span>約2分・要点だけ測る</span></button>
+<button type="button" data-mode="full">ちゃんと測る45問<span>約4分・フル計測</span></button>
 </div>
 <div id="checklist"></div>
 
@@ -220,26 +233,26 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </div>
 </div>
 <div class="flag-note" id="rMedFlag" style="display:none">
-<strong>🩺 受診をおすすめします</strong>：動悸・めまい・不眠・「異常なし」と言われた不調——症状がすでに体に出ています。この診断の点数に関わらず、心療内科または婦人科への相談を優先してください。「夫の在宅時に症状が悪化する」というパターンを伝えれば十分に伝わります。
+<strong>受診をおすすめします</strong>：動悸・めまい・不眠・「異常なし」と言われた不調——症状がすでに体に出ています。この診断の点数に関わらず、心療内科または婦人科への相談を優先してください。「夫の在宅時に症状が悪化する」というパターンを伝えれば十分に伝わります。
 </div>
 <div class="flag-note" id="rDvFlag" style="display:none">
 <strong>⚠ この診断の範囲を超えている可能性があります</strong>：威圧・経済的な支配・行動の制限は、夫源病ではなく<strong>モラルハラスメント・DVのサイン</strong>です。ひとりで抱えず、DV相談ナビ「<strong>#8008</strong>」（全国共通・最寄りの相談窓口につながります）または配偶者暴力相談支援センターへ。あなたの安全が最優先です。
 </div>
 <div class="r-block">
-<h3>🌡 あなたへのダメージ想定</h3>
+<h3>あなたへのダメージ想定</h3>
 <div><span class="damage-stars" id="rStars"></span><span class="damage-level" id="rDamageLevel"></span></div>
 <p id="rDamage" style="margin:8px 0 0;font-size:.9rem"></p>
 </div>
 <div class="r-block">
-<h3>☂️ 処方箋（いま打てる手）</h3>
+<h3>処方箋（いま打てる手）</h3>
 <ul class="r-tips" id="rTips"></ul>
 </div>
 <div class="r-block">
-<h3>📝 補足</h3>
+<h3>補足</h3>
 <p id="rNote" style="margin:0;font-size:.9rem"></p>
 </div>
 <div class="r-block">
-<h3>📨 夫に渡す処方箋（コピーして使えます）</h3>
+<h3>夫に渡す処方箋（コピーして使えます）</h3>
 <p style="font-size:.85rem;color:var(--ink-soft)">口頭の不満は流れます。書面の「仕様」は残ります。そのまま送れる例文：</p>
 <div style="background:var(--bg);border:1px dashed var(--line-strong);border-radius:6px;padding:14px 16px;font-size:.85rem;line-height:1.9">最近、体調が良くない日が続いていて、調べたら「夫源病」という状態に近いみたい。あなたを責めたいわけじゃなくて、直してほしいことを具体的に伝えたい。まず1つだけ：<strong>【例：日曜の昼食はあなたの担当にしてほしい／「ありがとう」を週に1回は言ってほしい】</strong>。これができたら次を相談させて。</div>
 </div>
@@ -250,17 +263,17 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <p style="font-size:.82rem;color:var(--ink-soft);margin:0 0 16px">夫源病の対処は「距離」と「負担減」。いま動けるものだけ選んでください。</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
 <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px 15px;display:flex;flex-direction:column">
-<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">🍚 家事負担の外部化</p>
+<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">家事負担の外部化</p>
 <p style="font-size:.78rem;color:var(--ink-soft);margin:0 0 12px;flex:1">「俺の飯は？」問題への現実解。食事づくりの負担をそもそも減らす。分担交渉より早い。</p>
 <a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA" rel="nofollow sponsored noopener" target="_blank" style="display:block;text-align:center;background:#7c2e42;color:#fff;font-weight:700;font-size:.82rem;padding:11px 10px;border-radius:2px;text-decoration:none">Oisixのおためしセットを見る</a>
 </div>
 <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px 15px;display:flex;flex-direction:column">
-<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">💴 経済的な選択肢を増やす</p>
+<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">経済的な選択肢を増やす</p>
 <p style="font-size:.78rem;color:var(--ink-soft);margin:0 0 12px;flex:1">「経済的に離れられない」は症状を長引かせる最大の環境要因。まず家計と保険の現在地を把握する。</p>
 <a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX" rel="nofollow sponsored noopener" target="_blank" style="display:block;text-align:center;background:#7c2e42;color:#fff;font-weight:700;font-size:.82rem;padding:11px 10px;border-radius:2px;text-decoration:none">保険ランドリーの相談内容を見る</a>
 </div>
 <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px 15px;display:flex;flex-direction:column">
-<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">📖 関係の今後を整理する</p>
+<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">関係の今後を整理する</p>
 <p style="font-size:.78rem;color:var(--ink-soft);margin:0 0 12px;flex:1">別居・離婚が頭をよぎるなら、感情で決める前に事実の整理から。お金と手順を知ってから判断しても遅くない。</p>
 <a href="/articles/rikon-junbi-jyunban/" style="display:block;text-align:center;background:#7c2e42;color:#fff;font-weight:700;font-size:.82rem;padding:11px 10px;border-radius:2px;text-decoration:none">離婚を考えたら最初にすること</a>
 </div>
@@ -269,7 +282,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </div>
 <hr class="r-divider">
 <div class="medical">
-<strong>🏥 我慢せず受診してほしいサイン</strong>
+<strong>我慢せず受診してほしいサイン</strong>
 以下が続く場合は、診断結果に関わらず医療機関（心療内科・婦人科）へ。
 <ul>
 <li>眠れない日が続く／食欲が出ない</li>
@@ -311,8 +324,8 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <div class="related">
 <h2>あわせて読みたい・使いたい</h2>
 <ul>
-<li><a href="/tools/saigenbyo-check/">🌧 妻源病危険度チェック診断｜逆方向はこちら。夫婦で答え合わせを（無料）</a></li>
-<li><a href="/tools/garugaru-check/">🦁 潜在ガルガル度チェック診断｜産後の攻撃性を産前に測る（無料）</a></li>
+<li><a href="/tools/saigenbyo-check/">妻源病危険度チェック診断｜逆方向はこちら。夫婦で答え合わせを（無料）</a></li>
+<li><a href="/tools/garugaru-check/">潜在ガルガル度チェック診断｜産後の攻撃性を産前に測る（無料）</a></li>
 <li><a href="/articles/sango-crisis-guide/">産後クライシスとは？いつからいつまで・原因と乗り越え方</a></li>
 <li><a href="/articles/garugaru-ki-guide/">ガルガル期とは？いつからいつまで続くか・原因と夫の対処法</a></li>
 <li><a href="/articles/rikon-junbi-jyunban/">離婚を考えたら最初にすること｜証拠集め・お金の整理・相談先の順番</a></li>
@@ -325,7 +338,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <div class="diag-bar">
 <div class="diag-bar-inner">
 <div class="diag-progress" id="progress">回答済み 0 / 15</div>
-<button class="diag-btn" id="diagBtn" type="button">🌤 診断する</button>
+<button class="diag-btn" id="diagBtn" type="button">診断する</button>
 </div>
 </div>
 
@@ -347,7 +360,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 
 <script>
 const SECTIONS = [
-  { roman: "Ⅰ", title: "🩺 からだのサイン", note: "まずは体が出している信号から。症状は嘘をつきません", items: [
+  { roman: "Ⅰ", title: "からだのサイン", note: "まずは体が出している信号から。症状は嘘をつきません", items: [
     { t: "夫が家にいる日は、頭痛・肩こり・胃痛などの不調が出やすい", w: 5, s: true },
     { t: "夫の帰宅時間が近づくと、気分が沈む・ソワソワする", w: 5, s: true },
     { t: "夫が出張・不在の日は、体が軽く症状が消える", w: 5, s: true },
@@ -359,7 +372,7 @@ const SECTIONS = [
     { t: "夫に触れられることに抵抗がある", w: 3 },
     { t: "夫の食事の音・咀嚼音が耐えられない", w: 2 },
   ]},
-  { roman: "Ⅱ", title: "🌀 夫の低気圧度", note: "夫の行動特性。ここが発生源です", items: [
+  { roman: "Ⅱ", title: "夫の低気圧度", note: "夫の行動特性。ここが発生源です", items: [
     { t: "「ありがとう」「ごめん」をほぼ言わない", w: 3, s: true },
     { t: "家事や育児を「手伝い」だと思っている（当事者意識がない）", w: 3, s: true },
     { t: "上から目線の命令・説教が多い", w: 3, s: true },
@@ -373,7 +386,7 @@ const SECTIONS = [
     { t: "妻の外出や交友関係を制限する", w: 4, dv: true },
     { t: "退職・在宅勤務などで、夫が家にいる時間が最近増えた", w: 3 },
   ]},
-  { roman: "Ⅲ", title: "💬 ふたりの気流", note: "会話と関係の風通しを見ます", items: [
+  { roman: "Ⅲ", title: "ふたりの気流", note: "会話と関係の風通しを見ます", items: [
     { t: "会話は業務連絡だけになっている", w: 2 },
     { t: "不満を伝えても「気にしすぎ」で終わる", w: 3, s: true },
     { t: "夫の顔色をうかがって行動している", w: 3, s: true },
@@ -383,7 +396,7 @@ const SECTIONS = [
     { t: "「夫がいなければ楽なのに」と思ったことがある", w: 3 },
     { t: "離婚・別居が頭をよぎることがある", w: 3 },
   ]},
-  { roman: "Ⅳ", title: "🏠 逃げ場の有無", note: "環境の風向き。同じ夫でも環境で症状は変わります", items: [
+  { roman: "Ⅳ", title: "逃げ場の有無", note: "環境の風向き。同じ夫でも環境で症状は変わります", items: [
     { t: "自分だけの部屋・逃げ場が家にない", w: 2, s: true },
     { t: "経済的に夫に依存している（自分の収入がない・少ない）", w: 3, s: true },
     { t: "子どもの独立・定年などで夫婦二人の時間が増えた", w: 2 },
@@ -392,7 +405,7 @@ const SECTIONS = [
     { t: "更年期の年代にあたる（症状の見分けがつきにくい）", w: 2 },
     { t: "転居などで地域に知り合いがいない", w: 2 },
   ]},
-  { roman: "Ⅴ", title: "🌈 回復力・晴れ間", note: "最後に、あなたの回復資源を", items: [
+  { roman: "Ⅴ", title: "回復力・晴れ間", note: "最後に、あなたの回復資源を", items: [
     { t: "自分だけの趣味・活動の時間が週に数時間ある", w: -3, s: true },
     { t: "夫は、指摘すれば変わろうとする意欲がある", w: -4, s: true },
     { t: "夫と離れて過ごす日が定期的にある", w: -3 },

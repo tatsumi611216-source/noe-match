@@ -98,6 +98,16 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 #top.show{opacity:1}
 #top:hover{background:var(--ink)}
 @media(max-width:600px){body{font-size:14.5px}article h2{margin:40px 0 14px}}
+
+/* ---- photo ambience ---- */
+.tool-hero{position:relative;min-height:220px;display:flex;align-items:flex-end;background-size:cover;background-position:center;background-color:#1d242b;border-radius:6px;overflow:hidden;margin-bottom:26px}
+.tool-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(22,18,20,.38),rgba(22,18,20,.68))}
+.tool-hero-inner{position:relative;padding:24px 34px 24px}
+.hero-mark{display:block;width:52px;height:52px;margin-bottom:12px}
+.tool-hero h1{font-family:var(--serif);font-size:clamp(1.35rem,3.8vw,1.8rem);font-weight:600;line-height:1.6;letter-spacing:.04em;color:#fff;margin:0}
+.tool-hero p{color:rgba(255,255,255,.88);font-size:.86rem;line-height:1.8;margin:8px 0 0;max-width:46em}
+@media(max-width:600px){.tool-hero{min-height:190px}.tool-hero-inner{padding:18px 18px 16px}.hero-mark{width:44px;height:44px;margin-bottom:10px}}
+.result .big{text-align:center;padding:26px 16px 20px;background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/hero-bouquet.jpg') center/cover;border-radius:4px;margin-bottom:12px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "結婚相談所の総額はいくら見ておけばいい？", "acceptedAnswer": {"@type": "Answer", "text": "1年活動を前提に、店舗型なら30〜50万円、オンライン型なら10〜20万円が目安です（各社公開情報より）。成婚料の有無で総額が大きく変わるため、このシミュレーターでは成婚料込み・抜きの両方を表示します。"}}, {"@type": "Question", "name": "シミュレーターの金額はどのくらい正確？", "acceptedAnswer": {"@type": "Answer", "text": "各社公式サイトの公開情報に基づく一般的な料金レンジ（2026年8月時点・編集部調べ）を使った概算です。実際の金額は相談所・プランにより異なるため、必ず無料相談や公式サイトで確認してください。"}}, {"@type": "Question", "name": "成婚料がない方がお得？", "acceptedAnswer": {"@type": "Answer", "text": "短期的にはそうですが、成婚料がある相談所は「成婚しないと収益にならない」ためサポートが手厚くなる傾向があります。総額と本気度のバランスで判断してください。"}}, {"@type": "Question", "name": "活動期間はどのくらいで見積もるべき？", "acceptedAnswer": {"@type": "Answer", "text": "まず12ヶ月で試算し、6ヶ月と比較するのがおすすめです。月会費型の料金体系では活動が延びるほど総額が膨らむため、「半年で決める」くらいの活動密度が費用面では有利になります。"}}, {"@type": "Question", "name": "お見合い料はどのくらいかかる？", "acceptedAnswer": {"@type": "Answer", "text": "1回あたり0〜1万円が相場です。無料の相談所も多い一方、店舗型では1回ごとに費用がかかるプランもあります。月2回×12ヶ月なら最大24万円前後の差になるため、回数を多くこなしたい人は無料の相談所が有利です。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "結婚相談所 料金シミュレーター", "url": "https://www.noe-match.com/tools/soudanjo-simulator/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@id": "https://www.noe-match.com/#organization"}, "datePublished": "2026-08-13", "dateModified": "2026-08-13"}</script>
@@ -105,13 +115,16 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </head>
 <body>
 <header><div class="header-inner">
-<a href="/" class="logo">💑 Noe結婚設計室<span class="logo-badge">2026</span></a>
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
 <nav><a href="/#ranking">ランキング</a><a href="/#articles">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
 </div></header>
 <div class="wrap">
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ 無料ツール ＞ 結婚相談所 料金シミュレーター</div>
-<article>
+<div class="tool-hero" style="background-image:url('../../images/lp/hero-bouquet.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><g fill="none" stroke="#7c2e42" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="15" r="1.6"/><path d="M32 17v31M23 48h18M16 23h32"/><path d="M16 23l-5.5 11M16 23l5.5 11M9.5 34.5a6.5 6.5 0 0 0 13 0"/><path d="M48 23l-5.5 11M48 23l5.5 11M41.5 34.5a6.5 6.5 0 0 0 13 0"/></g></svg>
 <h1>結婚相談所 料金シミュレーター｜期間×タイプ別の総額を30秒で試算【2026年版】</h1>
+</div></div>
+<article>
 <p class="pr-notice" style="font-size:12px;color:#666;background:#f5f5f5;border-left:3px solid #d9d2c8;border-radius:3px;padding:7px 11px;margin:10px 0 0">本ページはプロモーションを含みます。ページ内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
 <blockquote><strong>結婚相談所の費目は「初期費用・月会費・お見合い料・成婚料」の4つだけ。</strong>活動期間とタイプを選べば、総額レンジと3タイプの比較が一度に出ます。月会費の安さではなく成婚料込みの総額で比べるのがコツ。</blockquote>
 <p>相談所の料金はプラン表が複雑に見えるが、構造は4費目に分解すれば単純だ。料金体系の読み解き方は<a href="/articles/soudanjo-hikaku/">結婚相談所の料金比較｜オンライン型は本当に安いのか検証</a>で詳しく解説している。まずは自分の活動イメージで総額を出してみてほしい。</p>
@@ -201,7 +214,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <strong>数字の出典</strong>：当サイト<a href="/articles/soudanjo-hikaku/">「結婚相談所の料金比較【2026年版】」</a>に掲載の費目相場（入会金・初期費用3〜15万円／月会費1〜2万円／お見合い料0〜1万円/回／成婚料0〜30万円。各社公式サイトの公開情報に基づく一般的なレンジ）。タイプ別の細分は同レンジ内での編集部按分です。実際の金額はプラン・相談所により異なります。
 </div>
 </article>
-<div class="related"><h2>📚 関連記事</h2><ul>
+<div class="related"><h2>関連記事</h2><ul>
 <li><a href="/articles/soudanjo-hikaku/">結婚相談所の料金比較｜オンライン型は本当に安いのか検証【2026年版】</a></li>
 <li><a href="/tools/kekkon-shikin-keisanki/">結婚資金計算機</a></li>
 <li><a href="/articles/agency-vs-app/">結婚相談所vsアプリ</a></li>

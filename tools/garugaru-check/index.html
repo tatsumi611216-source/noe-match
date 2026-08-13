@@ -158,6 +158,16 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 .share-btn.x{background:#0f1419;color:#fff}
 .share-btn.line{background:#06C755;color:#fff}
 .share-btn.copy{background:#fff;color:var(--text);border:1px solid var(--line-strong)}
+
+/* ---- photo ambience ---- */
+.tool-hero{position:relative;min-height:220px;display:flex;align-items:flex-end;background-size:cover;background-position:center;background-color:#1d242b;border-radius:6px;overflow:hidden;margin-bottom:26px}
+.tool-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(22,18,20,.38),rgba(22,18,20,.68))}
+.tool-hero-inner{position:relative;padding:24px 34px 24px}
+.hero-mark{display:block;width:52px;height:52px;margin-bottom:12px}
+.tool-hero h1{font-family:var(--serif);font-size:clamp(1.35rem,3.8vw,1.8rem);font-weight:600;line-height:1.6;letter-spacing:.04em;color:#fff;margin:0}
+.tool-hero p{color:rgba(255,255,255,.88);font-size:.86rem;line-height:1.8;margin:8px 0 0;max-width:46em}
+@media(max-width:600px){.tool-hero{min-height:190px}.tool-hero-inner{padding:18px 18px 16px}.hero-mark{width:44px;height:44px;margin-bottom:10px}}
+.result-head{background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/hands-touch.jpg') center/cover;padding:30px 24px 24px;text-align:center;border-bottom:1px solid var(--hair)}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"潜在ガルガル度チェック診断","url":"https://www.noe-match.com/tools/garugaru-check/","applicationCategory":"LifestyleApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"description":"産後のガルガル期がどれくらい強く出そうかを、気質・体質・家族背景・環境の53問で事前に見積もる無料診断ツール。","publisher":{"@type":"Organization","name":"Noe結婚設計室","url":"https://www.noe-match.com/"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"無料ツール","item":"https://www.noe-match.com/#tools"},{"@type":"ListItem","position":3,"name":"潜在ガルガル度チェック診断"}]}</script>
@@ -165,15 +175,18 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </head>
 <body>
 <header><div class="header-inner">
-<a href="/" class="logo">💑 Noe結婚設計室<span class="logo-badge">2026</span></a>
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
 <nav><a href="/#ranking">ランキング</a><a href="/#articles">記事一覧</a><a href="/#tools">無料ツール</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
 </div></header>
 <div class="wrap">
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 潜在ガルガル度チェック診断</div>
 
+<div class="tool-hero" style="background-image:url('../../images/lp/hands-touch.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><g fill="none" stroke="#7c2e42" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="32" cy="32" r="16.5"/><path d="M36 22c-5.5 0-9.5 3.8-9.5 9 0 1.8-.9 3-2.1 4.4-.7.8-.4 1.8.7 1.9l2.9.3c.3 4.6 3.6 7.4 8 7.4"/><path d="M36.5 22c1.1-1.9 3.3-2.6 5-2"/><path d="M43.7 20.3l2.8-2.8M47.5 26.4l3.5-1.3M48.5 32h4M47.5 37.6l3.5 1.3M43.7 43.7l2.8 2.8"/><circle cx="30.5" cy="29.5" r="1.1" fill="#7c2e42" stroke="none"/></g></svg>
+<h1>潜在ガルガル度チェック診断</h1>
+<p>産後、あなた（の妻・彼女）の中のライオンはどれくらい目を覚ますのか。53問でいまのうちに見積もる無料診断。</p>
+</div></div>
 <article>
-<h1>潜在ガルガル🦁度チェック診断</h1>
-<p style="color:var(--sub);font-size:.9rem;margin-top:-6px">産後、あなた（の妻・彼女）の中のライオンはどれくらい目を覚ますのか。53問でいまのうちに見積もる無料診断。</p>
 
 <h2>この診断について</h2>
 <p>「ガルガル期」とは、産後のお母さんがホルモンの急変動と「赤ちゃんを守る」防衛本能によって、警戒心や攻撃性が一時的に高まる時期の俗称です。<strong>誰にでも起こりうる、生き物として正常な反応</strong>であり、性格の欠陥ではありません。</p>
@@ -188,8 +201,8 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </div>
 
 <div class="mode-switch" id="modeSwitch">
-<button type="button" data-mode="short" class="active">⚡ サクッと15問<span>約2分・要点だけ測る</span></button>
-<button type="button" data-mode="full">🔬 ちゃんと測る53問<span>約5分・フル計測</span></button>
+<button type="button" data-mode="short" class="active">サクッと15問<span>約2分・要点だけ測る</span></button>
+<button type="button" data-mode="full">ちゃんと測る53問<span>約5分・フル計測</span></button>
 </div>
 <div id="checklist"></div>
 
@@ -225,16 +238,16 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <strong>⚠ 重要フラグ検出</strong>：Ⅵ「こころのカルテ」の重要項目（双極性障害の既往/家族歴・産後うつ/産後精神病の家族歴）に「はい」があります。この場合、<strong>合計点に関係なく「飢えたライオン」以上</strong>として扱ってください。精神疾患の産後エピソードは気質と独立に発症するため、点数の低さは安全を意味しません。妊娠期から医療・支援先につないでおく設計を強く推奨します。
 </div>
 <div class="r-block">
-<h3>💥 パートナー（夫・彼氏）の被害想定</h3>
+<h3>パートナー（夫・彼氏）の被害想定</h3>
 <div><span class="damage-stars" id="rStars"></span><span class="damage-level" id="rDamageLevel"></span></div>
 <p id="rDamage" style="margin:8px 0 0;font-size:.9rem"></p>
 </div>
 <div class="r-block">
-<h3>🛡 夫・彼氏のサバイバルガイド</h3>
+<h3>夫・彼氏のサバイバルガイド</h3>
 <ul class="r-tips" id="rTips"></ul>
 </div>
 <div class="r-block">
-<h3>📝 補足</h3>
+<h3>補足</h3>
 <p id="rNote" style="margin:0;font-size:.9rem"></p>
 </div>
 <div style="border:1px solid var(--border);border-radius:6px;padding:20px 22px;margin:26px 0;background:var(--bg)">
@@ -243,17 +256,17 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <p style="font-size:.82rem;color:var(--ink-soft);margin:0 0 16px">出産が近い人も、まだ予定がない人も。診断結果と自分の段階に照らして、いま動けるものだけ選んでください。</p>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
 <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px 15px;display:flex;flex-direction:column">
-<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">🍚 食事の補給線</p>
+<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">食事の補給線</p>
 <p style="font-size:.78rem;color:var(--ink-soft);margin:0 0 12px;flex:1">空腹は二大トリガーのひとつで、産後に最初に消えるのは「作る余力」。共働きの平日にもそのまま効くので、予定がなくても試す価値はある。</p>
 <a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA" rel="nofollow sponsored noopener" target="_blank" style="display:block;text-align:center;background:#7c2e42;color:#fff;font-weight:700;font-size:.82rem;padding:11px 10px;border-radius:2px;text-decoration:none">Oisixのおためしセットを見る</a>
 </div>
 <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px 15px;display:flex;flex-direction:column">
-<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">💴 お金の防衛線</p>
+<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">お金の防衛線</p>
 <p style="font-size:.78rem;color:var(--ink-soft);margin:0 0 12px;flex:1">経済不安はガルガルを底上げする環境因子。結婚・出産などライフイベントの手前が保険と固定費の見直しどき。無料相談で現状把握から。</p>
 <a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX" rel="nofollow sponsored noopener" target="_blank" style="display:block;text-align:center;background:#7c2e42;color:#fff;font-weight:700;font-size:.82rem;padding:11px 10px;border-radius:2px;text-decoration:none">保険ランドリーの相談内容を見る</a>
 </div>
 <div style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:16px 15px;display:flex;flex-direction:column">
-<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">💘 そもそもの人選（婚活中の人向け）</p>
+<p style="font-weight:700;font-size:.88rem;margin:0 0 6px">そもそもの人選（婚活中の人向け）</p>
 <p style="font-size:.78rem;color:var(--ink-soft);margin:0 0 12px;flex:1">まだパートナー探しの段階なら、温度感の合う相手選びが実は最大のガルガル対策。真剣度の高い出会いから設計する。</p>
 <a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:block;text-align:center;background:#7c2e42;color:#fff;font-weight:700;font-size:.82rem;padding:11px 10px;border-radius:2px;text-decoration:none">結婚相談所比較ネットで無料診断する</a>
 </div>
@@ -262,7 +275,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </div>
 <hr class="r-divider">
 <div class="medical">
-<strong>🏥 これが出たら「ガルガル」ではなく受診のサイン</strong>
+<strong>これが出たら「ガルガル」ではなく受診のサイン</strong>
 以下は気質の問題ではなく、医療につなぐべきサインです。診断結果に関わらず、当てはまったら点数の話は打ち切って産婦人科・精神科・自治体の産後ケアへ。
 <ul>
 <li>赤ちゃんが寝ていても眠れない</li>
@@ -312,14 +325,14 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <div class="related">
 <h2>あわせて読みたい・使いたい</h2>
 <ul>
-<li><a href="/articles/garugaru-ki-guide/">📖 ガルガル期とは？いつからいつまで続くか・原因と夫の対処法（解説記事）</a></li>
-<li><a href="/tools/fugenbyo-check/">🌤 夫源病危険度チェック診断｜その不調、夫が原因かも（無料）</a></li>
-<li><a href="/articles/dansei-ninkatsu-guide/">🤝 男性の妊活準備ガイド｜「妊活は2人でするもの」検査・生活習慣の基礎知識</a></li>
-<li><a href="/articles/shinkon-seikatsu-guide/">🏠 新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト</a></li>
-<li><a href="/articles/kosodate-zaitaku-guide/">👶 子育てと両立できる働き方ガイド｜在宅ワーク化・時短勤務のスキルの選び方</a></li>
-<li><a href="/articles/tomobataraki-shokuji-data/">🍚 共働き夫婦の食事はどうしている？費用と時間の実データ</a></li>
-<li><a href="/tools/kekkon-shikin-keisanki/">💰 結婚資金計算機｜総額と実質自己負担を60秒で試算</a></li>
-<li><a href="/tools/soudanjo-simulator/">🏢 結婚相談所 料金シミュレーター｜タイプ別の総額レンジを試算</a></li>
+<li><a href="/articles/garugaru-ki-guide/">ガルガル期とは？いつからいつまで続くか・原因と夫の対処法（解説記事）</a></li>
+<li><a href="/tools/fugenbyo-check/">夫源病危険度チェック診断｜その不調、夫が原因かも（無料）</a></li>
+<li><a href="/articles/dansei-ninkatsu-guide/">男性の妊活準備ガイド｜「妊活は2人でするもの」検査・生活習慣の基礎知識</a></li>
+<li><a href="/articles/shinkon-seikatsu-guide/">新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト</a></li>
+<li><a href="/articles/kosodate-zaitaku-guide/">子育てと両立できる働き方ガイド｜在宅ワーク化・時短勤務のスキルの選び方</a></li>
+<li><a href="/articles/tomobataraki-shokuji-data/">共働き夫婦の食事はどうしている？費用と時間の実データ</a></li>
+<li><a href="/tools/kekkon-shikin-keisanki/">結婚資金計算機｜総額と実質自己負担を60秒で試算</a></li>
+<li><a href="/tools/soudanjo-simulator/">結婚相談所 料金シミュレーター｜タイプ別の総額レンジを試算</a></li>
 </ul>
 </div>
 
@@ -328,7 +341,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <div class="diag-bar">
 <div class="diag-bar-inner">
 <div class="diag-progress" id="progress">回答済み 0 / 53</div>
-<button class="diag-btn" id="diagBtn" type="button">🦁 診断する</button>
+<button class="diag-btn" id="diagBtn" type="button">診断する</button>
 </div>
 </div>
 
@@ -350,7 +363,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 
 <script>
 const SECTIONS = [
-  { roman: "Ⅰ", title: "🔥 牙の使用歴", note: "まずは基本性能の確認から。過去にどこかで牙、出てませんか", items: [
+  { roman: "Ⅰ", title: "牙の使用歴", note: "まずは基本性能の確認から。過去にどこかで牙、出てませんか", items: [
     { t: "物に当たったことがある（叩く・投げる・壊す）", w: 4, s: true },
     { t: "店員・運転手・コールセンターへの態度が横柄", w: 4, s: true },
     { t: "元交際相手への暴力・威圧の履歴", w: 4 },
@@ -359,7 +372,7 @@ const SECTIONS = [
     { t: "悲しみ・不安・恥がすべて怒りとして出力される", w: 2 },
     { t: "声量が状況で急に上がる場面がある", w: 2 },
   ]},
-  { roman: "Ⅱ", title: "🔍 心配性メーター", note: "ふだんの心配グセ・こだわりグセを見ます", items: [
+  { roman: "Ⅱ", title: "心配性メーター", note: "ふだんの心配グセ・こだわりグセを見ます", items: [
     { t: "確認行為が多い", w: 2 },
     { t: "潔癖傾向・清潔への執着", w: 2 },
     { t: "「正しさ」への執着が強い", w: 2 },
@@ -367,34 +380,34 @@ const SECTIONS = [
     { t: "情報収集が過剰（SNS・検索が止まらない）", w: 2 },
     { t: "予定変更で崩れ、立て直しに時間がかかる", w: 2 },
   ]},
-  { roman: "Ⅲ", title: "⚡ 腹ペコ・寝不足スイッチ", note: "産後は空腹と寝不足の無限ループ。スイッチの感度は？", items: [
+  { roman: "Ⅲ", title: "腹ペコ・寝不足スイッチ", note: "産後は空腹と寝不足の無限ループ。スイッチの感度は？", items: [
     { t: "PMS/PMDDの変動幅が大きい", w: 5, s: true },
     { t: "睡眠不足で明確に人格が変わる", w: 5, s: true },
     { t: "空腹・低血糖時に態度が変わる", w: 3 },
     { t: "疲労時の表情・口調の落差が大きい", w: 3 },
   ]},
-  { roman: "Ⅳ", title: "🤫 静かなる圧", note: "吠えないライオンにも、流儀がある", items: [
+  { roman: "Ⅳ", title: "静かなる圧", note: "吠えないライオンにも、流儀がある", items: [
     { t: "沈黙・無視で罰する", w: 2 },
     { t: "恨みを溜めて一気に爆発する", w: 2, s: true },
     { t: "「察してほしい」型で要求が言語化されない", w: 2 },
     { t: "見捨てられ不安・試し行動がある", w: 2 },
     { t: "独占欲・嫉妬が強い", w: 2 },
   ]},
-  { roman: "Ⅴ", title: "🏠 実家のかたち", note: "ライオンはプライド（群れ）で育つ", items: [
+  { roman: "Ⅴ", title: "実家のかたち", note: "ライオンはプライド（群れ）で育つ", items: [
     { t: "実母が産後に同様（ガルガル）だった", w: 5, s: true },
     { t: "実母の同居・頻回訪問が確定している", w: 5, s: true },
     { t: "実母との関係が過密着 or 完全断絶", w: 3 },
     { t: "被虐待歴・機能不全家庭", w: 3 },
     { t: "怒鳴りが日常の通信手段だった家庭", w: 3 },
   ]},
-  { roman: "Ⅵ", title: "🧠 こころのカルテ", note: "ここだけ真面目パート。正直にどうぞ", items: [
+  { roman: "Ⅵ", title: "こころのカルテ", note: "ここだけ真面目パート。正直にどうぞ", items: [
     { t: "双極性障害の既往または家族歴", w: 8, flag: true, s: true },
     { t: "産後うつ・産後精神病の家族歴", w: 8, flag: true, s: true },
     { t: "うつ・不安障害の既往", w: 5 },
     { t: "摂食障害の既往", w: 5 },
     { t: "自傷・衝動行動の履歴", w: 5 },
   ]},
-  { roman: "Ⅶ", title: "🌪 追い風・向かい風", note: "気質より効くことがある、環境のはなし", items: [
+  { roman: "Ⅶ", title: "追い風・向かい風", note: "気質より効くことがある、環境のはなし", items: [
     { t: "出産時トラウマ（緊急帝王切開・医療者の不適切対応）", w: 4 },
     { t: "夫・彼氏が激務・単身赴任・夜間不在", w: 4, s: true },
     { t: "望まない妊娠、キャリア中断への未整理な怒り", w: 2 },
@@ -403,7 +416,7 @@ const SECTIONS = [
     { t: "転居直後・孤立環境", w: 2 },
     { t: "実家以外の支援先がゼロ", w: 2, s: true },
   ]},
-  { roman: "Ⅷ", title: "🚧 縄張りセンサー", note: "サバンナの縄張り意識、日常生活編", items: [
+  { roman: "Ⅷ", title: "縄張りセンサー", note: "サバンナの縄張り意識、日常生活編", items: [
     { t: "自分の物を勝手に触られる・配置を変えられると強い不快感がある", w: 2, s: true },
     { t: "ペットや大事なものを他人が扱っていると目が離せない", w: 2 },
     { t: "夫・彼氏の家事のやり方に口を出し、結局自分でやり直す", w: 2 },
@@ -411,7 +424,7 @@ const SECTIONS = [
     { t: "疲れてくると匂い・音への感覚が過敏になる", w: 2 },
     { t: "相手の実家との距離感に、すでにモヤモヤがある", w: 2 },
   ]},
-  { roman: "Ⅸ", title: "🌿 切り替え力", note: "最後に、あなたの回復スキルを", items: [
+  { roman: "Ⅸ", title: "切り替え力", note: "最後に、あなたの回復スキルを", items: [
     { t: "再評価型：そもそも怒りが生成されにくい", w: -5, s: true },
     { t: "数日後に嫌な出来事を覚えていない", w: -3 },
     { t: "完璧主義が低い。「まあこんなもん」が言える", w: -3, s: true },

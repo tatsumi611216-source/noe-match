@@ -98,6 +98,16 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 #top.show{opacity:1}
 #top:hover{background:var(--ink)}
 @media(max-width:600px){body{font-size:14.5px}article h2{margin:40px 0 14px}}
+
+/* ---- photo ambience ---- */
+.tool-hero{position:relative;min-height:220px;display:flex;align-items:flex-end;background-size:cover;background-position:center;background-color:#1d242b;border-radius:6px;overflow:hidden;margin-bottom:26px}
+.tool-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(22,18,20,.38),rgba(22,18,20,.68))}
+.tool-hero-inner{position:relative;padding:24px 34px 24px}
+.hero-mark{display:block;width:52px;height:52px;margin-bottom:12px}
+.tool-hero h1{font-family:var(--serif);font-size:clamp(1.35rem,3.8vw,1.8rem);font-weight:600;line-height:1.6;letter-spacing:.04em;color:#fff;margin:0}
+.tool-hero p{color:rgba(255,255,255,.88);font-size:.86rem;line-height:1.8;margin:8px 0 0;max-width:46em}
+@media(max-width:600px){.tool-hero{min-height:190px}.tool-hero-inner{padding:18px 18px 16px}.hero-mark{width:44px;height:44px;margin-bottom:10px}}
+.result .big{text-align:center;padding:26px 16px 20px;background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/rings-bouquet.jpg') center/cover;border-radius:4px;margin-bottom:12px}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "この計算機の金額はどのくらい正確？", "acceptedAnswer": {"@type": "Answer", "text": "各種ブライダル調査の公開データおよび各社公式情報をもとにした一般的なレンジ（2026年8月時点・編集部調べ）を使った概算です。地域・会場・時期により大きく変動するため、実際の金額は必ず見積もりで確認してください。"}}, {"@type": "Question", "name": "自己負担額はどう計算している？", "acceptedAnswer": {"@type": "Answer", "text": "費目の合計（総額）から、ご祝儀見込み（招待人数×1人あたり単価）を差し引いた金額です。親からの援助は家庭差が大きいため計算に含めていません。あれば余裕分と考えるのが安全です。"}}, {"@type": "Question", "name": "ご祝儀の単価はいくらで見ればいい？", "acceptedAnswer": {"@type": "Answer", "text": "招待客1人あたり3万円前後が目安です。親族比率が高いと単価が上がり、友人中心だと下がる傾向があるため、この計算機では2.5万円・3万円・3.5万円から選べます。"}}, {"@type": "Question", "name": "一番削りやすい費目はどこ？", "acceptedAnswer": {"@type": "Answer", "text": "装花・演出・引出物のグレードです。招待人数の削減はご祝儀も一緒に減るため、想定より削減効果が小さい点に注意してください。計算機の「削るならここ」に、選んだ条件での節約幅の目安を表示します。"}}, {"@type": "Question", "name": "ナシ婚（入籍のみ）だと総額はいくら？", "acceptedAnswer": {"@type": "Answer", "text": "挙式費用がゼロになるため、指輪・新婚旅行・新生活を含めて100〜200万円程度が目安です。この計算機で挙式スタイルを「挙式なし」にすると試算できます。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "結婚資金計算機", "url": "https://www.noe-match.com/tools/kekkon-shikin-keisanki/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "inLanguage": "ja", "author": {"@type": "Organization", "name": "Noe編集部", "url": "https://www.noe-match.com/about.html"}, "publisher": {"@id": "https://www.noe-match.com/#organization"}, "datePublished": "2026-08-13", "dateModified": "2026-08-13"}</script>
@@ -105,13 +115,16 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </head>
 <body>
 <header><div class="header-inner">
-<a href="/" class="logo">💑 Noe結婚設計室<span class="logo-badge">2026</span></a>
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
 <nav><a href="/#ranking">ランキング</a><a href="/#articles">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
 </div></header>
 <div class="wrap">
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ 無料ツール ＞ 結婚資金計算機</div>
-<article>
+<div class="tool-hero" style="background-image:url('../../images/lp/rings-bouquet.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><g fill="none" stroke="#7c2e42" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="26" cy="38" r="10.5"/><path d="M26 18l5.5 6.5L26 29.5l-5.5-5z"/><circle cx="43" cy="41" r="9"/><circle cx="43" cy="41" r="5.5"/></g></svg>
 <h1>結婚資金計算機｜総額と「実質自己負担」を60秒で試算【2026年版】</h1>
+</div></div>
+<article>
 <blockquote><strong>結婚費用は「総額」ではなく「ご祝儀を差し引いた実質自己負担」で考えるのが正解。</strong>挙式スタイル・指輪・新生活のグレードを選ぶだけで、総額・自己負担・費目内訳・削減候補まで一度に出します。</blockquote>
 <p>「結婚には400万円かかる」とよく言われるが、それは全部やった場合の定価にすぎない。実際の負担はご祝儀でかなり圧縮される。まずは自分たちの条件で数字を出してみてほしい。数字の背景は<a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ</a>で詳しく解説している。</p>
 
@@ -240,7 +253,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <strong>数字の出典</strong>：当サイト<a href="/articles/kekkon-okane-data/">「結婚にかかるお金の総額データ【2026年版】」</a>に掲載の費目別レンジ（婚約指輪30〜40万円／結婚指輪20〜30万円／挙式・披露宴300〜370万円／顔合わせ・結納5〜25万円／新婚旅行40〜60万円／引越し・敷金礼金30〜60万円／家具・家電30〜70万円。各種ブライダル調査の公開データおよび各社公式情報に基づく一般的なレンジ）。引越し距離・家具家電グレードによる細分は同レンジ内での編集部按分です。<strong>編集部調べ・2026年8月時点。</strong>実際の金額は会場・地域・時期により変動します。
 </div>
 </article>
-<div class="related"><h2>📚 関連記事</h2><ul>
+<div class="related"><h2>関連記事</h2><ul>
 <li><a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ【2026年版】</a></li>
 <li><a href="/tools/soudanjo-simulator/">結婚相談所 料金シミュレーター</a></li>
 <li><a href="/articles/shikijo-erabi-guide/">結婚式場探し完全ガイド</a></li>
