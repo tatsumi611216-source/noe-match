@@ -12,7 +12,9 @@
 <meta property="og:url" content="https://www.noe-match.com/tools/garugaru-check/">
 <meta property="og:site_name" content="Noe結婚設計室">
 <meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://www.noe-match.com/images/garugaru-og.png">
+<meta name="twitter:image" content="https://www.noe-match.com/images/garugaru-og.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="潜在ガルガル度チェック診断【無料53問】">
 <meta name="twitter:description" content="産後のガルガル期、あなた（の妻・彼女）はどのタイプ？ 猫〜サーベルタイガーの4段階で事前診断。">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -50,6 +52,12 @@ blockquote strong{color:var(--pink-dark)}
 .lead-note li{margin:4px 0}
 
 /* ---- quiz ---- */
+.mode-switch{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 6px}
+.mode-switch button{border:2px solid var(--line-strong);background:#fff;border-radius:12px;padding:14px 12px;cursor:pointer;font-family:inherit;font-size:.95rem;font-weight:800;color:var(--sub);transition:border-color .15s,color .15s,background .15s;line-height:1.5}
+.mode-switch button span{display:block;font-size:.72rem;font-weight:500;margin-top:2px}
+.mode-switch button.active{border-color:var(--pink-dark);color:var(--pink-dark);background:var(--pink-light)}
+.mode-switch button:focus-visible{outline:2px solid var(--pink-deep);outline-offset:2px}
+.q-item.hidden{display:none}
 .q-section{margin-top:34px}
 .q-section-head{display:flex;align-items:baseline;gap:10px;margin-bottom:4px}
 .q-roman{color:var(--pink-dark);font-weight:900;font-size:1.05rem;min-width:1.6em}
@@ -169,6 +177,10 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 </ul>
 </div>
 
+<div class="mode-switch" id="modeSwitch">
+<button type="button" data-mode="short" class="active">⚡ サクッと15問<span>約2分・要点だけ測る</span></button>
+<button type="button" data-mode="full">🔬 ちゃんと測る53問<span>約5分・フル計測</span></button>
+</div>
 <div id="checklist"></div>
 
 <section id="result" aria-live="polite">
@@ -178,6 +190,7 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <div class="result-tier-label" id="rTierLabel"></div>
 <div class="result-name" id="rName"></div>
 <p class="result-catch" id="rCatch"></p>
+<div style="font-size:.68rem;color:var(--sub);margin-top:12px;letter-spacing:.04em">潜在ガルガル度チェック診断｜noe-match.com/tools/garugaru-check</div>
 </div>
 <div class="result-body">
 <div class="score-row">
@@ -250,6 +263,8 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 </ul>
 </div>
 <p class="r-disclaimer">※本診断は医学的診断・心理検査ではありません。産後の経過は出産体験や支援環境など状況要因に大きく左右されるため、低スコアでも油断せず、高スコアでも運用設計で吸収できる範囲は広い、が実務上の結論です。</p>
+<div id="shortNote" style="display:none;background:var(--bg);border:1px dashed var(--line-strong);border-radius:10px;padding:12px 16px;font-size:.82rem;color:var(--ink-soft);margin-bottom:4px">※これは<strong>15問の簡易判定</strong>です。家族歴・環境因子まで含めた精度で見るなら
+<button id="upgradeFull" type="button" style="background:none;border:none;color:var(--pink-dark);font-weight:700;font-size:.82rem;cursor:pointer;text-decoration:underline;font-family:inherit;padding:0">フル53問で測り直す（回答は引き継ぎ）</button></div>
 <div class="share-block">
 <div class="share-title">結果をシェアする</div>
 <div class="share-btns">
@@ -295,8 +310,8 @@ footer{background:var(--navy);color:#9aa;padding:34px 20px;font-size:.76rem;line
 <script>
 const SECTIONS = [
   { roman: "Ⅰ", title: "🔥 牙の使用歴", note: "まずは基本性能の確認から。過去にどこかで牙、出てませんか", items: [
-    { t: "物に当たったことがある（叩く・投げる・壊す）", w: 4 },
-    { t: "店員・運転手・コールセンターへの態度が横柄", w: 4 },
+    { t: "物に当たったことがある（叩く・投げる・壊す）", w: 4, s: true },
+    { t: "店員・運転手・コールセンターへの態度が横柄", w: 4, s: true },
     { t: "元交際相手への暴力・威圧の履歴", w: 4 },
     { t: "運転中に暴言が出る", w: 2 },
     { t: "トラブル時、原因を状況でなく人に求める", w: 2 },
@@ -307,48 +322,48 @@ const SECTIONS = [
     { t: "確認行為が多い", w: 2 },
     { t: "潔癖傾向・清潔への執着", w: 2 },
     { t: "「正しさ」への執着が強い", w: 2 },
-    { t: "曖昧な状況で最悪の解釈に飛ぶ", w: 2 },
+    { t: "曖昧な状況で最悪の解釈に飛ぶ", w: 2, s: true },
     { t: "情報収集が過剰（SNS・検索が止まらない）", w: 2 },
     { t: "予定変更で崩れ、立て直しに時間がかかる", w: 2 },
   ]},
   { roman: "Ⅲ", title: "⚡ 腹ペコ・寝不足スイッチ", note: "産後は空腹と寝不足の無限ループ。スイッチの感度は？", items: [
-    { t: "PMS/PMDDの変動幅が大きい", w: 5 },
-    { t: "睡眠不足で明確に人格が変わる", w: 5 },
+    { t: "PMS/PMDDの変動幅が大きい", w: 5, s: true },
+    { t: "睡眠不足で明確に人格が変わる", w: 5, s: true },
     { t: "空腹・低血糖時に態度が変わる", w: 3 },
     { t: "疲労時の表情・口調の落差が大きい", w: 3 },
   ]},
   { roman: "Ⅳ", title: "🤫 静かなる圧", note: "吠えないライオンにも、流儀がある", items: [
     { t: "沈黙・無視で罰する", w: 2 },
-    { t: "恨みを溜めて一気に爆発する", w: 2 },
+    { t: "恨みを溜めて一気に爆発する", w: 2, s: true },
     { t: "「察してほしい」型で要求が言語化されない", w: 2 },
     { t: "見捨てられ不安・試し行動がある", w: 2 },
     { t: "独占欲・嫉妬が強い", w: 2 },
   ]},
   { roman: "Ⅴ", title: "🏠 実家のかたち", note: "ライオンはプライド（群れ）で育つ", items: [
-    { t: "実母が産後に同様（ガルガル）だった", w: 5 },
-    { t: "実母の同居・頻回訪問が確定している", w: 5 },
+    { t: "実母が産後に同様（ガルガル）だった", w: 5, s: true },
+    { t: "実母の同居・頻回訪問が確定している", w: 5, s: true },
     { t: "実母との関係が過密着 or 完全断絶", w: 3 },
     { t: "被虐待歴・機能不全家庭", w: 3 },
     { t: "怒鳴りが日常の通信手段だった家庭", w: 3 },
   ]},
   { roman: "Ⅵ", title: "🧠 こころのカルテ", note: "ここだけ真面目パート。正直にどうぞ", items: [
-    { t: "双極性障害の既往または家族歴", w: 8, flag: true },
-    { t: "産後うつ・産後精神病の家族歴", w: 8, flag: true },
+    { t: "双極性障害の既往または家族歴", w: 8, flag: true, s: true },
+    { t: "産後うつ・産後精神病の家族歴", w: 8, flag: true, s: true },
     { t: "うつ・不安障害の既往", w: 5 },
     { t: "摂食障害の既往", w: 5 },
     { t: "自傷・衝動行動の履歴", w: 5 },
   ]},
   { roman: "Ⅶ", title: "🌪 追い風・向かい風", note: "気質より効くことがある、環境のはなし", items: [
     { t: "出産時トラウマ（緊急帝王切開・医療者の不適切対応）", w: 4 },
-    { t: "夫・彼氏が激務・単身赴任・夜間不在", w: 4 },
+    { t: "夫・彼氏が激務・単身赴任・夜間不在", w: 4, s: true },
     { t: "望まない妊娠、キャリア中断への未整理な怒り", w: 2 },
     { t: "授乳困難", w: 2 },
     { t: "経済不安", w: 2 },
     { t: "転居直後・孤立環境", w: 2 },
-    { t: "実家以外の支援先がゼロ", w: 2 },
+    { t: "実家以外の支援先がゼロ", w: 2, s: true },
   ]},
   { roman: "Ⅷ", title: "🚧 縄張りセンサー", note: "サバンナの縄張り意識、日常生活編", items: [
-    { t: "自分の物を勝手に触られる・配置を変えられると強い不快感がある", w: 2 },
+    { t: "自分の物を勝手に触られる・配置を変えられると強い不快感がある", w: 2, s: true },
     { t: "ペットや大事なものを他人が扱っていると目が離せない", w: 2 },
     { t: "夫・彼氏の家事のやり方に口を出し、結局自分でやり直す", w: 2 },
     { t: "体調が悪くても人に頼れず、限界まで抱え込む", w: 2 },
@@ -356,9 +371,9 @@ const SECTIONS = [
     { t: "相手の実家との距離感に、すでにモヤモヤがある", w: 2 },
   ]},
   { roman: "Ⅸ", title: "🌿 切り替え力", note: "最後に、あなたの回復スキルを", items: [
-    { t: "再評価型：そもそも怒りが生成されにくい", w: -5 },
+    { t: "再評価型：そもそも怒りが生成されにくい", w: -5, s: true },
     { t: "数日後に嫌な出来事を覚えていない", w: -3 },
-    { t: "完璧主義が低い。「まあこんなもん」が言える", w: -3 },
+    { t: "完璧主義が低い。「まあこんなもん」が言える", w: -3, s: true },
     { t: "相談相手が名前で3人以上出てくる", w: -3 },
     { t: "消耗の底を経験して抜けた実績がある", w: -3 },
     { t: "年少者の世話経験がある（弟妹・保育/看護職）", w: -2 },
@@ -435,7 +450,7 @@ SECTIONS.forEach((sec) => {
   sec.items.forEach((it) => {
     itemCount++;
     const name = `q${itemCount}`;
-    html += `<div class="q-item" data-w="${it.w}" ${it.flag ? 'data-flag="1"' : ""}>
+    html += `<div class="q-item" data-w="${it.w}" ${it.flag ? 'data-flag="1"' : ""} ${it.s ? 'data-short="1"' : ""}>
       <span class="q-text">${it.t}</span>
       <div class="seg" role="radiogroup">
         <label><input type="radio" name="${name}" value="1">はい</label>
@@ -450,7 +465,38 @@ SECTIONS.forEach((sec) => {
 });
 
 const allItems = () => Array.from(document.querySelectorAll('#checklist .q-item'));
+const modeItems = () => allItems().filter(i => mode === 'full' || i.dataset.short);
 const progress = document.getElementById("progress");
+
+// ---- モード（簡易15問 / フル53問） ----
+let mode = 'short';
+let started = false;
+const BANDS = { short: [4, 10, 16], full: [10, 25, 40] };  // 各tierの上限（超えたら次へ）
+const METER = {
+  short: { range: 22, flex: [4, 6, 6, 6], labels: ["〜4 猫", "5〜10 昼寝", "11〜16 飢え", "17〜 伝説"] },
+  full:  { range: 54, flex: [10, 15, 15, 14], labels: ["〜10 猫", "11〜25 昼寝", "26〜40 飢え", "41〜 伝説"] }
+};
+
+// ---- 計測（GA4が読み込まれていれば送る。無ければ静かに無視） ----
+function track(name, params) {
+  try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {}
+}
+
+function applyMode() {
+  allItems().forEach(i => i.classList.toggle('hidden', mode === 'short' && !i.dataset.short));
+  document.querySelectorAll('#modeSwitch button').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+  document.getElementById('result').classList.remove('show');
+  updateProgress();
+}
+
+document.querySelectorAll('#modeSwitch button').forEach(b => {
+  b.addEventListener('click', () => {
+    if (mode === b.dataset.mode) return;
+    mode = b.dataset.mode;
+    applyMode();
+    track('garugaru_mode_switch', { to: mode });
+  });
+});
 
 function answerOf(item) {
   const sel = item.querySelector('input:checked');
@@ -458,21 +504,27 @@ function answerOf(item) {
 }
 function updateProgress() {
   let n = 0;
-  allItems().forEach(item => {
+  modeItems().forEach(item => {
     const a = answerOf(item);
     item.classList.toggle("answered", a !== null);
     if (a !== null) n++;
   });
-  progress.textContent = `回答済み ${n} / ${itemCount}`;
+  progress.textContent = `回答済み ${n} / ${modeItems().length}`;
+  return n;
 }
-clWrap.addEventListener("change", updateProgress);
-updateProgress();
+clWrap.addEventListener("change", () => {
+  updateProgress();
+  if (!started) { started = true; track('garugaru_start', { mode }); }
+});
+applyMode();
 
 document.getElementById("diagBtn").addEventListener("click", () => {
-  let plus = 0, minus = 0, flag = false;
-  allItems().forEach(item => {
+  let plus = 0, minus = 0, flag = false, answered = 0;
+  modeItems().forEach(item => {
     const a = answerOf(item);
-    if (!a) return; // 未回答・いいえ = 0
+    if (a === null) return;
+    answered++;
+    if (!a) return; // いいえ = 0
     const v = Number(item.dataset.w) * a; // どちらでもない = 半分の重み
     if (v >= 0) plus += v; else minus += v;
     if (item.dataset.flag && a === 1) flag = true;
@@ -480,15 +532,18 @@ document.getElementById("diagBtn").addEventListener("click", () => {
   plus = Math.round(plus); minus = Math.round(minus);
   const total = plus + minus;
 
-  let tier = TIERS.find(t => total <= t.max);
+  const bands = BANDS[mode];
+  let ti = bands.findIndex(b => total <= b);
+  if (ti === -1) ti = 3;
   // 重要フラグ：合計点に関わらず「飢えたライオン」以上に引き上げ
-  if (flag && TIERS.indexOf(tier) < 2) tier = TIERS[2];
+  if (flag && ti < 2) ti = 2;
+  const tier = TIERS[ti];
 
   const card = document.getElementById("resultCard");
   card.style.setProperty("--tier-color", tier.color);
   card.style.setProperty("--tier-bg", tier.bg);
   document.getElementById("rEmoji").textContent = tier.emoji;
-  document.getElementById("rTierLabel").textContent = tier.label;
+  document.getElementById("rTierLabel").textContent = tier.label + (mode === 'short' ? "（簡易版）" : "");
   document.getElementById("rName").textContent = tier.name;
   document.getElementById("rCatch").textContent = tier.catch;
   document.getElementById("rTotal").textContent = `${total}点`;
@@ -500,29 +555,51 @@ document.getElementById("diagBtn").addEventListener("click", () => {
   document.getElementById("rTips").innerHTML = tier.tips.map(t => `<li>${t}</li>`).join("");
   document.getElementById("rNote").textContent = tier.note;
   document.getElementById("rFlag").style.display = flag ? "" : "none";
+  document.getElementById("shortNote").style.display = mode === 'short' ? "" : "none";
 
-  // メーター位置（0〜54点をレンジとして表示、区間比率は 10/15/15/14）
-  const clamped = Math.max(0, Math.min(total, 54));
-  document.getElementById("rPin").style.left = `${Math.max(2, Math.min(98, (clamped / 54) * 100))}%`;
+  // メーター（モード別のレンジ・帯域比率・ラベル）
+  const m = METER[mode];
+  document.querySelectorAll('.meter-seg').forEach((el, i) => el.style.flex = m.flex[i]);
+  document.querySelectorAll('.meter-labels span').forEach((el, i) => el.textContent = m.labels[i]);
+  const clamped = Math.max(0, Math.min(total, m.range));
+  document.getElementById("rPin").style.left = `${Math.max(2, Math.min(98, (clamped / m.range) * 100))}%`;
 
   // シェア導線（訪問者自身のアカウントで投稿される通常のシェアボタン）
   const PAGE_URL = "https://www.noe-match.com/tools/garugaru-check/";
-  const shareText = `診断結果：${tier.name}${tier.emoji}（${tier.label}）｜潜在ガルガル度チェック診断【無料53問】 #ガルガル期`;
+  const shareText = `診断結果：${tier.name}${tier.emoji}（${tier.label}）｜潜在ガルガル度チェック診断【無料】 #ガルガル期`;
   document.getElementById("shareX").href =
     `https://x.com/intent/post?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(PAGE_URL)}`;
   document.getElementById("shareLine").href =
     `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(PAGE_URL)}&text=${encodeURIComponent(shareText)}`;
 
+  track('garugaru_complete', { mode, tier: tier.name, score: total, answered });
+
   document.getElementById("result").classList.add("show");
   document.getElementById("result").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
 });
 
+// フル53問への引き継ぎ移行
+document.getElementById("upgradeFull").addEventListener("click", () => {
+  mode = 'full';
+  applyMode();
+  track('garugaru_mode_switch', { to: 'full', from: 'short_result' });
+  document.getElementById('checklist').scrollIntoView({ block: 'start' });
+});
+
+// シェア・PRクリック計測
+document.getElementById("shareX").addEventListener("click", () => track('garugaru_share', { method: 'x' }));
+document.getElementById("shareLine").addEventListener("click", () => track('garugaru_share', { method: 'line' }));
 document.getElementById("shareCopy").addEventListener("click", () => {
   const btn = document.getElementById("shareCopy");
   navigator.clipboard.writeText("https://www.noe-match.com/tools/garugaru-check/").then(() => {
     btn.textContent = "✅ コピーしました";
     setTimeout(() => { btn.textContent = "🔗 リンクをコピー"; }, 2000);
   }).catch(() => { btn.textContent = "コピーできませんでした"; });
+  track('garugaru_share', { method: 'copy' });
+});
+document.querySelectorAll('#result a[href*="px.a8.net"]').forEach(a => {
+  const offer = a.href.includes('5CWKMY') ? 'oisix' : a.href.includes('42GRGA') ? 'hoken_laundry' : 'soudanjo_hikaku';
+  a.addEventListener('click', () => track('garugaru_pr_click', { offer }));
 });
 
 document.getElementById("resetBtn").addEventListener("click", () => {
