@@ -68,7 +68,7 @@
 | 1 | 0 | 77.0 | 6,000円 | `okinawa-guide` | ユーブライド |
 | 1 | 0 | 94.0 | 案件なし | `dansei-ninkatsu-guide` | — |
 
-## D. 表示ゼロ（①がゼロ＝圏外）（69本）
+## D. 表示ゼロ（①がゼロ＝圏外）（70本）
 
 > 同上。`silent_articles.md` の寄せ直し対象
 
@@ -115,9 +115,9 @@
 | 0 | 0 | — | 797円 | `garugaru-ki-guide` | Oisixおためしセット |
 | 0 | 0 | — | 797円 | `ouchi-date-guide` | Oisixおためしセット |
 
-※他 29 本は省略
+※他 30 本は省略
 
-## A. 未インデックス（①が未測定）（52本）
+## A. 未インデックス（①が未測定）（70本）
 
 > **GSCで申請する。**申請すれば7〜8日で100%、放置すると1.7%。判定はその後
 
@@ -135,8 +135,18 @@
 | 0 | 0 | — | 1,800円 | `photo-tips` | Photojoy |
 | 0 | 0 | — | 1,800円 | `tapple-guide` | Photojoy |
 | 0 | 0 | — | 1,000円 | `yachin-credit-shiharai` | クレカリ賃貸 |
+| 0 | 0 | — | 797円 | `futarime-sango` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `garugaru-gibo-jitsubo` | Oisixおためしセット |
 | 0 | 0 | — | 797円 | `garugaru-ki-itsumade` | Oisixおためしセット |
-| 0 | 0 | — | 797円 | `sango-crisis-guide` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `garugaru-otto-taiou` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `garugaru-ueno-ko` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `gijikka-ikitakunai` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `sango-iraira` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `sango-kaji-buntan` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `sango-otto-kirai` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `sango-satogaeri` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `satogaeri-shinai` | Oisixおためしセット |
+| 0 | 0 | — | 797円 | `shinseiji-menkai` | Oisixおためしセット |
 | 0 | 0 | — | 797円 | `tomobataraki-shokuji-data` | Oisixおためしセット |
 | 0 | 0 | — | 735円 | `konkatsu-party-guide` | PARTY☆PARTY |
 | 0 | 0 | — | 案件なし | `anti-fraud` | — |
@@ -147,24 +157,14 @@
 | 0 | 0 | — | 案件なし | `first-date-guide` | — |
 | 0 | 0 | — | 案件なし | `fraud-statistics` | — |
 | 0 | 0 | — | 案件なし | `free-vs-paid` | — |
+| 0 | 0 | — | **単価不明** | `garugaru-doukyo` | 保険ランドリー |
+| 0 | 0 | — | **単価不明** | `garugaru-nai-hito` | 保険ランドリー |
+| 0 | 0 | — | **単価不明** | `garugaru-otto-genkai` | 保険ランドリー |
+| 0 | 0 | — | 案件なし | `garugaru-sangoutsu-chigai` | — |
+| 0 | 0 | — | **単価不明** | `ikukyu-fuufu-doji` | 保険ランドリー |
 | 0 | 0 | — | 案件なし | `kaiin-age-cross-data` | — |
-| 0 | 0 | — | 案件なし | `keiyaku-jisshitsu-wana` | — |
-| 0 | 0 | — | 案件なし | `kekkon-jutaku-loan` | — |
-| 0 | 0 | — | 案件なし | `kinsen-kachikan-check` | — |
-| 0 | 0 | — | 案件なし | `koninhiyou-guide` | — |
-| 0 | 0 | — | 案件なし | `late-20s-strategy` | — |
-| 0 | 0 | — | 案件なし | `line-exchange` | — |
-| 0 | 0 | — | 案件なし | `members-data` | — |
-| 0 | 0 | — | 案件なし | `myseed-kuchikomi` | — |
-| 0 | 0 | — | 案件なし | `nashikon-data` | — |
-| 0 | 0 | — | 案件なし | `pairs-marriage-data` | — |
-| 0 | 0 | — | 案件なし | `pairs-men` | — |
-| 0 | 0 | — | 案件なし | `pairs-women` | — |
-| 0 | 0 | — | 案件なし | `price-comparison` | — |
-| 0 | 0 | — | 案件なし | `privacy-protection` | — |
-| 0 | 0 | — | 案件なし | `profile-text` | — |
 
-※他 12 本は省略
+※他 30 本は省略
 
 ## 全記事一覧（テーマ × ①②③）
 
@@ -271,6 +271,7 @@
 | 圏外 | 0 | その他 | ALG探偵社／9,000円 | 1 | **看板を掛け替え**（表示ゼロ＝圏外） | 離婚を考えたら最初にすること | `rikon-junbi-jyunban` |
 | 圏外 | 0 | その他 | **なし** | 0 | **案件を設置**（①はあるが③が無い。貼るだけで経路ができる） | 離婚した場合のお金の現実 | `rikon-okane-genjitsu` |
 | 圏外 | 0 | その他 | ユーブライド／6,000円 | 2 | **看板を掛け替え**（表示ゼロ＝圏外） | 埼玉・千葉でマッチングアプリを使うなら | `saitama-chiba-guide` |
+| 圏外 | 0 | その他 | Oisixおためしセット／797円 | 2 | 実効797円は低い。**高単価案件への差し替えを検討** | 産後クライシスとは？いつからいつまで・原因と乗り | `sango-crisis-guide` |
 | 圏外 | 0 | その他 | ユーブライド／6,000円 | 2 | **看板を掛け替え**（表示ゼロ＝圏外） | 非正規・フリーランスは結婚できない？雇用形態を聞 | `seishain-igai-guide` |
 | 圏外 | 0 | その他 | ユーブライド／6,000円 | 2 | **看板を掛け替え**（表示ゼロ＝圏外） | 仙台・広島でマッチングアプリを使うなら | `sendai-hiroshima-guide` |
 | 圏外 | 0 | **主戦場** | ビジモ光／30,000円 | 1 | **看板を掛け替え**（表示ゼロ＝圏外） | 新婚生活の固定費見直し完全ガイド | `shinkon-koteihi-minaoshi` |
@@ -295,10 +296,21 @@
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マッチングアプリ初デート完全ガイド | `first-date-guide` |
 | 未計測 | — | 入口 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マッチングアプリの業者・サクラ被害の実態 | `fraud-statistics` |
 | 未計測 | — | 入口 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マッチングアプリの課金はいつ始めるべきか | `free-vs-paid` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 二人目の産後は一人目より楽か | `futarime-sango` |
+| 未計測 | — | その他 | 保険ランドリー／単価不明 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 義母と同居しながらの産後 | `garugaru-doukyo` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | ガルガル期に義母・実母へ強く出てしまうのはなぜか | `garugaru-gibo-jitsubo` |
 | 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | ガルガル期はいつからいつまで続く？すぐ終わる家庭 | `garugaru-ki-itsumade` |
+| 未計測 | — | その他 | 保険ランドリー／単価不明 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | ガルガル期が「ない人」は何が違うのか | `garugaru-nai-hito` |
+| 未計測 | — | その他 | 保険ランドリー／単価不明 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 産後、夫のほうが限界になったとき | `garugaru-otto-genkai` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | ガルガル期の夫の対応 | `garugaru-otto-taiou` |
+| 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | ガルガル期と産後うつはどう違うのか | `garugaru-sangoutsu-chigai` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 上の子にイライラしてしまう | `garugaru-ueno-ko` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 産後に義実家へ行きたくない | `gijikka-ikitakunai` |
 | 未計測 | — | 入口 | ユーブライド／6,000円 | 2 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 初婚年齢の平均データ | `hatsushon-nenmei-data` |
+| 未計測 | — | その他 | 保険ランドリー／単価不明 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 育休を夫婦同時に取るとどうなるか | `ikukyu-fuufu-doji` |
 | 未計測 | — | 入口 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マッチングアプリの年齢層×目的マップ | `kaiin-age-cross-data` |
 | 未計測 | — | **主戦場** | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 新生活の契約で見落としがちな「実質」表記の罠 | `keiyaku-jisshitsu-wana` |
+| 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 結婚費用は折半すべきか | `kekkon-hiyou-futan` |
 | 未計測 | — | **主戦場** | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 結婚後の住まい選び | `kekkon-jutaku-loan` |
 | 未計測 | — | **主戦場** | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 結婚前に確認すべき金銭感覚のすり合わせ | `kinsen-kachikan-check` |
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 婚姻費用とは | `koninhiyou-guide` |
@@ -306,6 +318,7 @@
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 20代後半（25〜29歳）のマッチングアプリ戦略 | `late-20s-strategy` |
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マッチングアプリのLINE交換タイミング | `line-exchange` |
 | 未計測 | — | 入口 | ユーブライド／6,000円 | 2 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マッチングアプリの女性費用 | `matching-josei-cost-data` |
+| 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マタニティブルーと産後うつの違い | `maternity-blue-chigai` |
 | 未計測 | — | 入口 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マッチングアプリの男女比はどれくらい？会員数より | `members-data` |
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マイシード（男性妊活サプリ）の口コミ・成分を検証 | `myseed-kuchikomi` |
 | 未計測 | — | 入口 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 結婚式をしない「ナシ婚」の割合データ | `nashikon-data` |
@@ -323,9 +336,15 @@
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 恋活から婚活に切り替えるタイミング | `renkatsu-vs-konkatsu` |
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 安全なマッチングアプリの選び方 | `safety-guide` |
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 作品の感想でわかる相手の結婚観 | `sakuhin-kachikan` |
-| 未計測 | — | その他 | Oisixおためしセット／797円 | 2 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 産後クライシスとは？いつからいつまで・原因と乗り | `sango-crisis-guide` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 産後のイライラが抑えられない | `sango-iraira` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 産後の家事分担はどう決めるか | `sango-kaji-buntan` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 産後に夫が嫌いになった | `sango-otto-kirai` |
+| 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 産後に離婚を考えたとき | `sango-rikon` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 産後の里帰りはいつからいつまで？期間の決め方と、 | `sango-satogaeri` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 里帰りしない産後をどう回すか | `satogaeri-shinai` |
 | 未計測 | — | **主戦場** | 匠本舗／単価不明 | 2 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 新婚夫婦の初めてのおせち | `shinkon-osechi` |
 | 未計測 | — | **主戦場** | tacINTERIOR／単価不明 | 2 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 新居の家具・インテリア予算データ | `shinkyo-kagu-yosan` |
+| 未計測 | — | その他 | Oisixおためしセット／797円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 新生児の面会はいつから？友達・親戚・上の子まで、 | `shinseiji-menkai` |
 | 未計測 | — | その他 | P!っと縁結び／単価不明 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | 静岡・新潟でマッチングアプリを使うなら | `shizuoka-niigata-guide` |
 | 未計測 | — | その他 | **なし** | 0 | **GSCで申請**（7〜8日で100%、放置は1.7%） | マッチングアプリで結婚した人の体験談 | `success-stories` |
 | 未計測 | — | 入口 | Photojoy／1,800円 | 1 | **GSCで申請**（7〜8日で100%、放置は1.7%） | Tapple(タップル)完全ガイド【20代向け即 | `tapple-guide` |
@@ -360,11 +379,11 @@
 | 84.0 | 2 | マッチングアプリ うまくいかない 疲れた 切り替え | **うまくいかない=1回** | `app-tsukare-guide` |
 | 90.0 | 2 | マッチングアプリ うまくいかない 結婚相談所 費用 | **うまくいかない=2回** | `agency-vs-app` |
 
-## ②が測れていない記事（17本）
+## ②が測れていない記事（21本）
 
 CTAは貼られているが、台帳に単価の記載が無いため実効単価を計算できない。
 **空欄は「案件なし」ではない。**この混同で判断を誤ったことがある（2026-08-09）。
 afb / A8 の管理画面で単価と確定率を確認し、`AGENT.md` に追記すること。
 
-`amenohi-date-guide`, `compare-price`, `date-sakuhin-ng`, `dousei-kekkon-hikaku`, `futari-kouza-kanri`, `fuufu-credit-kanri`, `gosyugi-shiharai-houhou`, `kekkon-hoken-minaoshi`, `kekkon-uchiiwai-guide`, `kisei-kekkon-aisatsu`, `konkatsu-soudan-saki`, `konyaku-yubiwa-data`, `ouchi-date-sakuhin`, `shinkon-osechi`, `shinkon-ryokou-credit`, `shinkyo-kagu-yosan`, `shizuoka-niigata-guide`
+`amenohi-date-guide`, `compare-price`, `date-sakuhin-ng`, `dousei-kekkon-hikaku`, `futari-kouza-kanri`, `fuufu-credit-kanri`, `garugaru-doukyo`, `garugaru-nai-hito`, `garugaru-otto-genkai`, `gosyugi-shiharai-houhou`, `ikukyu-fuufu-doji`, `kekkon-hoken-minaoshi`, `kekkon-uchiiwai-guide`, `kisei-kekkon-aisatsu`, `konkatsu-soudan-saki`, `konyaku-yubiwa-data`, `ouchi-date-sakuhin`, `shinkon-osechi`, `shinkon-ryokou-credit`, `shinkyo-kagu-yosan`, `shizuoka-niigata-guide`
 
