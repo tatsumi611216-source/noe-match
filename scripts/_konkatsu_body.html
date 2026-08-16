@@ -1,0 +1,278 @@
+<style>
+/* 診断結果の見せ方：スコアは棒で相対比較させる。数字だけだと優劣が読み取りにくい */
+.result .big{background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/hands-touch.jpg') center/cover}
+.bar-row{display:grid;grid-template-columns:9.5em 1fr 3.6em;gap:10px;align-items:center;margin:0 0 10px}
+.bar-track{background:#ece7e0;height:16px;position:relative}
+.bar-fill{background:#7c2e42;height:16px}
+.bar-fill.sub{background:#b39aa2}
+.bar-name{font-weight:700;font-size:.92rem}
+.bar-val{text-align:right;font-size:.86rem;color:#5a6068}
+.why{font-size:.88rem;color:#5a6068;margin:2px 0 16px;line-height:1.85}
+.notfit{background:#faf8f6;border-left:3px solid #c9bfb4;padding:12px 16px;margin:14px 0}
+.notfit p{margin:0;font-size:.9rem;line-height:1.85}
+.cost-line{display:flex;justify-content:space-between;border-bottom:1px dotted #ded8d0;padding:9px 0;font-size:.94rem}
+.attr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:8px}
+.attr-grid label{display:flex;align-items:center;gap:7px;font-size:.9rem;background:#faf8f6;border:1px solid #e6e2dc;padding:9px 11px;cursor:pointer}
+.attr-grid input{margin:0}
+</style>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/hands-touch.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/scale.png" x="9" y="9" width="46" height="46"/></svg>
+<h1>婚活タイプ診断｜自分に向いている婚活はどれかを60秒で</h1>
+<p>アプリ・結婚相談所・パーティー・属性特化の4手段を、使える時間とお金・生活のかたちから比べます。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>婚活がうまくいかない原因は、努力の量ではなく「合わない手段を選んでいること」であることが少なくありません。</strong>夜勤や転勤の多い仕事の人がパーティー中心で動く、文章でのやりとりが苦手な人がアプリだけで進める——手段と生活が噛み合っていないと、時間もお金も削られます。この診断は、向いている手段と<strong>向いていない手段の理由</strong>を並べて出します。</blockquote>
+
+<div class="calc">
+  <div class="row2">
+    <div class="fld"><span class="lbl">年齢</span>
+      <select id="age">
+        <option value="20">20代前半</option>
+        <option value="25">20代後半</option>
+        <option value="30" selected>30代前半</option>
+        <option value="35">30代後半</option>
+        <option value="40">40代</option>
+        <option value="50">50代以上</option>
+      </select></div>
+    <div class="fld"><span class="lbl">性別</span>
+      <select id="sex"><option value="f">女性</option><option value="m">男性</option><option value="x">回答しない</option></select></div>
+  </div>
+
+  <div class="row2">
+    <div class="fld"><span class="lbl">住んでいる地域</span>
+      <select id="area">
+        <option value="big">三大都市圏（東京・大阪・名古屋周辺）</option>
+        <option value="mid" selected>地方の県庁所在地・中核市</option>
+        <option value="small">それ以外の市町村</option>
+      </select></div>
+    <div class="fld"><span class="lbl">働き方</span>
+      <select id="work">
+        <option value="normal" selected>日中勤務・休日は比較的一定</option>
+        <option value="shift">交代制・夜勤がある</option>
+        <option value="busy">残業が多い・休日が読めない</option>
+        <option value="tenkin">転勤・出張が多い</option>
+        <option value="free">自営・フリーランス・非正規</option>
+      </select></div>
+  </div>
+
+  <div class="row2">
+    <div class="fld"><span class="lbl">婚活に使える金額（月）</span>
+      <select id="budget">
+        <option value="3000">〜3,000円</option>
+        <option value="10000" selected>1万円くらい</option>
+        <option value="20000">2万円くらい</option>
+        <option value="40000">3万円以上</option>
+      </select></div>
+    <div class="fld"><span class="lbl">婚活に使える時間（週）</span>
+      <select id="time">
+        <option value="1">1時間くらい</option>
+        <option value="3" selected>3時間くらい</option>
+        <option value="6">6時間くらい</option>
+        <option value="10">10時間以上</option>
+      </select></div>
+  </div>
+
+  <div class="row2">
+    <div class="fld"><span class="lbl">初対面で話すこと</span>
+      <select id="face">
+        <option value="ok">得意なほう</option>
+        <option value="mid" selected>ふつう</option>
+        <option value="ng">苦手なほう</option>
+      </select></div>
+    <div class="fld"><span class="lbl">文章でのやりとり</span>
+      <select id="text">
+        <option value="ok">苦にならない</option>
+        <option value="mid" selected>ふつう</option>
+        <option value="ng">続けるのが負担</option>
+      </select></div>
+  </div>
+
+  <div class="fld"><span class="lbl">最初から共有しておきたい条件（あてはまるものすべて）</span>
+    <div class="attr-grid">
+      <label><input type="checkbox" class="attr" value="趣味"> 趣味・好きなもの</label>
+      <label><input type="checkbox" class="attr" value="ペット"> ペットと暮らすこと</label>
+      <label><input type="checkbox" class="attr" value="体型"> 体型のこと</label>
+      <label><input type="checkbox" class="attr" value="再婚"> 再婚であること</label>
+      <label><input type="checkbox" class="attr" value="子ども"> 子どものこと</label>
+      <label><input type="checkbox" class="attr" value="働き方"> 働き方・勤務形態</label>
+    </div>
+    <span class="hint">最初から共有できると、説明の手間が減り、話が早く進みます</span>
+  </div>
+
+  <div class="fld"><span class="lbl">結婚したい時期</span>
+    <select id="speed">
+      <option value="soon">1年以内に決めたい</option>
+      <option value="mid" selected>2〜3年のうちに</option>
+      <option value="slow">いい人がいればで、急いでいない</option>
+    </select></div>
+
+  <button class="calc-btn" id="run">診断する</button>
+</div>
+
+<div class="result" id="res">
+  <div class="big"><span id="topname">—</span></div>
+  <p class="hint" id="toplead"></p>
+
+  <h3>4つの手段の合い方</h3>
+  <div id="bars"></div>
+
+  <div class="notfit" id="notfit"></div>
+
+  <h3>あなたの条件だと、どのくらいかかるか</h3>
+  <div id="cost"></div>
+  <p class="hint">金額はサービスの一般的なレンジからの概算です。実際の費用は各サービスの公式情報でご確認ください。</p>
+
+  <h3>次に読むと早いページ</h3>
+  <div id="links"></div>
+</div>
+
+<h2>この診断の考え方</h2>
+<p>婚活の手段は4つに整理できます。<strong>どれが優れているかではなく、生活のかたちと噛み合うかどうか</strong>で選ぶものです。</p>
+
+<div class="table-wrap"><table>
+<tr><th>手段</th><th>強み</th><th>噛み合わない場合</th></tr>
+<tr><td>マッチングアプリ</td><td>費用が最も低い。時間帯を選ばず動ける。母数が大きい</td><td>文章でのやりとりが負担な場合。相手の状況が確認しづらい</td></tr>
+<tr><td>結婚相談所</td><td>結婚の意思が確認されている相手に会える。担当者が間に入る</td><td>費用が最も高い。活動のペースを自分だけで決められない</td></tr>
+<tr><td>婚活パーティー</td><td>その場で会える。文章のやりとりが要らない</td><td>日程が固定される。初対面の場が苦手だと消耗が大きい</td></tr>
+<tr><td>属性特化サービス</td><td>前提の説明が要らない。話が早い</td><td>母数が小さい。地域によっては候補が限られる</td></tr>
+</table></div>
+
+<h2>時間とお金、どちらが制約か</h2>
+<p>手段選びで最初に効くのはここです。</p>
+<ul>
+<li><strong>時間が足りない場合</strong>——探す作業を人に渡せる手段（相談所）の価値が上がります。費用は高くなりますが、削られるのは時間ではなくお金になります</li>
+<li><strong>お金が制約の場合</strong>——アプリが中心になります。ただし探す・選ぶ・やりとりする作業はすべて自分に残るので、時間の確保が前提です</li>
+<li><strong>どちらも厳しい場合</strong>——手段を増やさず、1つに絞って続けるほうが結果的に早くなります。並行すると、やりとりの管理だけで時間が消えます</li>
+</ul>
+
+<h2>「向いていない」は欠点ではありません</h2>
+<p>この診断では、合わない手段とその理由も表示します。<strong>合わないのは本人の問題ではなく、手段の設計と生活が噛み合っていないだけ</strong>です。</p>
+<p>たとえば夜勤のある働き方でパーティー中心に動けば、日程が合わずに参加できない回が増えます。これは意欲の問題ではありません。手段を変えれば解決します。</p>
+<p class="hint">本ツールは手段選びの目安を示すもので、結果や成婚を保証するものではありません。各サービスの費用・会員数・利用条件は変更されることがあるため、申し込み前に公式情報をご確認ください。</p>
+</article>
+
+<script>
+(function(){
+var M=[
+ {k:'app',  n:'マッチングアプリ', base:52},
+ {k:'sodan',n:'結婚相談所',       base:48},
+ {k:'party',n:'婚活パーティー',   base:44},
+ {k:'attr', n:'属性特化サービス', base:40}
+];
+function v(id){return document.getElementById(id).value;}
+
+document.getElementById('run').addEventListener('click',function(){
+  var age=+v('age'), area=v('area'), work=v('work'),
+      budget=+v('budget'), time=+v('time'),
+      face=v('face'), text=v('text'), speed=v('speed');
+  var attrs=[].slice.call(document.querySelectorAll('.attr:checked')).map(function(e){return e.value;});
+
+  var s={app:M[0].base, sodan:M[1].base, party:M[2].base, attr:M[3].base};
+  var why={app:[],sodan:[],party:[],attr:[]};
+
+  // 予算：相談所は費用が高い。ここが最も効く制約
+  if(budget<=3000){ s.sodan-=22; s.party-=8; why.sodan.push('月の予算では相談所の会費に届きにくい'); why.app.push('費用が最も低い'); s.app+=10; }
+  else if(budget<=10000){ s.sodan-=10; s.app+=5; }
+  else if(budget>=40000){ s.sodan+=14; why.sodan.push('相談所の費用を確保できる'); }
+  else { s.sodan+=6; }
+
+  // 時間：探す作業を渡せるかどうか
+  if(time<=1){ s.app-=14; s.sodan+=12; why.sodan.push('探す作業を担当者に渡せるぶん、時間の消費が少ない'); why.app.push('自分で探して選ぶ時間が要る'); }
+  else if(time>=10){ s.app+=10; s.party+=6; why.app.push('動かせる時間が多く、母数の大きさを活かせる'); }
+
+  // 働き方
+  if(work==='shift'){ s.party-=16; s.app+=6; why.party.push('日程が固定されるため、交代制と噛み合わない回が出る'); }
+  if(work==='busy'){ s.party-=10; s.sodan+=6; why.sodan.push('日程調整を任せられる'); }
+  if(work==='tenkin'){ s.party-=12; s.app+=8; why.app.push('居住地が変わっても続けやすい'); }
+  if(work==='free'){ s.sodan-=4; s.attr+=6; why.attr.push('働き方を最初に共有できると説明の手間が減る'); }
+
+  // 対面と文章の得手不得手
+  if(face==='ng'){ s.party-=16; why.party.push('初対面の場が続くと消耗が大きい'); }
+  if(face==='ok'){ s.party+=12; why.party.push('その場で会って判断できる強みを活かせる'); }
+  if(text==='ng'){ s.app-=18; s.sodan+=8; s.party+=8; why.app.push('やりとりの継続が負担になりやすい'); why.sodan.push('担当者が間に入るため、やりとりの負担が小さい'); }
+  if(text==='ok'){ s.app+=10; }
+
+  // 地域：母数の問題。属性特化は地方で候補が絞られる
+  if(area==='big'){ s.party+=8; s.attr+=6; s.sodan+=4; }
+  // 属性特化は全国対応のオンライン型が多く、パーティーほど地域の影響を受けない
+  if(area==='small'){ s.party-=14; s.attr-=4; s.app+=6; why.party.push('開催数が限られる地域では回数を確保しにくい'); why.app.push('地域を越えて探せる'); }
+
+  // 共有したい条件が多いほど属性特化の価値が上がる
+  if(attrs.length>=1){ s.attr+=10*Math.min(attrs.length,3); why.attr.push('「'+attrs.slice(0,3).join('・')+'」を最初から共有できるため、説明の手間が要らない'); }
+  else { s.attr-=10; }
+
+  // 時期
+  if(speed==='soon'){ s.sodan+=12; s.party+=4; why.sodan.push('結婚の意思が確認された相手に会える'); }
+  if(speed==='slow'){ s.app+=8; s.sodan-=8; }
+
+  // 年代
+  if(age>=40){ s.sodan+=8; s.attr+=4; }
+  if(age<=25){ s.app+=8; s.sodan-=6; }
+
+  var arr=M.map(function(m){ return {k:m.k, n:m.n, v:Math.max(5,Math.min(100,Math.round(s[m.k]))), why:why[m.k]}; });
+  arr.sort(function(a,b){return b.v-a.v;});
+
+  document.getElementById('topname').textContent=arr[0].n;
+  document.getElementById('toplead').textContent=
+    '入力された条件では「'+arr[0].n+'」が最も噛み合います。次点は「'+arr[1].n+'」。'+
+    'スコアが接近している場合は、どちらから試しても構いません。';
+
+  document.getElementById('bars').innerHTML=arr.map(function(a,i){
+    return '<div class="bar-row"><span class="bar-name">'+a.n+'</span>'+
+      '<span class="bar-track"><span class="bar-fill'+(i?' sub':'')+'" style="width:'+a.v+'%"></span></span>'+
+      '<span class="bar-val">'+a.v+'</span></div>'+
+      (a.why.length?'<p class="why">'+a.why.join('。')+'。</p>':'');
+  }).join('');
+
+  var last=arr[arr.length-1];
+  document.getElementById('notfit').innerHTML=
+    '<p><strong>いま噛み合いにくいのは「'+last.n+'」です。</strong>'+
+    (last.why.length? last.why.join('。')+'。' : '入力された条件では、他の手段のほうが動きやすくなります。')+
+    'これは向き不向きの問題ではなく、手段の設計と生活のかたちが合っていないだけです。'+
+    '条件が変われば結果も変わります。</p>';
+
+  // 概算コスト
+  var cost={app:'月 3,000〜4,000円ほど（有料プランの一般的なレンジ）',
+            sodan:'初期費用 10万〜30万円＋月会費 1万〜2万円ほど（サービスにより幅があります）',
+            party:'1回 3,000〜7,000円ほど（月2回なら6,000〜14,000円）',
+            attr:'サービスにより幅があります。アプリ型は月数千円、相談所型は相談所に準じます'};
+  var hours={app:'週2〜4時間（探す・やりとりする時間）',
+             sodan:'週1〜2時間（お見合いと面談が中心）',
+             party:'週2〜3時間（移動を含む）',
+             attr:'選んだ形式に準じます'};
+  document.getElementById('cost').innerHTML=
+    '<div class="cost-line"><span>'+arr[0].n+'の費用</span><span>'+cost[arr[0].k]+'</span></div>'+
+    '<div class="cost-line"><span>かかる時間の目安</span><span>'+hours[arr[0].k]+'</span></div>'+
+    '<div class="cost-line"><span>いま使えると答えた金額</span><span>月 '+budget.toLocaleString()+'円</span></div>'+
+    '<div class="cost-line"><span>いま使えると答えた時間</span><span>週 '+time+'時間</span></div>'+
+    (arr[0].k==='sodan'&&budget<20000
+      ? '<p class="why">※ 相談所が最も噛み合う結果ですが、答えていただいた予算とは開きがあります。費用を抑えたオンライン型から見るか、アプリと併用する形が現実的です。</p>'
+      : '');
+
+  var L={
+    app:[['/articles/agency-vs-app/','マッチングアプリと結婚相談所はどちらを選ぶべきか'],
+         ['/articles/app-tsukare-guide/','アプリ疲れの原因と、続け方の立て直し']],
+    sodan:[['/articles/soudanjo-hikaku/','結婚相談所の比較｜タイプ別の選び方'],
+           ['/tools/soudanjo-simulator/','結婚相談所の費用シミュレーター']],
+    party:[['/articles/konkatsu-party-guide/','婚活パーティーの選び方と当日の動き方'],
+           ['/articles/konkatsu-roadmap/','婚活を何から始めるか｜手順の全体像']],
+    attr:[['/articles/konkatsu-roadmap/','婚活を何から始めるか｜手順の全体像'],
+          ['/articles/konkatsu-soudan-saki/','婚活の相談は誰にすればよいか']]
+  };
+  var links=L[arr[0].k].slice();
+  if(attrs.indexOf('ペット')>=0) links.push(['/articles/pet-konkatsu/','ペットと暮らす人の婚活']);
+  if(attrs.indexOf('趣味')>=0) links.push(['/articles/otaku-konkatsu/','趣味を共有できる相手を探す婚活']);
+  if(attrs.indexOf('体型')>=0) links.push(['/articles/pocchari-konkatsu/','体型を最初に共有する婚活']);
+  if(attrs.indexOf('再婚')>=0) links.push(['/articles/batsuichi-guide/','再婚を目指す婚活の進め方']);
+  if(attrs.indexOf('働き方')>=0) links.push(['/articles/seishain-igai-guide/','正社員以外の働き方と婚活']);
+  document.getElementById('links').innerHTML='<ul>'+links.map(function(l){
+    return '<li><a href="'+l[0]+'">'+l[1]+'</a></li>';}).join('')+'</ul>';
+
+  document.getElementById('res').classList.add('show');
+  try{gtag('event','tool_result',{tool:'konkatsu-type-shindan',top:arr[0].k});}catch(e){}
+  document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
+});
+})();
+</script>
