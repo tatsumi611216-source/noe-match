@@ -208,6 +208,16 @@ section{padding:88px 0}
 .cat-list a{display:block;padding:14px 2px;font-size:.9rem;color:var(--body);text-decoration:none}
 .cat-list a:hover{color:#7c2e42}
 .cat-list .arc-count{font-size:.68rem;color:var(--gray);margin-left:10px}
+
+/* トップの入口フォーム（2026-08-17） */
+.entry-section{background:#faf8f6;border-bottom:1px solid var(--hair);padding:64px 0}
+.entry-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px 22px;margin-top:34px}
+.entry-grid label{display:block}
+.entry-grid label span{display:block;font-size:.74rem;letter-spacing:.1em;color:var(--gray);margin:0 0 7px}
+.entry-grid select{width:100%;padding:12px 12px;font-size:.92rem;border:1px solid #ddd6cc;background:#fff;color:var(--ink);font-family:inherit}
+.entry-btn{display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:16px 44px;text-decoration:none;font-size:1rem;letter-spacing:.04em}
+.entry-btn:hover{opacity:.9}
+.entry-note{text-align:center;font-size:.8rem;color:var(--gray);margin:14px 0 0;line-height:1.9}
 </style>
 </head>
 <body>
@@ -248,14 +258,74 @@ section{padding:88px 0}
       <div class="hero-stat"><span class="num">20+</span><span class="lbl">検証アプリ数</span></div>
     </div>
   <div class="hero-links">
-    <a class="hero-link" href="#g-deai">① 出会う</a>
-    <a class="hero-link" href="#g-kousai">② 深める</a>
-    <a class="hero-link" href="#g-junbi">③ 結ばれる</a>
-    <a class="hero-link" href="#g-kurashi">④ 暮らす</a>
-    <a class="hero-link" href="#g-sonae">⑤ 備える</a>
+    <a class="hero-link" href="/articles/#g-deai">① 出会う</a>
+    <a class="hero-link" href="/articles/#g-kousai">② 深める</a>
+    <a class="hero-link" href="/articles/#g-junbi">③ 結ばれる</a>
+    <a class="hero-link" href="/articles/#g-kurashi">④ 暮らす</a>
+    <a class="hero-link" href="/articles/#g-sonae">⑤ 備える</a>
   </div>
 </div>
 
+
+<!-- ENTRY: 通しツールの入口（2026-08-17）
+     トップ自体は検索で取れていない（60表示・55.7位）ため、新規流入を狙う施策ではない。
+     記事から回遊した人と指名検索で来た人に、最初に中核ツールを触ってもらうための入口。
+     中身はツール側に置き、ここは条件を渡すだけにする＝内容の重複を作らない。 -->
+<section id="entry" class="entry-section">
+  <div class="container container-mid">
+    <div class="section-title">
+      <span class="tag">まず、ここから</span>
+      <h2>あなたの条件で<span>やることの順番</span>を出す</h2>
+      <p>4つ選ぶだけ。要らない項目は消え、残ったものが時系列で並びます。無料・登録不要</p>
+    </div>
+    <div class="entry-grid">
+      <label><span>いまの状況</span>
+        <select id="e-stage">
+          <option value="0">交際中</option>
+          <option value="1" selected>プロポーズ済み</option>
+          <option value="2">入籍の準備中</option>
+          <option value="3">入籍済み</option>
+        </select></label>
+      <label><span>結婚式</span>
+        <select id="e-style">
+          <option value="full" selected>挙式・披露宴をする</option>
+          <option value="small">会費制・少人数</option>
+          <option value="photo">フォトのみ</option>
+          <option value="none">やらない</option>
+          <option value="mikettei">まだ決めていない</option>
+        </select></label>
+      <label><span>一緒に住む時期</span>
+        <select id="e-live">
+          <option value="already">すでに同居</option>
+          <option value="before" selected>入籍前に引っ越す</option>
+          <option value="after">入籍後に引っ越す</option>
+        </select></label>
+      <label><span>子どもについて</span>
+        <select id="e-kids">
+          <option value="soon">早めに考えている</option>
+          <option value="later" selected>いずれ考えたい</option>
+          <option value="no">予定はない・未定</option>
+        </select></label>
+    </div>
+    <p style="text-align:center;margin:26px 0 0">
+      <a id="e-go" class="entry-btn" href="/tools/kekkon-yarukoto/">やることリストを出す →</a></p>
+    <p class="entry-note">ネット回線・姓の変更・保険の見直しなど、<strong>順番を間違えると手戻りが出る項目</strong>も表示します</p>
+  </div>
+</section>
+<script>
+(function(){
+  var b=document.getElementById('e-go');
+  function build(){
+    var v=function(i){return document.getElementById(i).value;};
+    return '/tools/kekkon-yarukoto/#s='+v('e-stage')+v('e-style')+'-'+v('e-live')+'-'+v('e-kids');
+  }
+  ['e-stage','e-style','e-live','e-kids'].forEach(function(i){
+    document.getElementById(i).addEventListener('change',function(){b.href=build();});
+  });
+  b.href=build();
+  b.addEventListener('click',function(){try{gtag('event','entry_click',{from:'top'});}catch(e){}});
+})();
+</script>
 <!-- GUIDE: 結婚設計の5ステップ -->
 <!-- TOOLS -->
 <section id="tools" class="tools-section">
@@ -328,7 +398,7 @@ section{padding:88px 0}
         </div>
       </div>
       
-      <a href="#g-deai" class="guide-more">「出会う」の記事一覧へ →</a>
+      <a href="/articles/#g-deai" class="guide-more">「出会う」の記事一覧へ →</a>
     </div>
 
     <!-- STEP 2 -->
@@ -341,7 +411,7 @@ section{padding:88px 0}
         </div>
       </div>
       
-      <a href="#g-kousai" class="guide-more">「深める」の記事一覧へ →</a>
+      <a href="/articles/#g-kousai" class="guide-more">「深める」の記事一覧へ →</a>
     </div>
 
     <!-- STEP 3 -->
@@ -354,7 +424,7 @@ section{padding:88px 0}
         </div>
       </div>
       
-      <a href="#g-junbi" class="guide-more">「結ばれる」の記事一覧へ →</a>
+      <a href="/articles/#g-junbi" class="guide-more">「結ばれる」の記事一覧へ →</a>
     </div>
 
     <!-- STEP 4 -->
@@ -367,7 +437,7 @@ section{padding:88px 0}
         </div>
       </div>
       
-      <a href="#g-kurashi" class="guide-more">「暮らす」の記事一覧へ →</a>
+      <a href="/articles/#g-kurashi" class="guide-more">「暮らす」の記事一覧へ →</a>
     </div>
 
     <!-- STEP 5 -->
@@ -380,7 +450,7 @@ section{padding:88px 0}
         </div>
       </div>
       
-      <a href="#g-sonae" class="guide-more">「備える」の記事一覧へ →</a>
+      <a href="/articles/#g-sonae" class="guide-more">「備える」の記事一覧へ →</a>
     </div>
 
   </div>
