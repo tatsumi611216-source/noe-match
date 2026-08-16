@@ -1,0 +1,220 @@
+<style>
+.result .big{background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/rings-bouquet.jpg') center/cover}
+.day-card{border:1px solid #e6e2dc;background:#fff;padding:14px 16px;margin:0 0 10px}
+.day-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.day-date{font-weight:700;font-size:1.06rem}
+.day-week{font-size:.86rem;color:#5a6068}
+.tags{margin:8px 0 0}
+.tag{display:inline-block;font-size:.74rem;padding:3px 9px;margin:0 6px 5px 0;border:1px solid #d9d2c8;background:#faf8f6;color:#5a6068}
+.tag.top{background:#7c2e42;color:#fff;border-color:#7c2e42}
+.tag.sub{background:#f0e7ea;color:#7c2e42;border-color:#e2d3d8}
+.day-note{font-size:.87rem;color:#5a6068;margin:8px 0 0;line-height:1.8}
+.nores{background:#faf8f6;border-left:3px solid #c9bfb4;padding:14px 18px}
+.nores p{margin:0;font-size:.92rem;line-height:1.9}
+</style>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/rings-bouquet.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/rings.png" x="9" y="9" width="46" height="46"/></svg>
+<h1>入籍日カレンダー｜2026・2027年の縁起のいい日を条件で絞り込む</h1>
+<p>天赦日・一粒万倍日・寅の日・巳の日と、曜日・祝日・語呂合わせを組み合わせて候補日を出します。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>入籍日で迷う理由は、候補が多すぎることではなく「条件が整理されていないこと」です。</strong>縁起のいい日は年に何十日もあります。そこから絞るのは、土日か・仕事を休めるか・記念日と重ねたいかという<strong>自分たちの条件</strong>です。このツールは条件で絞り込むためのものです。</blockquote>
+
+<div class="calc">
+  <div class="row2">
+    <div class="fld"><span class="lbl">入籍したい年</span>
+      <select id="year"><option value="2026">2026年</option><option value="2027" selected>2027年</option></select></div>
+    <div class="fld"><span class="lbl">曜日の希望</span>
+      <select id="week">
+        <option value="any" selected>こだわらない</option>
+        <option value="holiday">土日・祝日がいい</option>
+        <option value="weekday">平日のほうが都合がよい</option>
+      </select></div>
+  </div>
+
+  <div class="row2">
+    <div class="fld"><span class="lbl">縁起をどのくらい重視するか</span>
+      <select id="level">
+        <option value="max">天赦日だけ見たい（年5〜6日）</option>
+        <option value="mid" selected>縁起のいい日から選びたい</option>
+        <option value="low">語呂合わせや記念日も含めて広く見たい</option>
+      </select></div>
+    <div class="fld"><span class="lbl">希望の時期</span>
+      <select id="season">
+        <option value="any" selected>指定なし</option>
+        <option value="1">1〜3月</option>
+        <option value="2">4〜6月</option>
+        <option value="3">7〜9月</option>
+        <option value="4">10〜12月</option>
+      </select></div>
+  </div>
+
+  <button class="calc-btn" id="run">候補日を出す</button>
+</div>
+
+<div class="result" id="res">
+  <div class="big"><span id="count">—</span></div>
+  <p class="hint" id="lead"></p>
+  <div id="days"></div>
+  <p class="hint" style="margin-top:18px">
+    <strong>六曜（大安・友引・仏滅など）はこのツールに含めていません。</strong>
+    六曜は旧暦にもとづくもので、本ツールが扱う暦とは別の体系だからです。
+    会場や親世代が六曜を重視する場合は、候補日を絞ったあとに六曜カレンダーで確認してください。
+  </p>
+
+  <h3>次に読むと早いページ</h3>
+  <div id="links"></div>
+</div>
+
+<h2>それぞれの吉日は何を意味するか</h2>
+<div class="table-wrap"><table>
+<tr><th>吉日</th><th>意味とされること</th><th>年に何日あるか</th></tr>
+<tr><td><strong>天赦日</strong></td><td>暦の上で最も縁起がよいとされる日。何をするにも障りがないとされる</td><td><strong>年5〜6日</strong></td></tr>
+<tr><td>一粒万倍日</td><td>小さなことが大きく実るとされる日。始めごとに向くとされる</td><td>年60日前後</td></tr>
+<tr><td>寅の日</td><td>金運に関わるとされる日</td><td>年30日前後</td></tr>
+<tr><td>巳の日</td><td>弁財天に縁があるとされる日</td><td>年30日前後</td></tr>
+</table></div>
+<p><strong>数が少ないほど希少で、重なる日ほど「強い日」とされます。</strong>天赦日と一粒万倍日が重なる日は、2026年・2027年とも年に3日です。</p>
+
+<h2>縁起より先に決めたほうがよいこと</h2>
+<p>吉日から選ぶより、次の条件を先に置いたほうが決まりやすくなります。</p>
+<ul>
+<li><strong>役所が開いているか</strong>——土日祝も時間外窓口で受理されますが、<strong>不備があるとその場で直せません</strong>。書類に不安があるなら平日が確実です</li>
+<li><strong>二人とも動ける日か</strong>——提出は代理でもできますが、一緒に行くつもりなら休みを合わせる必要があります</li>
+<li><strong>記念日にしたいか</strong>——毎年その日を祝うことになります。繁忙期と重なる日を選ぶと、実際には祝えないことがあります</li>
+<li><strong>結婚式との前後関係</strong>——式の前に入れるか後にするかで、姓の変更手続きのタイミングが変わります</li>
+</ul>
+
+<h2>人気の日は混みます</h2>
+<p>天赦日や語呂合わせの日は、<strong>役所の窓口が混雑します</strong>。特に土日と重なる吉日は集中しやすく、待ち時間が長くなることがあります。</p>
+<p>写真を撮りたい、記念品をもらいたいといった希望がある場合は、自治体によって対応が異なるため、事前に確認しておくと当日慌てません。</p>
+
+<p class="hint">吉日は暦の考え方にもとづく一般的な情報であり、結果や運勢を保証するものではありません。届出の受理条件・必要書類・窓口の対応時間は自治体により異なります。必ずお住まいの自治体の公式情報をご確認ください。</p>
+</article>
+
+<script>
+(function(){
+// ===== 干支の計算 =====
+// 基準：2027-02-28 は戊寅（＝60干支の14番）。
+// この基準は articles/nyuseki-2027-guide の調査済みデータ（2027年の天赦日6日）と
+// 突き合わせて検証済み（6日すべて一致）。
+var ANCHOR=Date.UTC(2027,1,28), ANCHOR_I=14;
+var KAN='甲乙丙丁戊己庚辛壬癸', SHI='子丑寅卯辰巳午未申酉戌亥';
+function idx(d){ var n=Math.round((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-ANCHOR)/86400000);
+  return ((ANCHOR_I+n)%60+60)%60; }
+function etoName(i){ return KAN[i%10]+SHI[i%12]; }
+function shi(i){ return i%12; }
+
+// 季節（天赦日の判定に使う。節入りは概算）
+function season(d){
+  var y=d.getFullYear(), m=d.getMonth()+1, day=d.getDate();
+  var v=m*100+day;
+  if(v>=1107||v<204) return '冬';
+  if(v<505) return '春';
+  if(v<807) return '夏';
+  return '秋';
+}
+var TENSHA={'春':'戊寅','夏':'甲午','秋':'戊申','冬':'甲子'};
+
+// 節月（一粒万倍日の判定に使う。節入りは概算）
+// 節入りと節月の対応：立春(2/4)→寅月＝正月、大雪(12/7)→子月＝十一月、小寒(1/6)→丑月＝十二月。
+// ★当初この対応を1つずらして実装しており、2027年の重なる日が実際と食い違った
+//   （外部の複数ソースおよび articles/nyuseki-2027-guide と突合して発見）。
+function setsuMonth(d){
+  var v=(d.getMonth()+1)*100+d.getDate();
+  if(v>=1207) return 11;   if(v<106) return 11;
+  if(v<204) return 12;     if(v<306) return 1;   if(v<405) return 2;
+  if(v<505) return 3;      if(v<606) return 4;   if(v<707) return 5;
+  if(v<807) return 6;      if(v<908) return 7;   if(v<1008) return 8;
+  if(v<1107) return 9;     return 10;
+}
+// 節月ごとの一粒万倍日の十二支（子=0…亥=11）
+var ICHIRYU={1:[1,6],2:[9,2],3:[0,3],4:[3,4],5:[5,6],6:[9,6],
+             7:[0,7],8:[3,8],9:[6,9],10:[9,10],11:[11,0],12:[3,0]};
+
+var GORO={'1-23':'「1・2・3」でステップアップ','2-22':'「にゃんにゃんにゃん」',
+ '3-9':'「サンキュー」＝感謝','5-22':'「ゴーツーツー（夫婦）」','7-7':'七夕',
+ '8-10':'「ハート」の日','10-10':'「トゥ・トゥ」','11-22':'「いい夫婦」の日',
+ '11-23':'「いい夫妻」の日','12-24':'クリスマスイブ','1-1':'元日','12-25':'クリスマス'};
+
+// 日本の祝日（2026・2027年の固定祝日と主な移動祝日）
+var HOLI={
+ '2026':['1-1','1-12','2-11','2-23','3-20','4-29','5-3','5-4','5-5','5-6','7-20','8-11','9-21','9-23','10-12','11-3','11-23'],
+ '2027':['1-1','1-11','2-11','2-23','3-21','3-22','4-29','5-3','5-4','5-5','7-19','8-11','9-20','9-23','10-11','11-3','11-23']};
+
+function fmt(d){return (d.getMonth()+1)+'月'+d.getDate()+'日';}
+var WD='日月火水木金土';
+
+document.getElementById('run').addEventListener('click',function(){
+  var year=+document.getElementById('year').value;
+  var week=document.getElementById('week').value;
+  var level=document.getElementById('level').value;
+  var sea=document.getElementById('season').value;
+  var holi=HOLI[String(year)]||[];
+
+  var list=[];
+  var d=new Date(year,0,1);
+  while(d.getFullYear()===year){
+    var i=idx(d), nm=etoName(i), s=shi(i), key=(d.getMonth()+1)+'-'+d.getDate();
+    var tags=[], score=0;
+    if(nm===TENSHA[season(d)]){ tags.push(['天赦日','top']); score+=10; }
+    var ic=ICHIRYU[setsuMonth(d)];
+    if(ic&&(s===ic[0]||s===ic[1])){ tags.push(['一粒万倍日','sub']); score+=4; }
+    if(s===2){ tags.push(['寅の日','']); score+=2; }
+    if(s===5){ tags.push(['巳の日','']); score+=2; }
+    var isHoli=holi.indexOf(key)>=0, wd=d.getDay();
+    if(isHoli){ tags.push(['祝日','']); score+=1; }
+    if(GORO[key]){ tags.push(['語呂合わせ','sub']); score+=3; }
+    if(tags.length){
+      list.push({d:new Date(d),score:score,tags:tags,
+        goro:GORO[key]||'', wd:wd, holi:isHoli,
+        tensha:nm===TENSHA[season(d)]});
+    }
+    d.setDate(d.getDate()+1);
+  }
+
+  // 条件で絞る
+  var out=list.filter(function(x){
+    if(week==='holiday' && !(x.wd===0||x.wd===6||x.holi)) return false;
+    if(week==='weekday' && (x.wd===0||x.wd===6||x.holi)) return false;
+    if(sea!=='any'){ var q=Math.floor(x.d.getMonth()/3)+1; if(q!==+sea) return false; }
+    if(level==='max') return x.tensha;   // 天赦日のみ。語呂合わせ由来の高得点日は拾わない
+    if(level==='mid') return x.score>=4;
+    return x.score>=3;
+  });
+  out.sort(function(a,b){ return b.score-a.score || a.d-b.d; });
+  var top=out.slice(0,12);
+
+  document.getElementById('count').textContent = out.length+'日';
+  document.getElementById('lead').textContent = out.length
+    ? '条件に合う日が'+out.length+'日ありました。縁起の強い順に'+top.length+'日を表示します。'
+    : '条件に合う日が見つかりませんでした。条件をゆるめてみてください。';
+
+  document.getElementById('days').innerHTML = top.length ? top.map(function(x){
+    var note='';
+    if(x.tensha && x.score>=14) note='天赦日と一粒万倍日が重なる日です。年に3日ほどしかありません。';
+    else if(x.tensha) note='年に5〜6日しかない天赦日です。'+((x.wd===0||x.wd===6||x.holi)?'休日と重なるため混雑が予想されます。':'平日なので、仕事の調整が必要です。');
+    else if(x.goro) note=x.goro+'。覚えやすく、記念日として続けやすい日です。';
+    else note='縁起のよい日とされる日が重なっています。';
+    return '<div class="day-card"><div class="day-head">'+
+      '<span class="day-date">'+year+'年'+fmt(x.d)+'</span>'+
+      '<span class="day-week">'+WD[x.wd]+'曜日'+(x.holi?'・祝日':'')+'</span></div>'+
+      '<div class="tags">'+x.tags.map(function(t){return '<span class="tag '+t[1]+'">'+t[0]+'</span>';}).join('')+'</div>'+
+      '<p class="day-note">'+note+'</p></div>';
+  }).join('') : '<div class="nores"><p>条件に合う日が見つかりませんでした。「縁起をどのくらい重視するか」を1段ゆるめるか、時期の指定を外すと候補が出ます。</p></div>';
+
+  var L=[['/articles/nyuseki-2027-guide/','2027年の入籍日はいつがいい？｜天赦日6回の「当たり年」吉日と選び方ガイド'],
+         ['/articles/propose-guide/','結婚の段取り完全ガイド｜プロポーズから入籍・入籍後の手続きまで整理']];
+  if(sea!=='any'||week==='holiday') L.push(['/articles/shikijo-erabi-guide/','結婚式場探し完全ガイド｜見学予約サイトの特典比較と失敗しない回り方']);
+  L.push(['/tools/kekkon-shikin-keisanki/','結婚資金計算機｜総額とご祝儀差引後の自己負担を試算']);
+  document.getElementById('links').innerHTML='<ul>'+L.map(function(x){
+    return '<li><a href="'+x[0]+'">'+x[1]+'</a></li>';}).join('')+'</ul>';
+
+  document.getElementById('res').classList.add('show');
+  try{gtag('event','tool_result',{tool:'nyuseki-calendar',year:year});}catch(e){}
+  document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
+});
+})();
+</script>
