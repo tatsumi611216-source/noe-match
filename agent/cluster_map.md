@@ -97,3 +97,100 @@ noteの外部流入を足したもの。**どれか1つがゼロならクラス�
 
 案件の優先順位は単価だけで決めない：**期待値＝単価 × 承認率 × 成約しやすさ**
 （無料登録＞資料請求＞有料契約）。
+
+
+---
+
+# 全記事のクラスタ割付（2026-08-16・全185本を棚卸し）
+
+`articles/` の281エントリのうち、**リダイレクト残骸と canonical が他を指す重複を除いた実記事は185本**。
+その全部を、**漏れなく・重複なく**クラスタへ割り付けた（1本は1クラスタ。
+重複所属を作ると、どのツールへ送るかが記事ごとに決まらなくなる）。
+
+## 割付の原則
+
+**テーマの見た目ではなく「読者が同じ判断をしている段階」で切る。**
+たとえば `dousei-kekkon-hikaku`（同棲か結婚か）は同棲の記事だが、
+読者がしているのは**生活の立ち上げの判断**なのでBに入る。
+逆に `tokyo-guide` はマッチングアプリの記事だが、
+読者がしているのは**どの手段で動くかの判断**なのでC系に入る。
+
+## 一覧
+
+| クラスタ | 本数 | 核となるツール | KPI | 備考 |
+|---|---|---|---|---|
+| **A｜ガルガル期・産後** | 21 | tools/garugaru-check ✅稼働 | 集客（到達・LINE@） | 9月中旬に判定（index≥10/19・表示≥200/月・LINE@≥5/月） |
+| **B｜新生活・生活費** | 28 | tools/seikatsuhi-simulator ✅稼働 | 回収（成果件数） | K（同棲か結婚か 3本）を統合。判断段階が同じ |
+| **C｜婚活の手段選び** | 24 | tools/konkatsu-type-shindan ✅本日公開 | 回収（成果件数） | ④noteが婚活記録1語のみ＝要検証 |
+| **C-sub｜地域** | 10 | Cの診断に地域入力で接続 | 回収 | 新規ツール不要。Cのサテライト |
+| **D｜アプリの選定** | 23 | 【新規】アプリ適合診断 | 回収（成果件数） | 最大の未整理帯。個別ガイド6＋比較5＋料金/会員データ |
+| **E｜アプリの実績データ** | 21 | 【新規】成婚データ比較表 | 回収（成果件数） | 公表値と非公表を並べる＝大手がやらない切り口 |
+| **F｜アプリ運用（プロフィール〜デート〜安全）** | 26 | 【新規】プロフィール自己診断 | 集客（到達・LINE@） | 旧F/G/Hを統合。26本 |
+| **J｜結婚式・結婚準備** | 19 | 【新規】自己負担額シミュレーター | 回収（成果件数） | noteの反応が最良帯（花嫁120.5・新婚78.5） |
+| **L｜離婚・別居** | 6 | 【要検討】別居中の生活費計算機 | 回収 | ★台帳のYMYL上限8本。25本にはできない |
+| **M｜キャリア・働き方** | 3 | 未定 | 回収 | 転職アフィリ5サイトとの接続を検討 |
+| **N｜妊活** | 4 | なし（凍結） | — | 台帳でインデックス率0%・A8該当案件なしと実測済 |
+
+**合計185本 — 未割付ゼロ・重複所属ゼロ（検算済み）。**
+
+## 稼働状況
+
+- **稼働中は3クラスタ（A・B・C）＝73本。** 残る112本は、まだツールに接続されていない
+- **ツールが必要なのは4つ**（D・E・F・J）。C-subとKは既存ツールに接続するだけで足りる
+- **L（離婚・別居）は25本にできない。** 台帳 `AGENT.md` のYMYL上限（5〜8記事）に既に達しているため、
+  拡張するなら上限ルールの改定がCEO承認事項になる
+- **N（妊活）は凍結。** 台帳でインデックス率0パーセント・A8に該当案件なしと実測済み
+
+## 統合した小クラスタ
+
+| 元 | 統合先 | 理由 |
+|---|---|---|
+| K｜同棲・結婚のタイミング（3本） | **B** | 判断の段階が同じ（生活の立ち上げ） |
+| G｜デート（9本）・H｜安全（6本） | **F** | いずれも「アプリを使い始めたあとの運用」。単体では25本に届かない |
+
+## 詳細
+
+### A｜ガルガル期・産後（21本）
+
+`garugaru-ki-guide` `garugaru-ki-itsumade` `garugaru-otto-taiou` `garugaru-nai-hito` `garugaru-gibo-jitsubo` `garugaru-doukyo` `garugaru-ueno-ko` `garugaru-otto-genkai` `garugaru-sangoutsu-chigai` `sango-crisis-guide` `sango-iraira` `sango-kaji-buntan` `sango-otto-kirai` `sango-rikon` `sango-satogaeri` `satogaeri-shinai` `shinseiji-menkai` `maternity-blue-chigai` `futarime-sango` `gijikka-ikitakunai` `ikukyu-fuufu-doji`
+
+### B｜新生活・生活費（28本）
+
+`dousei-hajimekata` `shinkon-seikatsu-guide` `shinkon-koteihi-minaoshi` `shinkon-net-kaisen-dandori` `futari-hikari-kaisen` `futari-sumaho-minaoshi` `kazoku-simhikaku` `kekkon-hoken-minaoshi` `futari-kouza-kanri` `kekkon-chokin-mokuhyou` `shinkyo-kagu-yosan` `kaden-rental-vs-kounyu` `tomobataraki-shokuji-data` `kekkon-hiyou-futan` `futari-kounetsuhi` `kakeibo-app-fuufu` `sengyoshufu-seikatsuhi` `shinkon-hojokin` `tokyo-futari-seikatsuhi` `dousei-nimotsu-trunkroom` `keiyaku-jisshitsu-wana` `kekkon-jutaku-loan` `yachin-credit-shiharai` `fuufu-credit-kanri` `shinkon-osechi` `dousei-kekkon-hikaku` `dousei-kekkon-timing` `dousei-kaisho`
+
+### C｜婚活の手段選び（24本）
+
+`soudanjo-hikaku` `agency-vs-app` `app-plus-agency` `app-tsukare-guide` `konkatsu-roadmap` `konkatsu-soudan-saki` `konkatsu-party-guide` `nurse-guide` `nurse-konkatsu-soudanjo` `civil-servant-guide` `engineer-guide` `otaku-konkatsu` `pet-konkatsu` `pocchari-konkatsu` `seishain-igai-guide` `hitomishiri-guide` `usuge-konkatsu-eikyou` `over50-guide` `batsuichi-guide` `40s-men` `35s-strategy` `tokyo-guide` `osaka-guide` `kyoto-guide`
+
+### C-sub｜地域（10本）
+
+`nagoya-guide` `fukuoka-guide` `sapporo-guide` `kobe-yokohama-guide` `saitama-chiba-guide` `sendai-hiroshima-guide` `shizuoka-niigata-guide` `okinawa-guide` `inaka-guide` `kokusai-kekkon-guide`
+
+### D｜アプリの選定（23本）
+
+`matching-app-ranking` `price-comparison` `compare-price` `compare-popular` `compare-konkatsu` `compare-20s` `omiai-vs-pairs` `tapple-vs-pairs` `with-vs-pairs` `youbride-marrish-hikaku` `pairs-guide` `omiai-guide` `with-guide` `tapple-guide` `youbride-guide` `marrish-guide` `bachelor-date-guide` `free-vs-paid` `matching-dansei-cost-data` `matching-josei-cost-data` `members-data` `age-data` `kaiin-age-cross-data`
+
+### E｜アプリの実績データ（21本）
+
+`success-rate-data` `success-stories` `appkon-wariai-data` `pairs-marriage-data` `pairs-kaiin-data` `omiai-30s-women-data` `tapple-seriousness-data` `with-seriousness-data` `youbride-seikon-data` `zexy-enmusubi-data` `marrish-saikon-data` `kekkon-madeno-kikan-data` `hatsushon-nenmei-data` `renkatsu-vs-konkatsu` `20s-guide` `student-guide` `late-20s-strategy` `30s-konkatsu` `40s-guide` `time-management` `faq-troubleshooting`
+
+### F｜アプリ運用（プロフィール〜デート〜安全）（26本）
+
+`photo-tips` `profile-photo` `profile-text` `konkatsu-photo-guide` `mens-make-konkatsu` `message-strategy` `line-exchange` `pairs-men` `pairs-women` `with-women` `women-strategy` `first-date-guide` `first-date-spot` `date-plan-2kaime` `ouchi-date-guide` `ouchi-date-sakuhin` `amenohi-date-guide` `date-sakuhin-ng` `sakuhin-kachikan` `enkyori-renai-guide` `anti-fraud` `fraud-detection` `fraud-statistics` `safety-guide` `privacy-protection` `kekkon-sokou-chousa`
+
+### J｜結婚式・結婚準備（19本）
+
+`shikijo-erabi-guide` `kekkon-okane-data` `nashikon-data` `propose-guide` `konyaku-yubiwa-data` `pair-ring-guide` `christmas-propose-gyakusan` `yokohama-propose-spot` `maedori-photo-guide` `bridal-esthe-guide` `bridal-inner-guide` `kekkonshiki-isho-rental` `gosyugi-shiharai-houhou` `kekkon-uchiiwai-guide` `kekkon-houkoku-nengajou` `nyuseki-2027-guide` `kisei-kekkon-aisatsu` `shinkon-ryokou-credit` `kinsen-kachikan-check`
+
+### L｜離婚・別居（6本）
+
+`rikon-junbi-jyunban` `rikon-okane-genjitsu` `koninhiyou-guide` `tantei-erabikata` `uwaki-chousa-kiso` `tanshin-uwaki-mikiwame`
+
+### M｜キャリア・働き方（3本）
+
+`kekkon-tenshoku-guide` `tenshoku-riyu-honne` `kosodate-zaitaku-guide`
+
+### N｜妊活（4本）
+
+`dansei-ninkatsu-guide` `mitas-formen-kuchikomi` `mitocore-kuchikomi` `myseed-kuchikomi`
+
