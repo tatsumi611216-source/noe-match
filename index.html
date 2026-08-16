@@ -199,6 +199,15 @@ section{padding:88px 0}
 .arc-fold[open]>summary::after{content:"−"}
 .arc-fold .archive-grid{padding:0 0 22px}
 .arc-fold .arc-head{margin:0;border:none;padding:0}
+
+/* トップから個別記事タイトルを外す（2026-08-17）
+   ガイド節に20本・記事一覧節に161本のタイトルが並び、文字量の主因になっていた。
+   個別タイトルは /articles/ へ移し、トップは「どこへ行くか」だけを示す。 */
+.cat-list{list-style:none;padding:0;margin:26px 0 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0 34px}
+.cat-list li{border-bottom:1px solid var(--hair)}
+.cat-list a{display:block;padding:14px 2px;font-size:.9rem;color:var(--body);text-decoration:none}
+.cat-list a:hover{color:#7c2e42}
+.cat-list .arc-count{font-size:.68rem;color:var(--gray);margin-left:10px}
 </style>
 </head>
 <body>
@@ -223,7 +232,7 @@ section{padding:88px 0}
 <div class="hero">
   <figure class="hero-media"><img src="/images/lp/hero-bouquet.jpg" alt=""></figure>
   <div class="hero-overlay">
-    <div class="hero-badge">2026年8月更新 ｜ 全161記事・編集部検証</div>
+    <div class="hero-badge">2026年8月更新 ｜ 全185記事・編集部検証</div>
     <h1>出会いから<wbr><span>結婚後の暮らし</span>まで<br>「なんとなく」で<wbr>決めない<wbr>結婚設計を</h1>
     <p class="hero-sub">
       アプリ選びは、入口にすぎません。<br>
@@ -234,7 +243,7 @@ section{padding:88px 0}
 </div>
 <div class="hero-under">
   <div class="hero-stats">
-      <div class="hero-stat"><span class="num">161</span><span class="lbl">検証記事</span></div>
+      <div class="hero-stat"><span class="num">185</span><span class="lbl">検証記事</span></div>
       <div class="hero-stat"><span class="num">15</span><span class="lbl">テーマ分野</span></div>
       <div class="hero-stat"><span class="num">20+</span><span class="lbl">検証アプリ数</span></div>
     </div>
@@ -248,109 +257,6 @@ section{padding:88px 0}
 </div>
 
 <!-- GUIDE: 結婚設計の5ステップ -->
-<section id="guide" class="guide-section">
-  <div class="container container-narrow">
-    <div class="section-title">
-      <span class="tag">結婚設計の5ステップガイド</span>
-      <h2>出会いから備えまで、<span>順番に設計する</span></h2>
-      <p>いま自分がどの段階にいるかを選ぶと、判断材料になる記事にたどり着けます</p>
-    </div>
-
-    <!-- STEP 1 -->
-    <div class="guide-step">
-      <div class="guide-step-head">
-        <div class="guide-step-num">①</div>
-        <div>
-          <h3>出会う｜アプリ・相談所・戦略を選ぶ</h3>
-          <p class="desc">出会いの手段は複数あります。まず全体像と数字から。</p>
-        </div>
-      </div>
-      <div class="guide-cards">
-        <a href="/articles/matching-app-ranking/" class="arc-link">2026年最新マッチングアプリランキングTOP15｜総合比較・目的別おすすめ完全ガイド</a>
-        <a href="/articles/konkatsu-roadmap/" class="arc-link">婚活アプリで結婚するには｜選び方から成婚までの完全ロードマップ</a>
-        <a href="/articles/agency-vs-app/" class="arc-link">結婚相談所とマッチングアプリの違い｜費用・成婚率・サポートを徹底比較</a>
-        <a href="/articles/success-rate-data/" class="arc-link">マッチングアプリの結婚率・成功率データ｜付き合う・結婚する確率を統計で解説</a>
-      </div>
-      <a href="#g-deai" class="guide-more">「出会う」の記事一覧へ →</a>
-    </div>
-
-    <!-- STEP 2 -->
-    <div class="guide-step">
-      <div class="guide-step-head">
-        <div class="guide-step-num">②</div>
-        <div>
-          <h3>深める｜デート・交際・価値観のすり合わせ</h3>
-          <p class="desc">関係が進むかどうかは、初デートと「聞きにくい話」の扱い方で決まります。</p>
-        </div>
-      </div>
-      <div class="guide-cards">
-        <a href="/articles/first-date-guide/" class="arc-link">マッチングアプリ初デート完全ガイド｜場所選び・当日の進め方・告白のタイミング</a>
-        <a href="/articles/message-strategy/" class="arc-link">マッチングアプリのメッセージ戦略｜初回からデート約束まで使える完全テンプレート</a>
-        <a href="/articles/date-plan-2kaime/" class="arc-link">2回目・3回目のデートプラン｜関係が進む人と止まる人の違い</a>
-        <a href="/articles/kinsen-kachikan-check/" class="arc-link">結婚前に確認すべき金銭感覚のすり合わせ｜聞きにくいお金の話を切り出す方法</a>
-      </div>
-      <a href="#g-kousai" class="guide-more">「深める」の記事一覧へ →</a>
-    </div>
-
-    <!-- STEP 3 -->
-    <div class="guide-step">
-      <div class="guide-step-head">
-        <div class="guide-step-num">③</div>
-        <div>
-          <h3>結ばれる｜プロポーズ・指輪・式とお金</h3>
-          <p class="desc">「相場」を知ってから決めると、後悔と使いすぎを両方防げます。</p>
-        </div>
-      </div>
-      <div class="guide-cards">
-        <a href="/articles/propose-guide/" class="arc-link">プロポーズ準備完全ガイド｜タイミング・場所・指輪の段取りをデータで整理</a>
-        <a href="/articles/konyaku-yubiwa-data/" class="arc-link">婚約指輪の相場データ｜「給料3ヶ月分」は本当か統計で検証</a>
-        <a href="/articles/shikijo-erabi-guide/" class="arc-link">結婚式場探し完全ガイド｜見学予約サイトの特典比較と失敗しない回り方</a>
-        <a href="/articles/kekkon-okane-data/" class="arc-link">結婚にかかるお金の総額データ｜婚約から新生活までの費用を全部見える化</a>
-      </div>
-      <a href="#g-junbi" class="guide-more">「結ばれる」の記事一覧へ →</a>
-    </div>
-
-    <!-- STEP 4 -->
-    <div class="guide-step">
-      <div class="guide-step-head">
-        <div class="guide-step-num">④</div>
-        <div>
-          <h3>暮らす｜同棲・新生活・家計の設計</h3>
-          <p class="desc">固定費と口座の設計は、最初の3ヶ月で決めるのがいちばん安く済みます。</p>
-        </div>
-      </div>
-      <div class="guide-cards">
-        <a href="/articles/dousei-hajimekata/" class="arc-link">同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール</a>
-        <a href="/articles/shinkon-seikatsu-guide/" class="arc-link">新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト</a>
-        <a href="/articles/futari-kouza-kanri/" class="arc-link">結婚後の口座・お金の管理方法｜共通口座と費目分担の実例パターン</a>
-        <a href="/articles/shinkon-koteihi-minaoshi/" class="arc-link">新婚生活の固定費見直し完全ガイド｜携帯・回線・保険をまとめて最適化する</a>
-      </div>
-      <a href="#g-kurashi" class="guide-more">「暮らす」の記事一覧へ →</a>
-    </div>
-
-    <!-- STEP 5 -->
-    <div class="guide-step">
-      <div class="guide-step-head">
-        <div class="guide-step-num">⑤</div>
-        <div>
-          <h3>備える｜保険・もしもの時の知識</h3>
-          <p class="desc">考えたくないことほど、元気なうちに知っておくと軽く済みます。</p>
-        </div>
-      </div>
-      <div class="guide-cards">
-        <a href="/articles/kekkon-hoken-minaoshi/" class="arc-link">結婚したら保険はどう見直す？加入タイミングと必要保障額の考え方</a>
-        <a href="/articles/kekkon-sokou-chousa/" class="arc-link">結婚前の身元・素行調査は必要か｜費用相場と依頼前に自分でできる確認</a>
-        <a href="/articles/rikon-okane-genjitsu/" class="arc-link">離婚した場合のお金の現実｜財産分与・慰謝料の基礎知識と備え方</a>
-        <a href="/articles/koninhiyou-guide/" class="arc-link">婚姻費用とは｜別居中の生活費分担の仕組みと相手が支払わない時の対処法</a>
-      </div>
-      <a href="#g-sonae" class="guide-more">「備える」の記事一覧へ →</a>
-    </div>
-
-  </div>
-</section>
-
-<figure class="photo-band"><img src="/images/lp/rings-bouquet.jpg" alt=""></figure>
-<!-- ARTICLES SECTION -->
 <!-- TOOLS -->
 <section id="tools" class="tools-section">
   <div class="container container-mid">
@@ -404,191 +310,92 @@ section{padding:88px 0}
   </div>
 </section>
 
+<section id="guide" class="guide-section">
+  <div class="container container-narrow">
+    <div class="section-title">
+      <span class="tag">結婚設計の5ステップガイド</span>
+      <h2>出会いから備えまで、<span>順番に設計する</span></h2>
+      <p>いま自分がどの段階にいるかを選ぶと、判断材料になる記事にたどり着けます</p>
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="guide-step">
+      <div class="guide-step-head">
+        <div class="guide-step-num">①</div>
+        <div>
+          <h3>出会う｜アプリ・相談所・戦略を選ぶ</h3>
+          <p class="desc">出会いの手段は複数あります。まず全体像と数字から。</p>
+        </div>
+      </div>
+      
+      <a href="#g-deai" class="guide-more">「出会う」の記事一覧へ →</a>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="guide-step">
+      <div class="guide-step-head">
+        <div class="guide-step-num">②</div>
+        <div>
+          <h3>深める｜デート・交際・価値観のすり合わせ</h3>
+          <p class="desc">関係が進むかどうかは、初デートと「聞きにくい話」の扱い方で決まります。</p>
+        </div>
+      </div>
+      
+      <a href="#g-kousai" class="guide-more">「深める」の記事一覧へ →</a>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="guide-step">
+      <div class="guide-step-head">
+        <div class="guide-step-num">③</div>
+        <div>
+          <h3>結ばれる｜プロポーズ・指輪・式とお金</h3>
+          <p class="desc">「相場」を知ってから決めると、後悔と使いすぎを両方防げます。</p>
+        </div>
+      </div>
+      
+      <a href="#g-junbi" class="guide-more">「結ばれる」の記事一覧へ →</a>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="guide-step">
+      <div class="guide-step-head">
+        <div class="guide-step-num">④</div>
+        <div>
+          <h3>暮らす｜同棲・新生活・家計の設計</h3>
+          <p class="desc">固定費と口座の設計は、最初の3ヶ月で決めるのがいちばん安く済みます。</p>
+        </div>
+      </div>
+      
+      <a href="#g-kurashi" class="guide-more">「暮らす」の記事一覧へ →</a>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="guide-step">
+      <div class="guide-step-head">
+        <div class="guide-step-num">⑤</div>
+        <div>
+          <h3>備える｜保険・もしもの時の知識</h3>
+          <p class="desc">考えたくないことほど、元気なうちに知っておくと軽く済みます。</p>
+        </div>
+      </div>
+      
+      <a href="#g-sonae" class="guide-more">「備える」の記事一覧へ →</a>
+    </div>
+
+  </div>
+</section>
+
+<figure class="photo-band"><img src="/images/lp/rings-bouquet.jpg" alt=""></figure>
+<!-- ARTICLES SECTION -->
 <section id="articles" class="articles-section">
   <div class="container">
     <div class="section-title">
       <span class="tag">詳細ガイド</span>
-      <h2>出会いから結婚後の暮らしまで<span>全156記事</span>で設計する</h2>
+      <h2>出会いから結婚後の暮らしまで<span>全185記事</span>で設計する</h2>
       <p>アプリ比較・婚活戦略から結婚準備・お金・新生活まで、テーマ別に全記事を読めます</p>
     </div>
-    <div class="archive-list"><details class="arc-fold" id="g-deai" open><summary class="arc-head">アプリ選び・ランキング・比較<span class="arc-count">（18記事）</span></summary><div class="archive-grid">
-        <a href="/articles/matching-app-ranking/" class="arc-link"><span class="arc-no">01</span>2026年最新マッチングアプリランキングTOP15｜総合比較・目的別おすすめ完全ガイド</a>
-        <a href="/articles/price-comparison/" class="arc-link"><span class="arc-no">02</span>マッチングアプリ料金・会員数完全比較表【2026年版】</a>
-        <a href="/articles/free-vs-paid/" class="arc-link"><span class="arc-no">03</span>マッチングアプリの課金はいつ始めるべきか｜無料期間で見極める判断基準【2026年版】</a>
-        <a href="/articles/compare-popular/" class="arc-link"><span class="arc-no">04</span>Pairs vs with vs Omiai 徹底比較｜総合人気アプリの違いと選び方2026</a>
-        <a href="/articles/compare-20s/" class="arc-link"><span class="arc-no">05</span>Tapple vs with vs Pairs 20代向け比較｜年代別に最適なアプリを徹底解説</a>
-        <a href="/articles/compare-konkatsu/" class="arc-link"><span class="arc-no">06</span>婚活アプリ比較｜ユーブライド vs Omiai vs Match どれが一番結婚に近い？</a>
-        <a href="/articles/compare-price/" class="arc-link"><span class="arc-no">07</span>マッチングアプリ料金比較2026｜月額コスパ最高のアプリを徹底検証</a>
-        <a href="/articles/pairs-guide/" class="arc-link"><span class="arc-no">08</span>Pairs(ペアーズ)完全ガイド｜評判・料金・使い方と向き不向き</a>
-        <a href="/articles/pairs-women/" class="arc-link"><span class="arc-no">09</span>Pairs（ペアーズ）女性向け完全攻略｜プロフィール・いいね選別・安全に出会う方法</a>
-        <a href="/articles/pairs-men/" class="arc-link"><span class="arc-no">10</span>Pairs（ペアーズ）男性向け完全攻略｜いいね戦略・メッセージ・付き合うまでの全手順</a>
-        <a href="/articles/with-guide/" class="arc-link"><span class="arc-no">11</span>with（ウィズ）完全ガイド｜心理テスト機能の使い方・料金・マッチング攻略法</a>
-        <a href="/articles/with-women/" class="arc-link"><span class="arc-no">12</span>with（ウィズ）女性向けガイド｜相性診断の活用・無料でできること・安全に使う方法</a>
-        <a href="/articles/omiai-guide/" class="arc-link"><span class="arc-no">13</span>Omiai(お見合い)完全ガイド【婚活向け30代必読・成功戦略】</a>
-        <a href="/articles/tapple-guide/" class="arc-link"><span class="arc-no">14</span>Tapple(タップル)完全ガイド【20代向け即デート実現戦略】</a>
-        <a href="/articles/tapple-vs-pairs/" class="arc-link"><span class="arc-no">15</span>TappleとPairs比較｜20代向けマッチングアプリどっちを選ぶべき？</a>
-        <a href="/articles/with-vs-pairs/" class="arc-link"><span class="arc-no">16</span>withとPairs比較｜心理テスト・相性重視派はどちらを選ぶべき？</a>
-        <a href="/articles/omiai-vs-pairs/" class="arc-link"><span class="arc-no">17</span>OmiaiとPairs比較｜婚活目的ならどちらを選ぶべき？徹底比較</a>
-        <a href="/articles/bachelor-date-guide/" class="arc-link"><span class="arc-no">18</span>バチェラーデート完全ガイド｜審査制AIデーティングの評判と向き不向き【2026年版】</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">婚活特化サービス・結婚相談所<span class="arc-count">（11記事）</span></summary><div class="archive-grid">
-        <a href="/articles/youbride-guide/" class="arc-link"><span class="arc-no">01</span>ユーブライド完全ガイド｜評判・料金・成婚実績を徹底検証【2026年版】</a>
-        <a href="/articles/marrish-guide/" class="arc-link"><span class="arc-no">02</span>マリッシュ完全ガイド｜バツイチ・再婚に強い理由と評判・料金【2026年版】</a>
-        <a href="/articles/youbride-marrish-hikaku/" class="arc-link"><span class="arc-no">03</span>ユーブライドとマリッシュを徹底比較｜年代・目的別にどちらを選ぶべきか【2026年版】</a>
-        <a href="/articles/soudanjo-hikaku/" class="arc-link"><span class="arc-no">04</span>結婚相談所の料金比較｜オンライン型は本当に安いのか検証【2026年版】</a>
-        <a href="/articles/agency-vs-app/" class="arc-link"><span class="arc-no">05</span>結婚相談所とマッチングアプリの違い｜費用・成婚率・サポートを徹底比較</a>
-        <a href="/articles/app-plus-agency/" class="arc-link"><span class="arc-no">06</span>結婚相談所に入らなくていい人の条件｜アプリだけで足りるかの判断基準【2026年版】</a>
-        <a href="/articles/renkatsu-vs-konkatsu/" class="arc-link"><span class="arc-no">07</span>恋活から婚活に切り替えるタイミング｜目的が変わった時のアプリの乗り換え方【2026年版】</a>
-        <a href="/articles/app-tsukare-guide/" class="arc-link"><span class="arc-no">08</span>マッチングアプリ疲れの原因と対処法｜やめる前に試す3つの選択肢【2026年版】</a>
-        <a href="/articles/konkatsu-soudan-saki/" class="arc-link"><span class="arc-no">09</span>婚活の悩みは誰に相談すればいいか｜相談先5つを費用と得意分野で比較</a>
-        <a href="/articles/konkatsu-party-guide/" class="arc-link"><span class="arc-no">10</span>婚活パーティーの選び方と料金相場｜アプリ・相談所との使い分け【2026年版】</a>
-        <a href="/articles/nurse-konkatsu-soudanjo/" class="arc-link"><span class="arc-no">11</span>看護師の婚活は結婚相談所が向いている？不規則勤務でも続く進め方とサービス選び</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">年代別ガイド<span class="arc-count">（8記事）</span></summary><div class="archive-grid">
-        <a href="/articles/student-guide/" class="arc-link"><span class="arc-no">01</span>20代前半（学生・新社会人）向けマッチングアプリ完全ガイド｜始め方と注意点</a>
-        <a href="/articles/20s-guide/" class="arc-link"><span class="arc-no">02</span>20代向けマッチングアプリ完全ガイド【恋活・婚活別選び方】</a>
-        <a href="/articles/late-20s-strategy/" class="arc-link"><span class="arc-no">03</span>20代後半（25〜29歳）のマッチングアプリ戦略｜将来を見据えた出会い方</a>
-        <a href="/articles/30s-konkatsu/" class="arc-link"><span class="arc-no">04</span>30代向け婚活アプリ完全ガイド｜真剣度別おすすめ・選び方と成功戦略</a>
-        <a href="/articles/35s-strategy/" class="arc-link"><span class="arc-no">05</span>35歳前後のマッチングアプリ戦略｜キャリア重視・再婚希望の人向け完全ガイド</a>
-        <a href="/articles/40s-guide/" class="arc-link"><span class="arc-no">06</span>40代のマッチングアプリ活用法｜再婚・新しい出会いのための現実的な戦略</a>
-        <a href="/articles/40s-men/" class="arc-link"><span class="arc-no">07</span>40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略</a>
-        <a href="/articles/over50-guide/" class="arc-link"><span class="arc-no">08</span>50代のマッチングアプリ・婚活ガイド｜中高年の出会いの現実と最適解</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">属性・状況別ガイド<span class="arc-count">（11記事）</span></summary><div class="archive-grid">
-        <a href="/articles/women-strategy/" class="arc-link"><span class="arc-no">01</span>マッチングアプリの女性向けガイド｜いいね選別・安全対策・2回目につながる進め方</a>
-        <a href="/articles/civil-servant-guide/" class="arc-link"><span class="arc-no">02</span>公務員向けマッチングアプリガイド｜身バレを防ぎつつ堅実に出会う方法</a>
-        <a href="/articles/nurse-guide/" class="arc-link"><span class="arc-no">03</span>看護師向けマッチングアプリガイド｜不規則勤務でも出会える使い方【2026年版】</a>
-        <a href="/articles/engineer-guide/" class="arc-link"><span class="arc-no">04</span>エンジニア・理系向けマッチングアプリガイド｜論理派の強みを活かす戦略</a>
-        <a href="/articles/batsuichi-guide/" class="arc-link"><span class="arc-no">05</span>バツイチ・再婚向けマッチングアプリガイド｜再婚に強いアプリと離婚歴の書き方【2026年版】</a>
-        <a href="/articles/pet-konkatsu/" class="arc-link"><span class="arc-no">06</span>ペット好きの婚活はどう進めるか｜犬・猫と暮らす前提で相手を探す方法</a>
-        <a href="/articles/pocchari-konkatsu/" class="arc-link"><span class="arc-no">07</span>ぽっちゃり女性の婚活で体型はどう書くか｜プロフィールの実務と場所の選び方</a>
-        <a href="/articles/hitomishiri-guide/" class="arc-link"><span class="arc-no">08</span>人見知り・内向型のためのマッチングアプリ攻略｜会話が苦手でも出会える設計</a>
-        <a href="/articles/otaku-konkatsu/" class="arc-link"><span class="arc-no">09</span>オタクの婚活はどう進めるか｜趣味を隠さずに相手を探す方法と同居後の実務</a>
-        <a href="/articles/seishain-igai-guide/" class="arc-link"><span class="arc-no">10</span>非正規・フリーランスの婚活戦略｜雇用形態の壁をどう越えるか</a>
-        <a href="/articles/kokusai-kekkon-guide/" class="arc-link"><span class="arc-no">11</span>国際結婚・外国人パートナーとの出会いと手続きガイド</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">地域別ガイド<span class="arc-count">（12記事）</span></summary><div class="archive-grid">
-        <a href="/articles/tokyo-guide/" class="arc-link"><span class="arc-no">01</span>東京でマッチングアプリを使うなら｜都内で出会いが多いアプリTOP3と攻略法</a>
-        <a href="/articles/osaka-guide/" class="arc-link"><span class="arc-no">02</span>大阪でマッチングアプリを使うなら｜出会いが多いアプリTOP3とエリア別攻略法</a>
-        <a href="/articles/nagoya-guide/" class="arc-link"><span class="arc-no">03</span>名古屋でマッチングアプリを使うなら｜出会えるアプリTOP3と車社会ならではの攻略法</a>
-        <a href="/articles/fukuoka-guide/" class="arc-link"><span class="arc-no">04</span>福岡でマッチングアプリを使うなら｜出会えるアプリTOP3と天神・博多エリア攻略法</a>
-        <a href="/articles/sapporo-guide/" class="arc-link"><span class="arc-no">05</span>札幌でマッチングアプリを使うなら｜出会えるアプリTOP3とすすきの・大通エリア攻略法</a>
-        <a href="/articles/kyoto-guide/" class="arc-link"><span class="arc-no">06</span>京都でマッチングアプリを使うなら｜出会えるアプリTOP3と河原町・烏丸エリア攻略法</a>
-        <a href="/articles/kobe-yokohama-guide/" class="arc-link"><span class="arc-no">07</span>神戸・横浜でマッチングアプリを使うなら｜港町2都市の出会いエリア攻略法</a>
-        <a href="/articles/sendai-hiroshima-guide/" class="arc-link"><span class="arc-no">08</span>仙台・広島でマッチングアプリを使うなら｜地方中核都市の出会い戦略</a>
-        <a href="/articles/saitama-chiba-guide/" class="arc-link"><span class="arc-no">09</span>埼玉・千葉でマッチングアプリを使うなら｜都心依存しない出会い戦略</a>
-        <a href="/articles/shizuoka-niigata-guide/" class="arc-link"><span class="arc-no">10</span>静岡・新潟でマッチングアプリを使うなら｜地方中核県の出会い戦略</a>
-        <a href="/articles/okinawa-guide/" class="arc-link"><span class="arc-no">11</span>沖縄でマッチングアプリを使うなら｜移住者・地元の出会い事情と攻略法</a>
-        <a href="/articles/inaka-guide/" class="arc-link"><span class="arc-no">12</span>地方・田舎でマッチングアプリは使える？【人口10万人以下】出会うための現実的戦略</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">プロフィール・メッセージ攻略<span class="arc-count">（10記事）</span></summary><div class="archive-grid">
-        <a href="/articles/konkatsu-roadmap/" class="arc-link"><span class="arc-no">01</span>婚活アプリで結婚するには｜選び方から成婚までの完全ロードマップ</a>
-        <a href="/articles/profile-photo/" class="arc-link"><span class="arc-no">02</span>マッチングアプリのプロフィール写真｜マッチ率が上がる写真の選び方・撮り方</a>
-        <a href="/articles/profile-text/" class="arc-link"><span class="arc-no">03</span>マッチングアプリのプロフィール文｜いいねが増える自己紹介の書き方と実例</a>
-        <a href="/articles/photo-tips/" class="arc-link"><span class="arc-no">04</span>マッチングアプリのプロフィール写真完全ガイド｜マッチ率3倍になる選び方・撮り方</a>
-        <a href="/articles/konkatsu-photo-guide/" class="arc-link"><span class="arc-no">05</span>婚活・マッチングアプリのプロフィール写真戦略｜プロ撮影は投資に値するか</a>
-        <a href="/articles/message-strategy/" class="arc-link"><span class="arc-no">06</span>マッチングアプリのメッセージ戦略｜初回からデート約束まで使える完全テンプレート</a>
-        <a href="/articles/line-exchange/" class="arc-link"><span class="arc-no">07</span>マッチングアプリのLINE交換タイミング｜いつ・どう切り出すべきか完全解説</a>
-        <a href="/articles/time-management/" class="arc-link"><span class="arc-no">08</span>マッチングアプリの時間管理｜忙しい人でも出会える効率的な時間の使い方</a>
-        <a href="/articles/success-stories/" class="arc-link"><span class="arc-no">09</span>マッチングアプリで結婚した人の体験談｜リアルな成婚ストーリーと成功パターン</a>
-        <a href="/articles/faq-troubleshooting/" class="arc-link"><span class="arc-no">10</span>マッチングアプリがうまくいかない原因は5つに収束する｜段階別の切り分け方【2026年版】</a>
-        </div></details><details class="arc-fold" id="g-kousai"><summary class="arc-head">デート・交際<span class="arc-count">（9記事）</span></summary><div class="archive-grid">
-        <a href="/articles/first-date-guide/" class="arc-link"><span class="arc-no">01</span>マッチングアプリ初デート完全ガイド｜場所選び・当日の進め方・告白のタイミング</a>
-        <a href="/articles/first-date-spot/" class="arc-link"><span class="arc-no">02</span>マッチングアプリの初デート場所｜2回目につながる場所選びの法則</a>
-        <a href="/articles/date-plan-2kaime/" class="arc-link"><span class="arc-no">03</span>2回目・3回目のデートプラン｜関係が進む人と止まる人の違い</a>
-        <a href="/articles/ouchi-date-guide/" class="arc-link"><span class="arc-no">04</span>おうちデート完全ガイド｜付き合う前・付き合った後の過ごし方と失敗しない準備</a>
-        <a href="/articles/amenohi-date-guide/" class="arc-link"><span class="arc-no">05</span>雨の日デートプラン｜屋内で楽しめる過ごし方と当日の切り替え方</a>
-        <a href="/articles/enkyori-renai-guide/" class="arc-link"><span class="arc-no">06</span>遠距離恋愛・遠距離婚活の続け方｜オンラインで距離を縮める具体策</a>
-        <a href="/articles/ouchi-date-sakuhin/" class="arc-link"><span class="arc-no">07</span>おうちデートで見る作品の選び方｜関係性の段階別・会話が生まれる作品の条件</a>
-        <a href="/articles/date-sakuhin-ng/" class="arc-link"><span class="arc-no">08</span>デートで見ると気まずくなる作品の共通点｜避け方と代わりの選択肢</a>
-        <a href="/articles/sakuhin-kachikan/" class="arc-link"><span class="arc-no">09</span>作品の感想でわかる相手の結婚観｜見終わったあとの会話の使い方</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">データ・統計<span class="arc-count">（19記事）</span></summary><div class="archive-grid">
-        <a href="/articles/success-rate-data/" class="arc-link"><span class="arc-no">01</span>マッチングアプリの結婚率・成功率データ｜付き合う・結婚する確率を統計で解説【2026年最新】</a>
-        <a href="/articles/age-data/" class="arc-link"><span class="arc-no">02</span>マッチングアプリの年齢層分布【各年代の利用率比較】</a>
-        <a href="/articles/members-data/" class="arc-link"><span class="arc-no">03</span>マッチングアプリの男女比はどれくらい？会員数より先に見るべき数字【2026年版】</a>
-        <a href="/articles/kaiin-age-cross-data/" class="arc-link"><span class="arc-no">04</span>マッチングアプリの年齢層×目的マップ｜どの年代がどこにいるかデータで見る【2026年版】</a>
-        <a href="/articles/kekkon-madeno-kikan-data/" class="arc-link"><span class="arc-no">05</span>マッチングアプリから結婚までの期間データ｜出会って何ヶ月で結婚している？</a>
-        <a href="/articles/pairs-marriage-data/" class="arc-link"><span class="arc-no">06</span>ペアーズの成婚率・結婚データ｜本当に結婚できるのか公式数値で検証【2026年版】</a>
-        <a href="/articles/with-seriousness-data/" class="arc-link"><span class="arc-no">07</span>withの真剣度・結婚データ｜恋活アプリで婚活はできるのか検証【2026年版】</a>
-        <a href="/articles/tapple-seriousness-data/" class="arc-link"><span class="arc-no">08</span>タップルの真剣度は低い？｜ユーザー層データと目的別の向き不向き【2026年版】</a>
-        <a href="/articles/omiai-30s-women-data/" class="arc-link"><span class="arc-no">09</span>Omiaiは30代女性に向いている？｜年齢層データと婚活実績で検証【2026年版】</a>
-        <a href="/articles/nashikon-data/" class="arc-link"><span class="arc-no">10</span>結婚式をしない「ナシ婚」の割合データ｜後悔する人・しない人の分かれ目</a>
-        <a href="/articles/fraud-statistics/" class="arc-link"><span class="arc-no">11</span>マッチングアプリの業者・サクラ被害の実態｜統計データと危険パターン徹底解説</a>
-        <a href="/articles/appkon-wariai-data/" class="arc-link"><span class="arc-no">12</span>アプリ婚・マッチングアプリ経由の婚姻割合データ｜出会い方別の推移と現状【2026年版】</a>
-        <a href="/articles/matching-dansei-cost-data/" class="arc-link"><span class="arc-no">13</span>マッチングアプリの男性費用データ｜月額・利用期間・総額の実態と節約策【2026年版】</a>
-        <a href="/articles/matching-josei-cost-data/" class="arc-link"><span class="arc-no">14</span>マッチングアプリの女性費用｜無料範囲と有料が必要なケース【2026年版】</a>
-        <a href="/articles/hatsushon-nenmei-data/" class="arc-link"><span class="arc-no">15</span>初婚年齢の平均データ｜男女別推移と婚活を始めるべき年齢【2026年版】</a>
-        <a href="/articles/youbride-seikon-data/" class="arc-link"><span class="arc-no">16</span>ユーブライドの成婚率は公表されているか｜成婚退会者数の実数と読み方【2026年版】</a>
-        <a href="/articles/marrish-saikon-data/" class="arc-link"><span class="arc-no">17</span>マリッシュの再婚成婚データ｜シンパパ・シンママ優遇の実態を公表値で確認する【2026年版】</a>
-        <a href="/articles/zexy-enmusubi-data/" class="arc-link"><span class="arc-no">18</span>ゼクシィ縁結びの成婚率｜リクルートが公表している数字と、していない数字【2026年版】</a>
-        <a href="/articles/pairs-kaiin-data/" class="arc-link"><span class="arc-no">19</span>Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する【2026年版】</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">安全対策<span class="arc-count">（4記事）</span></summary><div class="archive-grid">
-        <a href="/articles/safety-guide/" class="arc-link"><span class="arc-no">01</span>安全なマッチングアプリの選び方｜業者・サクラ対策と安心して使えるアプリ比較</a>
-        <a href="/articles/fraud-detection/" class="arc-link"><span class="arc-no">02</span>マッチングアプリの業者・詐欺の見分け方｜引っかかる前に知るべき手口と対策</a>
-        <a href="/articles/anti-fraud/" class="arc-link"><span class="arc-no">03</span>マッチングアプリの業者・詐欺を見分ける完全版｜プロフィールと会話パターンで判定</a>
-        <a href="/articles/privacy-protection/" class="arc-link"><span class="arc-no">04</span>マッチングアプリで知り合いを見つけた・見つかった時の対処｜バレた後にどうするか【2026年版】</a>
-        </div></details><details class="arc-fold" id="g-junbi"><summary class="arc-head">結婚準備（プロポーズ〜式）<span class="arc-count">（15記事）</span></summary><div class="archive-grid">
-        <a href="/articles/propose-guide/" class="arc-link"><span class="arc-no">01</span>プロポーズ準備完全ガイド｜タイミング・場所・指輪の段取りをデータで整理</a>
-        <a href="/articles/konyaku-yubiwa-data/" class="arc-link"><span class="arc-no">02</span>婚約指輪の相場データ｜「給料3ヶ月分」は本当か統計で検証【2026年版】</a>
-        <a href="/articles/shikijo-erabi-guide/" class="arc-link"><span class="arc-no">03</span>結婚式場探し完全ガイド｜見学予約サイトの特典比較と失敗しない回り方【2026年版】</a>
-        <a href="/articles/maedori-photo-guide/" class="arc-link"><span class="arc-no">04</span>前撮り・フォトウェディングの費用比較｜後悔しないスタジオ選び【2026年版】</a>
-        <a href="/articles/bridal-esthe-guide/" class="arc-link"><span class="arc-no">05</span>ブライダルエステはいつから？費用・回数の相場データと選び方</a>
-        <a href="/articles/bridal-inner-guide/" class="arc-link"><span class="arc-no">06</span>ブライダルインナーはどこで買う？必要性・選び方・専門店比較【後悔しない準備】</a>
-        <a href="/articles/gosyugi-shiharai-houhou/" class="arc-link"><span class="arc-no">07</span>結婚式のご祝儀・支払いはクレジットカードでできる？現金以外の選択肢を整理</a>
-        <a href="/articles/kekkon-houkoku-nengajou/" class="arc-link"><span class="arc-no">08</span>結婚報告はがき・年賀状の作り方｜文例・写真選び・出す範囲のマナー</a>
-        <a href="/articles/kekkon-uchiiwai-guide/" class="arc-link"><span class="arc-no">09</span>結婚内祝いのマナー完全ガイド｜相場・時期・のし・品物の選び方</a>
-        <a href="/articles/pair-ring-guide/" class="arc-link"><span class="arc-no">10</span>ペアリングの選び方と相場データ｜婚約指輪との違い・つける指の意味</a>
-        <a href="/articles/christmas-propose-gyakusan/" class="arc-link"><span class="arc-no">11</span>クリスマスプロポーズの逆算準備ガイド｜婚約指輪の納期から「注文デッドライン」を計算する</a>
-        <a href="/articles/nyuseki-2027-guide/" class="arc-link"><span class="arc-no">12</span>2027年の入籍日はいつがいい？｜天赦日6回の「当たり年」吉日と選び方ガイド</a>
-        <a href="/articles/kekkonshiki-isho-rental/" class="arc-link"><span class="arc-no">13</span>結婚式の親族衣装・お呼ばれ服レンタルガイド｜留袖・訪問着・ドレスの相場と選び方</a>
-        <a href="/articles/yokohama-propose-spot/" class="arc-link"><span class="arc-no">14</span>横浜プロポーズスポットガイド｜定番夜景と2027年の記念日プランの立て方</a>
-        <a href="/articles/futari-sumaho-minaoshi/" class="arc-link"><span class="arc-no">15</span>夫婦・同棲カップルのスマホ代見直し手順｜iPhone 18発売期が「動きどき」の理由</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">結婚とお金<span class="arc-count">（14記事）</span></summary><div class="archive-grid">
-        <a href="/articles/kekkon-okane-data/" class="arc-link"><span class="arc-no">01</span>結婚にかかるお金の総額データ｜婚約から新生活までの費用を全部見える化【2026年版】</a>
-        <a href="/articles/kekkon-chokin-mokuhyou/" class="arc-link"><span class="arc-no">02</span>結婚までにいくら貯めるべきか｜世帯年収別の貯金目標データ</a>
-        <a href="/articles/kinsen-kachikan-check/" class="arc-link"><span class="arc-no">03</span>結婚前に確認すべき金銭感覚のすり合わせ｜聞きにくいお金の話を切り出す方法</a>
-        <a href="/articles/futari-kouza-kanri/" class="arc-link"><span class="arc-no">04</span>結婚後の口座・お金の管理方法｜共通口座と費目分担の実例パターン</a>
-        <a href="/articles/fuufu-credit-kanri/" class="arc-link"><span class="arc-no">05</span>夫婦のクレジットカードは家族カードか別々か｜メリット・デメリットを整理</a>
-        <a href="/articles/shinkon-ryokou-credit/" class="arc-link"><span class="arc-no">06</span>新婚旅行の支払いはどのクレジットカードが得か｜旅行保険・マイル還元率で比較</a>
-        <a href="/articles/kekkon-hoken-minaoshi/" class="arc-link"><span class="arc-no">07</span>結婚したら保険はどう見直す？加入タイミングと必要保障額の考え方</a>
-        <a href="/articles/kekkon-jutaku-loan/" class="arc-link"><span class="arc-no">08</span>結婚後の住まい選び｜賃貸か購入か・ペアローンの判断材料をデータで整理</a>
-        <a href="/articles/shinkon-koteihi-minaoshi/" class="arc-link"><span class="arc-no">09</span>新婚生活の固定費見直し完全ガイド｜携帯・回線・保険をまとめて最適化する</a>
-        <a href="/articles/kazoku-simhikaku/" class="arc-link"><span class="arc-no">10</span>結婚後のスマホ代・格安SIM比較｜家族割・シェアプランの最適構成</a>
-        <a href="/articles/futari-hikari-kaisen/" class="arc-link"><span class="arc-no">11</span>2人暮らしの光回線選び｜賃貸の工事可否問題と結婚前後の切り替えタイミング</a>
-        <a href="/articles/shinkon-net-kaisen-dandori/" class="arc-link"><span class="arc-no">12</span>新婚・同棲の引っ越しでネット回線はいつ手配する？｜2契約の解約と名義の決め方</a>
-        <a href="/articles/keiyaku-jisshitsu-wana/" class="arc-link"><span class="arc-no">13</span>新生活の契約で見落としがちな「実質」表記の罠｜携帯・保険・引越しに共通する読み解き方</a>
-        <a href="/articles/yachin-credit-shiharai/" class="arc-link"><span class="arc-no">14</span>家賃はクレジットカードで払える？手数料とポイント還元の損得を計算</a>
-        </div></details><details class="arc-fold" id="g-kurashi"><summary class="arc-head">同棲・新生活・季節行事<span class="arc-count">（11記事）</span></summary><div class="archive-grid">
-        <a href="/articles/dousei-hajimekata/" class="arc-link"><span class="arc-no">01</span>同棲の始め方完全ガイド｜引っ越し・初期費用・お金の分担ルール</a>
-        <a href="/articles/dousei-kekkon-hikaku/" class="arc-link"><span class="arc-no">02</span>同棲か結婚か｜先に一緒に住むメリット・デメリットをデータで比較</a>
-        <a href="/articles/dousei-kekkon-timing/" class="arc-link"><span class="arc-no">03</span>同棲中の結婚のタイミング｜何をきっかけに入籍する人が多いか</a>
-        <a href="/articles/dousei-kaisho/" class="arc-link"><span class="arc-no">04</span>同棲解消のリアル｜うまくいかなかった時どうするか</a>
-        <a href="/articles/shinkon-seikatsu-guide/" class="arc-link"><span class="arc-no">05</span>新婚生活の準備ガイド｜引越し・家具・お金の段取りチェックリスト</a>
-        <a href="/articles/shinkon-osechi/" class="arc-link"><span class="arc-no">06</span>新婚夫婦の初めてのおせち｜ふたり用おせち通販の選び方と早割カレンダー</a>
-        <a href="/articles/kisei-kekkon-aisatsu/" class="arc-link"><span class="arc-no">07</span>年末年始の帰省と結婚挨拶・手土産ガイド｜両家との初めての正月の乗り切り方</a>
-        <a href="/articles/kaden-rental-vs-kounyu/" class="arc-link"><span class="arc-no">08</span>新婚の家電はレンタルと購入どちらが得か｜損益分岐点をデータで検証</a>
-        <a href="/articles/tomobataraki-shokuji-data/" class="arc-link"><span class="arc-no">09</span>共働き夫婦の食事はどうしている？自炊・ミールキット・外食の費用と時間データ</a>
-        <a href="/articles/dousei-nimotsu-trunkroom/" class="arc-link"><span class="arc-no">10</span>同棲・結婚で荷物が入らない問題｜処分とトランクルームの料金相場</a>
-        <a href="/articles/shinkyo-kagu-yosan/" class="arc-link"><span class="arc-no">11</span>新居の家具・インテリア予算データ｜二人暮らしで最初に買うものと後回しでいいもの</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">結婚と仕事・働き方<span class="arc-count">（3記事）</span></summary><div class="archive-grid">
-        <a href="/articles/kekkon-tenshoku-guide/" class="arc-link"><span class="arc-no">01</span>結婚を機に転職すべきか｜収入・勤務地・働き方を見直すタイミングと判断基準</a>
-        <a href="/articles/tenshoku-riyu-honne/" class="arc-link"><span class="arc-no">02</span>転職理由ランキング｜結婚を意識すると重みが変わる8つの本音</a>
-        <a href="/articles/kosodate-zaitaku-guide/" class="arc-link"><span class="arc-no">03</span>子育てと両立できる働き方ガイド｜在宅ワーク化・時短勤務のためのスキルの選び方</a>
-        </div></details><details class="arc-fold"><summary class="arc-head">妊活・出産準備・身だしなみ<span class="arc-count">（9記事）</span></summary><div class="archive-grid">
-        <a href="/articles/dansei-ninkatsu-guide/" class="arc-link"><span class="arc-no">01</span>男性の妊活準備ガイド｜「妊活は2人でするもの」検査・生活習慣・サプリの基礎知識</a>
-        <a href="/articles/myseed-kuchikomi/" class="arc-link"><span class="arc-no">02</span>マイシード（男性妊活サプリ）の口コミ・成分を検証｜亜鉛・コエンザイムQ10配合の実際</a>
-        <a href="/articles/mitocore-kuchikomi/" class="arc-link"><span class="arc-no">03</span>ミトコア300mgの口コミ・成分を検証｜ミトコンドリアサプリの実際と選び方</a>
-        <a href="/articles/mitas-formen-kuchikomi/" class="arc-link"><span class="arc-no">04</span>mitas for men（ミタス男性用）の口コミ・成分検証｜夫婦で始める妊活サプリ</a>
-        <a href="/articles/usuge-konkatsu-eikyou/" class="arc-link"><span class="arc-no">05</span>薄毛は婚活・マッチングアプリで本当に不利か｜第一印象への影響と対策の選び方</a>
-        <a href="/articles/mens-make-konkatsu/" class="arc-link"><span class="arc-no">06</span>婚活・マッチングアプリ写真のためのメンズメイク入門｜BBクリーム1本から始める第一印象改善</a>
-        <a href="/articles/garugaru-ki-guide/" class="arc-link"><span class="arc-no">07</span>ガルガル期とは？いつからいつまで続くか・原因と夫の対処法【セルフ診断つき】</a>
-        <a href="/articles/garugaru-ki-itsumade/" class="arc-link"><span class="arc-no">08</span>ガルガル期はいつからいつまで続く？長引く家庭との違いと短くする設計</a>
-        <a href="/articles/sango-crisis-guide/" class="arc-link"><span class="arc-no">09</span>産後クライシスとは？いつからいつまで・原因と乗り越え方｜ガルガル期との違い</a>
-        </div></details><details class="arc-fold" id="g-sonae"><summary class="arc-head">調査・離婚・もしもの備え<span class="arc-count">（7記事）</span></summary><div class="archive-grid">
-        <a href="/articles/kekkon-sokou-chousa/" class="arc-link"><span class="arc-no">01</span>結婚前の身元・素行調査は必要か｜費用相場と依頼前に自分でできる確認</a>
-        <a href="/articles/uwaki-chousa-kiso/" class="arc-link"><span class="arc-no">02</span>浮気・不倫調査の基礎知識｜証拠になるもの・ならないものを正しく理解する</a>
-        <a href="/articles/tanshin-uwaki-mikiwame/" class="arc-link"><span class="arc-no">03</span>別居・単身赴任中の浮気の見抜き方｜物理的に離れていても分かるサイン</a>
-        <a href="/articles/tantei-erabikata/" class="arc-link"><span class="arc-no">04</span>探偵事務所の選び方・料金相場比較｜依頼前に確認すべきポイント</a>
-        <a href="/articles/rikon-junbi-jyunban/" class="arc-link"><span class="arc-no">05</span>離婚を考えたら最初にすること｜証拠集め・お金の整理・相談先の順番</a>
-        <a href="/articles/rikon-okane-genjitsu/" class="arc-link"><span class="arc-no">06</span>離婚した場合のお金の現実｜財産分与・慰謝料の基礎知識と備え方</a>
-        <a href="/articles/koninhiyou-guide/" class="arc-link"><span class="arc-no">07</span>婚姻費用とは｜別居中の生活費分担の仕組みと相手が支払わない時の対処法</a>
-    </div>
-  </div></details></div>
+    <ul class="cat-list"><li><a href="/articles/#g-deai">アプリ選び・ランキング・比較<span class="arc-count">（18記事）</span></a></li><li><a href="/articles/">婚活特化サービス・結婚相談所<span class="arc-count">（11記事）</span></a></li><li><a href="/articles/">年代別ガイド<span class="arc-count">（8記事）</span></a></li><li><a href="/articles/">属性・状況別ガイド<span class="arc-count">（11記事）</span></a></li><li><a href="/articles/">地域別ガイド<span class="arc-count">（12記事）</span></a></li><li><a href="/articles/">プロフィール・メッセージ攻略<span class="arc-count">（10記事）</span></a></li><li><a href="/articles/#g-kousai">デート・交際<span class="arc-count">（9記事）</span></a></li><li><a href="/articles/">データ・統計<span class="arc-count">（19記事）</span></a></li><li><a href="/articles/">安全対策<span class="arc-count">（4記事）</span></a></li><li><a href="/articles/#g-junbi">結婚準備（プロポーズ〜式）<span class="arc-count">（15記事）</span></a></li><li><a href="/articles/">結婚とお金<span class="arc-count">（14記事）</span></a></li><li><a href="/articles/#g-kurashi">同棲・新生活・季節行事<span class="arc-count">（11記事）</span></a></li><li><a href="/articles/">結婚と仕事・働き方<span class="arc-count">（3記事）</span></a></li><li><a href="/articles/">妊活・出産準備・身だしなみ<span class="arc-count">（9記事）</span></a></li><li><a href="/articles/#g-sonae">調査・離婚・もしもの備え<span class="arc-count">（7記事）</span></a></li></ul><p style="text-align:center;margin:30px 0 0"><a class="guide-more" href="/articles/">全161記事の一覧を見る →</a></p>
 </section>
 
 <figure class="photo-band"><img src="/images/lp/room-light.jpg" alt=""></figure>
