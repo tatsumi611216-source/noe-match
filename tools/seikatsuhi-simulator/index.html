@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ふたりの生活費シミュレーター｜月額の内訳と「収入比でいくらずつ」を試算【2026年版】</title>
+<meta name="description" content="新婚・二人暮らしの生活費を月額で試算し、折半・収入比・定額＋按分の3案で「どちらがいくら出すか」まで出す無料シミュレーター。家賃・光熱・通信・食費の内訳と、削れる固定費の余地も表示します。登録不要。">
+<link rel="canonical" href="https://www.noe-match.com/tools/seikatsuhi-simulator/">
+<meta property="og:title" content="ふたりの生活費シミュレーター｜月額の内訳と「収入比でいくらずつ」を試算【2026年版】">
+<meta property="og:description" content="新婚・二人暮らしの生活費を月額で試算し、折半・収入比・定額＋按分の3案で「どちらがいくら出すか」まで出す無料シミュレーター。家賃・光熱・通信・食費の内訳と、削れる固定費の余地も表示します。登録不要。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.noe-match.com/tools/seikatsuhi-simulator/">
+<meta property="og:image" content="https://www.noe-match.com/images/og/seikatsuhi-og.png">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.noe-match.com/images/og/seikatsuhi-og.png">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+<style>*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#1d242b;--body:#3a4148;--gray:#8a9097;--hair:#e6e2dc;--acc:#7c2e42;--acc-dark:#5c2131;--alt:#f7f5f2;--serif:'Noto Serif JP',serif;--sans:'Noto Sans JP',-apple-system,"Hiragino Kaku Gothic ProN",sans-serif;
+--pink:#7c2e42;--pink-dark:#7c2e42;--pink-deep:#5c2131;--pink-light:#f3ecee;--purple:#4a4458;--navy:#1d242b;--text:#3a4148;--ink-soft:#454b52;--sub:#757c83;--bg:#faf9f7;--white:#fff;--border:#e6e2dc;--line-strong:#d9d2c8;--shadow:0 1px 2px rgba(29,36,43,.04);--shadow-hover:0 2px 8px rgba(29,36,43,.07);--radius:6px;
+--safe:#3e7d57;--mid:#a1761f;--high:#a24e2a;--crit:#7c2e42;--safe-bg:#edf3ee;--mid-bg:#f6f0e1;--high-bg:#f6ebe3;--crit-bg:#f3e8eb}
+html{scroll-behavior:smooth}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.9;font-size:15.5px;-webkit-font-smoothing:antialiased;font-feature-settings:"palt";letter-spacing:.01em}
+header{background:#fff;border-bottom:1px solid var(--hair);position:sticky;top:0;z-index:100}
+.header-inner{max-width:860px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.logo{font-family:var(--serif);font-size:1.05rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:.06em}
+.logo-badge{background:#fff;color:var(--gray);border:1px solid var(--hair);font-size:.6rem;padding:2px 7px;border-radius:2px;margin-left:8px;letter-spacing:.08em;vertical-align:2px}
+nav a{color:var(--gray);text-decoration:none;font-size:.78rem;padding:6px 9px;font-weight:500;letter-spacing:.04em;transition:color .15s}
+nav a:hover{color:var(--acc)}
+@media(max-width:680px){nav{display:none}}
+.breadcrumb{font-size:.74rem;color:var(--gray);padding:16px 0;letter-spacing:.03em}
+.breadcrumb a{color:var(--gray);text-decoration:none}
+.breadcrumb a:hover{color:var(--acc)}
+article{background:#fff;border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);padding:44px 38px;margin-bottom:30px}
+@media(max-width:600px){article{padding:28px 18px}}
+article h1{font-family:var(--serif);font-size:clamp(1.45rem,4.2vw,1.95rem);font-weight:600;line-height:1.65;letter-spacing:.03em;margin-bottom:18px;color:var(--ink)}
+article h2{font-family:var(--serif);font-size:clamp(1.2rem,3.2vw,1.4rem);font-weight:600;line-height:1.7;margin:52px 0 18px;padding:0 0 .45em;border:none;border-bottom:1px solid var(--ink);background:none;border-radius:0;color:var(--ink);letter-spacing:.05em}
+article h3{font-size:1.02rem;font-weight:700;margin:30px 0 10px;color:var(--ink);padding-bottom:5px;border-bottom:1px solid var(--hair)}
+article p{margin:13px 0}
+article ul,article ol{margin:13px 0 13px 1.45em}
+article li{margin:7px 0}
+article a{color:var(--acc);font-weight:500;text-decoration-color:#c8a4b0;text-underline-offset:3px;transition:color .15s}
+article a:hover{color:var(--acc-dark)}
+blockquote{background:var(--alt);border-left:3px solid var(--acc);border-radius:0 4px 4px 0;padding:14px 18px;margin:20px 0;font-size:.93rem;color:var(--ink-soft)}
+blockquote strong{color:var(--ink)}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:6px;margin:20px 0;border:1px solid var(--hair)}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:.85rem;min-width:420px}
+thead th{background:var(--ink);color:#fff;padding:11px 10px;text-align:center;font-weight:700;letter-spacing:.04em;white-space:nowrap}
+tbody td{padding:11px 10px;border-bottom:1px solid var(--hair);text-align:center}
+tbody tr:nth-child(even){background:var(--alt)}
+tbody td:first-child{font-weight:700;color:var(--ink);text-align:left}
+footer{background:var(--ink);color:#9aa3aa;padding:34px 20px;font-size:.76rem;line-height:1.8}
+.footer-inner{max-width:860px;margin:0 auto;text-align:center}
+.footer-inner a{color:#b9c2c8;text-decoration:none;margin:0 8px}
+.footer-inner a:hover{color:#fff}
+.footer-disc{color:#78868f;font-size:.68rem;margin-top:12px;line-height:1.7}
+.related{background:#fff;border:1px solid var(--hair);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px;margin-bottom:30px}
+.related h2{font-family:var(--serif);font-size:1.02rem;font-weight:600;margin-bottom:14px;color:var(--ink);letter-spacing:.05em;padding:0 0 .4em;border:none;border-bottom:1px solid var(--ink)}
+.related ul{list-style:none;display:grid;gap:10px}
+.related a{display:block;background:#fff;border:1px solid var(--hair);border-radius:4px;padding:12px 15px;font-size:.83rem;font-weight:500;text-decoration:none;color:var(--text);transition:border-color .15s,color .15s}
+.related a:hover{border-color:var(--acc);color:var(--acc)}
+a[style*="#7c2e42"]:hover{background:#5c2131!important}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+/* ツール用フォーム */
+.calc{background:var(--alt);border:1px solid var(--hair);border-radius:6px;padding:22px 20px;margin:22px 0}
+.calc .fld{margin:14px 0}
+.calc label{display:block;font-weight:700;font-size:.88rem;margin-bottom:6px;color:var(--ink)}
+.calc select,.calc input[type=number]{width:100%;padding:11px 12px;font-size:16px;border:1px solid var(--line-strong);border-radius:4px;background:#fff;color:var(--text);font-family:inherit}
+.calc select:focus,.calc input:focus{outline:2px solid var(--acc);border-color:var(--acc)}
+.calc .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.calc .row2{grid-template-columns:1fr}}
+.calc .hint{font-size:.74rem;color:var(--sub);margin-top:4px;font-weight:400}
+.calc-btn{display:block;width:100%;background:var(--acc);color:#fff;font-weight:700;font-size:1rem;padding:15px;border:none;border-radius:4px;cursor:pointer;margin-top:18px;font-family:inherit;letter-spacing:.08em;transition:background .15s}
+.calc-btn:hover{background:var(--acc-dark)}
+.result{display:none;background:#fff;border:1px solid var(--acc);border-radius:6px;padding:22px 20px;margin:22px 0}
+.result.show{display:block}
+.result .big{text-align:center;padding:10px 0 16px}
+.result .big .lbl{font-size:.82rem;color:var(--sub);font-weight:700}
+.result .big .num{font-size:clamp(1.7rem,6vw,2.3rem);font-weight:800;color:var(--acc);line-height:1.3}
+.result .big .num small{font-size:.55em;font-weight:700}
+.result .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:6px 0 14px}
+@media(max-width:560px){.result .grid3{grid-template-columns:1fr}}
+.result .cell{background:var(--alt);border-radius:4px;padding:12px;text-align:center}
+.result .cell .lbl{font-size:.72rem;color:var(--sub);font-weight:700}
+.result .cell .num{font-size:1.15rem;font-weight:800;color:var(--ink)}
+.result .sub-num{text-align:center;font-size:.88rem;color:var(--ink-soft);margin-bottom:10px}
+.cutlist li{margin:9px 0;font-size:.9rem}
+.cutlist .amt{font-weight:800;color:var(--acc)}
+.note-src{font-size:.76rem;color:var(--sub);background:var(--alt);border-radius:6px;padding:12px 14px;margin:18px 0;line-height:1.8}
+.hl{background:#f3ecee!important}
+#top{position:fixed;bottom:20px;right:20px;width:44px;height:44px;background:#3a4148;color:#fff;border:none;border-radius:50%;font-size:1.1rem;cursor:pointer;box-shadow:0 2px 10px rgba(29,36,43,.25);opacity:0;transition:.3s}
+#top.show{opacity:1}
+#top:hover{background:var(--ink)}
+@media(max-width:600px){body{font-size:14.5px}article h2{margin:40px 0 14px}}
+
+/* ---- photo ambience ---- */
+.tool-hero{position:relative;min-height:220px;display:flex;align-items:flex-end;background-size:cover;background-position:center;background-color:#1d242b;border-radius:6px;overflow:hidden;margin-bottom:26px}
+.tool-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(22,18,20,.38),rgba(22,18,20,.68))}
+.tool-hero-inner{position:relative;padding:24px 34px 24px}
+.hero-mark{display:block;width:52px;height:52px;margin-bottom:12px}
+.tool-hero h1{font-family:var(--serif);font-size:clamp(1.35rem,3.8vw,1.8rem);font-weight:600;line-height:1.6;letter-spacing:.04em;color:#fff;margin:0}
+.tool-hero p{color:rgba(255,255,255,.88);font-size:.86rem;line-height:1.8;margin:8px 0 0;max-width:46em}
+@media(max-width:600px){.tool-hero{min-height:190px}.tool-hero-inner{padding:18px 18px 16px}.hero-mark{width:44px;height:44px;margin-bottom:10px}}
+.result .big{text-align:center;padding:26px 16px 20px;background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/rings-bouquet.jpg') center/cover;border-radius:4px;margin-bottom:12px}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "二人暮らしの生活費は月いくらが目安ですか？", "acceptedAnswer": {"@type": "Answer", "text": "家賃を除くと、二人暮らしではおおむね月15万〜20万円のレンジに収まるケースが多くなります。ただし最大の変数は家賃で、地域と間取りで数万円単位で変わるため、本ツールでは家賃を入力していただく方式にしています。総務省「家計調査」2025年平均の二人以上世帯（平均2.87人）では消費支出が月314,001円ですが、これは人数が多く世帯主の平均年齢も60.7歳のため、新婚2人世帯にそのまま当てはめると高めに出ます。"}}, {"@type": "Question", "name": "生活費は折半にすべきですか？", "acceptedAnswer": {"@type": "Answer", "text": "決まりはありません。判断の分かれ目は「同じ額を出すのが公平」と考えるか、「同じくらい負担感があるのが公平」と考えるかです。前者なら折半、後者なら収入比になります。本ツールでは折半・収入比・定額＋残り按分の3案を同時に表示するので、金額を見比べてから決められます。"}}, {"@type": "Question", "name": "収入差がある場合はどう分けますか？", "acceptedAnswer": {"@type": "Answer", "text": "収入比で按分する方法が使われます。たとえば手取りが30万円と20万円なら6:4です。ただし収入比だけだと「対等に出した」感覚が持てないという声もあるため、各自が同額を出したうえで超過分だけ収入比にする方法もあります。本ツールはこの2つを並べて表示します。"}}, {"@type": "Question", "name": "光熱費の目安はどのくらいですか？", "acceptedAnswer": {"@type": "Answer", "text": "総務省「家計調査」2025年平均では、二人以上の世帯（平均2.87人）の光熱・水道が月24,547円です。2人暮らしは人数が少ないぶんこれより低くなる傾向があります。実額が分かる場合は入力欄に入れていただくと精度が上がります。"}}, {"@type": "Question", "name": "家賃はいくらまでが適正ですか？", "acceptedAnswer": {"@type": "Answer", "text": "手取りに対する割合で見るのが一般的で、一つの目安として手取りの25〜30％以内に収める考え方があります。本ツールでは入力された家賃が手取り合計の何％にあたるかを表示するので、この目安と比べて判断できます。"}}, {"@type": "Question", "name": "固定費はどこから見直すと効果がありますか？", "acceptedAnswer": {"@type": "Answer", "text": "金額が大きく、一度変えれば毎月効き続けるものから着手するのが効率的です。具体的には通信（回線・スマホ）、保険、住まいの順で、食費や日用品のような変動費より先に見ることをおすすめします。"}}, {"@type": "Question", "name": "この試算はどのくらい正確ですか？", "acceptedAnswer": {"@type": "Answer", "text": "公的統計と当サイト掲載のレンジをもとにした概算です。地域・築年数・世帯の生活スタイルで実額は大きく変わるため、支出の全体像をつかみ、分担を話し合うための出発点としてお使いください。"}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "ふたりの生活費シミュレーター", "url": "https://www.noe-match.com/tools/seikatsuhi-simulator/", "applicationCategory": "FinanceApplication", "operatingSystem": "All", "inLanguage": "ja", "description": "新婚・二人暮らしの生活費を月額で試算し、折半・収入比・定額＋按分の3案で「どちらがいくら出すか」まで出す無料シミュレーター。家賃・光熱・通信・食費の内訳と、削れる固定費の余地も表示します。登録不要。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "無料ツール", "item": "https://www.noe-match.com/#tools"}, {"@type": "ListItem", "position": 3, "name": "ふたりの生活費シミュレーター"}]}</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#ranking">ランキング</a><a href="/#articles">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ ふたりの生活費シミュレーター</div>
+<style>
+/* 案C準拠の上書き：resultの写真敷きをこのツールの主題（暮らし）に合わせる */
+.result .big{background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/room-light.jpg') center/cover}
+.split-note{font-size:.85rem;color:var(--sub);margin:4px 0 14px}
+</style>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/scale.png" x="9" y="9" width="46" height="46"/></svg>
+<h1>ふたりの生活費シミュレーター｜月額と「どちらがいくら出すか」を60秒で試算</h1>
+<p>毎月の内訳だけでなく、折半・収入比・定額＋按分の3案で分担額まで出します。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>生活費の話し合いでもめる原因は、金額ではなく「数字がないまま比率を議論すること」。</strong>先に月額の総額を出し、そのうえで「どちらがいくら出すか」を3案で見比べるのが最短の着地です。</blockquote>
+<p>家賃と手取りを入れるだけで、月額・年額・内訳と、分担の3案まで一度に出ます。分担の考え方そのものは<a href="/articles/kekkon-hiyou-futan/">結婚費用は折半すべきか</a>で、結婚時の一時費用は<a href="/tools/kekkon-shikin-keisanki/">結婚資金計算機</a>で扱っています。</p>
+
+<h2>条件を入れる</h2>
+<div class="calc" id="calcForm">
+  <div class="fld">
+    <label for="rent">家賃（管理費込み・月）</label>
+    <input id="rent" type="number" min="0" step="1000" value="90000" inputmode="numeric">
+    <div class="hint">最大の変数なので実額を入れてください。統計の「住居」は持ち家世帯を含み実態より低いため使いません</div>
+  </div>
+
+  <div class="row2">
+    <div class="fld">
+      <label for="inc1">手取り月収 A（円）</label>
+      <input id="inc1" type="number" min="0" step="10000" value="250000" inputmode="numeric">
+    </div>
+    <div class="fld">
+      <label for="inc2">手取り月収 B（円）</label>
+      <input id="inc2" type="number" min="0" step="10000" value="200000" inputmode="numeric">
+      <div class="hint">片働きなら 0 のままで構いません</div>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="fld">
+      <label for="food">食事スタイル</label>
+      <select id="food">
+        <option value="50000">自炊が中心（月5.0万円）</option>
+        <option value="65000" selected>自炊と中食が半々（月6.5万円）</option>
+        <option value="80000">中食・外食が多い（月8.0万円）</option>
+      </select>
+      <div class="hint">二人暮らし共働きの実データ（月5〜8万円）のレンジに合わせています</div>
+    </div>
+    <div class="fld">
+      <label for="area">お住まいの地域</label>
+      <select id="area">
+        <option value="1.08">三大都市圏（東京・大阪・名古屋）</option>
+        <option value="1.00" selected>地方都市</option>
+        <option value="0.95">その他</option>
+      </select>
+      <div class="hint">家賃以外の物価差を反映します（家賃は入力値のまま）</div>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="fld">
+      <label for="util">光熱・水道（月・分かれば実額）</label>
+      <input id="util" type="number" min="0" step="1000" value="18000" inputmode="numeric">
+      <div class="hint">家計調査2025の二人以上世帯（平均2.87人）は24,547円。2人暮らしは低めに出ます</div>
+    </div>
+    <div class="fld">
+      <label for="car">車の保有</label>
+      <select id="car">
+        <option value="0" selected>なし</option>
+        <option value="25000">1台あり（月2.5万円）</option>
+        <option value="45000">2台あり（月4.5万円）</option>
+      </select>
+      <div class="hint">駐車場・保険・燃料・税金の按分を含む概算</div>
+    </div>
+  </div>
+
+  <button type="button" class="calc-btn" id="run">試算する</button>
+</div>
+
+<div class="result" id="result" aria-live="polite">
+  <div class="big">
+    <div class="lbl">ふたりの生活費（月額）</div>
+    <div class="num" id="total">—</div>
+  </div>
+
+  <div class="grid3">
+    <div class="cell"><div class="lbl">年額</div><div class="num" id="year">—</div></div>
+    <div class="cell"><div class="lbl">手取り合計に占める割合</div><div class="num" id="ratio">—</div></div>
+    <div class="cell"><div class="lbl">家賃の割合</div><div class="num" id="rentratio">—</div></div>
+  </div>
+
+  <h3>内訳</h3>
+  <div class="table-wrap"><table id="breakdown"></table></div>
+
+  <h3>どちらがいくら出すか（3案）</h3>
+  <p class="split-note">金額に正解はありません。<strong>「同じ額が公平」か「同じくらい痛いのが公平」か</strong>を先に決めると早く着地します。</p>
+  <div class="table-wrap"><table id="split"></table></div>
+
+  <h3>削れる余地</h3>
+  <div id="cut"></div>
+</div>
+
+<h2>この試算の前提</h2>
+
+<p>数字の出どころを明示します。ツールだけが独自の数値を持つ状態にはしていません。</p>
+
+<div class="table-wrap"><table>
+<tr><th>費目</th><th>前提</th><th>出典</th></tr>
+<tr><td>家賃</td><td><strong>入力値をそのまま使用</strong></td><td>統計の「住居」は持ち家世帯を含み月18,678円と実態より低いため使わない</td></tr>
+<tr><td>食費</td><td>月5.0〜8.0万円から選択</td><td>当サイト「共働き夫婦の食事はどうしている？」のレンジ（総務省「家計調査」をもとにした概算）</td></tr>
+<tr><td>光熱・水道</td><td>初期値18,000円（入力可）</td><td>総務省「家計調査」2025年平均・二人以上の世帯 24,547円。ただし平均世帯人員2.87人のため2人暮らしは低めに出る</td></tr>
+<tr><td>通信</td><td>スマホ2回線＋固定回線で月16,000円前後</td><td>総務省「家計消費状況調査」2025年1〜3月期・二人以上世帯のインターネット代 月4,447円を含む</td></tr>
+<tr><td>日用品・被服・医療・娯楽等</td><td>地域係数で調整した概算</td><td>総務省「家計調査」2025年平均の費目構成を2人世帯向けに縮小</td></tr>
+</table></div>
+
+<blockquote>
+<strong>統計の読み方に注意。</strong>総務省「家計調査」2025年平均の「二人以上の世帯」は<strong>平均世帯人員2.87人・世帯主の平均年齢60.7歳</strong>です。新婚の2人世帯とは構成が異なるため、公表値をそのまま当てはめると高めに出ます。本ツールは2人世帯向けに縮小したうえで、実額を入力できる項目を設けています。
+</blockquote>
+
+<h2>分担を決めるときの順番</h2>
+
+<p>金額より先に決めるものがあります。ここを飛ばすと、話し合いが平行線になります。</p>
+
+<ul>
+<li><strong>1. 公平の定義を合意する</strong>——「同じ額」か「同じ痛み」か。ここだけ最初に</li>
+<li><strong>2. 総額を出す</strong>——数字がないまま比率を議論すると空中戦になります</li>
+<li><strong>3. 共通に入れる額を決める</strong>——全額を共有する必要はありません</li>
+<li><strong>4. 相談なしで使える上限を決める</strong>——確認の回数が減ることが、実は一番効きます</li>
+<li><strong>5. 見直す日を決めておく</strong>——収入や生活が変われば前提が変わります</li>
+</ul>
+
+<p>口座の分け方と費目分担の実例は<a href="/articles/futari-kouza-kanri/">結婚後の口座・お金の管理方法</a>にまとめています。</p>
+
+<h2>固定費は「金額が大きく、一度で効く」順に</h2>
+
+<p>削るなら、毎月効き続けるものからです。食費や日用品のような変動費は、努力の割に戻りが小さく、続きません。</p>
+
+<ul>
+<li><strong>通信</strong>——回線とスマホ。契約を変えれば以後ずっと効きます（<a href="/articles/futari-hikari-kaisen/">2人暮らしの光回線選び</a>／<a href="/articles/kazoku-simhikaku/">格安SIM比較</a>）</li>
+<li><strong>保険</strong>——ライフイベントの前後が見直しどき（<a href="/articles/kekkon-hoken-minaoshi/">結婚したら保険はどう見直す？</a>）</li>
+<li><strong>住まい</strong>——最大の固定費。更新や転居のタイミングでしか動かせません（<a href="/articles/kekkon-jutaku-loan/">賃貸か購入か</a>）</li>
+</ul>
+
+<p>全体の手順は<a href="/articles/shinkon-koteihi-minaoshi/">新婚生活の固定費見直し完全ガイド</a>にまとめています。</p>
+
+<div style="background:#f7f5f2;border:1px solid #e6e2dc;padding:20px 22px;margin:22px 0;text-align:center">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
+<p style="font-weight:700;margin:0 0 8px">回線の見直しは「一度変えれば毎月効く」固定費の代表</p>
+<p style="font-size:.8rem;color:#5a6068;margin:0 0 14px">新生活のタイミングは、契約を組み直せる数少ない機会です。試算で通信費が気になった方はここから。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">ビジモ光の内容を見る</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">光回線サービス（提供エリア・料金・特典は時期により変わります。公式サイトでご確認ください）</p>
+</div>
+
+</article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:56px auto 64px;padding:36px 28px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">試算結果の読み解きと、家計の判断材料をLINEで</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">結婚まわりのお金に効くFACTだけを、週1回・短文で届けます。<br>気になることの相談も、追加後そのままトークでどうぞ。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'seikatsuhi-simulator'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加して受け取る</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は週1回だけ。いつでも解除できます。</p>
+</section>
+
+<script>
+(function(){
+  var Y = function(n){ return Math.round(n).toLocaleString('ja-JP'); };
+  var $ = function(id){ return document.getElementById(id); };
+
+  function calc(){
+    var rent = +$('rent').value || 0;
+    var i1 = +$('inc1').value || 0;
+    var i2 = +$('inc2').value || 0;
+    var food = +$('food').value || 0;
+    var area = +$('area').value || 1;
+    var util = +$('util').value || 0;
+    var car = +$('car').value || 0;
+
+    // 2人世帯向けに縮小した概算（家計調査2025の費目構成を基準）
+    var comm = 16000;          // 通信（スマホ2回線＋固定回線）
+    var daily = 12000;         // 日用品・家具家事用品
+    var cloth = 7000;          // 被服及び履物
+    var health = 9000;         // 保健医療
+    var fun = 22000;           // 教養娯楽
+    var other = 20000;         // 交際費・雑費
+
+    var items = [
+      ['家賃', rent],
+      ['食費', food * area],
+      ['光熱・水道', util],
+      ['通信（回線・スマホ）', comm * area],
+      ['日用品・家具', daily * area],
+      ['被服', cloth * area],
+      ['保健医療', health * area],
+      ['教養娯楽', fun * area],
+      ['交際費・その他', other * area]
+    ];
+    if (car > 0) items.push(['車関係', car]);
+
+    var total = items.reduce(function(s, r){ return s + r[1]; }, 0);
+    var income = i1 + i2;
+
+    $('total').textContent = '¥' + Y(total);
+    $('year').textContent = '¥' + Y(total * 12);
+    $('ratio').textContent = income > 0 ? Math.round(total / income * 100) + '%' : '—';
+    $('rentratio').textContent = income > 0 ? Math.round(rent / income * 100) + '%' : '—';
+
+    var tb = '<thead><tr><th>費目</th><th>月額</th><th>年額</th></tr></thead><tbody>';
+    items.forEach(function(r){
+      tb += '<tr><td>' + r[0] + '</td><td>¥' + Y(r[1]) + '</td><td>¥' + Y(r[1] * 12) + '</td></tr>';
+    });
+    tb += '<tr><td><strong>合計</strong></td><td><strong>¥' + Y(total) +
+          '</strong></td><td><strong>¥' + Y(total * 12) + '</strong></td></tr></tbody>';
+    $('breakdown').innerHTML = tb;
+
+    var sp = '<thead><tr><th>分け方</th><th>A</th><th>B</th><th>考え方</th></tr></thead><tbody>';
+    sp += '<tr><td>折半</td><td>¥' + Y(total / 2) + '</td><td>¥' + Y(total / 2) +
+          '</td><td>同じ額を出すのが公平</td></tr>';
+    if (income > 0) {
+      var a = total * (i1 / income), b = total * (i2 / income);
+      sp += '<tr><td>収入比</td><td>¥' + Y(a) + '</td><td>¥' + Y(b) +
+            '</td><td>同じくらい負担感があるのが公平（' +
+            Math.round(i1 / income * 100) + '：' + Math.round(i2 / income * 100) + '）</td></tr>';
+      // 定額は「双方が実際に出せる額」を超えない。
+      // 収入ゼロの側に定額を負わせると非現実的な結果になるため、
+      // 片働き（どちらかが0）のときはこの案自体を出さない。
+      var base = Math.min(50000, total / 2, i1, i2);
+      var rest = total - base * 2;
+      if (base > 0 && rest > 0) {
+        sp += '<tr><td>定額＋残り按分</td><td>¥' + Y(base + rest * (i1 / income)) +
+              '</td><td>¥' + Y(base + rest * (i2 / income)) +
+              '</td><td>各自¥' + Y(base) + 'を出し、超過分だけ収入比</td></tr>';
+      }
+    }
+    sp += '</tbody>';
+    $('split').innerHTML = sp;
+
+    var cut = [];
+    if (income > 0 && rent / income > 0.30) {
+      cut.push('<li><strong>家賃が手取りの' + Math.round(rent / income * 100) +
+               '%</strong>です。目安とされる25〜30%を超えています。' +
+               '更新や転居のタイミングでしか動かせない費目なので、次の機会に検討する価値があります。</li>');
+    }
+    cut.push('<li><strong>通信</strong>：回線とスマホの見直しは、契約を変えれば以後ずっと効きます。' +
+             '月2,000〜5,000円規模の差が出ることがあります。</li>');
+    if (food * area >= 78000) {
+      cut.push('<li><strong>食費</strong>：中食・外食が多い設定です。' +
+               '自炊と半々にすると月1.5万円前後の差になります。</li>');
+    }
+    if (income > 0 && total / income > 0.85) {
+      cut.push('<li><strong>支出が手取りの' + Math.round(total / income * 100) +
+               '%</strong>です。貯蓄の余地がほとんどありません。' +
+               '固定費（通信・保険・住まい）から順に見直してください。</li>');
+    }
+    $('cut').innerHTML = '<ul>' + cut.join('') + '</ul>';
+
+    $('result').classList.add('show');
+    try { gtag('event', 'tool_calc', { tool: 'seikatsuhi-simulator' }); } catch (e) {}
+    $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  $('run').addEventListener('click', calc);
+})();
+</script>
+
+<article>
+<h2 id="faq">よくある質問</h2>
+<h3>Q1. 二人暮らしの生活費は月いくらが目安ですか？</h3>
+<p>家賃を除くと、二人暮らしではおおむね月15万〜20万円のレンジに収まるケースが多くなります。ただし最大の変数は家賃で、地域と間取りで数万円単位で変わるため、本ツールでは家賃を入力していただく方式にしています。総務省「家計調査」2025年平均の二人以上世帯（平均2.87人）では消費支出が月314,001円ですが、これは人数が多く世帯主の平均年齢も60.7歳のため、新婚2人世帯にそのまま当てはめると高めに出ます。</p>
+<h3>Q2. 生活費は折半にすべきですか？</h3>
+<p>決まりはありません。判断の分かれ目は「同じ額を出すのが公平」と考えるか、「同じくらい負担感があるのが公平」と考えるかです。前者なら折半、後者なら収入比になります。本ツールでは折半・収入比・定額＋残り按分の3案を同時に表示するので、金額を見比べてから決められます。</p>
+<h3>Q3. 収入差がある場合はどう分けますか？</h3>
+<p>収入比で按分する方法が使われます。たとえば手取りが30万円と20万円なら6:4です。ただし収入比だけだと「対等に出した」感覚が持てないという声もあるため、各自が同額を出したうえで超過分だけ収入比にする方法もあります。本ツールはこの2つを並べて表示します。</p>
+<h3>Q4. 光熱費の目安はどのくらいですか？</h3>
+<p>総務省「家計調査」2025年平均では、二人以上の世帯（平均2.87人）の光熱・水道が月24,547円です。2人暮らしは人数が少ないぶんこれより低くなる傾向があります。実額が分かる場合は入力欄に入れていただくと精度が上がります。</p>
+<h3>Q5. 家賃はいくらまでが適正ですか？</h3>
+<p>手取りに対する割合で見るのが一般的で、一つの目安として手取りの25〜30％以内に収める考え方があります。本ツールでは入力された家賃が手取り合計の何％にあたるかを表示するので、この目安と比べて判断できます。</p>
+<h3>Q6. 固定費はどこから見直すと効果がありますか？</h3>
+<p>金額が大きく、一度変えれば毎月効き続けるものから着手するのが効率的です。具体的には通信（回線・スマホ）、保険、住まいの順で、食費や日用品のような変動費より先に見ることをおすすめします。</p>
+<h3>Q7. この試算はどのくらい正確ですか？</h3>
+<p>公的統計と当サイト掲載のレンジをもとにした概算です。地域・築年数・世帯の生活スタイルで実額は大きく変わるため、支出の全体像をつかみ、分担を話し合うための出発点としてお使いください。</p>
+</article>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/#articles">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本ツールの試算は2026年8月時点の編集部調べに基づく概算です。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+(function(){
+"use strict";
+// 金額はすべて万円。出典: /articles/kekkon-okane-data/（編集部調べ・2026年8月時点）
+var DATA={
+  engageRing:[30,40], marriageRing:[20,30],
+  ceremony:{ general:{base:[300,370],ref:60}, small:{base:[100,180],ref:30}, photo:[10,25], none:[0,0] },
+  perGuest:2.5,
+  kaoawase:{ meal:[5,10], yuino:[15,25], none:[0,0] },
+  honeymoon:{ yes:[40,60], no:[0,0] },
+  moving:{ near:[30,40], mid:[40,50], far:[50,60], none:[0,0] },
+  furniture:{ min:[30,40], std:[40,55], high:[55,70] }
+};
+function $(id){return document.getElementById(id);}
+function clampR(r){return [Math.max(0,r[0]),Math.max(0,r[1])];}
+function addR(a,b){return [a[0]+b[0],a[1]+b[1]];}
+function fmtR(r){
+  if(r[0]===0&&r[1]===0)return "0円";
+  if(Math.round(r[0])===Math.round(r[1]))return Math.round(r[0])+"万円";
+  return Math.round(r[0])+"〜"+Math.round(r[1])+"万円";
+}
+function ceremonyRange(style,guests){
+  var c=DATA.ceremony[style];
+  if(Array.isArray(c))return c.slice();
+  var diff=(guests-c.ref)*DATA.perGuest;
+  return clampR([c.base[0]+diff,c.base[1]+diff]);
+}
+function mid(r){return (r[0]+r[1])/2;}
+function calc(){
+  var style=$("style").value;
+  var guests=parseInt($("guests").value,10);
+  if(isNaN(guests)||guests<0)guests=0;
+  if(guests>500)guests=500;
+  $("guests").value=guests;
+  var giftUnit=parseFloat($("giftUnit").value);
+  var hasGuests=(style==="general"||style==="small");
+  var items=[];
+  var cer=ceremonyRange(style,guests);
+  var cerLabel={general:"挙式・披露宴（"+guests+"名）",small:"少人数婚（"+guests+"名）",photo:"フォトウェディング",none:"挙式"}[style];
+  items.push([cerLabel,cer]);
+  if($("engageRing").value==="1")items.push(["婚約指輪",DATA.engageRing]);
+  if($("marriageRing").value==="1")items.push(["結婚指輪（2本）",DATA.marriageRing]);
+  var kao=DATA.kaoawase[$("kaoawase").value];
+  if(kao[1]>0)items.push(["両家顔合わせ・結納",kao]);
+  var hm=DATA.honeymoon[$("honeymoon").value];
+  if(hm[1]>0)items.push(["新婚旅行",hm]);
+  var mv=DATA.moving[$("moving").value];
+  if(mv[1]>0)items.push(["引越し・敷金礼金",mv]);
+  var fn=DATA.furniture[$("furniture").value];
+  items.push(["家具・家電",fn]);
+  var total=[0,0];
+  items.forEach(function(it){ total=addR(total,it[1]); });
+  var gift=hasGuests?guests*giftUnit:0;
+  var self=clampR([total[0]-gift,total[1]-gift]);
+  // 表示
+  $("rTotal").textContent=fmtR(total);
+  $("rGift").textContent=hasGuests?(Math.round(gift*10)/10)+"万円":"0円（披露宴なし）";
+  $("rSelf").innerHTML=(self[0]===self[1]?Math.round(self[0]):Math.round(self[0])+"〜"+Math.round(self[1]))+"<small>万円</small>";
+  var m=mid(self)/12/1;
+  $("rMonthly").textContent=(Math.round(m*10)/10)+"万円";
+  var tb=$("rBreakdown");tb.textContent="";
+  items.forEach(function(it){
+    var tr=document.createElement("tr");
+    var td1=document.createElement("td");td1.textContent=it[0];
+    var td2=document.createElement("td");td2.textContent=fmtR(it[1]);
+    tr.appendChild(td1);tr.appendChild(td2);tb.appendChild(tr);
+  });
+  if(hasGuests){
+    var trg=document.createElement("tr");
+    var g1=document.createElement("td");g1.textContent="ご祝儀見込み（差引）";
+    var g2=document.createElement("td");g2.textContent="−"+(Math.round(gift*10)/10)+"万円";
+    g2.style.color="#2e7d32";g2.style.fontWeight="700";
+    trg.appendChild(g1);trg.appendChild(g2);tb.appendChild(trg);
+  }
+  // 削減候補
+  var cuts=[];
+  if(mid(cer)>0&&(style==="general"||style==="small")){
+    cuts.push(["装花・演出・引出物のグレードを一段下げる",Math.round(mid(cer)*0.12),"挙式費用の1割強が目安"]);
+  }
+  if(style==="general"){
+    var smallCer=ceremonyRange("small",Math.min(guests,30));
+    var diffCer=mid(cer)-mid(smallCer);
+    var giftLoss=hasGuests?(guests-Math.min(guests,30))*giftUnit:0;
+    var net=Math.round(diffCer-giftLoss);
+    if(net>0)cuts.push(["少人数婚（30名）に切り替える",net,"ご祝儀の減少分を差し引いた実質額"]);
+    var photoDiff=Math.round(mid(cer)-mid(DATA.ceremony.photo)-gift);
+    if(photoDiff>0)cuts.push(["フォトウェディングに切り替える",photoDiff,"ご祝儀がなくなる分も織り込み済み"]);
+  }
+  if($("kaoawase").value==="yuino")cuts.push(["結納をやめて食事会のみにする",Math.round(mid(DATA.kaoawase.yuino)-mid(DATA.kaoawase.meal)),""]);
+  if($("furniture").value==="high")cuts.push(["家具・家電を標準グレードにする",Math.round(mid(DATA.furniture.high)-mid(DATA.furniture.std)),""]);
+  if($("furniture").value==="std")cuts.push(["家具・家電を最小限にして順次買い足す",Math.round(mid(DATA.furniture.std)-mid(DATA.furniture.min)),""]);
+  if($("honeymoon").value==="yes")cuts.push(["新婚旅行を後日に回す（費用を一旦外す）",Math.round(mid(DATA.honeymoon.yes)),"行かない選択ではなく時期の分散"]);
+  if($("engageRing").value==="1")cuts.push(["婚約指輪を結婚指輪と兼ねる",Math.round(mid(DATA.engageRing)),"価値観が分かれる項目なので要相談"]);
+  cuts.sort(function(a,b){return b[1]-a[1];});
+  var ul=$("rCuts");ul.textContent="";
+  if(cuts.length===0){
+    var li=document.createElement("li");
+    li.textContent="現在の条件はすでに最小限に近い構成です。";
+    ul.appendChild(li);
+  }else{
+    cuts.slice(0,5).forEach(function(c){
+      var li=document.createElement("li");
+      var span=document.createElement("span");span.className="amt";
+      span.textContent="約−"+c[1]+"万円";
+      li.appendChild(document.createTextNode(c[0]+"："));
+      li.appendChild(span);
+      if(c[2])li.appendChild(document.createTextNode("（"+c[2]+"）"));
+      ul.appendChild(li);
+    });
+  }
+  $("result").classList.add("show");
+}
+$("calcBtn").addEventListener("click",function(){
+  calc();
+  $("result").scrollIntoView({behavior:"smooth",block:"start"});
+});
+["style","guests","giftUnit","engageRing","marriageRing","kaoawase","honeymoon","moving","furniture"].forEach(function(id){
+  $(id).addEventListener("change",function(){
+    if($("result").classList.contains("show"))calc();
+  });
+});
+})();
+onscroll=function(){document.getElementById("top").classList.toggle('show',scrollY>300)};
+</script>
+</body>
+</html>

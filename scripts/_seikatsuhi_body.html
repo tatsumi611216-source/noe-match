@@ -1,0 +1,263 @@
+<style>
+/* 案C準拠の上書き：resultの写真敷きをこのツールの主題（暮らし）に合わせる */
+.result .big{background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/room-light.jpg') center/cover}
+.split-note{font-size:.85rem;color:var(--sub);margin:4px 0 14px}
+</style>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/scale.png" x="9" y="9" width="46" height="46"/></svg>
+<h1>ふたりの生活費シミュレーター｜月額と「どちらがいくら出すか」を60秒で試算</h1>
+<p>毎月の内訳だけでなく、折半・収入比・定額＋按分の3案で分担額まで出します。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>生活費の話し合いでもめる原因は、金額ではなく「数字がないまま比率を議論すること」。</strong>先に月額の総額を出し、そのうえで「どちらがいくら出すか」を3案で見比べるのが最短の着地です。</blockquote>
+<p>家賃と手取りを入れるだけで、月額・年額・内訳と、分担の3案まで一度に出ます。分担の考え方そのものは<a href="/articles/kekkon-hiyou-futan/">結婚費用は折半すべきか</a>で、結婚時の一時費用は<a href="/tools/kekkon-shikin-keisanki/">結婚資金計算機</a>で扱っています。</p>
+
+<h2>条件を入れる</h2>
+<div class="calc" id="calcForm">
+  <div class="fld">
+    <label for="rent">家賃（管理費込み・月）</label>
+    <input id="rent" type="number" min="0" step="1000" value="90000" inputmode="numeric">
+    <div class="hint">最大の変数なので実額を入れてください。統計の「住居」は持ち家世帯を含み実態より低いため使いません</div>
+  </div>
+
+  <div class="row2">
+    <div class="fld">
+      <label for="inc1">手取り月収 A（円）</label>
+      <input id="inc1" type="number" min="0" step="10000" value="250000" inputmode="numeric">
+    </div>
+    <div class="fld">
+      <label for="inc2">手取り月収 B（円）</label>
+      <input id="inc2" type="number" min="0" step="10000" value="200000" inputmode="numeric">
+      <div class="hint">片働きなら 0 のままで構いません</div>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="fld">
+      <label for="food">食事スタイル</label>
+      <select id="food">
+        <option value="50000">自炊が中心（月5.0万円）</option>
+        <option value="65000" selected>自炊と中食が半々（月6.5万円）</option>
+        <option value="80000">中食・外食が多い（月8.0万円）</option>
+      </select>
+      <div class="hint">二人暮らし共働きの実データ（月5〜8万円）のレンジに合わせています</div>
+    </div>
+    <div class="fld">
+      <label for="area">お住まいの地域</label>
+      <select id="area">
+        <option value="1.08">三大都市圏（東京・大阪・名古屋）</option>
+        <option value="1.00" selected>地方都市</option>
+        <option value="0.95">その他</option>
+      </select>
+      <div class="hint">家賃以外の物価差を反映します（家賃は入力値のまま）</div>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="fld">
+      <label for="util">光熱・水道（月・分かれば実額）</label>
+      <input id="util" type="number" min="0" step="1000" value="18000" inputmode="numeric">
+      <div class="hint">家計調査2025の二人以上世帯（平均2.87人）は24,547円。2人暮らしは低めに出ます</div>
+    </div>
+    <div class="fld">
+      <label for="car">車の保有</label>
+      <select id="car">
+        <option value="0" selected>なし</option>
+        <option value="25000">1台あり（月2.5万円）</option>
+        <option value="45000">2台あり（月4.5万円）</option>
+      </select>
+      <div class="hint">駐車場・保険・燃料・税金の按分を含む概算</div>
+    </div>
+  </div>
+
+  <button type="button" class="calc-btn" id="run">試算する</button>
+</div>
+
+<div class="result" id="result" aria-live="polite">
+  <div class="big">
+    <div class="lbl">ふたりの生活費（月額）</div>
+    <div class="num" id="total">—</div>
+  </div>
+
+  <div class="grid3">
+    <div class="cell"><div class="lbl">年額</div><div class="num" id="year">—</div></div>
+    <div class="cell"><div class="lbl">手取り合計に占める割合</div><div class="num" id="ratio">—</div></div>
+    <div class="cell"><div class="lbl">家賃の割合</div><div class="num" id="rentratio">—</div></div>
+  </div>
+
+  <h3>内訳</h3>
+  <div class="table-wrap"><table id="breakdown"></table></div>
+
+  <h3>どちらがいくら出すか（3案）</h3>
+  <p class="split-note">金額に正解はありません。<strong>「同じ額が公平」か「同じくらい痛いのが公平」か</strong>を先に決めると早く着地します。</p>
+  <div class="table-wrap"><table id="split"></table></div>
+
+  <h3>削れる余地</h3>
+  <div id="cut"></div>
+</div>
+
+<h2>この試算の前提</h2>
+
+<p>数字の出どころを明示します。ツールだけが独自の数値を持つ状態にはしていません。</p>
+
+<div class="table-wrap"><table>
+<tr><th>費目</th><th>前提</th><th>出典</th></tr>
+<tr><td>家賃</td><td><strong>入力値をそのまま使用</strong></td><td>統計の「住居」は持ち家世帯を含み月18,678円と実態より低いため使わない</td></tr>
+<tr><td>食費</td><td>月5.0〜8.0万円から選択</td><td>当サイト「共働き夫婦の食事はどうしている？」のレンジ（総務省「家計調査」をもとにした概算）</td></tr>
+<tr><td>光熱・水道</td><td>初期値18,000円（入力可）</td><td>総務省「家計調査」2025年平均・二人以上の世帯 24,547円。ただし平均世帯人員2.87人のため2人暮らしは低めに出る</td></tr>
+<tr><td>通信</td><td>スマホ2回線＋固定回線で月16,000円前後</td><td>総務省「家計消費状況調査」2025年1〜3月期・二人以上世帯のインターネット代 月4,447円を含む</td></tr>
+<tr><td>日用品・被服・医療・娯楽等</td><td>地域係数で調整した概算</td><td>総務省「家計調査」2025年平均の費目構成を2人世帯向けに縮小</td></tr>
+</table></div>
+
+<blockquote>
+<strong>統計の読み方に注意。</strong>総務省「家計調査」2025年平均の「二人以上の世帯」は<strong>平均世帯人員2.87人・世帯主の平均年齢60.7歳</strong>です。新婚の2人世帯とは構成が異なるため、公表値をそのまま当てはめると高めに出ます。本ツールは2人世帯向けに縮小したうえで、実額を入力できる項目を設けています。
+</blockquote>
+
+<h2>分担を決めるときの順番</h2>
+
+<p>金額より先に決めるものがあります。ここを飛ばすと、話し合いが平行線になります。</p>
+
+<ul>
+<li><strong>1. 公平の定義を合意する</strong>——「同じ額」か「同じ痛み」か。ここだけ最初に</li>
+<li><strong>2. 総額を出す</strong>——数字がないまま比率を議論すると空中戦になります</li>
+<li><strong>3. 共通に入れる額を決める</strong>——全額を共有する必要はありません</li>
+<li><strong>4. 相談なしで使える上限を決める</strong>——確認の回数が減ることが、実は一番効きます</li>
+<li><strong>5. 見直す日を決めておく</strong>——収入や生活が変われば前提が変わります</li>
+</ul>
+
+<p>口座の分け方と費目分担の実例は<a href="/articles/futari-kouza-kanri/">結婚後の口座・お金の管理方法</a>にまとめています。</p>
+
+<h2>固定費は「金額が大きく、一度で効く」順に</h2>
+
+<p>削るなら、毎月効き続けるものからです。食費や日用品のような変動費は、努力の割に戻りが小さく、続きません。</p>
+
+<ul>
+<li><strong>通信</strong>——回線とスマホ。契約を変えれば以後ずっと効きます（<a href="/articles/futari-hikari-kaisen/">2人暮らしの光回線選び</a>／<a href="/articles/kazoku-simhikaku/">格安SIM比較</a>）</li>
+<li><strong>保険</strong>——ライフイベントの前後が見直しどき（<a href="/articles/kekkon-hoken-minaoshi/">結婚したら保険はどう見直す？</a>）</li>
+<li><strong>住まい</strong>——最大の固定費。更新や転居のタイミングでしか動かせません（<a href="/articles/kekkon-jutaku-loan/">賃貸か購入か</a>）</li>
+</ul>
+
+<p>全体の手順は<a href="/articles/shinkon-koteihi-minaoshi/">新婚生活の固定費見直し完全ガイド</a>にまとめています。</p>
+
+<div style="background:#f7f5f2;border:1px solid #e6e2dc;padding:20px 22px;margin:22px 0;text-align:center">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
+<p style="font-weight:700;margin:0 0 8px">回線の見直しは「一度変えれば毎月効く」固定費の代表</p>
+<p style="font-size:.8rem;color:#5a6068;margin:0 0 14px">新生活のタイミングは、契約を組み直せる数少ない機会です。試算で通信費が気になった方はここから。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">ビジモ光の内容を見る</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">光回線サービス（提供エリア・料金・特典は時期により変わります。公式サイトでご確認ください）</p>
+</div>
+
+</article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:56px auto 64px;padding:36px 28px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">試算結果の読み解きと、家計の判断材料をLINEで</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">結婚まわりのお金に効くFACTだけを、週1回・短文で届けます。<br>気になることの相談も、追加後そのままトークでどうぞ。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'seikatsuhi-simulator'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加して受け取る</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は週1回だけ。いつでも解除できます。</p>
+</section>
+
+<script>
+(function(){
+  var Y = function(n){ return Math.round(n).toLocaleString('ja-JP'); };
+  var $ = function(id){ return document.getElementById(id); };
+
+  function calc(){
+    var rent = +$('rent').value || 0;
+    var i1 = +$('inc1').value || 0;
+    var i2 = +$('inc2').value || 0;
+    var food = +$('food').value || 0;
+    var area = +$('area').value || 1;
+    var util = +$('util').value || 0;
+    var car = +$('car').value || 0;
+
+    // 2人世帯向けに縮小した概算（家計調査2025の費目構成を基準）
+    var comm = 16000;          // 通信（スマホ2回線＋固定回線）
+    var daily = 12000;         // 日用品・家具家事用品
+    var cloth = 7000;          // 被服及び履物
+    var health = 9000;         // 保健医療
+    var fun = 22000;           // 教養娯楽
+    var other = 20000;         // 交際費・雑費
+
+    var items = [
+      ['家賃', rent],
+      ['食費', food * area],
+      ['光熱・水道', util],
+      ['通信（回線・スマホ）', comm * area],
+      ['日用品・家具', daily * area],
+      ['被服', cloth * area],
+      ['保健医療', health * area],
+      ['教養娯楽', fun * area],
+      ['交際費・その他', other * area]
+    ];
+    if (car > 0) items.push(['車関係', car]);
+
+    var total = items.reduce(function(s, r){ return s + r[1]; }, 0);
+    var income = i1 + i2;
+
+    $('total').textContent = '¥' + Y(total);
+    $('year').textContent = '¥' + Y(total * 12);
+    $('ratio').textContent = income > 0 ? Math.round(total / income * 100) + '%' : '—';
+    $('rentratio').textContent = income > 0 ? Math.round(rent / income * 100) + '%' : '—';
+
+    var tb = '<thead><tr><th>費目</th><th>月額</th><th>年額</th></tr></thead><tbody>';
+    items.forEach(function(r){
+      tb += '<tr><td>' + r[0] + '</td><td>¥' + Y(r[1]) + '</td><td>¥' + Y(r[1] * 12) + '</td></tr>';
+    });
+    tb += '<tr><td><strong>合計</strong></td><td><strong>¥' + Y(total) +
+          '</strong></td><td><strong>¥' + Y(total * 12) + '</strong></td></tr></tbody>';
+    $('breakdown').innerHTML = tb;
+
+    var sp = '<thead><tr><th>分け方</th><th>A</th><th>B</th><th>考え方</th></tr></thead><tbody>';
+    sp += '<tr><td>折半</td><td>¥' + Y(total / 2) + '</td><td>¥' + Y(total / 2) +
+          '</td><td>同じ額を出すのが公平</td></tr>';
+    if (income > 0) {
+      var a = total * (i1 / income), b = total * (i2 / income);
+      sp += '<tr><td>収入比</td><td>¥' + Y(a) + '</td><td>¥' + Y(b) +
+            '</td><td>同じくらい負担感があるのが公平（' +
+            Math.round(i1 / income * 100) + '：' + Math.round(i2 / income * 100) + '）</td></tr>';
+      // 定額は「双方が実際に出せる額」を超えない。
+      // 収入ゼロの側に定額を負わせると非現実的な結果になるため、
+      // 片働き（どちらかが0）のときはこの案自体を出さない。
+      var base = Math.min(50000, total / 2, i1, i2);
+      var rest = total - base * 2;
+      if (base > 0 && rest > 0) {
+        sp += '<tr><td>定額＋残り按分</td><td>¥' + Y(base + rest * (i1 / income)) +
+              '</td><td>¥' + Y(base + rest * (i2 / income)) +
+              '</td><td>各自¥' + Y(base) + 'を出し、超過分だけ収入比</td></tr>';
+      }
+    }
+    sp += '</tbody>';
+    $('split').innerHTML = sp;
+
+    var cut = [];
+    if (income > 0 && rent / income > 0.30) {
+      cut.push('<li><strong>家賃が手取りの' + Math.round(rent / income * 100) +
+               '%</strong>です。目安とされる25〜30%を超えています。' +
+               '更新や転居のタイミングでしか動かせない費目なので、次の機会に検討する価値があります。</li>');
+    }
+    cut.push('<li><strong>通信</strong>：回線とスマホの見直しは、契約を変えれば以後ずっと効きます。' +
+             '月2,000〜5,000円規模の差が出ることがあります。</li>');
+    if (food * area >= 78000) {
+      cut.push('<li><strong>食費</strong>：中食・外食が多い設定です。' +
+               '自炊と半々にすると月1.5万円前後の差になります。</li>');
+    }
+    if (income > 0 && total / income > 0.85) {
+      cut.push('<li><strong>支出が手取りの' + Math.round(total / income * 100) +
+               '%</strong>です。貯蓄の余地がほとんどありません。' +
+               '固定費（通信・保険・住まい）から順に見直してください。</li>');
+    }
+    $('cut').innerHTML = '<ul>' + cut.join('') + '</ul>';
+
+    $('result').classList.add('show');
+    try { gtag('event', 'tool_calc', { tool: 'seikatsuhi-simulator' }); } catch (e) {}
+    $('result').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  $('run').addEventListener('click', calc);
+})();
+</script>
