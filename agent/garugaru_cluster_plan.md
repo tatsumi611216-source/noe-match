@@ -182,63 +182,32 @@ noteで全部答えてしまうとクリックする理由が消える（noteは
 - 生成は `scripts/build_page.py`（JSON-LDの3重検証つき）
 - 公開後、サイトマップへの追加とインデックス申請まで行う
 
-## インデックス申請の進捗（2026-08-15）
+## インデックス申請（完了：2026-08-15〜16）
 
-公開は完了（19本すべて200・サイトマップ193URLに反映済み）。
-**GSCの1日あたり割り当て上限に到達したため、8本で中断。**
+公開19本すべて申請済み。サイトマップ193URLにも反映済み。
 
-### 申請済み（8本・2026-08-15）
+| 日 | 本数 | 内容 |
+|---|---|---|
+| 8/15 | 8 | gibo-jitsubo / nai-hito / sango-satogaeri / gijikka-ikitakunai / doukyo / shinseiji-menkai / otto-taiou / otto-genkai |
+| 8/16 | 11 | sango-otto-kirai / satogaeri-shinai / kaji-buntan / ikukyu-fuufu-doji / sango-iraira / ueno-ko / futarime-sango / sango-rikon / sangoutsu-chigai / maternity-blue-chigai / kekkon-hiyou-futan |
 
-```
-articles/garugaru-gibo-jitsubo
-articles/garugaru-nai-hito
-articles/sango-satogaeri
-articles/gijikka-ikitakunai
-articles/garugaru-doukyo
-articles/shinseiji-menkai
-articles/garugaru-otto-taiou
-articles/garugaru-otto-genkai
-```
+**1日あたりの上限は8本前後**（8/15に到達）。**翌日にはリセットされ、11本を連続で通せた。**
 
-### 未申請（11本・翌日以降に実施）
-
-```
-articles/sango-otto-kirai        ← 上限に当たった1本目
-articles/satogaeri-shinai
-articles/sango-kaji-buntan
-articles/ikukyu-fuufu-doji
-articles/sango-iraira
-articles/garugaru-ueno-ko
-articles/futarime-sango
-articles/sango-rikon
-articles/garugaru-sangoutsu-chigai
-articles/maternity-blue-chigai
-articles/kekkon-hiyou-futan
-```
-
-**上限のメッセージ**：「割り当て量を超えています／1日の割り当て量を超えたため、
-リクエストを処理できませんでした。明日以降にもう一度お試しください」
-
-→ **1日あたり8本前後が上限**（今回の実測）。11本は翌日以降に分けて出す。
-
-### 手順（2026-08-15に実証）
+### 手順（実証済み）
 
 1. `https://search.google.com/search-console?resource_id=https%3A%2F%2Fwww.noe-match.com%2F`
    ※ URLプレフィックス型。`sc-domain:` だとアクセス権エラーになる
 2. 検査バーを**実クリック**（スクショ座標 505,22 付近）→ URLを**実タイピング** → Enter
-3. 10〜15秒待ち、「インデックス登録をリクエスト」をJSでクリック
+3. 15秒待ち、「インデックス登録をリクエスト」を**JSでクリック**
    （スクショ座標とCSS座標がずれるため computer の click は当たらないことがある）
-4. **20秒ほど待つ。**`[role=dialog]` に「インデックス登録をリクエスト済み」が出れば成功。
-   10秒では早すぎて未確定のまま次に進み、取りこぼす（実際に踏んだ）
-5. **次のURLの前に、開いているダイアログを必ず閉じる。**
-   閉じないとEnterが「公開URLをテスト」に吸われてテストが走る（実際に踏んだ）
+4. **20秒待つ。**`[role=dialog]` に「インデックス登録をリクエスト済み」が出れば成功
+5. **次のURLの前に、ダイアログを「表示しない」で必ず閉じる**
 
-**踏んだ罠（再現しないこと）**
+この1〜5を browser_batch にまとめると、1本あたり1リクエストで回せる。
+
+### 踏んだ罠（再現しないこと）
 
 - ディープリンク `inspect?resource_id=...&id=<URL>` は **404**。GSCは内部トークンidを使う
 - JSで input に値を設定してもAngularが送信を受け付けない
-- **Chromeのウィンドウが背面にあると、キー入力がページに届かない。**
-  今日はこれで一度中断した。ウィンドウを前面にすれば復旧する
-
-**急ぎではない。** サイトマップに全URLが載っているため、申請しなくても
-次回のサイトマップ巡回で検出される。申請はそれを前倒しするだけ。
+- **ダイアログを閉じずにEnterを押すと「公開URLをテスト」に吸われる**（実際に2回踏んだ）
+- **Chromeのウィンドウが背面だと、キー入力がページに届かない。**前面にすれば復旧する
