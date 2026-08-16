@@ -249,6 +249,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 
   <h3>次に読むと早いページ</h3>
   <div id="links"></div>
+  <div id="prbox"></div>
 </div>
 
 <h2>この診断の考え方</h2>
@@ -275,6 +276,17 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <p>たとえば夜勤のある働き方でパーティー中心に動けば、日程が合わずに参加できない回が増えます。これは意欲の問題ではありません。手段を変えれば解決します。</p>
 <p class="hint">本ツールは手段選びの目安を示すもので、結果や成婚を保証するものではありません。各サービスの費用・会員数・利用条件は変更されることがあるため、申し込み前に公式情報をご確認ください。</p>
 </article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:48px auto 8px;padding:34px 26px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">婚活の進め方を、LINEで</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">手段ごとの動かし方と、続けるための設計を週1回・短文で届けます。<br>迷ったら追加後そのままトークで相談できます。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'konkatsu-type-shindan'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加して受け取る</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は週1回だけ。いつでも解除できます。</p>
+</section>
+
 
 <script>
 (function(){
@@ -392,6 +404,30 @@ document.getElementById('run').addEventListener('click',function(){
   if(attrs.indexOf('働き方')>=0) links.push(['/articles/seishain-igai-guide/','正社員以外の働き方と婚活']);
   document.getElementById('links').innerHTML='<ul>'+links.map(function(l){
     return '<li><a href="'+l[0]+'">'+l[1]+'</a></li>';}).join('')+'</ul>';
+
+  // 診断結果に連動した案内（結果と無関係な広告は出さない）
+  var PR={
+    sodan:{u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL',
+      h:'相談所は費用の幅が大きいので、複数から資料を取り寄せて比べる',
+      b:'料金体系はサービスごとに異なります。無料で一括請求できる比較サービスがあります。',
+      btn:'結婚相談所を比較する', c:'#7c5cbf',
+      n:'無料の一括資料請求サービスです。料金・サービス内容・対応エリアは各社の公式情報でご確認ください'},
+    party:{u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3AHE0Q+FOG+3H6DXV',
+      h:'パーティーは1社に絞らず、開催数と参加層で比べる',
+      b:'開催地域や年齢条件は主催会社によって違います。まず開催予定を見てから決めると外しません。',
+      btn:'開催予定を見る', c:'#7c2e42',
+      n:'参加費・年齢条件・キャンセル規定は回ごとに異なります。申し込み前に公式サイトでご確認ください'}
+  };
+  var pr=PR[arr[0].k], box=document.getElementById('prbox');
+  if(pr){
+    box.innerHTML='<div style="background:#f7f5f2;border:1px solid #e6e2dc;padding:20px 22px;margin:26px 0;text-align:center">'+
+      '<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>'+
+      '<p style="font-weight:700;margin:0 0 10px">'+pr.h+'</p>'+
+      '<p style="font-size:.88rem;color:#5a6068;margin:0 0 14px">'+pr.b+'</p>'+
+      '<a href="'+pr.u+'" rel="nofollow sponsored noopener" target="_blank" '+
+      'style="display:inline-block;background:'+pr.c+';color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">'+pr.btn+'</a>'+
+      '<p style="font-size:.74rem;color:#888;margin:10px 0 0">'+pr.n+'</p></div>';
+  } else { box.innerHTML=''; }
 
   document.getElementById('res').classList.add('show');
   try{gtag('event','tool_result',{tool:'konkatsu-type-shindan',top:arr[0].k});}catch(e){}
