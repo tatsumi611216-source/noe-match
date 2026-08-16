@@ -1,0 +1,369 @@
+<style>
+.result .big{background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/rings-bouquet.jpg') center/cover}
+.ph{margin:0 0 26px}
+.ph-head{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid #7c2e42;padding-bottom:8px;margin:0 0 4px}
+.ph-name{font-weight:700;font-size:1.04rem;font-family:'Yu Mincho','游明朝',serif}
+.ph-when{font-size:.78rem;color:#8a8f95;margin-left:auto}
+.tk{display:flex;gap:11px;align-items:flex-start;border-bottom:1px dotted #e0dad2;padding:11px 2px}
+.tk input{margin:3px 0 0;flex:none;width:17px;height:17px;accent-color:#7c2e42}
+.tk-b{flex:1;min-width:0}
+.tk-t{font-size:.93rem;line-height:1.6}
+.tk.done .tk-t{color:#a9a29a;text-decoration:line-through}
+.tk-n{font-size:.8rem;color:#6b7178;line-height:1.75;margin:4px 0 0}
+.tk-l{font-size:.8rem;margin:4px 0 0}
+.tk-who{font-size:.7rem;border:1px solid #ddd6cc;color:#7a7168;padding:2px 7px;margin-left:8px;white-space:nowrap}
+.tk-key{background:#7c2e42;color:#fff;border-color:#7c2e42}
+.bar-wrap{background:#ece7e0;height:10px;margin:10px 0 4px}
+.bar-in{background:#7c2e42;height:10px;width:0;transition:width .3s}
+.share{background:#f7f5f2;border:1px solid #e6e2dc;padding:16px 18px;margin:22px 0}
+.share p{margin:0 0 10px;font-size:.9rem}
+.share input{width:100%;font-size:.8rem;padding:9px;border:1px solid #ddd6cc;background:#fff}
+.share button{margin-top:9px;background:#7c2e42;color:#fff;border:none;padding:10px 22px;font-weight:700;cursor:pointer}
+</style>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/rings-bouquet.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/rings.png" x="9" y="9" width="46" height="46"/></svg>
+<h1>結婚のやることリスト｜自分の条件で「順番」が決まる</h1>
+<p>いまの状況と式の有無を選ぶと、必要なことだけが時系列で並びます。チェックは保存され、URLで相手と共有できます。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>結婚準備でつまずく原因は、やることが多いことではなく「順番が分からないこと」です。</strong>ネット回線は入居前に手配しないと空白期間ができ、保険は入籍後でないと手続きできず、名義変更には順番があります。このリストは<strong>あなたの条件で要らない項目を消し、残ったものを時系列で並べます</strong>。</blockquote>
+
+<div class="calc">
+  <div class="row2">
+    <div class="fld"><span class="lbl">いまの状況</span>
+      <select id="stage">
+        <option value="0">交際中（結婚を考え始めた）</option>
+        <option value="1" selected>プロポーズ済み・これから準備</option>
+        <option value="2">入籍の準備中</option>
+        <option value="3">入籍済み・新生活の準備中</option>
+      </select></div>
+    <div class="fld"><span class="lbl">結婚式をどうするか</span>
+      <select id="style">
+        <option value="full" selected>挙式・披露宴をする</option>
+        <option value="small">会費制・少人数で行う</option>
+        <option value="photo">フォトウェディングのみ</option>
+        <option value="none">やらない（ナシ婚）</option>
+        <option value="mikettei">まだ決めていない</option>
+      </select></div>
+  </div>
+
+  <div class="row2">
+    <div class="fld"><span class="lbl">一緒に住むタイミング</span>
+      <select id="live">
+        <option value="already">すでに同居している</option>
+        <option value="before" selected>入籍前に引っ越す</option>
+        <option value="after">入籍後に引っ越す</option>
+      </select></div>
+    <div class="fld"><span class="lbl">子どもについて</span>
+      <select id="kids">
+        <option value="soon">早めに考えている</option>
+        <option value="later" selected>いずれ考えたい</option>
+        <option value="no">予定はない・未定</option>
+      </select></div>
+  </div>
+
+  <button class="calc-btn" id="run">やることリストを出す</button>
+</div>
+
+<div class="result" id="res">
+  <div class="big"><span id="cnt">—</span></div>
+  <p class="hint" id="lead"></p>
+  <div class="bar-wrap"><div class="bar-in" id="bar"></div></div>
+  <p class="hint" id="prog" style="margin:0 0 20px"></p>
+
+  <div id="list"></div>
+
+  <div class="share">
+    <p><strong>この進み具合を相手と共有する</strong>——下のURLを送ると、チェック済みの状態がそのまま開きます。</p>
+    <input type="text" id="url" readonly>
+    <button id="copy">URLをコピー</button>
+    <p class="hint" style="margin:10px 0 0">チェックはこの端末にも保存されます。次に開いたときは続きから使えます。</p>
+  </div>
+</div>
+
+<h2>順番を間違えると手戻りが出るもの</h2>
+<p>やること自体は調べれば分かります。実際に困るのは<strong>順番</strong>です。とくに次の4つは、後から気づくと手戻りになります。</p>
+<div class="table-wrap"><table>
+<tr><th>項目</th><th>正しい順番</th><th>間違えると</th></tr>
+<tr><td>ネット回線</td><td><strong>入居の1〜2か月前</strong>に申し込む</td><td>工事待ちで、入居後しばらく使えない期間ができる</td></tr>
+<tr><td>姓の変更手続き</td><td>入籍 → 運転免許 → 銀行 → 各種</td><td>本人確認書類が旧姓のままで、窓口で止まる</td></tr>
+<tr><td>保険の見直し</td><td>入籍後・住まいが決まった後</td><td>必要保障額が変わり、入り直しになる</td></tr>
+<tr><td>式場の申し込み</td><td>日取りを決めてから</td><td>希望日が埋まっていて、日程から選び直しになる</td></tr>
+</table></div>
+
+<h2>なぜ「自分の条件で」絞る必要があるのか</h2>
+<p>結婚準備のチェックリストは多くありますが、そのほとんどは<strong>挙式・披露宴をする前提</strong>で作られています。ナシ婚を選んだ人にとっては、半分以上が関係のない項目になります。</p>
+<p>逆に、式をしない人にこそ必要な項目——両家への報告の仕方、写真をどうするか、報告はがき——は、式前提のリストでは軽く扱われがちです。</p>
+<p><strong>要らない項目が並んでいるリストは、使われなくなります。</strong>だからこのツールは、条件で消してから並べます。</p>
+
+<h2>二人で分けるという前提</h2>
+<p>各項目には<strong>「二人で」「どちらか一方で足りる」</strong>の目安を付けています。全部を一緒にやろうとすると日程が合わず止まりますが、実際には片方だけで済む手続きも多くあります。</p>
+<p>URLを共有すれば、同じリストを二人で見られます。どちらが何を持つかを決めるところから始めると、抜けが減ります。</p>
+
+<p class="hint">本ツールは一般的な段取りを整理したものです。届出の要件・必要書類・受付時間は自治体により異なり、各種サービスの手続き方法も変更されることがあります。実際の手続きにあたっては公式情報をご確認ください。</p>
+</article>
+
+<script>
+(function(){
+// ===== やることデータ =====
+// c: 表示条件（省略で常に表示）／w: 'both'=二人で 'one'=どちらか一方で足りる
+// k: 順番を間違えると手戻りが出る項目（強調する）
+var PH=[
+ {id:'p0', n:'決める段階',       w:'プロポーズ前後'},
+ {id:'p1', n:'両家に伝える',     w:'入籍の3〜6か月前'},
+ {id:'p2', n:'式の準備',         w:'式の6〜12か月前'},
+ {id:'p3', n:'入籍',             w:'入籍日の前後'},
+ {id:'p4', n:'住まいと新生活',   w:'引っ越しの1〜2か月前'},
+ {id:'p5', n:'お金の設計',       w:'入籍後1〜3か月'},
+ {id:'p6', n:'その先の備え',     w:'落ち着いてから'}
+];
+var T=[
+ // ---- 決める段階
+ {p:'p0',t:'お金の価値観をすり合わせる',w:'both',k:1,
+  n:'貯蓄・支出・借入の有無を先に共有しておくと、後の判断が全部早くなります。',
+  l:['/articles/kinsen-kachikan-check/','金銭感覚のすり合わせ方']},
+ {p:'p0',t:'結婚までの時期の目安を決める',w:'both',
+  l:['/articles/dousei-kekkon-timing/','入籍のきっかけと時期の決め方'],c:function(s){return s.stage<=1;}},
+ {p:'p0',t:'かかるお金の総額を把握する',w:'both',k:1,
+  n:'式・指輪・新生活・旅行の合計。ご祝儀と親の援助を引いた自己負担で見ます。',
+  l:['/tools/kekkon-shikin-keisanki/','結婚資金計算機で試算する']},
+ {p:'p0',t:'指輪をどうするか決める',w:'both',
+  l:['/articles/konyaku-yubiwa-data/','婚約指輪の相場データ'],c:function(s){return s.stage<=1;}},
+ {p:'p0',t:'プロポーズの段取りを決める',w:'one',
+  l:['/articles/propose-guide/','結婚の段取り完全ガイド'],c:function(s){return s.stage===0;}},
+
+ // ---- 両家
+ {p:'p1',t:'それぞれの親に報告する',w:'one',k:1,
+  n:'順番があります。先に相手の親へ挨拶に行くより、まず自分の親に伝えるのが通例です。'},
+ {p:'p1',t:'両家への挨拶に行く',w:'both',
+  l:['/articles/kisei-kekkon-aisatsu/','結婚挨拶と手土産のガイド']},
+ {p:'p1',t:'顔合わせ・結納をするか決める',w:'both',
+  n:'場所・費用の負担・服装を先に決めておくと当日が楽になります。'},
+ {p:'p1',t:'親からの援助があるか確認する',w:'both',
+  n:'金額が決まると、式の規模も新生活の予算も現実的になります。'},
+
+ // ---- 式
+ {p:'p2',t:'式の日取りを決める',w:'both',k:1,
+  n:'会場を探す前に日取りの候補を決めます。人気の吉日は埋まりやすくなります。',
+  l:['/tools/nyuseki-calendar/','入籍日カレンダーで候補日を出す'],
+  c:function(s){return s.style!=='none';}},
+ {p:'p2',t:'式場を見学して決める',w:'both',
+  l:['/articles/shikijo-erabi-guide/','式場探し完全ガイド'],
+  c:function(s){return s.style==='full'||s.style==='small'||s.style==='mikettei';}},
+ {p:'p2',t:'招待する人を決める',w:'both',
+  n:'人数が決まらないと総額もご祝儀の見込みも出ません。ここが全体の起点です。',
+  c:function(s){return s.style==='full'||s.style==='small';}},
+ {p:'p2',t:'前撮り・フォトを手配する',w:'both',
+  l:['/articles/maedori-photo-guide/','前撮り・フォトウェディングの費用比較'],
+  c:function(s){return s.style!=='none';}},
+ {p:'p2',t:'衣装を決める',w:'both',
+  l:['/articles/kekkonshiki-isho-rental/','親族衣装・レンタルの相場'],
+  c:function(s){return s.style==='full'||s.style==='small'||s.style==='photo';}},
+ {p:'p2',t:'ブライダルエステを始めるか決める',w:'one',
+  n:'開始時期の逆算が要ります。式の直前では間に合わないことがあります。',
+  l:['/articles/bridal-esthe-guide/','ブライダルエステはいつから'],
+  c:function(s){return s.style==='full'||s.style==='small'||s.style==='photo';}},
+ {p:'p2',t:'式の費用をどう分けるか決める',w:'both',
+  l:['/articles/kekkon-hiyou-futan/','結婚費用は折半すべきか'],
+  c:function(s){return s.style==='full'||s.style==='small';}},
+ {p:'p2',t:'支払い方法を確認する',w:'one',
+  n:'カード払いに対応する会場が増えていますが、限度額の確認が要ります。',
+  l:['/articles/gosyugi-shiharai-houhou/','式場費用の支払い方法'],
+  c:function(s){return s.style==='full'||s.style==='small';}},
+ {p:'p2',t:'式をしない場合の代わりを決める',w:'both',
+  n:'両家への報告の形、写真、食事会。何もしないと後から気になることがあります。',
+  l:['/articles/nashikon-data/','ナシ婚の割合データと後悔の分かれ目'],
+  c:function(s){return s.style==='none';}},
+
+ // ---- 入籍
+ {p:'p3',t:'入籍日を決める',w:'both',
+  l:['/tools/nyuseki-calendar/','入籍日カレンダーで候補日を絞る']},
+ {p:'p3',t:'婚姻届と必要書類をそろえる',w:'both',k:1,
+  n:'証人2名の署名が要ります。本籍地以外に出す場合は戸籍謄本も必要です。'},
+ {p:'p3',t:'どちらの姓にするか決める',w:'both',k:1,
+  n:'変更する側の手続きが後に続きます。ここが決まらないと先へ進めません。'},
+ {p:'p3',t:'婚姻届を提出する',w:'one'},
+ {p:'p3',t:'運転免許証の氏名・住所を変更する',w:'one',k:1,
+  n:'最初にここを直します。他の窓口で本人確認書類として使うためです。'},
+ {p:'p3',t:'マイナンバーカードを変更する',w:'one'},
+ {p:'p3',t:'銀行口座・クレジットカードの名義を変更する',w:'one',
+  n:'給与の振込口座は勤務先への届出とセットで進めます。'},
+ {p:'p3',t:'勤務先へ届け出る',w:'one',
+  n:'健康保険・扶養・手当に関わります。遅れると精算が発生することがあります。'},
+ {p:'p3',t:'パスポートを変更する',w:'one',
+  n:'新婚旅行に行くなら、航空券の名義と一致している必要があります。',
+  c:function(s){return s.style!=='none';}},
+
+ // ---- 住まい
+ {p:'p4',t:'住む場所と間取りを決める',w:'both',k:1,
+  n:'家賃は手取りの25〜30％以内が一つの目安です。',
+  l:['/articles/tokyo-futari-seikatsuhi/','エリアと家賃の考え方'],
+  c:function(s){return s.live!=='already';}},
+ {p:'p4',t:'物件を契約して引っ越す',w:'both',
+  l:['/articles/shinkon-seikatsu-guide/','新生活の準備ガイド'],
+  c:function(s){return s.live!=='already';}},
+ {p:'p4',t:'ネット回線を申し込む',w:'one',k:1,
+  n:'入居の1〜2か月前に。工事が要る物件では、遅れると使えない期間ができます。',
+  l:['/articles/shinkon-net-kaisen-dandori/','ネット回線はいつ手配するか'],
+  c:function(s){return s.live!=='already';}},
+ {p:'p4',t:'電気・ガス・水道の契約と名義を決める',w:'one',
+  n:'支払う人と名義を一致させておくと、後の変更が楽になります。',
+  l:['/articles/futari-kounetsuhi/','光熱費の目安と名義の決め方']},
+ {p:'p4',t:'家具・家電を決める',w:'both',
+  n:'先に全部そろえると予算を使い切ります。後回しでよいものがあります。',
+  l:['/articles/shinkyo-kagu-yosan/','新居の家具・家電の予算データ'],
+  c:function(s){return s.live!=='already';}},
+ {p:'p4',t:'転出・転入届を出す',w:'one',
+  n:'婚姻届と同時に出せる場合があります。窓口で確認すると一度で済みます。',
+  c:function(s){return s.live!=='already';}},
+ {p:'p4',t:'自治体の補助金を確認する',w:'one',
+  n:'結婚新生活支援事業など。領収書が要る場合があるので、先に確認します。',
+  l:['/articles/shinkon-hojokin/','新婚生活の補助金の調べ方']},
+
+ // ---- お金
+ {p:'p5',t:'毎月の生活費を把握する',w:'both',k:1,
+  l:['/tools/seikatsuhi-simulator/','生活費シミュレーターで試算する']},
+ {p:'p5',t:'口座の管理方法を決める',w:'both',
+  n:'共通口座を作るか、費目で分けるか。最初に決めると後の摩擦が減ります。',
+  l:['/articles/futari-kouza-kanri/','口座・お金の管理方法']},
+ {p:'p5',t:'家計の記録をどうするか決める',w:'both',
+  l:['/articles/kakeibo-app-fuufu/','家計簿は共有すべきか']},
+ {p:'p5',t:'固定費を見直す',w:'both',
+  n:'通信・保険・住まいの順で。一度変えれば毎月効き続けます。',
+  l:['/articles/shinkon-koteihi-minaoshi/','固定費見直し完全ガイド']},
+ {p:'p5',t:'スマホ・通信を最適化する',w:'both',
+  l:['/articles/kazoku-simhikaku/','家族割・格安SIMの比較']},
+ {p:'p5',t:'保険を見直す',w:'both',k:1,
+  n:'住まいが決まってから。必要保障額が変わるためです。',
+  l:['/articles/kekkon-hoken-minaoshi/','結婚後の保険の見直し方']},
+ {p:'p5',t:'貯蓄の目標を決める',w:'both',
+  l:['/articles/kekkon-chokin-mokuhyou/','いくら貯めるべきか']},
+
+ // ---- その先
+ {p:'p6',t:'結婚報告をする',w:'both',
+  l:['/articles/kekkon-houkoku-nengajou/','報告はがき・年賀状の作り方']},
+ {p:'p6',t:'内祝いを手配する',w:'one',
+  n:'いただいてから1か月以内が目安です。',
+  l:['/articles/kekkon-uchiiwai-guide/','内祝いのマナー']},
+ {p:'p6',t:'新婚旅行を計画する',w:'both',
+  l:['/articles/shinkon-ryokou-credit/','新婚旅行の支払い方'],
+  c:function(s){return s.style!=='none';}},
+ {p:'p6',t:'働き方を見直すか考える',w:'both',
+  l:['/articles/kekkon-tenshoku-guide/','結婚を機に転職すべきか']},
+ {p:'p6',t:'住まいを買うか借り続けるか考える',w:'both',
+  l:['/articles/kekkon-jutaku-loan/','賃貸か購入かの判断材料']},
+ {p:'p6',t:'子どもの時期と働き方を話す',w:'both',
+  l:['/articles/ikukyu-fuufu-doji/','育休を夫婦同時に取るとどうなるか'],
+  c:function(s){return s.kids!=='no';}},
+ {p:'p6',t:'産後に何が起きるかを先に知っておく',w:'both',k:1,
+  n:'産後は生活も関係も大きく変わります。起きてから調べるより、先に知っておくほうが軽く済みます。',
+  l:['/articles/sango-crisis-guide/','産後クライシスとは'],
+  c:function(s){return s.kids==='soon';}},
+ {p:'p6',t:'産後の家事分担を先に決める',w:'both',
+  l:['/articles/sango-kaji-buntan/','産後の家事分担の決め方'],
+  c:function(s){return s.kids==='soon';}}
+];
+
+var KEY='noe-yarukoto';
+function state(){return {stage:+document.getElementById('stage').value,
+  style:document.getElementById('style').value,
+  live:document.getElementById('live').value,
+  kids:document.getElementById('kids').value};}
+
+var shown=[], checked={};
+
+function load(){
+  // ★共有URLには条件も載せる。チェックのキーは条件で変わる連番なので、
+  //   条件を復元しないと相手の画面では別の項目にチェックが付いてしまう。
+  var h=location.hash;
+  var s1=h.match(/s=(\d)([a-z]+)-([a-z]+)-([a-z]+)/);
+  if(s1){
+    document.getElementById('stage').value=s1[1];
+    document.getElementById('style').value=s1[2];
+    document.getElementById('live').value=s1[3];
+    document.getElementById('kids').value=s1[4];
+  }
+  var m=h.match(/c=([a-z0-9,\-]*)/);
+  if(m){ m[1].split(',').forEach(function(x){ if(x) checked[x]=1; }); return; }
+  try{ var v=localStorage.getItem(KEY); if(v) JSON.parse(v).forEach(function(x){checked[x]=1;}); }catch(e){}
+}
+function save(){
+  var ks=Object.keys(checked);
+  try{ localStorage.setItem(KEY,JSON.stringify(ks)); }catch(e){}
+  var st=state();
+  document.getElementById('url').value=
+    location.origin+location.pathname+'#s='+st.stage+st.style+'-'+st.live+'-'+st.kids+
+    '&c='+ks.join(',');
+}
+function progress(){
+  var done=shown.filter(function(x){return checked[x.key];}).length;
+  var pct=shown.length?Math.round(done/shown.length*100):0;
+  document.getElementById('bar').style.width=pct+'%';
+  document.getElementById('prog').textContent='完了 '+done+' / '+shown.length+'（'+pct+'％）';
+}
+
+function render(){
+  var s=state();
+  shown=[];
+  var html='';
+  PH.forEach(function(ph){
+    var items=T.filter(function(x){return x.p===ph.id && (!x.c || x.c(s));});
+    if(s.stage>=3 && (ph.id==='p0'||ph.id==='p1'||ph.id==='p2')) items=[];
+    if(s.stage>=2 && ph.id==='p0') items=items.filter(function(x){return x.k;});
+    if(!items.length) return;
+    var pn=ph.n;
+    if(ph.id==='p2'&&s.style==='none') pn='式をしない場合';
+    if(ph.id==='p2'&&s.style==='photo') pn='写真の準備';
+    html+='<div class="ph"><div class="ph-head"><span class="ph-name">'+pn+'</span>'+
+      '<span class="ph-when">'+ph.w+'</span></div>';
+    items.forEach(function(x,i){
+      var key=ph.id+'-'+i;
+      x.key=key; shown.push(x);
+      html+='<label class="tk'+(checked[key]?' done':'')+'" data-k="'+key+'">'+
+        '<input type="checkbox" '+(checked[key]?'checked':'')+'>'+
+        '<span class="tk-b"><span class="tk-t">'+x.t+
+        '<span class="tk-who'+(x.k?' tk-key':'')+'">'+(x.k?'順番に注意':(x.w==='both'?'二人で':'どちらか'))+'</span></span>'+
+        (x.n?'<p class="tk-n">'+x.n+'</p>':'')+
+        (x.l?'<p class="tk-l"><a href="'+x.l[0]+'">'+x.l[1]+' →</a></p>':'')+
+        '</span></label>';
+    });
+    html+='</div>';
+  });
+  document.getElementById('list').innerHTML=html;
+  document.getElementById('cnt').textContent=shown.length+'項目';
+  document.getElementById('lead').textContent=
+    '入力された条件で必要なものだけを残しました。「順番に注意」の項目は、後回しにすると手戻りが出ます。';
+  save(); progress();
+
+  document.querySelectorAll('.tk').forEach(function(el){
+    el.querySelector('input').addEventListener('change',function(){
+      var k=el.getAttribute('data-k');
+      if(this.checked){ checked[k]=1; el.classList.add('done'); }
+      else { delete checked[k]; el.classList.remove('done'); }
+      save(); progress();
+    });
+  });
+}
+
+document.getElementById('run').addEventListener('click',function(){
+  render();
+  document.getElementById('res').classList.add('show');
+  try{gtag('event','tool_result',{tool:'kekkon-yarukoto'});}catch(e){}
+  document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
+});
+document.getElementById('copy').addEventListener('click',function(){
+  var f=document.getElementById('url'); f.select();
+  try{ navigator.clipboard.writeText(f.value); this.textContent='コピーしました'; }
+  catch(e){ document.execCommand('copy'); this.textContent='コピーしました'; }
+  var b=this; setTimeout(function(){b.textContent='URLをコピー';},2000);
+});
+
+load();
+if(location.hash.indexOf('s=')>=0||location.hash.indexOf('c=')>=0){
+  render();
+  document.getElementById('res').classList.add('show');
+}
+})();
+</script>
