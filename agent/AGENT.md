@@ -414,7 +414,7 @@ success-rate-data 1本（52表示・平均34.8位・1クリック）が稼いで
 | シャディギフトモール（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+59BZ0A+4DMG+60OXE | 購入5%。内祝い・手土産・ギフト文脈のみ（kekkon-uchiiwai-guide・kisei-kekkon-aisatsu） |
 | THE KISS（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+633N96+1O28+IISMP | 【推定1,000円】※ジュエリー通販は料率型。要実測 購入5%。ペアリング・ジュエリー文脈のみ（pair-ring-guide・propose-guide・konyaku-yubiwa-data） |
 | PARTY☆PARTY（A8・IBJ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3AHE0Q+FOG+3H6DXV | 男性参加1,575円/女性741円・確定率46.7%。婚活パーティー文脈のみ（konkatsu-party-guide） |
-| ハナユメ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3K0BP6+3DOK+60OXF | 【推定10,000円】※式場来店は業界的に高単価。要実測 式場見学予約。**単価1〜2万円級で提携中トップ帯**。式場探し・結婚費用文脈のみ（shikijo-erabi-guide・kekkon-okane-data）。**特典の金額・適用条件・対象会場は時期で変わるため断定せず「公式サイトで確認を」を必ず併記**。1記事1箇所 |
+| ハナユメ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3K0BP6+3DOK+60OXF | 【推定10,000円】※式場来店は業界的に高単価。要実測 式場見学予約。**単価1〜2万円級で提携中トップ帯**。式場探し・結婚費用文脈のみ（shikijo-erabi-guide・kekkon-okane-data・kekkon-hiyou-futan〔2026-08-16 CEO承認で追加・負担割合の検討＝式場費用を考える段階のため〕）。**特典の金額・適用条件・対象会場は時期で変わるため断定せず「公式サイトで確認を」を必ず併記**。1記事1箇所 |
 | naco-do（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2ZRL4Q+4HHW+61RI9 | 【推定10,000円】※オンライン相談所の入会。要実測 オンライン完結型の結婚相談所。**店舗型（45〜100万円）との対比でのみ提示**（agency-vs-app・app-plus-agency）。安さだけを訴求せず「サポートが薄いぶん自走力が要る」構造も併記する。成婚を保証する表現は禁止。1記事1箇所 |
 | Photojoy（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+38P37E+4HMW+5YZ77 | 【推定3,000円】※撮影予約。要実測 マッチングアプリ専門のプロフィール写真撮影。**大手不在で競合が弱い**。写真戦略文脈のみ（konkatsu-photo-guide・photo-tips）。「マッチ率が上がる」等の効果断定は禁止、作例・納品枚数・料金という確認できる事実で訴求する。1記事1箇所 |
 | 挨拶状ドットコム（A8） | https://px.a8.net/svt/ejp?a8mat=3Z97VF+B5A8TM+1IEW+ZW0CI | 【推定500円】※印刷物の料率型。要実測 結婚報告はがき・年賀状の印刷。**早期割引の締切が11月頃＝商戦期は9〜11月**。kekkon-houkoku-nengajou のみ。割引率・締切・宛名印刷や投函代行の可否は断定せず公式確認を促す。1記事1箇所 |
