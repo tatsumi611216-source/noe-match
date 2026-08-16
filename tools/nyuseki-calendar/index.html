@@ -177,6 +177,21 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
   <button class="calc-btn" id="run">候補日を出す</button>
 </div>
 
+
+<div class="calc" style="margin-top:34px">
+  <p style="font-weight:700;margin:0 0 4px">決めている日がある場合</p>
+  <p class="hint" style="margin:0 0 14px">記念日や誕生日など、動かしたくない日があるときはこちら。その日の暦と、気になる場合の代替日を出します。</p>
+  <div class="fld"><span class="lbl">調べたい日</span>
+    <input type="date" id="pick" min="2026-01-01" max="2030-12-31" value="2027-11-22"></div>
+  <button class="calc-btn" id="check">この日を調べる</button>
+</div>
+
+<div class="result" id="res2">
+  <div class="big"><span id="pickhead">—</span></div>
+  <p class="hint" id="picklead"></p>
+  <div id="pickbody"></div>
+</div>
+
 <div class="result" id="res">
   <div class="big"><span id="count">—</span></div>
   <p class="hint" id="lead"></p>
@@ -212,6 +227,18 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <li><strong>記念日にしたいか</strong>——毎年その日を祝うことになります。繁忙期と重なる日を選ぶと、実際には祝えないことがあります</li>
 <li><strong>結婚式との前後関係</strong>——式の前に入れるか後にするかで、姓の変更手続きのタイミングが変わります</li>
 </ul>
+
+
+<h2>記念日と暦がぶつかったら</h2>
+<p>付き合った日や誕生日など<strong>動かしたくない日があるのに、その日が仏滅や赤口だった</strong>——これは実際によくある状況です。</p>
+<p>考え方は3つあります。</p>
+<ul>
+<li><strong>気にしない</strong>——六曜は二人が納得していれば問題になりません。毎年祝いやすい日のほうが、長い目で見て満足度が高いこともあります</li>
+<li><strong>日を分ける</strong>——婚姻届の提出は記念日に行い、両家の食事会や記念のディナーだけを暦の良い日に寄せる。<strong>すべてを一日に背負わせない</strong>と考えると解けます</li>
+<li><strong>近い吉日にずらす</strong>——上のツールで前後2週間の候補を出せます。数日ずらすだけで大安や天赦日にあたることがあります</li>
+</ul>
+<p><strong>仏滅は一日を通して同じ扱い</strong>とされ、「午後なら良い」という考え方は俗説です。一方<strong>赤口は正午前後のみ吉</strong>とする考え方があります。どちらも六曜の中の解釈であり、絶対的な決まりではありません。</p>
+<p>最も大事なのは<strong>「二人と両家の誰が、どのくらい気にするか」を先に確かめること</strong>です。誰も気にしないなら暦に合わせる必要はなく、気にする人がいるなら日を分ければ角が立ちません。</p>
 
 <h2>人気の日は混みます</h2>
 <p>天赦日や語呂合わせの日は、<strong>役所の窓口が混雑します</strong>。特に土日と重なる吉日は集中しやすく、待ち時間が長くなることがあります。</p>
@@ -377,6 +404,110 @@ document.getElementById('run').addEventListener('click',function(){
   document.getElementById('res').classList.add('show');
   try{gtag('event','tool_result',{tool:'nyuseki-calendar',year:year});}catch(e){}
   document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+// ===== 決めている日を調べる =====
+// 需要の実測（2026-08-16）: 「記念日 入籍」10件で2番目のサジェストが「記念日 入籍 仏滅」、
+// 「仏滅 入籍」7件（離婚率／午後／時間帯）、「入籍日 記念日」4件（仏滅／赤口）。
+// 一方「9月26日 六曜」「六曜 調べる」は各1件＝**日付を漠然と引く需要は薄い**。
+// 読者は「動かしたくない日があり、それが仏滅かもしれない」という状態にある。
+function attrs(d){
+  var i=idx(d), sh=i%12, key=(d.getMonth()+1)+'-'+d.getDate();
+  var t=[], score=0, tensha=(etoName(i)===TENSHA[season(d)]);
+  if(tensha){ t.push(['天赦日','top']); score+=10; }
+  var ic=ICHIRYU[setsuMonth(d)];
+  if(ic&&(sh===ic[0]||sh===ic[1])){ t.push(['一粒万倍日','sub']); score+=4; }
+  if(sh===2){ t.push(['寅の日','']); score+=2; }
+  if(sh===5){ t.push(['巳の日','']); score+=2; }
+  var h=holidays(d.getFullYear()), isHoli=!!h[key];
+  if(isHoli){ t.push(['祝日','']); score+=1; }
+  if(GORO[key]){ t.push(['語呂合わせ','sub']); score+=3; }
+  var rk=rokuyou(d);
+  if(rk==='大安'){ t.push(['大安','sub']); score+=5; }
+  else if(rk==='友引'){ t.push(['友引','']); score+=2; }
+  else if(rk==='仏滅'){ t.push(['仏滅','']); score-=6; }
+  else if(rk==='赤口'){ t.push(['赤口','']); score-=3; }
+  else if(rk){ t.push([rk,'']); }
+  return {tags:t,score:score,roku:rk,holi:isHoli,tensha:tensha,wd:d.getDay()};
+}
+
+document.getElementById('check').addEventListener('click',function(){
+  var v=document.getElementById('pick').value;
+  if(!v) return;
+  var pp=v.split('-'), d=new Date(+pp[0],+pp[1]-1,+pp[2]);
+  if(d.getFullYear()<2026||d.getFullYear()>2030){
+    document.getElementById('pickhead').textContent='対応期間外';
+    document.getElementById('picklead').textContent='このツールは2026年〜2030年に対応しています。';
+    document.getElementById('pickbody').innerHTML='';
+    document.getElementById('res2').classList.add('show'); return;
+  }
+  var a=attrs(d);
+  document.getElementById('pickhead').textContent =
+    a.tensha ? ('天赦日 ／ '+a.roku)
+    : (a.tags.some(function(t){return t[0]==='一粒万倍日';}) ? ('一粒万倍日 ／ '+a.roku) : a.roku);
+  var bad=(a.roku==='仏滅'||a.roku==='赤口');
+  document.getElementById('picklead').textContent =
+    (d.getFullYear()+'年'+fmt(d)+'（'+WD[a.wd]+'曜日'+(a.holi?'・祝日':'')+'）は「'+a.roku+'」です。')
+    + (a.tensha ? ' この日は天赦日にもあたります。' : '');
+
+  var kichi=a.tensha||a.tags.some(function(t){return t[0]==='一粒万倍日';});
+  var html='<div class="day-card"><div class="tags">'+
+    a.tags.map(function(t){return '<span class="tag '+t[1]+'">'+t[0]+'</span>';}).join('')+
+    '</div>';
+  if(bad&&kichi){
+    // 天赦日・一粒万倍日でありながら仏滅／赤口＝2つの暦の評価が食い違う日。
+    // 片方だけを伝えると誤解を招くため、食い違い自体を明示する。
+    html+='<p class="day-note"><strong>この日は暦によって評価が分かれます。</strong>'+
+      (a.tensha?'天赦日':'一粒万倍日')+'として強い日とされる一方、六曜では'+a.roku+'にあたります。'+
+      '天赦日・一粒万倍日と六曜は<strong>別の暦の体系</strong>で、どちらを優先するかに決まりはありません。'+
+      '開運日の情報サイトはこの日を勧め、六曜のカレンダーは避ける日として扱う——'+
+      'という食い違いが起きるのはこのためです。'+
+      '<strong>両家のどちらの見方が強いかで決める</strong>のが実際的です。</p>';
+  } else if(bad){
+    html+='<p class="day-note"><strong>六曜では避けられることが多い日です。</strong>'+
+      'ただし六曜を気にするかどうかは家庭によって分かれます。'+
+      (a.roku==='仏滅'
+        ? '仏滅は一日を通して同じ扱いとされ、時間帯で変わるという考え方は俗説です。'
+        : '赤口は正午前後のみ吉とされる考え方があります。')+
+      '両家の誰かが気にするなら、下の代替日も一緒に見てください。</p>';
+  } else if(a.score>=10){
+    html+='<p class="day-note"><strong>暦の上では強い日です。</strong>人気が集中しやすいため、'+
+      '窓口の混雑と、写真撮影を予定するなら時間の余裕を見ておいてください。</p>';
+  } else {
+    html+='<p class="day-note">六曜の上では特に避けられる日ではありません。'+
+      '動かしたくない日であれば、このまま進めて差し支えない日です。</p>';
+  }
+  html+='</div>';
+
+  // 前後14日から、より評価の高い日を出す
+  var alts=[];
+  for(var k=-14;k<=14;k++){
+    if(k===0) continue;
+    var e=new Date(d.getTime()); e.setDate(e.getDate()+k);
+    if(e.getFullYear()<2026||e.getFullYear()>2030) continue;
+    var b=attrs(e);
+    if(b.score>a.score) alts.push({d:e,a:b,gap:Math.abs(k)});
+  }
+  alts.sort(function(x,y){ return y.a.score-x.a.score || x.gap-y.gap; });
+  alts=alts.slice(0,3);
+
+  if(alts.length){
+    html+='<h3>近い日で、暦の評価が高い日</h3>'+alts.map(function(x){
+      return '<div class="day-card"><div class="day-head">'+
+        '<span class="day-date">'+x.d.getFullYear()+'年'+fmt(x.d)+'</span>'+
+        '<span class="day-week">'+WD[x.a.wd]+'曜日'+(x.a.holi?'・祝日':'')+'／'+x.gap+'日'+(x.d>d?'後':'前')+'</span></div>'+
+        '<div class="tags">'+x.a.tags.map(function(t){return '<span class="tag '+t[1]+'">'+t[0]+'</span>';}).join('')+'</div></div>';
+    }).join('');
+    html+='<p class="hint">どうしてもその日がよい場合は、<strong>婚姻届の提出はその日に行い、'+
+      '両家の食事会や記念のディナーだけを暦の良い日に寄せる</strong>という分け方もあります。'+
+      'すべてを一日に背負わせないと考えると、行き詰まりは解けることが多いものです。</p>';
+  } else {
+    html+='<p class="hint">前後2週間の中では、この日より暦の評価が高い日は見つかりませんでした。</p>';
+  }
+  document.getElementById('pickbody').innerHTML=html;
+  document.getElementById('res2').classList.add('show');
+  try{gtag('event','tool_result',{tool:'nyuseki-calendar',mode:'pick'});}catch(e){}
+  document.getElementById('res2').scrollIntoView({behavior:'smooth',block:'start'});
 });
 })();
 </script>
