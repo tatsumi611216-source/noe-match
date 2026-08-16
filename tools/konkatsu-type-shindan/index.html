@@ -406,6 +406,47 @@ document.getElementById('run').addEventListener('click',function(){
     return '<li><a href="'+l[0]+'">'+l[1]+'</a></li>';}).join('')+'</ul>';
 
   // 診断結果に連動した案内（結果と無関係な広告は出さない）
+  //
+  // 属性特化はシュタインズ1社の7ブランドなので、台帳の「同一広告主の別ブランドを併置しない」に従い
+  // **必ず1つだけ**出す。また台帳の共通ルールにより、**属性を不利・欠点として描く表現は禁止**。
+  // 「説明しなくていい相手を選ぶ」「条件が前提として共有されている」という構造の説明として提示する。
+  var ATTR_PR=[
+    {c:function(){return attrs.indexOf('ペット')>=0;},
+     u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2FIUKA+3LOM+ZS5GI',
+     h:'ペットと暮らすことが前提になっている相手を探す',
+     b:'動物好き・ペット好きに特化した相談所があります。飼育環境や頭数を最初から共有できるぶん、説明の手間が要りません。',
+     btn:'ペット婚を見る'},
+    {c:function(){return attrs.indexOf('趣味')>=0;},
+     u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2GPPRU+3LOM+BY641',
+     h:'趣味を説明しなくていい相手を探す',
+     b:'アニメ・マンガ・ゲーム好きに特化した相談所があります。趣味が前提として共有されているので、話が早く進みます。',
+     btn:'ヲタ婚を見る'},
+    {c:function(){return attrs.indexOf('体型')>=0;},
+     u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2G4A62+3LOM+614CX',
+     h:'体型が条件として最初から共有されている場を選ぶ',
+     b:'ぽっちゃり女性に特化した相談所があります。条件が前提になっているぶん、プロフィールの書き方に悩む場面が減ります。',
+     btn:'ぽちゃ婚を見る'},
+    {c:function(){return attrs.indexOf('子ども')>=0;},
+     u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+36BCSA+3LOM+1HLVB6',
+     h:'子どもがいることが前提として共有されている場を選ぶ',
+     b:'子連れ・子持ちに特化した相談所があります。家族のかたちを最初から共有できるので、伝え方に悩む段階を飛ばせます。',
+     btn:'子持ち婚を見る'},
+    {c:function(){return face==='ng';},
+     u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+35PX6I+3LOM+1BO6EP',
+     h:'交際経験の少なさが前提になっている場を選ぶ',
+     b:'恋愛経験が少ない層に特化した相談所があります。同じ状況の人が集まるので、説明から始める必要がありません。',
+     btn:'ピュア婚を見る'},
+    {c:function(){return area==='small';},
+     u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2HB5DM+3LOM+1NJRXE',
+     h:'地方在住が前提として設計されている場を選ぶ',
+     b:'地方在住者と移住希望者に特化した相談所があります。居住地の条件が最初から噛み合っているぶん、候補が絞られません。',
+     btn:'田舎婚を見る'},
+    {c:function(){return age>=35;},
+     u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2EXEYI+3LOM+NVHCX',
+     h:'年齢が条件ではなく前提になっている場を選ぶ',
+     b:'35歳以上に特化した相談所があります。年齢が共通の前提なので、そこから話が始まりません。',
+     btn:'R婚を見る'}
+  ];
   var PR={
     sodan:{u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL',
       h:'相談所は費用の幅が大きいので、複数から資料を取り寄せて比べる',
@@ -418,6 +459,31 @@ document.getElementById('run').addEventListener('click',function(){
       btn:'開催予定を見る', c:'#7c2e42',
       n:'参加費・年齢条件・キャンセル規定は回ごとに異なります。申し込み前に公式サイトでご確認ください'}
   };
+  // アプリが1位のとき：使える時間で出し分ける
+  if(arr[0].k==='app'){
+    PR.app = (time<=3)
+      ? {u:'https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6',
+         h:'探す時間が取りにくいなら、日程まで組んでくれる形もある',
+         b:'審査制でAIが相手と日程を決めるサービスがあります。やりとりの往復が減るぶん、時間の使い方が変わります。',
+         btn:'バチェラーデートを見る', c:'#3f6ea8',
+         n:'審査基準・料金・対応エリアは変更される場合があります。申し込み前に公式サイトでご確認ください'}
+      : {u:'https://px.a8.net/svt/ejp?a8mat=4B8B4Q+39VYEY+FOG+6PJZL',
+         h:'アプリと相談所の中間という選択肢もある',
+         b:'結婚相談所を運営する会社が出している婚活サイトがあります。アプリの手軽さを保ちつつ、相手の真剣度を確かめやすい形です。',
+         btn:'ブライダルネットを見る', c:'#3f6ea8',
+         n:'料金・機能・サポート内容は変更される場合があります。申し込み前に公式サイトでご確認ください'};
+  }
+  // 属性特化が1位のとき：選ばれた条件に合うものを1つだけ
+  if(arr[0].k==='attr'){
+    for(var z=0;z<ATTR_PR.length;z++){
+      if(ATTR_PR[z].c()){
+        PR.attr={u:ATTR_PR[z].u,h:ATTR_PR[z].h,b:ATTR_PR[z].b,btn:ATTR_PR[z].btn,c:'#7c2e42',
+          n:'料金・対応エリア・サービス内容は変更される場合があります。申し込み前に公式サイトでご確認ください。'+
+            '成婚を保証するものではありません'};
+        break;
+      }
+    }
+  }
   var pr=PR[arr[0].k], box=document.getElementById('prbox');
   if(pr){
     box.innerHTML='<div style="background:#f7f5f2;border:1px solid #e6e2dc;padding:20px 22px;margin:26px 0;text-align:center">'+
