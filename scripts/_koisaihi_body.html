@@ -1,0 +1,462 @@
+<style>
+.result .big{background:linear-gradient(rgba(250,249,247,.9),rgba(250,249,247,.86)),url('../../images/lp/hands-touch.jpg') center/cover}
+.mode-sw{display:flex;gap:0;margin:0 0 22px;border:1px solid #ddd6cc}
+.mode-sw button{flex:1;padding:13px 10px;border:none;background:#fff;color:#5a6068;font-size:.92rem;
+  font-weight:600;cursor:pointer;font-family:inherit}
+.mode-sw button.on{background:#7c2e42;color:#fff}
+.detail-only{display:none}
+body.detail .detail-only{display:block}
+.ph-block{border-top:1px solid #e6e2dc;margin:22px 0 0;padding:18px 0 0}
+.ph-block>p.lbl-h{font-weight:700;font-size:.95rem;margin:0 0 4px}
+.ph-block>p.lbl-s{font-size:.82rem;color:#8a8f95;margin:0 0 14px;line-height:1.8}
+.money-line{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dotted #ded8d0;padding:10px 0;font-size:.94rem}
+.money-line.total{border-bottom:2px solid #7c2e42;font-weight:700;font-size:1.06rem;padding-top:14px}
+.money-line .sub{color:#8a8f95;font-size:.82rem}
+.split-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:6px 0 0}
+.split-card{border:1px solid #e6e2dc;background:#faf8f6;padding:14px 16px}
+.split-card .nm{font-size:.8rem;color:#7a7168;margin:0 0 6px}
+.split-card .amt{font-weight:700;font-size:1.14rem;color:#7c2e42}
+.split-card .note{font-size:.78rem;color:#8a8f95;margin:6px 0 0;line-height:1.7}
+.bar-row{display:grid;grid-template-columns:7.5em 1fr 5.5em;gap:10px;align-items:center;margin:0 0 8px}
+.bar-track{background:#ece7e0;height:14px}
+.bar-fill{background:#7c2e42;height:14px}
+.bar-nm{font-size:.86rem}
+.bar-vl{text-align:right;font-size:.84rem;color:#5a6068}
+.warn{background:#fdf8f4;border-left:3px solid #c2896a;padding:14px 18px;margin:18px 0}
+.warn p{margin:0;font-size:.9rem;line-height:1.9}
+.src{font-size:.76rem;color:#8a8f95;margin:6px 0 18px;line-height:1.8}
+</style>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/hands-touch.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/scale.png" x="9" y="9" width="46" height="46"/></svg>
+<h1>デート代・交際費シミュレーター｜付き合うまでと付き合ってからを分けて試算</h1>
+<p>婚活期とお付き合い期でかかるお金は別ものです。年代別の目安から、記念日や旅行まで含めた年間総額を出します。見通しがあれば、同じ支出も納得して払えます。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>目的は節約ではなく、同じ金額で「残るもの」を増やすことです。</strong>二人でいればお金はかかります。それ自体は健全なことで、旅行も記念日も、一人では作れない体験への投資です。問題は使う量ではなく<strong>配分</strong>——年間の総額を把握しないまま使うと、記憶に残らない出費に予算を食われ、いざ旅行や記念日という段になって足りなくなります。まず全体を見て、<strong>思い出になる支出に厚く、そうでない支出は軽く</strong>。このツールはその配分を決めるためのものです。</blockquote>
+
+<div class="calc">
+  <div class="mode-sw">
+    <button id="m-simple" class="on">簡易版（3つ選ぶだけ）</button>
+    <button id="m-detail">詳細版（記念日・旅行まで）</button>
+  </div>
+
+  <div class="row2">
+    <div class="fld"><span class="lbl">年代・立場</span>
+      <select id="age">
+        <option value="student">大学生</option>
+        <option value="20s" selected>20代の社会人</option>
+        <option value="30s">30代</option>
+        <option value="40s">40代以上</option>
+      </select></div>
+    <div class="fld"><span class="lbl">いまの段階</span>
+      <select id="phase">
+        <option value="pre">付き合う前（婚活・デート中）</option>
+        <option value="post" selected>付き合ってから</option>
+        <option value="both">両方の見通しを知りたい</option>
+      </select></div>
+  </div>
+
+  <div class="row2">
+    <div class="fld"><span class="lbl">会う頻度（月）</span>
+      <select id="freq">
+        <option value="1">月1回</option>
+        <option value="2">月2回</option>
+        <option value="4" selected>月4回（週1）</option>
+        <option value="8">月8回（週2）</option>
+      </select></div>
+    <div class="fld"><span class="lbl">1回あたりの使い方</span>
+      <select id="style">
+        <option value="light">カフェ・散歩中心</option>
+        <option value="mid" selected>ランチ／軽めのディナー</option>
+        <option value="high">ディナー中心・少し良い店</option>
+      </select></div>
+  </div>
+
+  <!-- ここから詳細版 -->
+  <div class="detail-only">
+    <div class="ph-block">
+      <p class="lbl-h">付き合う前（婚活期）の費用</p>
+      <p class="lbl-s">アプリや相談所の月額と、会う人数で決まります。会う人数が多いほど1人あたりの成果は上がりますが、総額も上がります。</p>
+      <div class="row2">
+        <div class="fld"><span class="lbl">使っている婚活サービス</span>
+          <select id="svc">
+            <option value="none">使っていない</option>
+            <option value="app" selected>マッチングアプリ</option>
+            <option value="party">婚活パーティー中心</option>
+            <option value="sodan">結婚相談所</option>
+          </select></div>
+        <div class="fld"><span class="lbl">月に会う人数（初対面）</span>
+          <select id="meet">
+            <option value="0">0人</option>
+            <option value="1">1人</option>
+            <option value="2" selected>2人</option>
+            <option value="4">4人</option>
+            <option value="6">6人以上</option>
+          </select></div>
+      </div>
+      <div class="fld"><span class="lbl">初対面の費用をどう負担しているか</span>
+        <select id="firstpay">
+          <option value="all" selected>自分が全額出している</option>
+          <option value="half">割り勘</option>
+          <option value="most">多めに出している（7割程度）</option>
+        </select></div>
+    </div>
+
+    <div class="ph-block">
+      <p class="lbl-h">記念日・イベント</p>
+      <p class="lbl-s">月々のデート代とは別に乗る費用です。ここを入れないと年間の実額から外れます。</p>
+      <div class="row2">
+        <div class="fld"><span class="lbl">誕生日の予算（相手へ）</span>
+          <select id="bday">
+            <option value="0">なし</option>
+            <option value="10000">1万円くらい</option>
+            <option value="30000" selected>3万円くらい</option>
+            <option value="50000">5万円くらい</option>
+            <option value="100000">10万円以上</option>
+          </select></div>
+        <div class="fld"><span class="lbl">クリスマスの予算</span>
+          <select id="xmas">
+            <option value="0">なし</option>
+            <option value="10000">1万円くらい</option>
+            <option value="30000" selected>3万円くらい</option>
+            <option value="50000">5万円以上</option>
+          </select></div>
+      </div>
+      <div class="row2">
+        <div class="fld"><span class="lbl">交際記念日の予算</span>
+          <select id="anniv">
+            <option value="0">祝わない</option>
+            <option value="10000">1万円くらい</option>
+            <option value="20000" selected>2万円くらい</option>
+            <option value="50000">5万円以上</option>
+          </select></div>
+        <div class="fld"><span class="lbl">バレンタイン／ホワイトデー</span>
+          <select id="vday">
+            <option value="0">なし</option>
+            <option value="5000" selected>5千円くらい</option>
+            <option value="15000">1.5万円くらい</option>
+            <option value="30000">3万円以上</option>
+          </select></div>
+      </div>
+    </div>
+
+    <div class="ph-block">
+      <p class="lbl-h">旅行</p>
+      <p class="lbl-s">日帰りと泊まりで桁が変わります。回数を入れると年間に反映します。</p>
+      <div class="row2">
+        <div class="fld"><span class="lbl">泊まりの旅行（年何回）</span>
+          <select id="trip">
+            <option value="0">行かない</option>
+            <option value="1">年1回</option>
+            <option value="2" selected>年2回</option>
+            <option value="4">年4回</option>
+          </select></div>
+        <div class="fld"><span class="lbl">1回あたりの旅行費（2人分）</span>
+          <select id="tripcost">
+            <option value="40000">国内・近場1泊（4万円くらい）</option>
+            <option value="80000" selected>国内・1〜2泊（8万円くらい）</option>
+            <option value="150000">国内・遠方や連泊（15万円くらい）</option>
+            <option value="250000">海外・近場（25万円くらい／韓国・台湾など）</option>
+            <option value="450000">海外・中距離（45万円くらい／東南アジア・ハワイなど）</option>
+            <option value="700000">海外・長距離（70万円以上／欧米など）</option>
+          </select></div>
+      </div>
+      <p class="lbl-s" style="margin:12px 0 0">海外旅行は航空券・宿泊に加えて、現地での食事・移動・お土産が乗ります。
+      為替や時期でも大きく変わるため、<strong>1回で国内旅行の3〜5回分</strong>になることを見込んでおくと、年間の見通しが外れにくくなります。</p>
+      <div class="fld"><span class="lbl">日帰りの遠出（年何回）</span>
+        <select id="daytrip">
+          <option value="0">なし</option>
+          <option value="2">年2回</option>
+          <option value="4" selected>年4回</option>
+          <option value="8">年8回</option>
+        </select></div>
+    </div>
+
+    <div class="ph-block">
+      <p class="lbl-h">テーマパーク・レジャー</p>
+      <p class="lbl-s">1日で2人1万5千円〜3万円になることが多く、日帰りか泊まりかで桁が変わります。月々のデート代に混ぜると実額から外れるため、分けて数えます。</p>
+      <div class="row2">
+        <div class="fld"><span class="lbl">テーマパーク（年何回）</span>
+          <select id="park">
+            <option value="0">行かない</option>
+            <option value="1">年1回</option>
+            <option value="2" selected>年2回</option>
+            <option value="4">年4回以上</option>
+          </select></div>
+        <div class="fld"><span class="lbl">1回あたりの過ごし方（2人分）</span>
+          <select id="parkcost">
+            <option value="20000">日帰り（チケット＋飲食）</option>
+            <option value="35000" selected>日帰り＋グッズ・交通費</option>
+            <option value="70000">1泊2日（ホテル込み）</option>
+            <option value="110000">2泊3日</option>
+          </select></div>
+      </div>
+      <div class="fld"><span class="lbl">その他のレジャー（水族館・ライブ・スポーツ観戦など／年何回）</span>
+        <select id="leisure">
+          <option value="0">なし</option>
+          <option value="2">年2回</option>
+          <option value="4" selected>年4回</option>
+          <option value="8">年8回以上</option>
+        </select></div>
+    </div>
+
+    <div class="ph-block">
+      <p class="lbl-h">負担の分け方と収入</p>
+      <p class="lbl-s">収入比で分ける案を出すために使います。入れなくても折半案は表示されます。</p>
+      <div class="row2">
+        <div class="fld"><span class="lbl">あなたの手取り（月・万円）</span>
+          <input type="number" id="my" value="25" min="0" max="200" step="1"></div>
+        <div class="fld"><span class="lbl">相手の手取り（月・万円）</span>
+          <input type="number" id="pt" value="20" min="0" max="200" step="1"></div>
+      </div>
+      <div class="fld"><span class="lbl">移動手段</span>
+        <select id="move">
+          <option value="train" selected>電車・徒歩が中心</option>
+          <option value="car">車が中心（ガソリン・駐車場がかかる）</option>
+        </select></div>
+    </div>
+  </div>
+
+  <button class="calc-btn" id="run">試算する</button>
+</div>
+
+<div class="result" id="res">
+  <div class="big"><span id="headline">—</span></div>
+  <p class="hint" id="lead"></p>
+
+  <h3 id="h-pre">付き合うまでにかかるお金（月）</h3>
+  <div id="pre"></div>
+
+  <h3 id="h-post">付き合ってからかかるお金</h3>
+  <div id="post"></div>
+
+  <h3>費目の内訳</h3>
+  <div id="bars"></div>
+
+  <h3>配分は妥当か</h3>
+  <div id="haibun"></div>
+
+  <h3>負担の分け方</h3>
+  <div id="split"></div>
+  <p class="src">「同じ額を出すのが公平」か「同じくらい負担感があるのが公平」かで、選ぶ案が変わります。決まりはありません。</p>
+
+  <div class="warn"><p><strong>この試算は目安です。</strong>地域・店の選び方・記念日の考え方で実額は大きく変わります。金額そのものより、<strong>年間でいくら積み上がるかを二人で共有するための材料</strong>としてお使いください。</p></div>
+
+  <h3>次に読むと早いページ</h3>
+  <div id="links"></div>
+</div>
+
+<h2>「きつい」の正体は、金額ではなく見通しの無さ</h2>
+<p>デート代の相談でよく出るのが「1回5千円くらいなのに、なぜか苦しい」というものです。理由は単純で、<strong>月々のデート代とは別に、年に数回まとまった支出が乗る</strong>からです。</p>
+<p>ただし、ここで言いたいのは「使いすぎ」ではありません。<strong>予定していた出費は負担に感じにくく、予定していなかった出費が重く感じる</strong>——同じ金額でも、見通しがあるかどうかで感じ方が変わります。苦しさの正体は総額ではなく、把握していないことのほうです。逆に言えば、年間の見通しさえ立っていれば、旅行も記念日も「予定どおりの投資」として気持ちよく払えます。</p>
+<div class="table-wrap"><table>
+<tr><th>費目</th><th>性質</th><th>見落とされやすさ</th></tr>
+<tr><td>月々のデート代</td><td>毎月かかる。金額は読める</td><td>低い（意識している）</td></tr>
+<tr><td>誕生日・クリスマス・記念日</td><td>年3〜4回、まとまった額</td><td><strong>高い</strong></td></tr>
+<tr><td>旅行（国内）</td><td>年1〜4回。1回で4万〜15万円</td><td><strong>高い</strong></td></tr>
+<tr><td>旅行（海外）</td><td>1回で25万〜70万円。<strong>国内の3〜5回分</strong></td><td><strong>最も高い</strong></td></tr>
+<tr><td>テーマパーク・レジャー</td><td>1日で2人1.5〜3万円。泊まりにすると桁が変わる</td><td><strong>高い</strong></td></tr>
+<tr><td>交通費・移動</td><td>毎回かかるが小さく見える</td><td>高い（積むと大きい）</td></tr>
+</table></div>
+<p><strong>月々だけ見ていると、年間の3〜4割ほどを見落としがちです。</strong>このツールが記念日・旅行・レジャーを分けて聞くのはそのためです。分けて数えるのは削るためではなく、いちばん楽しみな支出のための枠を先に確保するためです。</p>
+<h2>減らすなら、失うものが小さい順から</h2>
+<p>年間で数十万円という数字を見ると、まず「減らさなければ」と考えたくなります。しかし数字が大きいこと自体は悪いことではありません。減らす必要が出たときも、<strong>何を減らすかで、失うものが全く違います</strong>。</p>
+<div class="table-wrap"><table>
+<tr><th>費目</th><th>減らしたときに失うもの</th><th>調整のしやすさ</th></tr>
+<tr><td>旅行・テーマパーク</td><td><strong>記憶に残りやすい時間</strong>。回数を半分にしても思い出は半分にならないが、ゼロにすると残らない</td><td>回数と行き先で段階的に調整できる</td></tr>
+<tr><td>記念日</td><td><strong>相手を大事にしている表明</strong>。金額より、覚えていて何かをしたという事実のほうが効く</td><td>金額は下げやすい。省略はしにくい</td></tr>
+<tr><td>月々のデート</td><td><strong>会う回数そのもの</strong>。関係の維持に直結する</td><td>使い方（店の選び方）は変えやすい</td></tr>
+<tr><td>移動費</td><td>ほぼ何も失わない</td><td><strong>最も削りやすい</strong></td></tr>
+</table></div>
+<p><strong>減らす順番は、失うものが小さいところからです。</strong>移動と店選びを見直すだけで年間数万円動くことがあり、そこで足りるなら旅行を削る必要はありません。逆に「全体を一律に切り詰める」と、いちばん記憶に残る部分から先に消えていきます。</p>
+<p>お金をかけること自体に問題はありません。旅行もテーマパークも、二人だから作れる体験です。<strong>かけた分に納得できているかどうか</strong>が、続けやすさを左右します。</p>
+
+<h2>付き合う前と付き合ってからは、別の家計です</h2>
+<p>混同されがちですが、この2つは性質が違います。</p>
+<ul>
+<li><strong>付き合う前</strong>——サービスの月額と、<strong>会う人数に比例する初対面の費用</strong>。人数を増やすほど総額が上がります。成果が出るまでの期間が読めないぶん、<strong>いつまで続けるかを先に決めておく</strong>ほうが消耗しません</li>
+<li><strong>付き合ってから</strong>——会う頻度に比例する費用に、<strong>記念日と旅行が乗る</strong>。相手が決まっているので、話し合いで調整できます</li>
+</ul>
+<p>婚活期に「きつい」のは<strong>人数×回数</strong>が効いているからで、交際期に「きつい」のは<strong>イベントの積み上がり</strong>が効いていることが多くなります。原因が違うので、打ち手も変わります。</p>
+<p>とくに婚活期の費用は、<strong>成果が出るまでは全部が持ち出しに見える</strong>のが苦しいところです。ただし手段が合っていれば期間は短くなり、総額も下がります。費用が重いと感じたときに削るべきは会う回数ではなく、<strong>合っていない手段を続けていないか</strong>のほうであることが多くなります。</p>
+
+<h2>負担の分け方に正解はありません</h2>
+<p>「男性が払うべきか」という議論は続いていますが、<strong>実務としては3つの考え方</strong>があります。</p>
+<ul>
+<li><strong>全額</strong>——誘った側が出す、収入の多い側が出す。分かりやすいが、続くかどうかは金額と期間による</li>
+<li><strong>折半</strong>——同じ額を出す。対等さは保たれるが、収入差があると片方の負担感が大きくなる</li>
+<li><strong>収入比</strong>——手取りの比で分ける。負担感は揃うが、金額が違うことへの納得が要る</li>
+</ul>
+<p>このツールは3案の金額を並べて出します。<strong>どれが正しいかではなく、それぞれいくらになるかを見てから決める</strong>ほうが、話がこじれにくくなります。</p>
+
+<p class="hint">本ツールは一般的なレンジにもとづく概算です。実際の費用は地域・店・時期により変わります。金額や相場を断定するものではありません。</p>
+</article>
+
+<script>
+(function(){
+function v(id){return document.getElementById(id).value;}
+function n(id){var e=document.getElementById(id);return e?(+e.value||0):0;}
+function yen(x){return Math.round(x).toLocaleString()+'円';}
+
+// 年代別の1回あたりデート代の目安（一般的なレンジからの概算）
+var PER={student:{light:1500,mid:3000,high:5000},
+         '20s':{light:2500,mid:5000,high:9000},
+         '30s':{light:3000,mid:6500,high:12000},
+         '40s':{light:3000,mid:7000,high:14000}};
+// 婚活サービスの月額（公表されている一般的なレンジからの概算）
+var SVC={none:0,app:3500,party:9000,sodan:15000};
+var SVCN={none:'なし',app:'マッチングアプリ',party:'婚活パーティー',sodan:'結婚相談所'};
+
+var detail=false;
+function setMode(d){
+  detail=d;
+  document.body.classList.toggle('detail',d);
+  document.getElementById('m-simple').classList.toggle('on',!d);
+  document.getElementById('m-detail').classList.toggle('on',d);
+}
+document.getElementById('m-simple').addEventListener('click',function(){setMode(false);});
+document.getElementById('m-detail').addEventListener('click',function(){setMode(true);});
+
+document.getElementById('run').addEventListener('click',function(){
+  var age=v('age'), phase=v('phase'), freq=+v('freq'), style=v('style');
+  var per=PER[age][style];
+  var move=detail?v('move'):'train';
+  var moveCost=(move==='car'?1200:600);   // 1回あたりの移動費の概算
+
+  // ---- 付き合う前（婚活期）----
+  var svc=detail?v('svc'):'app', meet=detail?+v('meet'):2, fp=detail?v('firstpay'):'all';
+  var share={all:1.0,most:0.7,half:0.5}[fp];
+  var firstCost=per*0.8;                   // 初対面は軽めの想定
+  var preMonthly=SVC[svc]+meet*(firstCost*share+moveCost);
+
+  // ---- 付き合ってから ----
+  var postMonthly=freq*(per+moveCost);
+  // ★簡易版の既定値は「控えめな標準」に置く。
+  //   詳細版の初期選択をそのまま流用すると、何も触らずに年66万円と出て過大になる。
+  var bday=detail?+v('bday'):20000, xmas=detail?+v('xmas'):15000;
+  var anniv=detail?+v('anniv'):10000, vday=detail?+v('vday'):5000;
+  var trip=detail?+v('trip'):1, tripcost=detail?+v('tripcost'):60000;
+  var daytrip=detail?+v('daytrip'):2;
+  var park=detail?+v('park'):1, parkcost=detail?+v('parkcost'):25000;
+  var leisure=detail?+v('leisure'):2;
+  var events=bday+xmas+anniv+vday;
+  var trips=trip*tripcost+daytrip*(per*1.8+moveCost*2);
+  // レジャーは月々のデート代と混ぜない。1日で2人1.5〜3万円になり、桁が違うため
+  var parks=park*parkcost+leisure*(per*1.6+moveCost*2);
+  var postYear=postMonthly*12+events+trips+parks;
+
+  var showPre=(phase==='pre'||phase==='both');
+  var showPost=(phase==='post'||phase==='both');
+  document.getElementById('h-pre').style.display=showPre?'':'none';
+  document.getElementById('pre').style.display=showPre?'':'none';
+  document.getElementById('h-post').style.display=showPost?'':'none';
+  document.getElementById('post').style.display=showPost?'':'none';
+
+  var head = showPost ? ('年 '+Math.round(postYear).toLocaleString()+'円')
+                      : ('月 '+Math.round(preMonthly).toLocaleString()+'円');
+  document.getElementById('headline').textContent=head;
+  document.getElementById('lead').textContent = showPost
+    ? ('付き合ってから1年でかかる想定です。月々のデート代に、記念日・旅行・レジャーを足した額になります。'
+       + (detail ? '' : '記念日と旅行は控えめな標準値で計算しています。実際の額を入れるなら詳細版へ。'))
+    : '婚活期に毎月かかる想定です。会う人数に比例するので、人数を増やすと総額も上がります。';
+
+  // 付き合う前
+  document.getElementById('pre').innerHTML=
+    '<div class="money-line"><span>'+SVCN[svc]+'の月額</span><span>'+yen(SVC[svc])+'</span></div>'+
+    '<div class="money-line"><span>初対面の費用 <span class="sub">'+meet+'人 ×'+
+      (fp==='all'?'全額':fp==='most'?'7割':'折半')+'</span></span><span>'+yen(meet*firstCost*share)+'</span></div>'+
+    '<div class="money-line"><span>移動費 <span class="sub">'+meet+'回</span></span><span>'+yen(meet*moveCost)+'</span></div>'+
+    '<div class="money-line total"><span>月あたり</span><span>'+yen(preMonthly)+'</span></div>'+
+    '<p class="src">年間では '+yen(preMonthly*12)+'。'+
+    (svc==='sodan'?'相談所は初期費用と成婚料が別にかかります。':'')+
+    '成果が出るまでの期間は読めないため、<strong>いつまで続けるかを先に決めておく</strong>と消耗しにくくなります。</p>';
+
+  // 付き合ってから
+  document.getElementById('post').innerHTML=
+    '<div class="money-line"><span>月々のデート代 <span class="sub">月'+freq+'回 × '+yen(per)+'</span></span><span>'+yen(freq*per)+'</span></div>'+
+    '<div class="money-line"><span>移動費 <span class="sub">月'+freq+'回</span></span><span>'+yen(freq*moveCost)+'</span></div>'+
+    '<div class="money-line total"><span>月あたり</span><span>'+yen(postMonthly)+'</span></div>'+
+    '<div class="money-line" style="margin-top:16px"><span>記念日・イベント <span class="sub">誕生日・クリスマス・記念日・バレンタイン</span></span><span>'+yen(events)+'</span></div>'+
+    '<div class="money-line"><span>旅行 <span class="sub">泊まり'+trip+'回・日帰り'+daytrip+'回</span></span><span>'+yen(trips)+'</span></div>'+
+    '<div class="money-line"><span>テーマパーク・レジャー <span class="sub">パーク'+park+'回・その他'+leisure+'回</span></span><span>'+yen(parks)+'</span></div>'+
+    '<div class="money-line total"><span>年間の合計</span><span>'+yen(postYear)+'</span></div>';
+
+  // 内訳バー
+  var items=[['月々のデート',postMonthly*12],['記念日・イベント',events],['旅行',trips],['レジャー',parks]];
+  var mx=Math.max.apply(null,items.map(function(x){return x[1];}))||1;
+  document.getElementById('bars').innerHTML=items.map(function(x){
+    var pct=Math.round(x[1]/postYear*100);
+    return '<div class="bar-row"><span class="bar-nm">'+x[0]+'</span>'+
+      '<span class="bar-track"><span class="bar-fill" style="width:'+(x[1]/mx*100)+'%"></span></span>'+
+      '<span class="bar-vl">'+pct+'%</span></div>';
+  }).join('')+
+  '<p class="src">月々のデート代しか見ていないと、年間の'+
+   Math.round((events+trips+parks)/postYear*100)+'%を見落とすことになります。</p>';
+
+  // ---- 配分の診断（同じ金額で「残るもの」を増やすための材料）----
+  // 記憶に残りやすい支出＝旅行・レジャー・記念日／残りにくい支出＝移動費と惰性の外食
+  var memory=trips+parks+events;
+  var routine=postMonthly*12;
+  var moveYear=freq*moveCost*12;
+  var mRatio=Math.round(memory/postYear*100);
+  var advice;
+  if(mRatio>=70){
+    advice='<p><strong>思い出に残る支出の比率が高い配分です（'+mRatio+'%）。</strong>'+
+      '旅行やイベントに厚く配分できています。総額が負担に感じる場合、'+
+      '減らすなら回数ではなく<strong>1回あたりの単価</strong>（宿のグレード・行き先の距離）から見るほうが、失うものが小さく済みます。</p>';
+  } else if(mRatio>=45){
+    advice='<p><strong>月々の支出と、思い出になる支出のバランスが取れた配分です（記憶に残る側 '+mRatio+'%）。</strong>'+
+      'このまま維持できるなら、無理に削る必要はありません。'+
+      '余力を作りたい場合は、まず移動費（年 '+yen(moveYear)+'）と店選びから見直すと、体験を減らさずに調整できます。</p>';
+  } else {
+    advice='<p><strong>月々の支出に予算の多くが吸われている配分です（思い出に残る側は '+mRatio+'%）。</strong>'+
+      '同じ年間 '+yen(postYear)+' を使うなら、'+
+      '<strong>日常のデートを少し軽くして、その分を旅行や記念日に寄せる</strong>ほうが記憶に残りやすくなります。'+
+      '月々を1回あたり2割抑えると年 '+yen(routine*0.2)+' 浮き、旅行の回数を増やすか、1回のグレードを上げられます。</p>';
+  }
+  document.getElementById('haibun').innerHTML=
+    '<div class="split-3">'+
+    '<div class="split-card"><p class="nm">思い出に残りやすい支出</p><p class="amt">'+yen(memory)+'</p>'+
+    '<p class="note">旅行・レジャー・記念日。回数と単価で調整できます</p></div>'+
+    '<div class="split-card"><p class="nm">日常の支出</p><p class="amt">'+yen(routine)+'</p>'+
+    '<p class="note">月々のデート代と移動費。積むと大きいが記憶には残りにくい</p></div>'+
+    '<div class="split-card"><p class="nm">移動費だけで</p><p class="amt">'+yen(moveYear)+'</p>'+
+    '<p class="note">ここは減らしても失うものがほぼありません</p></div>'+
+    '</div>'+advice;
+
+  // 負担の分け方
+  var my=detail?n('my'):0, pt=detail?n('pt'):0;
+  var target=showPost?postYear:preMonthly*12;
+  var cards='<div class="split-3">'+
+    '<div class="split-card"><p class="nm">あなたが全額</p><p class="amt">'+yen(target)+'</p>'+
+    '<p class="note">分かりやすい。ただし期間が延びるほど負担が積み上がります</p></div>'+
+    '<div class="split-card"><p class="nm">折半</p><p class="amt">'+yen(target/2)+'</p>'+
+    '<p class="note">同じ額を出す。収入差があると片方の負担感が大きくなります</p></div>';
+  if(my>0&&pt>0){
+    var r=my/(my+pt);
+    cards+='<div class="split-card"><p class="nm">収入比（あなた '+Math.round(r*100)+'%）</p>'+
+      '<p class="amt">'+yen(target*r)+'</p>'+
+      '<p class="note">相手は '+yen(target*(1-r))+'。負担感は揃いますが、金額が違うことへの納得が要ります</p></div>';
+  } else {
+    cards+='<div class="split-card"><p class="nm">収入比</p><p class="amt">—</p>'+
+      '<p class="note">詳細版で手取りを入れると、収入比の案も出ます</p></div>';
+  }
+  cards+='</div>';
+  document.getElementById('split').innerHTML=cards;
+
+  var L=[];
+  if(showPre) L.push(['/tools/konkatsu-type-shindan/','婚活タイプ診断｜使える時間とお金から手段を選ぶ']);
+  if(showPost) L.push(['/articles/kinsen-kachikan-check/','金銭感覚のすり合わせ方｜聞きにくいお金の話を切り出す']);
+  L.push(['/tools/seikatsuhi-simulator/','ふたりの生活費シミュレーター｜同居した場合の月額と分担']);
+  if(svc==='sodan') L.push(['/tools/soudanjo-simulator/','結婚相談所 料金シミュレーター']);
+  document.getElementById('links').innerHTML='<ul>'+L.map(function(x){
+    return '<li><a href="'+x[0]+'">'+x[1]+'</a></li>';}).join('')+'</ul>';
+
+  document.getElementById('res').classList.add('show');
+  try{gtag('event','tool_result',{tool:'koisaihi',mode:detail?'detail':'simple'});}catch(e){}
+  document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
+});
+})();
+</script>
