@@ -46,8 +46,10 @@ https://www.noe-match.com/articles/konkatsu-soudan-saki/
 https://www.noe-match.com/articles/pocchari-konkatsu/
 https://www.noe-match.com/articles/zexy-enmusubi-data/
 https://www.noe-match.com/articles/pairs-kaiin-data/
+https://www.noe-match.com/articles/omiai-danjohi-data/
+https://www.noe-match.com/articles/with-nenreiso-data/
 ```
-（konkatsu-soudan-saki / pocchari-konkatsu は 2026-08-09 公開。zexy-enmusubi-data / pairs-kaiin-data は 2026-08-10 公開。Day バックログとは別枠で申請してよい）
+（konkatsu-soudan-saki / pocchari-konkatsu は 2026-08-09 公開。zexy-enmusubi-data / pairs-kaiin-data は 2026-08-10 公開。omiai-danjohi-data / with-nenreiso-data は 2026-08-17 公開。Day バックログとは別枠で申請してよい）
 
 ### 申請済み
 

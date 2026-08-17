@@ -1,5 +1,55 @@
 # Agent Run Log
 
+## 2026-08-17　週次記事工場ラン｜型A×2本生成（omiai-danjohi-data / with-nenreiso-data）+ 寄せ直し2本
+
+### Phase 4-0 計測ゲート
+
+`asp_results.md` の `last_updated` が 2026-08-09（8日以内）のため、**ゲート開放**。CTAブロックを設置した。
+
+### 実施内容
+
+- `omiai-danjohi-data/index.html` 生成完了
+  - タイトル：Omiaiの男女比｜公表データと、比率が体感と食い違う理由
+  - BlogPosting JSON-LD / FAQPage JSON-LD（6問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：浅田さん（28歳・事務職）、大石さん（32歳・営業）
+  - 内部リンク4本 / CTAブロック（ユーブライド afb）
+
+- `with-nenreiso-data/index.html` 生成完了
+  - タイトル：withの年齢層｜20代中心と言われる根拠を公表データで確認する
+  - BlogPosting JSON-LD / FAQPage JSON-LD（6問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：小笠原さん（25歳・保育士）、後藤さん（29歳・IT企業）
+  - 内部リンク4本 / CTAブロック（ユーブライド afb）
+
+- `sitemap.xml` / `sitemap-all.xml` に2記事分URLを追加（lastmod 2026-08-17）
+- `sitemap_sync.py` で5件の日付ズレを修正
+- `index.html` 更新：全185→187記事（hero-badge・見出し・stat-tile）、データ・統計19→21記事
+- `articles/index.html` 更新：データ・統計19→21記事、arc-no 20/21追加
+- `keyword_queue.json` 2件を done + published 2026-08-17 に更新
+- `factory_audit.py`：新規FAIL 0件（既存バックログ71件は本ランの生成物に無関係）✅
+
+### 寄せ直し（silent_scan.py 結果から2本・無修飾ヘッドタームを優先）
+
+| slug | from（変更前） | to（変更後） |
+|------|-------------|------------|
+| success-stories | マッチングアプリで結婚した人の体験談｜リアルな成婚ストーリーと成功パターン | 看護師・会社員がPairs・Omiaiで結婚した体験談｜成婚まで何ヶ月かかったか |
+| compare-konkatsu | 婚活アプリ比較｜ユーブライド vs Omiai vs Match どれが一番結婚に近い？ | 30代が選ぶ婚活アプリ｜ユーブライド・Omiai の向き不向きを職業・年齢別に整理 |
+
+変更したのはタイトル・h1・breadcrumb・blockquote・dateModified のみ。本文・構成は変更なし。
+
+### インデックス申請キュー追加
+
+`agent/index_request_queue.md` に以下2件を追記（申請は人間の作業）：
+- https://www.noe-match.com/articles/omiai-danjohi-data/
+- https://www.noe-match.com/articles/with-nenreiso-data/
+
+### 次にやること（人間の作業）
+
+1. **インデックス申請**：omiai-danjohi-data / with-nenreiso-data の2件（Search Console から申請）
+2. **Day 4バックログ**：`agent/index_request_batches.md` の Day 4 グループ（10本）を申請
+3. **本番URL確認**：https://www.noe-match.com/articles/omiai-danjohi-data/ / with-nenreiso-data/ が200を返すことを確認
+
+---
+
 ## 2026-08-10　週次記事工場ラン｜型A×2本生成（zexy-enmusubi-data / pairs-kaiin-data）+ 寄せ直し2本
 
 ### Phase 4-0 計測ゲート
