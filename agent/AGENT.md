@@ -374,6 +374,11 @@ success-rate-data 1本（52表示・平均34.8位・1クリック）が稼いで
 | 妊娠線クリーム・マタニティコスメ | 予防と産後のケア | `ninshinsen-care`（同上） | CEOが申請 |
 | 骨盤矯正・整体 | 産後の骨盤ケアの開始時期 | `sango-kotsuban`（同上） | CEOが申請 |
 | 育毛・ヘアケア（女性向け） | 産後の抜け毛・白髪 | `sango-nukege` `sango-kami` `sango-shiraga`（同上） | CEOが申請 |
+| 衣装レンタル（留袖・訪問着・ドレス） | 親族衣装の相場 | `kekkonshiki-isho-rental`（**11.8位・表示8**） | 未申請 |
+| ブライダルインナー | 選び方・購入先 | `bridal-inner-guide`（**10.0位・表示3**） | 未申請 |
+| 妊活サプリ（男性向け） | 成分検証 | `mitas-formen-kuchikomi`（**12.0位**）`mitocore-kuchikomi` | 8/1に「A8に該当案件なし」と実測。**再確認が必要** |
+
+
 
 **弁護士案件の設置ルール（申請が通った時点で適用する）**
 

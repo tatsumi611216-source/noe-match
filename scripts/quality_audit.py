@@ -107,7 +107,7 @@ def check(slug, h, exists):
             d.append(("fix", "LD", "他ページのURLが混入: %s" % u))
 
     # --- 広告の作法 -------------------------------------------------
-    for a in re.finditer(r'<a[^>]*href="https://px\.a8\.net[^"]*"[^>]*>', h):
+    for a in re.finditer(r'<a[^>]*href="https://(?:px\.a8\.net|t\.afi-b\.com)[^"]*"[^>]*>', h):
         tag = a.group(0)
         if "nofollow" not in tag or "sponsored" not in tag:
             d.append(("fix", "広告", "rel属性が不足: %s" % tag[:60]))
@@ -115,7 +115,7 @@ def check(slug, h, exists):
             d.append(("check", "広告", "target=_blank が無い"))
     # ★JS文字列内の候補まで数えると誤検知になる（結果連動型ツールで11件と出た）。
     #   実際にリンクとして出るのは <a> タグだけなので、そこで数える。
-    ads = len(re.findall(r'<a[^>]*href="https://px\.a8\.net', h))
+    ads = len(re.findall(r'<a[^>]*href="https://(?:px\.a8\.net|t\.afi-b\.com)', h))
     if ads and ">PR<" not in h and "【PR】" not in h and "本ページはプロモーション" not in h:
         d.append(("fix", "広告", "PRラベルが見当たらない（広告%d件）" % ads))
     if ads > 4:
