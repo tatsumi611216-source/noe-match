@@ -167,6 +167,44 @@ def check(slug, h, exists):
     return d
 
 
+def fixed_pages():
+    """固定ページ（トップ・ポリシー・一覧）。
+
+    ★2026-08-18: 一括修正が articles/ と tools/ しか見ておらず、
+    ポリシー4ページのアンカー切れと記事一覧ページの検証不能主張を見逃した。
+    「全記事を直した」の対象範囲に固定ページが入っていなかったのが原因。
+    """
+    out = []
+    for f in (glob.glob(os.path.join(BASE, "*.html"))
+              + glob.glob(os.path.join(BASE, "policy", "*.html"))
+              + [os.path.join(BASE, "articles", "index.html")]):
+        if os.path.basename(f).startswith("google"):
+            continue
+        out.append((os.path.relpath(f, BASE).replace("\\", "/"),
+                    f, io.open(f, encoding="utf-8").read()))
+    return out
+
+
+def redirects():
+    """リダイレクト形式のページ。行き先が実在するかだけを見る。"""
+    out = []
+    for d in sorted(os.listdir(os.path.join(BASE, "articles"))):
+        p = os.path.join(BASE, "articles", d, "index.html")
+        if not os.path.exists(p):
+            continue
+        h = io.open(p, encoding="utf-8").read()
+        if 'http-equiv="refresh"' not in h.lower():
+            continue
+        m = re.search(r"url=([^\"'>]+)", h, re.I)
+        t = (m.group(1).strip() if m else "").replace(
+            "https://www.noe-match.com", "").replace("https://noe-match.com", "")
+        ok = t.startswith("/") and os.path.exists(
+            os.path.join(BASE, t.lstrip("/"), "index.html"))
+        if not ok:
+            out.append((d, t))
+    return out
+
+
 def main():
     arts = real_articles()
     tls = tools()
@@ -177,6 +215,25 @@ def main():
         exists.add("/tools/%s/" % s)
 
     rows = []
+    for slug, t in redirects():
+        rows.append({"slug": slug, "kind": "redirect", "sev": "fix",
+                     "cat": "リンク", "msg": "リダイレクト先が実在しない: %s" % t})
+    for slug, p, h in fixed_pages():
+        for pat in [r"のべマッチ数", r"登録・課金して検証", r"実使用経験", r"マッチングアプリ大学"]:
+            if re.search(pat, h):
+                rows.append({"slug": slug, "kind": "fixed", "sev": "fix",
+                             "cat": "主張", "msg": "検証できない主張の残存: %s" % pat})
+        top = os.path.join(BASE, "index.html")
+        top_ids = set(re.findall(r'<section id="([a-z\-]+)"',
+                                 io.open(top, encoding="utf-8").read()))
+        for a in sorted(set(re.findall(r'href="/#([a-z\-]+)"', h))):
+            if a not in top_ids:
+                rows.append({"slug": slug, "kind": "fixed", "sev": "fix",
+                             "cat": "リンク", "msg": "トップに無いアンカー: /#%s" % a})
+        for u in sorted(set(re.findall(r'href="(/(?:articles|tools)/[a-z0-9\-]+/)"', h))):
+            if u not in exists:
+                rows.append({"slug": slug, "kind": "fixed", "sev": "fix",
+                             "cat": "リンク", "msg": "リンク切れ: %s" % u})
     for slug, p, h in arts + tls:
         kind = "tool" if any(slug == t[0] for t in tls) else "article"
         for sev, cat, msg in check(slug, h, exists):
