@@ -96,19 +96,19 @@ def next_move(pos, imp, eff, known, cta, gap, indexed, role):
     return "**看板を掛け替え**（表示ゼロ＝圏外）"
 
 
-def build_roles():
-    """index.html のグループ分けから、記事の役割（主戦場／入口）を決める。"""
-    p = os.path.join(BASE, "index.html")
-    if not os.path.exists(p):
+def _roles_from(path, tag):
+    """グループ見出し（tag）ごとに、その配下の記事slugへ役割を割り当てる。"""
+    if not os.path.exists(path):
         return {}
-    idx = io.open(p, encoding="utf-8", errors="replace").read()
-    pos = [m.start() for m in re.finditer(r"<h3", idx)] + [len(idx)]
+    idx = io.open(path, encoding="utf-8", errors="replace").read()
+    pos = [m.start() for m in re.finditer(r"<" + tag, idx)] + [len(idx)]
     role = {}
     for a, b in zip(pos, pos[1:]):
         blk = idx[a:b]
         if not re.search(r"（\d+記事）", blk):
             continue
-        name = re.sub(r"（\d+記事）", "", re.sub("<[^>]+>", "", blk[:blk.find("</h3>")])).strip()
+        head = blk[:blk.find("</" + tag + ">")]
+        name = re.sub(r"（\d+記事）", "", re.sub("<[^>]+>", "", head)).strip()
         slugs = set(re.findall(r"/articles/([\w\-]+)/", blk))
         if "新生活" in name or "お金" in name:
             r = "**主戦場**"
@@ -118,6 +118,21 @@ def build_roles():
             r = "その他"
         for sg in slugs:
             role[sg] = r
+    return role
+
+
+def build_roles():
+    """記事一覧のグループ分けから、記事の役割（主戦場／入口）を決める。
+
+    2026-08-17 にトップから記事一覧が articles/index.html へ分離され、
+    見出しも h3 → h2 になった。新しい置き場を先に見て、
+    取れなければ旧トップ（h3）へ落とす。
+    """
+    role = _roles_from(os.path.join(BASE, "articles", "index.html"), "h2")
+    if len(role) < 20:
+        old = _roles_from(os.path.join(BASE, "index.html"), "h3")
+        if len(old) > len(role):
+            return old
     return role
 
 
