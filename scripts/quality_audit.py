@@ -76,9 +76,22 @@ def check(slug, h, exists):
         d.append(("fix", "混入", "英単語の紛れ込み: %s" % m.group(0)))
 
     # --- 内部リンク -------------------------------------------------
+    # ★2026-08-18: /privacy.html（正しくは /privacy-policy.html）が
+    #   自動生成された3本に入っていた。ディレクトリ形式だけ見ていて .html を
+    #   見ていなかったため検知できなかった。トップの #アンカーも同様に見る。
     for u in sorted(set(re.findall(r'href="(/(?:articles|tools)/[a-z0-9\-]+/)"', h))):
         if u not in exists:
             d.append(("fix", "リンク", "リンク切れ: %s" % u))
+    for u in sorted(set(re.findall(r'href="(/[a-z0-9\-]+\.html)"', h))):
+        if not os.path.exists(os.path.join(BASE, u.lstrip("/"))):
+            d.append(("fix", "リンク", "リンク切れ: %s" % u))
+    top = os.path.join(BASE, "index.html")
+    if os.path.exists(top):
+        top_ids = set(re.findall(r'<section id="([a-z\-]+)"',
+                                 io.open(top, encoding="utf-8").read()))
+        for a in sorted(set(re.findall(r'href="/#([a-z\-]+)"', h))):
+            if a not in top_ids:
+                d.append(("fix", "リンク", "トップに無いアンカー: /#%s" % a))
 
     # --- 構造化データ -----------------------------------------------
     types = []
