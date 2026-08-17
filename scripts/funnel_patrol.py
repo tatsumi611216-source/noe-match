@@ -97,6 +97,32 @@ def check(slug, path, rec):
                 magnet=slug in LEAD_MAGNET, gaps=gaps)
 
 
+def zero_exit():
+    """全実記事のうち、出口（広告・ツール・LINE）が一つも無いものを返す。
+
+    原則（2026-08-18 CEO確認）:
+    **「全記事にキャッシュポイント」はNG。「全記事に出口」はマスト。**
+    - 広告は文脈が成立する記事だけ（合わない広告はCTRゼロ＋信頼毀損）
+    - ツールは全記事OK（内部接続なのでリスクなし）
+    - LINEは集客装置クラスタ
+    この検査を入れた日、出口ゼロの記事が19本あった（pairs-men等）。
+    読者がどこにも進めない行き止まりで、貼り忘れは検査でしか見つからない。
+    """
+    out = []
+    for f in glob.glob(os.path.join(BASE, "articles", "*", "index.html")):
+        slug = os.path.basename(os.path.dirname(f))
+        h = io.open(f, encoding="utf-8").read()
+        if len(h) < 3000 or 'http-equiv="refresh"' in h.lower():
+            continue
+        m = re.search(r'<link rel="canonical" href="([^"]+)"', h)
+        if m and ("/articles/%s/" % slug) not in m.group(1):
+            continue
+        ads = len(re.findall(r'<a[^>]*href="https://(?:px\.a8\.net|t\.afi-b\.com)', h))
+        if ads == 0 and "/tools/" not in h and "lin.ee" not in h:
+            out.append(slug)
+    return sorted(out)
+
+
 def main():
     G, period = gsc()
     rows = []
@@ -136,8 +162,13 @@ def main():
           "  KPIがLINE@登録だから。ただしLINE導線が無いのは欠陥として数える",
           "- 回収クラスタは広告ゼロを欠陥として数える。ただし台帳のYMYL枠・文脈の制約があるため、",
           "  **実際に置けるかは案件台帳（agent/AGENT.md）で個別に確認すること**", ""]
+    ze = zero_exit()
+    L += ["## 出口ゼロの記事（全記事対象・射程外も含む）", "",
+          (("**%d本**：" % len(ze)) + " ".join("`%s`" % x for x in ze)) if ze
+          else "**0本** — 全記事に出口（広告・ツール・LINEのいずれか）がある", ""]
     io.open(OUT, "w", encoding="utf-8").write("\n".join(L) + "\n")
     print("書き出し:", OUT)
+    print("出口ゼロ:", len(ze), "本")
     print("射程内 %d本 / 欠けあり %d本" % (len(rows), len(bad)))
     for k, v in c.most_common():
         print("  %-14s %d" % (k, v))
