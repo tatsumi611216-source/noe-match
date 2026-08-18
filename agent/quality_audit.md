@@ -8,15 +8,8 @@
 
 | 重大度 | 分類 | 件数 |
 |---|---|---|
-| check | 鮮度 | 3 |
 
-**fix 合計 0件／check 合計 3件**
+**fix 合計 0件／check 合計 0件**
 
 ## 明細
 
-
-### [check] 鮮度
-
-- `age-data` — 古い年の表記: 2024年時点
-- `appkon-wariai-data` — 古い年の表記: 2023年時点
-- `omiai-danjohi-data` — 古い年の表記: 2024年時点

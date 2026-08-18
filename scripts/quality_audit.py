@@ -58,6 +58,68 @@ def tools():
             for p in sorted(glob.glob(os.path.join(BASE, "tools", "*", "index.html")))]
 
 
+# --- 鮮度チェックの定義 ---------------------------------------------
+# ★2026-08-19 改修（CEO承認済み）
+#
+# 旧実装は `(20(2[0-4]))年(現在|時点|最新|版)` の1本だけで、
+# 見たいものを外し、見なくていいものを拾っていた。
+#
+#   (a) 誤検知: 「2024年時点の累計会員数は約1,000万人（各社公式発表）」のように
+#       **出典の公表時点を正しく明記した記述**まで一律で拾っていた。
+#       実測で残っていた3件（age-data / appkon-wariai-data / omiai-danjohi-data）は
+#       全部これで、記事側に直しようが無い＝監査が使われなくなる原因になっていた。
+#   (b) 見逃し: 年の**前**に新しさの語が来る形を1件も拾えなかった。
+#       hatsushon-nenmei-data は「最新データ（2023年）」「2023年（最新）」
+#       「最新値（2023年）」と3箇所で2023年を最新と称していたが、
+#       旧実装の検知は無関係な「2022年時点で〜（各種調査より推計）」1件だけで、
+#       本物の陳腐化は人手で見つけている。
+#
+# 改修の方針は3つ。
+#   1. 語順を問わない（「2023年（最新）」も「最新データ（2023年）」も拾う）
+#   2. 「時点」はトリガーから外す。出典の公表時点を書く定型であり、
+#      記事全体の古さは直前の「最終更新」チェックが見ている
+#   3. 年が**出典名を含む括弧の中**にあるときは出典表記なので除外する
+STALE_YEAR = r"20(?:1\d|2[0-4])"
+RECENCY = r"(?:最新|現在|今年)"
+SOURCE_WORD = re.compile(r"出典|公表|発表|調査|統計|白書|報告|集計|推計|省|庁|"
+                         r"研究所|総研|各社|公式|当時|確定数|概数")
+STALE_PATTERNS = [
+    # 2024年最新版 ／ 2023年（最新）／ 2024年現在
+    re.compile(r"%s年\s*[（(【]?\s*%s" % (STALE_YEAR, RECENCY)),
+    # 最新データ（2023年）／ 最新値（2023年）／ 現在（2024年）
+    re.compile(r"%s[^。<>（()]{0,6}[（(]\s*%s年" % (RECENCY, STALE_YEAR)),
+    # 2024年版（出典の版表記は下の括弧判定で落ちる）
+    re.compile(r"%s年版" % STALE_YEAR),
+]
+
+
+def _in_source_paren(text, pos):
+    """pos の位置が「出典名を含む括弧」の内側かどうか。"""
+    open_at = max(text.rfind("（", 0, pos), text.rfind("(", 0, pos))
+    if open_at < 0:
+        return False
+    close_at = min([i for i in (text.find("）", open_at), text.find(")", open_at))
+                    if i != -1] or [-1])
+    if close_at == -1 or close_at < pos:
+        return False
+    return bool(SOURCE_WORD.search(text[open_at:close_at]))
+
+
+def stale_recency(body):
+    """古い年を「最新・現在」と称している箇所を返す（出典の時点表記は除く）。"""
+    out, seen = [], set()
+    for pat in STALE_PATTERNS:
+        for m in pat.finditer(body):
+            y = re.search(STALE_YEAR, m.group(0))
+            if y and _in_source_paren(body, m.start() + y.start()):
+                continue
+            frag = re.sub(r"\s+", " ", m.group(0)).strip()
+            if frag not in seen:
+                seen.add(frag)
+                out.append(frag)
+    return out
+
+
 def check(slug, h, exists):
     """1ページ分の欠陥を返す。"""
     d = []
@@ -152,8 +214,8 @@ def check(slug, h, exists):
         y, mo = int(m.group(1)), int(m.group(2))
         if (2026 - y) * 12 + (8 - mo) >= 6:
             d.append(("check", "鮮度", "最終更新が%d年%d月" % (y, mo)))
-    for m in re.finditer(r"(20(2[0-4]))年(現在|時点|最新|版)", body):
-        d.append(("check", "鮮度", "古い年の表記: %s" % m.group(0)))
+    for hit in stale_recency(body):
+        d.append(("check", "鮮度", "古い年を「最新」として書いている: %s" % hit))
 
     # --- 見出しと本文 -----------------------------------------------
     h2 = re.findall(r"<h2[^>]*>(.*?)</h2>", h, re.S)
