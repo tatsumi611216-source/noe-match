@@ -20,8 +20,7 @@
 | Day | 状態 |
 |-----|------|
 | 0〜3 | ✅ 申請済み（2026-08-01 / 08-02 / 08-08 / 08-09） |
-| **4** | **← 次はここ** |
-| 5〜8 | 未申請 |
+| 4〜8 | ✅ 申請済み（**2026-08-19 GSC実機で抜き取り確認**。Day4先頭・Day5・Day8末尾がすべて「リクエスト済み」＝バックログは消化済み。台帳の更新が漏れていただけ） |
 
 **除外：note専用テスト群5本には絶対に申請しない**
 （`kaden-rental-vs-kounyu` / `nurse-konkatsu-soudanjo` / `soudanjo-hikaku` /
@@ -37,17 +36,9 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
-
-
-
+（なし——2026-08-19にGSC実機で全件「リクエスト済み」を確認し、下の申請済みへ移した）
 
 ```
-https://www.noe-match.com/articles/konkatsu-soudan-saki/
-https://www.noe-match.com/articles/pocchari-konkatsu/
-https://www.noe-match.com/articles/zexy-enmusubi-data/
-https://www.noe-match.com/articles/pairs-kaiin-data/
-https://www.noe-match.com/articles/omiai-danjohi-data/
-https://www.noe-match.com/articles/with-nenreiso-data/
 ```
 （konkatsu-soudan-saki / pocchari-konkatsu は 2026-08-09 公開。zexy-enmusubi-data / pairs-kaiin-data は 2026-08-10 公開。omiai-danjohi-data / with-nenreiso-data は 2026-08-17 公開。Day バックログとは別枠で申請してよい）
 
@@ -61,6 +52,15 @@ https://www.noe-match.com/articles/with-nenreiso-data/
 | /articles/sango-crisis-guide/ | 2026-08-13 | 2026-08-13 | |
 | /tools/fugenbyo-check/ | 2026-08-13 | 2026-08-13 | |
 | /tools/saigenbyo-check/ | 2026-08-13 | 2026-08-13 | |
+| /articles/konkatsu-soudan-saki/ | 2026-08-09 | 〜2026-08-19確認 | |
+| /articles/pocchari-konkatsu/ | 2026-08-09 | 〜2026-08-19確認 | |
+| /articles/zexy-enmusubi-data/ | 2026-08-10 | 〜2026-08-19確認 | |
+| /articles/pairs-kaiin-data/ | 2026-08-10 | 〜2026-08-19確認 | |
+| /articles/omiai-danjohi-data/ | 2026-08-17 | 〜2026-08-19確認 | |
+| /articles/with-nenreiso-data/ | 2026-08-17 | 〜2026-08-19確認 | |
+| /tools/koisaihi-simulator/ | 2026-08-18 | **2026-08-19** | |
+| /articles/marrish-saikon-data/（再クロール） | — | **2026-08-19** | |
+| /tools/rikongo-seikatsuhi/ | 2026-08-16 | **2026-08-19** | |
 | | | | |
 
 ---
