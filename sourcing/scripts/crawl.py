@@ -206,7 +206,13 @@ def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: in
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futures = {ex.submit(crawl_one, it, source_site, cache): it for it in seed}
         for fut in as_completed(futures):
-            results.append(fut.result())
+            item = futures[fut]
+            try:
+                results.append(fut.result())
+            except Exception as e:  # 1社の想定外エラーで巡回全体を落とさない
+                results.append({"status": f"error:{type(e).__name__}",
+                                "company": item.get("company", {}),
+                                "records": [], "pages": 0})
     cache.save()
 
     # 差分取り込み: 取得成功した企業のみ ingest（未更新/失敗は現状維持）

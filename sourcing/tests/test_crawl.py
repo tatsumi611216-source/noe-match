@@ -15,6 +15,7 @@ sys.path.insert(0, str(SCRIPTS))
 from common import connect  # noqa: E402
 from crawl import crawl_seed  # noqa: E402
 from gbiz_client import parse_gbiz  # noqa: E402
+from http_cache import to_ascii_url  # noqa: E402
 from load_seed import load_csv  # noqa: E402
 
 CAREERS_HTML = """<html><head>
@@ -123,6 +124,14 @@ def run():
            WHERE c.name_normalized LIKE '%フォールバック商事%' GROUP BY c.id""").fetchone()
     assert row and row[1] == 1, f"フォールバック反映失敗 {row}"
     print(f"[OK] 採用URL外れ→企業サイトから辿り直し: 求人{row[1]}件を取得")
+
+    # --- 非ASCII URL の送信可能化（日本語パスの採用ページ対策） ---
+    assert to_ascii_url("https://example.co.jp/採用/中途") == \
+        "https://example.co.jp/%E6%8E%A1%E7%94%A8/%E4%B8%AD%E9%80%94"
+    assert to_ascii_url("https://example.co.jp/%E6%8E%A1%E7%94%A8/") == \
+        "https://example.co.jp/%E6%8E%A1%E7%94%A8/", "二重符号化してはいけない"
+    assert to_ascii_url("https://日本語.jp/jobs").startswith("https://xn--")
+    print("[OK] 非ASCII URL: パーセント符号化とIDN変換（二重符号化なし）")
 
     conn.close()
     print("\n=== クローラ層 全テスト通過 ===")

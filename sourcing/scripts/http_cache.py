@@ -10,11 +10,31 @@ import time
 import urllib.error
 import urllib.request
 from pathlib import Path
-from urllib.parse import urlparse
+from urllib.parse import quote, urlparse, urlsplit, urlunsplit
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEFAULT_CACHE = BASE_DIR / "data" / "http_cache.json"
 USER_AGENT = "NoeSourcingBot/0.1 (+contact: sales-tool; respects robots.txt)"
+
+
+def to_ascii_url(url: str) -> str:
+    """日本語を含むURL（IRI）を送信可能なASCII URLへ変換する。
+
+    採用ページには /採用/ のような非ASCIIパスが実在し、そのまま urllib に渡すと
+    UnicodeEncodeError で落ちる。既存の %xx は safe に '%' を含めて二重符号化を防ぐ。
+    """
+    parts = urlsplit(url)
+    netloc = parts.netloc
+    if any(ord(ch) > 127 for ch in netloc):  # 国際化ドメイン
+        try:
+            host = parts.hostname or ""
+            netloc = netloc.replace(host, host.encode("idna").decode("ascii"))
+        except (UnicodeError, AttributeError):
+            pass
+    path = quote(parts.path, safe="/%:@&=+$,~!*'()")
+    query = quote(parts.query, safe="%:@&=+$,/?~!*'()")
+    fragment = quote(parts.fragment, safe="%:@&=+$,/?~!*'()")
+    return urlunsplit((parts.scheme, netloc, path, query, fragment))
 
 
 class HttpCache:
@@ -52,7 +72,7 @@ class HttpCache:
         if prev.get("last_modified"):
             headers["If-Modified-Since"] = prev["last_modified"]
 
-        req = urllib.request.Request(url, headers=headers)
+        req = urllib.request.Request(to_ascii_url(url), headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 body = resp.read().decode(resp.headers.get_content_charset() or "utf-8", "replace")
