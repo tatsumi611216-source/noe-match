@@ -70,6 +70,8 @@ python3 scripts/generate_report.py
 | scripts/edinet_client.py | EDINET有報→子会社抽出（抽出部テスト済／実接続は要キー・CSV校正残） | ◐ |
 | scripts/score.py | 採用の困り度スコア | ✅ |
 | scripts/generate_report.py | HTMLレポート生成 | ✅ |
+| scripts/export_csv.py | 営業リスト・求人明細のCSV出力 | ✅ |
+| scripts/run_daily.py | 日次実行の束ね（シード→クロール→スコア→レポート） | ✅ |
 
 ## テスト
 
@@ -79,9 +81,23 @@ python3 tests/test_crawl.py      # シード→クロール(file://)→取込→
 python3 tests/test_edinet.py     # 有報CSV相当→子会社抽出→corporate_relations→v_group_targets
 ```
 
+## 起点リスト（seeds/）
+
+| ファイル | 内容 |
+|---|---|
+| game_companies.csv | ゲーム大手6社（初期の動作確認用） |
+| startups_probe.csv | ATS採用ページのスタートアップ6社（HERP/HRMOS） |
+| multi_industry.csv | 全業種67社。SaaS/インターネット/金融/小売/EC/製造/建設・不動産/物流/医療/HR/広告/教育/外食など14業種 |
+
+## 実行環境の制約
+
+Cowork（クラウドセッション）からの外部クロールは egress ポリシーで遮断される。
+巡回は GitHub Actions（`.github/workflows/sourcing-crawl.yml`）で実行し、
+DBとHTTPキャッシュは actions/cache で引き継ぐ。成果物（report.html / CSV / DB）は
+artifact からダウンロードする。
+
 ## 未実装（次工程）
 
 - 起点リストの自動生成（JPX上場一覧の取得、資金調達リリースの収集・パース）
 - EDINET実データでのCSV要素校正（extract_subsidiaries のチューニング）
-- 採用ページに JobPosting が無いサイトの素HTMLフォールバック
-- 定期実行（毎朝の差分巡回）・CSVエクスポート
+- 採用ページに JobPosting が無いサイトの素HTMLフォールバック（現状の最大の取りこぼし要因）
