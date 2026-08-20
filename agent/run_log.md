@@ -898,3 +898,59 @@ Phase 2の強化対象なし（唯一の候補が2週間ルールに抵触）。
 |-------|---------|------|------|
 | 該当なし（全クエリに対応記事あり） | - | - | - |
 
+
+---
+
+## 実行記録 2026-08-20（週次定期実行）
+
+### Phase 1：新規記事生成
+
+**処理キュー（pending先頭2件）：**
+
+| スラッグ | キーワード | ステータス |
+|---------|----------|---------|
+| tapple-kaiin-data | タップル 会員数 年齢 | done（2026-08-20公開） |
+| bachelor-shinsa-data | バチェラーデート 審査 通過率 | done（2026-08-20公開） |
+
+**生成記事：**
+
+1. `articles/tapple-kaiin-data/index.html`
+   - タイトル：タップルの会員数と年齢構成｜「20代が多い」は数字で言えるのか【2026年版】
+   - CTA：ユーブライド（afb）
+   - FAQ：5問、内部リンク：4本
+
+2. `articles/bachelor-shinsa-data/index.html`
+   - タイトル：バチェラーデートの審査通過率は公表されているか｜審査制の実態を確認する【2026年版】
+   - CTA：バチェラーデート（A8）× 2箇所
+   - FAQ：5問、内部リンク：3本
+
+**更新ファイル：**
+- `articles/index.html`：データ・統計カテゴリ（21→23記事）
+- `index.html`：全187記事→全189記事、カテゴリ表記更新
+- `sitemap.xml`：2件追加（tapple-kaiin-data, bachelor-shinsa-data）
+- `sitemap-all.xml`：2件追加（同上）
+- `agent/keyword_queue.json`：2件をdoneに更新
+
+**factory_audit.py結果：**
+- FAIL 39本（pre-existing・新規増加なし）
+- STRUCT 185件（pre-existing・新記事2件のSTRUCTはサイト設計上の既存課題）
+- 新記事はいずれもFAIL対象外（6,000字超、FAQ5問以上、PR表記あり）
+
+### Phase 2：silent_scan.py に基づく寄せ直し
+
+**対象（無修飾ヘッドターム上位2本）：**
+
+| スラッグ | 寄せ直し前タイトル | 寄せ直し後タイトル |
+|---------|-------------------|-------------------|
+| compare-popular | 30代が婚活で使うPairs・with・Omiai比較｜目的別の違いと選び方【2026年版】 | 会社員・看護師が選ぶPairs・with・Omiai比較｜職業別の使い分けと向き不向き【2026年版】 |
+| compare-price | マッチングアプリ料金を男女・目的別に比較｜30代のコスパ最高プランを整理【2026年版】 | 社会人のマッチングアプリ料金比較｜会社員・看護師・公務員のコスパ最高プラン【2026年版】 |
+
+変更箇所：title / og:title / twitter:title / h1 / Article JSON-LD headline / BreadcrumbList第3項 / 導入blockquote / article:modified_time / dateModified → 2026-08-20
+sitemap.xml および sitemap-all.xml の両記事 lastmod も 2026-08-20 に更新。
+
+### Phase 3：後処理
+
+- `agent/index_request_queue.md`：新記事2件を「未申請」セクションに追加
+- `agent/note_drafts/tapple-kaiin-data.md`：note下書き生成
+- `agent/note_drafts/bachelor-shinsa-data.md`：note下書き生成
+- `agent/rewrites.json`：compare-popular / compare-price を2026-08-20の記録に更新
