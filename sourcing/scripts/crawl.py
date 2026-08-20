@@ -121,20 +121,20 @@ def discover_job_links(base_url: str, html: str, limit: int = MAX_DISCOVER_PAGES
     return links
 
 
-def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:
-    """1社分を取得・抽出。トップにJobPostingが無ければ求人リンクを1階層辿る。"""
-    url = item["careers_url"]
-    company = item.get("company", {})
-    name = company.get("name", "")
-    force = bool(item.get("force"))  # 求人0件の企業はキャッシュ無視で再探索
+def _fetch_and_extract(url: str, source_site: str, name: str,
+                       cache: HttpCache, force: bool = False):
+    """1ページ取得→JobPosting抽出。無ければ求人リンクを1階層辿る。
+
+    戻り値: (records | None, status, pages)。records が None は取得失敗。
+    """
     if not allowed_by_robots(url):
-        return {"status": "robots_blocked", "company": company, "records": [], "pages": 0}
+        return None, "robots_blocked", 0
     _throttle(url)
     html, state = cache.fetch(url, force=force)
     if state == "not_modified":
-        return {"status": "not_modified", "company": company, "records": [], "pages": 0}
+        return [], "not_modified", 0
     if state.startswith("error") or html is None:
-        return {"status": state, "company": company, "records": [], "pages": 0}
+        return None, state, 0
 
     records = extract(html, source_site, name)
     pages = 1
@@ -152,7 +152,39 @@ def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:
         for r in records:
             uniq[r["source_job_id"]] = r
         records = list(uniq.values())
-    return {"status": "fetched", "company": {**company, "careers_url": url},
+    return records, "fetched", pages
+
+
+def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:
+    """1社分を取得・抽出。
+
+    採用URLが外れ（404等）や空振りだった場合は、企業サイトのトップから
+    採用リンクを辿り直す（起点リストのURL精度に依存しすぎないための保険）。
+    """
+    url = item["careers_url"]
+    company = item.get("company", {})
+    name = company.get("name", "")
+    force = bool(item.get("force"))  # 求人0件の企業はキャッシュ無視で再探索
+
+    records, status, pages = _fetch_and_extract(url, source_site, name, cache, force)
+    used_url = url
+
+    website = (company.get("website") or "").strip()
+    if not records and status != "not_modified" and website:
+        same = urlparse(website).geturl().rstrip("/") == urlparse(url).geturl().rstrip("/")
+        if not same:
+            alt, alt_status, alt_pages = _fetch_and_extract(
+                website, source_site, name, cache, force)
+            pages += alt_pages
+            if alt:
+                records, used_url = alt, website
+                status = "fetched:website"
+            elif records is None and alt is not None:
+                records, status = alt, "fetched:website"
+
+    if records is None:
+        return {"status": status, "company": company, "records": [], "pages": pages}
+    return {"status": status, "company": {**company, "careers_url": used_url},
             "records": records, "pages": pages}
 
 
@@ -178,7 +210,7 @@ def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: in
     cache.save()
 
     # 差分取り込み: 取得成功した企業のみ ingest（未更新/失敗は現状維持）
-    fetched = [r for r in results if r["status"] == "fetched"]
+    fetched = [r for r in results if r["status"].startswith("fetched")]
     batch = [{"company": r["company"], "records": r["records"]} for r in fetched]
     ingest_stats = ingest_batch(conn, batch, source_site, today) if batch else {
         "companies": 0, "new": 0, "updated": 0, "closed": 0}
@@ -186,6 +218,7 @@ def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: in
     summary = {
         "total": len(seed),
         "fetched": len(fetched),
+        "fetched_via_website": sum(1 for r in results if r["status"] == "fetched:website"),
         "not_modified": sum(1 for r in results if r["status"] == "not_modified"),
         "robots_blocked": sum(1 for r in results if r["status"] == "robots_blocked"),
         "errors": sum(1 for r in results if r["status"].startswith("error")),

@@ -30,6 +30,13 @@ CAREERS_HTML = """<html><head>
  "url":"https://example.test/jobs/2"}
 </script></head><body></body></html>"""
 
+FALLBACK_JOB_HTML = """<html><head>
+<script type="application/ld+json">
+{"@type":"JobPosting","title":"法人営業","datePosted":"2026-08-10",
+ "hiringOrganization":{"name":"フォールバック商事株式会社"},
+ "url":"https://fallback.test/jobs/1"}
+</script></head><body></body></html>"""
+
 GBIZ_PAYLOAD = {
     "hojin-infos": [{
         "corporate_number": "9010001000001",
@@ -98,6 +105,24 @@ def run():
     ).fetchone()
     assert row and row[0] == "9010001000001", f"エンリッチ反映失敗 {row}"
     print(f"[OK] エンリッチ反映: 法人番号{row[0]} / 資本金{row[1]:,}円 / 従業員{row[2]}名")
+
+    # --- 採用URLが外れたときの企業サイトからの辿り直し ---
+    site_dir = tmp / "site"
+    site_dir.mkdir()
+    (site_dir / "recruit.html").write_text(FALLBACK_JOB_HTML, encoding="utf-8")
+    (site_dir / "index.html").write_text(
+        '<html><body><a href="recruit.html">採用情報</a></body></html>', encoding="utf-8")
+    seed2 = [{"company": {"name": "フォールバック商事株式会社", "is_listed": 0,
+                          "website": f"file://{site_dir}/index.html"},
+              "careers_url": f"file://{tmp}/not_found_404.html"}]
+    summary2 = crawl_seed(conn, seed2, "careers", "2026-08-06", workers=1)
+    assert summary2["ingest"]["new"] == 1, f"フォールバック取り込み {summary2}"
+    row = conn.execute(
+        """SELECT c.careers_url, COUNT(jp.id) FROM companies c
+           JOIN job_postings jp ON jp.company_id=c.id AND jp.is_active=1
+           WHERE c.name_normalized LIKE '%フォールバック商事%' GROUP BY c.id""").fetchone()
+    assert row and row[1] == 1, f"フォールバック反映失敗 {row}"
+    print(f"[OK] 採用URL外れ→企業サイトから辿り直し: 求人{row[1]}件を取得")
 
     conn.close()
     print("\n=== クローラ層 全テスト通過 ===")
