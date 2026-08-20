@@ -50,11 +50,16 @@ jobs:
           python3 run_daily.py --seeds ../seeds/startups_probe.csv --workers 4
           python3 run_daily.py --seeds ../seeds/multi_industry.csv --workers 6
 
+      - name: Export sales list CSV
+        working-directory: sourcing/scripts
+        run: python3 export_csv.py
+
       - name: Upload report
         uses: actions/upload-artifact@v4
         with:
           name: sourcing-report-${{ github.run_number }}
           path: |
             sourcing/outputs/report.html
+            sourcing/outputs/*.csv
             sourcing/data/sourcing.db
           retention-days: 30
