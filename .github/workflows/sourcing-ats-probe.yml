@@ -1,0 +1,41 @@
+# ATS上の採用ページの実在確認（手動実行）
+# 企業サイトがJS描画で採用ページのHTMLにATSリンクが出ない企業向けに、
+# 企業ドメインから作ったスラッグでATSのURL型を叩き、JobPostingが取れたものだけを
+# seeds/ats_targets.csv として出力する。結果はログとartifactで確認する。
+name: sourcing-ats-probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sourcing-ats-probe
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Probe ATS pages
+        working-directory: sourcing/scripts
+        run: |
+          python3 probe_ats.py \
+            --seeds ../seeds/multi_industry.csv \
+            --seeds ../seeds/game_companies.csv \
+            --seeds ../seeds/startups_probe.csv
+
+      - name: Upload found list
+        uses: actions/upload-artifact@v4
+        with:
+          name: ats-targets-${{ github.run_number }}
+          path: sourcing/seeds/ats_targets.csv
+          retention-days: 30

@@ -205,6 +205,15 @@ def run():
     assert ranked == ["https://x.jp/recruit/jobs/12", "https://x.jp/recruit/"], ranked
     print("[OK] URL順位付け: 求人詳細を優先し、求人と無関係なリンクは辿らない")
 
+    # --- ATSスラッグ候補の導出（企業ドメインからATS URLを組み立てるため） ---
+    from probe_ats import slug_candidates
+    assert slug_candidates("https://about.mercari.com") == ["mercari"]
+    assert slug_candidates("https://smarthr.co.jp") == ["smarthr"]
+    assert slug_candidates("https://corp.atama.plus") == ["atama"]
+    assert slug_candidates("https://www.ga-tech.co.jp") == ["ga-tech", "gatech"]
+    assert slug_candidates("") == []
+    print("[OK] ATSスラッグ候補: 接頭ラベルとTLDを落として企業名部分を取り出す")
+
     conn.close()
     print("\n=== クローラ層 全テスト通過 ===")
 
