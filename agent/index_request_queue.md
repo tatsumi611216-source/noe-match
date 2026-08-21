@@ -2,6 +2,11 @@
 
 人間が毎日ここを見て、Search Console から申請する。**1日10本まで。**
 
+> **2026-08-21追記：サイト全体の欠落リストは `agent/index_gap.md` が正本。**
+> `python3 scripts/index_gap.py` で再生成する。sitemap 206URL中 **71本（34%）が未インデックス**で、
+> 本ファイルのDayバックログ（記事のみ）では拾えていなかったツール・規約ページも含む。
+> 優先順つきで1日10本に分割済み。note対照実験の5本は自動除外される。
+
 手順：Search Console 上部の検索窓にURLを貼る → Enter → 「インデックス登録をリクエスト」。
 
 済んだら「申請済み」欄へ移し、`agent/index_requests_done.json` に日付を記録する。
