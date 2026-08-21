@@ -40,3 +40,12 @@ python3 tools/ai_smell.py draft/_sample_human.md   # → 判定 A
 
 環境の Network access を **Custom** にして該当ドメインを許可すれば、
 以降の新規セッションからは到達可能になる（実行中のセッションには反映されない）。
+
+## 新しいセッションを立てたときの最初の一手
+
+```bash
+bash tools/netcheck.sh
+```
+
+どのドメインに到達できるかが出る。
+`403 / 000` は環境ポリシー側の遮断、`403`で到達している場合は先方サーバーのbot判定。
