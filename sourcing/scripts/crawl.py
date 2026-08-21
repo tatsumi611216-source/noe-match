@@ -24,8 +24,8 @@ from urllib.parse import urlparse
 from common import DEFAULT_DB, connect
 from extract_jobposting import extract
 from http_cache import USER_AGENT, HttpCache
-from job_discovery import (links_on_page, looks_like_job_detail, rank_job_links,
-                           sitemap_urls, url_priority)
+from job_discovery import (ats_links, links_on_page, looks_like_job_detail,
+                           rank_job_links, sitemap_urls, url_priority)
 from update_db import ingest_batch
 
 # 1社あたりの取得予算。robots/sitemap/一覧/詳細の全取得を含む総ページ数の上限。
@@ -141,6 +141,30 @@ def _harvest_sitemap(base_url: str, source_site: str, name: str,
     return _dedupe(records), len(details)
 
 
+def _harvest_ats(base_url: str, html: str, source_site: str, name: str,
+                 fetch, budget: _Budget) -> tuple[list[dict], int]:
+    """経路C: 採用ページから外部ATS（HRMOS/HERP等）へのリンクを辿って抽出する。
+
+    日本企業は募集一覧の実体をATSに置き、構造化データもそちら側にあることが多い。
+    同一サイト限定の探索では捨ててしまうため、ATSドメインだけ例外的に許可する。
+    """
+    found_links = ats_links(base_url, html)
+    records = []
+    for ats_url in found_links:
+        if budget.left <= 0:
+            break
+        a_html, state = fetch(ats_url)
+        if state != "fetched" or not a_html:
+            continue
+        got = extract(a_html, source_site, name)
+        if not got:  # ATSの一覧に無ければATS内をもう2階層辿る
+            got = _harvest_links(ats_url, a_html, source_site, name, fetch, budget)
+        records.extend(got)
+        if records:
+            break
+    return _dedupe(records), len(found_links)
+
+
 def _harvest_links(base_url: str, html: str, source_site: str, name: str,
                    fetch, budget: _Budget) -> list[dict]:
     """経路B: 採用トップ → 求人一覧 → 求人詳細 と2階層辿って抽出する。"""
@@ -181,6 +205,10 @@ def _harvest_site(url: str, source_site: str, name: str, fetch, budget: _Budget)
     if records:
         return records, "fetched", "top"
 
+    ats_records, n_ats = _harvest_ats(url, html, source_site, name, fetch, budget)
+    if ats_records:
+        return ats_records, "fetched", "ats"
+
     sm_records, n_details = _harvest_sitemap(url, source_site, name, fetch, budget)
     if sm_records:
         return sm_records, "fetched", f"sitemap/{n_details}"
@@ -189,7 +217,7 @@ def _harvest_site(url: str, source_site: str, name: str, fetch, budget: _Budget)
     if link_records:
         return link_records, "fetched", "link2"
 
-    return [], "fetched", f"none(sitemap候補{n_details})"
+    return [], "fetched", f"none(ATS{n_ats}/sitemap候補{n_details})"
 
 
 def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:

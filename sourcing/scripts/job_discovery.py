@@ -29,6 +29,21 @@ _GENERIC_LAST = {
     "採用", "求人", "募集", "中途採用", "新卒採用", "キャリア採用",
 }
 
+# 採用管理システム（ATS）。日本企業の採用ページは募集一覧をここへ外部リンクしており、
+# JobPosting の構造化データは企業サイトではなくATS側に置かれていることが多い。
+ATS_HOSTS = (
+    "hrmos.co", "herp.careers", "talentio.com", "recruit.jobcan.jp", "jobcan.jp",
+    "wantedly.com", "en-gage.net", "engage.en-japan.com", "jinjer.biz",
+    "greenhouse.io", "lever.co", "ashbyhq.com", "workable.com",
+    "smartrecruiters.com", "recruitee.com", "successfactors.com", "myworkdayjobs.com",
+)
+
+# 求人詳細ではないが採用系パスに置かれがちなページ（社員インタビュー・座談会など）
+_NOT_A_JOB = re.compile(
+    r'/(interview|people|member|story|stories|voice|crosstalk|talk|culture|message|'
+    r'blog|news|event|report|faq|about|environment|welfare|benefit|training|'
+    r'number|data|movie|gallery|privacy|guideline)(/|$|\.)', re.IGNORECASE)
+
 _LOC_RE = re.compile(r"<loc>\s*([^<\s]+)\s*</loc>", re.IGNORECASE)
 _HREF_RE = re.compile(r'href=["\']([^"\'#]+)["\']', re.IGNORECASE)
 _SITEMAP_DIRECTIVE_RE = re.compile(r"^\s*sitemap\s*:\s*(\S+)", re.IGNORECASE | re.MULTILINE)
@@ -49,6 +64,8 @@ def looks_like_job_detail(url: str) -> bool:
     """
     p = urlparse(url)
     if not JOB_HINT.search(p.path):
+        return False
+    if _NOT_A_JOB.search(p.path):
         return False
     last = _last_segment(p.path)
     if last in _GENERIC_LAST:
@@ -173,3 +190,26 @@ def sitemap_urls(base_url: str, fetch, robots_text: str = "",
         seen.add(u)
         out.append(u)
     return out
+
+
+def ats_links(base_url: str, html: str, limit: int = 4) -> list[str]:
+    """ページ内から採用管理システム（ATS）への外部リンクを拾う。
+
+    同一サイト限定の探索では捨ててしまうが、日本企業では募集一覧の実体が
+    ここにあることが多く、JobPosting もATS側に置かれている。
+    """
+    seen, out = set(), []
+    for href in _HREF_RE.findall(html):
+        full = _normalize(base_url, href)
+        if not full:
+            continue
+        host = urlparse(full).netloc.lower()
+        if not any(host == a or host.endswith("." + a) for a in ATS_HOSTS):
+            continue
+        if full in seen:
+            continue
+        seen.add(full)
+        out.append(full)
+        if len(out) >= limit:
+            break
+    return sorted(out, key=url_priority)

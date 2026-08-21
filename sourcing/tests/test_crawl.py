@@ -16,8 +16,8 @@ from common import connect  # noqa: E402
 from crawl import crawl_seed  # noqa: E402
 from gbiz_client import parse_gbiz  # noqa: E402
 from http_cache import to_ascii_url  # noqa: E402
-from job_discovery import (looks_like_job_detail, rank_job_links,  # noqa: E402
-                           sitemap_urls)
+from job_discovery import (ats_links, looks_like_job_detail,  # noqa: E402
+                           rank_job_links, sitemap_urls)
 from load_seed import load_csv  # noqa: E402
 
 CAREERS_HTML = """<html><head>
@@ -156,6 +156,16 @@ def run():
     assert summary3["ingest"]["new"] == 1, f"2階層探索の取り込み {summary3}"
     assert summary3["hit_by_strategy"].get("link2") == 1, f"経路判定 {summary3['hit_by_strategy']}"
     print(f"[OK] 2階層リンク探索: 一覧を経由して求人詳細から{summary3['ingest']['new']}件を取得")
+
+    # --- 採用ページから外部ATSへのリンクを拾う（同一サイト限定の探索では捨てていた） ---
+    ats_html = ('<html><body><a href="/company/">会社情報</a>'
+                '<a href="https://hrmos.co/pages/acme/jobs">募集職種一覧</a>'
+                '<a href="https://note.com/acme">note</a></body></html>')
+    assert ats_links("https://acme.co.jp/recruit/", ats_html) == \
+        ["https://hrmos.co/pages/acme/jobs"], "ATSリンクだけを拾う"
+    assert not looks_like_job_detail("https://acme.co.jp/recruit/interview/tanaka"), \
+        "社員インタビューは求人詳細ではない"
+    print("[OK] ATSリンク検出: 外部ATSのみ許可し、社員インタビュー等は求人詳細から除外")
 
     # --- sitemap から求人詳細URLを列挙（sitemapindex の1段再帰つき） ---
     pages = {
