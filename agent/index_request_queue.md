@@ -36,10 +36,25 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
-（なし——2026-08-19にGSC実機で全件「リクエスト済み」を確認し、下の申請済みへ移した）
+**2026-08-21追加：ツールページ3本。**`index_status.json` の実測で、記事ではなく
+**ツールに未インデックスが残っている**ことが分かった。ツールはAI要約に食われない
+防御資産として作ったものなので、読まれていない状態を放置しない。
 
 ```
+https://www.noe-match.com/tools/kekkon-shikin-keisanki/
+https://www.noe-match.com/tools/seikatsuhi-simulator/
+https://www.noe-match.com/tools/saigenbyo-check/
 ```
+
+| URL | 状態（確認日） | 内部リンク | 備考 |
+|---|---|---|---|
+| `/tools/kekkon-shikin-keisanki/` | **URL is unknown to Google**（08-15） | 35本 | **最優先。**sitemap掲載済み（lastmod 08-13）・内部リンク35本があってGoogleが認識していない。申請しても解消しない場合は、リンク先URLの綴り・実URLの200応答・sitemap再送信を順に確認する |
+| `/tools/seikatsuhi-simulator/` | Discovered - currently not indexed（**08-20**） | 31本 | 直近の確認なので状態は確か。クロール待ちで止まっている |
+| `/tools/saigenbyo-check/` | Discovered - currently not indexed（08-15） | 5本 | ただし同期間のGSCに 6.0位・2表示が出ており、確認が古い可能性。申請前にGSCで再確認してよい |
+
+（他8本は Submitted and indexed を確認済み。ツール11本の一覧と実績は
+`agent/tools_audit.md` を見ること）
+
 （konkatsu-soudan-saki / pocchari-konkatsu は 2026-08-09 公開。zexy-enmusubi-data / pairs-kaiin-data は 2026-08-10 公開。omiai-danjohi-data / with-nenreiso-data は 2026-08-17 公開。Day バックログとは別枠で申請してよい）
 
 ### 申請済み
