@@ -18,6 +18,7 @@
 | `tools/ai_smell.py` | AI臭を機械検出するスクリプト |
 | `tools/style_extract.py` | 文字起こしから文体の型を定量抽出する |
 | `tools/netcheck.sh` | 到達できるドメインを確認する |
+| `tools/fetch_transcripts.sh` | **手元のPCで**字幕を一括取得してプッシュする |
 
 ## 使い方
 
