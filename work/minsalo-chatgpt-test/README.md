@@ -14,7 +14,10 @@
 | `04_録画用プロンプト集.md` | 録画で実際に打つプロンプト一式（表向き） |
 | `05_録画と納品.md` | 撮影段取り、編集、納品パッケージ、提出前チェック |
 | `06_返信文案.md` | 受諾返信・追加質問・納品・単価交渉 |
+| `07_文字起こし一括取得.md` | yt-dlpで字幕をまとめて落とす手順 |
 | `tools/ai_smell.py` | AI臭を機械検出するスクリプト |
+| `tools/style_extract.py` | 文字起こしから文体の型を定量抽出する |
+| `tools/netcheck.sh` | 到達できるドメインを確認する |
 
 ## 使い方
 
@@ -26,7 +29,13 @@ python3 tools/ai_smell.py draft/script.md --verbose   # 全件表示
 # 動作確認用サンプル
 python3 tools/ai_smell.py draft/_sample_ai.md      # → 判定 D
 python3 tools/ai_smell.py draft/_sample_human.md   # → 判定 A
+
+# 文体の型を抽出（refs/ に .vtt / .srt / .txt を置く）
+python3 tools/style_extract.py refs/ --out refs/style.md
+python3 tools/style_extract.py refs/ --per-file
 ```
+
+字幕の集め方は `07_文字起こし一括取得.md` を参照。
 
 終了コードは 判定A/B で 0、C以下で 1。
 
