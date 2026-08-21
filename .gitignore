@@ -1,2 +1,8 @@
 _indexnow_key.txt
 __pycache__/
+
+# 台本の下書き（サンプルは除く）
+work/minsalo-chatgpt-test/draft/*
+!work/minsalo-chatgpt-test/draft/_sample_*.md
+work/minsalo-chatgpt-test/refs/*
+!work/minsalo-chatgpt-test/refs/.gitkeep
