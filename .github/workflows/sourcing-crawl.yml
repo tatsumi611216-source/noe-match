@@ -50,6 +50,21 @@ jobs:
           python3 run_daily.py --seeds ../seeds/startups_probe.csv --workers 4
           python3 run_daily.py --seeds ../seeds/multi_industry.csv --workers 8
 
+      # 採用ページがJS描画でATSリンクを辿れない企業向けに、ATS上の採用ページを
+      # ドメイン由来のスラッグで実在確認し、取れたものだけを追加で巡回する。
+      - name: Probe ATS pages for companies with no jobs
+        working-directory: sourcing/scripts
+        run: |
+          python3 probe_ats.py \
+            --seeds ../seeds/multi_industry.csv \
+            --seeds ../seeds/game_companies.csv \
+            --seeds ../seeds/startups_probe.csv
+          if [ -s ../seeds/ats_targets.csv ] && [ "$(wc -l < ../seeds/ats_targets.csv)" -gt 1 ]; then
+            python3 run_daily.py --seeds ../seeds/ats_targets.csv --source ats --workers 6
+          else
+            echo "ATS探索: 追加で巡回する企業なし"
+          fi
+
       - name: Export sales list CSV
         working-directory: sourcing/scripts
         run: python3 export_csv.py

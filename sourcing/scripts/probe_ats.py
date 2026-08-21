@@ -13,6 +13,7 @@ import csv
 from pathlib import Path
 from urllib.parse import urlparse
 
+from common import DEFAULT_DB, connect, normalize_company_name
 from crawl import _Budget, _make_fetch
 from extract_jobposting import extract
 from http_cache import HttpCache
@@ -71,9 +72,23 @@ def probe(name: str, slugs: list[str], fetch) -> tuple[str, int] | None:
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--seeds", action="append", required=True)
+    parser.add_argument("--db", default=str(DEFAULT_DB),
+                        help="既に求人が取れている企業を探索対象から外すために参照する")
     parser.add_argument("--out", default=str(Path(__file__).resolve().parent.parent
                                              / "seeds" / "ats_targets.csv"))
     args = parser.parse_args()
+
+    # 既に求人が取れている企業は探索しない（無駄打ちと重複取り込みを避ける）
+    have_jobs = set()
+    if Path(args.db).exists():
+        conn = connect(args.db)
+        try:
+            have_jobs = {r[0] for r in conn.execute(
+                """SELECT c.name_normalized FROM companies c
+                   JOIN job_postings jp ON jp.company_id=c.id AND jp.is_active=1
+                   GROUP BY c.id""")}
+        finally:
+            conn.close()
 
     cache = HttpCache()
     rows, found = [], []
@@ -81,11 +96,14 @@ def main():
         with Path(seed_path).open(encoding="utf-8-sig", newline="") as f:
             rows.extend(list(csv.DictReader(f)))
 
-    print(f"探索対象: {len(rows)}社 / URL型{len(PATTERNS)}種")
+    print(f"シード{len(rows)}社 / 既に求人が取れている{len(have_jobs)}社は除外 "
+          f"/ URL型{len(PATTERNS)}種")
     for row in rows:
         name = (row.get("name") or "").strip()
         slugs = slug_candidates(row.get("website", ""), row.get("careers_url", ""))
         if not name or not slugs:
+            continue
+        if normalize_company_name(name) in have_jobs:
             continue
         budget = _Budget(len(slugs) * len(PATTERNS) + 2)
         hit = probe(name, slugs, _make_fetch(cache, budget, force=False))
