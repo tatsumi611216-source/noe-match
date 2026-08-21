@@ -59,7 +59,8 @@ def main():
         details = summary.pop("details", [])
         print(f"クロール結果: {summary}")
         for d in details:
-            print(f"  [{d['status']}] {d['name']}: 求人{d['jobs']}件 (取得{d['pages']}ページ)")
+            print(f"  [{d['status']}] {d['name']}: 求人{d['jobs']}件 "
+                  f"(取得{d['pages']}ページ / 経路 {d['strategy']})")
 
         updates = score.compute_scores(conn, date.today())
         conn.executemany(

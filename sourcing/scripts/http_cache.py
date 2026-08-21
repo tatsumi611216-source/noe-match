@@ -5,6 +5,7 @@
 304（未更新）なら本文取得をスキップし、収集量を大幅に削減する。
 キャッシュは data/http_cache.json に保持。file:// はテスト用に直読み対応。
 """
+import gzip
 import json
 import time
 import urllib.error
@@ -51,7 +52,8 @@ class HttpCache:
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self.path.write_text(json.dumps(self.data, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    def fetch(self, url: str, timeout: int = 20, force: bool = False) -> tuple[str | None, str]:
+    def fetch(self, url: str, timeout: int = 20, force: bool = False,
+              max_bytes: int = 8_000_000) -> tuple[str | None, str]:
         """(本文, 状態) を返す。状態: 'fetched' / 'not_modified' / 'error:xxx'。
 
         304 のときは本文 None・状態 'not_modified'（呼び出し側で再取り込み不要と判断）。
@@ -75,7 +77,13 @@ class HttpCache:
         req = urllib.request.Request(to_ascii_url(url), headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=timeout) as resp:
-                body = resp.read().decode(resp.headers.get_content_charset() or "utf-8", "replace")
+                raw = resp.read(max_bytes)
+                if raw[:2] == b"\x1f\x8b":  # sitemap.xml.gz など
+                    try:
+                        raw = gzip.decompress(raw)
+                    except (OSError, EOFError):
+                        pass
+                body = raw.decode(resp.headers.get_content_charset() or "utf-8", "replace")
                 self.data[url] = {
                     "etag": resp.headers.get("ETag"),
                     "last_modified": resp.headers.get("Last-Modified"),

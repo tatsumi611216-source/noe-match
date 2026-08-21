@@ -48,7 +48,7 @@ jobs:
         run: |
           python3 run_daily.py --seeds ../seeds/game_companies.csv --workers 4
           python3 run_daily.py --seeds ../seeds/startups_probe.csv --workers 4
-          python3 run_daily.py --seeds ../seeds/multi_industry.csv --workers 6
+          python3 run_daily.py --seeds ../seeds/multi_industry.csv --workers 8
 
       - name: Export sales list CSV
         working-directory: sourcing/scripts

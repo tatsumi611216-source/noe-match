@@ -16,6 +16,8 @@ from common import connect  # noqa: E402
 from crawl import crawl_seed  # noqa: E402
 from gbiz_client import parse_gbiz  # noqa: E402
 from http_cache import to_ascii_url  # noqa: E402
+from job_discovery import (looks_like_job_detail, rank_job_links,  # noqa: E402
+                           sitemap_urls)
 from load_seed import load_csv  # noqa: E402
 
 CAREERS_HTML = """<html><head>
@@ -132,6 +134,66 @@ def run():
         "https://example.co.jp/%E6%8E%A1%E7%94%A8/", "二重符号化してはいけない"
     assert to_ascii_url("https://日本語.jp/jobs").startswith("https://xn--")
     print("[OK] 非ASCII URL: パーセント符号化とIDN変換（二重符号化なし）")
+
+    # --- 2階層リンク探索（採用トップ→求人一覧→求人詳細） ---
+    deep = tmp / "deep"
+    (deep / "jobs").mkdir(parents=True)
+    (deep / "careers.html").write_text(
+        '<html><body><a href="/company/">会社情報</a>'
+        '<a href="jobs/list.html">募集職種一覧</a></body></html>', encoding="utf-8")
+    (deep / "jobs" / "list.html").write_text(  # 一覧には構造化データが無い（実サイトの典型）
+        '<html><body><ul><li><a href="engineer.html">バックエンドエンジニア</a></li></ul>'
+        '</body></html>', encoding="utf-8")
+    (deep / "jobs" / "engineer.html").write_text("""<html><head>
+<script type="application/ld+json">
+{"@type":"JobPosting","title":"バックエンドエンジニア","datePosted":"2026-08-18",
+ "hiringOrganization":{"name":"二階層テスト株式会社"},
+ "url":"https://deep.test/jobs/engineer"}
+</script></head><body></body></html>""", encoding="utf-8")
+    seed3 = [{"company": {"name": "二階層テスト株式会社", "is_listed": 0},
+              "careers_url": f"file://{deep}/careers.html"}]
+    summary3 = crawl_seed(conn, seed3, "careers", "2026-08-06", workers=1)
+    assert summary3["ingest"]["new"] == 1, f"2階層探索の取り込み {summary3}"
+    assert summary3["hit_by_strategy"].get("link2") == 1, f"経路判定 {summary3['hit_by_strategy']}"
+    print(f"[OK] 2階層リンク探索: 一覧を経由して求人詳細から{summary3['ingest']['new']}件を取得")
+
+    # --- sitemap から求人詳細URLを列挙（sitemapindex の1段再帰つき） ---
+    pages = {
+        "https://sm.test/robots.txt": "User-agent: *\nSitemap: https://sm.test/sitemap_index.xml\n",
+        "https://sm.test/sitemap_index.xml":
+            "<sitemapindex><sitemap><loc>https://sm.test/sitemap-news.xml</loc></sitemap>"
+            "<sitemap><loc>https://sm.test/sitemap-jobs.xml</loc></sitemap></sitemapindex>",
+        "https://sm.test/sitemap-jobs.xml":
+            "<urlset><url><loc>https://sm.test/recruit/jobs/101</loc></url>"
+            "<url><loc>https://sm.test/recruit/jobs/</loc></url>"
+            "<url><loc>https://other.test/recruit/jobs/999</loc></url></urlset>",
+        "https://sm.test/sitemap-news.xml":
+            "<urlset><url><loc>https://sm.test/news/1</loc></url></urlset>",
+    }
+    calls = []
+
+    def fake_fetch(url):
+        calls.append(url)
+        return (pages.get(url), "fetched" if url in pages else "error:http404")
+
+    urls = sitemap_urls("https://sm.test/recruit/", fake_fetch,
+                        robots_text=pages["https://sm.test/robots.txt"])
+    assert "https://sm.test/recruit/jobs/101" in urls, urls
+    assert not any(u.startswith("https://other.test") for u in urls), "外部ドメインは除外"
+    assert calls[0] == "https://sm.test/sitemap_index.xml", f"robots記載を最優先 {calls}"
+    assert calls[1] == "https://sm.test/sitemap-jobs.xml", f"求人らしい子を優先 {calls}"
+    details = [u for u in urls if looks_like_job_detail(u)]
+    assert details == ["https://sm.test/recruit/jobs/101"], details
+    print(f"[OK] sitemap経路: {len(urls)}URLを列挙し求人詳細{len(details)}件を選別（子sitemapは求人優先）")
+
+    # --- URLの詳細/一覧判定とリンクの順位付け ---
+    assert looks_like_job_detail("https://x.jp/careers/backend-engineer")
+    assert not looks_like_job_detail("https://x.jp/careers/")
+    assert not looks_like_job_detail("https://x.jp/company/about")
+    ranked = rank_job_links(["https://x.jp/company/about", "https://x.jp/recruit/",
+                             "https://x.jp/recruit/jobs/12"], limit=3)
+    assert ranked == ["https://x.jp/recruit/jobs/12", "https://x.jp/recruit/"], ranked
+    print("[OK] URL順位付け: 求人詳細を優先し、求人と無関係なリンクは辿らない")
 
     conn.close()
     print("\n=== クローラ層 全テスト通過 ===")

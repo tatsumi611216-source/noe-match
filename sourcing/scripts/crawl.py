@@ -4,6 +4,7 @@
 - robots.txt を遵守（ホスト単位でキャッシュ）
 - 条件付きGET（ETag/Last-Modified）で未更新ページはスキップ＝差分巡回
 - ドメインまたぎで並列取得（同一ドメインへの連続アクセスは間隔を空ける）
+- 求人詳細ページへの到達は job_discovery（sitemap経路 / 2階層リンク経路）に委譲
 - 取得HTMLから JobPosting を抽出 → 企業ごとに update_db へ
 
 入力シード JSON: [{"company": {...メタ...}, "careers_url": "https://..."}]
@@ -11,7 +12,6 @@ usage: python3 crawl.py seed.json --source careers --db ../data/sourcing.db [--w
 """
 import argparse
 import json
-import re
 import threading
 import time
 import urllib.request
@@ -19,21 +19,23 @@ import urllib.robotparser
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date
 from pathlib import Path
-from urllib.parse import urljoin, urlparse
+from urllib.parse import urlparse
 
 from common import DEFAULT_DB, connect
 from extract_jobposting import extract
 from http_cache import USER_AGENT, HttpCache
+from job_discovery import (links_on_page, looks_like_job_detail, rank_job_links,
+                           sitemap_urls, url_priority)
 from update_db import ingest_batch
 
-# 採用トップ→求人一覧/詳細ページを辿るリンク発見（1階層・同一ホスト限定）
-_HREF_RE = re.compile(r'href=["\']([^"\'#]+)["\']', re.IGNORECASE)
-_JOB_LINK_HINT = re.compile(
-    r'(recruit|career|job|saiyo|entry|position|opening|graduate|mid)'
-    r'|(採用|求人|募集|中途|キャリア|新卒)', re.IGNORECASE)
-MAX_DISCOVER_PAGES = 5  # 1社あたり追加で辿る最大ページ数
+# 1社あたりの取得予算。robots/sitemap/一覧/詳細の全取得を含む総ページ数の上限。
+MAX_PAGES_PER_COMPANY = 26
+MAX_SITEMAP_JOBS = 12    # sitemap から開く求人詳細ページ数
+MAX_LIST_PAGES = 6       # 採用トップから辿る求人一覧候補（1階層目）
+MAX_DETAIL_PER_LIST = 4  # 求人一覧1ページから辿る詳細候補（2階層目）
 
 _robots_cache: dict[str, urllib.robotparser.RobotFileParser | None] = {}
+_robots_body: dict[str, str] = {}
 _robots_lock = threading.Lock()
 _domain_last: dict[str, float] = {}
 _domain_lock = threading.Lock()
@@ -50,19 +52,28 @@ def allowed_by_robots(url: str) -> bool:
     if rp == "unset":
         # rp.read() はタイムアウト指定不可でハングし得るため、自前で取得してparseする
         rp = urllib.robotparser.RobotFileParser()
+        body = ""
         try:
             req = urllib.request.Request(host + "/robots.txt",
                                          headers={"User-Agent": USER_AGENT})
             with urllib.request.urlopen(req, timeout=10) as resp:
-                body = resp.read(65536).decode("utf-8", "replace")
+                body = resp.read(262144).decode("utf-8", "replace")
             rp.parse(body.splitlines())
         except Exception:
             rp = None  # robots取得失敗時は保守的にアクセスを許可（一般的挙動）
         with _robots_lock:
             _robots_cache[host] = rp
+            _robots_body[host] = body
     if rp is None:
         return True
     return rp.can_fetch(USER_AGENT, url)
+
+
+def robots_text(url: str) -> str:
+    """取得済み robots.txt の本文（Sitemap: 行の読み取りに使う）。未取得なら空。"""
+    parsed = urlparse(url)
+    with _robots_lock:
+        return _robots_body.get(f"{parsed.scheme}://{parsed.netloc}", "")
 
 
 def _throttle(url: str):
@@ -78,81 +89,107 @@ def _throttle(url: str):
         _domain_last[host] = time.time()
 
 
-def _registrable_root(host: str) -> str:
-    """www.等の先頭ラベルを外した比較用ルート。example.co.jp / example.jp 両対応の簡易版。"""
-    host = host.lower()
-    return host[4:] if host.startswith("www.") else host
+class _Budget:
+    """1社あたりの取得ページ数を制限するカウンタ（相手サイトへの負荷の上限）。"""
+
+    def __init__(self, limit: int):
+        self.left = limit
+        self.pages = 0
+
+    def take(self) -> bool:
+        if self.left <= 0:
+            return False
+        self.left -= 1
+        self.pages += 1
+        return True
 
 
-def _same_site(host: str, base_host: str) -> bool:
-    """同一サイト判定: 完全一致 or 互いのルートのサブドメイン（recruit.xxx.co.jp等を許可）。"""
-    h, b = _registrable_root(host), _registrable_root(base_host)
-    return h == b or h.endswith("." + b) or b.endswith("." + h)
+def _make_fetch(cache: HttpCache, budget: _Budget, force: bool):
+    """robots遵守・間隔制御・予算消費をまとめた取得関数を作る。"""
+    def fetch(url: str) -> tuple[str | None, str]:
+        if not allowed_by_robots(url):
+            return None, "robots_blocked"
+        if not budget.take():
+            return None, "budget_exhausted"
+        _throttle(url)
+        return cache.fetch(url, force=force)
+    return fetch
 
 
-def discover_job_links(base_url: str, html: str, limit: int = MAX_DISCOVER_PAGES) -> list[str]:
-    """採用トップのHTMLから、求人一覧/詳細らしき同一サイトのリンクを抽出する。
+def _dedupe(records: list[dict]) -> list[dict]:
+    """同一求人が一覧・詳細の双方に出た場合の重複を落とす。"""
+    uniq = {}
+    for r in records:
+        uniq[r["source_job_id"]] = r
+    return list(uniq.values())
 
-    大手は採用を recruit.example.co.jp 等のサブドメインに置くことが多いため、
-    同一ドメイン配下のサブドメインまで許可する（外部ドメインは辿らない）。
-    """
-    base = urlparse(base_url)
-    seen, links = set(), []
-    for href in _HREF_RE.findall(html):
-        if href.startswith(("mailto:", "javascript:", "tel:")):
-            continue
-        full = urljoin(base_url, href)
-        p = urlparse(full)
-        # 同一サイトのhttp(s)のみ。file://はテスト用にbaseがfileの場合のみ許可
-        if p.scheme in ("http", "https"):
-            if not _same_site(p.netloc, base.netloc):
-                continue
-        elif not (p.scheme == "file" and base.scheme == "file"):
-            continue
-        full = full.split("#")[0]
-        if full == base_url or full in seen:
-            continue
-        if not _JOB_LINK_HINT.search(p.path + ("?" + p.query if p.query else "")):
-            continue
-        seen.add(full)
-        links.append(full)
-        if len(links) >= limit:
+
+def _harvest_sitemap(base_url: str, source_site: str, name: str,
+                     fetch, budget: _Budget) -> tuple[list[dict], int]:
+    """経路A: sitemap から求人詳細URLを列挙し、上位を開いて抽出する。"""
+    urls = sitemap_urls(base_url, fetch, robots_text=robots_text(base_url))
+    details = [u for u in urls if looks_like_job_detail(u)]
+    if not details:
+        return [], 0
+    records = []
+    for u in sorted(details, key=url_priority)[:MAX_SITEMAP_JOBS]:
+        if budget.left <= 0:
             break
-    return links
+        html, state = fetch(u)
+        if state == "fetched" and html:
+            records.extend(extract(html, source_site, name))
+    return _dedupe(records), len(details)
 
 
-def _fetch_and_extract(url: str, source_site: str, name: str,
-                       cache: HttpCache, force: bool = False):
-    """1ページ取得→JobPosting抽出。無ければ求人リンクを1階層辿る。
+def _harvest_links(base_url: str, html: str, source_site: str, name: str,
+                   fetch, budget: _Budget) -> list[dict]:
+    """経路B: 採用トップ → 求人一覧 → 求人詳細 と2階層辿って抽出する。"""
+    records = []
+    for link in rank_job_links(links_on_page(base_url, html), MAX_LIST_PAGES):
+        if budget.left <= 0:
+            break
+        sub_html, state = fetch(link)
+        if state != "fetched" or not sub_html:
+            continue
+        found = extract(sub_html, source_site, name)
+        if found:
+            records.extend(found)
+            continue
+        # このページ自体に構造化データが無ければ、求人詳細らしいリンクへもう1階層
+        deeper = [u for u in links_on_page(link, sub_html) if looks_like_job_detail(u)]
+        for detail_url in sorted(deeper, key=url_priority)[:MAX_DETAIL_PER_LIST]:
+            if budget.left <= 0:
+                break
+            d_html, d_state = fetch(detail_url)
+            if d_state == "fetched" and d_html:
+                records.extend(extract(d_html, source_site, name))
+    return _dedupe(records)
 
-    戻り値: (records | None, status, pages)。records が None は取得失敗。
+
+def _harvest_site(url: str, source_site: str, name: str, fetch, budget: _Budget):
+    """1つの起点URLから求人を集める。戻り値: (records | None, status, 経路名)。
+
+    records が None は取得失敗。経路は top（起点ページ直下）→ sitemap → link の順に試す。
     """
-    if not allowed_by_robots(url):
-        return None, "robots_blocked", 0
-    _throttle(url)
-    html, state = cache.fetch(url, force=force)
+    html, state = fetch(url)
     if state == "not_modified":
-        return [], "not_modified", 0
-    if state.startswith("error") or html is None:
-        return None, state, 0
+        return [], "not_modified", "-"
+    if html is None:
+        return None, state, "-"
 
     records = extract(html, source_site, name)
-    pages = 1
-    if not records:  # トップに構造化データ無し → 求人ページ候補を辿る
-        for link in discover_job_links(url, html):
-            if not allowed_by_robots(link):
-                continue
-            _throttle(link)
-            sub_html, sub_state = cache.fetch(link)
-            pages += 1
-            if sub_state == "fetched" and sub_html:
-                records.extend(extract(sub_html, source_site, name))
-        # 同一求人の重複除去（discovery で同じ求人が複数ページに出る場合）
-        uniq = {}
-        for r in records:
-            uniq[r["source_job_id"]] = r
-        records = list(uniq.values())
-    return records, "fetched", pages
+    if records:
+        return records, "fetched", "top"
+
+    sm_records, n_details = _harvest_sitemap(url, source_site, name, fetch, budget)
+    if sm_records:
+        return sm_records, "fetched", f"sitemap/{n_details}"
+
+    link_records = _harvest_links(url, html, source_site, name, fetch, budget)
+    if link_records:
+        return link_records, "fetched", "link2"
+
+    return [], "fetched", f"none(sitemap候補{n_details})"
 
 
 def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:
@@ -165,27 +202,29 @@ def crawl_one(item: dict, source_site: str, cache: HttpCache) -> dict:
     company = item.get("company", {})
     name = company.get("name", "")
     force = bool(item.get("force"))  # 求人0件の企業はキャッシュ無視で再探索
+    budget = _Budget(MAX_PAGES_PER_COMPANY)
+    fetch = _make_fetch(cache, budget, force)
 
-    records, status, pages = _fetch_and_extract(url, source_site, name, cache, force)
+    records, status, strategy = _harvest_site(url, source_site, name, fetch, budget)
     used_url = url
 
     website = (company.get("website") or "").strip()
     if not records and status != "not_modified" and website:
         same = urlparse(website).geturl().rstrip("/") == urlparse(url).geturl().rstrip("/")
         if not same:
-            alt, alt_status, alt_pages = _fetch_and_extract(
-                website, source_site, name, cache, force)
-            pages += alt_pages
+            alt, alt_status, alt_strategy = _harvest_site(
+                website, source_site, name, fetch, budget)
             if alt:
                 records, used_url = alt, website
-                status = "fetched:website"
+                status, strategy = "fetched:website", alt_strategy
             elif records is None and alt is not None:
-                records, status = alt, "fetched:website"
+                records, status, strategy = alt, "fetched:website", alt_strategy
 
     if records is None:
-        return {"status": status, "company": company, "records": [], "pages": pages}
+        return {"status": status, "company": company, "records": [],
+                "pages": budget.pages, "strategy": strategy}
     return {"status": status, "company": {**company, "careers_url": used_url},
-            "records": records, "pages": pages}
+            "records": records, "pages": budget.pages, "strategy": strategy}
 
 
 def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: int = 8) -> dict:
@@ -212,7 +251,7 @@ def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: in
             except Exception as e:  # 1社の想定外エラーで巡回全体を落とさない
                 results.append({"status": f"error:{type(e).__name__}",
                                 "company": item.get("company", {}),
-                                "records": [], "pages": 0})
+                                "records": [], "pages": 0, "strategy": "-"})
     cache.save()
 
     # 差分取り込み: 取得成功した企業のみ ingest（未更新/失敗は現状維持）
@@ -221,6 +260,12 @@ def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: in
     ingest_stats = ingest_batch(conn, batch, source_site, today) if batch else {
         "companies": 0, "new": 0, "updated": 0, "closed": 0}
 
+    hit_by = {}
+    for r in results:
+        if r["records"]:
+            key = r.get("strategy", "-").split("/")[0]
+            hit_by[key] = hit_by.get(key, 0) + 1
+
     summary = {
         "total": len(seed),
         "fetched": len(fetched),
@@ -228,10 +273,14 @@ def crawl_seed(conn, seed: list[dict], source_site: str, today: str, workers: in
         "not_modified": sum(1 for r in results if r["status"] == "not_modified"),
         "robots_blocked": sum(1 for r in results if r["status"] == "robots_blocked"),
         "errors": sum(1 for r in results if r["status"].startswith("error")),
+        "companies_with_jobs": sum(1 for r in results if r["records"]),
+        "hit_by_strategy": hit_by,
+        "pages_total": sum(r.get("pages", 0) for r in results),
         "ingest": ingest_stats,
         "details": [
             {"name": r["company"].get("name", "?"), "status": r["status"],
-             "jobs": len(r["records"]), "pages": r.get("pages", 0)}
+             "jobs": len(r["records"]), "pages": r.get("pages", 0),
+             "strategy": r.get("strategy", "-")}
             for r in results
         ],
     }
