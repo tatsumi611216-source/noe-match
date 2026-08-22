@@ -216,14 +216,19 @@ def audit_index_groups():
     見た目の破損なので記事の中身では気づけない。機械で止める。
     """
     errors = []
-    with open(os.path.join(ROOT, 'index.html'), encoding='utf-8') as f:
+    # 2026-08-18 以降、記事一覧グループは articles/index.html（記事ハブ）にあり、
+    # 見出しは h2。トップの index.html は「全N記事」の数字だけ持つ。
+    hub = os.path.join(ROOT, 'articles', 'index.html')
+    if not os.path.exists(hub):
+        hub = os.path.join(ROOT, 'index.html')
+    with open(hub, encoding='utf-8') as f:
         html = f.read()
 
-    parts = re.split(r'(<h3 [^>]*>.*?</h3>)', html, flags=re.S)
+    parts = re.split(r'(<h[23] [^>]*>.*?</h[23]>)', html, flags=re.S)
     cur = None
     total = 0
     for seg in parts:
-        m = re.match(r'<h3 [^>]*>(.*?)<span[^>]*>（(\d+)記事）</span></h3>', seg, re.S)
+        m = re.match(r'<h[23] [^>]*>(.*?)<span[^>]*>（(\d+)記事）</span></h[23]>', seg, re.S)
         if m:
             cur = (re.sub(r'<[^>]+>', '', m.group(1)).strip(), int(m.group(2)))
             continue
@@ -242,9 +247,18 @@ def audit_index_groups():
                 f'index.html「{name}」の通し番号が連番でない（{nos[0]}〜{nos[-1]}／{len(nos)}本）'
                 'グループを分割したら番号を1から振り直すこと')
 
-    m = re.search(r'全(\d+)記事', html)
-    if m and int(m.group(1)) != total:
-        errors.append(f'index.html の「全{m.group(1)}記事」が実数{total}本と不一致')
+    # 「全N記事」はトップとハブの両方に現れうる。グループ合計（無ければ稼働記事数）と照合
+    if total == 0:
+        total = len(live_slugs())
+    for name in ('index.html', os.path.join('articles', 'index.html')):
+        hp = os.path.join(ROOT, name)
+        if not os.path.exists(hp):
+            continue
+        with open(hp, encoding='utf-8') as f:
+            for m in re.finditer(r'全(\d+)記事', f.read()):
+                if int(m.group(1)) != total:
+                    errors.append(f'{name} の「全{m.group(1)}記事」が実数{total}本と不一致')
+                    break
     return errors
 
 
@@ -253,8 +267,14 @@ def audit_structure():
     errors = []
     with open(os.path.join(ROOT, 'redirects.json'), encoding='utf-8') as f:
         redirects = json.load(f)
-    with open(os.path.join(ROOT, 'index.html'), encoding='utf-8') as f:
-        indexed = set(re.findall(r'href="/articles/([^/"]+)/?"', f.read()))
+    # 2026-08-18 にトップをツール中心へ再設計し、記事の全件一覧は
+    # articles/index.html（記事ハブ）へ移った。どちらかから辿れればよい。
+    indexed = set()
+    for hub in ('index.html', os.path.join('articles', 'index.html')):
+        hp = os.path.join(ROOT, hub)
+        if os.path.exists(hp):
+            with open(hp, encoding='utf-8') as f:
+                indexed |= set(re.findall(r'href="/articles/([^/"]+)/?"', f.read()))
 
     sitemap = set(live_slugs())
     dirs = {d for d in os.listdir(os.path.join(ROOT, 'articles'))
@@ -266,7 +286,7 @@ def audit_structure():
     for slug in sorted(sitemap - dirs):
         errors.append(f'sitemap.xml のURLに実体が無い: {slug}')
     for slug in sorted(sitemap - indexed):
-        errors.append(f'sitemap.xml にあるが index.html から未リンク: {slug}')
+        errors.append(f'sitemap.xml にあるが index.html / articles/index.html のどちらからも未リンク: {slug}')
     # 稼働記事がリダイレクト元として登録されていると server.py が301で飛ばしてしまう
     for slug in sorted(sitemap & set(redirects)):
         errors.append(f'稼働記事が redirects.json のリダイレクト元になっている: {slug}')
