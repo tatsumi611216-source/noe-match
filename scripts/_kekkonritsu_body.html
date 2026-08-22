@@ -1,0 +1,105 @@
+<style>
+.app-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:6px 0 4px}
+.app-grid button{font:inherit;background:#faf8f6;border:1px solid #e6e2dc;padding:12px 10px;cursor:pointer;text-align:center;color:#1d242b}
+.app-grid button.on{background:#7c2e42;color:#fff;border-color:#7c2e42}
+.pub-bar{display:grid;grid-template-columns:8em 1fr 4.5em;gap:10px;align-items:center;margin:8px 0 18px}
+.pub-track{background:#ece7e0;height:16px}.pub-fill{background:#7c2e42;height:16px}
+.kv{width:100%;border-collapse:collapse;font-size:.92rem}
+.kv th,.kv td{border-bottom:1px solid #e6e2dc;padding:10px 8px;text-align:left;vertical-align:top}
+.kv th{width:9.5em;color:#5a6068;font-weight:600;background:#faf8f6}
+.tag{display:inline-block;font-size:.72rem;padding:2px 8px;margin-right:6px;vertical-align:middle}
+.tag.y{background:#e8f0ea;color:#2f6b3f}.tag.n{background:#f3ecec;color:#8a3a3a}
+.src{font-size:.78rem;color:#8a8f95;margin-top:4px}
+.pubfact{background:#f7f5f2;border-left:2px solid #b39352;padding:16px 18px;margin:22px 0;font-size:.92rem;line-height:1.9}
+</style>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/hands-touch.jpg')"><div class="tool-hero-inner">
+<svg class="hero-mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="31" fill="#f7f5f2"/><image href="../../images/emblems/scale.png" x="9" y="9" width="46" height="46"/></svg>
+<h1>マッチングアプリの結婚率・公表データ早見表｜公表している数字と、していない数字</h1>
+<p>アプリを選ぶと、結婚率・成婚者数・会員数・年齢構成・男女比について「公式に公表しているか」と出典・確認日が出ます。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>主要7アプリのうち、結婚率・成婚率を公式に公表している社はゼロです（__CHECKED__確認）。</strong>「結婚率◯%」と書かれた比較記事の数字は、出典を辿ると各社の公表値ではありません。この早見表は、何が公表されていて何が公表されていないかを、出典と確認日つきで並べます。優劣を判定するものではありません。</blockquote>
+
+<div class="calc">
+  <div class="fld"><span class="lbl">アプリを選ぶ</span>
+    <div class="app-grid" id="apps"></div>
+    <span class="hint">複数を比べたいときは、下の一覧表（全アプリ）も参照してください</span>
+  </div>
+</div>
+
+<div class="result" id="res">
+  <div class="big"><span id="topname">—</span></div>
+  <p class="hint" id="toplead"></p>
+  <h3>公表している項目の割合</h3>
+  <div class="pub-bar"><span>公表項目</span><div class="pub-track"><div class="pub-fill" id="pubfill" style="width:0"></div></div><span id="pubval">—</span></div>
+  <table class="kv" id="kv"></table>
+  <p class="src">確認日：__CHECKED__（各社の公表時点は表内に併記）。料金・公表内容は変更されるため、申込前に公式サイトで再確認してください。</p>
+  <div class="pubfact"><strong>アプリ別の結婚率が無い代わりに、公的統計で分かっていること。</strong>国立社会保障・人口問題研究所「第16回出生動向基本調査」（2021年）では、SNS・アプリなど<strong>「ネットで」知り合った夫婦の平均交際期間は2.8年</strong>（従来の恋愛結婚は4.9年）、2018年7月〜2021年6月に結婚した夫婦の<strong>13.6%がネットで知り合った</strong>と報告されています。詳しくは<a href="/articles/kekkon-madeno-kikan-data/">結婚までの期間データ</a>へ。</div>
+  <h3>このアプリの公表データを詳しく読む</h3>
+  <div id="links"></div>
+  <div id="prbox"></div>
+</div>
+
+<h2>全アプリの公表状況（一覧）</h2>
+__STATIC_TABLE__
+<p class="hint">「非公表」は公式サイト・公式リリースに該当する数値の記載が無かったことを示します（__CHECKED__確認）。ゼクシィ縁結びは2026年3月末でサービス終了のため一覧から除外しています（<a href="/articles/zexy-enmusubi-data/">詳細</a>）。</p>
+
+<h2>この早見表の考え方</h2>
+<p>「結婚率が高いアプリ」を探して検索すると、ランキング形式の記事が並びます。ところが<strong>各アプリ運営会社は結婚率を公表していない</strong>ため、それらの数字は推計か、婚活サービス全体の調査を特定アプリに当てはめたものです。</p>
+<p>公表していないこと自体は悪ではありません。成婚率は分母（全登録者か、有料会員か、一定期間の活動者か）と分子（退会時の自己申告か、追跡調査か）の取り方で何倍も変わるため、公表しない判断には合理性があります。ただし、<strong>公表されていない数字を根拠に選ぶことはできない</strong>。この早見表が示せるのは「公表の有無」までで、そこから先は各社の公式情報と自分の目で確認する必要があります。</p>
+<h3>数字を読むときの三つの確認点</h3>
+<ul>
+<li><strong>「累計」か「現在」か</strong>——会員数はほぼ全社が累計登録者数。退会者を含むため、いま活動している人数ではありません</li>
+<li><strong>「率」か「件数」か</strong>——ユーブライドの成婚退会者19,350名は件数です。率に換算するには分母が要りますが、分母は非公表です</li>
+<li><strong>「自己申告」か「追跡」か</strong>——Pairsの「毎月13,000人に恋人」は退会時の自己申告ベースと公式が説明しています</li>
+</ul>
+<p class="hint">本ツールは各社の公表状況を整理したものであり、サービスの優劣や成婚の可能性を示すものではありません。</p>
+</article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:48px auto 8px;padding:34px 26px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">公表データの更新を、LINEで</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">各社の公表値が変わったときと、公的統計の更新を週1回・短文で届けます。<br>迷ったら追加後そのままトークで相談できます。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'app-kekkonritsu-data'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加して受け取る</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は週1回だけ。いつでも解除できます。</p>
+</section>
+
+<script>
+(function(){
+var APPS=__DATA_JSON__;
+var YB={u:'https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I',h:'比較対象：成婚の実数を公式に公表している婚活サイト',b:'選んだアプリは成婚率・成婚者数を公表していません。主要アプリで成婚退会者数（累計19,350名・2013年7月〜2026年8月）を継続開示しているのはユーブライドのみです。公表姿勢を比較の軸にするなら、一度見ておく価値があります。',btn:'ユーブライド公式サイトを見る（登録無料）',c:'#7c2e42',note:'30〜50代の婚活・再婚層向け。料金・条件は公式サイトでご確認ください'};
+var grid=document.getElementById('apps');
+APPS.forEach(function(a,i){
+  var b=document.createElement('button'); b.type='button'; b.textContent=a.n; b.setAttribute('data-k',a.k);
+  b.addEventListener('click',function(){show(a,b);}); grid.appendChild(b);
+});
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function show(a,btn){
+  [].forEach.call(grid.children,function(c){c.classList.remove('on');}); btn.classList.add('on');
+  var pub=a.rows.filter(function(r){return r[3];}).length, tot=a.rows.length, pct=Math.round(100*pub/tot);
+  document.getElementById('topname').textContent=a.n;
+  document.getElementById('toplead').textContent=(a.k==='zexy')?'このサービスは終了しています。以下は終了前の公表状況の記録です。':
+    (a.rows[0][3]?'結婚率を公表しています。':'結婚率・成婚率は公式には公表されていません。')+'公表している項目は'+tot+'項目中'+pub+'項目です。';
+  document.getElementById('pubfill').style.width=pct+'%'; document.getElementById('pubval').textContent=pub+'/'+tot;
+  document.getElementById('kv').innerHTML=a.rows.map(function(r){
+    return '<tr><th>'+esc(r[0])+'</th><td><span class="tag '+(r[3]?'y">公表':'n">非公表')+'</span>'+esc(r[1])+'<div class="src">出典：'+esc(r[2])+'</div></td></tr>';}).join('');
+  document.getElementById('links').innerHTML='<ul><li><a href="'+a.art+'">'+esc(a.artn)+'</a></li><li><a href="/articles/success-rate-data/">マッチングアプリの結婚率データ｜公表・非公表を分けて読む</a></li></ul>';
+  var pr=(a.k==='zexy')?null:(a.pr||YB), box=document.getElementById('prbox');
+  if(pr){
+    box.innerHTML='<div style="background:#f7f5f2;border:1px solid #e6e2dc;padding:20px 22px;margin:26px 0;text-align:center">'+
+      '<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>'+
+      '<p style="font-weight:700;margin:0 0 10px">'+esc(pr.h)+'</p>'+
+      '<p style="font-size:.88rem;color:#5a6068;margin:0 0 14px">'+esc(pr.b)+'</p>'+
+      '<a href="'+pr.u+'" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:'+pr.c+';color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">'+esc(pr.btn)+'</a>'+
+      '<p style="font-size:.74rem;color:#888;margin:10px 0 0">'+esc(pr.note)+'</p></div>';
+  } else { box.innerHTML=''; }
+  document.getElementById('res').classList.add('show');
+  try{gtag('event','tool_result',{tool:'app-kekkonritsu-data',app:a.k});}catch(e){}
+  document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
+}
+})();
+</script>
