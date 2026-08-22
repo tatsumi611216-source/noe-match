@@ -192,5 +192,10 @@ https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し�
 https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み
 https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識
 https://www.noe-match.com/articles/success-stories/           ← 未認識
+https://www.noe-match.com/tools/app-kekkonritsu-data/          ← 新規ツール（8/22公開・E核）
+https://www.noe-match.com/articles/kekkon-madeno-kikan-data/   ← 8/22公的統計へ差し替え（10.4位・再クロール優先）
+https://www.noe-match.com/articles/soudanjo-hikaku/            ← 8/22型A改稿
+https://www.noe-match.com/articles/over50-guide/               ← 8/22型A改稿
+https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改稿
 ```
 ※寄せ直した5本は既にインデックス済みだが、タイトル変更の再クロールを早める目的で申請する。
