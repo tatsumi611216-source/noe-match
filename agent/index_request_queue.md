@@ -76,3 +76,76 @@ python scripts\index_diff.py
 
 そのあとは B だけを回す運用になる（週2本＝週2件の申請）。
 バックログを抱えない限り、この作業は週に1分で済む。
+
+---
+
+## 2026-08-22 の実測でわかったこと（重要・運用の前提が変わる）
+
+### 1. 未登録69件は「2種類」あり、対処が違う
+
+`agent/index_status.json`（8/22取得）の coverageState 内訳：
+
+| 状態 | 件数 | 意味 | 申請は効くか |
+|---|---|---|---|
+| Submitted and indexed | 138 | 登録済み | — |
+| **Discovered - currently not indexed** | **51** | Googleは見つけたうえで登録していない | **効きにくい**。発見の問題ではないため |
+| **URL is unknown to Google** | **17** | Googleがまだ認識していない | **効く**。優先クロールキューに入る |
+| Crawled - currently not indexed | 1 | クロール済みだが未登録 | 効きにくい |
+
+**「未登録57本を申請する」という運用は、実は51本が的外れだった。**
+申請で動くのは「認識されていない」側だけ。「検出済み・未登録」はGoogleが
+品質・優先度で判断して見送っている状態なので、申請ではなく記事側の問題。
+
+### 2. 再申請は無意味（Google自身が明言）
+
+申請完了ダイアログの原文：
+> URL を優先クロール キューに追加しました。**ページを複数回送信してもキューの順番や優先順位は変わりません。**
+
+→ **一度申請した記事を再申請する作業は、やるだけ無駄。** 台帳の照合キューで
+「済みかどうか」を確認していたのは正しいが、確認の目的は「二重申請を避ける」ではなく
+**「まだ申請していないものを見つける」**であると理解し直す。
+
+### 3. 1日の割り当ては約11件（実測）
+
+11件目まで通り、12件目で
+> 1 日の割り当て量を超えたため、リクエストを処理できませんでした。明日、もう一度お試しください。
+
+**台帳の「1日10本まで」は実測とほぼ一致していた。** この上限は据え置く。
+
+### 4. sitemapは正常。ただし綴り間違いの登録が残っている
+
+| サイトマップ | 状態 | 検出ページ数 | 最終読込 |
+|---|---|---|---|
+| /sitemap.xml | 成功 | 206 | 2026/08/22 |
+| /sitemap-all.xml | 成功 | 197 | 2026/08/22 |
+| **/sitemap.xm** | **取得できませんでした** | 0 | （2026/07/26に送信・以降ずっと失敗） |
+
+`/sitemap.xm`（末尾の l が欠落）が7/26から失敗し続けている。
+**害はないが、サイトマップレポートに恒久的なエラーが1件出たままになる。**
+削除はCEO判断を要するため未実施。
+
+### 5. ドメインプロパティは未登録
+
+`sc-domain:noe-match.com` は「このプロパティへのアクセス権がありません」＝未登録。
+登録するとhttp/https・www有無・全サブドメインをまとめて見られるが、
+**DNSのTXTレコード認証が必要**。DNSは dnsv.jp（お名前.com系）なので
+レジストラへのログインが要る。CEO対応事項。
+
+## 2026-08-22 に申請した11件
+
+| URL | 申請前の状態 |
+|---|---|
+| /articles/junyuchu-biyou/ | 新規公開 |
+| /articles/sango-biyou-itsukara/ | 新規公開 |
+| /articles/garugaru-doukyo/ | 検出-未登録 |
+| /articles/garugaru-ueno-ko/ | 未認識 |
+| /articles/maternity-blue-chigai/ | 未認識 |
+| /articles/sango-rikon/ | 未認識 |
+| /articles/anti-fraud/ | 未認識 |
+| /articles/faq-troubleshooting/ | 未認識 |
+| /articles/kekkon-jutaku-loan/ | 未認識 |
+| /articles/keiyaku-jisshitsu-wana/ | 未認識 |
+| /articles/pairs-marriage-data/ | 未認識 |
+
+**明日に持ち越し（未申請・未認識の残り4件）**：
+pet-konkatsu / shinkon-osechi / shizuoka-niigata-guide / success-stories
