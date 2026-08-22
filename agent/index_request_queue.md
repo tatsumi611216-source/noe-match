@@ -22,7 +22,13 @@
 | 0〜3 | ✅ 申請済み（2026-08-01 / 08-02 / 08-08 / 08-09） |
 | 4〜8 | ⚠️ **状態不明（2026-08-19 訂正）**。GSC実機の抜き取り3本（Day4先頭・Day5・Day8末尾）は「リクエスト済み」だったが、done.json は pending のまま＝人間の報告が無い。**3本の抜き取りで50本を済みと断定したのは誤り**。要照合リストは agent/gsc_verify_queue.md。1日10件ずつGSCで照合し、未申請なら申請する |
 
-**除外：note専用テスト群5本には絶対に申請しない**
+**除外：note専用テスト群5本には絶対に申請しない** ← **2026-08-22 CEO判断で一部解除**。
+note実験は 2026-08-09 に打ち切り済み（`agent/note_group_final_state_20260809.md`）のため
+禁止の根拠は消えている。**`nurse-konkatsu-soudanjo` は「看護師 婚活」39位・27表示で
+白衣コン（4万円・提携中最高単価）が載る収益ページ**なので、8/22に寄せ直しのうえ申請対象に戻した。
+残り4本（kaden/soudanjo-hikaku/tantei/yachin）も禁止の根拠は無いが、優先度が低いので後回し。
+
+（旧記載）
 （`kaden-rental-vs-kounyu` / `nurse-konkatsu-soudanjo` / `soudanjo-hikaku` /
 `tantei-erabikata` / `yachin-credit-shiharai`）。
 noteがクロール需要を動かすかを測っている対照群で、申請すると壊れる。
@@ -168,3 +174,18 @@ Googleが品質で見送っているので申請は効きにくい」と結論�
 
 **明日に持ち越し（未申請・未認識の残り4件）**：
 pet-konkatsu / shinkon-osechi / shizuoka-niigata-guide / success-stories
+
+## 2026-08-23 に申請する（8/22は割り当て上限で持ち越し）
+
+```
+https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/   ← 寄せ直し済み・対照群解除・最優先
+https://www.noe-match.com/articles/kekkon-houkoku-nengajou/   ← 寄せ直し済み（季節物・10月まで）
+https://www.noe-match.com/articles/propose-guide/             ← 寄せ直し済み
+https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し済み
+https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み
+https://www.noe-match.com/articles/pet-konkatsu/              ← 未認識
+https://www.noe-match.com/articles/shinkon-osechi/            ← 未認識
+https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識
+https://www.noe-match.com/articles/success-stories/           ← 未認識
+```
+※寄せ直した5本は既にインデックス済みだが、タイトル変更の再クロールを早める目的で申請する。
