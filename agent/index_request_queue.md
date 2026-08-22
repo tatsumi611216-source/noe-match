@@ -185,18 +185,18 @@ pet-konkatsu / shinkon-osechi / shizuoka-niigata-guide / success-stories
 ## 2026-08-23 に申請する（8/22は割り当て上限で持ち越し）
 
 ```
-https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/   ← 寄せ直し済み・対照群解除・最優先
-https://www.noe-match.com/articles/kekkon-houkoku-nengajou/   ← 寄せ直し済み（季節物・10月まで）
-https://www.noe-match.com/articles/propose-guide/             ← 寄せ直し済み
-https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し済み
-https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み
-https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識
-https://www.noe-match.com/articles/success-stories/           ← 未認識
-https://www.noe-match.com/tools/app-kekkonritsu-data/          ← 新規ツール（8/22公開・E核）
-https://www.noe-match.com/articles/kekkon-madeno-kikan-data/   ← 8/22公的統計へ差し替え（10.4位・再クロール優先）
-https://www.noe-match.com/articles/soudanjo-hikaku/            ← 8/22型A改稿
-https://www.noe-match.com/articles/over50-guide/               ← 8/22型A改稿
-https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改稿
+https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/   ← 寄せ直し済み・対照群解除・最優先  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/articles/kekkon-houkoku-nengajou/   ← 寄せ直し済み（季節物・10月まで）  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/articles/propose-guide/             ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/articles/success-stories/           ← 未認識  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/tools/app-kekkonritsu-data/          ← 新規ツール（8/22公開・E核）  ← [済 8/23]
+https://www.noe-match.com/articles/kekkon-madeno-kikan-data/   ← 8/22公的統計へ差し替え（10.4位・再クロール優先）  ← [済 8/23]
+https://www.noe-match.com/articles/soudanjo-hikaku/            ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/articles/over50-guide/               ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
+https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
 https://www.noe-match.com/tools/kekkon-shikin-keisanki/        ← J核・表示ゼロ。8/23に公表値更新＋ハナユメ結果連動
 https://www.noe-match.com/articles/kekkon-okane-data/          ← 8/23公表値へ更新
 https://www.noe-match.com/articles/nashikon-data/              ← 8/23公表値へ更新
@@ -208,3 +208,22 @@ https://www.noe-match.com/articles/youbride-guide/             ← 8/23料金改
 https://www.noe-match.com/articles/marrish-guide/              ← 8/23公表状況＋4,000字
 ```
 ※寄せ直した5本は既にインデックス済みだが、タイトル変更の再クロールを早める目的で申請する。
+
+### 2026-08-23 実行結果（自動タスク）
+
+割り当て上限に到達したため **2件成功・11件持ち越し** で打ち切り。
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /tools/app-kekkonritsu-data/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/kekkon-madeno-kikan-data/ | ✅ 優先クロールキューに追加 |
+| 3 | /articles/nurse-konkatsu-soudanjo/ | ❌「割り当て量を超えています」→ここで打ち切り |
+| 4〜13 | 残り10本 | 未実行（持ち越し） |
+
+3本目でダイアログ「1日の割り当て量を超えたため、リクエストを処理できませんでした」。
+8/22 は11件目で上限だったので、**8/22 夜の申請分が24時間窓にまだ残っている**状態。
+再試行・アカウント切替は行っていない。
+
+※この節の残り9本（kekkon-shikin-keisanki / kekkon-okane-data / nashikon-data /
+shikijo-erabi-guide / gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data /
+youbride-guide / marrish-guide）は 8/23 の自動タスクの割り当て対象外。改稿後に別途申請する。
