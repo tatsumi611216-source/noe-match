@@ -1,0 +1,28 @@
+[debug] [2026-08-22T02:38:42.274Z] ----------------------------------------------------------------------
+[debug] [2026-08-22T02:38:42.278Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\tatsu\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js projects:list
+[debug] [2026-08-22T02:38:42.279Z] CLI Version:   13.0.1
+[debug] [2026-08-22T02:38:42.279Z] Platform:      win32
+[debug] [2026-08-22T02:38:42.279Z] Node Version:  v22.16.0
+[debug] [2026-08-22T02:38:42.280Z] Time:          Sat Aug 22 2026 11:38:42 GMT+0900 (日本標準時)
+[debug] [2026-08-22T02:38:42.280Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-08-22T02:38:42.312Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-08-22T02:38:42.531Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-08-22T02:38:42.532Z] > authorizing via signed-in user (tatsumi611216@gmail.com)
+[debug] [2026-08-22T02:38:42.538Z] > refreshing access token with scopes: []
+[debug] [2026-08-22T02:38:42.540Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-08-22T02:38:42.540Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-08-22T02:38:42.664Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-08-22T02:38:42.664Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-08-22T02:38:42.665Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=1000
+[debug] [2026-08-22T02:38:42.750Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 401
+[debug] [2026-08-22T02:38:42.750Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[debug] [2026-08-22T02:38:42.750Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2026-08-22T02:38:42.752Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\tatsu\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\tatsu\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:292:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[error] 
+[error] Error: Failed to list Firebase projects. See firebase-debug.log for more info.
+[debug] [2026-08-22T02:38:42.838Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-08-22T02:38:42.839Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}

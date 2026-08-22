@@ -97,7 +97,7 @@ def build(slug, title, desc, lead, toc, body, faq, related, cta,
 <body>
 <header><div class="header-inner">
 <a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
-<nav><a href="/#ranking">ランキング</a><a href="/#articles">記事一覧</a><a href="/#tools">無料ツール</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+<nav><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#tools">無料ツール</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
 </div></header>
 <div class="wrap">
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#articles">記事一覧</a> ＞ %(title)s</div>
