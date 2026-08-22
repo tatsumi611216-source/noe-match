@@ -223,24 +223,23 @@ def check_taigen(sents, verbose):
 
 
 def check_triples(body):
-    # 単語を3つ並べるだけの列挙は口語でも自然に出る。
-    # AIの癖が出るのは、修飾のついた「句」を3つ並べる構文なので、
-    # 各要素が6字以上のものだけを数える。
-    # 閾値は絶対数ではなく密度で見る。実在チャンネル31本(288,296字)の生実測は
-    # 0.29件/1000字だが、自動字幕は読点が7.9個/1000字しかなく（普通の文章は20超）、
-    # 読点密度で補正すると人間の水準は約0.9件/1000字。
-    pat = re.compile(r"[^。、]{6,25}、[^。、]{6,25}、(?:そして|また、?)?[^。、]{6,25}[。]")
-    flat = re.sub(r"\s", "", body)
-    n = len(pat.findall(flat))
+    # v3: 読点2個の文はごく普通の日本語なので数えない。
+    # AIの癖として拾うのは (a) 読点3個以上の連鎖文、(b)「XとYとZ」型の明示的な並列列挙。
+    # 実際に句読点のある人間の話し言葉（納品テストの検品過程）で較正した。
+    flat = re.sub(r"[ \t]", "", body)
+    sent_list = [x for x in re.split(r"(?<=[。！？])", flat) if len(x.strip()) > 2]
+    chains = [x for x in sent_list if x.count("、") >= 3]
+    para = re.findall(r"[^。、\n]{2,12}と、[^。、\n]{2,12}と、[^。、\n]{2,12}", flat)
+    n = len(chains) + len(para)
     dens = n / len(flat) * 1000 if flat else 0
-    print(f"\n【5】三点セット列挙（句レベル）  {n}件 ({dens:.2f}件/1000字, 補正済み人間水準≈0.9)")
-    if dens > 1.8:
-        print("  ✗ 人間の話し言葉の水準を大きく超えている。列挙を文にほどく")
-        for m in list(pat.finditer(flat))[:3]:
-            print(f"      {m.group(0)[:60]}")
-        return int((dens - 0.9) * 8)
-    if dens > 1.2:
-        print("  △ やや多い。目立つものだけほどく")
+    print(f"\n【5】列挙・読点連鎖  連鎖{len(chains)}件+並列{len(para)}件 ({dens:.2f}件/1000字)")
+    if dens > 1.5:
+        print("  ✗ 多すぎる。読点3個以上の文を句点で切る")
+        for x in chains[:3]:
+            print(f"      {x[:60]}")
+        return int((dens - 0.7) * 8)
+    if dens > 0.9:
+        print("  △ やや多い。音読でつっかえるものだけほどく")
         return 6
     print("  ✓ 人間の水準")
     return 0
