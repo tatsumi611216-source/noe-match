@@ -1,0 +1,37 @@
+台本のファクトチェックをお願いします。
+
+# 対象
+work/minsalo-chatgpt-test/draft/script_本番.md の中の【要確認：…】タグ全件（16件前後）。
+
+# 絶対のルール
+- あなたの知識で判定しないでください。**必ずWebFetchで一次ソースを開いて**、
+  ページに書いてある内容とだけ突き合わせてください
+- 一次ソースは OpenAI公式のみ：
+  - https://help.openai.com/en/articles/6825453-chatgpt-release-notes
+  - https://help.openai.com/en/articles/9624314-model-release-notes
+  - https://openai.com/chatgpt/pricing/
+  - help.openai.com 内の各機能のヘルプ記事（検索して辿ってよい）
+- まとめサイト・ブログ・ニュース記事は使わないでください
+- インボイス制度の1件だけは国税庁（nta.go.jp）を一次ソースとする
+
+# 手順
+1. script_本番.md を読み、【要確認】タグを全件リストアップする
+2. 1件ずつ一次ソースを開いて照合する
+3. 結果を work/minsalo-chatgpt-test/refs/facts_verified.md に表で書き出す。
+   列：タグ内容／判定（✅一致・❌不一致・⚠️確認不能）／根拠URL／
+   **根拠となるページ内の記述の引用（原文のまま）**／確認日時
+4. 判定にもとづいて script_本番.md を編集する：
+   - ✅一致 → タグだけ外す（本文は触らない）
+   - ❌不一致 → 本文を正しい内容に直してタグを外す。直した箇所は
+     facts_verified.md に「修正前→修正後」を記録する
+   - ⚠️確認不能 → 本文のその文の先頭に【削除候補】マーカーを付ける。
+     勝手に削除はしない（削除の判断は私がやります）
+5. 編集が終わったら python work/minsalo-chatgpt-test/tools/ai_smell.py で検査し、
+   結果を報告する
+6. コミットしてプッシュする：
+   git add -f work/minsalo-chatgpt-test/draft/script_本番.md work/minsalo-chatgpt-test/refs/facts_verified.md
+   git commit -m "要確認タグの裏取り：一次ソース照合の結果を反映"
+   git push -u origin claude/chatgpt-mastery-test-order-bf485z
+
+# 報告
+最後に、✅／❌／⚠️の件数と、❌だった項目の一覧だけ教えてください。
