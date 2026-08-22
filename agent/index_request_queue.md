@@ -197,5 +197,8 @@ https://www.noe-match.com/articles/kekkon-madeno-kikan-data/   ← 8/22公的統
 https://www.noe-match.com/articles/soudanjo-hikaku/            ← 8/22型A改稿
 https://www.noe-match.com/articles/over50-guide/               ← 8/22型A改稿
 https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改稿
+https://www.noe-match.com/tools/kekkon-shikin-keisanki/        ← J核・表示ゼロ。8/23に公表値更新＋ハナユメ結果連動
+https://www.noe-match.com/articles/kekkon-okane-data/          ← 8/23公表値へ更新
+https://www.noe-match.com/articles/nashikon-data/              ← 8/23公表値へ更新
 ```
 ※寄せ直した5本は既にインデックス済みだが、タイトル変更の再クロールを早める目的で申請する。

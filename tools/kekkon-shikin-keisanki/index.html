@@ -126,7 +126,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 </div></div>
 <article>
 <blockquote><strong>結婚費用は「総額」ではなく「ご祝儀を差し引いた実質自己負担」で考えるのが正解。</strong>挙式スタイル・指輪・新生活のグレードを選ぶだけで、総額・自己負担・費目内訳・削減候補まで一度に出します。</blockquote>
-<p>「結婚には400万円かかる」とよく言われるが、それは全部やった場合の定価にすぎない。実際の負担はご祝儀でかなり圧縮される。まずは自分たちの条件で数字を出してみてほしい。数字の背景は<a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ</a>で詳しく解説している。</p>
+<p>公表データでは、挙式と披露宴を実施した人の総額は平均298.6万円、ご祝儀総額は平均187.1万円、自己負担額は平均158.9万円（リクルートブライダル総研「結婚マーケット調査2025」）。総額の大半はご祝儀で圧縮される。まずは自分たちの条件で数字を出してみてほしい。数字の背景は<a href="/articles/kekkon-okane-data/">結婚にかかるお金の総額データ</a>で詳しく解説している。</p>
 
 <h2>条件を選ぶ</h2>
 <div class="calc" id="calcForm">
@@ -227,6 +227,14 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <ul class="cutlist" id="rCuts"></ul>
 <p style="font-size:.82rem;color:var(--sub)">※招待人数の削減はご祝儀も一緒に減るため、削減効果は見た目より小さくなりがちです。削って後悔しやすいのは写真・映像と言われます。</p>
 
+<div id="hanaBox" style="display:none;background:#f7f5f2;border:1px solid #e3ddd3;border-radius:6px;padding:20px 22px;margin:26px 0 6px;text-align:center">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
+<p style="font-weight:700;margin:0 0 6px">数字が出たら、次は実際の式場の見積もりで答え合わせ</p>
+<p style="font-size:.85rem;color:var(--ink-soft);margin:0 0 12px">この計算機は公表データの平均をもとにした概算です。実際の総額は会場・時期・人数で大きく動くため、見学して見積もりを取ると自分たちの数字に置き換わります。見学前に予算の上限（この試算の自己負担）を決めておくと交渉がしやすくなります。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3K0BP6+3DOK+60OXF" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;border-radius:0;text-decoration:none">ハナユメで式場を探す・見学を予約する</a>
+<p style="font-size:.74rem;color:#888;margin:10px 0 0">式場探し・見学予約のサービス。料金・特典・条件は会場と時期で異なります。公式サイトでご確認ください</p>
+</div>
+
 <div style="background:#f7f5f2;border:1px solid #e3ddd3;border-radius:6px;padding:20px 22px;margin:26px 0 6px;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
 <p style="font-weight:700;margin:0 0 6px">新生活費用は「初期費用」より、毎月ずっと続く固定費の設定で差がつく</p>
@@ -275,17 +283,17 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 
 <footer><div class="footer-inner">
 <div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
-<p class="footer-disc">※本ツールの試算は2026年8月時点の編集部調べに基づく概算です。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+<p class="footer-disc">※本ツールの試算は「結婚マーケット調査2025」の公表平均と2026年8月時点の編集部調べに基づく概算です。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
 </div></footer>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>
 (function(){
 "use strict";
-// 金額はすべて万円。出典: /articles/kekkon-okane-data/（編集部調べ・2026年8月時点）
+// 金額はすべて万円。挙式・披露宴の基準はリクルートブライダル総研「結婚マーケット調査2025」（挙式＋披露宴実施者の総額平均298.6万円・招待客平均57.2人・1人当たり7.3万円）を中心にレンジ化。他費目は編集部調べ（2026年8月時点）
 var DATA={
   engageRing:[30,40], marriageRing:[20,30],
-  ceremony:{ general:{base:[300,370],ref:60}, small:{base:[100,180],ref:30}, photo:[10,25], none:[0,0] },
-  perGuest:2.5,
+  ceremony:{ general:{base:[270,330],ref:57}, small:{base:[100,180],ref:30}, photo:[10,25], none:[0,0] },
+  perGuest:3,
   kaoawase:{ meal:[5,10], yuino:[15,25], none:[0,0] },
   honeymoon:{ yes:[40,60], no:[0,0] },
   moving:{ near:[30,40], mid:[40,50], far:[50,60], none:[0,0] },
@@ -331,6 +339,7 @@ function calc(){
   var total=[0,0];
   items.forEach(function(it){ total=addR(total,it[1]); });
   var gift=hasGuests?guests*giftUnit:0;
+  var hb=document.getElementById("hanaBox"); if(hb){hb.style.display=hasGuests?"block":"none";}
   var self=clampR([total[0]-gift,total[1]-gift]);
   // 表示
   $("rTotal").textContent=fmtR(total);
