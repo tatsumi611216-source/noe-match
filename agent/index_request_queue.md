@@ -175,6 +175,13 @@ Googleが品質で見送っているので申請は効きにくい」と結論�
 **明日に持ち越し（未申請・未認識の残り4件）**：
 pet-konkatsu / shinkon-osechi / shizuoka-niigata-guide / success-stories
 
+## 2026-08-22 追記：割り当ては時間窓で回復する（実測）
+
+11件目で上限→数時間後に2件通る→再び上限。**1日の上限は固定11件ではなく、
+24時間の移動窓で回復する**と見るのが実態に近い。申請は「朝と夜の2回に分ける」と
+1日の処理数を増やせる可能性がある（未検証・明日試す）。本日の合計は13件。
+追加で通った2件：pet-konkatsu / shinkon-osechi。
+
 ## 2026-08-23 に申請する（8/22は割り当て上限で持ち越し）
 
 ```
@@ -183,8 +190,6 @@ https://www.noe-match.com/articles/kekkon-houkoku-nengajou/   ← 寄せ直し�
 https://www.noe-match.com/articles/propose-guide/             ← 寄せ直し済み
 https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し済み
 https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み
-https://www.noe-match.com/articles/pet-konkatsu/              ← 未認識
-https://www.noe-match.com/articles/shinkon-osechi/            ← 未認識
 https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識
 https://www.noe-match.com/articles/success-stories/           ← 未認識
 ```
