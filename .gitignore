@@ -1,2 +1,5 @@
 _indexnow_key.txt
 __pycache__/
+
+# プロフィールの個人特定語リスト（絶対にコミットしない）
+profiles/.ngwords

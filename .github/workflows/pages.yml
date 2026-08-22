@@ -13,6 +13,7 @@ on:
       - 'sourcing/**'
       - 'agent/**'
       - 'scripts/**'
+      - 'profiles/**'
       - '.github/workflows/sourcing-crawl.yml'
   workflow_dispatch:
 
@@ -56,7 +57,7 @@ jobs:
         run: |
           set -eu
           fail=0
-          for p in agent scripts sourcing build_articles.py server.py complete_implementation.py README.md; do
+          for p in agent scripts sourcing profiles build_articles.py server.py complete_implementation.py README.md; do
             if [ -e "_site/$p" ]; then echo "::error::_site に $p が混入している"; fail=1; fi
           done
           if find _site -name '*.py' -o -name '*.env*' | grep -q .; then
