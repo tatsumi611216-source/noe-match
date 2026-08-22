@@ -248,7 +248,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
   <p class="hint">金額はサービスの一般的なレンジからの概算です。実際の費用は各サービスの公式情報でご確認ください。</p>
 
   <h3>次に読むと早いページ</h3>
-  <div id="links"></div>
+  <div id="links"><ul class="entry-static"><li><a href="/articles/tokyo-guide/">東京で婚活するなら</a></li><li><a href="/articles/osaka-guide/">大阪で婚活するなら</a></li><li><a href="/articles/kyoto-guide/">烏丸・河原町で出会うなら</a></li><li><a href="/articles/civil-servant-guide/">公務員の婚活</a></li><li><a href="/articles/hitomishiri-guide/">人見知りの婚活</a></li><li><a href="/articles/35s-strategy/">35歳からの婚活戦略</a></li><li><a href="/articles/seishain-igai-guide/">正社員以外の働き方と婚活</a></li></ul></div>
   <div id="prbox"></div>
 </div>
 
@@ -402,6 +402,13 @@ document.getElementById('run').addEventListener('click',function(){
   if(attrs.indexOf('体型')>=0) links.push(['/articles/pocchari-konkatsu/','体型を最初に共有する婚活']);
   if(attrs.indexOf('再婚')>=0) links.push(['/articles/batsuichi-guide/','再婚を目指す婚活の進め方']);
   if(attrs.indexOf('働き方')>=0) links.push(['/articles/seishain-igai-guide/','正社員以外の働き方と婚活']);
+
+  // 入口記事（地域・職業・性格・年齢）: 診断結果にかかわらず末尾に2本だけ足す（2026-08-22・Cクラスタ導線強化）
+  var ENTRY=[['/articles/tokyo-guide/','東京で婚活するなら'],['/articles/osaka-guide/','大阪で婚活するなら'],
+    ['/articles/kyoto-guide/','烏丸・河原町で出会うなら'],['/articles/civil-servant-guide/','公務員の婚活'],
+    ['/articles/hitomishiri-guide/','人見知りの婚活'],['/articles/35s-strategy/','35歳からの婚活戦略']];
+  if(attrs.indexOf('働き方')<0) links.push(ENTRY[Math.floor(Math.random()*ENTRY.length)]);
+  links.push(ENTRY[(Math.floor(Math.random()*ENTRY.length)+3)%ENTRY.length]);
   document.getElementById('links').innerHTML='<ul>'+links.map(function(l){
     return '<li><a href="'+l[0]+'">'+l[1]+'</a></li>';}).join('')+'</ul>';
 
