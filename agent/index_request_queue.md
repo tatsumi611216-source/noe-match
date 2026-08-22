@@ -200,5 +200,8 @@ https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改�
 https://www.noe-match.com/tools/kekkon-shikin-keisanki/        ← J核・表示ゼロ。8/23に公表値更新＋ハナユメ結果連動
 https://www.noe-match.com/articles/kekkon-okane-data/          ← 8/23公表値へ更新
 https://www.noe-match.com/articles/nashikon-data/              ← 8/23公表値へ更新
+https://www.noe-match.com/articles/shikijo-erabi-guide/        ← 8/23型A全面改稿（ハナユメ受け皿・78位）
+https://www.noe-match.com/articles/gosyugi-shiharai-houhou/    ← 8/23寄せ直し＋4,000字
+https://www.noe-match.com/articles/shinkon-ryokou-credit/      ← 8/23寄せ直し＋4,000字
 ```
 ※寄せ直した5本は既にインデックス済みだが、タイトル変更の再クロールを早める目的で申請する。
