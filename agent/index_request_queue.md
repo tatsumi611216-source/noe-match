@@ -185,19 +185,19 @@ pet-konkatsu / shinkon-osechi / shizuoka-niigata-guide / success-stories
 ## 2026-08-23 に申請する（8/22は割り当て上限で持ち越し）
 
 ```
-https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/   ← 寄せ直し済み・対照群解除・最優先  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/articles/kekkon-houkoku-nengajou/   ← 寄せ直し済み（季節物・10月まで）  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/articles/propose-guide/             ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/articles/success-stories/           ← 未認識  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/   ← 寄せ直し済み・対照群解除・最優先  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/kekkon-houkoku-nengajou/   ← 寄せ直し済み（季節物・10月まで）  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/propose-guide/             ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/success-stories/           ← 未認識  ← 持ち越し（8/23 割り当て上限）
 [済 8/23] https://www.noe-match.com/tools/app-kekkonritsu-data/          ← 新規ツール（8/22公開・E核）  ← [済 8/23]
 https://www.noe-match.com/articles/kekkon-madeno-kikan-data/   ← 8/22公的統計へ差し替え（10.4位・再クロール優先）  ← [済 8/23]
 https://www.noe-match.com/articles/soudanjo-hikaku/            ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/articles/over50-guide/               ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/tools/kekkon-shikin-keisanki/        ← J核・表示ゼロ。8/23に公表値更新＋ハナユメ結果連動
+[済 8/24] https://www.noe-match.com/articles/over50-guide/               ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/tools/kekkon-shikin-keisanki/        ← J核・表示ゼロ。8/23に公表値更新＋ハナユメ結果連動
 https://www.noe-match.com/articles/kekkon-okane-data/          ← 8/23公表値へ更新
 https://www.noe-match.com/articles/nashikon-data/              ← 8/23公表値へ更新
 https://www.noe-match.com/articles/shikijo-erabi-guide/        ← 8/23型A全面改稿（ハナユメ受け皿・78位）
@@ -252,16 +252,16 @@ https://www.noe-match.com/articles/anti-fraud/
 ## 新規ツール（2026-08-23公開）
 
 ```
-https://www.noe-match.com/tools/sango-recovery-check/
+[済 8/24] https://www.noe-match.com/tools/sango-recovery-check/
 ```
 
 ## ツール改名分（2026-08-23・再クロール優先）
 
 ```
-https://www.noe-match.com/tools/kekkon-shikin-keisanki/
-https://www.noe-match.com/tools/koisaihi-simulator/
-https://www.noe-match.com/tools/seikatsuhi-simulator/
-https://www.noe-match.com/tools/rikongo-seikatsuhi/
+[済 8/24] https://www.noe-match.com/tools/kekkon-shikin-keisanki/
+[済 8/24] https://www.noe-match.com/tools/koisaihi-simulator/
+[済 8/24] https://www.noe-match.com/tools/seikatsuhi-simulator/
+[済 8/24] https://www.noe-match.com/tools/rikongo-seikatsuhi/
 https://www.noe-match.com/tools/soudanjo-simulator/
 https://www.noe-match.com/tools/kekkon-yarukoto/
 ```
@@ -279,3 +279,47 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 - [ ] /articles/sango-fukeru-taisaku/
 - [ ] /articles/sango-taikei-itsu-modoru/
 - [ ] /tools/hoikuen-tensu-nerima/（8/24新設・練馬区保育園点数ツール）
+
+## 2026-08-24 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**14件成功・15件目で割り当て上限に到達し打ち切り。** 8/22の11件・8/23の2件を上回り、本タスク開始以来の最多。
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /articles/nurse-konkatsu-soudanjo/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/kekkon-houkoku-nengajou/ | ✅ |
+| 3 | /articles/propose-guide/ | ✅ |
+| 4 | /articles/kyoto-guide/ | ✅ |
+| 5 | /articles/success-rate-data/ | ✅ |
+| 6 | /articles/shizuoka-niigata-guide/ | ✅ |
+| 7 | /articles/success-stories/ | ✅ |
+| 8 | /articles/over50-guide/ | ✅ |
+| 9 | /articles/agency-vs-app/ | ✅ |
+| 10 | /tools/sango-recovery-check/ | ✅ |
+| 11 | /tools/kekkon-shikin-keisanki/ | ✅ |
+| 12 | /tools/koisaihi-simulator/ | ✅ |
+| 13 | /tools/seikatsuhi-simulator/ | ✅ |
+| 14 | /tools/rikongo-seikatsuhi/ | ✅ |
+| 15 | /tools/soudanjo-simulator/ | ❌「割り当て量を超えています」→ここで打ち切り |
+
+再試行・アカウント切替は行っていない。`soudanjo-hikaku` は note対照群の残り4本に含まれるため
+台帳ルールどおりスキップした（`nurse-konkatsu-soudanjo` のみ解除済み）。
+
+### 残り（8/25以降）
+
+- ツール改名分：/tools/soudanjo-simulator/ ・ /tools/kekkon-yarukoto/
+- Fクラスタ13本：women-strategy / with-women / sakuhin-kachikan / safety-guide / profile-text /
+  privacy-protection / photo-tips / pairs-women / pairs-men / line-exchange / fraud-statistics /
+  first-date-guide / anti-fraud
+- 産後周辺4本：sango-nukege-itsu-modoru / sango-fukeru-taisaku / sango-taikei-itsu-modoru /
+  tools/hoikuen-tensu-nerima
+- 改稿待ちで対象外のまま：kekkon-okane-data / nashikon-data / shikijo-erabi-guide /
+  gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide /
+  omiai-guide / compare-popular
+
+### 実測メモ：1日の上限は11件固定ではない
+
+8/22は11件目、8/23は3件目で上限だったが、本日は**14件通った**。
+「1日◯件」ではなく24時間移動窓での回復とする 8/22 の見立てを支持する。
+台帳冒頭の「1日10本まで」は下限の目安であって、実際は**上限が出るまで回すのが正しい**。
+
