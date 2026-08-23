@@ -278,3 +278,4 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 - [ ] /articles/sango-nukege-itsu-modoru/
 - [ ] /articles/sango-fukeru-taisaku/
 - [ ] /articles/sango-taikei-itsu-modoru/
+- [ ] /tools/hoikuen-tensu-nerima/（8/24新設・練馬区保育園点数ツール）
