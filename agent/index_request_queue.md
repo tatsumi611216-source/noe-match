@@ -192,7 +192,7 @@ https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し�
 https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
 https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識  ← 持ち越し（8/23 割り当て上限）
 https://www.noe-match.com/articles/success-stories/           ← 未認識  ← 持ち越し（8/23 割り当て上限）
-https://www.noe-match.com/tools/app-kekkonritsu-data/          ← 新規ツール（8/22公開・E核）  ← [済 8/23]
+[済 8/23] https://www.noe-match.com/tools/app-kekkonritsu-data/          ← 新規ツール（8/22公開・E核）  ← [済 8/23]
 https://www.noe-match.com/articles/kekkon-madeno-kikan-data/   ← 8/22公的統計へ差し替え（10.4位・再クロール優先）  ← [済 8/23]
 https://www.noe-match.com/articles/soudanjo-hikaku/            ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
 https://www.noe-match.com/articles/over50-guide/               ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
@@ -264,4 +264,5 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 ## 2026-08-23 申請実績
 
 - [済 8/23] /tools/seikatsuhi-simulator/（8/22時点で未認識だったため最優先。成功）
-- 2件目（app-kekkonritsu-data）で「割り当て量を超えています」→ 8/22からの移動窓で合計14件。以降は8/24 8:00の予約タスクへ
+- [済 8/23] /tools/app-kekkonritsu-data/（窓の回復後に1件通過）
+- 3件目（kekkon-madeno-kikan-data）で再び上限。**以降は毎朝8:00の定期タスク `affiliate-gsc-request-20260823` が台帳の未申請を上限まで自動処理する**（8/23 CEO承認で一回限り→毎日に変更）
