@@ -260,3 +260,8 @@ https://www.noe-match.com/tools/soudanjo-simulator/
 https://www.noe-match.com/tools/kekkon-yarukoto/
 ```
 ※「計算機／シミュレーター」という検索されない機能名から、検索される言い方（自己負担 平均／デート代 平均／二人暮らし 生活費／養育費 いくら／結婚相談所 成婚料／結婚 準備 リスト）へタイトル・h1・descriptionを改名。本体は無変更。
+
+## 2026-08-23 申請実績
+
+- [済 8/23] /tools/seikatsuhi-simulator/（8/22時点で未認識だったため最優先。成功）
+- 2件目（app-kekkonritsu-data）で「割り当て量を超えています」→ 8/22からの移動窓で合計14件。以降は8/24 8:00の予約タスクへ
