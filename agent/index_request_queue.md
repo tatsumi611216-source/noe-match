@@ -272,3 +272,9 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 - [済 8/23] /tools/seikatsuhi-simulator/（8/22時点で未認識だったため最優先。成功）
 - [済 8/23] /tools/app-kekkonritsu-data/（窓の回復後に1件通過）
 - 3件目（kekkon-madeno-kikan-data）で再び上限。**以降は毎朝8:00の定期タスク `affiliate-gsc-request-20260823` が台帳の未申請を上限まで自動処理する**（8/23 CEO承認で一回限り→毎日に変更）
+
+
+## 産後周辺記事（8/23生成・未申請）
+- [ ] /articles/sango-nukege-itsu-modoru/
+- [ ] /articles/sango-fukeru-taisaku/
+- [ ] /articles/sango-taikei-itsu-modoru/
