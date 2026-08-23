@@ -206,6 +206,8 @@ https://www.noe-match.com/articles/shinkon-ryokou-credit/      ← 8/23寄せ直
 https://www.noe-match.com/articles/age-data/                   ← 8/23型A再構成（48表示・Dの主力）
 https://www.noe-match.com/articles/youbride-guide/             ← 8/23料金改定反映＋4,000字
 https://www.noe-match.com/articles/marrish-guide/              ← 8/23公表状況＋4,000字
+https://www.noe-match.com/articles/omiai-guide/                ← 8/23料金・統計を公式値に（15.5位）
+https://www.noe-match.com/articles/compare-popular/            ← 8/23抜け殻節を型Aに
 ```
 ※寄せ直した5本は既にインデックス済みだが、タイトル変更の再クロールを早める目的で申請する。
 
