@@ -759,5 +759,196 @@
    "with-seriousness-data",
    "youbride-seikon-data"
   ]
+ },
+ {
+  "period": {
+   "start": "2026-07-24",
+   "end": "2026-08-21"
+  },
+  "fetched_at": "2026-08-23T13:25:24",
+  "totals": {
+   "live_articles": 192,
+   "eligible_articles": 184,
+   "excluded_published_after_window": 0,
+   "articles_with_impressions": 110,
+   "silent_rate": 40.2,
+   "impressions": 2601,
+   "clicks": 40,
+   "ctr": 1.54
+  },
+  "cohorts": {
+   "legacy": {
+    "articles": 91,
+    "with_impressions": 44,
+    "reach_rate": 48.4
+   },
+   "in_window": {
+    "articles": 93,
+    "with_impressions": 66,
+    "reach_rate": 71.0
+   },
+   "fresh": {
+    "articles": 8,
+    "with_impressions": 4,
+    "reach_rate": 50.0
+   },
+   "after_window": {
+    "articles": 0,
+    "with_impressions": 0,
+    "reach_rate": null
+   }
+  },
+  "rewrites": {
+   "evaluated": 6,
+   "reached": 1,
+   "pending": 19
+  },
+  "position_bands": {
+   "1-10位": {
+    "impressions": 68,
+    "clicks": 4,
+    "ctr": 5.9
+   },
+   "11-30位": {
+    "impressions": 148,
+    "clicks": 4,
+    "ctr": 2.7
+   },
+   "31-50位": {
+    "impressions": 119,
+    "clicks": 0,
+    "ctr": 0.0
+   },
+   "51位以下": {
+    "impressions": 603,
+    "clicks": 0,
+    "ctr": 0.0
+   }
+  },
+  "clusters": {
+   "データ・統計": {
+    "pages": 20,
+    "impressions": 528,
+    "clicks": 10,
+    "avg_position": 25.7,
+    "clicks_per_page": 0.5,
+    "ctr": 1.9
+   },
+   "地域ガイド": {
+    "pages": 8,
+    "impressions": 474,
+    "clicks": 5,
+    "avg_position": 31.7,
+    "clicks_per_page": 0.62,
+    "ctr": 1.1
+   },
+   "属性別": {
+    "pages": 12,
+    "impressions": 353,
+    "clicks": 3,
+    "avg_position": 54.3,
+    "clicks_per_page": 0.25,
+    "ctr": 0.8
+   },
+   "その他": {
+    "pages": 35,
+    "impressions": 478,
+    "clicks": 9,
+    "avg_position": 34.8,
+    "clicks_per_page": 0.26,
+    "ctr": 1.9
+   },
+   "アプリ別": {
+    "pages": 6,
+    "impressions": 131,
+    "clicks": 2,
+    "avg_position": 46.9,
+    "clicks_per_page": 0.33,
+    "ctr": 1.5
+   },
+   "結婚準備": {
+    "pages": 15,
+    "impressions": 202,
+    "clicks": 1,
+    "avg_position": 46.9,
+    "clicks_per_page": 0.07,
+    "ctr": 0.5
+   },
+   "ノウハウ": {
+    "pages": 9,
+    "impressions": 93,
+    "clicks": 1,
+    "avg_position": 31.3,
+    "clicks_per_page": 0.11,
+    "ctr": 1.1
+   },
+   "相談所": {
+    "pages": 4,
+    "impressions": 114,
+    "clicks": 0,
+    "avg_position": 68.5,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "新生活": {
+    "pages": 10,
+    "impressions": 77,
+    "clicks": 0,
+    "avg_position": 23.6,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "探偵・離婚": {
+    "pages": 2,
+    "impressions": 2,
+    "clicks": 0,
+    "avg_position": 45.0,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   }
+  },
+  "top10_queries": [
+   "2030年 結婚 良い日",
+   "with 年齢",
+   "with 成婚率",
+   "with 結婚率",
+   "アプリ婚 割合",
+   "ガルガル期 名前の由来",
+   "タップル 真剣度",
+   "タップル 結婚率",
+   "ユー ブライド 地方"
+  ],
+  "top10_pages": [
+   "(top)",
+   "appkon-wariai-data",
+   "garugaru-ki-guide",
+   "inaka-guide",
+   "tapple-seriousness-data",
+   "with-nenreiso-data",
+   "with-seriousness-data"
+  ],
+  "pages_with_clicks": [
+   "(top)",
+   "appkon-wariai-data",
+   "bachelor-date-guide",
+   "christmas-propose-gyakusan",
+   "civil-servant-guide",
+   "futari-sumaho-minaoshi",
+   "garugaru-ki-guide",
+   "garugaru-otto-taiou",
+   "kekkon-madeno-kikan-data",
+   "konkatsu-roadmap",
+   "kyoto-guide",
+   "matching-app-ranking",
+   "mitas-formen-kuchikomi",
+   "okinawa-guide",
+   "omiai-guide",
+   "sapporo-guide",
+   "tapple-seriousness-data",
+   "tenshoku-riyu-honne",
+   "time-management",
+   "with-seriousness-data",
+   "youbride-seikon-data"
+  ]
  }
 ]
