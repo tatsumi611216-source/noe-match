@@ -1,8 +1,8 @@
 {
- "fetched_at": "2026-08-22T22:37:25",
+ "fetched_at": "2026-08-23T12:54:23",
  "period": {
-  "start": "2026-07-23",
-  "end": "2026-08-20"
+  "start": "2026-07-24",
+  "end": "2026-08-21"
  },
  "by_query_page": [
   {
@@ -2234,14 +2234,14 @@
   {
    "page": "https://www.noe-match.com/articles/with-seriousness-data/",
    "clicks": 5,
-   "impressions": 102,
+   "impressions": 100,
    "position": 7.5
   },
   {
    "page": "https://www.noe-match.com/articles/kyoto-guide/",
    "clicks": 4,
-   "impressions": 59,
-   "position": 24.6
+   "impressions": 57,
+   "position": 25.0
   },
   {
    "page": "https://www.noe-match.com/tools/garugaru-check/",
@@ -2510,8 +2510,8 @@
   {
    "page": "https://www.noe-match.com/articles/fraud-detection/",
    "clicks": 0,
-   "impressions": 8,
-   "position": 35.6
+   "impressions": 7,
+   "position": 39.3
   },
   {
    "page": "https://www.noe-match.com/articles/fukuoka-guide/",
@@ -2744,8 +2744,8 @@
   {
    "page": "https://www.noe-match.com/articles/osaka-guide/",
    "clicks": 0,
-   "impressions": 33,
-   "position": 9.8
+   "impressions": 32,
+   "position": 9.6
   },
   {
    "page": "https://www.noe-match.com/articles/ouchi-date-guide/",
@@ -2870,14 +2870,14 @@
   {
    "page": "https://www.noe-match.com/articles/student-guide/",
    "clicks": 0,
-   "impressions": 26,
-   "position": 44.2
+   "impressions": 24,
+   "position": 47.0
   },
   {
    "page": "https://www.noe-match.com/articles/success-rate-data/",
    "clicks": 0,
-   "impressions": 51,
-   "position": 33.4
+   "impressions": 50,
+   "position": 33.8
   },
   {
    "page": "https://www.noe-match.com/articles/tanshin-uwaki-mikiwame/",
