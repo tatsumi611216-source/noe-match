@@ -248,3 +248,15 @@ https://www.noe-match.com/articles/first-date-guide/
 https://www.noe-match.com/articles/anti-fraud/
 ```
 ※ 8/22までに申請済みのものは「リクエスト済み」表示でスキップされる。Fは26本中16本が未登録で、クリック0の主因。
+
+## ツール改名分（2026-08-23・再クロール優先）
+
+```
+https://www.noe-match.com/tools/kekkon-shikin-keisanki/
+https://www.noe-match.com/tools/koisaihi-simulator/
+https://www.noe-match.com/tools/seikatsuhi-simulator/
+https://www.noe-match.com/tools/rikongo-seikatsuhi/
+https://www.noe-match.com/tools/soudanjo-simulator/
+https://www.noe-match.com/tools/kekkon-yarukoto/
+```
+※「計算機／シミュレーター」という検索されない機能名から、検索される言い方（自己負担 平均／デート代 平均／二人暮らし 生活費／養育費 いくら／結婚相談所 成婚料／結婚 準備 リスト）へタイトル・h1・descriptionを改名。本体は無変更。
