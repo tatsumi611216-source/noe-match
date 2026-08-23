@@ -249,6 +249,12 @@ https://www.noe-match.com/articles/anti-fraud/
 ```
 ※ 8/22までに申請済みのものは「リクエスト済み」表示でスキップされる。Fは26本中16本が未登録で、クリック0の主因。
 
+## 新規ツール（2026-08-23公開）
+
+```
+https://www.noe-match.com/tools/sango-recovery-check/
+```
+
 ## ツール改名分（2026-08-23・再クロール優先）
 
 ```
