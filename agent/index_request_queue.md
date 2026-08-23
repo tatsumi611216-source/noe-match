@@ -229,3 +229,22 @@ https://www.noe-match.com/articles/compare-popular/            ← 8/23抜け殻
 ※この節の残り9本（kekkon-shikin-keisanki / kekkon-okane-data / nashikon-data /
 shikijo-erabi-guide / gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data /
 youbride-guide / marrish-guide）は 8/23 の自動タスクの割り当て対象外。改稿後に別途申請する。
+
+## Fクラスタ（集客装置）の未登録分（2026-08-23起票・8/24以降に1日上限まで）
+
+```
+https://www.noe-match.com/articles/women-strategy/
+https://www.noe-match.com/articles/with-women/
+https://www.noe-match.com/articles/sakuhin-kachikan/
+https://www.noe-match.com/articles/safety-guide/
+https://www.noe-match.com/articles/profile-text/
+https://www.noe-match.com/articles/privacy-protection/
+https://www.noe-match.com/articles/photo-tips/
+https://www.noe-match.com/articles/pairs-women/
+https://www.noe-match.com/articles/pairs-men/
+https://www.noe-match.com/articles/line-exchange/
+https://www.noe-match.com/articles/fraud-statistics/
+https://www.noe-match.com/articles/first-date-guide/
+https://www.noe-match.com/articles/anti-fraud/
+```
+※ 8/22までに申請済みのものは「リクエスト済み」表示でスキップされる。Fは26本中16本が未登録で、クリック0の主因。
