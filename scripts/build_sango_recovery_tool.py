@@ -247,7 +247,7 @@ def main():
 
     # --- hero ---
     h = h.replace("../../images/lp/room-light.jpg", "../../images/lp/hands-touch.jpg")
-    h = re.sub(r"<h1>夫源病危険度チェック診断</h1>\s*<p>.*?</p>",
+    h = re.sub(r"<h1>夫源病チェックリスト</h1>\s*<p>.*?</p>",
                "<h1>産後、いつ戻る？老けた？｜産後リカバリー診断</h1>\n<p>抜け毛・肌・体型・再開したい美容。気になる項目をチェックすると、公的・公式に確認できる時期の目安と確認先、家族との段取りを項目ごとに整理します。判定はせず、段取りだけを出します。無料・登録不要。</p>", h, count=1, flags=re.S)
 
     # --- 診断についての導入（h2〜modeSwitch直前） ---
@@ -299,8 +299,8 @@ def main():
 </ul>
 つらさが強いときは、よりそいホットライン 0120-279-338（24時間・無料）も利用できます。産後の落ち込みの線引きは<a href="/articles/maternity-blue-chigai/">マタニティブルーと産後うつの違い</a>にまとめています。
 </div>""", h, count=1, flags=re.S)
-    h = h.replace("＞ 夫源病危険度チェック診断</div>", "＞ 産後リカバリー診断</div>")
-    h = h.replace("夫源病危険度チェック診断｜noe-match.com/tools/fugenbyo-check", "産後リカバリー診断｜noe-match.com/tools/%s" % SLUG)
+    h = h.replace("＞ 夫源病チェックリスト</div>", "＞ 産後リカバリー診断</div>")
+    h = h.replace("夫源病チェックリスト｜noe-match.com/tools/fugenbyo-check", "産後リカバリー診断｜noe-match.com/tools/%s" % SLUG)
     h = h.replace("フル45問で測り直す（回答は引き継ぎ）", "完全版33問で測り直す（回答は引き継ぎ）")
     h = h.replace("夫の行動・環境まで含めた精度で見るなら", "条件と家族関係まで含めて見るなら")
     # 基礎知識の記事節を産後版に

@@ -26,7 +26,7 @@ SITE = "https://www.noe-match.com"
 URL = SITE + "/tools/app-kekkonritsu-data/"
 CHECKED = "2026年8月22日"
 
-TITLE = "マッチングアプリの結婚率・公表データ早見表｜アプリ別に「公表している数字・していない数字」を確認【2026年8月】"
+TITLE = "マッチングアプリの結婚率をアプリ別に比較｜アプリ別に「公表している数字・していない数字」を確認【2026年8月】"
 DESC = ("Pairs・with・Omiai・タップル・ユーブライド・マリッシュ・ブライダルネットについて、"
         "結婚率・成婚者数・会員数・年齢構成・男女比を「公式に公表しているか」で整理した早見表。"
         "非公表は非公表と表示し、出典と確認日を付けます。公的統計（ネットで知り合った夫婦の平均交際期間2.8年）も併記。無料・登録不要。")
@@ -151,14 +151,14 @@ def main():
         {"@context": "https://schema.org", "@type": "FAQPage",
          "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]},
         {"@context": "https://schema.org", "@type": "WebApplication",
-         "name": "マッチングアプリの結婚率・公表データ早見表", "url": URL,
+         "name": "マッチングアプリの結婚率をアプリ別に比較", "url": URL,
          "applicationCategory": "LifestyleApplication", "operatingSystem": "All", "inLanguage": "ja",
          "description": DESC, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"},
          "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": SITE + "/"}},
         {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "ホーム", "item": SITE + "/"},
             {"@type": "ListItem", "position": 2, "name": "無料ツール", "item": SITE + "/#tools"},
-            {"@type": "ListItem", "position": 3, "name": "マッチングアプリの結婚率・公表データ早見表"}]},
+            {"@type": "ListItem", "position": 3, "name": "マッチングアプリの結婚率をアプリ別に比較"}]},
     ]
     lds = ""
     for d in ld:
@@ -192,7 +192,7 @@ def main():
 %(style)s
 %(ld)s</head>
 %(header)s
-<div class="breadcrumb"><div class="wrap"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ マッチングアプリの結婚率・公表データ早見表</div></div>
+<div class="breadcrumb"><div class="wrap"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ マッチングアプリの結婚率をアプリ別に比較</div></div>
 <main class="wrap">
 %(body)s
 <article>

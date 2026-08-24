@@ -34,7 +34,7 @@ OUT_DIR = os.path.join(ROOT, "tools", "rikongo-seikatsuhi")
 SITE = "https://www.noe-match.com"
 URL = SITE + "/tools/rikongo-seikatsuhi/"
 
-TITLE = "離婚後の生活費シミュレーター｜収支・養育費・手当を無料で試算【2026年版】"
+TITLE = "離婚後の生活費の相場は？子供ありの収支・養育費・手当をシミュレーション【2026年】"
 DESC = ("離婚後に毎月いくら入っていくら出るのかを試算する無料シミュレーター。"
         "裁判所の標準算定方式にもとづく養育費の目安、別居中の婚姻費用、受けられる手当、"
         "必要な初期費用まで表示します。判定はせず、数字だけを出します。登録不要。")
