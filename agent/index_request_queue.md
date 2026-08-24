@@ -42,8 +42,8 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
-- /articles/tapple-nenreiso-data/　（2026-08-24 公開）
-- /articles/pairs-nenreiso-data/　（2026-08-24 公開）
+- [済 8/25] /articles/tapple-nenreiso-data/　（2026-08-24 公開）
+- [済 8/25] /articles/pairs-nenreiso-data/　（2026-08-24 公開）
 
 ```
 ```
@@ -234,10 +234,10 @@ youbride-guide / marrish-guide）は 8/23 の自動タスクの割り当て対�
 ## Fクラスタ（集客装置）の未登録分（2026-08-23起票・8/24以降に1日上限まで）
 
 ```
-https://www.noe-match.com/articles/women-strategy/
-https://www.noe-match.com/articles/with-women/
-https://www.noe-match.com/articles/sakuhin-kachikan/
-https://www.noe-match.com/articles/safety-guide/
+[済 8/25] https://www.noe-match.com/articles/women-strategy/
+[済 8/25] https://www.noe-match.com/articles/with-women/
+[済 8/25] https://www.noe-match.com/articles/sakuhin-kachikan/
+[済 8/25] https://www.noe-match.com/articles/safety-guide/
 https://www.noe-match.com/articles/profile-text/
 https://www.noe-match.com/articles/privacy-protection/
 https://www.noe-match.com/articles/photo-tips/
@@ -263,8 +263,8 @@ https://www.noe-match.com/articles/anti-fraud/
 [済 8/24] https://www.noe-match.com/tools/koisaihi-simulator/
 [済 8/24] https://www.noe-match.com/tools/seikatsuhi-simulator/
 [済 8/24] https://www.noe-match.com/tools/rikongo-seikatsuhi/
-https://www.noe-match.com/tools/soudanjo-simulator/
-https://www.noe-match.com/tools/kekkon-yarukoto/
+[済 8/25] https://www.noe-match.com/tools/soudanjo-simulator/
+[済 8/25] https://www.noe-match.com/tools/kekkon-yarukoto/
 ```
 ※「計算機／シミュレーター」という検索されない機能名から、検索される言い方（自己負担 平均／デート代 平均／二人暮らし 生活費／養育費 いくら／結婚相談所 成婚料／結婚 準備 リスト）へタイトル・h1・descriptionを改名。本体は無変更。
 
@@ -277,9 +277,9 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 
 ## 産後周辺記事（8/23生成・未申請）
 - [済 8/24] /articles/sango-nukege-itsu-modoru/
-- [ ] /articles/sango-fukeru-taisaku/
-- [ ] /articles/sango-taikei-itsu-modoru/
-- [ ] /tools/hoikuen-tensu-nerima/（8/24新設・練馬区保育園点数ツール）
+- [済 8/25] /articles/sango-fukeru-taisaku/
+- [済 8/25] /articles/sango-taikei-itsu-modoru/
+- [済 8/25] /tools/hoikuen-tensu-nerima/（8/24新設・練馬区保育園点数ツール）
 
 ## 2026-08-24 実行結果（自動タスク affiliate-gsc-request-20260823）
 
@@ -329,6 +329,43 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 
 ### 2026-08-25 追加分（申請待ち）
 
-- /tools/daredemo-tsuen-jichitai/（新規公開・最優先）
-- /tools/hoikuen-tensu-nerima/（8/24時点で「検出-インデックス未登録」）
+- [済 8/25] /tools/daredemo-tsuen-jichitai/（新規公開・最優先）
+- [済 8/25] /tools/hoikuen-tensu-nerima/（8/24時点で「検出-インデックス未登録」）
 - /tools/sango-recovery-check/（8/24時点で「URL は Google に認識されていません」）
+
+## 2026-08-25 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**12件成功・13件目で割り当て上限に到達し打ち切り。**
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /tools/daredemo-tsuen-jichitai/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/tapple-nenreiso-data/ | ✅ |
+| 3 | /articles/pairs-nenreiso-data/ | ✅ |
+| 4 | /tools/soudanjo-simulator/ | ✅ |
+| 5 | /tools/kekkon-yarukoto/ | ✅ |
+| 6 | /articles/sango-fukeru-taisaku/ | ✅（1回目は送信エラー・再実行で成功） |
+| 7 | /articles/sango-taikei-itsu-modoru/ | ✅ |
+| 8 | /tools/hoikuen-tensu-nerima/ | ✅（1回目は送信エラー・再実行で成功） |
+| 9 | /articles/women-strategy/ | ✅ |
+| 10 | /articles/with-women/ | ✅ |
+| 11 | /articles/sakuhin-kachikan/ | ✅ |
+| 12 | /articles/safety-guide/ | ✅ |
+| 13 | /articles/profile-text/ | ❌「割り当て量を超えています」→ここで打ち切り |
+
+再試行・アカウント切替は行っていない（送信エラー2件のみ、同一URLを1回だけ再実行）。
+
+### 実測メモ：送信エラーは割り当て上限とは別物
+
+2件で「インデックス登録リクエストの送信中に問題が発生しました。しばらくしてから
+もう一度お試しください」が出たが、いずれも**同じURLを1回やり直しただけで成功**した。
+「割り当て量を超えています」とは別の一過性エラーなので、打ち切り条件に含めない。
+
+### 残り（8/26以降）
+
+- Fクラスタ9本：profile-text / privacy-protection / photo-tips / pairs-women / pairs-men /
+  line-exchange / fraud-statistics / first-date-guide / anti-fraud
+- 改稿待ちで対象外のまま：kekkon-okane-data / nashikon-data / shikijo-erabi-guide /
+  gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide /
+  omiai-guide / compare-popular
+- note対照群の残り4本（kaden / soudanjo-hikaku / tantei / yachin）は台帳ルールどおり申請しない
