@@ -276,7 +276,7 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 
 
 ## 産後周辺記事（8/23生成・未申請）
-- [ ] /articles/sango-nukege-itsu-modoru/
+- [済 8/24] /articles/sango-nukege-itsu-modoru/
 - [ ] /articles/sango-fukeru-taisaku/
 - [ ] /articles/sango-taikei-itsu-modoru/
 - [ ] /tools/hoikuen-tensu-nerima/（8/24新設・練馬区保育園点数ツール）
@@ -324,3 +324,5 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 「1日◯件」ではなく24時間移動窓での回復とする 8/22 の見立てを支持する。
 台帳冒頭の「1日10本まで」は下限の目安であって、実際は**上限が出るまで回すのが正しい**。
 
+
+※8/24 手動申請1件で割り当て上限（「割り当て量を超えています」表示）。残る3件（sango-fukeru-taisaku／sango-taikei-itsu-modoru／hoikuen-tensu-nerima）は8/25朝8:00の定期タスクで申請する。
