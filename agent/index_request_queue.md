@@ -326,3 +326,9 @@ https://www.noe-match.com/tools/kekkon-yarukoto/
 
 
 ※8/24 手動申請1件で割り当て上限（「割り当て量を超えています」表示）。残る3件（sango-fukeru-taisaku／sango-taikei-itsu-modoru／hoikuen-tensu-nerima）は8/25朝8:00の定期タスクで申請する。
+
+### 2026-08-25 追加分（申請待ち）
+
+- /tools/daredemo-tsuen-jichitai/（新規公開・最優先）
+- /tools/hoikuen-tensu-nerima/（8/24時点で「検出-インデックス未登録」）
+- /tools/sango-recovery-check/（8/24時点で「URL は Google に認識されていません」）

@@ -31,7 +31,7 @@ def date_modified(html):
             d = json.loads(s)
         except Exception:
             continue
-        if d.get("@type") in ("Article", "BlogPosting") and d.get("dateModified"):
+        if d.get("@type") in ("Article", "BlogPosting", "WebApplication", "SoftwareApplication") and d.get("dateModified"):
             return d["dateModified"]
     return None
 
