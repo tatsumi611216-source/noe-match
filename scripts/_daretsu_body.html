@@ -42,18 +42,18 @@ __CSS__
 
 <div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
 <h1>__H1__</h1>
-<p>国の基準は月10時間。しかし自治体の上乗せで、実際に使える時間は10時間から64時間まで開いています。自治体を選ぶと、上限時間・利用料・予約の経路・申込の入口が出ます。無料・登録不要。</p>
+<p>国の基準は月10時間。しかし自治体の上乗せで、実際に使える時間は10時間から160時間まで開いています。東京23区を全部調べました。区を選ぶと、上限時間・利用料・予約の経路・申込の入口が出ます。無料・登録不要。</p>
 </div></div>
 
 <article>
-<blockquote><strong>同じ制度でも、住んでいる自治体で使える時間が6倍以上違います。</strong>渋谷区は最大月64時間、足立区は月10時間（2026年8月25日時点の各区公式ページ）。上乗せ分はその自治体の中の施設に限られるのが原則で、区外の施設を使うと国基準の月10時間に戻ります。</blockquote>
+<blockquote><strong>同じ制度でも、住んでいる区で使える時間が最大16倍違います。</strong>大田区は条件つきで最大月160時間、渋谷区は最大月64時間、一方で足立区・板橋区・杉並区などは国基準どおりの月10時間（2026年8月25日時点の各区公式ページ）。上乗せ分はその区の中の施設に限られるのが原則で、区外の施設を使うと国基準の月10時間に戻ります。</blockquote>
 
 <h2>STEP1｜自治体と使いたい回数を選ぶ</h2>
 <div class="calc" id="calcForm">
   <div class="fld">
     <label for="city">お住まいの自治体</label>
     <select id="city">__OPTS__</select>
-    <div class="hint">2026年8月25日に公式ページを確認した6区を収録しています。それ以外は「上記以外の自治体（国の基準）」を選んでください。</div>
+    <div class="hint">東京23区は2026年8月25日に全区の公式ページを確認して収録しています。23区以外にお住まいの場合は「上記以外の自治体（国の基準）」を選んでください。</div>
   </div>
   <div class="row2">
     <div class="fld">
@@ -78,12 +78,12 @@ __CSS__
   <p class="sub-num" id="srcNote"></p>
 </div>
 
-<h2>自治体別の早見表（上限時間の多い順）</h2>
+<h2>東京23区の早見表（上限時間の多い順）</h2>
 <div class="table-wrap"><table>
 <tr><th>自治体</th><th>月の上限</th><th>利用料</th><th>予約の経路</th></tr>
 __ROWS__
 </table></div>
-<p>上限時間の差は、国の基準（月10時間）に自治体が独自の枠を上乗せしているかどうかで生まれています。上乗せ分はその自治体の施設でしか使えないのが原則です。引っ越し先を検討している段階なら、この差は預けられる時間の差としてそのまま効いてきます。</p>
+<p>上限時間の差は、国の基準（月10時間）に区が独自の枠を上乗せしているかどうかで生まれています。上乗せ分はその区の施設でしか使えないのが原則です。23区のうち上乗せを確認できたのは大田・渋谷・世田谷・練馬・江東・品川・港・江戸川・中央・豊島・葛飾で、残りは国基準どおりでした。引っ越し先を検討している段階なら、この差は預けられる時間の差としてそのまま効いてきます。</p>
 
 <h2>予約の経路が自治体で違う（つまずきやすい点）</h2>
 <p>多くの自治体は国の「こども誰でも通園制度総合支援システム」（つうえんポータル）で施設を検索して予約します。ただし練馬区は区内施設について「総合支援システムでは予約できない」と明記しており、実施施設一覧の申込先へ直接申し込む方式です。足立区も各施設へ電話等で面談予約をします。<strong>システムに登録したのに自分の区の園が予約画面に出てこない、という詰まり方をするのはここです。</strong></p>
@@ -96,7 +96,7 @@ __ROWS__
 <tr><th>自治体</th><th>出典</th><th>確認日</th></tr>
 __SRCROWS__
 </table></div>
-<blockquote><strong>本ツールが再現していないもの：</strong>施設ごとの受入時間・空き状況、上乗せ枠の細かい適用条件、年度途中の制度変更、収録した6区以外の個別条件。制度は2026年度に本格実施へ移ったところで、各自治体が運用を更新しています。<strong>申込の前に必ずお住まいの自治体の公式ページで最新の内容をご確認ください。</strong></blockquote>
+<blockquote><strong>本ツールが再現していないもの：</strong>施設ごとの受入時間・空き状況、上乗せ枠の細かい適用条件、年度途中の制度変更、23区以外の自治体の個別条件。中野区と荒川区は令和8年度の内容を公式ページで確認できませんでした（表示にもその旨を出しています）。制度は2026年度に本格実施へ移ったところで、各自治体が運用を更新しています。<strong>申込の前に必ずお住まいの自治体の公式ページで最新の内容をご確認ください。</strong></blockquote>
 
 <h2>保活とこの制度は別の話（混同しやすい）</h2>
 <p>こども誰でも通園制度は、保育所に通っていない子どもが時間単位で通う仕組みです。認可保育園の入園選考（指数・点数）とは別の制度で、この制度を使ったことが入園選考で有利になるわけではありません。認可の入園を狙う場合の点数計算は<a href="/tools/hoikuen-tensu-nerima/">練馬区の保育園 点数計算＆内定ボーダー逆引き</a>に分けてあります。</p>
@@ -136,8 +136,15 @@ function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 function run(){
   var c=D[$('city').value];
   var per=+$('per').value, times=+$('times').value, need=per*times;
+  var f=$('fit');
+  if(c.cap===null){
+    $('capNum').textContent='非公表';
+    f.className='fitbox fit-ng';
+    f.innerHTML='<strong>'+esc(c.name)+'は、月あたりの上限時間を公式ページで確認できませんでした。</strong>'+esc(c.cap_note)+'　希望する使い方は'+per+'時間 × 月'+times+'回 ＝ 月'+need+'時間です。この数字を持って区に確認してください。';
+    renderDetail(c); return;
+  }
   $('capNum').textContent=c.cap+'時間';
-  var over=need-c.cap, f=$('fit');
+  var over=need-c.cap;
   if(over<=0){
     f.className='fitbox fit-ok';
     f.innerHTML='<strong>希望する使い方（'+per+'時間 × 月'+times+'回 ＝ 月'+need+'時間）は、'+esc(c.name)+'の上限 月'+c.cap+'時間に収まります。</strong>残りは月'+(c.cap-need)+'時間です。';
@@ -146,6 +153,9 @@ function run(){
     f.className='fitbox fit-ng';
     f.innerHTML='<strong>希望する使い方（'+per+'時間 × 月'+times+'回 ＝ 月'+need+'時間）は、'+esc(c.name)+'の上限 月'+c.cap+'時間を'+over+'時間超えます。</strong>超えた分はこの制度の枠外で、施設が定める料金や一時預かりなど別の枠を使うことになります。回数を月'+maxTimes+'回までにするか、1回を'+maxPer+'時間までにすると収まります。';
   }
+  renderDetail(c);
+}
+function renderDetail(c){
   $('detail').innerHTML=''+
    '<dt>上限時間</dt><dd>'+esc(c.cap_label)+'／'+esc(c.cap_note)+'</dd>'+
    '<dt>利用料</dt><dd>'+esc(c.fee)+' '+esc(c.fee_extra)+'</dd>'+
@@ -154,7 +164,7 @@ function run(){
    '<dt>申込・認定</dt><dd>'+esc(c.apply)+'</dd>'+
    '<dt>実施施設</dt><dd>'+esc(c.facil)+'</dd>';
   $('srcNote').innerHTML='出典：<a href="'+c.src+'" rel="noopener" target="_blank">'+esc(c.src_label)+'</a>（2026年8月25日確認）。最新の内容は必ず公式ページでご確認ください。';
-  try{gtag('event','tool_result',{tool:'__SLUG__',city:c.key,need:need,fit:(over<=0?'in':'over')});}catch(e){}
+  try{gtag('event','tool_result',{tool:'__SLUG__',city:c.key,cap:(c.cap===null?'na':c.cap)});}catch(e){}
 }
 $('run').addEventListener('click',run);
 $('city').addEventListener('change',run);
