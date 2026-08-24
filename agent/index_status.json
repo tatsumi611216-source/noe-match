@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-08-23T14:03:35+00:00",
+ "fetched_at": "2026-08-24T13:37:02+00:00",
  "results": {
   "https://www.noe-match.com/": {
    "checked_at": "2026-08-23T13:36:34+00:00",
@@ -2235,6 +2235,23 @@
    "userCanonical": null,
    "verdict": "NEUTRAL"
   },
+  "https://www.noe-match.com/articles/pairs-nenreiso-data/": {
+   "checked_at": "2026-08-24T13:37:02+00:00",
+   "coverageState": "Discovered - currently not indexed",
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED",
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=8mTPhKTleCarXsxLtUqzeA&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
+  },
   "https://www.noe-match.com/articles/pairs-women/": {
    "checked_at": "2026-08-23T13:37:12+00:00",
    "coverageState": "Discovered - currently not indexed",
@@ -3066,6 +3083,23 @@
    "userCanonical": null,
    "verdict": "NEUTRAL"
   },
+  "https://www.noe-match.com/articles/tapple-nenreiso-data/": {
+   "checked_at": "2026-08-24T13:36:54+00:00",
+   "coverageState": "Discovered - currently not indexed",
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED",
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=gIph5hzPAPdwes0orfrP5g&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
+  },
   "https://www.noe-match.com/articles/tapple-seriousness-data/": {
    "checked_at": "2026-08-23T13:47:26+00:00",
    "coverageState": "Submitted and indexed",
@@ -3591,6 +3625,23 @@
    ],
    "userCanonical": "https://www.noe-match.com/tools/garugaru-check/",
    "verdict": "PASS"
+  },
+  "https://www.noe-match.com/tools/hoikuen-tensu-nerima/": {
+   "checked_at": "2026-08-24T13:36:47+00:00",
+   "coverageState": "Discovered - currently not indexed",
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED",
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=aZZmkr9ZogD5qvebcPWmhw&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
   },
   "https://www.noe-match.com/tools/kekkon-shikin-keisanki/": {
    "checked_at": "2026-08-23T13:57:12+00:00",
