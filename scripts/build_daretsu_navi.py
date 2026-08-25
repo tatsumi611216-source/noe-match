@@ -12,8 +12,8 @@ SLUG = "daredemo-tsuen-jichitai"
 URL = "https://www.noe-match.com/tools/%s/" % SLUG
 from _daretsu_data import CHECKED, CITIES
 
-TITLE = "こども誰でも通園制度は月何時間使える？東京23区＋政令市20市の上限時間・利用料早見表【令和8年度】"
-DESC = "こども誰でも通園制度（乳児等通園支援事業）の月の上限時間は自治体で違います。国基準は月10時間ですが、大田区は条件つきで最大160時間、渋谷区64時間、世田谷区・練馬区48時間、江東区40時間、品川区30時間、港区・江戸川区24時間。東京23区と政令指定都市20市の計43自治体を全部調べて早見表にしました。政令市で上乗せがあるのは京都市（月12時間）だけでした。自治体を選ぶと上限時間・利用料・予約の経路・申込の入口が出ます。出典は各自治体公式（2026年8月25日確認）。"
+TITLE = "こども誰でも通園制度は月何時間使える？東京23区＋政令市20市ほかの上限時間・利用料早見表【令和8年度】"
+DESC = "こども誰でも通園制度（乳児等通園支援事業）の月の上限時間は自治体で違います。国基準は月10時間ですが、大田区は条件つきで最大160時間、渋谷区64時間、世田谷区・練馬区48時間、江東区40時間、品川区30時間、港区・江戸川区24時間。東京23区・政令指定都市20市・中核市ほか3市の計46自治体を調べて早見表にしました。政令市で上乗せがあるのは京都市（月12時間）だけでした。自治体を選ぶと上限時間・利用料・予約の経路・申込の入口が出ます。出典は各自治体公式（2026年8月25日確認）。"
 H1 = "こども誰でも通園制度は月何時間使える？｜東京23区＋政令市の上限時間・利用料早見表"
 OGD = "国の基準は月10時間。大田区は条件つき最大160時間、渋谷区64時間、練馬区48時間、足立区10時間。東京23区と政令市の上限時間・利用料・予約の経路を早見表で。"
 
@@ -61,6 +61,7 @@ def _rows(group):
                    % (c["name"], c["cap_label"], c["fee"], c["reserve"]) for c in sel)
 rows = _rows("東京23区")
 rows_seirei = _rows("政令市")
+rows_chukaku = _rows("中核市ほか")
 faq_html = "\n".join("<h3>Q%d. %s</h3>\n<p>%s</p>" % (i + 1, q, a) for i, (q, a) in enumerate(FAQ))
 src_rows = "".join('<tr><td>%s</td><td><a href="%s" rel="noopener" target="_blank">%s</a></td><td>%s</td></tr>'
                    % (c["name"], c["src"], c["src_label"], CHECKED) for c in CITIES)
@@ -72,7 +73,7 @@ TPL = io.open("scripts/_daretsu_body.html", encoding="utf-8").read()
 HTML = (TPL.replace("__TITLE__", TITLE).replace("__DESC__", DESC).replace("__OGD__", OGD)
         .replace("__URL__", URL).replace("__H1__", H1).replace("__CSS__", CSS)
         .replace("__FAQLD__", faq_ld).replace("__APPLD__", app_ld).replace("__BCLD__", bc_ld)
-        .replace("__OPTS__", opts).replace("__ROWS__", rows).replace("__ROWS_SEIREI__", rows_seirei).replace("__SRCROWS__", src_rows)
+        .replace("__OPTS__", opts).replace("__ROWS__", rows).replace("__ROWS_SEIREI__", rows_seirei).replace("__ROWS_CHUKAKU__", rows_chukaku).replace("__SRCROWS__", src_rows)
         .replace("__FAQHTML__", faq_html).replace("__DATA__", DATA_JS).replace("__SLUG__", SLUG))
 
 os.makedirs("tools/%s" % SLUG, exist_ok=True)

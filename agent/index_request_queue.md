@@ -369,3 +369,17 @@ https://www.noe-match.com/articles/anti-fraud/
   gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide /
   omiai-guide / compare-popular
 - note対照群の残り4本（kaden / soudanjo-hikaku / tantei / yachin）は台帳ルールどおり申請しない
+
+### 2026-08-25 申請実施（Chrome MCP経由・4本すべて「インデックス登録をリクエスト済み」を確認）
+
+| URL | 申請時点の状態 |
+|---|---|
+| /tools/daredemo-tsuen-jichitai/ | すでに登録済み → 内容を6区→43自治体に大幅更新したため再リクエスト |
+| /articles/daredemo-tsuen-ryokin/ | 未登録（URLがGoogleに認識されていない）→ 新規リクエスト |
+| /tools/hoikuen-tensu-nerima/ | 8/24は「検出-未登録」だったが**登録済みに変化**していた → 再リクエスト |
+| /tools/sango-recovery-check/ | 8/24は「Google未認識」だったが**登録済みに変化**していた → 再リクエスト |
+
+**手順のメモ**: GSCの `inspect?resource_id=...&id=<URL>` 形式のディープリンクは404になる。
+上部の検索バーに入力してEnterする経路しかない。モーダルが開いている状態でEnterを押すと
+「公開URLをテスト」が走ってしまうので、必ずサマリー画面に戻してから検索バーに入れ直す。
+リクエストボタンは `find` でrefを取ってrefクリックするのが確実（座標クリックは効かないことがある）。
