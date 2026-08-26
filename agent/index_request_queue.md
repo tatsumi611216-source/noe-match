@@ -57,22 +57,22 @@ Googleが一度も認識していない（未認識）ものを先頭に置い�
 **Day A（10本）**
 
 ```
-https://www.noe-match.com/articles/compare-price/                    ← Googleがこのページを認識していない
-https://www.noe-match.com/articles/matching-josei-cost-data/         ← Googleがこのページを認識していない
-https://www.noe-match.com/articles/myseed-kuchikomi/                 ← Googleがこのページを認識していない
-https://www.noe-match.com/articles/pairs-guide/                      ← Googleがこのページを認識していない
-https://www.noe-match.com/articles/tapple-guide/                     ← Googleがこのページを認識していない
-https://www.noe-match.com/articles/tapple-vs-pairs/                  ← Googleがこのページを認識していない
-https://www.noe-match.com/articles/tomobataraki-shokuji-data/        ← Googleがこのページを認識していない
-https://www.noe-match.com/articles/with-guide/                       ← Googleがこのページを認識していない
-https://www.noe-match.com/articles/free-vs-paid/                     ← クロール済み・インデックス未登録
-https://www.noe-match.com/articles/konkatsu-roadmap/                 ← クロール済み・インデックス未登録
+[済 8/27] https://www.noe-match.com/articles/compare-price/                    ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/matching-josei-cost-data/         ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/myseed-kuchikomi/                 ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/pairs-guide/                      ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/tapple-guide/                     ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/tapple-vs-pairs/                  ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/tomobataraki-shokuji-data/        ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/with-guide/                       ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/free-vs-paid/                     ← クロール済み・インデックス未登録
+[済 8/27] https://www.noe-match.com/articles/konkatsu-roadmap/                 ← クロール済み・インデックス未登録
 ```
 
 **Day B（10本）**
 
 ```
-https://www.noe-match.com/articles/dousei-kaisho/                    ← 検出済み・未クロール
+[済 8/27] https://www.noe-match.com/articles/dousei-kaisho/                    ← 検出済み・未クロール
 https://www.noe-match.com/articles/dousei-kekkon-hikaku/             ← 検出済み・未クロール
 https://www.noe-match.com/articles/first-date-guide/                 ← 検出済み・未クロール
 https://www.noe-match.com/articles/fraud-statistics/                 ← 検出済み・未クロール
@@ -445,3 +445,43 @@ https://www.noe-match.com/articles/anti-fraud/
 上部の検索バーに入力してEnterする経路しかない。モーダルが開いている状態でEnterを押すと
 「公開URLをテスト」が走ってしまうので、必ずサマリー画面に戻してから検索バーに入れ直す。
 リクエストボタンは `find` でrefを取ってrefクリックするのが確実（座標クリックは効かないことがある）。
+
+## 2026-08-27 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**11件成功、12件目で割り当て上限に到達し打ち切り。** 処理順は台帳の「2026-08-26 判定分」Day A → Day B。
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /articles/compare-price/ | ✅ 優先クロール キューに追加 |
+| 2 | /articles/matching-josei-cost-data/ | ✅ |
+| 3 | /articles/myseed-kuchikomi/ | ✅ |
+| 4 | /articles/pairs-guide/ | ✅ |
+| 5 | /articles/tapple-guide/ | ✅ |
+| 6 | /articles/tapple-vs-pairs/ | ✅ |
+| 7 | /articles/tomobataraki-shokuji-data/ | ✅ |
+| 8 | /articles/with-guide/ | ✅ |
+| 9 | /articles/free-vs-paid/ | ✅ |
+| 10 | /articles/konkatsu-roadmap/ | ✅ |
+| 11 | /articles/dousei-kaisho/ | ✅ |
+| 12 | /articles/dousei-kekkon-hikaku/ | ❌「割り当て量を超えています」→ここで打ち切り |
+
+Day A（10本）は全件通過。再試行・アカウント切替は行っていない（送信エラーは0件）。
+
+### 残り（8/28以降）
+
+- 2026-08-26 判定分の残26本：Day B の9本（dousei-kekkon-hikaku / first-date-guide / fraud-statistics /
+  hatsushon-nenmei-data / kaiin-age-cross-data / kinsen-kachikan-check / koninhiyou-guide /
+  konkatsu-party-guide / late-20s-strategy）と Day C（10本）・Day D（7本）
+- Fクラスタ9本：profile-text / privacy-protection / photo-tips / pairs-women / pairs-men /
+  line-exchange / fraud-statistics / first-date-guide / anti-fraud
+  ※うち profile-text / privacy-protection / pairs-women / pairs-men / line-exchange は Day C、
+  fraud-statistics / first-date-guide は Day B と重複する。Day 順で処理すればFも埋まる
+- 改稿待ちで対象外のまま：kekkon-okane-data / nashikon-data / shikijo-erabi-guide /
+  gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide /
+  omiai-guide / compare-popular
+- note対照群の残り4本（kaden / soudanjo-hikaku / tantei / yachin）は台帳ルールどおり申請しない
+
+### 実測メモ：上限は11件（8/22と同じ）
+
+8/24は14件、8/25は12件、8/23は2件、8/27は11件。
+24時間移動窓での回復という見立てと矛盾しない。上限が出るまで回す運用を維持する。
