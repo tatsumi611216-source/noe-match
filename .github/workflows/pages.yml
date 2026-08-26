@@ -78,3 +78,26 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      # デプロイ成功後、全URLをIndexNowでBingに通知する（2026-08-26追加）。
+      # 実流入の4割がbing+yahoo経由と判明したため、Bingの反映を待たず即時に知らせる。
+      # 送信は冪等（同じURLを何度送ってもペナルティなし・キューの順番も変わらない）。
+      - uses: actions/checkout@v4
+      - name: IndexNow で Bing に全URLを通知
+        run: |
+          python3 - <<'EOF' || true
+          import re, json, urllib.request
+          urls = sorted(set(re.findall(r'<loc>(.*?)</loc>', open('sitemap.xml').read())))
+          payload = {
+              "host": "www.noe-match.com",
+              "key": "28fb2874520d40719aa81fc0618e863b",
+              "keyLocation": "https://www.noe-match.com/28fb2874520d40719aa81fc0618e863b.txt",
+              "urlList": urls,
+          }
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode(),
+              headers={"Content-Type": "application/json; charset=utf-8"})
+          r = urllib.request.urlopen(req, timeout=60)
+          print("IndexNow", r.status, "urls:", len(urls))
+          EOF
