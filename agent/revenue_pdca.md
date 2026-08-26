@@ -1,27 +1,27 @@
 # 収益PDCA週次レポート（自動生成: scripts/revenue_pdca.py）
 
-生成: 2026-08-27 03:21 ／ データ源: noe-metrics/metrics.db（C30日次収集）
+生成: 2026-08-27 07:18 ／ データ源: noe-metrics/metrics.db（C30日次収集）
 
 ## ファネル実測
 
 | 指標 | 直近7日 | 直近28日 |
 |---|---|---|
-| セッション（GA4） | 107 | 260 |
+| セッション（GA4） | 113 | 266 |
 | aff_click（アフィリCTAクリック） | 0 | 0 |
 | line_add_click | 0 | 0 |
-| tool_result（ツール実行） | 45 | - |
-| LINE友だち数（最新 2026-08-25） | 1 | - |
+| tool_result（ツール実行） | 132 | - |
+| LINE友だち数（最新 2026-08-26） | 1 | - |
 | A8成果（手動実測 2026-08-09） | asp_results.md 参照 | - |
 
-非Google流入比率（7日）: 49.0/121.0 = 40%
+非Google流入比率（7日）: 49.0/130.0 = 38%
 
 ### 参照元（直近7日）
 
 | source | sessions |
 |---|---|
-| (direct) | 44 |
-| (not set) | 15 |
-| google | 13 |
+| (direct) | 47 |
+| (not set) | 19 |
+| google | 15 |
 | chatgpt.com | 13 |
 | bing | 13 |
 | yahoo | 11 |
