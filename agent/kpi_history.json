@@ -950,5 +950,211 @@
    "with-seriousness-data",
    "youbride-seikon-data"
   ]
+ },
+ {
+  "period": {
+   "start": "2026-07-27",
+   "end": "2026-08-24"
+  },
+  "fetched_at": "2026-08-26T13:43:50",
+  "totals": {
+   "live_articles": 195,
+   "eligible_articles": 188,
+   "excluded_published_after_window": 0,
+   "articles_with_impressions": 117,
+   "silent_rate": 37.8,
+   "impressions": 3302,
+   "clicks": 39,
+   "ctr": 1.18
+  },
+  "cohorts": {
+   "legacy": {
+    "articles": 92,
+    "with_impressions": 48,
+    "reach_rate": 52.2
+   },
+   "in_window": {
+    "articles": 96,
+    "with_impressions": 69,
+    "reach_rate": 71.9
+   },
+   "fresh": {
+    "articles": 7,
+    "with_impressions": 3,
+    "reach_rate": 42.9
+   },
+   "after_window": {
+    "articles": 0,
+    "with_impressions": 0,
+    "reach_rate": null
+   }
+  },
+  "rewrites": {
+   "evaluated": 6,
+   "reached": 1,
+   "pending": 28
+  },
+  "position_bands": {
+   "1-10位": {
+    "impressions": 104,
+    "clicks": 3,
+    "ctr": 2.9
+   },
+   "11-30位": {
+    "impressions": 158,
+    "clicks": 2,
+    "ctr": 1.3
+   },
+   "31-50位": {
+    "impressions": 130,
+    "clicks": 0,
+    "ctr": 0.0
+   },
+   "51位以下": {
+    "impressions": 671,
+    "clicks": 0,
+    "ctr": 0.0
+   }
+  },
+  "clusters": {
+   "地域ガイド": {
+    "pages": 8,
+    "impressions": 753,
+    "clicks": 5,
+    "avg_position": 41.2,
+    "clicks_per_page": 0.62,
+    "ctr": 0.7
+   },
+   "属性別": {
+    "pages": 12,
+    "impressions": 473,
+    "clicks": 3,
+    "avg_position": 59.6,
+    "clicks_per_page": 0.25,
+    "ctr": 0.6
+   },
+   "その他": {
+    "pages": 38,
+    "impressions": 553,
+    "clicks": 11,
+    "avg_position": 35.2,
+    "clicks_per_page": 0.29,
+    "ctr": 2.0
+   },
+   "データ・統計": {
+    "pages": 23,
+    "impressions": 645,
+    "clicks": 7,
+    "avg_position": 27.6,
+    "clicks_per_page": 0.3,
+    "ctr": 1.1
+   },
+   "アプリ別": {
+    "pages": 6,
+    "impressions": 143,
+    "clicks": 2,
+    "avg_position": 46.1,
+    "clicks_per_page": 0.33,
+    "ctr": 1.4
+   },
+   "結婚準備": {
+    "pages": 15,
+    "impressions": 219,
+    "clicks": 1,
+    "avg_position": 45.3,
+    "clicks_per_page": 0.07,
+    "ctr": 0.5
+   },
+   "ノウハウ": {
+    "pages": 10,
+    "impressions": 99,
+    "clicks": 1,
+    "avg_position": 35.0,
+    "clicks_per_page": 0.1,
+    "ctr": 1.0
+   },
+   "相談所": {
+    "pages": 4,
+    "impressions": 136,
+    "clicks": 0,
+    "avg_position": 66.5,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "新生活": {
+    "pages": 10,
+    "impressions": 89,
+    "clicks": 0,
+    "avg_position": 25.2,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "探偵・離婚": {
+    "pages": 3,
+    "impressions": 4,
+    "clicks": 0,
+    "avg_position": 43.0,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   }
+  },
+  "top10_queries": [
+   "2030年 結婚 良い日",
+   "with 年代",
+   "with 年齢",
+   "with 成婚率",
+   "with 結婚率",
+   "アプリ婚 割合",
+   "ウィズ 年齢層",
+   "ガルガル 期 同居",
+   "ガルガル期 名前の由来",
+   "ガルガル期 診断",
+   "タップル 真剣度",
+   "タップル 結婚率",
+   "ペアーズ 成婚率",
+   "ペアーズ 結婚 確率",
+   "マッチングアプリ婚 割合",
+   "マリッシュ ユーブライド 比較",
+   "ミトコア 怪しい",
+   "ユー ブライド 地方"
+  ],
+  "top10_pages": [
+   "(top)",
+   "appkon-wariai-data",
+   "garugaru-doukyo",
+   "garugaru-ki-guide",
+   "inaka-guide",
+   "mitocore-kuchikomi",
+   "pairs-marriage-data",
+   "success-rate-data",
+   "tapple-seriousness-data",
+   "with-nenreiso-data",
+   "with-seriousness-data",
+   "youbride-marrish-hikaku"
+  ],
+  "pages_with_clicks": [
+   "(top)",
+   "appkon-wariai-data",
+   "bachelor-date-guide",
+   "christmas-propose-gyakusan",
+   "civil-servant-guide",
+   "futari-sumaho-minaoshi",
+   "garugaru-ki-guide",
+   "garugaru-otto-taiou",
+   "kekkon-madeno-kikan-data",
+   "konkatsu-roadmap",
+   "kyoto-guide",
+   "matching-app-ranking",
+   "mens-make-konkatsu",
+   "mitas-formen-kuchikomi",
+   "okinawa-guide",
+   "omiai-guide",
+   "sapporo-guide",
+   "tapple-seriousness-data",
+   "tenshoku-riyu-honne",
+   "time-management",
+   "with-seriousness-data",
+   "youbride-seikon-data"
+  ]
  }
 ]
