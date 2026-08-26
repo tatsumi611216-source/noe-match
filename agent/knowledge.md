@@ -48,6 +48,7 @@
 ## 運用の落とし穴
 
 - [2026-08-26] GSCのURL検査はディープリンク不可（404）。上部検索バー経由のみ。モーダル表示中のEnterは「公開URLテスト」が走る。ボタンはfindでref取得してクリック。
+- [2026-08-27] **pushしてもDeploy to Pagesが発火しないことがある**。tools/・articles/・sitemap.xml を含むコミット（paths-ignore の対象外）をpushしたのにワークフローの実行が作られず、本番は404のままだった。`gh workflow run "Deploy to Pages" --ref main` の手動ディスパッチで復旧。**公開したら必ず本番URLを叩いて200を確認する**（run一覧のsuccessは前のコミットのものかもしれない。headShaを見る）。**根拠:** 8/27 産後ケアナビ公開時に発生・手動実行で解消。
 - [2026-08-25] GitHub Pagesのデプロイは許可リスト方式（pages.ymlで明示コピー）。ルートに置いただけのファイルは公開されない。
 - [2026-08-23] sitemap_add.pyはArticle/BlogPostingのJSON-LDしか見ない→WebApplication追加済み（8/25）。新形式のページを作ったらsitemap登録経路を確認する。
 - [2026-08-11] 文字数計測はbody_text()（script/style/目次/PR表記除外）で。バイト数計測は誤判定する。
