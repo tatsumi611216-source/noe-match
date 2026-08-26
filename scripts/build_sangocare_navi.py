@@ -25,6 +25,13 @@ OISIX = "https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77"
 real = [c for c in CITIES if c["key"] != "kokuhyo"]
 N = len(real)
 
+GROUPS = []
+for c in real:
+    g = c.get("group", "東京23区")
+    if g not in GROUPS:
+        GROUPS.append(g)
+
+
 def stay_1night(c):
     """宿泊型を1泊（1泊2日）使ったときの自己負担。数え方が自治体で違うので揃える。
     range＝施設ごとに実額が違い自治体としての単価が無い（比較に使わない）。"""
@@ -52,15 +59,17 @@ if stays:
 else:
     LEAD = "自治体ごとに自己負担額が大きく違います"
 
-TITLE = ("産後ケアの料金はいくら？東京23区の自己負担・回数上限の早見表【2026年度】")
+SCOPE = ("東京23区＋政令指定都市"
+         if any(g == "政令市" for g in GROUPS) else "東京23区")
+TITLE = "産後ケアの料金はいくら？%s%d自治体の自己負担・回数上限【2026年度】" % (SCOPE, N)
 H1 = "産後ケアの料金はいくら？｜自治体別の自己負担と回数上限がわかる早見ナビ"
-DESC = ("産後ケア事業の利用料は市区町村が決めるため、同じ宿泊型1泊でも自己負担が0円の区と"
-        "1万円近い区があります。東京23区など%d自治体の公式ページを確認し、宿泊型・日帰り型・"
+DESC = ("産後ケア事業の利用料は市区町村が決めるため、同じ宿泊型1泊でも自己負担が0円の自治体と"
+        "1万円近い自治体があります。%s計%d自治体の公式ページを確認し、宿泊型・日帰り型・"
         "訪問型の自己負担額、1回の出産あたりの上限回数、非課税世帯の減免、申請の期限を"
         "出典つきで収録しました。使いたい回数を入れると自己負担の合計が出ます。"
-        "確認日は%s。" % (N, CHECKED))
+        "確認日は%s。" % (SCOPE, N, CHECKED))
 OGD = ("産後ケアの自己負担は自治体で決まる。宿泊型・日帰り型・訪問型の実額と回数上限を"
-       "%d自治体ぶん収録。使う回数を入れると合計が出ます。" % N)
+       "%s計%d自治体ぶん収録。使う回数を入れると合計が出ます。" % (SCOPE, N))
 
 
 def _fee_cell(c, k):
@@ -76,11 +85,25 @@ def _limit_cell(c):
     return "／".join(parts) if parts else "非公表"
 
 
-ROWS = "".join(
-    '<tr><td><strong>%s</strong></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>'
-    % (c["name"], _fee_cell(c, "stay"), _fee_cell(c, "day"),
-       _fee_cell(c, "visit"), _limit_cell(c))
-    for c in real)
+def _rows_for(g):
+    return "".join(
+        '<tr><td><strong>%s</strong></td><td>%s</td><td>%s</td><td>%s</td><td>%s</td></tr>'
+        % (c["name"], _fee_cell(c, "stay"), _fee_cell(c, "day"),
+           _fee_cell(c, "visit"), _limit_cell(c))
+        for c in real if c.get("group", "東京23区") == g)
+
+
+if len(GROUPS) > 1:
+    ROWS = "".join(
+        ('<tr><td colspan="5" style="background:#f2efe9;font-weight:700;'
+         'color:#7c2e42;padding:10px 8px">%s（%d自治体）</td></tr>'
+         % (g, sum(1 for c in real if c.get("group", "東京23区") == g))) + _rows_for(g)
+        for g in GROUPS)
+else:
+    ROWS = _rows_for(GROUPS[0])
+
+GROUP_LABEL = "・".join("%s%d" % (g, sum(1 for c in real if c.get("group", "東京23区") == g))
+                       for g in GROUPS)
 
 SRCROWS = "".join(
     '<tr><td>%s</td><td><a href="%s" rel="noopener" target="_blank">%s</a></td><td>%s</td></tr>'
@@ -173,6 +196,7 @@ HTML = (TPL.replace("__TITLE__", TITLE).replace("__DESC__", DESC).replace("__OGD
         .replace("__OPTS__", OPTS).replace("__ROWS__", ROWS).replace("__SRCROWS__", SRCROWS)
         .replace("__FAQHTML__", faq_html).replace("__DATA__", DATA_JS)
         .replace("__SLUG__", SLUG).replace("__NCITY__", str(N))
+        .replace("__SCOPE__", SCOPE)
         .replace("__CHECKED__", CHECKED).replace("__LEAD__", LEAD)
         .replace("__OISIX__", OISIX))
 

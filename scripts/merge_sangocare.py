@@ -22,8 +22,11 @@ import json
 import os
 import sys
 
-SRC_DIR = (r"C:\Users\tatsu\AppData\Local\Temp\claude\C--Users-tatsu"
-           r"\9bb7063f-23b1-4fdd-9750-dfa305ab85e1\scratchpad\sangocare")
+_SP = (r"C:\Users\tatsu\AppData\Local\Temp\claude\C--Users-tatsu"
+       r"\9bb7063f-23b1-4fdd-9750-dfa305ab85e1\scratchpad")
+# 東京23区は BASIS で人が確定させた（初回の実査では数え方を聞いていなかったため）。
+# 政令市は実査時に fee_stay_basis を答えさせているので、そちらを使う。
+SRC_DIRS = [os.path.join(_SP, "sangocare"), os.path.join(_SP, "sangocare_seirei")]
 OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "_sangocare_data.py")
 CHECKED = "2026年8月27日"
 
@@ -57,11 +60,15 @@ BASIS = {
     "edogawa":    {"stay": ("trip", 7000, 3500),  "day": 3000,  "visit": 2000},
 }
 
-# 23区の並び（公式の区順）
+# 23区の並び（公式の区順）＋政令市20市
 ORDER = ["chiyoda", "chuo", "minato", "shinjuku", "bunkyo", "taito", "sumida",
          "koto", "shinagawa", "meguro", "ota", "setagaya", "shibuya", "nakano",
          "suginami", "toshima", "kita", "arakawa", "itabashi", "nerima",
-         "adachi", "katsushika", "edogawa"]
+         "adachi", "katsushika", "edogawa",
+         "sapporo", "sendai", "saitama", "chiba", "yokohama", "kawasaki",
+         "sagamihara", "niigata", "shizuoka", "hamamatsu", "nagoya", "kyoto",
+         "osaka", "sakai", "kobe", "okayama", "hiroshima", "kitakyushu",
+         "fukuoka", "kumamoto"]
 
 HEAD = '''# -*- coding: utf-8 -*-
 """産後ケア事業の自治体データ（ツールと記事の共通の正本）
@@ -99,29 +106,62 @@ def esc(s):
     return str(s).replace('"', "”").replace("\n", " ").strip()
 
 
+def from_json(d):
+    """実査JSONが数え方を答えている場合はそれを使う（政令市以降）。
+    basis が3種類のどれでもなければ落とす（黙って通さない）。"""
+    basis = d.get("fee_stay_basis")
+    if basis not in ("day", "trip", "range"):
+        return None
+    first = d.get("fee_stay")
+    add = d.get("fee_stay_add")
+    if basis == "range":
+        first, add = None, None
+    types = d.get("types") or {}
+    out = {"stay": (basis, first, add)}
+    for f in ("day", "visit"):
+        if types.get(f) is False:
+            out[f] = "none"
+        else:
+            v = d.get("fee_%s" % f)
+            out[f] = v if isinstance(v, int) else None
+    return out
+
+
 def main():
     dry = "--dry" in sys.argv
-    files = [f for f in os.listdir(SRC_DIR) if f.endswith(".json")]
-    if not files:
+    entries = []
+    for src in SRC_DIRS:
+        if not os.path.isdir(src):
+            print("（未収集）", src)
+            continue
+        for fn in sorted(os.listdir(src)):
+            if not fn.endswith(".json"):
+                continue
+            d = json.load(io.open(os.path.join(src, fn), encoding="utf-8"))
+            d["_key"] = fn[:-5]
+            entries.append(d)
+    if not entries:
         print("JSONがありません")
         return
-
-    entries = []
-    for fn in files:
-        d = json.load(io.open(os.path.join(SRC_DIR, fn), encoding="utf-8"))
-        d["_key"] = fn[:-5]
-        entries.append(d)
     entries.sort(key=lambda d: ORDER.index(d["_key"]) if d["_key"] in ORDER else 99)
 
-    missing = [d["_key"] for d in entries if d["_key"] not in BASIS]
-    if missing:
-        print("BASIS未登録（実査結果を読んで追記してください）:", missing)
+    resolved = {}
+    unknown = []
+    for d in entries:
+        k = d["_key"]
+        b = BASIS.get(k) or from_json(d)
+        if b is None:
+            unknown.append(k)
+        else:
+            resolved[k] = b
+    if unknown:
+        print("数え方が確定できません（実査結果を読んで BASIS に追記）:", unknown)
         return
 
     out = [HEAD]
     for d in entries:
         k = d["_key"]
-        b = BASIS[k]
+        b = resolved[k]
         basis, first, add = b["stay"]
         body = [' {"key": "%s", "name": "%s", "group": "%s",'
                 % (k, esc(d.get("name", k)), esc(d.get("group", "東京23区")))]
