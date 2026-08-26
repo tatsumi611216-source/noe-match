@@ -374,3 +374,7 @@ Cクラスタの属性群（看護師・公務員・エンジニア）が既にG
 - **判定・提案（A）**: `scripts/revenue_pdca.py` が週次で `agent/revenue_pdca.md` を生成。ファネル（セッション→aff_click→成果／→line_add_click→友だち数）＋ルールベースの機械提案＋期限リマインダ
 - **定期実行**: 定期タスク `noematch-revenue-pdca-weekly`（毎週月曜7:20）。**提案まで。適用はCEO承認後・1変数ずつ**（C31と同じ原則）
 - **実行済みの改善（8/26）**: 料金記事・通園ナビにOisix設置／クリック実績18記事にLINE導線／IndexNow自動通知をCIに組み込み
+
+## ツール新設ゲート（2026-08-26制定）
+
+**新しいツールは `python scripts/tool_gate.py "<語>"` を通してから作る。** GO=作ってよい／NO-GO=作らない／CHECK=GoogleのSERPを目視してから判断。8/13の5本中4本が選定ミスで沈んだ再発防止。ゲートの判定根拠と限界はスクリプト冒頭のdocstringに記載。
