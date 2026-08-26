@@ -21,8 +21,8 @@ BLOCK = """
 <div style="border-left:3px solid #7c2e42;background:#faf8f5;padding:16px 18px;margin:28px 0;">
 <p style="margin:0 0 6px;font-size:.78rem;letter-spacing:.1em;color:#7c2e42;">関連ツール</p>
 <p style="margin:0;font-size:.92rem;line-height:1.9;color:#3a4148;">
-産後ケア事業は自治体ごとに自己負担が違い、宿泊型1泊で0円の区と9,800円の区があります。
-<a href="%s" style="color:#7c2e42;font-weight:700;">産後ケアの料金を自治体別に調べる（東京23区の実額と回数上限）</a>で、
+産後ケア事業は自治体ごとに自己負担が違い、宿泊型を1泊使ったときの負担は0円の自治体と1万円を超える自治体があります。
+<a href="%s" style="color:#7c2e42;font-weight:700;">産後ケアの料金を自治体別に調べる（東京23区＋政令市の実額と回数上限）</a>で、
 使いたい回数を入れると自己負担の合計が出ます。
 </p>
 </div>
