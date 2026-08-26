@@ -1,6 +1,11 @@
 {
   "version": "0.0.1",
   "configurations": [
-    { "name": "noe-match", "runtimeExecutable": "python", "runtimeArgs": ["-m", "http.server", "8765", "--directory", "C:/Users/tatsu/noe-match-local"], "port": 8765 }
+    {
+      "name": "noe-match",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "--directory", "C:/Users/tatsu/noe-match-local", "8765"],
+      "port": 8765
+    }
   ]
 }

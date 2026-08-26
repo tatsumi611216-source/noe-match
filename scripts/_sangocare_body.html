@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="px.a8.net"],a[href*="t.afi-b.com"]');if(a){try{gtag('event','aff_click',{link_domain:(a.href.indexOf('a8.net')>-1?'a8':'afb'),page_slug:location.pathname});}catch(x){}}},true);</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="__URL__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__OGD__">
+<meta property="og:type" content="website">
+<meta property="og:url" content="__URL__">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="産後ケアの自己負担はいくら？自治体別の料金・回数早見">
+<meta name="twitter:description" content="__OGD__">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+__CSS__
+<style>
+.num-cell{font-weight:800;color:#7c2e42;white-space:nowrap}
+.cityout dt{font-weight:700;color:#1d242b;margin-top:14px;font-size:.9rem}
+.cityout dd{margin:4px 0 0;font-size:.88rem;line-height:1.9;color:#3a4148}
+.fitbox{padding:14px 16px;border-radius:6px;margin:14px 0;font-size:.9rem;line-height:1.9}
+.fit-ok{background:#edf3ee;border:1px solid #cfe0d4}
+.fit-ng{background:#f6f0e1;border:1px solid #e6d8b4}
+.bd{width:100%;border-collapse:collapse;margin:12px 0 0;font-size:.88rem}
+.bd th,.bd td{border-bottom:1px solid #e6e2da;padding:9px 8px;text-align:left}
+.bd td.n{text-align:right;font-weight:700;color:#7c2e42;white-space:nowrap}
+.bd tr.sum td{border-top:2px solid #7c2e42;border-bottom:none;font-size:1rem}
+.row3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:640px){.row3{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">__FAQLD__</script>
+<script type="application/ld+json">__APPLD__</script>
+<script type="application/ld+json">__BCLD__</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 産後ケア 自治体別 料金ナビ</div>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<h1>__H1__</h1>
+<p>産後ケア事業は母子保健法にもとづく市区町村の事業です。同じ「宿泊型1泊」でも、自己負担が0円の区と7,000円の区があります。__NCITY__自治体の公式ページを確認し、宿泊型・日帰り型・訪問型の自己負担額と回数の上限を収録しました。使いたい回数を入れると、自己負担の合計と上限に収まるかが出ます。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>産後ケアの自己負担は、住んでいる自治体で決まります。</strong>__LEAD__（__CHECKED__時点の各自治体公式ページ）。多くの自治体が住民税非課税世帯・生活保護世帯の減免を設けており、その場合は無料または大幅減額になります。</blockquote>
+
+<h2>STEP1｜自治体と使いたい回数を入れる</h2>
+<div class="calc" id="calcForm">
+  <div class="fld">
+    <label for="city">お住まいの自治体</label>
+    <select id="city">__OPTS__</select>
+    <div class="hint">__NCITY__自治体は__CHECKED__に公式ページを確認して収録しています。それ以外にお住まいの場合は「上記以外の自治体（目安）」を選んでください。産後ケアは市区町村ごとに実施の有無・金額・回数が異なります。</div>
+  </div>
+  <div class="row3">
+    <div class="fld">
+      <label for="nStay">宿泊型（泊数）</label>
+      <select id="nStay"><option value="0">使わない</option><option value="1">1泊</option><option value="2" selected>2泊</option><option value="3">3泊</option><option value="4">4泊</option><option value="5">5泊</option><option value="6">6泊</option><option value="7">7泊</option></select>
+    </div>
+    <div class="fld">
+      <label for="nDay">日帰り型（回数）</label>
+      <select id="nDay"><option value="0">使わない</option><option value="1">1回</option><option value="2" selected>2回</option><option value="3">3回</option><option value="4">4回</option><option value="5">5回</option><option value="7">7回</option></select>
+    </div>
+    <div class="fld">
+      <label for="nVisit">訪問型（回数）</label>
+      <select id="nVisit"><option value="0">使わない</option><option value="1">1回</option><option value="2">2回</option><option value="3" selected>3回</option><option value="4">4回</option><option value="5">5回</option></select>
+    </div>
+  </div>
+  <div class="fld">
+    <label for="genmen">世帯の区分</label>
+    <select id="genmen"><option value="normal" selected>課税世帯（通常）</option><option value="hikazei">住民税非課税世帯・生活保護世帯</option></select>
+    <div class="hint">非課税・生活保護世帯を選ぶと、その自治体が公表している減免の内容を表示します（金額の自動計算はしません。減免の書き方が自治体ごとに違うためです）。</div>
+  </div>
+  <button type="button" class="calc-btn" id="run">この自治体の自己負担を見る</button>
+</div>
+
+<div class="result" id="result" aria-live="polite">
+  <div class="big">
+    <div class="lbl">この使い方での自己負担の合計</div>
+    <div class="num" id="total">—</div>
+  </div>
+  <table class="bd" id="bd"></table>
+  <div id="fit" class="fitbox"></div>
+  <dl class="cityout" id="detail"></dl>
+  <p id="srcNote" style="font-size:.78rem;color:#6b7178;margin:18px 0 0;line-height:1.9"></p>
+</div>
+
+<h2 id="ichiran">__NCITY__自治体の産後ケア 料金・回数一覧</h2>
+<p>宿泊型・日帰り型・訪問型の利用者負担額と、1回の出産あたりで使える上限です。金額はいずれも減免前（課税世帯）の額です。</p>
+<div class="table-scroll">
+<table class="cmp">
+<thead><tr><th>自治体</th><th>宿泊型</th><th>日帰り型</th><th>訪問型</th><th>回数の上限</th></tr></thead>
+<tbody>__ROWS__</tbody>
+</table>
+</div>
+
+<h2 id="chui">金額を比べるときに間違えやすいところ</h2>
+<h3>「1泊いくら」ではない自治体がある</h3>
+<p>宿泊型の金額表示は自治体で書き方が違います。1日あたりの単価を示す自治体がある一方で、「1泊2日で7,000円、以降1日増えるごとに3,500円」のように初回とそれ以降で分ける自治体もあります。本ツールはこの違いを自治体ごとに持たせて計算していますが、金額だけを横に並べて比べると実態を取り違えます。</p>
+<h3>負担額が0円でも、方式が違う</h3>
+<p>自己負担0円には「もともと利用者負担を設定していない」場合と「自治体が基本利用料を全額補助している」場合があります。後者は差額ベッド代など補助の対象外になる費用が別に発生することがあります。</p>
+<h3>回数の上限を見ないと比較にならない</h3>
+<p>1回あたりが安くても使える回数が少なければ、受けられるケアの総量は小さくなります。金額と上限回数は必ずセットで見てください。</p>
+<h3>対象期間が「産後1年」とは限らない</h3>
+<p>母子保健法は産後1年以内を想定していますが、類型ごとに「産後4か月未満」と短く設定している自治体があります。里帰りの予定がある場合は、対象期間と住民票の要件を先に確認してください。</p>
+
+<h2 id="faq">よくある質問（FAQ）</h2>
+__FAQHTML__
+
+<h2 id="src">出典</h2>
+<p>数値はすべて各自治体の公式ページで確認しました。確認日は__CHECKED__です。制度は年度で変わるため、利用前に必ず公式ページをご確認ください。</p>
+<div class="table-scroll">
+<table class="cmp">
+<thead><tr><th>自治体</th><th>出典ページ</th><th>確認日</th></tr></thead>
+<tbody>__SRCROWS__</tbody>
+</table>
+</div>
+
+<h2 id="related">関連するツールと記事</h2>
+<ul>
+<li><a href="/tools/garugaru-check/">潜在ガルガル度チェック診断</a>｜産後の気持ちの揺れがどの段階にあるかを、質問に答えて確かめる</li>
+<li><a href="/tools/sango-recovery-check/">産後リカバリー診断</a>｜産後の回復状況と、いま優先すべきことを整理する</li>
+<li><a href="/tools/daredemo-tsuen-jichitai/">こども誰でも通園制度 自治体別ナビ</a>｜月何時間預けられるかを自治体別に調べる</li>
+<li><a href="/articles/daredemo-tsuen-ryokin/">こども誰でも通園制度の料金はいくら？</a>｜46自治体の実額と減免</li>
+</ul>
+
+<div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:32px 0;background:#faf8f5">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
+<p style="font-weight:900;margin:0 0 6px;color:#1d242b">産後ケアを使わない日の食事をどうするか</p>
+<p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">産後ケアの回数には上限があります。使える日は限られるので、それ以外の日の負担をどう下げるかが実際の問題になります。買い物と献立を考える時間を削る方法のひとつです。</p>
+<a href="__OISIX__" rel="sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。産後ケア事業の利用可否とは関係ありません</p>
+</div>
+</article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:56px auto 64px;padding:36px 28px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">自治体の制度は年度で変わります</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">産後ケア・こども誰でも通園制度など、自治体ごとに違う制度の変更点を月1回お知らせします。<br>お住まいの自治体について調べてほしいことは、追加後そのままトークでどうぞ。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'__SLUG__'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加する</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は月1回だけ。いつでも解除できます。</p>
+</section>
+</div>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本ツールは各自治体の公式公開情報（__CHECKED__確認）に基づく目安です。制度の適用と最終的な判断は各自治体が行います。医療的な判断については医師・助産師にご相談ください。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+(function(){
+"use strict";
+var D=__DATA__;
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function yen(n){return n.toLocaleString('ja-JP')+'円';}
+
+/* 宿泊の数え方は自治体で3通りある。
+   trip … 1泊2日でいくら＋以降1日ごとにいくら
+   day  … 1日あたりいくら（1泊2日＝2日ぶん）
+   range… 施設ごとに実額が違い、自治体としての単価が無い（計算しない） */
+function stayCost(c,n){
+  if(n<=0) return 0;
+  if(c.stay_basis==='range'||c.stay===null) return null;
+  if(c.stay_basis==='day') return c.stay*(n+1);
+  var add=(c.stay_add===null||c.stay_add===undefined)?c.stay:c.stay_add;
+  return c.stay+add*(n-1);
+}
+function stayBasisNote(c){
+  if(c.stay_basis==='day') return '1日あたりの単価。1泊2日は2日ぶん';
+  if(c.stay_basis==='trip'&&c.stay_add) return '2泊目以降は1日'+yen(c.stay_add);
+  return '';
+}
+
+/* 上限の数え方は自治体で違う（類型ごとに枠を持つ区、3類型を合算する区、
+   宿泊と日帰りだけ合算する区）。文言の先頭の数字を拾って自動判定すると
+   「1回の出産につき5日まで」の"1"を上限と読むような誤判定が起きるので、
+   判定はせず自治体の原文をそのまま出す。 */
+
+function run(){
+  var c=D[$('city').value];
+  var ns=+$('nStay').value, nd=+$('nDay').value, nv=+$('nVisit').value;
+  var hikazei=$('genmen').value==='hikazei';
+  var cs=stayCost(c,ns);
+  var cd=(c.day===null?null:c.day*nd);
+  var cv=(c.visit===null?null:c.visit*nv);
+  var rows='', total=0, unknown=false;
+
+  function line(label,n,cost,unit,note,avail){
+    if(n<=0) return;
+    var amount;
+    if(avail===false){amount='<td class="n" style="font-weight:400;color:#5a6068;font-size:.8rem">実施なし</td>';}
+    else if(cost===null){amount='<td class="n" style="font-weight:400;color:#5a6068;font-size:.8rem">施設により変動</td>';unknown=true;}
+    else {amount='<td class="n">'+yen(cost)+'</td>';total+=cost;}
+    rows+='<tr><td>'+label+'<br><span style="font-size:.78rem;color:#6b7178">'+esc(unit)+(note?'／'+esc(note):'')+'</span></td><td style="white-space:nowrap">'+n+'</td>'+amount+'</tr>';
+  }
+  line('宿泊型',ns,cs,c.stay_label,stayBasisNote(c),true);
+  line('日帰り型',nd,cd,c.day_label,'',c.day_avail);
+  line('訪問型',nv,cv,c.visit_label,'',c.visit_avail);
+
+  if(!rows){
+    $('total').textContent='—';
+    $('bd').innerHTML='';
+    $('fit').className='fitbox fit-ng';
+    $('fit').innerHTML='使いたい類型を1つ以上選んでください。';
+    renderDetail(c); return;
+  }
+  rows+='<tr class="sum"><td>合計</td><td></td><td class="n">'+(unknown?yen(total)+'＋変動分':yen(total))+'</td></tr>';
+  $('bd').innerHTML='<thead><tr><th>類型</th><th>回数</th><th style="text-align:right">自己負担</th></tr></thead><tbody>'+rows+'</tbody>';
+  $('total').textContent=unknown?(yen(total)+'＋変動分'):yen(total);
+
+  var f=$('fit');
+  var head=hikazei
+    ? '<strong>非課税・生活保護世帯の扱い：</strong>'+esc(c.genmen)+'　上の合計は課税世帯（減免前）の金額です。減免の適用に別途申請が必要な自治体があるため、申込先に確認してください。<br><br>'
+    : (unknown ? '<strong>'+esc(c.name)+'は、自治体としての単価を持たない類型があります。</strong>実際の自己負担は選ぶ施設で決まるため、合計は「変動分」として分けて表示しています。<br><br>' : '');
+  f.className='fitbox '+(unknown&&!hikazei?'fit-ng':'fit-ok');
+  f.innerHTML=head+'<strong>'+esc(c.name)+'の上限（自治体の公表どおり）：</strong>'+
+    '<br>宿泊型 '+esc(c.limit_stay)+
+    '<br>日帰り型 '+esc(c.limit_day)+
+    '<br>訪問型 '+esc(c.limit_visit)+
+    '<br><span style="font-size:.82rem;color:#6b7178">上限の数え方は自治体で違います。類型ごとに枠を持つ自治体と、3類型を合算して数える自治体があります。上の原文でご確認ください。</span>';
+  renderDetail(c);
+}
+function renderDetail(c){
+  $('detail').innerHTML=''+
+   '<dt>宿泊型</dt><dd>'+esc(c.stay_label)+'（上限 '+esc(c.limit_stay)+'）</dd>'+
+   '<dt>日帰り型</dt><dd>'+esc(c.day_label)+'（上限 '+esc(c.limit_day)+'）</dd>'+
+   '<dt>訪問型</dt><dd>'+esc(c.visit_label)+'（上限 '+esc(c.limit_visit)+'）</dd>'+
+   '<dt>減免</dt><dd>'+esc(c.genmen)+'</dd>'+
+   '<dt>対象</dt><dd>'+esc(c.target)+'</dd>'+
+   '<dt>申請</dt><dd>'+esc(c.apply)+'</dd>'+
+   (c.note?'<dt>特記</dt><dd>'+esc(c.note)+'</dd>':'');
+  $('srcNote').innerHTML='出典：<a href="'+c.src+'" rel="noopener" target="_blank">'+esc(c.src_label)+'</a>（__CHECKED__確認）。最新の内容は必ず公式ページでご確認ください。';
+  try{gtag('event','tool_result',{tool:'__SLUG__',city:c.key});}catch(e){}
+}
+$('run').addEventListener('click',run);
+$('city').addEventListener('change',run);
+['nStay','nDay','nVisit','genmen'].forEach(function(id){$(id).addEventListener('change',run);});
+run();
+})();
+</script>
+</body>
+</html>
