@@ -49,6 +49,68 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 ```
 （konkatsu-soudan-saki / pocchari-konkatsu は 2026-08-09 公開。zexy-enmusubi-data / pairs-kaiin-data は 2026-08-10 公開。omiai-danjohi-data / with-nenreiso-data は 2026-08-17 公開。Day バックログとは別枠で申請してよい）
 
+### 2026-08-26 判定分（GSC照合キューの実質未申請 37本）
+
+`affiliate-index-verify-20260826` の判定結果。正本は `agent/gsc_verify_queue.md`「判定結果（2026-08-26）」。**上から順に1日10件（上限が出るまで）。**
+Googleが一度も認識していない（未認識）ものを先頭に置いた。
+
+**Day A（10本）**
+
+```
+https://www.noe-match.com/articles/compare-price/                    ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/matching-josei-cost-data/         ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/myseed-kuchikomi/                 ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/pairs-guide/                      ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/tapple-guide/                     ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/tapple-vs-pairs/                  ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/tomobataraki-shokuji-data/        ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/with-guide/                       ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/free-vs-paid/                     ← クロール済み・インデックス未登録
+https://www.noe-match.com/articles/konkatsu-roadmap/                 ← クロール済み・インデックス未登録
+```
+
+**Day B（10本）**
+
+```
+https://www.noe-match.com/articles/dousei-kaisho/                    ← 検出済み・未クロール
+https://www.noe-match.com/articles/dousei-kekkon-hikaku/             ← 検出済み・未クロール
+https://www.noe-match.com/articles/first-date-guide/                 ← 検出済み・未クロール
+https://www.noe-match.com/articles/fraud-statistics/                 ← 検出済み・未クロール
+https://www.noe-match.com/articles/hatsushon-nenmei-data/            ← 検出済み・未クロール
+https://www.noe-match.com/articles/kaiin-age-cross-data/             ← 検出済み・未クロール
+https://www.noe-match.com/articles/kinsen-kachikan-check/            ← 検出済み・未クロール
+https://www.noe-match.com/articles/koninhiyou-guide/                 ← 検出済み・未クロール
+https://www.noe-match.com/articles/konkatsu-party-guide/             ← 検出済み・未クロール
+https://www.noe-match.com/articles/late-20s-strategy/                ← 検出済み・未クロール
+```
+
+**Day C（10本）**
+
+```
+https://www.noe-match.com/articles/line-exchange/                    ← 検出済み・未クロール
+https://www.noe-match.com/articles/members-data/                     ← 検出済み・未クロール
+https://www.noe-match.com/articles/nashikon-data/                    ← 検出済み・未クロール
+https://www.noe-match.com/articles/pairs-men/                        ← 検出済み・未クロール
+https://www.noe-match.com/articles/pairs-women/                      ← 検出済み・未クロール
+https://www.noe-match.com/articles/price-comparison/                 ← 検出済み・未クロール
+https://www.noe-match.com/articles/privacy-protection/               ← 検出済み・未クロール
+https://www.noe-match.com/articles/profile-text/                     ← 検出済み・未クロール
+https://www.noe-match.com/articles/renkatsu-vs-konkatsu/             ← 検出済み・未クロール
+https://www.noe-match.com/articles/shinkyo-kagu-yosan/               ← 検出済み・未クロール
+```
+
+**Day D（7本）**
+
+```
+https://www.noe-match.com/articles/usuge-konkatsu-eikyou/            ← 検出済み・未クロール
+https://www.noe-match.com/articles/with-vs-pairs/                    ← 検出済み・未クロール
+https://www.noe-match.com/articles/garugaru-ki-itsumade/             ← Googleがこのページを認識していない
+https://www.noe-match.com/articles/garugaru-otto-genkai/             ← 検出済み・未クロール
+https://www.noe-match.com/articles/garugaru-sangoutsu-chigai/        ← 検出済み・未クロール
+https://www.noe-match.com/articles/sango-iraira/                     ← 検出済み・未クロール
+https://www.noe-match.com/articles/shinseiji-menkai/                 ← 検出済み・未クロール
+```
+
 ### 申請済み
 
 | URL | 公開日 | 申請日 | 7日後の状態 |
