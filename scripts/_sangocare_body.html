@@ -105,7 +105,11 @@ __CSS__
 
 <h2 id="chui">金額を比べるときに間違えやすいところ</h2>
 <h3>「1泊いくら」ではない自治体がある</h3>
-<p>宿泊型の金額表示は自治体で書き方が違います。1日あたりの単価を示す自治体がある一方で、「1泊2日で7,000円、以降1日増えるごとに3,500円」のように初回とそれ以降で分ける自治体もあります。本ツールはこの違いを自治体ごとに持たせて計算していますが、金額だけを横に並べて比べると実態を取り違えます。</p>
+<p>宿泊型の金額表示は自治体で書き方が違います。1日あたりの単価を示す自治体がある一方で、「1泊2日で7,000円、以降1日増えるごとに3,500円」のように初回とそれ以降で分ける自治体もあります。単価表の見た目と、1泊2日を実際に使ったときの支払額は順序が入れ替わります。</p>
+<h3>使う日数で単価が変わる自治体がある</h3>
+<p>相模原市は宿泊型の6日目から単価が倍になり、新潟市は宿泊・日帰り・訪問それぞれの1回目が無料です。単価に回数を掛けるだけでは実際の負担額になりません。本ツールは自治体ごとに「1回目・2回目…の単価」を持たせて積み上げています。</p>
+<h3>2泊目以降の金額を公表していない自治体がある</h3>
+<p>熊本市と北九州市は宿泊型の「1泊2日いくら」は公表していますが、そこから1日増えたときの金額を公式ページに載せていません。本ツールはこの場合、1泊ぶんを掛け算で埋めずに「施設により変動」として合計から分けています。存在しない金額を出さないためです。</p>
 <h3>負担額が0円でも、方式が違う</h3>
 <p>自己負担0円には「もともと利用者負担を設定していない」場合と「自治体が基本利用料を全額補助している」場合があります。後者は差額ベッド代など補助の対象外になる費用が別に発生することがあります。</p>
 <h3>回数の上限を見ないと比較にならない</h3>
@@ -169,17 +173,33 @@ function yen(n){return n.toLocaleString('ja-JP')+'円';}
    trip … 1泊2日でいくら＋以降1日ごとにいくら
    day  … 1日あたりいくら（1泊2日＝2日ぶん）
    range… 施設ごとに実額が違い、自治体としての単価が無い（計算しない） */
-function stayCost(c,n){
+/* 料金は「単価×回数」で表せない自治体がある。
+   相模原市は6日目から単価が倍、新潟市は各類型の1回目が無料、
+   熊本市は2泊目以降の額が非公表。掛け算で埋めると実在しない金額を出す。
+   そこで「n回目の単価の並び」を持たせ、最後の値が以降に繰り返す形にした。
+   prices の要素が null＝その回の額が公表されていない → 計算しない。 */
+function priceAt(prices,i){
+  var p=prices[Math.min(i,prices.length)-1];
+  return (p===null||p===undefined)?null:p;
+}
+function sumUnits(prices,n){
   if(n<=0) return 0;
-  if(c.stay_basis==='range'||c.stay===null) return null;
-  if(c.stay_basis==='day') return c.stay*(n+1);
-  var add=(c.stay_add===null||c.stay_add===undefined)?c.stay:c.stay_add;
-  return c.stay+add*(n-1);
+  if(!prices||!prices.length) return null;
+  var t=0;
+  for(var i=1;i<=n;i++){var p=priceAt(prices,i); if(p===null) return null; t+=p;}
+  return t;
+}
+/* stay_unit: 'day'＝1日あたりで数える（1泊2日は2日ぶん）／'night'＝1泊あたり */
+function stayCost(c,nights){
+  if(nights<=0) return 0;
+  if(!c.stay_prices) return null;
+  return sumUnits(c.stay_prices, c.stay_unit==='day'?nights+1:nights);
 }
 function stayBasisNote(c){
-  if(c.stay_basis==='day') return '1日あたりの単価。1泊2日は2日ぶん';
-  if(c.stay_basis==='trip'&&c.stay_add) return '2泊目以降は1日'+yen(c.stay_add);
-  return '';
+  if(!c.stay_prices) return '';
+  var multi=c.stay_prices.length>1;
+  if(c.stay_unit==='day') return '1日あたりの単価。1泊2日は2日ぶん'+(multi?'／日数で単価が変わります':'');
+  return '1泊あたり'+(multi?'／泊数で単価が変わります':'');
 }
 
 /* 上限の数え方は自治体で違う（類型ごとに枠を持つ区、3類型を合算する区、
@@ -192,8 +212,8 @@ function run(){
   var ns=+$('nStay').value, nd=+$('nDay').value, nv=+$('nVisit').value;
   var hikazei=$('genmen').value==='hikazei';
   var cs=stayCost(c,ns);
-  var cd=(c.day===null?null:c.day*nd);
-  var cv=(c.visit===null?null:c.visit*nv);
+  var cd=sumUnits(c.day_prices,nd);
+  var cv=sumUnits(c.visit_prices,nv);
   var rows='', total=0, unknown=false;
 
   function line(label,n,cost,unit,note,avail){
