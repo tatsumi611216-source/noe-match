@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="px.a8.net"],a[href*="t.afi-b.com"]');if(a){try{gtag('event','aff_click',{link_domain:(a.href.indexOf('a8.net')>-1?'a8':'afb'),page_slug:location.pathname});}catch(x){}}},true);</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="__URL__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__OGD__">
+<meta property="og:type" content="website">
+<meta property="og:url" content="__URL__">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="子ども医療費助成はいつまで？東京23区の条件">
+<meta name="twitter:description" content="__OGD__">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+__CSS__
+<style>
+.cityout dt{font-weight:700;color:#1d242b;margin-top:14px;font-size:.9rem}
+.cityout dd{margin:4px 0 0;font-size:.88rem;line-height:1.9;color:#3a4148}
+.fitbox{padding:14px 16px;border-radius:6px;margin:14px 0;font-size:.9rem;line-height:1.9}
+.fit-ok{background:#edf3ee;border:1px solid #cfe0d4}
+.fit-ng{background:#f6f0e1;border:1px solid #e6d8b4}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.row2{grid-template-columns:1fr}}
+.badge{display:inline-block;font-size:.74rem;font-weight:700;padding:2px 9px;border-radius:3px;margin-left:8px;vertical-align:middle}
+.b-ok{background:#e3ecec;color:#3d585e}
+.b-ng{background:#f0e3e6;color:#7c2e42}
+table.cmp td{vertical-align:top}
+</style>
+<script type="application/ld+json">__FAQLD__</script>
+<script type="application/ld+json">__APPLD__</script>
+<script type="application/ld+json">__BCLD__</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 子ども医療費助成 東京23区ナビ</div>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<h1>__H1__</h1>
+<p>対象年齢は東京23区すべて「18歳到達後最初の3月31日まで」で差がありません。差がつくのは入院時食事療養費で、__NTAISHO__区が助成対象、__NGAI__区が対象外です。お子さんの生年月日と区を選ぶと、助成が切れる日とその区の条件が出典つきで出ます。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>「23区は高校生まで医療費無料」で片づけると、入院したときの食事代を見落とします。</strong>東京都の基準は「通院1回につき最大200円の一部負担あり」「入院時食事療養標準負担額は自己負担」です。都のページ自身が「区市町村によって助成範囲が異なる」と明記しており、区が「自己負担なし」「食事代も助成」としているのは区独自の上乗せにあたります。__CHECKED__に23区すべての公式ページを確認しました。</blockquote>
+
+<h2>STEP1｜お子さんの生年月日と区を選ぶ</h2>
+<div class="calc" id="calcForm">
+  <div class="row2">
+    <div class="fld">
+      <label for="birth">お子さんの生年月日</label>
+      <input type="date" id="birth" style="width:100%;padding:10px;border:1px solid #d8d2c8;border-radius:4px;font-size:1rem">
+      <div class="hint">助成は誕生日ではなく「18歳到達後最初の3月31日」までです。年度末が区切りなので、同じ学年の子は誕生日に関係なく同じ日に終わります。逆に学年の境目（4月1日生まれと4月2日生まれ）では、終わる日が1年変わります。</div>
+    </div>
+    <div class="fld">
+      <label for="city">お住まいの区</label>
+      <select id="city">__OPTS__</select>
+      <div class="hint">東京23区を__CHECKED__に確認して収録しています。</div>
+    </div>
+  </div>
+  <button type="button" class="calc-btn" id="run">この区の条件を見る</button>
+</div>
+
+<div class="result" id="result" aria-live="polite">
+  <div class="big">
+    <div class="lbl">助成が使えるのは</div>
+    <div class="num" id="until">—</div>
+  </div>
+  <div id="fit" class="fitbox"></div>
+  <dl class="cityout" id="detail"></dl>
+  <p id="srcNote" style="font-size:.78rem;color:#6b7178;margin:18px 0 0;line-height:1.9"></p>
+</div>
+
+<h2 id="ichiran">東京23区の一覧</h2>
+<p>対象年齢は全区共通なので、比べる意味があるのは所得制限の記載と入院時食事療養費の扱いです。</p>
+<div class="table-scroll">
+<table class="cmp">
+<thead><tr><th>区</th><th>所得制限</th><th>自己負担</th><th>入院時食事療養費</th></tr></thead>
+<tbody>__ROWS__</tbody>
+</table>
+</div>
+
+<h2 id="chui">調べるときに間違えやすいところ</h2>
+<h3>「記載なし」は「制限なし」ではない</h3>
+<p>所得制限について「ありません」と明記している区と、そもそも記載が無い区があります。本ツールは記載が無いものを「記載なし」と表示し、制限が無いとは断定していません。心配な場合は区に直接ご確認ください。</p>
+<h3>自己負担の列は「区がそう書いているか」を示すもの</h3>
+<p>この項目は区ページの書きぶりに幅があり、そのまま横並びで比べるのが難しい項目です。「窓口での支払いは不要」と明示している区もあれば、「自己負担分を助成します」とだけ書いて金額に触れていない区もあります。後者は実質ゼロ負担と読めますが断定できないため、本ツールでは「記載なし」として扱い、区ページの原文をそのまま表示しています。<strong>この列だけで区を比較しないでください。</strong></p>
+<h3>食事代が対象でも、その場で無料とは限らない</h3>
+<p>入院時食事療養費を助成対象としている区でも、窓口ではいったん支払って後から償還払いという運用が多くあります。また足立区は令和7年10月1日以降の入院分から、文京区は令和8年4月1日受診分からの新規開始で、それ以前の診療分は対象外と明記しています。</p>
+<h3>都外・区外は償還払い</h3>
+<p>医療証を扱わない医療機関や都外の医療機関では、窓口でいったん自己負担分を支払い、後日区に申請して払い戻しを受けます。これは23区で共通の運用です。</p>
+<h3>医療証の呼び方が区で違う</h3>
+<p>「マル乳・マル子・マル青」という通称を公式に使っている区と、正式名称しか使わない区があります。豊島区・世田谷区は通称を公式ページで使っていません。検索するときは両方で当たってください。</p>
+
+<h2 id="faq">よくある質問（FAQ）</h2>
+__FAQHTML__
+
+<h2 id="src">出典</h2>
+<p>すべて各区の公式ページで確認しました。確認日は__CHECKED__です。制度は年度で変わるため、利用前に必ず公式ページをご確認ください。</p>
+<div class="table-scroll">
+<table class="cmp">
+<thead><tr><th>区</th><th>出典ページ</th><th>確認日</th></tr></thead>
+<tbody>__SRCROWS__</tbody>
+</table>
+</div>
+
+<h2 id="related">関連するツールと記事</h2>
+<ul>
+<li><a href="/articles/kodomo-iryohi-data/">子ども医療費助成は東京23区でどう違う？差がつくのは入院時の食事代</a></li>
+<li><a href="/tools/sangokea-ryokin/">産後ケアの料金はいくら？自治体別の自己負担</a></li>
+<li><a href="/tools/daredemo-tsuen-jichitai/">こども誰でも通園制度は月何時間使える？</a></li>
+<li><a href="/tools/ikukyu-encho-hantei/">育休はいつまで延長できる？条件と必要書類の判定</a></li>
+<li><a href="/articles/shussan-mushouka/">出産費用の無償化はいつから？</a></li>
+</ul>
+
+<div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:32px 0;background:#faf8f5">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
+<p style="font-weight:900;margin:0 0 6px;color:#1d242b">医療費が助成されても、日々の負担は残る</p>
+<p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">医療費の助成は制度で決まっていて、こちらで動かせる余地はありません。一方で日々の家事の総量は今日から減らせます。買い物と献立を考える時間を削るのはその一つです。</p>
+<a href="__OISIX__" rel="sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。医療費助成の適用とは関係ありません</p>
+</div>
+</article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:56px auto 64px;padding:36px 28px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">自治体の制度は年度で変わります</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">子ども医療費助成・産後ケア・こども誰でも通園制度など、自治体ごとに違う制度の変更点を月1回お知らせします。<br>お住まいの自治体について調べてほしいことは、追加後そのままトークでどうぞ。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'__SLUG__'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加する</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は月1回だけ。いつでも解除できます。</p>
+</section>
+</div>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本ツールは東京23区の公式公開情報（__CHECKED__確認）に基づく目安です。制度の適用と最終的な判断は各区が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+(function(){
+"use strict";
+var D=__DATA__;
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function fmt(d){return d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日';}
+
+/* 助成の終期は「18歳到達後最初の3月31日」。年齢計算の応当日ではなく年度末なので、
+   誕生日を迎えた年度の3月31日を返す。3月生まれと4月生まれで1年近く変わる。 */
+function endOfSupport(birth){
+  var y=birth.getFullYear()+18;
+  var b18=new Date(y, birth.getMonth(), birth.getDate());
+  /* 18歳の誕生日が1〜3月なら その年の3月31日、4月以降なら 翌年の3月31日 */
+  var fyEnd=(b18.getMonth()<=2)?new Date(y,2,31):new Date(y+1,2,31);
+  return fyEnd;
+}
+
+function run(){
+  var bv=$('birth').value;
+  var c=D[$('city').value];
+  if(!bv){
+    $('until').textContent='生年月日を入れてください';
+    $('fit').className='fitbox fit-ng';
+    $('fit').innerHTML='お子さんの生年月日を入れると、助成が切れる日が出ます。';
+    renderDetail(c); return;
+  }
+  var birth=new Date(bv+'T00:00:00');
+  var end=endOfSupport(birth);
+  var today=new Date(); today.setHours(0,0,0,0);
+  var days=Math.round((end-today)/86400000);
+  $('until').textContent=fmt(end)+' まで';
+  var f=$('fit');
+  if(days<0){
+    f.className='fitbox fit-ng';
+    f.innerHTML='<strong>助成の対象期間は終了しています。</strong>'+esc(c.name)+'の対象は「'+esc(c.age_limit)+'」です。';
+  }else{
+    var yrs=Math.floor(days/365), mos=Math.floor((days%365)/30);
+    var span=(yrs>0)?(yrs+'年'+mos+'か月ほど'):(mos+'か月ほど');
+    f.className='fitbox fit-ok';
+    f.innerHTML='<strong>あと'+span+'（'+days+'日）使えます。</strong>'+
+      esc(c.name)+'の対象は「'+esc(c.age_limit)+'」です。'+
+      '助成の終わりは誕生日ではなく年度末なので、<strong>同じ学年の子は誕生日に関係なく同じ日に終わります</strong>。';
+  }
+  renderDetail(c);
+}
+
+function renderDetail(c){
+  function badge(ok,okText,ngText){
+    return ok?'<span class="badge b-ok">'+okText+'</span>':'<span class="badge b-ng">'+ngText+'</span>';
+  }
+  var shokujiOK=(String(c.shokuji_ryoyohi).indexOf('対象外')<0);
+  $('detail').innerHTML=''+
+   '<dt>対象年齢</dt><dd>'+esc(c.age_limit)+'</dd>'+
+   '<dt>所得制限'+(c.shotoku_seigen===false?badge(true,'なしと明記',''):badge(false,'','記載なし'))+'</dt>'+
+   '<dd>'+esc(c.shotoku_seigen_note)+'</dd>'+
+   '<dt>自己負担'+(c.jiko_futan===false?badge(true,'なし',''):badge(false,'','記載なし'))+'</dt>'+
+   '<dd>'+esc(c.jiko_futan_note)+'</dd>'+
+   '<dt>入院時食事療養費'+badge(shokujiOK,'助成対象','対象外')+'</dt>'+
+   '<dd>'+esc(c.shokuji_ryoyohi)+'</dd>'+
+   '<dt>都外・区外で受診したとき</dt><dd>'+esc(c.kugai)+'</dd>'+
+   '<dt>申請</dt><dd>'+esc(c.apply)+'</dd>'+
+   '<dt>医療証の名称</dt><dd>'+esc(c.medical_cert_name)+'</dd>'+
+   (c.note?'<dt>特記</dt><dd>'+esc(c.note)+'</dd>':'');
+  $('srcNote').innerHTML='出典：<a href="'+c.src+'" rel="noopener" target="_blank">'+esc(c.src_label)+'</a>（__CHECKED__確認）。最新の内容は必ず公式ページでご確認ください。';
+  try{gtag('event','tool_result',{tool:'__SLUG__',city:c.key});}catch(e){}
+}
+$('run').addEventListener('click',run);
+$('city').addEventListener('change',run);
+$('birth').addEventListener('change',run);
+run();
+})();
+</script>
+</body>
+</html>
