@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="px.a8.net"],a[href*="t.afi-b.com"]');if(a){try{gtag('event','aff_click',{link_domain:(a.href.indexOf('a8.net')>-1?'a8':'afb'),page_slug:location.pathname});}catch(x){}}},true);</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="__URL__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__OGD__">
+<meta property="og:type" content="website">
+<meta property="og:url" content="__URL__">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="病児保育はいくらかかる？東京23区の1日あたりの料金">
+<meta name="twitter:description" content="__OGD__">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+__CSS__
+<style>
+.cityout dt{font-weight:700;color:#1d242b;margin-top:14px;font-size:.9rem}
+.cityout dd{margin:4px 0 0;font-size:.88rem;line-height:1.9;color:#3a4148}
+.fitbox{padding:14px 16px;border-radius:6px;margin:14px 0;font-size:.9rem;line-height:1.9}
+.fit-ok{background:#edf3ee;border:1px solid #cfe0d4}
+.fit-ng{background:#f6f0e1;border:1px solid #e6d8b4}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.row2{grid-template-columns:1fr}}
+.rankbar{margin:16px 0 0}
+.rankrow{display:grid;grid-template-columns:5.2em 1fr 5.5em;gap:8px;align-items:center;font-size:.82rem;padding:3px 0}
+.rankrow .rn{color:#5a6068}
+.rankrow .rv{text-align:right;font-weight:700;color:#1d242b;font-variant-numeric:tabular-nums}
+.rankrow .bar{background:#e3ddd3;height:11px;border-radius:2px}
+.rankrow .bar span{display:block;height:100%;background:#b9a68c;border-radius:2px}
+.rankrow.me .rn,.rankrow.me .rv{color:#7c2e42}
+.rankrow.me .bar span{background:#7c2e42}
+table.cmp td{vertical-align:top}
+</style>
+<script type="application/ld+json">__FAQLD__</script>
+<script type="application/ld+json">__APPLD__</script>
+<script type="application/ld+json">__BCLD__</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 病児保育の料金 東京23区</div>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<h1>__H1__</h1>
+<p>東京23区はすべて病児・病後児保育を実施していますが、1日あたりの料金は__MIN__円から__MAX__円まで開いています。区と使う日数を入れると、自己負担の合計と、同じ日数を23区で使った場合の位置づけが出ます。減免の条件・対象年齢・利用上限・予約方法も出典つきで表示します。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>病児保育は「あるかないか」ではなく「いくらか」で差がつきます。</strong>東京23区はすべて実施していますが、1日あたりの料金は__MINNAME__の__MIN__円から__MAXNAME__の__MAX__円まで開いています。__MODEN__区が__MODE__円で並ぶ一方、上下に外れる区があります。子どもが病気になる回数は選べないので、年間で何日使うかによって差は積み上がります。__CHECKED__に23区すべての公式ページを確認しました。</blockquote>
+
+<h2>STEP1｜区と使う日数を入れる</h2>
+<div class="calc" id="calcForm">
+  <div class="row2">
+    <div class="fld">
+      <label for="city">お住まいの区</label>
+      <select id="city">__OPTS__</select>
+      <div class="hint">東京23区を__CHECKED__に確認して収録しています。</div>
+    </div>
+    <div class="fld">
+      <label for="days">年間で使う日数（日）</label>
+      <input type="number" id="days" min="1" max="60" step="1" value="10" style="width:100%;padding:10px;border:1px solid #d8d2c8;border-radius:4px;font-size:1rem">
+      <div class="hint">保育園に通う子は年に10日前後、入園1年目はそれ以上使うことがあります。実際の日数でお試しください。</div>
+    </div>
+  </div>
+  <button type="button" class="calc-btn" id="run">この区の料金と条件を見る</button>
+</div>
+
+<div class="result" id="result" aria-live="polite">
+  <div class="big">
+    <div class="lbl">その日数を使ったときの自己負担</div>
+    <div class="num" id="total">—</div>
+  </div>
+  <div id="fit" class="fitbox"></div>
+  <h3 style="margin-top:26px">同じ日数を23区で使ったら</h3>
+  <p style="font-size:.82rem;color:#6b7178;margin:0 0 8px;line-height:1.8">減免を適用していない通常料金での比較です。給食費・おやつ代など別途かかる費用は含みません。</p>
+  <div class="rankbar" id="rank"></div>
+  <h3 style="margin-top:26px">この区の条件</h3>
+  <dl class="cityout" id="detail"></dl>
+  <p id="srcNote" style="font-size:.78rem;color:#6b7178;margin:18px 0 0;line-height:1.9"></p>
+</div>
+
+<h2 id="ichiran">東京23区の1日あたりの料金</h2>
+<p>安い順に並べています。減免の条件は区ごとに区分が違うため、原文のまま載せています。</p>
+<div class="table-scroll">
+<table class="cmp">
+<thead><tr><th>区</th><th>1日あたり</th><th>料金の記載（原文）</th><th>減免</th></tr></thead>
+<tbody>__ROWS__</tbody>
+</table>
+</div>
+
+<h2 id="chui">調べるときに間違えやすいところ</h2>
+<h3>料金のほかに給食費・おやつ代がかかる区がある</h3>
+<p>表示している金額は保育料そのものです。区や施設によっては、これとは別に給食費・おやつ代・医薬品代などがかかります。練馬区は「別途、給食費等の負担あり」と明記しています。合計は施設に確認してください。</p>
+<h3>減免は「区分」が区ごとに違う</h3>
+<p>生活保護世帯・住民税非課税世帯・所得税非課税世帯という3区分を設けている区もあれば、区分の異なる区もあります。本ツールでは減免後の額を計算せず、区の記載をそのまま表示しています。該当しそうな場合は必ず区または施設にご確認ください。</p>
+<h3>使う前に「事前登録」がいる</h3>
+<p>ほとんどの区で、利用の前に施設への事前登録が必要です。子どもが熱を出してから登録しようとしても間に合いません。<strong>元気なうちに登録を済ませておくのが前提の制度です。</strong>登録の窓口が区ではなく各施設という区も多く、練馬区は「保育課窓口では受け付けなし」と明記しています。</p>
+<h3>医師の診療情報提供書が必要なことが多い</h3>
+<p>利用前に医療機関を受診し、区や施設の様式の診療情報提供書を書いてもらう必要がある区が多くあります。この書類の発行に費用がかかる場合もあります。当日の朝に受診してから預けるという流れになるため、時間の見積もりに入れておいてください。</p>
+
+<h2 id="faq">よくある質問（FAQ）</h2>
+__FAQHTML__
+
+<h2 id="src">出典</h2>
+<p>すべて各区の公式ページで確認しました。確認日は__CHECKED__です。制度は年度で変わるため、利用前に必ず公式ページをご確認ください。</p>
+<div class="table-scroll">
+<table class="cmp">
+<thead><tr><th>区</th><th>出典ページ</th><th>確認日</th></tr></thead>
+<tbody>__SRCROWS__</tbody>
+</table>
+</div>
+
+<h2 id="related">関連するツールと記事</h2>
+<ul>
+<li><a href="/articles/byoji-hoiku-data/">病児保育は1日いくら？東京23区の料金と、料金以外で詰まるところ</a></li>
+<li><a href="/tools/kodomo-iryohi-jichitai/">子ども医療費助成はいつまで使える？東京23区</a></li>
+<li><a href="/tools/daredemo-tsuen-jichitai/">こども誰でも通園制度は月何時間使える？</a></li>
+<li><a href="/tools/sangokea-ryokin/">産後ケアの料金はいくら？自治体別の自己負担</a></li>
+<li><a href="/tools/ikukyu-encho-hantei/">育休はいつまで延長できる？条件と必要書類の判定</a></li>
+</ul>
+
+<div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:32px 0;background:#faf8f5">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
+<p style="font-weight:900;margin:0 0 6px;color:#1d242b">子どもが熱を出した日に、買い物まで背負わない</p>
+<p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">病児保育を使う日は、受診・書類・送迎で午前が消えます。そのうえで買い物と献立まで抱えると回りません。この部分は制度と違って、今日から自分の側で減らせます。</p>
+<a href="__OISIX__" rel="sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。病児保育の利用条件とは関係ありません</p>
+</div>
+</article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:56px auto 64px;padding:36px 28px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">自治体の制度は年度で変わります</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">病児保育・子ども医療費助成・産後ケア・こども誰でも通園制度など、自治体ごとに違う制度の変更点を月1回お知らせします。<br>お住まいの自治体について調べてほしいことは、追加後そのままトークでどうぞ。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'__SLUG__'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加する</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は月1回だけ。いつでも解除できます。</p>
+</section>
+</div>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本ツールは東京23区の公式公開情報（__CHECKED__確認）に基づく目安です。減免の適用と最終的な判断は各区・各施設が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+(function(){
+"use strict";
+var D=__DATA__;
+var LIST=[];for(var k in D){if(D.hasOwnProperty(k)){LIST.push(D[k]);}}
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function yen(n){return n.toLocaleString()+'円';}
+
+function run(){
+  var c=D[$('city').value];
+  var d=parseInt($('days').value,10);
+  if(!(d>0)){d=1;$('days').value=1;}
+  var total=c.byoji_fee*d;
+  $('total').textContent=yen(total);
+
+  /* 23区で同じ日数を使ったときの順位。安い順に数えた位置を出す。 */
+  var sorted=LIST.slice().sort(function(a,b){return a.byoji_fee-b.byoji_fee;});
+  var rank=1;
+  for(var i=0;i<sorted.length;i++){ if(sorted[i].byoji_fee<c.byoji_fee){rank++;} }
+  var min=sorted[0], max=sorted[sorted.length-1];
+  var f=$('fit');
+  if(c.byoji_fee===0){
+    f.className='fitbox fit-ok';
+    f.innerHTML='<strong>'+esc(c.name)+'は保育料の自己負担がありません。</strong>'+
+      '23区で唯一、1日あたりの保育料を無料としています。'+
+      'ただし給食費など別途かかる費用がある場合があります。施設にご確認ください。';
+  }else{
+    /* 同額の区が多い（15区が2,000円）ので、順位だけ出すと誤読される。
+       同額が何区あるかを必ず添え、自分が最安・最高のときは自分との比較を出さない。 */
+    var tie=0;
+    for(var t=0;t<sorted.length;t++){ if(sorted[t].byoji_fee===c.byoji_fee){tie++;} }
+    var head='<strong>1日'+yen(c.byoji_fee)+'×'+d+'日で'+yen(total)+'。</strong>';
+    if(tie>1){
+      head+='この金額の区は23区中'+tie+'区あり、安い順では'+rank+'番目から'+(rank+tie-1)+'番目に並びます。';
+    }else{
+      head+='23区を安い順に並べると'+rank+'番目です。';
+    }
+    var tail=[];
+    if(c.byoji_fee>min.byoji_fee){
+      tail.push('いちばん安い'+esc(min.name)+'（1日'+yen(min.byoji_fee)+'）との差は'+
+        d+'日で'+yen((c.byoji_fee-min.byoji_fee)*d));
+    }
+    if(c.byoji_fee<max.byoji_fee){
+      tail.push('いちばん高い'+esc(max.name)+'（1日'+yen(max.byoji_fee)+'）との差は'+
+        yen((max.byoji_fee-c.byoji_fee)*d));
+    }else{
+      tail.push('これが23区でいちばん高い金額');
+    }
+    f.className=(rank<=8)?'fitbox fit-ok':'fitbox fit-ng';
+    f.innerHTML=head+tail.join('、')+'です。';
+  }
+  renderRank(sorted,c,d);
+  renderDetail(c);
+}
+
+function renderRank(sorted,me,d){
+  var max=sorted[sorted.length-1].byoji_fee*d;
+  var out=[];
+  for(var i=0;i<sorted.length;i++){
+    var w=sorted[i], v=w.byoji_fee*d;
+    var pct=max>0?Math.round(v/max*100):0;
+    out.push('<div class="rankrow'+(w.key===me.key?' me':'')+'">'+
+      '<span class="rn">'+esc(w.name)+'</span>'+
+      '<span class="bar"><span style="width:'+pct+'%"></span></span>'+
+      '<span class="rv">'+yen(v)+'</span></div>');
+  }
+  $('rank').innerHTML=out.join('');
+}
+
+function renderDetail(c){
+  $('detail').innerHTML=''+
+   '<dt>1日あたりの料金</dt><dd>'+esc(c.byoji_fee_label)+'</dd>'+
+   '<dt>減免（原文）</dt><dd>'+esc(c.byoji_genmen)+'</dd>'+
+   '<dt>対象</dt><dd>'+esc(c.byoji_taisho)+'</dd>'+
+   '<dt>利用できる日数の上限</dt><dd>'+esc(c.byoji_jogen)+'</dd>'+
+   '<dt>予約・事前登録</dt><dd>'+esc(c.byoji_yoyaku)+'</dd>'+
+   (c.note?'<dt>特記</dt><dd>'+esc(c.note)+'</dd>':'');
+  $('srcNote').innerHTML='出典：<a href="'+c.byoji_src+'" rel="noopener" target="_blank">'+esc(c.byoji_src_label)+'</a>（__CHECKED__確認）。最新の内容は必ず公式ページでご確認ください。';
+  try{gtag('event','tool_result',{tool:'__SLUG__',city:c.key});}catch(e){}
+}
+$('run').addEventListener('click',run);
+$('city').addEventListener('change',run);
+$('days').addEventListener('input',run);
+run();
+})();
+</script>
+</body>
+</html>
