@@ -44,6 +44,8 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 - [済 8/25] /articles/tapple-nenreiso-data/　（2026-08-24 公開）
 - [済 8/25] /articles/pairs-nenreiso-data/　（2026-08-24 公開）
+- [ ] /articles/nagano-guide/　（2026-08-27 公開）
+- [ ] /articles/kagoshima-guide/　（2026-08-27 公開）
 
 ```
 ```
