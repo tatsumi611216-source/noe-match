@@ -225,3 +225,238 @@
 - **日本での言及度**: **低**。【未検索・推定】 「クロール済み – インデックス未登録」の日本語記事は多数存在するが、内容は「サイトマップを送りましょう」「内部リンクを増やしましょう」という汎用対処に終始しており、**テンプレ別に比率を出して品質シグナルとして読む**という運用法は流通していない。要検証クエリ案: `クロール済み インデックス未登録 テンプレート別 比率 品質シグナル`。
 - **noe-match適用度**: **A**。無料・即実行可能・pSEO投資判断の中核指標。想定工数: 初回分析2〜4時間、以後は月1時間。
 - **リスク・反証**: 新規ドメインでは「まだ順番が来ていないだけ」のページが大量にこのステータスに入るため、**開設6ヶ月未満のサイトでは品質シグナルとして読むと過剰反応になる**。ドメイン年齢を考慮した読み方が必要。
+
+---
+
+## 3-10. GSC Crawl Stats ＋ ログファイル分析（Crawl Budget Forensics）
+
+- **一言で**: GSCのクロール統計は「集計値」、サーバーログは「真実」。両者を突き合わせて、Googlebotがどのテンプレに何%のクロールを割いているかを実測する。
+- **海外での出典**:
+  - https://www.oncrawl.com/general-seo/google-crawl-stats-report-log-file-analysis/
+  - https://gautamkhorana.com/blog/log-file-analysis-crawl-budget-large-sites/
+  - https://www.adamhodson.com/log-file-analysis-to-find-wasted-crawl-budget/
+  - https://edwardbate.com/resources/google-search-console-crawl-stats-guide/
+- **仕組み／なぜ効くか**: 「GSCは『昨日Googleが500ページをクロールした』と教える。ログは『どの500ページを、どの順で、どの速度で、どのステータスコードで』を教える」。GSCのクロール統計で読むべきは4つ——(a) Googlebotヒットの多いホスト、(b) 返したステータスコードの内訳（非200がクロール予算の何%を食っているか）、(c) ファイルタイプ別（CSS/JS/画像がどれだけ食っているか）、(d) クロール目的（**Discovery=新規発見 か Refresh=既知の更新確認 か**）。この(d)が pSEO では特に重要で、**Discovery比率が落ちているなら新規ページの発見が止まっている**という早期警告になる。さらに、Googlebotのクロール量の急減はしばしば順位下落に先行し、ログの方がGSCより早く異常を示す。
+- **具体手順**:
+  1. GSC「設定 → クロールの統計情報」を開き、上記(a)〜(d)を毎月スクリーンショット or メモで記録する。
+  2. 「クロールの目的」の Discovery/Refresh 比率を時系列で追う。新バッチ公開後に Discovery が跳ねなければ、発見されていない。
+  3. 「レスポンス別」で非200の比率を見る。10%を超えたら要調査。
+  4. ログが取れる環境なら、Googlebot（UA + 逆引き検証）のリクエストをURLパターン別に集計し、「テンプレ別クロール割当%」を出す。
+  5. 「クロールされているが順位もクリックも無いパターン」＝クロールの浪費として、3-08の剪定候補にする。
+  6. 「クロールされていない重要ページ」＝内部リンク不足として、3-20/3-21の対象にする。
+- **日本での言及度**: **低**。【未検索・推定】 「クロールバジェット」の日本語記事は多いが、大半が「Googleが中小サイトは気にしなくていいと言っている」の紹介で終わる。**クロール目的（Discovery/Refresh）の比率を pSEO の発見指標として読む**という話は日本語圏でほぼ見ない。ログファイル分析自体も、日本ではエンタープライズSEO（Screaming Frog Log Analyser / Botify 等）の文脈でしか語られない。要検証クエリ案: `Googlebot クロール目的 検出 更新 比率 読み方`。
+- **noe-match適用度**: **B**（GSC Crawl Stats は A、ログ分析は C）。**GitHub Pages ではアクセスログが一切取得できない**（→3-26）ため、ログファイル分析は現状の構成では実行不能。GSC Crawl Stats だけなら即実行可。想定工数: GSC定点観測は月30分。
+- **リスク・反証**: GitHub Pages 構成では真のログが手に入らないという構造的制約がある。Cloudflare を前段に挟めばログが取れる（無料枠でもある程度）が、CNAMEの付け替え・キャッシュ設計の追加工数が発生する。ログ分析のために構成を変えるのは、ページ数が数千を超えてからで十分。
+
+---
+
+## 3-11. GSC Bulk Data Export → BigQuery（全量クエリデータの確保）
+
+- **一言で**: GSCのUI/APIでは見えない「全行」のクエリ・URLデータを、毎日BigQueryに自動エクスポートして無期限に貯める。16ヶ月の保持制限を突破する唯一の公式手段。
+- **海外での出典**:
+  - https://support.google.com/webmasters/answer/12918484?hl=en
+  - https://developers.google.com/search/blog/2023/06/bigquery-efficiency-tips?hl=en
+  - https://www.searchenginejournal.com/google-search-console-data-bigquery-enhanced-analytics/496535/
+  - https://www.seoclarity.net/blog/gsc-bulk-data-exports-for-enterprise-seo
+  - https://raulrevuelta.com/en/how-to-export-search-console-data-bigquery/
+- **仕組み／なぜ効くか**: GSCのUIは1,000行、APIも上限があるが、**Bulk Data Export はGSCアカウントで利用可能な全行を出せる**（APIと比べて2〜10倍のデータ量が見えるという報告）。さらにBigQuery側は保持無制限なので、GSCの16ヶ月制限を超えた複数年トレンド分析が可能になる。pSEOでは「テンプレ別・バッチ別に、どのロングテールクエリが取れ始めたか」を全量で見られることが決定的に重要で、サンプリングされた1,000行では**tailの実態が全く見えない**。
+- **具体手順**:
+  1. Google Cloud プロジェクトを作り、BigQuery API を有効化する。
+  2. GSC の「設定 → 一括データエクスポート」でプロジェクトIDを指定する。データは24〜48時間で流入し始める。
+  3. **エクスポートは設定日以降のデータのみ**（遡及しない）。つまり「今すぐ設定する」こと自体が最大のアクション。
+  4. `searchdata_url_impression` テーブルに対し、URLパターン（テンプレ由来の接頭辞）でGROUP BYするクエリを書く。
+  5. 「テンプレ別 × 月別 の impressions / clicks / 平均掲載順位 / ユニーククエリ数」を出す。**ユニーククエリ数**が pSEO の健康指標として最も有用（1ページが何種類の検索語を拾っているか＝tailの捕捉力）。
+  6. クエリ課金に注意。パーティション（`data_date`）でフィルタしないと毎回全期間をスキャンする。
+- **日本での言及度**: **低**。【未検索・推定】 「Search Console BigQuery エクスポート」の日本語記事は存在するが、大半が「設定手順」の紹介で止まり、**pSEOのテンプレ別評価に使う**という応用は流通していない。個人メディア運営者の文脈ではほぼ語られない（「BigQuery＝企業のもの」という心理的障壁がある）。要検証クエリ案: `Search Console 一括データエクスポート BigQuery 個人ブログ 活用`。
+- **noe-match適用度**: **A**（設定だけなら1時間、価値は時間とともに増える）。**設定が遅れるほど過去データが永久に失われる**ので、優先度は「今日やる」。想定工数: 設定1〜2時間、分析クエリ作成に4〜8時間。BigQueryの無料枠（月1TBスキャン）でこの規模なら十分収まる。
+- **リスク・反証**: Google Cloud の請求先アカウント設定が必要（無料枠内でも）。また、GSCのプロパティが「ドメインプロパティ」でないと粒度が落ちる場合がある。個人メディアで課金事故が怖いなら、予算アラートを1ドルで設定しておく。
+
+---
+
+## 3-12. IndexNow ＋ Google Indexing API の「限界の正確な理解」
+
+- **一言で**: IndexNow は Bing/Yandex/Seznam/Naver には効くが **Googleには効かない**。Google Indexing API は **JobPosting と BroadcastEvent 限定**。この2つの事実を知らずに時間を溶かす人が非常に多い。
+- **海外での出典**:
+  - https://www.indexernow.com/google-indexnow
+  - https://indexfast.co/blog/indexnow-vs-indexing-api
+  - https://crawlwp.com/indexnow-vs-google-indexing-api-vs-sitemaps/
+  - https://www.seopress.org/support/guides/how-to-use-the-indexnow-api-to-instantly-index-a-url-in-bing-and-yandex/
+  - https://gracker.ai/seo-101/indexnow-seo-guide
+- **仕組み／なぜ効くか**: IndexNow は「URLを追加/更新/削除したことを検索エンジンに即時通知する」オープンプロトコル。2026年時点で **Googleは非対応**（2021年のローンチ後に評価はしたが、ウェブ索引には採用しなかった）。一方 Google Indexing API は「JobPosting 構造化データを含むページ」または「VideoObject 内の BroadcastEvent を含むページ」のクロールにのみ使うべきものとGoogleが明示しており、ブログ記事や一般商品には使ってはいけない。既定クォータは1プロジェクトあたり1日200リクエスト（太平洋時間の深夜リセット）。
+  それでも IndexNow に価値がある理由は、**Bing 経由の流入と、Bing インデックスを参照するAI検索系の露出**。Copilot/ChatGPT検索系がBingインデックスに依存する部分がある以上、Bingへの即時通知はGoogle以外の可視性に効く。
+- **具体手順**:
+  1. ランダムな32〜128文字の英数字キーを生成し、`https://noe-match.com/{key}.txt` にそのキーだけを書いたファイルを置く（GitHub Pages なら単にファイルをコミットするだけ。**リポジトリ直下に `28fb2874520d40719aa81fc0618e863b.txt` が既に存在しており、これは既にIndexNowキーが設置済みである可能性が高い** → 要確認）。
+  2. Bing Webmaster Tools でサイトを登録し、IndexNow のキーを紐づける（BWT内でキー生成も可能）。
+  3. デプロイ後のGitHub Actionsから、更新URLのリストをJSONで `https://api.indexnow.org/indexnow` にPOSTする。
+  4. Google に対しては **IndexNow ではなく sitemap の lastmod（→3-13）と内部リンク**で発見させる。Indexing API を一般記事に使わない。
+  5. Bing Webmaster Tools の「URL送信」（1日あたりの送信枠あり）も併用する。
+  6. Bing側の索引数とクリック数を、Google側と分けて記録する。
+- **日本での言及度**: **中**（ただし誤解込み）。【検索実施】 検索クエリ: `IndexNow 日本語 導入 SEO 効果 Bing 静的サイト`。鈴木謙一氏のブログ（https://www.suzukikenichi.com/blog/bing-and-yandex-support-indexnow-to-immediately-index-content-without-crawling/ ）や個人ブログの設定手順記事（https://socratetsu.jp/seo/bing_indexnow.html ）が複数ヒットし、「Googleは非対応」も正しく書かれている。**設定手順の日本語情報は十分にある**。一方で「Google Indexing API は JobPosting / BroadcastEvent 限定」という制約は、日本語圏では**依然として誤用が広まっている**（一般記事にIndexing APIを叩くWordPressプラグインが日本でも人気）。ここが実質的な空白。
+- **noe-match適用度**: **B**。静的サイト × GitHub Actions なので実装は容易。ただし婚活領域の Bing シェアは小さいため、直接の収益インパクトは限定的。「AI検索経由の可視性の保険」として位置づけるのが正しい。想定工数: 2〜4時間。
+- **リスク・反証**: IndexNow を「Googleに効く裏技」として売る日本語情報・ツールが存在するが、**これは端的に誤り**。また、Indexing API を JobPosting 以外に使うことは Google のガイドライン違反にあたり、最悪クォータ剥奪の対象になり得る。
+
+---
+
+## 3-13. sitemap lastmod の誠実運用（Lastmod Hygiene）
+
+- **一言で**: lastmod の信頼性は **サイト単位のバイナリ判定**。1度でも嘘の日付を出すと、そのサイトの lastmod は丸ごと無視される。
+- **海外での出典**:
+  - https://www.digitalapplied.com/blog/xml-sitemap-lastmod-hygiene-illyes-directive-seo-2026
+  - https://www.searchenginejournal.com/google-seo-tips-for-news-articles-lastmod-tag-separate-sitemaps/478103/
+  - https://www.womenintechseo.com/knowledge/advanced-xml-sitemap-strategies-seo/
+  - https://nightwatch.io/blog/sitemap-best-practices/
+  - https://www.capconvert.com/learn/blog/xml-sitemaps-and-lastmod-tags-do-they-still-matter-for-google-and-ai-crawlers
+- **仕組み／なぜ効くか**: Google の Gary Illyes によれば、**lastmod シグナルは本質的にバイナリ**——Googleは日付が信頼できるかを判定し、不正確な lastmod の履歴があるサイトではタグを丸ごと無視する。2026年7月16日には、CMSのバグで日付が汚染された事例に対して「lastmod を出さない方がおそらくマシ」とまで述べている。逆に、正確な lastmod は Google が実際にクロールシグナルとして使う。`priority` と `changefreq` は濫用され尽くしたため無視される（Illyes は priority を「ノイズの袋」と呼んだ）。
+  **pSEOでこれが致命的な理由**: 生成器で全ページを再ビルドするたびに `lastmod = 今日` を全ページに出力する実装が非常に多い。これは「毎日全ページが更新されている」という嘘であり、サイト全体の lastmod 信頼を1回で失う。
+- **具体手順**:
+  1. build_articles.py の sitemap 生成部を確認し、`lastmod` が**現在日時**由来になっていないか検査する（**noe-match で最初に見るべき1行**）。
+  2. 台帳側に「そのページのデータが実際に変わった日」の列を持ち、そこから lastmod を引く。テンプレの共通部分（フッター・免責）の変更では lastmod を動かさない。
+  3. `priority` と `changefreq` は出力しない（無視されるうえ、ファイルサイズを増やすだけ）。
+  4. sitemap index を使う場合、index 側の lastmod は「その sitemap ファイル自体が変わった日」であり、ページの更新日ではないことに注意する。
+  5. コンテンツのハッシュ（本文の正規化後SHA）を台帳に保存し、ハッシュが変わったときだけ lastmod を更新する実装にすると、嘘をつかない仕組みが自動化できる。
+- **日本での言及度**: **低**。【未検索・推定】 日本語の sitemap 解説記事は無数にあるが、大半が「priority を設定しましょう」という**10年前の情報のまま**であり、lastmod がサイト単位でバイナリ判定されるという2023年以降の重要な変化はほとんど反映されていない。要検証クエリ案: `sitemap lastmod 信頼性 バイナリ 無視される Google`。
+- **noe-match適用度**: **A**。既存の生成器のバグである可能性が高く、修正工数は極小、失うものが大きい項目。想定工数: 2〜6時間（コンテンツハッシュ方式まで実装しても半日）。
+- **リスク・反証**: lastmod を正確にした瞬間に、それまで「毎日更新」を装っていた分のクロール頻度が落ちる可能性がある（これは正常化であって悪化ではないが、短期のクロール数減として見える）。数値の一時的な下振れに動揺しないこと。
+
+---
+
+## 3-14. sitemap 分割を「診断装置」として使う（Sitemap Segmentation as a Diagnostic）
+
+- **一言で**: sitemap をテンプレ別・バッチ別に分割すると、GSCの sitemap レポートが**そのままテンプレ別インデックス率のダッシュボード**になる。
+- **海外での出典**:
+  - https://www.womenintechseo.com/knowledge/advanced-xml-sitemap-strategies-seo/
+  - https://nightwatch.io/blog/sitemap-best-practices/
+  - https://hashmeta.com/blog/how-to-maintain-indexation-quality-on-huge-websites/
+- **仕組み／なぜ効くか**: GSCの「サイトマップ」レポートは sitemap ファイル単位で「送信数 / インデックス数」を出す。つまり **sitemap の切り方をそのまま分析軸にできる**。全URLを1ファイルに入れると「サイト全体のインデックス率」しか分からないが、`sitemap-tool.xml` `sitemap-data.xml` `sitemap-muni-batch01.xml` のように分ければ、**どのテンプレが索引されないかが無料で可視化される**。3-06のゲート判定に必要な数字がここから直接取れる。
+- **具体手順**:
+  1. URLをテンプレ種別で分類する（記事 / ツール / データ記事 / 自治体ページ / 一覧ページ）。
+  2. さらに公開バッチ（batch_001...）で細分する。1ファイルあたり数百〜数千URLで十分。
+  3. `sitemap_index.xml` から各ファイルを参照する。
+  4. GSCに **sitemap index だけでなく個別ファイルも** 送信する（個別に送るとレポートが個別に出る）。
+  5. 毎月「ファイル別インデックス率」を記録し、閾値割れしたテンプレを3-04に差し戻す。
+  6. バッチが古くなってインデックス率が安定したら、ファイルを統合してよい（診断が終わったため）。
+- **日本での言及度**: **ほぼ無**。【未検索・推定】 日本語では「サイトマップは5万URL/50MBまで、超えたら分割」という**容量制約としての分割**しか語られない。**診断装置として意図的に分割する**という発想は流通していない。要検証クエリ案: `サイトマップ 分割 テンプレート別 インデックス率 診断`。
+- **noe-match適用度**: **A**。GitHub Pages でも完全に実装可能（静的XMLを吐くだけ）。3-06のゲートを機能させるための前提条件。想定工数: 4〜8時間。
+- **リスク・反証**: sitemap の分割自体には順位効果は無い（あくまで計測用）。分割しすぎると管理が煩雑になるだけ。また、GSCのサイトマップレポートの「インデックス数」は更新に遅延があるので、日次では見ない。
+
+---
+
+## 3-15. Dataset 構造化データ ＋ Google Dataset Search（Dataset Schema / DCAT）
+
+- **一言で**: 自作の集計データに `schema.org/Dataset` の JSON-LD を付けると、**通常のウェブ検索とは別枠の Google Dataset Search に載る**。日本語データセットは極端に少ないため、実質的に競合が居ない。
+- **海外での出典**:
+  - https://developers.google.com/search/docs/appearance/structured-data/dataset
+  - https://support.datacite.org/docs/how-do-i-expose-my-datasets-to-google-dataset-search
+  - https://docs.ckan.org/projects/ckanext-dcat/en/latest/google-dataset-search/
+  - https://searchengineland.com/google-search-adds-dataset-schema-support-to-search-results-302906
+- **仕組み／なぜ効くか**: Google Dataset Search は、ランディングページに露出された `schema.org/Dataset` マークアップ（または W3C DCAT）をクロールして構築される専用の検索エンジン。推奨フィールドは `name` / `description` / `creator` / `distribution`（ダウンロードリンク）/ `temporalCoverage` / `spatialCoverage` / `license` など。**Kaggle のデータセットが Dataset Search で頻繁に上位に出るのは、schema.org 準拠のメタデータが全ページに標準実装されているからにすぎない**——つまりこれは権威ではなく実装で取れる枠。
+  さらに副次効果として、Dataset マークアップは「このページは一次データを持つ」という機械可読な主張になるため、3-04 の固有 value-add とセットで機能する。
+- **具体手順**:
+  1. 「データバンク」の各集計を1つの Dataset として定義する（例:「全国自治体 結婚新生活支援事業 給付上限額データセット 2026年度版」）。
+  2. 各データセットに専用のランディングページを作り、CSV/JSONの実ファイルを同じドメインに置く（GitHub Pages はこれが得意）。
+  3. ランディングページに `Dataset` の JSON-LD を入れる。`distribution` に `DataDownload`（`contentUrl` = CSVの実URL、`encodingFormat` = "text/csv"）を必ず入れる。
+  4. `temporalCoverage`（例: "2026-04-01/2027-03-31"）と `spatialCoverage`（日本、都道府県）を入れる。日本語データセットが少ない領域なのでここが効く。
+  5. `license` を明示する（CC BY 4.0 など）。ライセンス不明のデータセットは Dataset Search で扱いが悪い。
+  6. リッチリザルトテストで検証し、データセット用の sitemap を分けてGSCに送信する（→3-14）。
+- **日本での言及度**: **ほぼ無**。【検索実施】 検索クエリ: `Dataset 構造化データ schema.org データセット Google Dataset Search 登録 日本語`。ヒットしたのは鈴木謙一氏のブログ3本（2018〜2020年の公開報道記事、https://www.suzukikenichi.com/blog/google-launches-dataset-search/ ほか）、@IT の紹介記事（https://atmarkit.itmedia.co.jp/ait/articles/2007/15/news021.html ）、Qiitaの「使ってみた」1本のみ。**「自サイトのデータをDataset Searchに載せるための実装解説」の日本語記事は事実上存在しない**。さらに検索結果自体が「Dataset Searchで見つかる日本語データセットはかなり限られている」と述べており、**供給が薄い＝参入余地が大きい**ことを示している。本レポート中で最も日本語圏が空白な手法。
+- **noe-match適用度**: **A**（ただし収益直結は間接的）。既に「データバンク台帳」があるので、CSV公開＋JSON-LD追加だけで実装できる。想定工数: 8〜16時間（データセット5本分のランディングページ + マークアップ + CSV出力）。
+- **リスク・反証**: Dataset Search からの直接トラフィックは大きくない（研究者・ジャーナリスト中心）。**本命は「引用されること」**——記者やブロガーがデータを探して見つけ、引用リンクを張るという3-19との合わせ技で効く。また、公的データを再配布する際は各データの利用規約（政府標準利用規約2.0など）の確認が必須で、これを怠るとライセンス違反になる。
+
+---
+
+## 3-16. 再集計による新規性の生成（Derivative Data / Re-aggregation）
+
+- **一言で**: 公開データは誰でも取れるが、**「その切り方」は自分だけのもの**。ランキング化・都道府県別・前年比・クロス集計・指数化の5操作で、公的データを「独自データ」に変換する。
+- **海外での出典**:
+  - https://salt.agency/blog/data-led-content-link-building/
+  - https://scale-xpert.com/how-to-build-backlinks-with-original-data-research/
+  - https://memorable.design/original-research-content/
+  - https://practicalprogrammatic.com/examples
+- **仕組み／なぜ効くか**: 「オリジナルリサーチがリンクを獲得するのは、**それまで存在しなかった事実を作り出すから**であり、そのstatを引用する記事すべてが被リンクになる」。ここで重要なのは、**一次調査（アンケート）をしなくても「それまで存在しなかった事実」は作れる**という点。公開データに対して次の操作を加えると、検索しても出てこない新しい命題文が生まれる：
+  - **ランキング化**: 「結婚新生活支援事業の給付上限額が高い自治体トップ20」
+  - **地理正規化**: 「人口1万人あたりの婚活支援予算 都道府県別」
+  - **前年比 / 時系列**: 「婚姻件数の対前年比 都道府県別（過去10年）」
+  - **クロス集計**: 「平均初婚年齢 × 平均家賃 の散布図で見る47都道府県」
+  - **指数化 / 合成スコア**: 複数指標を正規化して合成した独自スコア（→3-17）
+  これらは「Googleで検索しても既存記事が無い」ため、**キーワード競合がゼロの状態で作れるコンテンツ**になる。しかも各セルに一次データが入るので3-04の固有value-add要件を自動的に満たす。
+- **具体手順**:
+  1. 井戸のデータを「1行 = 1エンティティ（自治体 or 都道府県）、1列 = 1指標」の tidy形式に正規化する。
+  2. 各列について「ランキング化する意味があるか」「人口/世帯数で割る意味があるか」を判定する。
+  3. 分母データ（人口・世帯数・婚姻件数）をe-Statから取得して結合する（→カタログ参照）。**分母を持つことが再集計の生命線**。
+  4. 前年データも取得して対前年比列を作る。年次が2期あれば「変化」という新しい軸が生まれる。
+  5. 相関の面白い2列をクロスさせて散布図にする（→3-18で埋め込み可能な資産にする）。
+  6. **各集計に「集計方法・出典・取得日・注意事項」を必ず添える**（3-25）。これが無いと引用されない。
+- **日本での言及度**: **低**。【未検索・推定】 「データジャーナリズム」の文脈では日本語でも語られる（NHK・日経・データのじかん等）が、それは**報道の技法**であって、**SEOのコンテンツ供給パイプライン**としては語られていない。「オープンデータを再集計して記事にする」という個人メディアの実践論はほぼ空白。要検証クエリ案: `オープンデータ 再集計 独自データ 記事 SEO 個人メディア`。
+- **noe-match適用度**: **A**。noe-matchの既存資産（自治体43件台帳 + データ記事25本）と完全に一致する。すぐ次の一手になる。想定工数: 分母データ取得と結合に8〜16時間、集計テンプレ実装に8時間。
+- **リスク・反証**: 再集計は**計算ミスが致命的**（一度誤った数字を出して引用されると訂正が追えない）。必ず「元データ→集計→出力」の全工程をコードにして再現可能にし、手作業のExcelを挟まないこと。また、母数の小さい自治体を人口で割ると外れ値が暴れるので、「人口N万人以上」などの足切りを明示する必要がある。
+
+---
+
+## 3-17. 独自指数・合成スコアの設計（Composite Index / Proprietary Score）
+
+- **一言で**: 複数の公開指標を正規化して重み付け合成し、**自分の名前をつけた指数**を作る。Nomad List の "Nomad Score" 型。指数そのものが引用対象・被リンク対象になる。
+- **海外での出典**:
+  - https://levels.io/nomad-list-founder
+  - https://www.starterstory.com/stories/nomad-list-breakdown
+  - https://www.softwaregrowth.io/blog/how-pieter-levels-grew-nomad-list
+  - https://practicalprogrammatic.com/examples
+- **仕組み／なぜ効くか**: Nomad List は生活コスト・回線速度・気候・安全度・医療などの外部データを集約して都市ごとのスコアを出し、**そのスコア自体が「Nomad Listでしか見られない数字」**になっている。フィルタ選択の各組合せがURLを生成し索引される構造と組み合わせることで、労力ゼロで数百ページのロングテールを作った。
+  合成指数の戦略的な意味は3つ：(a) 元データは公開でも**合成物は自分のもの**なので「独自データ」を主張できる、(b) 指数は**ランキング化・比較・時系列という3つの派生コンテンツを自動で生む**、(c) 指数の名前がブランドになり指名検索を生む。
+- **具体手順**:
+  1. 指数の目的を1文で定義する（例:「20代後半〜30代前半の未婚者にとって、結婚・新生活を始めやすい自治体はどこか」）。
+  2. 構成指標を4〜7個選ぶ。婚活・新生活文脈なら: 未婚率、平均初婚年齢、平均家賃、結婚新生活支援事業の給付上限、保育所待機児童数、住民1人あたり子育て予算、婚活支援施策の有無 など。
+  3. 各指標を偏差値（またはmin-max）で正規化する。方向（高いほど良い/悪い）を揃える。
+  4. 重みを決め、**重みと算出式を必ず公開する**。ブラックボックス指数は引用されない。
+  5. スコアの全国分布・上位下位・都道府県別平均を出す（→3-16の派生が自動で生まれる）。
+  6. 年次で再計算し、「昨年から順位を上げた自治体」という毎年使えるコンテンツ枠を作る。
+- **日本での言及度**: **ほぼ無**。【未検索・推定】 日本では「住みやすさランキング」「幸福度ランキング」は自治体・シンクタンク・不動産ポータルが出すもので、**個人メディアが自作の指数を持つ**という発想はほぼ存在しない。逆に言えば、婚活文脈の合成指数は日本語圏に前例が見当たらない。要検証クエリ案: `独自指数 スコア 自作 ランキング 自治体 メディア 算出式 公開`。
+- **noe-match適用度**: **A**（ただしデータ拡張が前提）。43自治体では指数の説得力が弱いので、**まず47都道府県ベースの指数**から始めるのが現実的。想定工数: 指標選定と算出実装に16〜24時間、記事化に別途。
+- **リスク・反証**: 指数は「恣意的だ」と批判されやすい。**重み・出典・限界を先回りして明記する**のが唯一の防御。また、指数が炎上材料になるリスク（「◯◯県が最下位」）があるため、婚活という繊細な領域では**順位の煽り方に注意**が必要（「最下位」ではなく「支援制度の拡充余地が大きい自治体」のような表現）。さらに、指数は年次更新のコミットメントを伴う——更新が止まった指数は3-23の decay 直行になる。
+
+---
+
+## 3-18. 埋め込みコード配布によるリンク獲得（Embed-Code Distribution / Widget Link Bait）
+
+- **一言で**: インタラクティブな地図・チャートに「埋め込みコード」を付けて配布し、**他サイトが貼るたびに被リンクが増える**構造を作る。
+- **海外での出典**:
+  - https://handsondataviz.org/embed.html
+  - https://www.datawrapper.de/
+  - https://flourish.studio/visualisations/maps/
+  - https://infogram.com/features/website-embeds
+  - https://visme.co/blog/how-to-build-links-with-infographics
+- **仕組み／なぜ効くか**: 「インフォグラフィックに埋め込みコードを添えると、他者が共有する際に自サイトへのリンクが張られる」「人はインタラクティブなコンテンツをより共有・リンクしやすい」。Datawrapper / Flourish / Infogram はいずれも iframe の埋め込みコードを生成するが、**それらのSaaSで作ると被リンクは自サイトではなくSaaS側に向かう**。ここが分岐点で、**自前ドメインで iframe を配信すれば、埋め込まれるたびに自サイトのURLが他サイトのHTMLに載る**。
+  さらに重要なのは、埋め込み元HTMLに `<p>Source: <a href="https://noe-match.com/...">Noe結婚設計室</a></p>` のクレジット行を**iframeの外側に**含めた埋め込みコードを配ること。iframe内のリンクはSEO的なリンク価値を渡さないため、**クレジットのアンカーテキストはiframeの外に置く**のが英語圏の定石。
+- **具体手順**:
+  1. 3-16/3-17の集計から、単体で成立するビジュアル（47都道府県の色分け地図、散布図、時系列）を1つ選ぶ。
+  2. そのビジュアルを **自ドメインの独立HTMLページ**（`/embed/marriage-age-map/`）として作る。軽量なSVG + 最小限のJSで、外部CDN依存なしに作る（GitHub Pages と相性が良い）。
+  3. `X-Frame-Options` を付けない（GitHub Pages はデフォルトで埋め込み可）。レスポンシブに `iframe` の高さを調整する postMessage を入れる。
+  4. 元記事ページに「このグラフを埋め込む」ボタンを置き、コピー用のコードを表示する。コードは `<iframe src="https://noe-match.com/embed/...">` + **iframe外のクレジットリンク**。
+  5. ライセンスを明記する（「出典表示のうえ自由に埋め込み可」）。
+  6. データを更新すると**埋め込み先の表示も自動で最新になる**——これが静的画像に対する決定的優位で、「最新データが自動反映される図」として売り込める。
+- **日本での言及度**: **ほぼ無**。【未検索・推定】 日本語のリンクビルディング議論は「被リンク営業」「サイテーション」「相互リンク」に偏り、**埋め込みコード配布による受動的リンク獲得**はほとんど語られない。日本のメディアで埋め込みを配っているのはNHKや日経などの大手のみ。個人メディア向けの実践解説は空白。要検証クエリ案: `埋め込みコード 配布 被リンク グラフ iframe 出典リンク`。
+- **noe-match適用度**: **B**（技術的には容易だが、埋め込んでもらう先の獲得が難所）。GitHub Pages で完全実装可能。想定工数: 埋め込み基盤の実装に16〜24時間、1ビジュアルあたり4〜8時間。
+- **リスク・反証**: **作れば貼られるわけではない**。埋め込みが広がるには、そもそもデータが話題になっている必要がある（3-19とセット運用が前提）。また iframe はページ速度・CLSに悪影響を与えうるので、自サイト側では lazy load 必須。埋め込み先が増えると、データを間違えたときの訂正が全埋め込み先に即時反映される（これは利点でもありリスクでもある）。
+
+---
+
+## 3-19. 「◯◯統計」ページ＝リンク磁石（Statistics Page as Linkable Asset）
+
+- **一言で**: 「{テーマ} statistics」型のまとめページは、記者・ブロガーが数字を探すときの入口になり、**引用のたびに被リンクを生む**恒久資産になる。
+- **海外での出典**:
+  - https://linkquest.co.uk/saas-seo/link-building/how-to-create-linkable-assets
+  - https://salt.agency/blog/data-led-content-link-building/
+  - https://outreachdesk.com/linkable-assets/
+  - https://memorable.design/original-research-content/
+  - https://scale-xpert.com/how-to-build-backlinks-with-original-data-research/
+- **仕組み／なぜ効くか**: 英語圏では "Remote working statistics UK" のような1本の統計まとめページが **707本の被リンク**（Indeed, Deloitte, CityAM 等を含む）を獲得した事例が報告されている。仕組みは単純で、記事を書く人は「数字を1つ引用したい」ときに `{topic} statistics` で検索し、最初に見つかった信頼できるページを引用する。つまり**このページは「検索需要」ではなく「引用需要」を取りに行く**。
+  重要な実装ディテールは、**「引用しやすさ」を設計すること**——事前フォーマット済みの引用ブロック（blockquote）やコピーボタンを置くと、ライターが数字をコピーして自サイトをクレジットするのが極端に簡単になる。また、統計ページは AI検索・LLM に引用されやすいフォーマットでもある（数字＋出典＋日付が構造化されているため）。
+- **具体手順**:
+  1. テーマを決める（例:「日本の結婚・婚活に関する統計まとめ2026」「都道府県別 結婚データ集」「新生活・引越し費用の統計」）。
+  2. 20〜60個の「1文で完結する数字の事実」を集める。**各行に必ず (a) 数値、(b) 一次出典名、(c) 出典URL、(d) 調査年 を付ける**。
+  3. 各統計に `id` を振り、パーマリンク（`#stat-12`）で個別に参照できるようにする。
+  4. 各統計にコピーボタンを置き、クリックすると「〔数値〕（出典: 〔調査名〕, 〔年〕／ Noe結婚設計室 https://noe-match.com/... ）」がクリップボードに入るようにする。
+  5. 目次を作り、カテゴリ（婚姻・初婚年齢・費用・意識・地域差）で分ける。
+  6. 「最終更新日」と「次回更新予定」を明記し、実際に年1回更新する。更新しない統計ページは3-23で腐る。
+- **日本での言及度**: **低**。【未検索・推定】 日本語でも「〇〇の統計データまとめ」記事は多数あるが、それらは**アフィリエイト記事の導入用**であって、**被リンク獲得資産として設計されていない**（出典URLが無い、コピー用ブロックが無い、更新されない）。「linkable asset」という概念語自体が日本語SEOに定着していない。要検証クエリ案: `リンカブルアセット 統計まとめ 被リンク 獲得 引用されやすい`。
+- **noe-match適用度**: **A**。データバンク台帳と再集計（3-16）があれば、統計ページは**副産物として作れる**。婚活領域は記者・ライターの引用需要が確実にある（少子化報道が恒常的にあるため）。想定工数: 1本あたり16〜24時間（数字の一次確認が重い）。
+- **リスク・反証**: 数字の誤りは信用の直撃事故。一次ソースにあたらず二次情報を孫引きすると、誤りが連鎖して自サイトが誤情報の発信源になる。**必ず一次ソース（e-Stat等）で確認し、確認日を残す**（3-25）。また、被リンクは「作った瞬間」ではなく「数字が話題になった瞬間」に来るので、成果は数ヶ月〜年単位で遅れる。短期のROIを求めると挫折する。
