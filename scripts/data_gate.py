@@ -10,10 +10,26 @@ kaiin-age-cross-data）に共通するのは「複数の公表値を横断で1�
 **Googleの1ページ目は大手が占有していて取れないが、AIとBingは公表値の表を引きに来る。**
 したがってデータ記事はGoogle順位ではなく「AIが引用しやすい形」に最適化する。
 
-このゲートが見るのは3点:
-  A. 需要      … Googleサジェスト（4件以上を目安。0〜1件は作らない）
-  B. 一次データ … 公表元が実在するか（人が確認する。ここは機械化しない）
-  C. 横断性    … 1社・1自治体で終わらず、複数を並べられるか
+このゲートが見るのは4点:
+  A. 有無      … 完全一致フレーズのGoogleサジェスト（0件なら誰も打っていない＝作らない）
+  B. 面積      … 頭の語のサジェストの豊かさ＋自社GSCの実表示（後述）
+  C. 一次データ … 公表元が実在するか（人が確認する。ここは機械化しない）
+  D. 横断性    … 1社・1自治体で終わらず、複数を並べられるか
+
+【2026-08-27 の重要な訂正】
+サジェスト件数はボリュームの代理指標になっていない。自社GSCで20位以内にいる
+20語を検証したところ、サジェスト4件以上の語は平均8.0表示、3件以下の語は平均9.7表示で
+**相関がなかった**。さらに1ページ目（7〜10位）にいる語ですら表示は2〜35・中央値6。
+つまりサジェスト件数は「誰かが打っているか」の有無しか示していない。
+
+そこで面積の判断には次の2つを併用する:
+  ・**頭の語のサジェスト**（例:「産後ケア」）… 完全一致フレーズではなく頭の語が
+    どれだけ補完候補を持つかで、その領域の広さを見る
+  ・**自社GSCの実表示**… 既に表示が出ている語なら、その表示数がほぼ実ボリューム
+    （1〜2ページ目にいる場合）。agent/gsc_data.json を辞書として引く
+
+それでも絶対ボリュームは測れない。**実ボリュームが要るときは Bing Webmaster Tools の
+キーワード調査**（アカウント保有済み・月間検索数が出る）を使う。ここは本人操作。
 
 使い方:
   python scripts/data_gate.py "マッチングアプリ 会員数" "産後ケア 何回"
@@ -61,16 +77,52 @@ def suggests(q):
         return None
 
 
+def head_of(q):
+    """「産後ケア 料金」→「産後ケア」。頭の語で領域の広さを見る"""
+    parts = q.split()
+    return parts[0] if parts else q
+
+
+_GSC = None
+
+
+def gsc_impressions(q):
+    """自社GSCに既に表示が出ている語なら、その表示数を返す。
+    1〜2ページ目にいる語なら表示数はほぼ実ボリュームとみなせる。"""
+    global _GSC
+    if _GSC is None:
+        _GSC = {}
+        path = os.path.join(ROOT, "agent", "gsc_data.json")
+        try:
+            d = json.load(io.open(path, encoding="utf-8"))
+            for r in d.get("by_query_page", []):
+                k = r["query"]
+                cur = _GSC.get(k, {"i": 0, "p": []})
+                cur["i"] += r["impressions"]
+                cur["p"].append(r["position"])
+                _GSC[k] = cur
+        except Exception:
+            _GSC = {}
+    v = _GSC.get(q)
+    if not v:
+        return None
+    return {"impressions": v["i"], "position": sum(v["p"]) / len(v["p"])}
+
+
 def judge(q):
     s = suggests(q)
     if s is None:
-        return q, None, "取得失敗", []
+        return q, None, "取得失敗", [], {}
     n = len(s)
+    time.sleep(0.8)
+    hs = suggests(head_of(q))
+    extra = {"head": head_of(q), "head_suggests": (len(hs) if hs is not None else None),
+             "gsc": gsc_impressions(q)}
     if n == 0:
-        return q, n, "NO-GO", s
+        return q, n, "NO-GO", s, extra
     if n < MIN_SUGGESTS:
-        return q, n, "CHECK", s
-    return q, n, "GO", s
+        return q, n, "CHECK", s, extra
+    return q, n, "GO", s, extra
 
 
 def main():
@@ -85,8 +137,12 @@ def main():
     for q in words:
         r = judge(q)
         results.append(r)
-        print("[%-6s] %-26s サジェスト%-4s %s"
-              % (r[2], r[0], r[1], " / ".join(r[3][:4])))
+        e = r[4] if len(r) > 4 else {}
+        g = e.get("gsc")
+        gtxt = ("／GSC実表示 %d（%.1f位）" % (g["impressions"], g["position"])) if g else ""
+        print("[%-6s] %-24s 一致%-3s 頭「%s」%-4s%s"
+              % (r[2], r[0], r[1], e.get("head", "-"), e.get("head_suggests"), gtxt))
+        print("        %s" % " / ".join(r[3][:4]))
         time.sleep(0.8)
 
     if not sweep:
