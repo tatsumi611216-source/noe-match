@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="px.a8.net"],a[href*="t.afi-b.com"]');if(a){try{gtag('event','aff_click',{link_domain:(a.href.indexOf('a8.net')>-1?'a8':'afb'),page_slug:location.pathname});}catch(x){}}},true);</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="__URL__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__OGD__">
+<meta property="og:type" content="website">
+<meta property="og:url" content="__URL__">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="不妊治療の区の助成、あなたの区にあるか">
+<meta name="twitter:description" content="__OGD__">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+__CSS__
+<style>
+.cityout dt{font-weight:700;color:#1d242b;margin-top:14px;font-size:.9rem}
+.cityout dd{margin:4px 0 0;font-size:.88rem;line-height:1.9;color:#3a4148}
+.fitbox{padding:14px 16px;border-radius:6px;margin:14px 0;font-size:.9rem;line-height:1.9}
+.fit-ok{background:#edf3ee;border:1px solid #cfe0d4}
+.fit-ng{background:#f6f0e1;border:1px solid #e6d8b4}
+.badge{display:inline-block;font-size:.74rem;font-weight:700;padding:2px 9px;border-radius:3px;margin-left:8px;vertical-align:middle}
+.b-ok{background:#e3ecec;color:#3d585e}
+.b-ng{background:#f0e3e6;color:#7c2e42}
+.rangetag{display:inline-block;font-size:.76rem;font-weight:700;padding:3px 10px;border-radius:3px;background:#f3efe9;color:#5a4a35;border:1px solid #e3ddd3}
+table.cmp td{vertical-align:top;font-size:.84rem}
+.warnbox{background:#f6f0e1;border:1px solid #e6d8b4;border-radius:6px;padding:16px 18px;margin:18px 0;font-size:.88rem;line-height:1.9}
+</style>
+<script type="application/ld+json">__FAQLD__</script>
+<script type="application/ld+json">__APPLD__</script>
+<script type="application/ld+json">__BCLD__</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 不妊治療の区独自助成 東京23区</div>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<h1>__H1__</h1>
+<p>東京都の助成とは別に、区が独自に上乗せしている助成があります。__CHECKED__に23区すべての公式ページを確認したところ、実施しているのは__NYES__区、実施していないのが__NNO__区でした。上限額は5万円から30万円まで開きますが、<strong>対象になる費用の範囲が区によって違うため、金額だけでは比べられません</strong>。区を選ぶと、実施の有無・上限額・対象になる費用・申請期限を出典つきで表示します。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>同じ「上限5万円」でも、対象になる費用が正反対の区があります。</strong>__ONLY_SENSHIN__区は「保険診療と併用した先進医療」だけを対象にしていますが、品川区は逆に「保険適用の自己負担分のみ」が対象で、<strong>先進医療と自由診療は対象外</strong>と明記しています。金額を横に並べただけでは、この違いは見えません。このツールは順位をつけず、区ごとの対象範囲と原文を並べます。__CHECKED__に23区すべての公式ページを確認しました。</blockquote>
+
+<h2>STEP1｜お住まいの区を選ぶ</h2>
+<div class="calc" id="calcForm">
+  <div class="fld">
+    <label for="city">お住まいの区</label>
+    <select id="city">__OPTS__</select>
+    <div class="hint">東京23区を__CHECKED__に確認して収録しています。申請要件は「申請時に区内在住」としている区が多いため、住んでいる区で調べてください。</div>
+  </div>
+  <button type="button" class="calc-btn" id="run">この区の助成を見る</button>
+</div>
+
+<div class="result" id="result" aria-live="polite">
+  <div class="big">
+    <div class="lbl">この区の上乗せ助成</div>
+    <div class="num" id="amount">—</div>
+  </div>
+  <div id="fit" class="fitbox"></div>
+  <dl class="cityout" id="detail"></dl>
+  <p id="srcNote" style="font-size:.78rem;color:#6b7178;margin:18px 0 0;line-height:1.9"></p>
+</div>
+
+<div class="warnbox">
+<strong>このツールは助成額を計算しません。</strong>助成額の計算式は区ごとに違うためです。たとえば練馬区は「先進医療に係る費用の7割から東京都の助成上限額15万円を差し引いた額」と「区の上限5万円」を比べて低いほうを助成します。区の掲載例では、自己負担28万円で区の助成は4万6千円、自己負担20万円だと都の上限に届かないため<strong>区の助成は対象外</strong>です。上限額＝もらえる額ではありません。金額の見込みは必ず区にご確認ください。
+</div>
+
+<h2 id="hanni">上限額ではなく「対象になる費用」で分かれる</h2>
+<p>実施している__NYES__区を、対象にしている費用の範囲でまとめました。分類はこちらで付けたラベルなので、判断の根拠になる原文も併記しています。</p>
+__RANGEHTML__
+
+<h2 id="ichiran">東京23区の一覧</h2>
+<div class="table-scroll">
+<table class="cmp">
+<thead><tr><th>区</th><th>実施</th><th>区の上限額</th><th>対象になる費用</th></tr></thead>
+<tbody>__ROWS__</tbody>
+</table>
+</div>
+
+<h2 id="chui">調べるときに間違えやすいところ</h2>
+<h3>区の助成は「東京都の助成を受けたあと」の上乗せ</h3>
+<p>多くの区が、東京都の助成額を差し引いた残りを助成対象としています。練馬区は「東京都特定不妊治療費（先進医療）助成事業の承認決定を受けた方」を対象と明記しており、都に申請していないと区の助成にたどり着けません。<strong>順番は都が先、区が後です。</strong></p>
+<h3>区が実施していなくても都の助成はある</h3>
+<p>__NNO__区は区独自の上乗せを行っていませんが、東京都の助成そのものは都内在住であれば対象です。「区にないから何もない」ではありません。</p>
+<h3>申請期限が区によってまったく違う</h3>
+<p>「治療終了年度の末日まで」とする区と、「東京都の承認決定日から1年以内」とする区があります。起算点が違うので、他の区の情報をそのまま当てはめると期限を逃します。各区の記載を必ず確認してください。</p>
+<h3>令和8年度は制度が動いている</h3>
+<p>中央区は令和8年4月1日以降の治療から対象範囲を変えており、練馬区は令和8年4月1日以降に開始した治療について「東京都の助成が拡充されるため検討中」と明記しています（__CHECKED__時点）。治療の開始日がいつかで扱いが変わるため、開始前に区に確認するのが安全です。</p>
+
+<h2 id="faq">よくある質問（FAQ）</h2>
+__FAQHTML__
+
+<h2 id="src">出典</h2>
+<p>すべて各区の公式ページで確認しました。確認日は__CHECKED__です。制度は年度で変わるため、申請前に必ず公式ページをご確認ください。</p>
+<div class="table-scroll">
+<table class="cmp">
+<thead><tr><th>区</th><th>出典ページ</th><th>確認日</th></tr></thead>
+<tbody>__SRCROWS__</tbody>
+</table>
+</div>
+
+<h2 id="related">関連するツールと記事</h2>
+<ul>
+<li><a href="/articles/funin-josei-data/">不妊治療の区独自助成は東京23区でどう違う？同じ5万円でも中身が正反対</a></li>
+<li><a href="/tools/byoji-hoiku-ryokin/">病児保育は1日いくら？東京23区の料金と利用条件</a></li>
+<li><a href="/tools/kodomo-iryohi-jichitai/">子ども医療費助成はいつまで使える？東京23区</a></li>
+<li><a href="/tools/sangokea-ryokin/">産後ケアの料金はいくら？自治体別の自己負担</a></li>
+<li><a href="/articles/shussan-hiyou-data/">出産費用の平均はいくら？都道府県別・費目別</a></li>
+</ul>
+
+<div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:32px 0;background:#faf8f5">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
+<p style="font-weight:900;margin:0 0 6px;color:#1d242b">通院が続く時期に、家のことを一つ減らす</p>
+<p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">不妊治療は通院の回数が多く、時間の使い方から先に苦しくなります。助成の額は制度で決まっていて動かせませんが、買い物と献立を考える時間は今日から減らせます。</p>
+<a href="__OISIX__" rel="sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。助成の適用とは関係ありません</p>
+</div>
+</article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:56px auto 64px;padding:36px 28px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">令和8年度は制度が動いています</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">不妊治療助成・子ども医療費助成・病児保育・産後ケアなど、自治体ごとに違う制度の変更点を月1回お知らせします。<br>お住まいの自治体について調べてほしいことは、追加後そのままトークでどうぞ。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'__SLUG__'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加する</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は月1回だけ。いつでも解除できます。</p>
+</section>
+</div>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本ツールは東京23区の公式公開情報（__CHECKED__確認）に基づく整理です。助成額の算定と最終的な判断は各区が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+(function(){
+"use strict";
+var D=__DATA__;
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function yen(n){return n.toLocaleString()+'円';}
+
+function run(){
+  var c=D[$('city').value];
+  var f=$('fit');
+  if(!c.funin_jisshi){
+    $('amount').textContent='実施なし';
+    f.className='fitbox fit-ng';
+    f.innerHTML='<strong>'+esc(c.name)+'は、区独自の上乗せ助成を実施していません。</strong>'+
+      'ただし東京都の助成そのものは都内在住であれば対象です。'+
+      '区に無いから何もない、ということではありません。'+
+      '令和8年度に新設される可能性もあるため、治療の開始前に区に確認してください。';
+    $('detail').innerHTML='<dt>区独自の上乗せ助成</dt><dd>'+
+      esc(c.funin_taisho_chiryo)+'（__CHECKED__時点で区の公式ページに助成制度の記載を確認できませんでした）</dd>';
+  }else{
+    $('amount').textContent='上限 '+yen(c.funin_jogen_gaku);
+    f.className='fitbox fit-ok';
+    f.innerHTML='<strong>'+esc(c.name)+'は区独自の上乗せ助成を実施しています。上限は'+
+      yen(c.funin_jogen_gaku)+'です。</strong>'+
+      '対象になる費用は<span class="rangetag">'+esc(c.funin_range)+'</span>です。'+
+      '<strong>上限額はもらえる額ではありません。</strong>'+
+      '区ごとに計算式が違います。'+
+      (c.funin_range.indexOf('先進医療')>-1
+        ? '先進医療については、東京都の助成額を差し引いた残りを対象にするのが一般的です。'
+        : '')+
+      '実際の額は区にご確認ください。';
+    $('detail').innerHTML=''+
+     '<dt>対象になる費用（原文）</dt><dd>'+esc(c.funin_taisho_chiryo)+'</dd>'+
+     '<dt>対象になる人（原文）</dt><dd>'+esc(c.funin_taisho)+'</dd>'+
+     '<dt>回数の上限（原文）</dt><dd>'+esc(c.funin_jogen_kaisu)+'</dd>'+
+     '<dt>申請期限（原文）</dt><dd>'+esc(c.funin_shinsei_kigen)+'</dd>'+
+     (c.note?'<dt>特記</dt><dd>'+esc(c.note)+'</dd>':'');
+  }
+  $('srcNote').innerHTML='出典：<a href="'+c.funin_src+'" rel="noopener" target="_blank">'+esc(c.funin_src_label)+'</a>（__CHECKED__確認）。最新の内容は必ず公式ページでご確認ください。';
+  try{gtag('event','tool_result',{tool:'__SLUG__',city:c.key});}catch(e){}
+}
+$('run').addEventListener('click',run);
+$('city').addEventListener('change',run);
+run();
+})();
+</script>
+</body>
+</html>
