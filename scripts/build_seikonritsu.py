@@ -26,7 +26,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _article_shell import faq_html, source_list, table, write
+from _article_shell import SRC_INTRO_KIGYO, faq_html, source_list, table, write
 from _seikonritsu_data import CHECKED, COMPANIES, SOURCES, TEIGI, UNCONFIRMED
 
 TODAY = "2026-08-27"
@@ -360,7 +360,7 @@ def build_article():
 </ul>""")
     p.append('<h2 id="faq">よくある質問（FAQ）</h2>')
     p.append(faq_html(FAQ_ART))
-    p.append(source_list([(u, l) for u, l in SOURCES]))
+    p.append(source_list([(u, l) for u, l in SOURCES], SRC_INTRO_KIGYO))
 
     write(ART_SLUG,
           "成婚率はなぜ社によって3倍違うのか｜%d社の分母と分子を並べて確かめた【%s確認】" % (N, CHECKED),

@@ -94,14 +94,29 @@ def faq_html(faq):
                      for i, (q, a) in enumerate(faq))
 
 
-def source_list(sources):
-    """[(url, label), ...] を出典リストにする"""
-    items = "\n".join(
+SRC_INTRO_TOUKEI = ("本記事の数値はすべて次の公的統計の公表値です。"
+                    "統計ごとに調査の対象・周期・母集団が違うため、"
+                    "異なる統計の数値を掛け合わせないでください。")
+SRC_INTRO_JICHITAI = ("本記事の数値はすべて次の自治体公式ページの記載です。"
+                      "制度は年度で変わるため、利用前に必ず各自治体の公式ページで"
+                      "ご確認ください。")
+SRC_INTRO_KIGYO = ("本記事の数値はすべて次の各社公式ページ・IR資料の公表値です。"
+                   "公表値は年度で書き換わり、算出方法も社によって違うため、"
+                   "異なる社の数値をそのまま並べて比べないでください。")
+
+
+def source_list(sources, intro=None):
+    """[(url, label), ...] を出典リストにする。
+
+    intro は出典の性格に合わせて差し替える。公的統計の記事に企業の出典を、
+    企業の記事に「公的統計」という説明を付けると、そこだけ事実と食い違う。
+    """
+    items = chr(10).join(
         '<li><a href="%s" rel="noopener" target="_blank">%s</a></li>' % (u, l)
         for u, l in sources)
-    return ('<h2 id="src">出典</h2>\n<p>本記事の数値はすべて次の公的統計の公表値です。'
-            '統計ごとに調査の対象・周期・母集団が違うため、異なる統計の数値を掛け合わせないでください。</p>\n'
-            '<ul style="font-size:.86rem;line-height:2">\n%s\n</ul>' % items)
+    return ('<h2 id="src">出典</h2>' + chr(10) + '<p>%s</p>' + chr(10) +
+            '<ul style="font-size:.86rem;line-height:2">' + chr(10) + '%s' + chr(10) + '</ul>'
+            ) % (intro or SRC_INTRO_TOUKEI, items)
 
 
 def table(headers, rows, aligns=None):

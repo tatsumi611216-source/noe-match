@@ -22,7 +22,7 @@ import sys
 from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _article_shell import faq_html, source_list, table, write
+from _article_shell import SRC_INTRO_JICHITAI, faq_html, source_list, table, write
 from _byoji_funin_data import CHECKED, WARDS
 
 TODAY = "2026-08-27"
@@ -268,7 +268,7 @@ def build_article():
     p.append('<h2 id="faq">よくある質問（FAQ）</h2>')
     p.append(faq_html(FAQ_ART))
     p.append(source_list([(w["byoji_src"], "%s｜%s" % (w["name"], w["byoji_src_label"]))
-                          for w in WARDS]))
+                          for w in WARDS], SRC_INTRO_JICHITAI))
 
     write(ART_SLUG,
           "病児保育は1日いくら？東京23区の料金・減免・利用上限と、料金より先に詰まるところ【%s確認】" % CHECKED,

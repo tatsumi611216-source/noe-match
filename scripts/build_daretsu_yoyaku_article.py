@@ -18,7 +18,7 @@ import os
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from _article_shell import faq_html, source_list, table, write
+from _article_shell import SRC_INTRO_JICHITAI, faq_html, source_list, table, write
 from _daretsu_data import CHECKED, CITIES
 
 TODAY = "2026-08-27"
@@ -141,7 +141,7 @@ def build():
 </ul>""")
     p.append('<h2 id="faq">よくある質問（FAQ）</h2>')
     p.append(faq_html(FAQ))
-    p.append(source_list([(c["src"], "%s｜%s" % (c["name"], c["src_label"])) for c in real]))
+    p.append(source_list([(c["src"], "%s｜%s" % (c["name"], c["src_label"])) for c in real], SRC_INTRO_JICHITAI))
 
     write(SLUG,
           "こども誰でも通園制度の予約はどこから？%s自治体の経路と、システムで予約できない自治体" % N,
