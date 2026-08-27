@@ -66,8 +66,8 @@ table.cmp td.n{{text-align:right;font-weight:700;color:#7c2e42;white-space:nowra
 <p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
 <p style="font-weight:900;margin:0 0 6px;color:#1d242b">{pr_head}</p>
 <p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">{pr_body}</p>
-<a href="{oisix}" rel="sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
-<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。本記事の統計とは関係ありません</p>
+<a href="{aff_url}" rel="{aff_rel}" target="_blank" style="display:inline-block;background:{aff_color};color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">{aff_text}</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">{aff_note}</p>
 </div>
 </article>
 <!-- LINE-CTA -->
@@ -116,7 +116,12 @@ def table(headers, rows, aligns=None):
 
 
 def write(slug, title, h1, desc, ogd, faq, body, today, checked,
-          pr_head, pr_body):
+          pr_head, pr_body,
+          aff_url=None, aff_text="Oisixのおためしセットを見る",
+          aff_note="食材宅配サービス。本記事の統計とは関係ありません",
+          aff_color="#7c2e42", aff_rel="sponsored noopener"):
+    """アフィリエイトの差し替えは agent/AGENT.md の案件台帳に許可された文脈だけ。
+    既定はOisix（共働きの食事・おうちデート文脈）。"""
     url = "https://www.noe-match.com/articles/%s/" % slug
     faqld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
@@ -138,7 +143,9 @@ def write(slug, title, h1, desc, ogd, faq, body, today, checked,
     html = HEAD.format(title=title, desc=desc, ogd=ogd, url=url, css=css(),
                        faqld=faqld, artld=artld, bcld=bcld, h1=h1,
                        today=today, checked=checked, body=body, slug=slug,
-                       oisix=OISIX, pr_head=pr_head, pr_body=pr_body)
+                       aff_url=(aff_url or OISIX), aff_text=aff_text,
+                       aff_note=aff_note, aff_color=aff_color, aff_rel=aff_rel,
+                       pr_head=pr_head, pr_body=pr_body)
     os.makedirs("articles/%s" % slug, exist_ok=True)
     io.open("articles/%s/index.html" % slug, "w", encoding="utf-8").write(html)
     print("written: articles/%s/index.html  %d chars" % (slug, len(html)))
