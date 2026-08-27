@@ -42,6 +42,30 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
+#### 2026-08-27 公開のデータバンク6本（器具＋記事・最優先）
+
+ツールとデータ記事は1本あたりの流入が通常記事の5倍前後（ツール1.41／データ記事1.28／通常0.24
+セッション/月）。9月中旬の初動判定に間に合わせたいので、既存バックログより先に申請する。
+
+```
+https://www.noe-match.com/tools/seikonritsu-hikaku/
+https://www.noe-match.com/articles/seikonritsu-data/
+https://www.noe-match.com/tools/soudanjo-hiyou-sim/
+https://www.noe-match.com/articles/soudanjo-hiyou-data/
+https://www.noe-match.com/tools/app-kakin-hikaku/
+https://www.noe-match.com/articles/app-ryokin-data/
+https://www.noe-match.com/tools/byoji-hoiku-ryokin/
+https://www.noe-match.com/articles/byoji-hoiku-data/
+https://www.noe-match.com/tools/kodomo-iryohi-jichitai/
+https://www.noe-match.com/articles/kodomo-iryohi-data/
+https://www.noe-match.com/tools/funin-josei-jichitai/
+https://www.noe-match.com/articles/funin-josei-data/
+```
+
+並び順は流入と単価が重なる婚活クラスタ（成婚率→費用→アプリ料金）を先に、
+自治体クラスタ（病児保育→子ども医療費→不妊助成）を後に置いている。
+1日の割り当てが約11件なので、初日で婚活6本＋自治体5本、翌日に残り1本が入る想定。
+
 - [済 8/25] /articles/tapple-nenreiso-data/　（2026-08-24 公開）
 - [済 8/25] /articles/pairs-nenreiso-data/　（2026-08-24 公開）
 
@@ -485,3 +509,30 @@ Day A（10本）は全件通過。再試行・アカウント切替は行って�
 
 8/24は14件、8/25は12件、8/23は2件、8/27は11件。
 24時間移動窓での回復という見立てと矛盾しない。上限が出るまで回す運用を維持する。
+
+
+## 2026-08-27 の状態確認（URL Inspection API で実測）
+
+サイトマップとGSCプロパティの登録状態を、画面ではなくAPIで確認した。
+
+| 項目 | 実測 |
+|---|---|
+| プロパティ `https://www.noe-match.com/` | 登録済み・権限は siteOwner |
+| `/sitemap-all.xml` | エラー0・警告0。最終読込 2026-08-26 23:01 UTC・送信URL 224 |
+| `/sitemap.xml` | エラー0・警告0。最終読込 2026-08-26 15:01 UTC・送信URL 218 |
+| `/sitemap.xm`（綴り間違い） | **エラー1・isPending=True のまま**（2026-07-26送信・以降ずっと失敗） |
+| 本日公開の12URL | **12本すべて「URL が Google に認識されていません」＝未クロール** |
+
+sitemapの `indexed` は API が常に0を返す項目なので、インデックス数の判断には使えない。
+判断には URL Inspection API の `coverageState` を使うこと。
+
+公開当日に未クロールなのは異常ではない。Googleの最終読込（8/26 23:01 UTC）が
+本日の公開より前だったため、まだ拾われていないだけ。両サイトマップを再送信済み
+（PUT → HTTP 204）なので、次のクロールで240件が見える。
+
+**GoogleのIndexing APIは JobPosting と BroadcastEvent 専用で、通常ページには使えない。**
+早めるには GSC のインデックス登録リクエストしかなく、これは毎朝8時の
+`affiliate-gsc-request-20260823` が台帳の上から順に消化する。
+
+**`/sitemap.xm` の削除はCEO判断待ちのまま**（2026-08-22から継続）。害はないが、
+サイトマップレポートに恒久的なエラーが1件出たままになる。
