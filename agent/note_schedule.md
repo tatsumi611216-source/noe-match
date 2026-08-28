@@ -180,3 +180,27 @@ const s=getSelection(); s.removeAllRanges(); s.addRange(r);
 document.execCommand('delete');
 // このあと通常どおり paste イベントを投げる
 ```
+
+### 日時設定を1呼び出しで通す完成形（2026-08-28）
+
+publish画面の2状態と、日付クリックでピッカーが閉じる件の両方に対応した版。
+
+```js
+// 公開に進む → 5.5秒待つ → 最下部へ
+const opener=[...document.querySelectorAll('button')].find(x=>
+  x.innerText.trim()==='日時の設定' || /^2026年\d+月\d+日\s+\d+:\d+$/.test(x.innerText.trim()));
+fire(opener);
+// 月ヘッダが8月なら月送り、9月ならそのまま
+const mh=[...document.querySelectorAll('*')].filter(e=>e.children.length===0
+  && /^2026年\d+月$/.test((e.innerText||'').trim()));
+if(mh.length && mh[0].innerText.trim()==='2026年8月'){ /* 月送り */ }
+// 日セル（tdではなくbutton、aria-disabled=trueのtd配下は除外）
+fire(day);
+// ここでピッカーが閉じることがある → 閉じていたら開き直す
+let opts=[...document.querySelectorAll('li[role="option"]')];
+if(!opts.length){ fire(日時ボタン); await wait(2000); opts=[...再取得]; }
+opts.find(o=>o.innerText.trim()==='19:00') を focus() + Enter
+```
+
+ピッカーが開いた時点の月が8月か9月かは**その時々で変わる**ので、必ず読んでから
+月送りするか決める。決め打ちすると1か月ずれる。
