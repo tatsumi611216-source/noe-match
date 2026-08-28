@@ -150,3 +150,33 @@ publish画面のハッシュタグ欄には、見た目がほぼ同じチップ�
 - **日セルは `<td>` ではなく中の `<button>` を押す。**`td[aria-disabled=true]` の
   中にある同じ数字（翌月の頭）を除外しないと、無効なセルを押して日付が変わらない
 - **月送りボタンは「幅44px未満・テキスト空・月ヘッダと同じ高さ・ヘッダより右」**で特定する
+
+### publish画面には2つの状態がある（2026-08-28）
+
+予約投稿トグルが**すでにONになっている**ことがある。そのとき `日時の設定` ボタンは
+存在せず、代わりに `2026年M月D日 HH:MM` 形式のボタンが出ている。
+両対応するセレクタはこれ。
+
+```js
+const opener=[...document.querySelectorAll('button')]
+  .find(x=>x.innerText.trim()==='日時の設定'
+        || /^2026年\d+月\d+日\s+\d+:\d+$/.test(x.innerText.trim()));
+```
+
+またこの状態では、**日付セルを押した時点でピッカーが閉じる**（日付だけ確定して
+時刻は前の値のまま残る）。時刻を変えるには**もう一度ボタンを押してピッカーを
+開き直す**必要がある。合成イベントで開き直せないことがあるので、そのときは
+スクリーンショットを撮って `computer` の実クリックで開く。
+
+### 本文の誤記は「全選択→削除→再ペースト」で直せる
+
+新しく記事を作り直す必要はない。重複も起きない（#19で実証）。
+
+```js
+const b=document.querySelector('div[contenteditable="true"]');
+b.focus();
+const r=document.createRange(); r.selectNodeContents(b);
+const s=getSelection(); s.removeAllRanges(); s.addRange(r);
+document.execCommand('delete');
+// このあと通常どおり paste イベントを投げる
+```
