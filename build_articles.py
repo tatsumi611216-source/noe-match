@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """48本のmarkdownソースから、サイト統一デザインのHTML記事を生成する。"""
-import re, json, html, shutil, sys
+import re, json, html, os, shutil, sys
 from pathlib import Path
 
 SRC = Path(r"C:/Users/tatsu/matching-app/article-system/output")
@@ -415,6 +415,24 @@ def write_sitemap(lastmod):
     return len(entries)
 
 if __name__=='__main__':
+    # ── 凍結（2026-08-29） ──────────────────────────────────────────────
+    # これは旧ビルダー。現行の記事工場・sitemap 運用とは無関係で、実行しても
+    # リポジトリではなく DEPLOY（C:/Users/tatsu/Desktop/noe-match-deploy・
+    # 2026-07-04 で更新停止・git管理外）を書き換えるだけになる。
+    # さらに write_sitemap() が出すのは旧48スラッグ＋トップ＋法的3ページの
+    # 52URL・lastmod 一律・sitemap-all.xml なしで、現行の
+    # scripts/sitemap_add.py / scripts/sitemap_sync.py の原則
+    # （lastmod は dateModified を使う・今日の日付を勝手に入れない）と真逆。
+    # DEPLOY を現行リポジトリに向け直して再利用したときの事故を防ぐため、
+    # 明示的に許可したときだけ動くようにしてある。
+    if os.environ.get("NOE_ALLOW_LEGACY_BUILD") != "1":
+        sys.exit("""build_articles.py は凍結済みの旧ビルダーです（2026-08-29 凍結）。
+  出力先 : C:/Users/tatsu/Desktop/noe-match-deploy（更新停止済み・git管理外）
+  sitemap: 旧48スラッグの52URLで上書きする作り。現行の244URLとは別物
+  現行の sitemap は scripts/sitemap_add.py と scripts/sitemap_sync.py が担当
+  本番デプロイは .github/workflows/pages.yml がリポジトリから直接ビルドする
+どうしても動かす場合のみ NOE_ALLOW_LEGACY_BUILD=1 を付けること。""")
+    # ────────────────────────────────────────────────────────────────────
     targets=[int(x) for x in sys.argv[1:]] if len(sys.argv)>1 else list(SLUGS)
     IMG_OUT.mkdir(exist_ok=True)
     # 画像コピー
