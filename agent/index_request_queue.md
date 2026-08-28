@@ -48,18 +48,18 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 セッション/月）。9月中旬の初動判定に間に合わせたいので、既存バックログより先に申請する。
 
 ```
-https://www.noe-match.com/tools/seikonritsu-hikaku/
-https://www.noe-match.com/articles/seikonritsu-data/
-https://www.noe-match.com/tools/soudanjo-hiyou-sim/
-https://www.noe-match.com/articles/soudanjo-hiyou-data/
-https://www.noe-match.com/tools/app-kakin-hikaku/
-https://www.noe-match.com/articles/app-ryokin-data/
-https://www.noe-match.com/tools/byoji-hoiku-ryokin/
-https://www.noe-match.com/articles/byoji-hoiku-data/
-https://www.noe-match.com/tools/kodomo-iryohi-jichitai/
-https://www.noe-match.com/articles/kodomo-iryohi-data/
-https://www.noe-match.com/tools/funin-josei-jichitai/
-https://www.noe-match.com/articles/funin-josei-data/
+[済 8/28 登録済] https://www.noe-match.com/tools/seikonritsu-hikaku/
+[済 8/28] https://www.noe-match.com/articles/seikonritsu-data/
+[済 8/28] https://www.noe-match.com/tools/soudanjo-hiyou-sim/
+[済 8/28] https://www.noe-match.com/articles/soudanjo-hiyou-data/
+[済 8/28] https://www.noe-match.com/tools/app-kakin-hikaku/
+[済 8/28] https://www.noe-match.com/articles/app-ryokin-data/
+[済 8/28 登録済] https://www.noe-match.com/tools/byoji-hoiku-ryokin/
+[済 8/28] https://www.noe-match.com/articles/byoji-hoiku-data/
+[済 8/28] https://www.noe-match.com/tools/kodomo-iryohi-jichitai/
+[済 8/28] https://www.noe-match.com/articles/kodomo-iryohi-data/
+[済 8/28] https://www.noe-match.com/tools/funin-josei-jichitai/
+[済 8/28] https://www.noe-match.com/articles/funin-josei-data/
 ```
 
 並び順は流入と単価が重なる婚活クラスタ（成婚率→費用→アプリ料金）を先に、
@@ -97,7 +97,7 @@ Googleが一度も認識していない（未認識）ものを先頭に置い�
 
 ```
 [済 8/27] https://www.noe-match.com/articles/dousei-kaisho/                    ← 検出済み・未クロール
-https://www.noe-match.com/articles/dousei-kekkon-hikaku/             ← 検出済み・未クロール
+[済 8/28] https://www.noe-match.com/articles/dousei-kekkon-hikaku/             ← 検出済み・未クロール
 https://www.noe-match.com/articles/first-date-guide/                 ← 検出済み・未クロール
 https://www.noe-match.com/articles/fraud-statistics/                 ← 検出済み・未クロール
 https://www.noe-match.com/articles/hatsushon-nenmei-data/            ← 検出済み・未クロール
@@ -549,3 +549,45 @@ sitemapの `indexed` は API が常に0を返す項目なので、インデッ�
 
 なお削除したのはGSC側の「登録」だけで、サイト側には元から `sitemap.xm` という
 ファイルは存在しない（だから7/26以来ずっと取得に失敗していた）。失うものは無い。
+
+## 2026-08-28 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**11件成功・2件は既にインデックス登録済みのためスキップ・12本目で割り当て上限に到達し打ち切り（残り未申請 33本）。**
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /tools/seikonritsu-hikaku/ | ⏭️ 既に「URL は Google に登録されています」＝申請不要でスキップ |
+| 2 | /articles/seikonritsu-data/ | ✅ 優先クロールキューに追加 |
+| 3 | /tools/soudanjo-hiyou-sim/ | ✅ |
+| 4 | /articles/soudanjo-hiyou-data/ | ✅ |
+| 5 | /tools/app-kakin-hikaku/ | ✅ |
+| 6 | /articles/app-ryokin-data/ | ✅ |
+| 7 | /tools/byoji-hoiku-ryokin/ | ⏭️ 既にインデックス登録済み＝スキップ |
+| 8 | /articles/byoji-hoiku-data/ | ✅ |
+| 9 | /tools/kodomo-iryohi-jichitai/ | ✅ |
+| 10 | /articles/kodomo-iryohi-data/ | ✅ |
+| 11 | /tools/funin-josei-jichitai/ | ✅ |
+| 12 | /articles/funin-josei-data/ | ✅ |
+| 13 | /articles/dousei-kekkon-hikaku/ | ✅ |
+| 14 | /articles/first-date-guide/ | ❌「1日の割り当て量を超えたため、リクエストを処理できませんでした」→ここで打ち切り |
+
+再試行・アカウント切替は行っていない。次回は Day B の `/articles/first-date-guide/` から再開する。
+
+### 手順から外した判断（2026-08-28・自動タスク側の裁量）
+
+台帳の手順は「リクエスト済みでなければ押す」だが、**既に「URL は Google に登録されています」と
+出ているページには押さなかった**。1日の割り当ては約11件しかなく、未登録が33本残っている状況で
+登録済みページに1枠使うのは目的に反するため。該当2本は `[済 8/28 登録済]` として印を付けてある。
+
+### 実装上の罠（次回のために記録）
+
+申請成功のスナックバー「インデックス登録をリクエスト済み／URL を優先クロール キューに追加しました」は
+**次のURLを検査しても画面に残る**。本文に「リクエスト済み」が含まれるかだけで判定すると、
+次のURLを「申請済み」と誤判定して飛ばしてしまう（実際に `/tools/soudanjo-hiyou-sim/` で1回誤検知した）。
+検査の前後に「表示しない」を押してスナックバーを消してから判定すること。
+
+### 8/27 に未クロールだった12本の翌日の状態
+
+8/27 の実測では公開当日の12本すべてが「Google に認識されていません」だったが、
+8/28 時点で **2本（seikonritsu-hikaku / byoji-hoiku-ryokin）がインデックス登録済み**に変わっていた。
+サイトマップ再送信（8/27・PUT 204）が効いている。残り10本は「検出 - インデックス未登録」で、本日申請済み。
