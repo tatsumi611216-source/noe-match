@@ -40,10 +40,24 @@ PAGE_SIZE = 25000
 
 
 def session():
+    """認証情報は2経路で読む（fetch_gsc.py と同じ順序）。
+
+    1. 環境変数 GSC_KEY_JSON（GitHub Actions 用。JSON文字列をそのまま渡す）
+    2. ファイル KEY_PATH（ローカル実行用）
+
+    CI で動かすためにこの順序が要る。ローカルだけで動かしていると、
+    PCが起動していない日は永久に取り返せない（GSCは16ヶ月で消える）。
+    """
     from google.oauth2 import service_account
     from google.auth.transport.requests import AuthorizedSession
-    creds = service_account.Credentials.from_service_account_file(
-        KEY_PATH, scopes=["https://www.googleapis.com/auth/webmasters.readonly"])
+    scopes = ["https://www.googleapis.com/auth/webmasters.readonly"]
+    key_json = os.environ.get("GSC_KEY_JSON")
+    if key_json:
+        creds = service_account.Credentials.from_service_account_info(
+            json.loads(key_json), scopes=scopes)
+    else:
+        creds = service_account.Credentials.from_service_account_file(
+            KEY_PATH, scopes=scopes)
     return AuthorizedSession(creds)
 
 

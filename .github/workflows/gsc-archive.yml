@@ -1,0 +1,54 @@
+name: Daily GSC Archive
+
+# GSCは16ヶ月でデータが消える。保存していない期間は永久に取り返せない。
+# ローカル実行だけだとPCが起動していない日は落ちるので、クラウドで毎日回す。
+# 差分モードは直近45日の欠損を埋め直すので、数日落ちても自力で復旧する。
+
+on:
+  schedule:
+    # 毎日 05:00 JST（= 20:00 UTC 前日）。GSCの確定は2〜3日遅れなので時刻は重要ではない。
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install google-auth google-auth-httplib2 requests
+
+      - name: Archive GSC daily data
+        env:
+          GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
+        run: |
+          python scripts/gsc_archive.py | tee /tmp/gsc_archive.txt
+          {
+            echo '## GSC日別アーカイブ'
+            echo '```'
+            cat /tmp/gsc_archive.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit and push if updated
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add agent/gsc_archive
+          if git diff --cached --quiet; then
+            echo "新規の日なし。スキップ。"
+          else
+            git commit -m "chore: archive GSC daily data ($(date -u +%Y-%m-%d))"
+            git pull --rebase origin main
+            git push origin main
+          fi
