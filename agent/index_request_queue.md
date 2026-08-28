@@ -98,24 +98,24 @@ Googleが一度も認識していない（未認識）ものを先頭に置い�
 ```
 [済 8/27] https://www.noe-match.com/articles/dousei-kaisho/                    ← 検出済み・未クロール
 [済 8/28] https://www.noe-match.com/articles/dousei-kekkon-hikaku/             ← 検出済み・未クロール
-https://www.noe-match.com/articles/first-date-guide/                 ← 検出済み・未クロール
-https://www.noe-match.com/articles/fraud-statistics/                 ← 検出済み・未クロール
-https://www.noe-match.com/articles/hatsushon-nenmei-data/            ← 検出済み・未クロール
-https://www.noe-match.com/articles/kaiin-age-cross-data/             ← 検出済み・未クロール
-https://www.noe-match.com/articles/kinsen-kachikan-check/            ← 検出済み・未クロール
-https://www.noe-match.com/articles/koninhiyou-guide/                 ← 検出済み・未クロール
-https://www.noe-match.com/articles/konkatsu-party-guide/             ← 検出済み・未クロール
-https://www.noe-match.com/articles/late-20s-strategy/                ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/first-date-guide/                 ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/fraud-statistics/                 ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/hatsushon-nenmei-data/            ← 検出済み・未クロール
+[済 8/29 登録済] https://www.noe-match.com/articles/kaiin-age-cross-data/             ← 検出済み・未クロール
+[済 8/29 登録済] https://www.noe-match.com/articles/kinsen-kachikan-check/            ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/koninhiyou-guide/                 ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/konkatsu-party-guide/             ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/late-20s-strategy/                ← 検出済み・未クロール
 ```
 
 **Day C（10本）**
 
 ```
-https://www.noe-match.com/articles/line-exchange/                    ← 検出済み・未クロール
-https://www.noe-match.com/articles/members-data/                     ← 検出済み・未クロール
-https://www.noe-match.com/articles/nashikon-data/                    ← 検出済み・未クロール
-https://www.noe-match.com/articles/pairs-men/                        ← 検出済み・未クロール
-https://www.noe-match.com/articles/pairs-women/                      ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/line-exchange/                    ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/members-data/                     ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/nashikon-data/                    ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/pairs-men/                        ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/pairs-women/                      ← 検出済み・未クロール
 https://www.noe-match.com/articles/price-comparison/                 ← 検出済み・未クロール
 https://www.noe-match.com/articles/privacy-protection/               ← 検出済み・未クロール
 https://www.noe-match.com/articles/profile-text/                     ← 検出済み・未クロール
@@ -286,7 +286,7 @@ https://www.noe-match.com/articles/soudanjo-hikaku/            ← 8/22型A改�
 [済 8/24] https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
 [済 8/24] https://www.noe-match.com/tools/kekkon-shikin-keisanki/        ← J核・表示ゼロ。8/23に公表値更新＋ハナユメ結果連動
 https://www.noe-match.com/articles/kekkon-okane-data/          ← 8/23公表値へ更新
-https://www.noe-match.com/articles/nashikon-data/              ← 8/23公表値へ更新
+[済 8/29] https://www.noe-match.com/articles/nashikon-data/              ← 8/23公表値へ更新
 https://www.noe-match.com/articles/shikijo-erabi-guide/        ← 8/23型A全面改稿（ハナユメ受け皿・78位）
 https://www.noe-match.com/articles/gosyugi-shiharai-houhou/    ← 8/23寄せ直し＋4,000字
 https://www.noe-match.com/articles/shinkon-ryokou-credit/      ← 8/23寄せ直し＋4,000字
@@ -327,11 +327,11 @@ youbride-guide / marrish-guide）は 8/23 の自動タスクの割り当て対�
 https://www.noe-match.com/articles/profile-text/
 https://www.noe-match.com/articles/privacy-protection/
 https://www.noe-match.com/articles/photo-tips/
-https://www.noe-match.com/articles/pairs-women/
-https://www.noe-match.com/articles/pairs-men/
-https://www.noe-match.com/articles/line-exchange/
-https://www.noe-match.com/articles/fraud-statistics/
-https://www.noe-match.com/articles/first-date-guide/
+[済 8/29] https://www.noe-match.com/articles/pairs-women/
+[済 8/29] https://www.noe-match.com/articles/pairs-men/
+[済 8/29] https://www.noe-match.com/articles/line-exchange/
+[済 8/29] https://www.noe-match.com/articles/fraud-statistics/
+[済 8/29] https://www.noe-match.com/articles/first-date-guide/
 https://www.noe-match.com/articles/anti-fraud/
 ```
 ※ 8/22までに申請済みのものは「リクエスト済み」表示でスキップされる。Fは26本中16本が未登録で、クリック0の主因。
@@ -591,3 +591,48 @@ sitemapの `indexed` は API が常に0を返す項目なので、インデッ�
 8/27 の実測では公開当日の12本すべてが「Google に認識されていません」だったが、
 8/28 時点で **2本（seikonritsu-hikaku / byoji-hoiku-ryokin）がインデックス登録済み**に変わっていた。
 サイトマップ再送信（8/27・PUT 204）が効いている。残り10本は「検出 - インデックス未登録」で、本日申請済み。
+
+## 2026-08-29 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**11件成功・2件は既にインデックス登録済みのためスキップ・12本目で割り当て上限に到達し打ち切り（残り未申請 22本）。**
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /articles/first-date-guide/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/fraud-statistics/ | ✅ |
+| 3 | /articles/hatsushon-nenmei-data/ | ✅ |
+| 4 | /articles/kaiin-age-cross-data/ | ⏭️ 既に「URL は Google に登録されています」＝申請不要でスキップ |
+| 5 | /articles/kinsen-kachikan-check/ | ⏭️ 既にインデックス登録済み＝スキップ |
+| 6 | /articles/koninhiyou-guide/ | ✅ |
+| 7 | /articles/konkatsu-party-guide/ | ✅ |
+| 8 | /articles/late-20s-strategy/ | ✅ |
+| 9 | /articles/line-exchange/ | ✅ |
+| 10 | /articles/members-data/ | ✅ |
+| 11 | /articles/nashikon-data/ | ✅ |
+| 12 | /articles/pairs-men/ | ✅ |
+| 13 | /articles/pairs-women/ | ✅ |
+| 14 | /articles/price-comparison/ | ❌「1日の割り当て量を超えたため、リクエストを処理できませんでした」→ここで打ち切り |
+
+再試行・アカウント切替は行っていない。**次回は Day C の `/articles/price-comparison/` から再開する。**
+
+Day B は完了。Fクラスタ節に重複していた5本（first-date-guide / fraud-statistics /
+line-exchange / pairs-men / pairs-women）にも同じ印を付けた。
+nashikon-data は「2026-08-23 に申請する」節にも重複していたので同様に印を付けてある。
+
+### 残り（8/30以降）
+
+- Day C 残り5本：price-comparison / privacy-protection / profile-text / renkatsu-vs-konkatsu / shinkyo-kagu-yosan
+- Day D 7本：usuge-konkatsu-eikyou / with-vs-pairs / garugaru-ki-itsumade / garugaru-otto-genkai / garugaru-sangoutsu-chigai / sango-iraira / shinseiji-menkai
+- 8/23節の改稿分 9本：kekkon-okane-data / shikijo-erabi-guide / gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide / omiai-guide / compare-popular
+- Fクラスタ残り 4本：profile-text / privacy-protection / photo-tips / anti-fraud（Day C と重複するものあり）
+- soudanjo-hikaku は対照群のため申請しない（nurse-konkatsu-soudanjo のみ解除済み）
+
+### 実測メモ：上限は11件（8/22・8/28と同じ）
+
+3日連続で「11件成功 → 12件目で割り当て超過」。上限到達までのスキップ（登録済み2本）は
+割り当てを消費していない。8/28 に記録したスナックバー誤検知の罠は、各URL検査の前に
+「表示しない」を押す手順で回避できている（今回は誤検知ゼロ）。
+
+### 8/28 に申請した10本の翌日の状態
+
+未確認（本タスクでは検査していない）。
