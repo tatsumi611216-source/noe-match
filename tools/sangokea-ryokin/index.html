@@ -435,7 +435,7 @@ function renderDetail(c){
    '<dt>申請</dt><dd>'+esc(c.apply)+'</dd>'+
    (c.note?'<dt>特記</dt><dd>'+esc(c.note)+'</dd>':'');
   $('srcNote').innerHTML='出典：<a href="'+c.src+'" rel="noopener" target="_blank">'+esc(c.src_label)+'</a>（2026年8月27日確認）。最新の内容は必ず公式ページでご確認ください。';
-  try{gtag('event','tool_result',{tool:'sangokea-ryokin',city:c.key});}catch(e){}
+  if(window.__ui)try{gtag('event','tool_result',{tool:'sangokea-ryokin',city:c.key});}catch(e){}
 }
 $('run').addEventListener('click',run);
 $('city').addEventListener('change',run);
@@ -443,5 +443,5 @@ $('city').addEventListener('change',run);
 run();
 })();
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>

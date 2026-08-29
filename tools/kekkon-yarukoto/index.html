@@ -474,7 +474,7 @@ function render(){
 document.getElementById('run').addEventListener('click',function(){
   render();
   document.getElementById('res').classList.add('show');
-  try{gtag('event','tool_result',{tool:'kekkon-yarukoto'});}catch(e){}
+  if(window.__ui)try{gtag('event','tool_result',{tool:'kekkon-yarukoto'});}catch(e){}
   document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
 });
 document.getElementById('copy').addEventListener('click',function(){
@@ -658,6 +658,6 @@ $("calcBtn").addEventListener("click",function(){
 })();
 onscroll=function(){document.getElementById("top").classList.toggle('show',scrollY>300)};
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>
 

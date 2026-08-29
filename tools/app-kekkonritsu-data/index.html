@@ -222,7 +222,7 @@ function show(a,btn){
       '<p style="font-size:.74rem;color:#888;margin:10px 0 0">'+esc(pr.note)+'</p></div>';
   } else { box.innerHTML=''; }
   document.getElementById('res').classList.add('show');
-  try{gtag('event','tool_result',{tool:'app-kekkonritsu-data',app:a.k});}catch(e){}
+  if(window.__ui)try{gtag('event','tool_result',{tool:'app-kekkonritsu-data',app:a.k});}catch(e){}
   document.getElementById('res').scrollIntoView({behavior:'smooth',block:'start'});
 }
 })();
@@ -384,6 +384,6 @@ $("calcBtn").addEventListener("click",function(){
 })();
 onscroll=function(){document.getElementById("top").classList.toggle('show',scrollY>300)};
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>
 

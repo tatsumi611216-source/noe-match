@@ -295,12 +295,12 @@ function run(){
      (c.note?'<dt>特記</dt><dd>'+esc(c.note)+'</dd>':'');
   }
   $('srcNote').innerHTML='出典：<a href="'+c.funin_src+'" rel="noopener" target="_blank">'+esc(c.funin_src_label)+'</a>（2026年8月27日確認）。最新の内容は必ず公式ページでご確認ください。';
-  try{gtag('event','tool_result',{tool:'funin-josei-jichitai',city:c.key});}catch(e){}
+  if(window.__ui)try{gtag('event','tool_result',{tool:'funin-josei-jichitai',city:c.key});}catch(e){}
 }
 $('run').addEventListener('click',run);
 $('city').addEventListener('change',run);
 run();
 })();
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>

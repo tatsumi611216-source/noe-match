@@ -336,12 +336,12 @@ function renderDetail(c){
    '<dt>申込・認定</dt><dd>'+esc(c.apply)+'</dd>'+
    '<dt>実施施設</dt><dd>'+esc(c.facil)+'</dd>';
   $('srcNote').innerHTML='出典：<a href="'+c.src+'" rel="noopener" target="_blank">'+esc(c.src_label)+'</a>（2026年8月25日確認）。最新の内容は必ず公式ページでご確認ください。';
-  try{gtag('event','tool_result',{tool:'daredemo-tsuen-jichitai',city:c.key,cap:(c.cap===null?'na':c.cap)});}catch(e){}
+  if(window.__ui)try{gtag('event','tool_result',{tool:'daredemo-tsuen-jichitai',city:c.key,cap:(c.cap===null?'na':c.cap)});}catch(e){}
 }
 $('run').addEventListener('click',run);
 $('city').addEventListener('change',run);
 run();
 })();
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>

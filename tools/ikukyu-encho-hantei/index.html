@@ -499,7 +499,7 @@ function run(){
    '<li>いずれも延長時の「育児休業給付金支給申請書」に添付し、勤務先を経由してハローワークへ提出します</li>'+
    (rv('koyo')==='yuki'&&kind==='24'?'<li>有期雇用で1歳6か月から2歳への延長の場合は、休業終了後の雇用の継続が予定されていることを証明できる書類も必要です</li>':'');
 
-  try{gtag('event','tool_result',{tool:'ikukyu-encho-hantei',kind:kind,law_ng:lawNg.length,pay_ng:payNg.length});}catch(e){}
+  if(window.__ui)try{gtag('event','tool_result',{tool:'ikukyu-encho-hantei',kind:kind,law_ng:lawNg.length,pay_ng:payNg.length});}catch(e){}
 }
 
 function syncYuki(){
@@ -514,5 +514,5 @@ $('run').addEventListener('click',run);
 syncYuki();
 })();
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>

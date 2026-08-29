@@ -464,8 +464,8 @@ onscroll=function(){document.getElementById("top").classList.toggle('show',scrol
 <script>
 document.addEventListener('click',function(e){
   var b=e.target.closest&&e.target.closest('.calc-btn,#run,#calc,button[type="submit"],.btn-primary');
-  if(b){try{gtag('event','tool_result',{tool:'hoikuen-tensu-nerima'});}catch(x){}}
+  if(b){if(window.__ui)try{gtag('event','tool_result',{tool:'hoikuen-tensu-nerima'});}catch(x){}}
 },true);
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>

@@ -144,3 +144,14 @@
 - `lastDownloaded` が None なら、そのサイトマップは一度も取得できていない。
   綴り間違いの登録かどうかは、この値で機械的に判定できる。
 - GoogleのIndexing APIは JobPosting と BroadcastEvent 専用。通常ページには使えない。
+
+## tool_result は2026-08-29以前の値を信用しない（計測バグ修正の断絶）
+
+バンク由来ツール等は初期表示のrender内で `tool_result` を送っていたため、
+**閲覧しただけで「結果表示」が計上されていた**（実測: 7日間で tool_result 156 に対し
+tool_calc 10）。2026-08-29 に `window.__ui`（pointerdown/keydown/change で立つフラグ）で
+ガードし、ユーザー操作後のみ発火に修正した（23ツール・未ガード残0）。
+
+**8/29以前の tool_result は使用実態より大きい。前後比較をしてはいけない。**
+9月中旬のバンク初動判定では 8/30以降の値だけを使うこと。
+tool_calc・診断系の show/calc（ボタン押下起点）は元から正しく、影響なし。

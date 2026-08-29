@@ -50,6 +50,10 @@ JOBS = {
  "articles/success-rate-data":     (SEIKON, '/tools/app-kekkonritsu-data/'),
  "articles/youbride-seikon-data":  (SEIKON, '/tools/app-kekkonritsu-data/'),
  "articles/zexy-enmusubi-data":    (SEIKON, '/tools/app-kekkonritsu-data/'),
+ # 2026-08-29 第2弾: cluster_audit が検出した成婚率スポークの残り
+ "articles/marrish-saikon-data":   (SEIKON, '/tools/app-kekkonritsu-data/'),
+ "articles/success-stories":       (SEIKON, '/tools/app-kekkonritsu-data/'),
+ "articles/konkatsu-roadmap":      (SEIKON, '/tools/konkatsu-type-shindan/'),
  "articles/soudanjo-hikaku":       (SOUDANJO, '/tools/soudanjo-simulator/'),
  "articles/agency-vs-app":         (SOUDANJO, '/tools/soudanjo-simulator/'),
  "articles/app-plus-agency":       (SOUDANJO, '/tools/soudanjo-simulator/'),

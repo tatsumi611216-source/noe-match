@@ -338,7 +338,7 @@ function run(){
   $('summary').innerHTML=msg;
   renderRank(rows,hi.total);
   renderCards(rows,months,omiaiN,withSeikon,renmei);
-  try{gtag('event','tool_result',{tool:'soudanjo-hiyou-sim',months:months});}catch(e){}
+  if(window.__ui)try{gtag('event','tool_result',{tool:'soudanjo-hiyou-sim',months:months});}catch(e){}
 }
 
 function renderRank(rows,max){
@@ -394,5 +394,5 @@ $('renmei').addEventListener('change',run);
 run();
 })();
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>

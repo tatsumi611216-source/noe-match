@@ -351,7 +351,7 @@ function run(){
       '<ul>'+li.join('')+'</ul>';
   }
   renderCards(sel);
-  try{gtag('event','tool_result',{tool:'seikonritsu-hikaku',n:sel.length});}catch(e){}
+  if(window.__ui)try{gtag('event','tool_result',{tool:'seikonritsu-hikaku',n:sel.length});}catch(e){}
 }
 
 function renderCards(sel){
@@ -411,5 +411,5 @@ for(var p=0;p<pb.length;p++){
 run();
 })();
 </script>
-</body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
 </html>
