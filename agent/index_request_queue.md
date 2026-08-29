@@ -711,3 +711,14 @@ nashikon-data は「2026-08-23 に申請する」節にも重複していたの�
 2. **find で取ったrefは1回目のクリックで効かないことがある**（画面再描画でrefが陳腐化する）。
    入力後に**スクリーンショットで文字が入ったことを確認してからEnter**を押すと空振りしない。
    座標クリック（520,22）は効かなかった。refクリックが正。
+
+## タイトル差し替え8本の再クロール待ち（2026-08-29 夜・CTR是正）
+
+4〜10位でクリック0だった8本の title / description を差し替えた（コミット参照）。
+IndexNow送信済み。GSCの申請枠は明朝の自動タスクを優先し、この8本は
+**再申請しない**（既に索引済みのページはクロールで自然に更新される。
+再申請は枠の無駄）。9/12ごろに「表示が同水準でクリックが出たか」で効果を判定する。
+
+対象: with-seriousness-data / with-nenreiso-data / pairs-marriage-data /
+kekkon-madeno-kikan-data / success-rate-data / mens-make-konkatsu /
+hoikuen-tensu-nerima / kekkon-okane-data
