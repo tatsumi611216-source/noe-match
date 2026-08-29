@@ -42,6 +42,40 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
+#### 最優先（2026-08-29 追加・翌朝の自動タスクはここから取る）
+
+2026-08-29 02:30 の URL Inspection 実測で判明した積み残し。**上から順に処理する。**
+
+```
+https://www.noe-match.com/tools/sangokea-ryokin/
+https://www.noe-match.com/policy/editorial.html
+https://www.noe-match.com/disclaimer.html
+https://www.noe-match.com/articles/shussan-hiyou-data/
+https://www.noe-match.com/articles/shussan-ichijikin-data/
+https://www.noe-match.com/privacy-policy.html
+```
+
+**1本目 `/tools/sangokea-ryokin/` が最優先の理由。**
+2026-08-27 公開のデータバンク12本は 8/28 に申請して全て索引済みになったが、
+**このツールだけキューに載せ忘れていた**（上の「データバンク6本」の一覧に無い）。
+実測では `lastCrawlTime: null` ＝ Googleが一度もクロールしていない。
+sitemap には入っており内部リンクも29本（全ツール中最多）、canonical も robots も正常。
+純粋に申請漏れによるクロール待ちで、構造的な問題ではない。
+さらにこのURLは **note予約記事2本（9/11 19:00 産後ケア料金／9/12 07:00 産後ケア日数）の
+着地先**なので、9/11 までに索引に入っていないと送客先が検索から見えない。
+
+**2〜3本目（editorial.html / disclaimer.html）の理由。**
+どちらも `URL is unknown to Google`。編集方針と免責事項は E-E-A-T の土台で、
+本来サイト内で最も早く索引されるべき種類のページ。disclaimer.html は内部リンクが
+255本ありながら未発見で、放置する理由がない。
+
+**4〜5本目**は 2026-08-27 公開のデータ記事だが、上の「データバンク6本」の枠から漏れていた。
+
+なお 2026-08-29 02:35 時点で、上記6本すべて IndexNow へ送信済み（HTTP 200）。
+IndexNow は Bing / Yandex には効くが Google には効かない。当サイトは Copilot 経由の
+流入が実在する（直近30日10セッション・滞在128秒）ため、Bing 側の索引にも意味がある。
+
+
 #### 2026-08-27 公開のデータバンク6本（器具＋記事・最優先）
 
 ツールとデータ記事は1本あたりの流入が通常記事の5倍前後（ツール1.41／データ記事1.28／通常0.24
