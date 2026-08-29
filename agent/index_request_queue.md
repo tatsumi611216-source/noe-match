@@ -53,7 +53,12 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 [済 8/29] https://www.noe-match.com/articles/shussan-hiyou-data/
 [済 8/29] https://www.noe-match.com/articles/shussan-ichijikin-data/
 [済 8/29] https://www.noe-match.com/privacy-policy.html
+https://www.noe-match.com/articles/uwaki-chousa-kiso/
 ```
+
+（uwaki-chousa-kiso は 2026-08-29 の実測で「Crawled - currently not indexed」かつ
+申請記録なしと判明。クロール済み未索引は申請で入る見込みが薄い型だが、枠が余る日に
+低優先で出す。入らなければ品質側の保留として扱い、再申請はしない）
 
 **6本すべて申請成功（2026-08-29 夜・手動実行）。割り当て上限には到達していない。**
 
