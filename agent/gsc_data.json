@@ -1,8 +1,8 @@
 {
- "fetched_at": "2026-08-28T22:38:39",
+ "fetched_at": "2026-08-29T22:36:20",
  "period": {
-  "start": "2026-07-29",
-  "end": "2026-08-26"
+  "start": "2026-07-30",
+  "end": "2026-08-27"
  },
  "by_query_page": [
   {
@@ -25,8 +25,8 @@
    "query": "with 結婚率",
    "page": "https://www.noe-match.com/articles/with-seriousness-data/",
    "clicks": 1,
-   "impressions": 35,
-   "ctr": 0.0286,
+   "impressions": 34,
+   "ctr": 0.0294,
    "position": 7.5
   },
   {
@@ -716,14 +716,6 @@
    "impressions": 1,
    "ctr": 0,
    "position": 42
-  },
-  {
-   "query": "バチェラーデート 結婚",
-   "page": "https://www.noe-match.com/articles/bachelor-date-guide/",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 57
   },
   {
    "query": "バツイチ アプリ",
@@ -1702,14 +1694,6 @@
    "position": 72
   },
   {
-   "query": "ユー ブライド 料金",
-   "page": "https://www.noe-match.com/articles/youbride-guide/",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 88
-  },
-  {
    "query": "ユーブライド",
    "page": "https://www.noe-match.com/articles/youbride-guide/",
    "clicks": 0,
@@ -2302,14 +2286,6 @@
    "position": 82
   },
   {
-   "query": "婚約期間 平均",
-   "page": "https://www.noe-match.com/articles/kekkon-madeno-kikan-data/",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 64
-  },
-  {
    "query": "子作り 準備 男",
    "page": "https://www.noe-match.com/articles/dansei-ninkatsu-guide/",
    "clicks": 0,
@@ -2489,9 +2465,9 @@
    "query": "新婚生活 引越し",
    "page": "https://www.noe-match.com/articles/shinkon-seikatsu-guide/",
    "clicks": 0,
-   "impressions": 16,
+   "impressions": 15,
    "ctr": 0,
-   "position": 18
+   "position": 17.7
   },
   {
    "query": "札幌 出会い アプリ",
@@ -2873,9 +2849,9 @@
    "query": "結婚 段取り",
    "page": "https://www.noe-match.com/articles/propose-guide/",
    "clicks": 0,
-   "impressions": 18,
+   "impressions": 16,
    "ctr": 0,
-   "position": 29.6
+   "position": 29.8
   },
   {
    "query": "結婚 生命保険 見直し",
@@ -2892,14 +2868,6 @@
    "impressions": 2,
    "ctr": 0,
    "position": 85
-  },
-  {
-   "query": "結婚 費用 平均",
-   "page": "https://www.noe-match.com/articles/kekkon-okane-data/",
-   "clicks": 0,
-   "impressions": 1,
-   "ctr": 0,
-   "position": 80
   },
   {
    "query": "結婚 転職 理由",
@@ -3182,12 +3150,6 @@
    "position": 11.2
   },
   {
-   "page": "https://www.noe-match.com/articles/kyoto-guide/",
-   "clicks": 4,
-   "impressions": 208,
-   "position": 37.8
-  },
-  {
    "page": "https://www.noe-match.com/tools/daredemo-tsuen-jichitai/",
    "clicks": 4,
    "impressions": 28,
@@ -3224,6 +3186,12 @@
    "position": 5.7
   },
   {
+   "page": "https://www.noe-match.com/articles/kyoto-guide/",
+   "clicks": 2,
+   "impressions": 202,
+   "position": 38.7
+  },
+  {
    "page": "https://www.noe-match.com/articles/mens-make-konkatsu/",
    "clicks": 2,
    "impressions": 28,
@@ -3242,12 +3210,6 @@
    "position": 9.2
   },
   {
-   "page": "https://www.noe-match.com/articles/with-seriousness-data/",
-   "clicks": 2,
-   "impressions": 102,
-   "position": 13.6
-  },
-  {
    "page": "https://www.noe-match.com/articles/appkon-wariai-data/",
    "clicks": 1,
    "impressions": 44,
@@ -3256,8 +3218,8 @@
   {
    "page": "https://www.noe-match.com/articles/bachelor-date-guide/",
    "clicks": 1,
-   "impressions": 26,
-   "position": 31
+   "impressions": 25,
+   "position": 30.0
   },
   {
    "page": "https://www.noe-match.com/articles/christmas-propose-gyakusan/",
@@ -3286,8 +3248,8 @@
   {
    "page": "https://www.noe-match.com/articles/kekkon-madeno-kikan-data/",
    "clicks": 1,
-   "impressions": 96,
-   "position": 12.9
+   "impressions": 95,
+   "position": 12.4
   },
   {
    "page": "https://www.noe-match.com/articles/konkatsu-roadmap/",
@@ -3306,12 +3268,6 @@
    "clicks": 1,
    "impressions": 21,
    "position": 21.6
-  },
-  {
-   "page": "https://www.noe-match.com/articles/omiai-guide/",
-   "clicks": 1,
-   "impressions": 26,
-   "position": 15.9
   },
   {
    "page": "https://www.noe-match.com/articles/pet-konkatsu/",
@@ -3336,6 +3292,12 @@
    "clicks": 1,
    "impressions": 2,
    "position": 30
+  },
+  {
+   "page": "https://www.noe-match.com/articles/with-seriousness-data/",
+   "clicks": 1,
+   "impressions": 100,
+   "position": 13.8
   },
   {
    "page": "https://www.noe-match.com/articles/youbride-seikon-data/",
@@ -3394,8 +3356,8 @@
   {
    "page": "https://www.noe-match.com/articles/amenohi-date-guide/",
    "clicks": 0,
-   "impressions": 14,
-   "position": 9.9
+   "impressions": 12,
+   "position": 10.4
   },
   {
    "page": "https://www.noe-match.com/articles/anti-fraud/",
@@ -3484,8 +3446,8 @@
   {
    "page": "https://www.noe-match.com/articles/engineer-guide/",
    "clicks": 0,
-   "impressions": 6,
-   "position": 26.2
+   "impressions": 5,
+   "position": 29.4
   },
   {
    "page": "https://www.noe-match.com/articles/enkyori-renai-guide/",
@@ -3646,8 +3608,8 @@
   {
    "page": "https://www.noe-match.com/articles/kekkon-okane-data/",
    "clicks": 0,
-   "impressions": 15,
-   "position": 18.9
+   "impressions": 14,
+   "position": 14.5
   },
   {
    "page": "https://www.noe-match.com/articles/kekkon-tenshoku-guide/",
@@ -3730,14 +3692,14 @@
   {
    "page": "https://www.noe-match.com/articles/nagoya-guide/",
    "clicks": 0,
-   "impressions": 116,
+   "impressions": 115,
    "position": 40.3
   },
   {
    "page": "https://www.noe-match.com/articles/nurse-guide/",
    "clicks": 0,
-   "impressions": 31,
-   "position": 44.8
+   "impressions": 30,
+   "position": 46.1
   },
   {
    "page": "https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/",
@@ -3758,6 +3720,12 @@
    "position": 23.9
   },
   {
+   "page": "https://www.noe-match.com/articles/omiai-guide/",
+   "clicks": 0,
+   "impressions": 25,
+   "position": 16.3
+  },
+  {
    "page": "https://www.noe-match.com/articles/omiai-vs-pairs/",
    "clicks": 0,
    "impressions": 18,
@@ -3766,8 +3734,8 @@
   {
    "page": "https://www.noe-match.com/articles/osaka-guide/",
    "clicks": 0,
-   "impressions": 125,
-   "position": 47.3
+   "impressions": 123,
+   "position": 47.9
   },
   {
    "page": "https://www.noe-match.com/articles/ouchi-date-guide/",
@@ -3814,8 +3782,8 @@
   {
    "page": "https://www.noe-match.com/articles/propose-guide/",
    "clicks": 0,
-   "impressions": 37,
-   "position": 32.5
+   "impressions": 35,
+   "position": 32.7
   },
   {
    "page": "https://www.noe-match.com/articles/saitama-chiba-guide/",
@@ -3850,8 +3818,8 @@
   {
    "page": "https://www.noe-match.com/articles/sapporo-guide/",
    "clicks": 0,
-   "impressions": 18,
-   "position": 24.4
+   "impressions": 13,
+   "position": 31.5
   },
   {
    "page": "https://www.noe-match.com/articles/satogaeri-shinai/",
@@ -3904,7 +3872,7 @@
   {
    "page": "https://www.noe-match.com/articles/shinkon-seikatsu-guide/",
    "clicks": 0,
-   "impressions": 25,
+   "impressions": 24,
    "position": 20.6
   },
   {
@@ -3952,8 +3920,8 @@
   {
    "page": "https://www.noe-match.com/articles/tokyo-guide/",
    "clicks": 0,
-   "impressions": 229,
-   "position": 44.6
+   "impressions": 228,
+   "position": 44.8
   },
   {
    "page": "https://www.noe-match.com/articles/uwaki-chousa-kiso/",
@@ -4042,8 +4010,8 @@
   {
    "page": "https://www.noe-match.com/articles/youbride-guide/",
    "clicks": 0,
-   "impressions": 12,
-   "position": 72
+   "impressions": 11,
+   "position": 70.5
   },
   {
    "page": "https://www.noe-match.com/articles/youbride-marrish-hikaku/",
