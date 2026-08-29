@@ -47,13 +47,15 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 2026-08-29 02:30 の URL Inspection 実測で判明した積み残し。**上から順に処理する。**
 
 ```
-https://www.noe-match.com/tools/sangokea-ryokin/
-https://www.noe-match.com/policy/editorial.html
-https://www.noe-match.com/disclaimer.html
-https://www.noe-match.com/articles/shussan-hiyou-data/
-https://www.noe-match.com/articles/shussan-ichijikin-data/
-https://www.noe-match.com/privacy-policy.html
+[済 8/29] https://www.noe-match.com/tools/sangokea-ryokin/
+[済 8/29] https://www.noe-match.com/policy/editorial.html
+[済 8/29] https://www.noe-match.com/disclaimer.html
+[済 8/29] https://www.noe-match.com/articles/shussan-hiyou-data/
+[済 8/29] https://www.noe-match.com/articles/shussan-ichijikin-data/
+[済 8/29] https://www.noe-match.com/privacy-policy.html
 ```
+
+**6本すべて申請成功（2026-08-29 夜・手動実行）。割り当て上限には到達していない。**
 
 **1本目 `/tools/sangokea-ryokin/` が最優先の理由。**
 2026-08-27 公開のデータバンク12本は 8/28 に申請して全て索引済みになったが、
@@ -670,3 +672,42 @@ nashikon-data は「2026-08-23 に申請する」節にも重複していたの�
 ### 8/28 に申請した10本の翌日の状態
 
 未確認（本タスクでは検査していない）。
+
+## 2026-08-29 夜 追加実行（手動・最優先6本）
+
+**6件すべて成功。割り当て上限には到達しなかった（残り本数の上限余力は未確認）。**
+同日朝8:19の自動タスクが11件で上限に達していたが、約11時間後に窓が回復していた。
+
+| # | URL | 申請前の状態 | 結果 |
+|---|-----|------|------|
+| 1 | /tools/sangokea-ryokin/ | 検出 - インデックス未登録 | ✅ 優先クロールキューに追加 |
+| 2 | /policy/editorial.html | URL が Google に認識されていません | ✅ |
+| 3 | /disclaimer.html | 検出 - インデックス未登録 | ✅ |
+| 4 | /articles/shussan-hiyou-data/ | 検出 - インデックス未登録 | ✅ |
+| 5 | /articles/shussan-ichijikin-data/ | 検出 - インデックス未登録 | ✅ |
+| 6 | /privacy-policy.html | 検出 - インデックス未登録 | ✅ |
+
+再試行・再申請・アカウント切替は行っていない。送信エラーは0件。
+**「最優先（2026-08-29 追加）」節は消化完了。** 残りの未申請は下記のとおり（21本）。
+
+### 残り（8/30以降・21本）
+
+- Day C 残り5本：price-comparison / privacy-protection / profile-text / renkatsu-vs-konkatsu / shinkyo-kagu-yosan
+- Day D 7本：usuge-konkatsu-eikyou / with-vs-pairs / garugaru-ki-itsumade / garugaru-otto-genkai / garugaru-sangoutsu-chigai / sango-iraira / shinseiji-menkai
+- 8/23節の改稿分 9本：kekkon-okane-data / shikijo-erabi-guide / gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide / omiai-guide / compare-popular
+- Fクラスタ残り：photo-tips / anti-fraud（他はDay Cと重複）
+- soudanjo-hikaku は対照群のため申請しない
+
+### 実測メモ：割り当ての回復は「翌朝」を待たなくてよい
+
+朝8:19に11件で上限 → **同日19時台に6件がすべて通った**。1日固定ではなく24時間移動窓という
+8/22の見立てを再度支持する。**朝の自動タスクで打ち切った分は、その日の夜に手動で拾える。**
+
+### 実測メモ：検索バーの操作で踏んだ罠（次回のために記録）
+
+1. **結果画面のままEnterを押すと「公開URLをテスト」が走る**（台帳8/25の記録どおり再現）。
+   1〜2分かかるうえ申請にならないので、キャンセルして**必ずサマリー画面に戻してから**入力し直す。
+   確実な手順は「サマリーへnavigate → find で検索バーのref取得 → クリック → 入力 → Enter」。
+2. **find で取ったrefは1回目のクリックで効かないことがある**（画面再描画でrefが陳腐化する）。
+   入力後に**スクリーンショットで文字が入ったことを確認してからEnter**を押すと空振りしない。
+   座標クリック（520,22）は効かなかった。refクリックが正。
