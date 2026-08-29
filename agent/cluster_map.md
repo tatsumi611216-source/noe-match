@@ -378,3 +378,61 @@ Cクラスタの属性群（看護師・公務員・エンジニア）が既にG
 ## ツール新設ゲート（2026-08-26制定）
 
 **新しいツールは `python scripts/tool_gate.py "<語>"` を通してから作る。** GO=作ってよい／NO-GO=作らない／CHECK=GoogleのSERPを目視してから判断。8/13の5本中4本が選定ミスで沈んだ再発防止。ゲートの判定根拠と限界はスクリプト冒頭のdocstringに記載。
+
+---
+
+## 2026-08-27〜29 の増援と割付（8/29追記）
+
+8/27のデータバンク一斉公開と8/29のクラスタ結線を、既存のクラスタ軸に割り付ける。
+**新しいクラスタは作っていない。** すべて既存クラスタの核の強化または増援である。
+
+### 割付
+
+| 新規資産（8/27〜29） | 帰属 | 位置づけ |
+|---|---|---|
+| `tools/seikonritsu-hikaku`（成婚率16社）＋ `articles/seikonritsu-data` | **E** | 核の強化。app-kekkonritsu-data と併存（結婚率の早見＝E核／成婚率の式検証＝新設。粒度が違う） |
+| `tools/app-kakin-hikaku`（アプリ料金8社）＋ `articles/app-ryokin-data` | **E** | 核の強化。「Web/アプリ内の差額」という検証系の切り口 |
+| `tools/soudanjo-hiyou-sim`（相談所総額10社）＋ `articles/soudanjo-hiyou-data` | **C** | **核の交代要員**。旧 soudanjo-simulator より検索される問い（総額いくら）に寄せた |
+| `tools/sangokea-ryokin`（産後ケア43自治体）＋ sangokea記事6本 | **A** | 増援。Aの制度面を担う（感情面は既存21本） |
+| `tools/byoji-hoiku-ryokin` ＋ `articles/byoji-hoiku-data` | **制度** | 子育て制度クラスタの2本目 |
+| `tools/kodomo-iryohi-jichitai` ＋ `articles/kodomo-iryohi-data` | **制度** | 同3本目 |
+| `tools/funin-josei-jichitai` ＋ `articles/funin-josei-data` | **制度** | 同4本目（Nの妊活とは別物。制度の一次データであり商品レビューではない） |
+| `tools/ikukyu-encho-hantei` | **制度** | 8/27新設の判定ツール |
+| `articles/shussan-hiyou-data` `shussan-ichijikin-data` `ikukyu-kyufukin-data` ほか公的統計3本 | **制度** | 出産・育休の一次データ |
+
+### 8/29に行った結線（wire_bank_clusters.py / wire_tool_family.py）
+
+1. **E**: スポーク8本（pairs/with真剣度/success-rate/youbride/zexy/marrish再婚/成婚体験談/ロードマップ）→ seikonritsu-hikaku へ接続
+2. **C**: soudanjo-hikaku / agency-vs-app / app-plus-agency → soudanjo-hiyou-sim へ接続
+3. **E**: compare-price / free-vs-paid → app-kakin-hikaku へ接続
+4. **制度＋A**: 制度ツール7本（病児/医療費/通園/産後ケア/不妊/育休延長/練馬点数）を相互結線。
+   横断クリックは `tool_cross`（from/to付き）で計測。不妊助成・育休延長・練馬点数には
+   ライフステージ上の理由で被リンクを張っていない（産後の読者に不妊助成は文脈違い）
+
+結線の完成度は `python scripts/cluster_audit.py`、バンクの鮮度は
+`python scripts/bank_freshness.py` で毎週金曜に見る（8/29新設・どちらも報告のみ）。
+
+### note 40本（8/29〜9/17予約済み）のクラスタ対応
+
+| note週 | 主な着地クラスタ | 本数 |
+|---|---|---|
+| 第1週（8/29〜9/4）婚活のお金 | C・E | 14 |
+| 第2週前半（9/5〜9/9）感情・構造 | C・A・B | 10 |
+| 制度週（9/10〜9/12） | 制度・A | 6 |
+| 家族とお金（9/13〜9/15） | C・B | 5 |
+| 季節・実務（9/15〜9/17） | B・J | 5 |
+
+### 計測の断絶（判定時の注意）
+
+- **tool_result は8/29以前の値を使わない**（初期表示で発火していた実装バグを8/29修正。
+  詳細は agent/knowledge.md）。9月中旬のA判定・バンク初動判定は8/30以降の値のみで読む
+- `tool_cross`（ツール間回遊）は8/29開始なので最初からきれいな値
+
+### 判定予定
+
+| 日 | 対象 |
+|---|---|
+| 9/3 | ガルガル結果直後CTAの配置実験（勝てば制度・E系ツールへ横展開） |
+| 9/8 | A8成果（C・Eの回収初動） |
+| 9/12 | note第1週SERP＋Eタイトル差し替え4本の効果＋tool_cross初動 |
+| 9月中旬 | A判定（表示200/月・LINE5/月）＋バンクツール6本のGSC初動 |
