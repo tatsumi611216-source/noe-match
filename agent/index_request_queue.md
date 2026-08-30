@@ -157,19 +157,19 @@ Googleが一度も認識していない（未認識）ものを先頭に置い�
 [済 8/29] https://www.noe-match.com/articles/nashikon-data/                    ← 検出済み・未クロール
 [済 8/29] https://www.noe-match.com/articles/pairs-men/                        ← 検出済み・未クロール
 [済 8/29] https://www.noe-match.com/articles/pairs-women/                      ← 検出済み・未クロール
-https://www.noe-match.com/articles/price-comparison/                 ← 検出済み・未クロール
-https://www.noe-match.com/articles/privacy-protection/               ← 検出済み・未クロール
-https://www.noe-match.com/articles/profile-text/                     ← 検出済み・未クロール
-https://www.noe-match.com/articles/renkatsu-vs-konkatsu/             ← 検出済み・未クロール
-https://www.noe-match.com/articles/shinkyo-kagu-yosan/               ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/price-comparison/                 ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/privacy-protection/               ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/profile-text/                     ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/renkatsu-vs-konkatsu/             ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/shinkyo-kagu-yosan/               ← 検出済み・未クロール
 ```
 
 **Day D（7本）**
 
 ```
-https://www.noe-match.com/articles/usuge-konkatsu-eikyou/            ← 検出済み・未クロール
-https://www.noe-match.com/articles/with-vs-pairs/                    ← 検出済み・未クロール
-https://www.noe-match.com/articles/garugaru-ki-itsumade/             ← Googleがこのページを認識していない
+[済 8/30] https://www.noe-match.com/articles/usuge-konkatsu-eikyou/            ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/with-vs-pairs/                    ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/garugaru-ki-itsumade/             ← Googleがこのページを認識していない
 https://www.noe-match.com/articles/garugaru-otto-genkai/             ← 検出済み・未クロール
 https://www.noe-match.com/articles/garugaru-sangoutsu-chigai/        ← 検出済み・未クロール
 https://www.noe-match.com/articles/sango-iraira/                     ← 検出済み・未クロール
@@ -365,8 +365,8 @@ youbride-guide / marrish-guide）は 8/23 の自動タスクの割り当て対�
 [済 8/25] https://www.noe-match.com/articles/with-women/
 [済 8/25] https://www.noe-match.com/articles/sakuhin-kachikan/
 [済 8/25] https://www.noe-match.com/articles/safety-guide/
-https://www.noe-match.com/articles/profile-text/
-https://www.noe-match.com/articles/privacy-protection/
+[済 8/30] https://www.noe-match.com/articles/profile-text/
+[済 8/30] https://www.noe-match.com/articles/privacy-protection/
 https://www.noe-match.com/articles/photo-tips/
 [済 8/29] https://www.noe-match.com/articles/pairs-women/
 [済 8/29] https://www.noe-match.com/articles/pairs-men/
@@ -727,3 +727,36 @@ IndexNow送信済み。GSCの申請枠は明朝の自動タスクを優先し、
 対象: with-seriousness-data / with-nenreiso-data / pairs-marriage-data /
 kekkon-madeno-kikan-data / success-rate-data / mens-make-konkatsu /
 hoikuen-tensu-nerima / kekkon-okane-data
+
+## 2026-08-30 実行結果（自動タスク）
+
+**8件成功・9件目「割り当て量を超えています」で打ち切り（残 17件）。**
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /articles/price-comparison/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/privacy-protection/ | ✅ 優先クロールキューに追加 |
+| 3 | /articles/profile-text/ | ✅ 優先クロールキューに追加 |
+| 4 | /articles/renkatsu-vs-konkatsu/ | ✅ 優先クロールキューに追加 |
+| 5 | /articles/shinkyo-kagu-yosan/ | ✅ 優先クロールキューに追加 |
+| 6 | /articles/usuge-konkatsu-eikyou/ | ✅ 優先クロールキューに追加 |
+| 7 | /articles/with-vs-pairs/ | ✅ 優先クロールキューに追加 |
+| 8 | /articles/garugaru-ki-itsumade/ | ✅ 優先クロールキューに追加 |
+| 9 | /articles/garugaru-otto-genkai/ | ❌「割り当て量を超えています」→ここで打ち切り |
+
+これで Day C（10本）は完了。Day D は 8本中1本のみ消化。
+8/29夜の手動6本が24時間窓に残っていたため、8件で上限に当たったと見られる。
+再試行・アカウント切替は行っていない。
+
+**残り17件（次回はここから上から順に）**
+
+- Day D 残り4本：garugaru-otto-genkai / garugaru-sangoutsu-chigai / sango-iraira / shinseiji-menkai
+- 8/23節の改稿分 10本：kekkon-okane-data / shikijo-erabi-guide / gosyugi-shiharai-houhou /
+  shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide / omiai-guide / compare-popular
+  ＋ kekkon-madeno-kikan-data（行末に「[済 8/23]」の記録あり・行頭マーク未付与。次回スキップ可否は要確認）
+- Fクラスタ残り2本：photo-tips / anti-fraud
+- 最優先枠の低優先1本：uwaki-chousa-kiso（クロール済み未索引・枠が余る日のみ）
+- soudanjo-hikaku は対照群のため申請しない
+
+※ 8/22・8/29の実測どおり割り当ては24時間移動窓で回復するため、
+本日分の残りは夜に手動で拾える見込み。
