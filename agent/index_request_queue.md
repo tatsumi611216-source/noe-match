@@ -695,6 +695,11 @@ nashikon-data は「2026-08-23 に申請する」節にも重複していたの�
 再試行・再申請・アカウント切替は行っていない。送信エラーは0件。
 **「最優先（2026-08-29 追加）」節は消化完了。** 残りの未申請は下記のとおり（21本）。
 
+#### 最優先（2026-08-30 追加）
+
+- https://www.noe-match.com/tools/hitorioya-shien-jichitai/ （ひとり親支援 東京23区ナビ・8/30公開）
+- https://www.noe-match.com/articles/hitorioya-shien-data/ （ひとり親支援データ記事・8/30公開）
+
 ### 残り（8/30以降・21本）
 
 - Day C 残り5本：price-comparison / privacy-protection / profile-text / renkatsu-vs-konkatsu / shinkyo-kagu-yosan

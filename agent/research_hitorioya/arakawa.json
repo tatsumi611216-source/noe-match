@@ -1,0 +1,63 @@
+{
+  "ward": "荒川区",
+  "checked": "2026-08-30",
+  "ikusei_teate": {
+    "exists": true,
+    "monthly": 13500,
+    "shogai_monthly": 15500,
+    "shotoku_seigen": "所得制限は令和8年6月分から改正（扶養0人:3,758,000円〜）。",
+    "note": "児童育成手当（東京都制度・所得制限あり）。区ページ実測で育成手当は児童1人につき月額13,500円（基準どおり）。18歳に達する日以後最初の3/31までの児童が対象。支給月は6月・10月・2月。ページ更新日2026年8月21日。障害手当（月15,500円・基準どおり）は同ページに記載、育成手当と両方の受給も可。参考: 児童扶養手当（国制度・別制度）は令和8年4月分から1人目の児童は全部支給48,050円・一部支給48,040円〜11,340円、2人目以降の加算は1人につき全部支給11,350円・一部支給11,340円〜5,680円。支給は奇数月（1・3・5・7・9・11月）の10日。所得制限あり（本人全部支給 扶養1人:1,070,000円等）。ページ更新日2026年7月1日",
+    "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/ikuseiteate.html",
+    "src_label": "児童育成手当（育成・障害）｜荒川区（児童扶養手当（国制度）情報は https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/fuyoteate.html を参照）"
+  },
+  "iryo_josei": {
+    "seido_name": "ひとり親家庭医療費助成（マル親）",
+    "futan": "住民税課税世帯は自己負担『定率1割』（自己負担限度額: 外来18,000円/月・年間上限144,000円、入院57,600円/月・多数回該当44,400円）、住民税非課税世帯は『自己負担なし』。",
+    "shotoku_seigen": "所得制限あり（本人 扶養1人:2,460,000円等）。",
+    "age_limit": "原文に児童の年齢要件の明記なし（本調査では未取得）。医療証の有効期限は毎年1/1〜12/31。",
+    "note": "ページ更新日2026年1月27日",
+    "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/iryohijosei.html",
+    "src_label": "ひとり親家庭医療費助成（マル親）｜荒川区"
+  },
+  "jutaku": {
+    "exists": true,
+    "seido_name": "ひとり親世帯等民間賃貸住宅入居支援事業／ひとり親家庭等転居支援補助金交付事業",
+    "kingaku": "(1)保証料補助: 保証料上限5万円、緊急連絡先引受契約料も初回保証料と合わせ上限5万円、更新保証料上限5万円・更新は最大4回。(2)転居支援補助金: 上限40万円（3人以上の児童を扶養する多子世帯は上限45万円）。",
+    "joken": "(1)区内在住1年以上・児童扶養手当受給者又は同等所得水準等の要件、区と協定を結ぶ保証会社との契約に限る。(2)区内→区内の民間賃貸住宅への転居、区内在住2年以上・母子父子自立支援員への事前相談必須・利用は一度限り。",
+    "note": "毎月の家賃補助（家賃助成・住宅手当）型の専用制度は区サイトで確認できず（検索語『荒川区 ひとり親 家賃 助成 補助』で確認。ヒットした家賃助成は高齢者向けのみ）。上記2制度は初期費用・保証料支援型。",
+    "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/hitorioyajuutaku.html",
+    "src_label": "ひとり親世帯等民間賃貸住宅入居支援事業｜荒川区（転居支援補助金は https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/hitorioyatenkyoshien.html ）"
+  },
+  "dokuji": [
+    {
+      "name": "ひとり親高等職業訓練促進給付金等事業",
+      "gaiyo": "看護師・保育士等の資格取得のため養成機関で修業する場合に支給される給付金（修業期間上限4年）。児童扶養手当受給者又は同等所得水準が対象。ページ更新日2026年8月24日",
+      "kingaku": "住民税非課税世帯は月額100,000円・課税世帯は月額70,500円（最終学年1年間は月額40,000円増額）。修了時に修了支援給付金（非課税50,000円・課税25,000円）。",
+      "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/shokugyokunren.html"
+    },
+    {
+      "name": "ひとり親自立支援教育訓練給付金事業",
+      "gaiyo": "就業のための教育訓練講座受講費用の給付金。",
+      "kingaku": "詳細金額は本調査では個別ページ未取得（ひとり親支援トップからのリンクで制度の存在を確認）。",
+      "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/shienkyoiku.html"
+    },
+    {
+      "name": "ひとり親家庭サポート事業",
+      "gaiyo": "求職活動・傷病・残業・ひとり親になって2年以内等の場合にベビーシッター又はホームヘルパーを派遣（1日2〜8時間・月5回まで）。ページ更新日2026年5月21日",
+      "kingaku": "2人世帯で年収518万円以下は費用負担なし、それ以外は1時間0円〜1,290円。",
+      "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/supportjigyo.html"
+    },
+    {
+      "name": "ひとり親家庭休養ホーム",
+      "gaiyo": "指定宿泊施設又は日帰り施設の利用料を助成。年度内どれか1回のみ。ページ更新日2025年11月6日",
+      "kingaku": "指定宿泊施設（清里高原ロッジ・ホテルグリーンパール那須）は上限3,000円、日帰り施設（あらかわ遊園等）は上限2,000円。",
+      "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/kyuyohome.html"
+    },
+    {
+      "name": "荒川区養育費に関する公正証書等作成促進補助金事業",
+      "gaiyo": "家庭相談等の事前相談後に養育費に関する公正証書・調停調書等を作成した場合、公証人手数料等の費用を補助。利用は一度限り。ページ更新日2025年8月25日",
+      "kingaku": "上限3万円。",
+      "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/youikuhi_kakuho.html"
+    }
+  ]
+}

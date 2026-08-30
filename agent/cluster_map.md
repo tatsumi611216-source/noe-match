@@ -368,6 +368,8 @@ Cクラスタの属性群（看護師・公務員・エンジニア）が既にG
 - 未着手の脚：①集客記事0本 ②note 0本 ③高単価アフィリなし（この領域は集客の脚と割り切る）。
 - **GSC申請（8/25実施）**：通園ナビ／料金記事／練馬保活ツール／産後リカバリー診断の4本を申請済み。**練馬保活ツールと産後リカバリー診断は、8/24時点の「検出-未登録」「Google未認識」から自力で登録済みに変わっていた**（申請しなくても入ることがある）。手順の落とし穴は `agent/index_request_queue.md` に記録。
 
+- **制度クラスタ5本目（2026-08-30）**: `tools/hitorioya-shien-jichitai` ＋ `articles/hitorioya-shien-data`（ひとり親支援・東京23区）。設計正本は `agent/hitorioya_cluster_plan.md`、データ正本は `scripts/_hitorioya_data.py`（生成は `scripts/build_hitorioya.py`）。離婚後の制度の一次データでありYMYLのL枠は消費しない。L6記事と `tools/rikongo-seikatsuhi` から結線し、kodomo-iryohi と TOOL-FAMILY で相互接続。
+
 ## 収益PDCAの自動化（2026-08-26設置）
 
 - **測定（C）**: 全261ページ＋ジェネレータに `aff_click` GA4イベントを注入（px.a8.net / t.afi-b.com へのクリックをデリゲーションで捕捉）。`noematch_ga4`（C30日次）が自動で積む。A8の確定成果だけは手動（asp_results.md・月1）

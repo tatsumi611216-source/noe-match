@@ -1,0 +1,57 @@
+{
+  "ward": "台東区",
+  "checked": "2026-08-29",
+  "ikusei_teate": {
+    "exists": true,
+    "monthly": 13500,
+    "shogai_monthly": 15500,
+    "shotoku_seigen": "「令和8年度（令和7年分）所得　扶養人数0人：3,838,000円未満／1人：4,218,000円未満／2人：4,598,000円未満／3人：4,978,000円未満／4人目以降：1人につき38万円加算　※所得制限額には、社会保険料控除相当額（8万円）を加算してあります。」（育成・障害共通）",
+    "note": "育成手当「児童1人につき13,500円」、障害手当「児童1人につき　15,500円」。障害手当ページに「※令和8年6月より額が改定されました」の注記あり。生HTML直接取得で数字を再確認済み。所得制限表は他区（3,758,000円）と異なり社会保険料控除相当8万円を加算した表記。",
+    "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/teate_josei/teate/jidoikuseiteate.html",
+    "src_label": "児童育成手当｜台東区（障害手当は https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/teate_josei/teate/shogaiteate.html）"
+  },
+  "iryo_josei": {
+    "seido_name": "ひとり親家庭等医療費助成（（親）医療証）",
+    "futan": "住民税課税世帯は「保険診療の1割分を自己負担金として医療機関窓口で支払ってください」。上限：個人・外来18,000円（年間144,000円）、個人・入院57,600円（多数回該当44,400円）、世帯合算57,600円。住民税非課税世帯は「保険診療の自己負担金が全額助成されます」（入院時食事療養費・生活療養費は対象外）。",
+    "shotoku_seigen": "令和7年度（令和6年分）所得：扶養人数0人＝父母または養育者2,160,000円未満／配偶者・扶養義務者2,440,000円未満（1人増すごとに38万円加算）。",
+    "age_limit": "「18歳になった最初の3月31日まで（身体に中度以上の障害がある場合は20歳未満）の児童を養育している父、母、または養育者とその児童」。",
+    "note": "課税世帯1割・上限あり／非課税世帯負担なしの基準形と一致。本人側の所得制限が2,160,000円と他区（2,080,000円）よりやや高い表記。",
+    "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/teate_josei/iryohijosei/hitorioya.html",
+    "src_label": "ひとり親家庭等医療費助成｜台東区"
+  },
+  "jutaku": {
+    "exists": true,
+    "seido_name": "高齢者等住み替え居住支援制度（ひとり親世帯を対象区分に明記）",
+    "kingaku": "「礼金・仲介手数料・引越し費用の合計額」を対象に最大15万円を助成（千円未満切り捨て）。あわせて家賃債務保証会社の「初回保証料の2分の1」助成（限度額：単身20,000円／2人30,000円／3人以上40,000円）。",
+    "joken": "「立ち退きにより転居する高齢者･障害者･ひとり親世帯の方」。ひとり親世帯の定義は「児童と同居し扶養する父又は母のみで構成される世帯」。",
+    "note": "月次の家賃補助は確認できた範囲では無い。転居時の初期費用（最大15万円）と保証料（1/2）の助成、および入居相談窓口の3本立て。",
+    "src": "https://www.city.taito.lg.jp/kenchiku/jutaku/sumai/yachinhojo/sumikae.html",
+    "src_label": "高齢者等住み替え居住支援制度｜台東区（保証料助成は https://www.city.taito.lg.jp/kenchiku/jutaku/sumai/yachinhojo/saimuhosho.html）"
+  },
+  "dokuji": [
+    {
+      "name": "ひとり親家庭ホームヘルプサービス",
+      "gaiyo": "区内在住・中学生までの子を扶養するひとり親家庭に、家事支援（料理・買い物・掃除・洗濯等）と育児支援（育児、保育園等の送迎）のヘルパーを派遣。年間120時間まで、1時間単位（午前7時〜午後7時）。",
+      "kingaku": "所得3,604,000円以下の世帯は無料。3,604,001円以上は1時間250〜1,290円（早朝・夜間は追加料金）。",
+      "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/hitorioya/home_help/home_help.html"
+    },
+    {
+      "name": "高等職業訓練促進給付金等事業",
+      "gaiyo": "就業に役立つ資格取得のため学校等に6ヶ月以上修学する場合の給付。対象は児童扶養手当受給者または同等所得水準の父・母。",
+      "kingaku": "訓練促進給付金（上限4年）：非課税世帯 月額15万円（12ヶ月未満は月額14万円）／課税世帯 月額7万500円（最終1年は月額11万500円）。訓練修了支援給付金：非課税5万円／課税2万5千円。",
+      "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/hitorioya/shugyou/shokugyou_kyufu.html"
+    },
+    {
+      "name": "自立支援教育訓練給付金事業",
+      "gaiyo": "就労を目的とした資格取得のため訓練講座等を受講する場合に受講料の一部を給付。",
+      "kingaku": "「講座受講に要する費用の最大60%を支給」。一般教育訓練講座等：1万2千円〜20万円。専門実践教育訓練講座：受講年数×40万円（最大4年160万円）。修了後就職者への加算給付：受講費用の25%（最大80万円）。",
+      "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/hitorioya/shugyou/kyouikukunren_kyufu.html"
+    },
+    {
+      "name": "母子生活支援施設（さくら荘）",
+      "gaiyo": "「さまざまな事情を抱え、子供の養育が十分にできない、18歳未満の子を養育する母子世帯」を対象に、生活・就労・養育などの相談・助言を行う入所施設。",
+      "kingaku": "金額記載なし（入所・相談支援）。",
+      "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/hitorioya/shisetsu/sakura_sou.html"
+    }
+  ]
+}
