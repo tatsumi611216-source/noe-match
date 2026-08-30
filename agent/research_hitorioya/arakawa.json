@@ -14,10 +14,11 @@
     "seido_name": "ひとり親家庭医療費助成（マル親）",
     "futan": "住民税課税世帯は自己負担『定率1割』（自己負担限度額: 外来18,000円/月・年間上限144,000円、入院57,600円/月・多数回該当44,400円）、住民税非課税世帯は『自己負担なし』。",
     "shotoku_seigen": "所得制限あり（本人 扶養1人:2,460,000円等）。",
-    "age_limit": "原文に児童の年齢要件の明記なし（本調査では未取得）。医療証の有効期限は毎年1/1〜12/31。",
+    "age_limit": "区公式ページ本文に児童の年齢要件の明記なし。医療証の有効期限は毎年1/1〜12/31。",
     "note": "ページ更新日2026年1月27日",
     "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/iryohijosei.html",
-    "src_label": "ひとり親家庭医療費助成（マル親）｜荒川区"
+    "src_label": "ひとり親家庭医療費助成（マル親）｜荒川区",
+    "qa_note": "年齢要件は原文に明記がなく本調査では未取得。"
   },
   "jutaku": {
     "exists": true,
@@ -38,8 +39,9 @@
     {
       "name": "ひとり親自立支援教育訓練給付金事業",
       "gaiyo": "就業のための教育訓練講座受講費用の給付金。",
-      "kingaku": "詳細金額は本調査では個別ページ未取得（ひとり親支援トップからのリンクで制度の存在を確認）。",
-      "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/shienkyoiku.html"
+      "kingaku": "詳細金額は確認できていない（ひとり親支援トップからのリンクで制度の存在を確認）。",
+      "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/shienkyoiku.html",
+      "qa_note": "詳細金額は本調査では個別ページ未取得。"
     },
     {
       "name": "ひとり親家庭サポート事業",

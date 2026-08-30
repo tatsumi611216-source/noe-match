@@ -1,66 +1,74 @@
 {
- "ward": "目黒区",
- "checked": "2026-08-29",
- "ikusei_teate": {
-   "exists": true,
-   "monthly": 13500,
-   "shogai_monthly": 15500,
-   "shotoku_seigen": "児童育成手当は、申請者の所得に制限があります。令和7年度（令和7年6月分）手当より、所得制限額が57,000円引き上げられました。（具体的な限度額は別掲の「子どものための諸手当各種所得制限限度額表」を参照する必要があり、本ページ本文中には数値の直接記載を確認できなかった）",
-   "note": "支給額のうち育成手当（児童1人につき月額13,500円）は基準アンカーと一致。障害手当は区ページの原文表記が「月額15,500円（児童1人につき）」であり、基準アンカーの月15,900円と不一致。金額は原文のまま記録した（修正していない）。",
-   "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/ikuseiteate.html", "src_label": "児童育成手当 | 目黒区"
- },
- "iryo_josei": {
-   "seido_name": "ひとり親家庭等医療費助成制度",
-   "futan": "「対象者には『ひとり親家庭等医療証』を交付します。医療機関等で、健康保険の対象となる診療または投薬を受けた時の自己負担分の一部または全部を助成します」（区報PDFにも同旨で「医療費（保険診療）の自己負担分（一部または全部）を助成します」とあり）。通院・入院別の負担割合や、住民税課税世帯＝1割負担（上限あり）・非課税世帯＝負担なし、といった基準アンカーに相当する具体的な数値・区分は、確認できた区公式ページ（josei.html）およびめぐろ区報PDF（2024年10月15日号）の本文には記載が見当たらなかった。",
-   "shotoku_seigen": "「申請者および同居の扶養義務者の所得が一定以上の場合は対象外となります」。令和7年1月から申請者本人の所得制限額が改正され、区報PDF記載の表では、扶養人数0人＝改正前192万円→改正後208万円、1人＝改正前230万円→改正後246万円、2人＝改正前268万円→改正後284万円（以下、扶養人数が1人増すごとに38万円を加算）。",
-   "age_limit": "18歳に達する日の以後の最初の3月31日までの児童（20歳未満で中度以上の障害がある児童を含む）。※めぐろ区報PDF（2024/10/15号）では「18歳到達後最初の3月31日まで。中度以上の障害がある場合は19歳まで」との記載もあり、ページ間で年齢上限の表現に差異がある（19歳までか20歳未満かは原文のまま両方記録）。",
-   "note": "自己負担の具体的な割合（1割負担・上限額）や住民税非課税世帯の扱いについて、city.meguro.tokyo.jpの本文（josei.html、jidofuyo_hitorioyairyo_kaisei2024.html、区報PDF）のいずれにも数値の明記を確認できなかったため、原文で得られた範囲のみを記録し、詳細部分は非公表とする。",
-   "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/josei.html", "src_label": "ひとり親家庭等医療費助成制度 | 目黒区"
- },
- "jutaku": {
-   "exists": true,
-   "seido_name": "居住支援制度（家賃等債務保証料の助成）",
-   "kingaku": "「新規契約時及び初回更新時の保証料の一部（いずれも上限20,000円）を助成します。」",
-   "joken": "対象世帯の一つとして「ひとり親世帯」が明記されている（対象世帯は高齢者世帯・障害者世帯・ひとり親世帯・火災等り災世帯）。ひとり親世帯の定義は「扶養する18歳未満の子とひとり親だけの世帯」。まず「民間賃貸住宅の情報提供」の対象世帯として決定されたうえで、賃貸借契約にあたり保証会社を利用した場合に保証料の一部を助成する仕組み。問い合わせ先：住宅課 居住支援係（03-5722-9878）。",
-   "note": "これは月額の家賃そのものへの補助ではなく、入居時の保証料（初期費用）に対する助成である点に注意。別途「ファミリー世帯家賃助成」（月額20,000円、18歳未満の子を扶養する世帯が対象でひとり親世帯限定ではないが、応募多数時の公開抽せんでひとり親世帯は当せん倍率が2倍になる優遇あり）が存在するが、こちらはひとり親専用制度ではない。ひとり親を対象属性として明記した独自制度は居住支援制度（保証料助成）のみ確認できた。",
-   "src": "https://www.city.meguro.tokyo.jp/juutaku/kurashi/sumai/kyojusien.html", "src_label": "居住支援制度 | 目黒区"
- },
- "dokuji": [
-   {
-     "name": "ひとり親家庭ホームヘルプサービス",
-     "gaiyo": "「就業、職業訓練、求職活動、傷病、看護、介護等の理由により保育が困難な場合にホームヘルパーを派遣」する制度。",
-     "kingaku": "非公表（本文中に利用料・助成額の具体的記載を確認できず、ページ詳細を未取得のため。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/homehelp.html）",
-     "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/homehelp.html"
-   },
-   {
-     "name": "ひとり親家庭高等職業訓練促進給付金",
-     "gaiyo": "「資格取得のための修業訓練中における生活の負担の軽減」を目的とした給付金。",
-     "kingaku": "非公表（金額の原文確認のためページ詳細を未取得。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/hitorioyakateikunnrennsokusinnhi.html）",
-     "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/hitorioyakateikunnrennsokusinnhi.html"
-   },
-   {
-     "name": "ひとり親家庭自立支援教育訓練給付金",
-     "gaiyo": "「雇用保険の教育訓練制度の指定訓練講座受講終了時に講座受講料の60パーセント相当額を支給」する制度。",
-     "kingaku": "講座受講料の60パーセント相当額（原文表記。上限額の記載は本文からは未確認）",
-     "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/kunrenkyufu.html"
-   },
-   {
-     "name": "母子及び父子福祉資金の貸付",
-     "gaiyo": "「入学や修学、技能習得など自立に必要な資金（無利子又は利率1パーセント）」を貸し付ける制度。給付ではなく貸付のため、本設問の趣旨（給付以外の貸付は対象外）に照らすと参考情報扱い。",
-     "kingaku": "非公表（貸付制度のため金額は用途・種類により異なり、本文からは一律の額を確認できず）",
-     "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/kashitsuke.html"
-   },
-   {
-     "name": "養育費確保支援事業",
-     "gaiyo": "離婚に伴う養育費の取り決め・確保を支援する事業（公正証書作成費用の補助等が想定されるが、本文詳細は未取得）。",
-     "kingaku": "非公表（ページ詳細を未取得のため。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/r31001youikuhi.html）",
-     "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/r31001youikuhi.html"
-   },
-   {
-     "name": "居住支援制度（家賃等債務保証料の助成）",
-     "gaiyo": "民間賃貸住宅への転居を希望するひとり親世帯等に対し、賃貸借契約時の保証会社利用に係る保証料の一部を助成する制度（住宅費助成の項と同一制度のため参考掲載）。",
-     "kingaku": "新規契約時及び初回更新時の保証料の一部（いずれも上限20,000円）",
-     "src": "https://www.city.meguro.tokyo.jp/juutaku/kurashi/sumai/kyojusien.html"
-   }
- ]
+  "ward": "目黒区",
+  "checked": "2026-08-29",
+  "ikusei_teate": {
+    "exists": true,
+    "monthly": 13500,
+    "shogai_monthly": 15500,
+    "shotoku_seigen": "児童育成手当は、申請者の所得に制限があります。令和7年度（令和7年6月分）手当より、所得制限額が57,000円引き上げられました。（具体的な限度額は別掲の「子どものための諸手当各種所得制限限度額表」を参照する必要があり、本ページ本文中には数値の直接記載を確認できなかった）",
+    "note": "育成手当は児童1人につき月額13,500円。障害手当は区ページの原文表記が「月額15,500円（児童1人につき）」（区公式ページで確認・2026年8月時点）。",
+    "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/ikuseiteate.html",
+    "src_label": "児童育成手当 | 目黒区",
+    "qa_note": "育成手当は基準アンカーと一致。障害手当は基準アンカーの月15,900円と不一致。金額は原文のまま記録した（修正していない）。"
+  },
+  "iryo_josei": {
+    "seido_name": "ひとり親家庭等医療費助成制度",
+    "futan": "「対象者には『ひとり親家庭等医療証』を交付します。医療機関等で、健康保険の対象となる診療または投薬を受けた時の自己負担分の一部または全部を助成します」（区報PDFにも同旨で「医療費（保険診療）の自己負担分（一部または全部）を助成します」とあり）。通院・入院別の負担割合や、住民税課税世帯＝1割負担（上限あり）・非課税世帯＝負担なし、といった具体的な数値・区分は、確認できた区公式ページ（josei.html）およびめぐろ区報PDF（2024年10月15日号）の本文には記載が見当たらなかった。",
+    "shotoku_seigen": "「申請者および同居の扶養義務者の所得が一定以上の場合は対象外となります」。令和7年1月から申請者本人の所得制限額が改正され、区報PDF記載の表では、扶養人数0人＝改正前192万円→改正後208万円、1人＝改正前230万円→改正後246万円、2人＝改正前268万円→改正後284万円（以下、扶養人数が1人増すごとに38万円を加算）。",
+    "age_limit": "18歳に達する日の以後の最初の3月31日までの児童（20歳未満で中度以上の障害がある児童を含む）。※めぐろ区報PDF（2024/10/15号）では「18歳到達後最初の3月31日まで。中度以上の障害がある場合は19歳まで」との記載もあり、ページ間で年齢上限の表現に差異がある（19歳までか20歳未満かは原文のまま両方記録）。",
+    "note": "自己負担の具体的な割合（1割負担・上限額）や住民税非課税世帯の扱いは、区公式ページ（josei.html、jidofuyo_hitorioyairyo_kaisei2024.html、区報PDF）のいずれにも数値の明記を確認できなかった。詳細は区への確認が必要。",
+    "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/josei.html",
+    "src_label": "ひとり親家庭等医療費助成制度 | 目黒区",
+    "qa_note": "基準アンカー（課税世帯1割負担・上限あり／非課税世帯負担なし）に相当する数値・区分の明記を確認できなかったため、原文で得られた範囲のみを記録し、詳細部分は非公表とする。"
+  },
+  "jutaku": {
+    "exists": true,
+    "seido_name": "居住支援制度（家賃等債務保証料の助成）",
+    "kingaku": "「新規契約時及び初回更新時の保証料の一部（いずれも上限20,000円）を助成します。」",
+    "joken": "対象世帯の一つとして「ひとり親世帯」が明記されている（対象世帯は高齢者世帯・障害者世帯・ひとり親世帯・火災等り災世帯）。ひとり親世帯の定義は「扶養する18歳未満の子とひとり親だけの世帯」。まず「民間賃貸住宅の情報提供」の対象世帯として決定されたうえで、賃貸借契約にあたり保証会社を利用した場合に保証料の一部を助成する仕組み。問い合わせ先：住宅課 居住支援係（03-5722-9878）。",
+    "note": "これは月額の家賃そのものへの補助ではなく、入居時の保証料（初期費用）に対する助成である点に注意。別途「ファミリー世帯家賃助成」（月額20,000円、18歳未満の子を扶養する世帯が対象でひとり親世帯限定ではないが、応募多数時の公開抽せんでひとり親世帯は当せん倍率が2倍になる優遇あり）が存在するが、こちらはひとり親専用制度ではない。ひとり親を対象属性として明記した独自制度は居住支援制度（保証料助成）のみ確認できた。",
+    "src": "https://www.city.meguro.tokyo.jp/juutaku/kurashi/sumai/kyojusien.html",
+    "src_label": "居住支援制度 | 目黒区"
+  },
+  "dokuji": [
+    {
+      "name": "ひとり親家庭ホームヘルプサービス",
+      "gaiyo": "「就業、職業訓練、求職活動、傷病、看護、介護等の理由により保育が困難な場合にホームヘルパーを派遣」する制度。",
+      "kingaku": "非公表（本文中に利用料・助成額の具体的記載を確認できず。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/homehelp.html）",
+      "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/homehelp.html",
+      "qa_note": "ページ詳細を未取得のため非公表。"
+    },
+    {
+      "name": "ひとり親家庭高等職業訓練促進給付金",
+      "gaiyo": "「資格取得のための修業訓練中における生活の負担の軽減」を目的とした給付金。",
+      "kingaku": "非公表（金額の明記を区ページ本文で確認できず。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/hitorioyakateikunnrennsokusinnhi.html）",
+      "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/hitorioyakateikunnrennsokusinnhi.html",
+      "qa_note": "金額の原文確認のためページ詳細を未取得。"
+    },
+    {
+      "name": "ひとり親家庭自立支援教育訓練給付金",
+      "gaiyo": "「雇用保険の教育訓練制度の指定訓練講座受講終了時に講座受講料の60パーセント相当額を支給」する制度。",
+      "kingaku": "講座受講料の60パーセント相当額（原文表記。上限額の記載は本文からは未確認）",
+      "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/kunrenkyufu.html"
+    },
+    {
+      "name": "母子及び父子福祉資金の貸付",
+      "gaiyo": "「入学や修学、技能習得など自立に必要な資金（無利子又は利率1パーセント）」を貸し付ける制度。給付ではなく貸付のため、本設問の趣旨（給付以外の貸付は対象外）に照らすと参考情報扱い。",
+      "kingaku": "非公表（貸付制度のため金額は用途・種類により異なり、本文からは一律の額を確認できず）",
+      "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/kashitsuke.html"
+    },
+    {
+      "name": "養育費確保支援事業",
+      "gaiyo": "離婚に伴う養育費の取り決め・確保を支援する事業。",
+      "kingaku": "非公表（区ページ本文で金額を確認できず。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/r31001youikuhi.html）",
+      "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/r31001youikuhi.html",
+      "qa_note": "公正証書作成費用の補助等が想定されるが、ページ詳細を未取得のため本文詳細・金額は非公表。"
+    },
+    {
+      "name": "居住支援制度（家賃等債務保証料の助成）",
+      "gaiyo": "民間賃貸住宅への転居を希望するひとり親世帯等に対し、賃貸借契約時の保証会社利用に係る保証料の一部を助成する制度（住宅費助成の項と同一制度のため参考掲載）。",
+      "kingaku": "新規契約時及び初回更新時の保証料の一部（いずれも上限20,000円）",
+      "src": "https://www.city.meguro.tokyo.jp/juutaku/kurashi/sumai/kyojusien.html"
+    }
+  ]
 }

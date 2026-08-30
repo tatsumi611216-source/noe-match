@@ -267,16 +267,26 @@ def table_sources():
 
 
 # ---------- ツール用 JS データ ----------
+def strip_qa(x):
+    """qa_note（内部QA用フィールド）を再帰的に除去する。
+    qa_note は実査・検算の内部記録であり、読者向けHTMLには一切出さない。"""
+    if isinstance(x, dict):
+        return {k: strip_qa(v) for k, v in x.items() if k != "qa_note"}
+    if isinstance(x, list):
+        return [strip_qa(v) for v in x]
+    return x
+
+
 def js_data():
     out = {}
     for w in WARDS:
         key = KEYS[w["ward"]]
         out[key] = {
             "key": key, "name": w["ward"], "checked": checked_jp(w["checked"]),
-            "ikusei": w["ikusei_teate"], "iryo": w["iryo_josei"],
+            "ikusei": strip_qa(w["ikusei_teate"]), "iryo": strip_qa(w["iryo_josei"]),
             "med_ok": med_ok(w),
-            "jutaku": w["jutaku"], "jutaku_type": TYPE_MAP[key],
-            "dokuji": w["dokuji"],
+            "jutaku": strip_qa(w["jutaku"]), "jutaku_type": TYPE_MAP[key],
+            "dokuji": strip_qa(w["dokuji"]),
         }
     return json.dumps(out, ensure_ascii=False, separators=(",", ":"))
 
@@ -626,15 +636,36 @@ ART_HTML = """<!DOCTYPE html>
 """
 
 
+# ---------- 禁止語リント（測定器・2026-08-30 検品BLOCK①を受けて恒久化） ----------
+# 内部作業メモの語が生成HTMLへ漏れたらビルドを失敗させる。
+# 検出したら、直すのは上流 agent/research_hitorioya/*.json 側
+# （読者向け注記を note に・内部QAは qa_note に書く）。リストを緩めて通さない。
+FORBIDDEN = ["検算アンカー", "基準アンカー", "本タスク", "指示の", "WebFetch",
+             "本調査", "未取得", "取り込む", "qa_note"]
+
+
+def lint(name, content):
+    hits = []
+    for t in FORBIDDEN:
+        i = content.find(t)
+        if i >= 0:
+            hits.append("%s（…%s…）" % (t, content[max(0, i - 30):i + len(t) + 30].replace("\n", " ")))
+    if hits:
+        raise SystemExit("禁止語リントFAIL: %s に内部文言が漏れている:\n  %s\n"
+                         "→ 上流 agent/research_hitorioya/*.json の note/qa_note を直して再生成すること"
+                         % (name, "\n  ".join(hits)))
+
+
 def main():
     for path, content in [
         (os.path.join(BASE, "tools", "hitorioya-shien-jichitai", "index.html"), TOOL_HTML),
         (os.path.join(BASE, "articles", "hitorioya-shien-data", "index.html"), ART_HTML),
     ]:
+        lint(os.path.relpath(path, BASE), content)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8", newline="\n") as f:
             f.write(content)
-        print("wrote %s (%d bytes)" % (os.path.relpath(path, BASE), len(content.encode("utf-8"))))
+        print("wrote %s (%d bytes) — 禁止語リントPASS" % (os.path.relpath(path, BASE), len(content.encode("utf-8"))))
 
 
 if __name__ == "__main__":
