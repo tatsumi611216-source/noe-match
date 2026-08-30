@@ -126,6 +126,7 @@ def build_hiyou():
 <h2 id="related">関連する記事とツール</h2>
 <ul>
 <li><a href="/articles/shussan-ichijikin-data/">出産育児一時金は50万円のまま？内訳・改定の履歴・現物給付化の法改正</a></li>
+<li><a href="/articles/shussan-iryohi-koujo/">出産費用の医療費控除はいくら？一時金を引いた残りを都道府県別に計算</a></li>
 <li><a href="/articles/sangokea-josei/">産後ケアの助成はいくら？非課税世帯の減免と所得を問わない減額枠</a></li>
 <li><a href="/articles/sangokea-nankai/">産後ケアは何回使える？43自治体の上限一覧</a></li>
 <li><a href="/tools/ikukyu-encho-hantei/">育休はいつまで延長できる？条件と必要書類の判定</a></li>
@@ -249,6 +250,7 @@ def build_ichijikin():
 <h2 id="related">関連する記事とツール</h2>
 <ul>
 <li><a href="/articles/shussan-hiyou-data/">出産費用の平均はいくら？都道府県別・費目別の実額</a></li>
+<li><a href="/articles/shussan-iryohi-koujo/">出産費用の医療費控除はいくら？一時金を引いた残りを都道府県別に計算</a></li>
 <li><a href="/articles/sangokea-josei/">産後ケアの助成はいくら？非課税世帯の減免と所得を問わない減額枠</a></li>
 <li><a href="/articles/sangokea-nankai/">産後ケアは何回使える？43自治体の上限一覧</a></li>
 <li><a href="/tools/ikukyu-encho-hantei/">育休はいつまで延長できる？条件と必要書類の判定</a></li>
@@ -421,6 +423,7 @@ def build_mushouka():
 <h2 id="related">関連する記事とツール</h2>
 <ul>
 <li><a href="/articles/shussan-hiyou-data/">出産費用の平均はいくら？都道府県別・費目別の実額</a></li>
+<li><a href="/articles/shussan-iryohi-koujo/">出産費用の医療費控除はいくら？一時金を引いた残りを都道府県別に計算</a></li>
 <li><a href="/articles/shussan-ichijikin-data/">出産育児一時金は50万円｜内訳・受け取り方・改定の履歴</a></li>
 <li><a href="/articles/sangokea-josei/">産後ケアの助成はいくら？非課税世帯の減免と所得を問わない減額枠</a></li>
 <li><a href="/articles/sangokea-nankai/">産後ケアは何回使える？43自治体の上限一覧</a></li>

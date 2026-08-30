@@ -22,8 +22,18 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 
-BANKS = ["_seikonritsu_data", "_soudanjo_hiyou_data", "_app_ryokin_data",
-         "_byoji_funin_data", "_kodomo_iryo_data", "_daretsu_data", "_sangocare_data"]
+def banks():
+    """scripts/_*_data.py を自動で拾う。
+
+    手で並べたリストにしていたら、8/30に新設した _hitorioya_data が
+    載らないまま「再確認対象0本」と報告していた（8/31発見）。
+    バンクを増やしたことを人が覚えていないと監視から漏れる作りにしない。
+    """
+    import glob
+    out = []
+    for p in sorted(glob.glob(os.path.join(ROOT, "scripts", "_*_data.py"))):
+        out.append(os.path.splitext(os.path.basename(p))[0])
+    return out
 
 WARN_DAYS = 30
 
@@ -37,7 +47,7 @@ def main():
     today = datetime.date.today()
     stale = []
     print("バンク鮮度（今日: %s / 警告しきい値: %d日）" % (today, WARN_DAYS))
-    for name in BANKS:
+    for name in banks():
         mod = importlib.import_module(name)
         d = parse_date(getattr(mod, "CHECKED", ""))
         if not d:
