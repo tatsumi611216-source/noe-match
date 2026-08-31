@@ -881,3 +881,15 @@ soudanjo-hikaku は対照群ルールどおり申請していない。
 2回目で入った。**navigate を挟んだ直後だけ click→type を2回打つ**のが確実。
 スクリーンショットで入力を確認してから Enter を押す手順は今回も誤検査ゼロ。
 
+---
+
+## 2026-08-31 週次生成分（nagano-guide / kagoshima-guide）
+
+新規公開2本をインデックス申請キューに追加。
+
+| # | URL | 状態 |
+|---|-----|------|
+| 1 | /articles/nagano-guide/ | 未申請 |
+| 2 | /articles/kagoshima-guide/ | 未申請 |
+
+申請タイミング：手動でSearch Console「URL検査」から実施する。24時間窓の残枠があるタイミングで。
