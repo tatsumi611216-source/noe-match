@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-08-29T02:27:19+00:00",
+ "fetched_at": "2026-08-31T16:09:17+00:00",
  "results": {
   "https://www.noe-match.com/": {
    "checked_at": "2026-08-29T02:12:28+00:00",
@@ -1237,6 +1237,23 @@
    "userCanonical": "https://www.noe-match.com/articles/hitomishiri-guide/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/articles/hitorioya-shien-data/": {
+   "checked_at": "2026-08-31T16:08:07+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/hitorioya-shien-data/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=iFtqfps-S-_73luvKSvkKQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-08-30T01:26:35Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap-all.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/articles/hitorioya-shien-data/",
+   "verdict": "PASS"
+  },
   "https://www.noe-match.com/articles/ikukyu-fuufu-doji/": {
    "checked_at": "2026-08-28T14:01:59+00:00",
    "coverageState": "Submitted and indexed",
@@ -1534,6 +1551,21 @@
     "https://www.noe-match.com/sitemap.xml"
    ],
    "userCanonical": "https://www.noe-match.com/articles/kekkon-okane-data/",
+   "verdict": "PASS"
+  },
+  "https://www.noe-match.com/articles/kekkon-shinseikatsu-data/": {
+   "checked_at": "2026-08-31T16:09:06+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/kekkon-shinseikatsu-data/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=NzX5Xle3cthWnIATPQwQ2g&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-08-31T14:50:02Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": null,
+   "userCanonical": "https://www.noe-match.com/articles/kekkon-shinseikatsu-data/",
    "verdict": "PASS"
   },
   "https://www.noe-match.com/articles/kekkon-sokou-chousa/": {
@@ -3015,6 +3047,41 @@
    "userCanonical": "https://www.noe-match.com/articles/sango-taikei-itsu-modoru/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/articles/sangokea-higaeri/": {
+   "checked_at": "2026-08-31T16:07:52+00:00",
+   "coverageState": "URL is unknown to Google",
+   "crawledAs": null,
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=_S-HyBp7GJtp8KhfXqalWg&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": null,
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
+  },
+  "https://www.noe-match.com/articles/sangokea-houmon/": {
+   "checked_at": "2026-08-31T16:08:00+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/sangokea-houmon/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=9MfFyow0A6qh4ArqNBEvTQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-08-29T07:53:40Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": [
+    "https://www.noe-match.com/sitemap-all.xml",
+    "https://www.noe-match.com/tools/sangokea-ryokin/"
+   ],
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap-all.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/articles/sangokea-houmon/",
+   "verdict": "PASS"
+  },
   "https://www.noe-match.com/articles/sangokea-josei/": {
    "checked_at": "2026-08-28T14:06:35+00:00",
    "coverageState": "Submitted and indexed",
@@ -3438,6 +3505,21 @@
    "sitemap": null,
    "userCanonical": null,
    "verdict": "NEUTRAL"
+  },
+  "https://www.noe-match.com/articles/shussan-iryohi-koujo/": {
+   "checked_at": "2026-08-31T16:08:22+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/shussan-iryohi-koujo/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=whZ7QYPGOzRU0MTNY01IPg&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-08-31T00:15:11Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": null,
+   "userCanonical": "https://www.noe-match.com/articles/shussan-iryohi-koujo/",
+   "verdict": "PASS"
   },
   "https://www.noe-match.com/articles/shussan-mushouka/": {
    "checked_at": "2026-08-28T14:07:36+00:00",
@@ -4269,6 +4351,23 @@
    "userCanonical": "https://www.noe-match.com/tools/garugaru-check/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/tools/hitorioya-shien-jichitai/": {
+   "checked_at": "2026-08-31T16:08:15+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/tools/hitorioya-shien-jichitai/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=fjyl4WLo1OavryQAV6itLQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-08-30T01:26:35Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": [
+    "https://www.noe-match.com/articles/hitorioya-shien-data/"
+   ],
+   "robotsTxtState": "ALLOWED",
+   "sitemap": null,
+   "userCanonical": "https://www.noe-match.com/tools/hitorioya-shien-jichitai/",
+   "verdict": "PASS"
+  },
   "https://www.noe-match.com/tools/hoikuen-tensu-nerima/": {
    "checked_at": "2026-08-28T14:05:43+00:00",
    "coverageState": "Submitted and indexed",
@@ -4319,6 +4418,21 @@
    "robotsTxtState": "ALLOWED",
    "sitemap": null,
    "userCanonical": "https://www.noe-match.com/tools/kekkon-shikin-keisanki/",
+   "verdict": "PASS"
+  },
+  "https://www.noe-match.com/tools/kekkon-shinseikatsu-jichitai/": {
+   "checked_at": "2026-08-31T16:09:15+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/tools/kekkon-shinseikatsu-jichitai/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=lAXFQAzPVv2Hx-cxk0RuMw&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-08-31T14:48:14Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": null,
+   "userCanonical": "https://www.noe-match.com/tools/kekkon-shinseikatsu-jichitai/",
    "verdict": "PASS"
   },
   "https://www.noe-match.com/tools/kekkon-yarukoto/": {
