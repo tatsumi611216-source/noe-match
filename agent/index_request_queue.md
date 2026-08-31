@@ -698,6 +698,8 @@ nashikon-data は「2026-08-23 に申請する」節にも重複していたの�
 #### 最優先（2026-08-31 追加・当日公開分）
 
 - [済 8/31] https://www.noe-match.com/articles/shussan-iryohi-koujo/ （出産費用×医療費控除データ記事・8/31公開）
+- [済 8/31] https://www.noe-match.com/tools/kekkon-shinseikatsu-jichitai/ （結婚新生活支援 一都三県ナビ・8/31公開）
+- [済 8/31] https://www.noe-match.com/articles/kekkon-shinseikatsu-data/ （結婚新生活支援データ記事・8/31公開）
 
 #### 最優先（2026-08-30 追加）
 
