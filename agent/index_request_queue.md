@@ -765,3 +765,16 @@ hoikuen-tensu-nerima / kekkon-okane-data
 
 ※ 8/22・8/29の実測どおり割り当ては24時間移動窓で回復するため、
 本日分の残りは夜に手動で拾える見込み。
+
+---
+
+## 2026-08-31 週次生成分（nagano-guide / kagoshima-guide）
+
+新規公開2本をインデックス申請キューに追加。
+
+| # | URL | 状態 |
+|---|-----|------|
+| 1 | /articles/nagano-guide/ | 未申請 |
+| 2 | /articles/kagoshima-guide/ | 未申請 |
+
+申請タイミング：手動でSearch Console「URL検査」から実施する。24時間窓の残枠があるタイミングで。
