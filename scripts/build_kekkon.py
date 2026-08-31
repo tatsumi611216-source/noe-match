@@ -31,17 +31,14 @@ TOOL_URL = "https://www.noe-match.com/tools/kekkon-shinseikatsu-jichitai/"
 ART_URL = "https://www.noe-match.com/articles/kekkon-shinseikatsu-data/"
 TODAY = "2026-08-31"
 
-
 def esc(s):
     return html.escape(s or "", quote=True)
-
 
 def man(yen):
     """円 → 「◯万円」。端数は千円単位まで出す。"""
     if yen % 10000 == 0:
         return "%d万円" % (yen // 10000)
     return "%s円" % format(yen, ",")
-
 
 # ---------- 上限額を判定に使える形に落とす ----------
 def rule_of(m):
@@ -51,7 +48,6 @@ def rule_of(m):
     if len(t) == 2 and t[0][1] > t[1][1] and "29" in t[0][0]:
         return {"kind": "std", "y29": t[0][1], "y39": t[1][1]}
     return {"kind": "special", "y29": None, "y39": None}
-
 
 for m in M:
     m["rule"] = rule_of(m)
@@ -99,6 +95,44 @@ FOOTER_TOOL = ("<footer><div class=\"footer-inner\">\n"
 
 FOOTER_ART = FOOTER_TOOL.replace("本ツールは", "本記事は")
 
+# ---------- アフィリエイト（台帳: agent/AGENT.md「アフィリエイトリンク台帳」） ----------
+# 文脈: 新居への引越と、新居で新たに発生する固定費。どちらもこの制度の読者が必ず通る。
+# 引越し侍は「補助対象になる費目」の側、ビジモ光は「補助対象にならない費目」の側に置く。
+# 補助と広告を混同させないため、どちらもその区別を本文に書いてから提示する。
+HIKKOSHI = "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX"
+HIKARI = "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U"
+
+def pr_block(head, body, url, btn, note, color="#7c2e42"):
+    nl = "\n"
+    return ("<div style=\"border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:32px 0;"
+            "background:#faf8f5\">" + nl +
+            "<p style=\"font-size:.7rem;color:#999;margin:0 0 6px\">PR</p>" + nl +
+            "<p style=\"font-weight:900;margin:0 0 6px;color:#1d242b\">" + head + "</p>" + nl +
+            "<p style=\"font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9\">" + body + "</p>" + nl +
+            "<a href=\"" + url + "\" rel=\"nofollow sponsored noopener\" target=\"_blank\" "
+            "style=\"display:inline-block;background:" + color + ";color:#fff;font-weight:700;"
+            "padding:13px 32px;text-decoration:none\">" + btn + "</a>" + nl +
+            "<p style=\"font-size:.72rem;color:#8a8f95;margin:10px 0 0\">" + note + "</p>" + nl +
+            "</div>")
+
+CTA_HIKKOSHI = pr_block(
+    "引越しは業者に頼まないと、この補助の対象になりません",
+    "対象になる引越費用を「引越業者または運送業者へ支払った費用」に限る記述は、"
+    "今回確認した公式ページのうち39自治体で見つかりました。自分や友人で運ぶと対象外で、"
+    "鎌ケ谷市はレンタカーを借りた場合も対象外と明記しています。"
+    "業者に頼む前提なら、見積もりは複数社を並べたほうが金額の差が出ます。",
+    HIKKOSHI, "引越しの見積もりを比べる",
+    "無料の一括見積もりサービスです。料金・対応エリア・作業内容は業者と時期で変わるため、"
+    "条件は公式サイトでご確認ください。")
+
+CTA_HIKARI = pr_block(
+    "回線の工事費と月額は、この補助では戻りません",
+    "補助の対象は住居費・リフォーム費・引越費用で、インターネット回線の工事費や月額料金は含まれません。"
+    "新居では回線を引き直すことが多く、ここは自分たちの負担になります。"
+    "毎月かかる費用なので、入居前に契約先を決めておくと後から動かすより手間が少なく済みます。",
+    HIKARI, "光回線の条件を公式サイトで見る",
+    "キャッシュバックの条件・提供エリア・工事の要否は物件によって異なります。"
+    "金額や適用条件は必ず公式サイトでご確認ください。", "#2f6f8f")
 
 def line_cta(kind, slug, title, body):
     ev = "{%s:'%s'}" % ("tool" if kind == "tool" else "article", slug)
@@ -117,13 +151,11 @@ def line_cta(kind, slug, title, body):
             "  <p style=\"margin:14px 0 0;font-size:11px;color:#8a8f95;\">登録は無料・配信は月1回だけ。"
             "いつでも解除できます。</p>\n</section>")
 
-
 def fam_link(to, label, sub):
     return ("<li style=\"margin:0 0 12px\"><a href=\"/tools/%s/\" onclick=\"try{gtag('event','tool_cross',"
             "{from:'kekkon-shinseikatsu-jichitai',to:'%s'});}catch(e){}\" style=\"font-weight:700;color:#7c2e42\">%s</a>"
             "<span style=\"display:block;font-size:.82rem;color:#6b7178;line-height:1.8\">%s</span></li>"
             % (to, to, label, sub))
-
 
 # ============================================================
 # ツールに渡すデータ
@@ -144,11 +176,9 @@ def js_data():
         })
     return json.dumps(out, ensure_ascii=False)
 
-
 def pref_options():
     return "".join('<option value="%s">%s（%d自治体）</option>' % (esc(p), esc(p), len(BY_PREF[p]))
                    for p in PREFS if BY_PREF[p])
-
 
 # ============================================================
 # 記事の表
@@ -158,7 +188,6 @@ def tbl(headers, rows):
     trs = "".join("<tr>" + "".join("<td>%s</td>" % c for c in r) + "</tr>" for r in rows)
     return ('<div class="table-scroll"><table class="cmp"><thead><tr>%s</tr></thead>'
             '<tbody>%s</tbody></table></div>' % (th, trs))
-
 
 def table_all():
     rows = []
@@ -170,14 +199,12 @@ def table_all():
                      esc("・".join(m["costs"]))])
     return tbl(["都県", "自治体", "上限額", "区分", "年齢要件", "所得要件", "対象経費"], rows)
 
-
 def table_top():
     rows = []
     for m in TOP[:10]:
         rows.append([esc(m["muni"] + "（" + m["pref"].replace("県", "").replace("都", "") + "）"),
                      man(m["max_yen"]), esc(m["special"] or m["program"])])
     return tbl(["自治体", "上限額", "なぜその額になるか"], rows)
-
 
 def table_low():
     rows = []
@@ -187,7 +214,6 @@ def table_low():
                      esc(m["special"] or "—")])
     return tbl(["自治体", "上限額", "制度名", "内容"], rows)
 
-
 def table_over39():
     rows = []
     for m in sorted(OVER39, key=lambda x: -x["age_max"]):
@@ -196,7 +222,6 @@ def table_over39():
                      "／".join("%s %s" % (esc(t[0]), man(t[1])) for t in m["tiers"]),
                      esc(m["age_note"] or m["special"] or "—")])
     return tbl(["自治体", "年齢の上限", "区分", "備考"], rows)
-
 
 def table_rich():
     rows = []
@@ -211,7 +236,6 @@ def table_rich():
     rows += [[esc(a), esc(b), esc(c)] for a, b, c in extra]
     return tbl(["自治体", "所得の上限", "国基準（500万円未満）との違い"], rows)
 
-
 def table_costs():
     rows = []
     for m in sorted(M, key=lambda x: (PREFS.index(x["pref"]), x["muni"])):
@@ -222,7 +246,6 @@ def table_costs():
                      esc("・".join(m["costs"])),
                      esc(m["special"] or "—")])
     return tbl(["自治体", "対象になる費目", "備考"], rows)
-
 
 def table_sources():
     items = []
@@ -244,7 +267,6 @@ def table_sources():
             "制度は年度で変わり、予算に達した時点で受付が終わるものもあるため、"
             "利用前に必ず各自治体の公式ページでご確認ください。</p>\n"
             "<ul style=\"font-size:.84rem;line-height:2\">\n" + "\n".join(items) + "\n</ul>")
-
 
 FAQ = [
     ("結婚新生活支援は一都三県のどこでもらえますか。",
@@ -281,16 +303,13 @@ FAQ = [
      "秦野市と銚子市は令和9年2月28日までの婚姻が対象です。"),
 ]
 
-
 def faq_jsonld():
     return json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
         for q, a in FAQ]}, ensure_ascii=False)
 
-
 def faq_html():
     return "\n".join("<h3>Q%d. %s</h3>\n<p>%s</p>" % (i + 1, q, a) for i, (q, a) in enumerate(FAQ))
-
 
 # ============================================================
 # ツールページ
@@ -405,6 +424,8 @@ label.f{display:block;font-size:.82rem;font-weight:700;color:#3a4148;margin:0 0 
 <h2 id="rank">上限額の高い自治体</h2>
 <p>一都三県の""" + str(N_ALL) + """自治体のうち、上限が60万円なのは""" + str(len(STD60)) + """自治体です。国の基準（29歳以下60万円・39歳以下30万円）をそのまま採っている自治体が多数派で、そこから外れているところに理由があります。</p>
 """ + table_top() + """
+
+""" + CTA_HIKKOSHI + """
 
 <h2 id="fam">結婚とお金の他のツール</h2>
 <ul style="list-style:none;padding:0">
@@ -585,9 +606,13 @@ ART_BODY = """
 <li><strong>居住し続ける意思が条件になる。</strong>山北町は10年、南足柄市は5年、上尾市は3年超、美里町は3年（未満で転出すると返還）と幅があります。</li>
 </ul>
 
+""" + CTA_HIKKOSHI + """
+
 <h2 id="rel">結婚のお金を先に見積もる</h2>
 <p>補助金は後払いです。契約と支払いを先に済ませる必要があるため、手元の資金は別に用意しておく必要があります。<a href="/tools/kekkon-shikin-keisanki/">結婚資金の計算機</a>で式・指輪・新生活の合計を出し、<a href="/tools/seikatsuhi-simulator/">ふたりの生活費シミュレーター</a>で引っ越し後に毎月いくら残るかを見てから、この補助で戻る額を差し引くと順番が合います。</p>
 <p>制度の全体像は<a href="/articles/shinkon-hojokin/">新婚生活の補助金はいくらもらえる？</a>、費用の相場は<a href="/articles/kekkon-hiyou-futan/">結婚費用の負担割合</a>、固定費の見直しは<a href="/articles/shinkon-koteihi-minaoshi/">新婚の固定費見直し</a>にまとめています。</p>
+
+""" + CTA_HIKARI + """
 
 <h2 id="faq">よくある質問</h2>
 """ + faq_html() + """
@@ -630,13 +655,7 @@ ART_HTML = """<!DOCTYPE html>
 <p style="font-size:.78rem;color:#8a8f95;margin:6px 0 20px">公開 """ + TODAY + """／出典は各自治体および各都県の公式ページ。""" + CHECKED + """に全件確認</p>
 <p class="pr-notice">本ページはプロモーションを含みます。記事内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
 """ + ART_BODY + """
-<div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:32px 0;background:#faf8f5">
-<p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
-<p style="font-weight:900;margin:0 0 6px;color:#1d242b">引っ越し直後の食事づくりを軽くする</p>
-<p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">新居に移った直後は、調理器具も調味料も揃っていません。Oisixのおためしセットは1回だけの注文で、1,980円から届きます。補助金の対象経費とは関係のないサービスです。</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77" rel="sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
-<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。本記事の制度とは関係ありません</p>
-</div>
+
 </article>
 """ + line_cta("article", "kekkon-shinseikatsu-data",
                "制度が変わったらお知らせします",
@@ -646,7 +665,6 @@ ART_HTML = """<!DOCTYPE html>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 </body>
 </html>"""
-
 
 # ============================================================
 # 出荷前リント
@@ -659,14 +677,12 @@ BANNED = [
     (r"必ずもらえ|確実にもらえ|全員が対象", "断定的な受給の約束"),
 ]
 
-
 def visible_text(content):
     """CSS・JS・属性を落として、読者が読む文字だけにする。
     リントはここにだけかける（styleのbackground等を誤検出しないため）。"""
     t = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", content)
     t = re.sub(r"(?s)<[^>]+>", " ", t)
     return html.unescape(t)
-
 
 def lint(name, content):
     ng = []
@@ -676,7 +692,6 @@ def lint(name, content):
         if m:
             ng.append("%s: %s（%r）" % (name, why, m.group(0)[:40]))
     return ng
-
 
 def main():
     ng = lint("tool", TOOL_HTML) + lint("article", ART_HTML)
@@ -697,7 +712,6 @@ def main():
           % (N_ALL, len(BY_PREF["千葉県"]), len(BY_PREF["埼玉県"]),
              len(BY_PREF["神奈川県"]), len(BY_PREF["東京都"])))
     print("上限額の型: 標準%d / 一律%d / 特殊%d" % (len(STD), len(UNI), len(SPE)))
-
 
 if __name__ == "__main__":
     main()
