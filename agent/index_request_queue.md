@@ -706,7 +706,32 @@ nashikon-data は「2026-08-23 に申請する」節にも重複していたの�
 - [済 8/30] https://www.noe-match.com/tools/hitorioya-shien-jichitai/ （ひとり親支援 東京23区ナビ・8/30公開）
 - [済 8/30] https://www.noe-match.com/articles/hitorioya-shien-data/ （ひとり親支援データ記事・8/30公開）
 
-### 残り（8/30以降・21本）
+#### 最優先（2026-09-01 追加・実測で作り直した未申請リスト）
+
+**台帳の「残り21本」は古かった。** 9/1に URL Inspection API（251URL全数）と突き合わせたところ、
+21本のうち多くは既にインデックス済みで、**未インデックスかつ未申請は13本**だった。
+以後、この節は台帳の記憶ではなく `agent/index_status.json` との突き合わせで作る。
+
+251URLの被覆状態（2026-09-01実測）: Submitted and indexed 220 ／ Discovered - currently not indexed 20 ／
+Crawled - currently not indexed 6 ／ URL is unknown to Google 5。
+
+- [済 9/1] https://www.noe-match.com/articles/sangokea-higaeri/        ← Googleが認識していない
+- [済 9/1] https://www.noe-match.com/articles/daredemo-tsuen-yoyaku/   ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/ikukyu-kyufukin-data/    ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/omiai-danjohi-data/      ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/pairs-kaiin-data/        ← 検出済み・未クロール
+- https://www.noe-match.com/articles/tokyo-futari-seikatsuhi/          ← 検出済み・未クロール
+- https://www.noe-match.com/articles/tomobataraki-wariai-data/         ← 検出済み・未クロール
+- https://www.noe-match.com/articles/zexy-enmusubi-data/               ← 検出済み・未クロール
+- https://www.noe-match.com/tools/ikukyu-encho-hantei/                 ← 検出済み・未クロール
+
+**申請の見込みが薄い型（後回し）** — クロール済み未索引の4本。申請では入りにくいので、
+中身か狙う語を直すほうが先:
+35s-strategy ／ 40s-guide ／ app-plus-agency ／ omiai-vs-pairs
+
+**IndexNow（Bing/Yandex）には13本すべて送信済み（9/1・HTTP 200）。**
+
+### 残り（8/30以降・21本 ※2026-09-01に上の実測へ置き換え）
 
 - Day C 残り5本：price-comparison / privacy-protection / profile-text / renkatsu-vs-konkatsu / shinkyo-kagu-yosan
 - Day D 7本：usuge-konkatsu-eikyou / with-vs-pairs / garugaru-ki-itsumade / garugaru-otto-genkai / garugaru-sangoutsu-chigai / sango-iraira / shinseiji-menkai
