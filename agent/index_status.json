@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-08-31T16:09:17+00:00",
+ "fetched_at": "2026-09-01T17:23:35+00:00",
  "results": {
   "https://www.noe-match.com/": {
    "checked_at": "2026-08-29T02:12:28+00:00",
@@ -1456,6 +1456,36 @@
    ],
    "userCanonical": "https://www.noe-match.com/articles/kekkon-hiyou-futan/",
    "verdict": "PASS"
+  },
+  "https://www.noe-match.com/articles/kekkon-hojokin-reigai/": {
+   "checked_at": "2026-09-01T17:23:22+00:00",
+   "coverageState": "URL is unknown to Google",
+   "crawledAs": null,
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=9toqM0BukpZDLKhCRSuc8A&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": null,
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
+  },
+  "https://www.noe-match.com/articles/kekkon-hojokin-tokyo/": {
+   "checked_at": "2026-09-01T17:23:28+00:00",
+   "coverageState": "URL is unknown to Google",
+   "crawledAs": null,
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=eu97FogKy7LXnRZkmhoVIw&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": null,
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
   },
   "https://www.noe-match.com/articles/kekkon-hoken-minaoshi/": {
    "checked_at": "2026-08-29T02:24:43+00:00",
@@ -4100,6 +4130,21 @@
    ],
    "userCanonical": "https://www.noe-match.com/articles/youbride-seikon-data/",
    "verdict": "PASS"
+  },
+  "https://www.noe-match.com/articles/youikuhi-kousei-shosho/": {
+   "checked_at": "2026-09-01T17:23:35+00:00",
+   "coverageState": "URL is unknown to Google",
+   "crawledAs": null,
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=_Mcx5kqziFJ0d1OQbr1-NA&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": null,
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
   },
   "https://www.noe-match.com/articles/zexy-enmusubi-data/": {
    "checked_at": "2026-08-28T13:58:29+00:00",
