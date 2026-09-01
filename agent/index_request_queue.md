@@ -720,10 +720,10 @@ Crawled - currently not indexed 6 ／ URL is unknown to Google 5。
 - [済 9/1] https://www.noe-match.com/articles/ikukyu-kyufukin-data/    ← 検出済み・未クロール
 - [済 9/1] https://www.noe-match.com/articles/omiai-danjohi-data/      ← 検出済み・未クロール
 - [済 9/1] https://www.noe-match.com/articles/pairs-kaiin-data/        ← 検出済み・未クロール
-- https://www.noe-match.com/articles/tokyo-futari-seikatsuhi/          ← 検出済み・未クロール
-- https://www.noe-match.com/articles/tomobataraki-wariai-data/         ← 検出済み・未クロール
-- https://www.noe-match.com/articles/zexy-enmusubi-data/               ← 検出済み・未クロール
-- https://www.noe-match.com/tools/ikukyu-encho-hantei/                 ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/tokyo-futari-seikatsuhi/          ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/tomobataraki-wariai-data/         ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/zexy-enmusubi-data/               ← 検出済み・未クロール
+- https://www.noe-match.com/tools/ikukyu-encho-hantei/                 ← 検出済み・未クロール（9/1は1日10本の上限に達したため明日）
 
 **申請の見込みが薄い型（後回し）** — クロール済み未索引の4本。申請では入りにくいので、
 中身か狙う語を直すほうが先:
