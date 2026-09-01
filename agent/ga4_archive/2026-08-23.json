@@ -1,0 +1,78 @@
+{
+ "date": "2026-08-23",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:37",
+ "total": {
+  "sessions": 8,
+  "users": 7,
+  "views": 9
+ },
+ "by_page": [
+  {
+   "path": "/articles/mens-make-konkatsu/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 0,
+   "views": 1
+  },
+  {
+   "path": "/articles/app-plus-agency/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/app-kekkonritsu-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kekkon-shikin-keisanki/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sango-recovery-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  }
+ ],
+ "events": {
+  "page_view": 9,
+  "session_start": 8,
+  "first_visit": 6,
+  "sango_recovery_complete": 6,
+  "tool_result": 5,
+  "user_engagement": 4,
+  "sango_recovery_start": 2,
+  "sango_recovery_mode_switch": 1
+ }
+}

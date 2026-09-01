@@ -1,0 +1,165 @@
+{
+ "date": "2026-08-20",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:34",
+ "total": {
+  "sessions": 22,
+  "users": 19,
+  "views": 20
+ },
+ "by_page": [
+  {
+   "path": "/articles/kaiin-age-cross-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/youbride-marrish-hikaku/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/age-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/appkon-wariai-data/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/bridal-inner-guide/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/ikukyu-fuufu-doji/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-madeno-kikan-data/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/members-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/message-strategy/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/omiai-30s-women-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/pairs-men/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/pairs-women/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/photo-tips/",
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 20,
+  "session_start": 15,
+  "user_engagement": 13,
+  "first_visit": 12,
+  "scroll": 7,
+  "garugaru_complete": 3,
+  "garugaru_start": 1
+ }
+}

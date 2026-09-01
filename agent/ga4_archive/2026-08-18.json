@@ -1,0 +1,293 @@
+{
+ "date": "2026-08-18",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:31",
+ "total": {
+  "sessions": 53,
+  "users": 39,
+  "views": 66
+ },
+ "by_page": [
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 6,
+   "users": 2,
+   "views": 13
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5,
+   "users": 3,
+   "views": 5
+  },
+  {
+   "path": "/tools/koisaihi-simulator/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5,
+   "users": 2,
+   "views": 7
+  },
+  {
+   "path": "/articles/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/appkon-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/kekkon-yarukoto/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 1,
+   "views": 3
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1,
+   "users": 0,
+   "views": 1
+  },
+  {
+   "path": "/articles/compare-20s/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/compare-price/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-ki-guide/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 3
+  },
+  {
+   "path": "/articles/garugaru-otto-genkai/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kisei-kekkon-aisatsu/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/marrish-saikon-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/members-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/over50-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/over50-guide/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/pairs-kaiin-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sango-crisis-guide/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sango-iraira/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shinseiji-menkai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tapple-vs-pairs/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tokyo-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tokyo-guide/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kekkon-shikin-keisanki/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/koisaihi-simulator/",
+   "channel": "Organic Social",
+   "source": "t.co",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 66,
+  "session_start": 25,
+  "user_engagement": 17,
+  "tool_result": 14,
+  "first_visit": 11,
+  "scroll": 11,
+  "entry_click": 1
+ }
+}

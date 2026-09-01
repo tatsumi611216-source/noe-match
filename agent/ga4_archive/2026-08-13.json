@@ -1,0 +1,126 @@
+{
+ "date": "2026-08-13",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:24",
+ "total": {
+  "sessions": 17,
+  "users": 15,
+  "views": 28
+ },
+ "by_page": [
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 4,
+   "users": 2,
+   "views": 11
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 5
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/dansei-ninkatsu-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/dousei-hajimekata/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-ki-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/konkatsu-roadmap/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shinkon-seikatsu-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kekkon-shikin-keisanki/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 28,
+  "session_start": 9,
+  "garugaru_mode_switch": 8,
+  "first_visit": 6,
+  "scroll": 5,
+  "fugenbyo_complete": 4,
+  "garugaru_share": 3,
+  "saigenbyo_complete": 3,
+  "user_engagement": 3,
+  "click": 2,
+  "garugaru_complete": 2,
+  "fugenbyo_mode_switch": 1,
+  "fugenbyo_start": 1,
+  "garugaru_start": 1,
+  "saigenbyo_mode_switch": 1,
+  "saigenbyo_start": 1
+ }
+}

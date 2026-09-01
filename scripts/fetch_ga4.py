@@ -13,14 +13,12 @@ GSCには一切出ない。GSCだけを見ると「データ記事は表示4.1/�
 - 直近N日の欠損を埋め直す差分モード（数日落ちても自力で復旧する）
 - 認証は「環境変数 → ファイル」の2経路（CIに載せられる形にしておく）
 
-準備（1回だけ・人の作業）:
-  1. GCPプロジェクト noe-gsc で次の2つのAPIを有効化する
-       Google Analytics Data API   (analyticsdata.googleapis.com)
-       Google Analytics Admin API  (analyticsadmin.googleapis.com)  ※プロパティID自動検出に使う
-  2. GA4の管理 → プロパティのアクセス管理 で、次のサービスアカウントに「閲覧者」を付与
-       noe-gsc-reader@noe-gsc.iam.gserviceaccount.com
-  3. プロパティIDは自動検出する。固定したい場合は環境変数 GA4_PROPERTY_ID か
-     下の PROPERTY_ID に "properties/123456789" 形式で書く
+認証（2026-09-01 に実機で確認・追加の権限付与は不要だった）:
+  GA4のプロパティ「Noe結婚設計室 noe-match.com」（properties/549779769）には、既に
+  gsc-ga4-analytics@matching-app-analytics.iam.gserviceaccount.com が閲覧者として
+  登録されていた。その鍵を secrets/noe-ga4-key.json に置いて使う。
+  **GSC用の noe-gsc-reader とは別のサービスアカウント（プロジェクトも別）** なので、
+  CIに載せるときは GSC_KEY_JSON ではなく GA4_KEY_JSON に入れる。
 
 使い方:
   python scripts/fetch_ga4.py            未取得日を埋める（既定45日ぶん）
@@ -42,8 +40,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARC = os.path.join(ROOT, "agent", "ga4_archive")
-KEY_PATH = r"C:\Users\tatsu\matching-app\secrets\noe-gsc-key.json"
-PROPERTY_ID = ""          # 例: "properties/123456789"（空なら自動検出）
+KEY_PATH = r"C:\Users\tatsu\matching-app\secrets\noe-ga4-key.json"
+PROPERTY_ID = "properties/549779769"   # Noe結婚設計室 noe-match.com（2026-09-01 実機で確認）
 SCOPES = ["https://www.googleapis.com/auth/analytics.readonly"]
 DEFAULT_DAYS = 45
 SETUP_HINT = (
@@ -55,7 +53,7 @@ SETUP_HINT = (
 
 def credentials():
     from google.oauth2 import service_account
-    key_json = os.environ.get("GA4_KEY_JSON") or os.environ.get("GSC_KEY_JSON")
+    key_json = os.environ.get("GA4_KEY_JSON")
     if key_json:
         return service_account.Credentials.from_service_account_info(
             json.loads(key_json), scopes=SCOPES)

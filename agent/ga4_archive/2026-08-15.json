@@ -1,0 +1,222 @@
+{
+ "date": "2026-08-15",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:26",
+ "total": {
+  "sessions": 36,
+  "users": 32,
+  "views": 40
+ },
+ "by_page": [
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 7,
+   "users": 4,
+   "views": 8
+  },
+  {
+   "path": "/articles/propose-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 6,
+   "users": 6,
+   "views": 7
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/",
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/christmas-propose-gyakusan/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/date-plan-2kaime/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-ki-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-ki-itsumade/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-sangoutsu-chigai/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-hiyou-futan/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/kekkon-tenshoku-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/konkatsu-party-guide/",
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/konkatsu-roadmap/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/mitas-formen-kuchikomi/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/mitocore-kuchikomi/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/propose-guide/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sango-satogaeri/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 0,
+   "views": 1
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kekkon-shikin-keisanki/",
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 40,
+  "session_start": 30,
+  "first_visit": 21,
+  "user_engagement": 12,
+  "scroll": 5,
+  "saigenbyo_complete": 2,
+  "saigenbyo_start": 2,
+  "saigenbyo_mode_switch": 1
+ }
+}

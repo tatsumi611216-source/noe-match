@@ -1,0 +1,140 @@
+{
+ "date": "2026-08-25",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:39",
+ "total": {
+  "sessions": 22,
+  "users": 22,
+  "views": 24
+ },
+ "by_page": [
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 4,
+   "users": 4,
+   "views": 4
+  },
+  {
+   "path": "/tools/daredemo-tsuen-jichitai/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3,
+   "users": 3,
+   "views": 5
+  },
+  {
+   "path": "/articles/daredemo-tsuen-ryokin/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/tools/daredemo-tsuen-jichitai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/civil-servant-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-otto-taiou/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/omiai-guide/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/otaku-konkatsu/",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/policy/rating.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/app-kekkonritsu-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "tool_result": 27,
+  "page_view": 24,
+  "session_start": 18,
+  "first_visit": 15,
+  "user_engagement": 11,
+  "scroll": 1
+ }
+}

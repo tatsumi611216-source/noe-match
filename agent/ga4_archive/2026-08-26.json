@@ -1,0 +1,150 @@
+{
+ "date": "2026-08-26",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:41",
+ "total": {
+  "sessions": 33,
+  "users": 32,
+  "views": 36
+ },
+ "by_page": [
+  {
+   "path": "/articles/shinkon-koteihi-minaoshi/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 15,
+   "users": 15,
+   "views": 15
+  },
+  {
+   "path": "/articles/appkon-wariai-data/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 3,
+   "users": 3,
+   "views": 3
+  },
+  {
+   "path": "/articles/time-management/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/appkon-wariai-data/",
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 4
+  },
+  {
+   "path": "/articles/kekkon-chokin-mokuhyou/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-okane-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/members-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sango-biyou-itsukara/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sengyoshufu-seikatsuhi/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/daredemo-tsuen-jichitai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kekkon-shikin-keisanki/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/koisaihi-simulator/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sango-recovery-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 36,
+  "session_start": 32,
+  "first_visit": 31,
+  "user_engagement": 16,
+  "tool_result": 7,
+  "scroll": 3,
+  "saigenbyo_complete": 2,
+  "saigenbyo_start": 1
+ }
+}

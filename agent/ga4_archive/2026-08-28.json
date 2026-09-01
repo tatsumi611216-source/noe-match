@@ -1,0 +1,100 @@
+{
+ "date": "2026-08-28",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:44",
+ "total": {
+  "sessions": 14,
+  "users": 13,
+  "views": 14
+ },
+ "by_page": [
+  {
+   "path": "/",
+   "channel": "Paid Search",
+   "source": "google",
+   "sessions": 4,
+   "users": 4,
+   "views": 4
+  },
+  {
+   "path": "/articles/over50-guide/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/app-ryokin-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/compare-konkatsu/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/ouchi-date-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/pairs-marriage-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sango-kaji-buntan/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/youbride-guide/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/soudanjo-simulator/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 14,
+  "session_start": 14,
+  "first_visit": 12,
+  "user_engagement": 6,
+  "scroll": 2,
+  "tool_result": 1
+ }
+}

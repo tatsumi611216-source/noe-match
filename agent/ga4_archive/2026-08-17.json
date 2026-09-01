@@ -1,0 +1,248 @@
+{
+ "date": "2026-08-17",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:30",
+ "total": {
+  "sessions": 41,
+  "users": 34,
+  "views": 70
+ },
+ "by_page": [
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5,
+   "users": 5,
+   "views": 5
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3,
+   "users": 2,
+   "views": 16
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3,
+   "users": 1,
+   "views": 5
+  },
+  {
+   "path": "/tools/kekkon-yarukoto/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3,
+   "users": 2,
+   "views": 5
+  },
+  {
+   "path": "/articles/tenshoku-riyu-honne/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 1,
+   "views": 13
+  },
+  {
+   "path": "/tools/seikatsuhi-simulator/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 1,
+   "views": 3
+  },
+  {
+   "path": "/",
+   "channel": "Referral",
+   "source": "adv-console.a8.net",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/appkon-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/compare-20s/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-otto-taiou/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/gijikka-ikitakunai/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-sokou-chousa/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kisei-kekkon-aisatsu/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-dansei-cost-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/message-strategy/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/rikon-junbi-jyunban/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/satogaeri-shinai/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kekkon-shikin-keisanki/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kekkon-yarukoto/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/rikongo-seikatsuhi/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 70,
+  "tool_result": 22,
+  "session_start": 21,
+  "user_engagement": 19,
+  "first_visit": 14,
+  "scroll": 10,
+  "garugaru_complete": 9,
+  "entry_click": 4,
+  "garugaru_start": 1,
+  "tool_calc": 1
+ }
+}

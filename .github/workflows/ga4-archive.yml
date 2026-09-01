@@ -1,0 +1,60 @@
+name: Daily GA4 Archive
+
+# GSCは検索だけを見ている。データ記事の流入はAI（chatgpt・copilot）とBingが主で、
+# GSCには一切出ない。GA4を日次で貯めておかないと、バンクとデータ記事の価値を
+# 後から測り直せない。gsc-archive.yml と同じ設計（日別1ファイル・差分モード）。
+#
+# 必要なシークレット: GA4_KEY_JSON
+#   GA4プロパティ properties/549779769 に閲覧者として登録済みの
+#   gsc-ga4-analytics@matching-app-analytics.iam.gserviceaccount.com の鍵JSON。
+#   GSC_KEY_JSON とは別のサービスアカウントなので使い回さないこと。
+
+on:
+  schedule:
+    # 毎日 06:00 JST（= 21:00 UTC 前日）。GA4は当日ぶんが確定しないので2日前まで取る。
+    - cron: '0 21 * * *'
+  workflow_dispatch:
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install google-auth google-analytics-data google-analytics-admin
+
+      - name: Archive GA4 daily data
+        env:
+          GA4_KEY_JSON: ${{ secrets.GA4_KEY_JSON }}
+          GA4_PROPERTY_ID: properties/549779769
+        run: |
+          python scripts/fetch_ga4.py | tee /tmp/ga4_archive.txt
+          {
+            echo '## GA4日別アーカイブ'
+            echo '```'
+            cat /tmp/ga4_archive.txt
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit and push if updated
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add agent/ga4_archive
+          if git diff --cached --quiet; then
+            echo "新規の日なし。スキップ。"
+          else
+            git commit -m "chore: archive GA4 daily data ($(date -u +%Y-%m-%d))"
+            git pull --rebase origin main
+            git push origin main
+          fi

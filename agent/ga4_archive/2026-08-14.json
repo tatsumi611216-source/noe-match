@@ -1,0 +1,174 @@
+{
+ "date": "2026-08-14",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:25",
+ "total": {
+  "sessions": 35,
+  "users": 23,
+  "views": 55
+ },
+ "by_page": [
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 9,
+   "users": 3,
+   "views": 18
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5,
+   "users": 2,
+   "views": 13
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 3,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/garugaru-ki-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/garugaru-check/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Referral",
+   "source": "adv-console.a8.net",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/compare-price/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kyoto-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/members-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/osaka-guide/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/otaku-konkatsu/",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tapple-seriousness-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/fugenbyo-check/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 4
+  },
+  {
+   "path": "/tools/saigenbyo-check/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 55,
+  "session_start": 25,
+  "first_visit": 14,
+  "user_engagement": 13,
+  "scroll": 9,
+  "garugaru_complete": 6,
+  "click": 4,
+  "garugaru_start": 4,
+  "garugaru_pr_click": 3,
+  "saigenbyo_complete": 3,
+  "garugaru_mode_switch": 2,
+  "saigenbyo_start": 2,
+  "fugenbyo_complete": 1,
+  "fugenbyo_start": 1,
+  "garugaru_share": 1,
+  "saigenbyo_mode_switch": 1
+ }
+}

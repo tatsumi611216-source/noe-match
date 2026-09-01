@@ -1,0 +1,152 @@
+{
+ "date": "2026-08-16",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-01T09:27:28",
+ "total": {
+  "sessions": 28,
+  "users": 22,
+  "views": 53
+ },
+ "by_page": [
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5,
+   "users": 2,
+   "views": 9
+  },
+  {
+   "path": "/tools/seikatsuhi-simulator/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5,
+   "users": 3,
+   "views": 17
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 4,
+   "users": 3,
+   "views": 4
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 9
+  },
+  {
+   "path": "/articles/dousei-hajimekata/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/futari-kouza-kanri/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-gibo-jitsubo/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/garugaru-ki-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/gijikka-ikitakunai/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/konkatsu-roadmap/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 0
+  },
+  {
+   "path": "/articles/sango-otto-kirai/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sengyoshufu-seikatsuhi/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shinseiji-menkai/",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/rikongo-seikatsuhi/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  }
+ ],
+ "events": {
+  "page_view": 53,
+  "tool_result": 31,
+  "tool_calc": 15,
+  "session_start": 13,
+  "user_engagement": 12,
+  "first_visit": 5,
+  "scroll": 5,
+  "garugaru_complete": 1,
+  "garugaru_mode_switch": 1,
+  "garugaru_start": 1
+ }
+}
