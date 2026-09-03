@@ -356,7 +356,7 @@
   </url>
 <url>
     <loc>https://www.noe-match.com/articles/kyoto-guide/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -500,7 +500,7 @@
   </url>
 <url>
     <loc>https://www.noe-match.com/articles/shinkon-seikatsu-guide/</loc>
-    <lastmod>2026-08-17</lastmod>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1127,4 +1127,6 @@
 <url><loc>https://www.noe-match.com/articles/kekkon-hojokin-reigai/</loc><lastmod>2026-08-31</lastmod></url>
 <url><loc>https://www.noe-match.com/articles/kekkon-hojokin-tokyo/</loc><lastmod>2026-08-31</lastmod></url>
 <url><loc>https://www.noe-match.com/articles/youikuhi-kousei-shosho/</loc><lastmod>2026-08-31</lastmod></url>
+<url><loc>https://www.noe-match.com/articles/nagano-guide/</loc><lastmod>2026-09-03</lastmod></url>
+<url><loc>https://www.noe-match.com/articles/kagoshima-guide/</loc><lastmod>2026-09-03</lastmod></url>
 </urlset>

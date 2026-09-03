@@ -1,5 +1,59 @@
 # Agent Run Log
 
+## 2026-09-03　週次記事工場ラン｜新記事×2本生成（nagano-guide / kagoshima-guide）+ Phase 2 GSC強化×2本
+
+### Phase 4-0 計測ゲート
+
+`asp_results.md` の `last_updated` を確認（前回確認 2026-08-17以内）。ゲート開放。CTAブロックを設置した。
+
+### 実施内容
+
+- `nagano-guide/index.html` 生成完了
+  - タイトル：長野でマッチングアプリを使うなら｜長野市・松本と県内の使い分け【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（8問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：小宮さん（31歳・公務員）、野瀬さん（28歳・IT企業勤務）
+  - 内部リンク4本 / CTAブロック（P!っと縁結び A8 + ユーブライド afb）・計2本
+  - CTA密度チェック：2本 ≤ 4上限 ✅
+
+- `kagoshima-guide/index.html` 生成完了
+  - タイトル：鹿児島でマッチングアプリを使うなら｜出会えるアプリと鹿児島市・県内の使い分け【2026年版】
+  - BlogPosting JSON-LD / FAQPage JSON-LD（8問）/ BreadcrumbList JSON-LD ✅
+  - 体験談：鹿島さん（35歳・医療職）、岩永さん（52歳・会社経営）
+  - 内部リンク4本 / CTAブロック（P!っと縁結び A8 + マリッシュ afb + ユーブライド afb）・計3本
+  - CTA密度チェック：3本 ≤ 4上限、同一ASP最大2本 ✅
+
+- `sitemap.xml` に2記事分URLを追加（lastmod 2026-09-03）
+- `index.html` 更新：全198→200記事（hero-badge 2026年8月→9月・見出し・地域別14記事）
+- `articles/index.html` 更新：地域別ガイド 12→14記事、arc-no 13/14追加
+- `keyword_queue.json` 2件を done + published 2026-09-03 に更新
+- `factory_audit.py`：新規FAIL 0件 ✅
+
+### Phase 2 GSC強化
+
+| slug | 対象クエリ | 施策 | impr | pos |
+|------|-----------|------|------|-----|
+| kyoto-guide | 烏丸 出会い | h3「烏丸エリアで出会いを探す場合の使い方」追加 | 16 | 29.2 |
+| shinkon-seikatsu-guide | 新婚生活 引越し | h2に「新婚生活の」を追加・冒頭導入文追加 | 13 | 17.2 |
+
+dateModified / sitemap.xml lastmod を2026-09-03に更新済み。
+
+### note下書き生成
+
+- `agent/note_drafts/nagano-guide.md`：長野県でマッチングアプリ（長野市 vs 松本市）
+- `agent/note_drafts/kagoshima-guide.md`：鹿児島でマッチングアプリ（50代・鹿児島市以外）
+
+### インデックス申請キュー追加
+
+`agent/index_request_queue.md` に以下2件を追記（申請は人間の作業）：
+- https://www.noe-match.com/articles/nagano-guide/
+- https://www.noe-match.com/articles/kagoshima-guide/
+
+### 次にやること（人間の作業）
+
+1. **インデックス申請**：nagano-guide / kagoshima-guide の2件（Search Console から申請）
+
+---
+
 ## 2026-08-17　週次記事工場ラン｜型A×2本生成（omiai-danjohi-data / with-nenreiso-data）+ 寄せ直し2本
 
 ### Phase 4-0 計測ゲート

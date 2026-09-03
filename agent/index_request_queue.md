@@ -898,7 +898,9 @@ soudanjo-hikaku は対照群ルールどおり申請していない。
 
 ### 残り
 
-- **未申請ゼロ。** 次回は当日公開分の有無を `git log` で確認するところから始める。
+- **未申請（2026-09-03 追加）：**
+  - `https://www.noe-match.com/articles/nagano-guide/`
+  - `https://www.noe-match.com/articles/kagoshima-guide/`
 - soudanjo-hikaku は対照群のため申請しない（nurse-konkatsu-soudanjo のみ解除済み）。
 
 ### 実測メモ：検索バーの空振りは「navigate直後の1回目」だけ
