@@ -708,6 +708,14 @@ nashikon-data は「2026-08-23 に申請する」節にも重複していたの�
 
 #### 最優先（2026-09-01 追加・実測で作り直した未申請リスト）
 
+**9/1 追加分（当日公開の3本）はすべて申請済み:**
+- [済 9/1] https://www.noe-match.com/articles/kekkon-hojokin-tokyo/
+- [済 9/1] https://www.noe-match.com/articles/kekkon-hojokin-reigai/
+- [済 9/1] https://www.noe-match.com/articles/youikuhi-kousei-shosho/
+
+（9/1の申請は計12本。Googleの上限に当たらずすべて「優先クロールキューに追加しました」を確認）
+
+
 **台帳の「残り21本」は古かった。** 9/1に URL Inspection API（251URL全数）と突き合わせたところ、
 21本のうち多くは既にインデックス済みで、**未インデックスかつ未申請は13本**だった。
 以後、この節は台帳の記憶ではなく `agent/index_status.json` との突き合わせで作る。
@@ -723,7 +731,7 @@ Crawled - currently not indexed 6 ／ URL is unknown to Google 5。
 - [済 9/1] https://www.noe-match.com/articles/tokyo-futari-seikatsuhi/          ← 検出済み・未クロール
 - [済 9/1] https://www.noe-match.com/articles/tomobataraki-wariai-data/         ← 検出済み・未クロール
 - [済 9/1] https://www.noe-match.com/articles/zexy-enmusubi-data/               ← 検出済み・未クロール
-- https://www.noe-match.com/tools/ikukyu-encho-hantei/                 ← 検出済み・未クロール（9/1は1日10本の上限に達したため明日）
+- [済 9/1] https://www.noe-match.com/tools/ikukyu-encho-hantei/          ← 検出済み・未クロール
 
 **申請の見込みが薄い型（後回し）** — クロール済み未索引の4本。申請では入りにくいので、
 中身か狙う語を直すほうが先:
