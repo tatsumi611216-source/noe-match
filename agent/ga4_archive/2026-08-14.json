@@ -3,8 +3,8 @@
  "property": "properties/549779769",
  "fetched_at": "2026-09-01T09:27:25",
  "total": {
-  "sessions": 35,
-  "users": 23,
+  "sessions": 25,
+  "users": 16,
   "views": 55
  },
  "by_page": [
@@ -170,5 +170,10 @@
   "fugenbyo_start": 1,
   "garugaru_share": 1,
   "saigenbyo_mode_switch": 1
+ },
+ "total_by_page_sum": {
+  "sessions": 35,
+  "users": 23,
+  "views": 55
  }
 }

@@ -3,8 +3,8 @@
  "property": "properties/549779769",
  "fetched_at": "2026-09-01T09:27:32",
  "total": {
-  "sessions": 46,
-  "users": 30,
+  "sessions": 27,
+  "users": 11,
   "views": 59
  },
  "by_page": [
@@ -235,5 +235,10 @@
   "tool_result": 2,
   "click": 1,
   "garugaru_mode_switch": 1
+ },
+ "total_by_page_sum": {
+  "sessions": 46,
+  "users": 30,
+  "views": 59
  }
 }

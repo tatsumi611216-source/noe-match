@@ -4,7 +4,7 @@
  "fetched_at": "2026-09-01T09:27:37",
  "total": {
   "sessions": 8,
-  "users": 7,
+  "users": 6,
   "views": 9
  },
  "by_page": [
@@ -74,5 +74,10 @@
   "user_engagement": 4,
   "sango_recovery_start": 2,
   "sango_recovery_mode_switch": 1
+ },
+ "total_by_page_sum": {
+  "sessions": 8,
+  "users": 7,
+  "views": 9
  }
 }

@@ -96,5 +96,10 @@
   "user_engagement": 6,
   "scroll": 2,
   "tool_result": 1
+ },
+ "total_by_page_sum": {
+  "sessions": 14,
+  "users": 13,
+  "views": 14
  }
 }

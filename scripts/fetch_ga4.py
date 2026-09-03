@@ -117,10 +117,28 @@ def fetch_day(creds, prop, day):
     events = {r.dimension_values[0].value: int(r.metric_values[0].value)
               for r in client.run_report(ev).rows}
 
+    # 合計は必ずディメンションなしで取り直す（2026-09-04 修正）。
+    # by_page（pagePath×channel×source）の sessions を足し上げると、複数ページを見た
+    # セッションが行の数だけ重複する。8月は 487 と出ていたが実数は 363（34%の水増し）で、
+    # 「月570セッション」「1面あたり月2.0」などの判断がこの水増し値の上に載っていた。
+    tot_req = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        metrics=[Metric(name="sessions"), Metric(name="activeUsers"),
+                 Metric(name="screenPageViews")])
+    tot_rows = client.run_report(tot_req).rows
+    if tot_rows:
+        mv = tot_rows[0].metric_values
+        total = {"sessions": int(mv[0].value), "users": int(mv[1].value),
+                 "views": int(mv[2].value)}
+    else:
+        total = {"sessions": 0, "users": 0, "views": 0}
+
     return {
         "date": ds, "property": prop,
         "fetched_at": datetime.datetime.now().isoformat(timespec="seconds"),
-        "total": {
+        "total": total,
+        "total_by_page_sum": {
             "sessions": sum(x["sessions"] for x in rows),
             "users": sum(x["users"] for x in rows),
             "views": sum(x["views"] for x in rows),

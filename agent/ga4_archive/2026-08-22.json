@@ -73,5 +73,10 @@
   "first_visit": 3,
   "click": 1,
   "garugaru_mode_switch": 1
+ },
+ "total_by_page_sum": {
+  "sessions": 7,
+  "users": 5,
+  "views": 11
  }
 }

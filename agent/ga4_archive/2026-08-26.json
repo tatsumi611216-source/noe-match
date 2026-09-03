@@ -3,8 +3,8 @@
  "property": "properties/549779769",
  "fetched_at": "2026-09-01T09:27:41",
  "total": {
-  "sessions": 33,
-  "users": 32,
+  "sessions": 32,
+  "users": 31,
   "views": 36
  },
  "by_page": [
@@ -146,5 +146,10 @@
   "scroll": 3,
   "saigenbyo_complete": 2,
   "saigenbyo_start": 1
+ },
+ "total_by_page_sum": {
+  "sessions": 33,
+  "users": 32,
+  "views": 36
  }
 }

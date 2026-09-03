@@ -3,8 +3,8 @@
  "property": "properties/549779769",
  "fetched_at": "2026-09-01T09:27:31",
  "total": {
-  "sessions": 53,
-  "users": 39,
+  "sessions": 25,
+  "users": 14,
   "views": 66
  },
  "by_page": [
@@ -289,5 +289,10 @@
   "first_visit": 11,
   "scroll": 11,
   "entry_click": 1
+ },
+ "total_by_page_sum": {
+  "sessions": 53,
+  "users": 39,
+  "views": 66
  }
 }
