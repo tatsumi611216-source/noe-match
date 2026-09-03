@@ -175,6 +175,14 @@ label.f{display:block;font-size:.82rem;font-weight:700;color:#3a4148;margin:0 0 
   <button id="go" class="btn">この自治体の条件を見る</button>
 </div>
 <div id="out"></div>
+  <section id="line-cta-result" hidden style="border:1px solid #e3ddd3;background:#f7f5f2;padding:18px 18px 20px;margin:24px 0 0;text-align:center">
+    <p style="margin:0 0 6px;font-size:11px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif">NOE OFFICIAL LINE</p>
+    <p style="margin:0 0 10px;font-size:16px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5">制度が変わったらお知らせします</p>
+    <p style="margin:0 0 16px;font-size:13px;color:#5a6068;line-height:1.85">自治体の結婚・子育て支援の公表値を月1回まとめて配信します。</p>
+    <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_result',{tool:'kekkon-shinseikatsu-jichitai'});}catch(e){}" style="display:inline-block;background:#7c2e42;color:#ffffff;padding:12px 30px;font-size:14px;font-weight:600;text-decoration:none">友だち追加する</a>
+    <p style="margin:10px 0 0;font-size:11px;color:#8a8f95">登録は無料。いつでも解除できます。</p>
+  </section>
+
 
 <h2 id="rank">上限額の高い自治体</h2>
 <p>一都三県の61自治体のうち、上限が60万円なのは49自治体です。国の基準（29歳以下60万円・39歳以下30万円）をそのまま採っている自治体が多数派で、そこから外れているところに理由があります。</p>
@@ -219,7 +227,7 @@ label.f{display:block;font-size:.82rem;font-weight:700;color:#3a4148;margin:0 0 
   <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
   <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">制度が変わったらお知らせします</p>
   <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">自治体の結婚・子育て支援の公表値を月1回まとめて配信します。<br>調べてほしい自治体があれば、追加後そのままトークでどうぞ。</p>
-  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'kekkon-shinseikatsu-jichitai'});}catch(e){}"
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_bottom',{tool:'kekkon-shinseikatsu-jichitai'});}catch(e){}"
      style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加する</a>
   <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は月1回だけ。いつでも解除できます。</p>
 </section>
@@ -291,5 +299,6 @@ document.getElementById('go').addEventListener('click', function(){
   out.scrollIntoView({behavior:'smooth', block:'start'});
 });
 </script>
+<script>(function(){var r=document.getElementById('out'),c=document.getElementById('line-cta-result');if(!r||!c)return;var sync=function(){c.hidden=(r.innerHTML.trim()==='');};sync();new MutationObserver(sync).observe(r,{childList:true,subtree:true});})();</script>
 </body>
 </html>
