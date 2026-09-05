@@ -487,3 +487,13 @@ A8案件が出た場合は、インデックスを理由に見送らないこと
   文脈が合うが、**CTAの追加はCEO承認事項**なので置いていない）／③ 本ツール／④ note未着手。
 - **次アクション**: ②を置くかどうかは9月中旬の初動を見てから決める。
   ①は `shinkon-hojokin` からツールへの内部リンクを追加すると受け皿が繋がる。
+
+---
+
+## 割付の確定（2026-09-05・CEO「対策を実行して」）
+
+- `articles/kekkon-shinseikatsu-data` と `tools/kekkon-shinseikatsu-jichitai` は**制度**に割り付ける
+  （測定器は種別で記事／ツールを分けるので、B・Cの回収側という位置づけは本文の説明で保つ）。
+  cluster_gsc.py に反映済み。
+- 統計3本（`rikonritsu-data` `shougai-mikonritsu-data` `tomobataraki-wariai-data`）は
+  独立クラスタ「**統計**」を正式化する。9/5時点で7日3クリック・表示173。

@@ -85,7 +85,8 @@ N = "dansei-ninkatsu-guide mitas-formen-kuchikomi mitocore-kuchikomi myseed-kuch
 
 SEIDO = """daredemo-tsuen-ryokin daredemo-tsuen-yoyaku byoji-hoiku-data kodomo-iryohi-data
 funin-josei-data shussan-hiyou-data shussan-ichijikin-data shussan-iryohi-koujo
-shussan-mushouka ikukyu-kyufukin-data hitorioya-shien-data"""
+shussan-mushouka ikukyu-kyufukin-data hitorioya-shien-data
+kekkon-shinseikatsu-data"""
 
 # 公的統計だが既存クラスタに帰属が決まっていない3本（2026-08-31に発見）。
 # 出産・育休の統計は制度クラスタに入るが、この3本は婚姻・世帯の一般統計で
@@ -103,7 +104,7 @@ TOOLS = {
     "L":    "rikongo-seikatsuhi",
     "制度": ("daredemo-tsuen-jichitai byoji-hoiku-ryokin kodomo-iryohi-jichitai "
              "funin-josei-jichitai ikukyu-encho-hantei hoikuen-tensu-nerima "
-             "hitorioya-shien-jichitai"),
+             "hitorioya-shien-jichitai kekkon-shinseikatsu-jichitai"),
 }
 
 ORDER = ["A", "B", "C", "C-sub", "D", "E", "F", "J", "L", "M", "N", "制度", "統計"]
