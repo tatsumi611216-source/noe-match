@@ -1374,5 +1374,241 @@
    "with-seriousness-data",
    "youbride-seikon-data"
   ]
+ },
+ {
+  "period": {
+   "start": "2026-08-07",
+   "end": "2026-09-04"
+  },
+  "fetched_at": "2026-09-06T15:53:20",
+  "totals": {
+   "live_articles": 221,
+   "eligible_articles": 219,
+   "excluded_published_after_window": 0,
+   "articles_with_impressions": 182,
+   "silent_rate": 16.9,
+   "impressions": 5148,
+   "clicks": 74,
+   "ctr": 1.44
+  },
+  "cohorts": {
+   "legacy": {
+    "articles": 118,
+    "with_impressions": 100,
+    "reach_rate": 84.7
+   },
+   "in_window": {
+    "articles": 101,
+    "with_impressions": 82,
+    "reach_rate": 81.2
+   },
+   "fresh": {
+    "articles": 2,
+    "with_impressions": 2,
+    "reach_rate": 100.0
+   },
+   "after_window": {
+    "articles": 0,
+    "with_impressions": 0,
+    "reach_rate": null
+   }
+  },
+  "rewrites": {
+   "evaluated": 8,
+   "reached": 5,
+   "pending": 29
+  },
+  "position_bands": {
+   "1-10位": {
+    "impressions": 318,
+    "clicks": 6,
+    "ctr": 1.9
+   },
+   "11-30位": {
+    "impressions": 370,
+    "clicks": 6,
+    "ctr": 1.6
+   },
+   "51位以下": {
+    "impressions": 887,
+    "clicks": 2,
+    "ctr": 0.2
+   },
+   "31-50位": {
+    "impressions": 296,
+    "clicks": 0,
+    "ctr": 0.0
+   }
+  },
+  "clusters": {
+   "属性別": {
+    "pages": 13,
+    "impressions": 510,
+    "clicks": 5,
+    "avg_position": 57.3,
+    "clicks_per_page": 0.38,
+    "ctr": 1.0
+   },
+   "ノウハウ": {
+    "pages": 13,
+    "impressions": 109,
+    "clicks": 5,
+    "avg_position": 25.0,
+    "clicks_per_page": 0.38,
+    "ctr": 4.6
+   },
+   "データ・統計": {
+    "pages": 43,
+    "impressions": 1431,
+    "clicks": 11,
+    "avg_position": 25.4,
+    "clicks_per_page": 0.26,
+    "ctr": 0.8
+   },
+   "その他": {
+    "pages": 66,
+    "impressions": 978,
+    "clicks": 24,
+    "avg_position": 31.0,
+    "clicks_per_page": 0.36,
+    "ctr": 2.5
+   },
+   "地域ガイド": {
+    "pages": 9,
+    "impressions": 774,
+    "clicks": 4,
+    "avg_position": 42.6,
+    "clicks_per_page": 0.44,
+    "ctr": 0.5
+   },
+   "アプリ別": {
+    "pages": 13,
+    "impressions": 268,
+    "clicks": 3,
+    "avg_position": 26.6,
+    "clicks_per_page": 0.23,
+    "ctr": 1.1
+   },
+   "結婚準備": {
+    "pages": 18,
+    "impressions": 208,
+    "clicks": 1,
+    "avg_position": 45.2,
+    "clicks_per_page": 0.06,
+    "ctr": 0.5
+   },
+   "相談所": {
+    "pages": 4,
+    "impressions": 155,
+    "clicks": 0,
+    "avg_position": 64.6,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "新生活": {
+    "pages": 11,
+    "impressions": 98,
+    "clicks": 0,
+    "avg_position": 27.0,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   },
+   "探偵・離婚": {
+    "pages": 3,
+    "impressions": 4,
+    "clicks": 0,
+    "avg_position": 43.0,
+    "clicks_per_page": 0.0,
+    "ctr": 0.0
+   }
+  },
+  "top10_queries": [
+   "2030年 結婚 良い日",
+   "with ユーザー数",
+   "with 年代",
+   "with 心理テスト どこから",
+   "with 心理テスト 攻略",
+   "with 心理テスト攻略",
+   "with 成婚率",
+   "with 結婚率",
+   "with心理テスト",
+   "こども誰でも通園制度",
+   "アプリ婚 割合",
+   "ウィズ 年齢層",
+   "ガルガル 期 同居",
+   "ガルガル期 名前の由来",
+   "ガルガル期 診断",
+   "タップル 真剣度",
+   "タップル 結婚率",
+   "ペアーズ 成婚率",
+   "ペアーズ 結婚 確率",
+   "マッチングアプリ婚 割合",
+   "マリッシュ ユーブライド 比較",
+   "ミトコア",
+   "ミトコア 怪しい",
+   "動物好き 婚活",
+   "子供 医療費 無料 東京 いつまで",
+   "専業主婦 割合",
+   "授乳中 化粧品 ダメな成分",
+   "新生児 面会 いつから",
+   "練馬区 保育園 最低指数一覧 令和8年"
+  ],
+  "top10_pages": [
+   "(top)",
+   "appkon-wariai-data",
+   "daredemo-tsuen-ryokin",
+   "garugaru-doukyo",
+   "garugaru-ki-guide",
+   "junyuchu-biyou",
+   "mitocore-kuchikomi",
+   "pairs-marriage-data",
+   "pet-konkatsu",
+   "shinseiji-menkai",
+   "success-rate-data",
+   "tapple-seriousness-data",
+   "tomobataraki-wariai-data",
+   "with-guide",
+   "with-nenreiso-data",
+   "with-seriousness-data",
+   "youbride-marrish-hikaku"
+  ],
+  "pages_with_clicks": [
+   "(top)",
+   "amenohi-date-guide",
+   "bachelor-date-guide",
+   "christmas-propose-gyakusan",
+   "civil-servant-guide",
+   "daredemo-tsuen-ryokin",
+   "futari-sumaho-minaoshi",
+   "garugaru-ki-guide",
+   "garugaru-otto-taiou",
+   "garugaru-ueno-ko",
+   "kekkon-okane-data",
+   "konkatsu-roadmap",
+   "kyoto-guide",
+   "matching-app-ranking",
+   "mens-make-konkatsu",
+   "mitas-formen-kuchikomi",
+   "nyuseki-2027-guide",
+   "ouchi-date-guide",
+   "pairs-marriage-data",
+   "pet-konkatsu",
+   "privacy-protection",
+   "rikonritsu-data",
+   "sango-biyou-itsukara",
+   "sango-kaji-buntan",
+   "sapporo-guide",
+   "sengyoshufu-seikatsuhi",
+   "shinseiji-menkai",
+   "shougai-mikonritsu-data",
+   "tapple-seriousness-data",
+   "tenshoku-riyu-honne",
+   "time-management",
+   "tokyo-guide",
+   "usuge-konkatsu-eikyou",
+   "with-guide",
+   "with-seriousness-data",
+   "youbride-seikon-data"
+  ]
  }
 ]
