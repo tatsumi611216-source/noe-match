@@ -706,6 +706,28 @@ nashikon-data は「2026-08-23 に申請する」節にも重複していたの�
 - [済 8/30] https://www.noe-match.com/tools/hitorioya-shien-jichitai/ （ひとり親支援 東京23区ナビ・8/30公開）
 - [済 8/30] https://www.noe-match.com/articles/hitorioya-shien-data/ （ひとり親支援データ記事・8/30公開）
 
+#### 最優先（2026-09-06 追加・API全数取り直し×GSC表示で絞った再申請リスト）
+
+9/6に `index_check.py --refresh`（254URL）を回し、**APIが未索引と返した27本のうち、GSC表示が28日でゼロのもの**だけを残した
+（表示が1でも出ているページは実際には索引済み。APIは shussan-hiyou-data / shussan-ichijikin-data を「未認識」と返したが、
+画面検査では「登録されています」だった。**APIの未索引判定は画面より遅れる。表示ゼロと突き合わせてから申請する**）。
+いずれも 8/29〜9/1 に申請済みで、5〜8日経ってもまだ入っていない**再申請**。
+
+- [ ] https://www.noe-match.com/articles/daredemo-tsuen-yoyaku/   ← 9/6 画面で「検出 - 未登録」確認。再リクエストは送信エラー2回（一過性・要再試行）
+- [ ] https://www.noe-match.com/articles/garugaru-ki-itsumade/
+- [ ] https://www.noe-match.com/articles/ikukyu-kyufukin-data/
+- [ ] https://www.noe-match.com/articles/konkatsu-party-guide/
+- [ ] https://www.noe-match.com/articles/sangokea-higaeri/
+- [ ] https://www.noe-match.com/articles/youikuhi-kousei-shosho/
+- [ ] https://www.noe-match.com/tools/ikukyu-encho-hantei/
+- [ ] https://www.noe-match.com/policy/editorial.html （優先度低・サイト共通ページ）
+
+申請の見込みが薄い型（申請しない）: free-vs-paid（クロール済み未索引・表示0）。
+
+9/6 実測メモ: Search Console の画面が終日不安定だった（検査の1回目が「エラーが発生しました」、リクエスト送信が
+「送信中に問題が発生しました」×2、スクリーンショットのレンダラ停止）。台帳8/25の「1回やり直せば通る」が今回は通らず、
+**画面での申請は打ち切って翌朝の自動タスクへ引き継ぐ**。
+
 #### 最優先（2026-09-01 追加・実測で作り直した未申請リスト）
 
 **9/1 追加分（当日公開の3本）はすべて申請済み:**
