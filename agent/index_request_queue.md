@@ -916,3 +916,8 @@ soudanjo-hikaku は対照群ルールどおり申請していない。
 2回目で入った。**navigate を挟んだ直後だけ click→type を2回打つ**のが確実。
 スクリーンショットで入力を確認してから Enter を押す手順は今回も誤検査ゼロ。
 
+
+#### 最優先（2026-09-07 追加・当日公開分）
+
+- https://www.noe-match.com/articles/nagano-guide/ （長野でマッチングアプリを使うなら・9/7公開）
+- https://www.noe-match.com/articles/kagoshima-guide/ （鹿児島でマッチングアプリを使うなら・9/7公開）
