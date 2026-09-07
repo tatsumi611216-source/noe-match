@@ -943,6 +943,8 @@ soudanjo-hikaku は対照群ルールどおり申請していない。
 
 - https://www.noe-match.com/articles/nagano-guide/ （長野でマッチングアプリを使うなら・9/7公開）
 - https://www.noe-match.com/articles/kagoshima-guide/ （鹿児島でマッチングアプリを使うなら・9/7公開）
+- https://www.noe-match.com/articles/kumamoto-guide/ （熊本でマッチングアプリを使うなら・9/7公開）
+- https://www.noe-match.com/articles/okayama-guide/ （岡山でマッチングアプリを使うなら・9/7公開）
 
 ## 2026-09-07 実行結果（サブエージェント・再申請8本）
 
