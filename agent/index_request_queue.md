@@ -713,14 +713,14 @@ nashikon-data は「2026-08-23 に申請する」節にも重複していたの�
 画面検査では「登録されています」だった。**APIの未索引判定は画面より遅れる。表示ゼロと突き合わせてから申請する**）。
 いずれも 8/29〜9/1 に申請済みで、5〜8日経ってもまだ入っていない**再申請**。
 
-- [ ] https://www.noe-match.com/articles/daredemo-tsuen-yoyaku/   ← 9/6 画面で「検出 - 未登録」確認。再リクエストは送信エラー2回（一過性・要再試行）
-- [ ] https://www.noe-match.com/articles/garugaru-ki-itsumade/
-- [ ] https://www.noe-match.com/articles/ikukyu-kyufukin-data/
-- [ ] https://www.noe-match.com/articles/konkatsu-party-guide/
-- [ ] https://www.noe-match.com/articles/sangokea-higaeri/
-- [ ] https://www.noe-match.com/articles/youikuhi-kousei-shosho/
-- [ ] https://www.noe-match.com/tools/ikukyu-encho-hantei/
-- [ ] https://www.noe-match.com/policy/editorial.html （優先度低・サイト共通ページ）
+- [済 9/7] https://www.noe-match.com/articles/daredemo-tsuen-yoyaku/   ← 9/6 画面で「検出 - 未登録」確認。再リクエストは送信エラー2回（一過性・要再試行）。9/7 未登録確認・再リクエスト成功
+- [登録済 9/7・申請不要] https://www.noe-match.com/articles/garugaru-ki-itsumade/
+- [済 9/7] https://www.noe-match.com/articles/ikukyu-kyufukin-data/
+- [登録済 9/7・申請不要] https://www.noe-match.com/articles/konkatsu-party-guide/
+- [登録済 9/7・申請不要] https://www.noe-match.com/articles/sangokea-higaeri/
+- [登録済 9/7・申請不要] https://www.noe-match.com/articles/youikuhi-kousei-shosho/
+- [登録済 9/7・申請不要] https://www.noe-match.com/tools/ikukyu-encho-hantei/
+- [登録済 9/7・申請不要] https://www.noe-match.com/policy/editorial.html （優先度低・サイト共通ページ）
 
 申請の見込みが薄い型（申請しない）: free-vs-paid（クロール済み未索引・表示0）。
 
@@ -943,3 +943,41 @@ soudanjo-hikaku は対照群ルールどおり申請していない。
 
 - https://www.noe-match.com/articles/nagano-guide/ （長野でマッチングアプリを使うなら・9/7公開）
 - https://www.noe-match.com/articles/kagoshima-guide/ （鹿児島でマッチングアプリを使うなら・9/7公開）
+
+## 2026-09-07 実行結果（サブエージェント・再申請8本）
+
+**2件成功・6件スキップ（登録済み）。割り当て上限には到達せず、送信エラー・失敗ともに0件。**
+
+| # | URL | 検査結果 | 処理 |
+|---|-----|------|------|
+| 1 | /articles/daredemo-tsuen-yoyaku/ | URL が Google に登録されていません | ✅ 優先クロールキューに追加 |
+| 2 | /articles/garugaru-ki-itsumade/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 3 | /articles/ikukyu-kyufukin-data/ | URL が Google に登録されていません | ✅ 優先クロールキューに追加 |
+| 4 | /articles/konkatsu-party-guide/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 5 | /articles/sangokea-higaeri/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 6 | /articles/youikuhi-kousei-shosho/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 7 | /tools/ikukyu-encho-hantei/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 8 | /policy/editorial.html | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+
+送信エラー0件・「割り当て量を超えています」0件・再試行なし。
+9/6に「送信エラー2回」と記録されていた daredemo-tsuen-yoyaku は、9/7 は1回目で成功した
+（9/6の画面不安定は一過性で、今回は再現しなかった）。
+
+### 6本が「登録済み」に変わっていた
+
+9/6時点では27本の未索引候補から絞った8本だったが、9/7の実機検査では garugaru-ki-itsumade /
+konkatsu-party-guide / sangokea-higaeri / youikuhi-kousei-shosho / tools/ikukyu-encho-hantei /
+policy/editorial.html の6本がすでに「登録されています」に変化していた。
+8/29〜9/1に申請済みだった分がこの数日で自然に入ったとみられる。**申請前に必ず検査してから
+撃つ**ことで、枠を6件分節約できた。
+
+### 実測メモ：今回は検索バーの罠が毎回再現した
+
+台帳記載の「navigate直後の1回目は空振りする」が8URL中7回で再現（1回目のtypeが空振り、
+2回目で入力成功）。スクリーンショットで入力確認してからEnterを押す手順のおかげで誤検査は
+0件。「送信中に問題が発生しました」エラーは今回は発生しなかった。
+
+### 残り
+
+- 台帳の「最優先（2026-09-06追加）」節は全8本処理済み（申請2本・登録済みスキップ6本）。
+- free-vs-paid は台帳の指示どおり申請していない（クロール済み未索引・表示0のため見込み薄）。
