@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="px.a8.net"],a[href*="t.afi-b.com"]');if(a){try{gtag('event','aff_click',{link_domain:(a.href.indexOf('a8.net')>-1?'a8':'afb'),page_slug:location.pathname});}catch(x){}}},true);</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="__URL__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__OGD__">
+<meta property="og:type" content="website">
+<meta property="og:url" content="__URL__">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="23区の子育て支援を比較｜区を選ぶと5制度が1画面">
+<meta name="twitter:description" content="__OGD__">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+__CSS__
+<style>
+.num-cell{font-weight:800;color:#7c2e42;white-space:nowrap}
+.hub-card{border:1px solid #e3ddd3;border-radius:6px;background:#fff;padding:16px 18px;margin:14px 0;min-width:0}
+.hub-card h3{margin:0 0 4px;font-size:1.02rem;color:#1d242b}
+.hub-card .hub-key{font-size:1.25rem;font-weight:800;color:#7c2e42;margin:0 0 8px;line-height:1.5;overflow-wrap:anywhere}
+.hub-card dl{margin:0}
+.hub-card dt{font-weight:700;color:#1d242b;margin-top:10px;font-size:.86rem}
+.hub-card dd{margin:2px 0 0;font-size:.86rem;line-height:1.85;color:#3a4148;overflow-wrap:anywhere}
+.hub-card .hub-go{display:block;margin-top:12px;font-size:.86rem;font-weight:700;color:#7c2e42}
+.hub-card .hub-go span{display:block;font-weight:400;font-size:.78rem;color:#6b7178}
+.hub-na{color:#8a8f95;font-weight:600}
+.hub-note{padding:12px 14px;border-radius:6px;margin:12px 0;font-size:.88rem;line-height:1.85;background:#f6f0e1;border:1px solid #e6d8b4}
+.table-scroll table td,.table-scroll table th{font-size:.82rem;white-space:nowrap}
+</style>
+<script type="application/ld+json">__FAQLD__</script>
+<script type="application/ld+json">__APPLD__</script>
+<script type="application/ld+json">__BCLD__</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 23区の子育て支援を比較</div>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<h1>__H1__</h1>
+<p>ひとり親家庭の手当、子ども医療費助成、病児保育の料金、こども誰でも通園制度の上限時間、産後ケアの自己負担。5つの制度はそれぞれ別のページで比較できますが、「うちの区はどうなのか」を一度に見る場所がありませんでした。ここでは区を1つ選ぶと、5つの制度の当該区の値が1画面に並びます。数字はすべて各区の公式ページを一次確認したデータから取り出しています（__CHECKED_TXT__）。</p>
+</div></div>
+
+<article>
+<blockquote><strong>制度ごとに、差の出方が違います。</strong>__INTRO_FACTS__　どの制度で差が出るのかを先に知ってから、区ごとの詳細に入るのが早道です。</blockquote>
+
+<h2>STEP1｜お住まいの区（または候補の区）を選ぶ</h2>
+<div class="calc" id="calcForm">
+  <div class="fld">
+    <label for="ward">東京23区</label>
+    <select id="ward">__OPTS__</select>
+    <div class="hint">23区すべてを収録しています。区の公式ページに記載が無い項目は推測で埋めず「情報なし」、その区に制度が無いものは「対象外」と表示します。</div>
+  </div>
+  <button type="button" class="calc-btn" id="run">この区の5つの制度を見る</button>
+</div>
+
+<div class="result" id="result" aria-live="polite">
+  <div class="big">
+    <div class="lbl">選んだ区</div>
+    <div class="num" id="wardName">—</div>
+  </div>
+  <div id="cards"></div>
+  <div id="hoikuenNote"></div>
+  <p class="sub-num" id="srcNote"></p>
+</div>
+
+<div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:24px 0 0;background:#faf8f5">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
+<p style="font-weight:900;margin:0 0 6px;color:#1d242b">制度は区が決める。減らせるのは、毎日の家事の総量のほう</p>
+<p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">手当も助成も上限時間も、こちらで動かせる余地はありません。一方で買い物と献立を考える時間は今日から減らせます。Oisixは食材宅配のおためしセット（内容・価格・配送エリアは公式サイトでご確認ください）。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77" id="aff-result" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。制度の適用とは関係ありません</p>
+</div>
+
+<h2>東京23区の早見表（5制度の代表値）</h2>
+<p>各制度の代表的な1項目だけを並べた表です。減免の条件・予約の経路・対象年齢などは、上の区選択か、各制度の比較ツールで確認してください。</p>
+<div class="table-scroll"><table>
+<tr><th>区</th><th>児童育成手当（月額）</th><th>子ども医療費の窓口負担</th><th>病児保育（1日）</th><th>誰でも通園の上限</th><th>産後ケア 宿泊型</th></tr>
+__ROWS__
+</table></div>
+
+<h2>保育園の点数（入園指数）はこのページでは比較していません</h2>
+<p>「保育園 点数」で探している方が多いので先に書いておきます。認可保育園の入園選考で使う指数（点数）の表と、園ごとの内定ボーダーは区ごとに別の資料で、23区を同じ基準で並べることができません。当サイトで点数計算とボーダーの逆引きを用意しているのは練馬区だけで、上の区選択で練馬区を選ぶと案内が出ます。ほかの区は各区の入園案内（利用調整基準・指数表）でご確認ください。なお、こども誰でも通園制度は保育園に在籍していない子どもが時間単位で通う別の制度で、使ったことが入園選考で有利になるわけではありません。</p>
+
+<h2>このページの前提（出典と、載せていないもの）</h2>
+<p>5つの制度の数字は、制度ごとに東京23区の公式ページを一次確認して作ったデータからそのまま取り出しています（__CHECKED_TXT__）。各区の出典URLは、各ブロックのリンク先（制度別の比較ツール・データ記事）に区ごとに載せています。</p>
+<blockquote><strong>本ページが載せていないもの：</strong>施設の数と空き状況、申込の締切、年度途中の改定、所得に応じた減免の細かい計算、ひとり親向けの家賃・住宅助成の専用制度を確認できなかった区（23区中__N_JUTAKU__区には何らかの住宅支援の記載あり）の代替制度、こども誰でも通園制度の令和8年度の上限時間を公式ページで確認できなかった__N_DAR_NA__区の実際の運用。最終的な適用は各区が判断します。</blockquote>
+
+<h2>よくある質問</h2>
+__FAQHTML__
+</article>
+
+<!-- TOOL-FAMILY -->
+<section style="max-width:680px;margin:40px auto 8px;padding:26px 24px;background:#f7f5f2;border:1px solid #e3ddd3"><p style="margin:0 0 6px;font-size:12px;letter-spacing:.16em;color:#7c2e42;font-family:Georgia,serif">RELATED TOOLS</p><p style="margin:0 0 16px;font-weight:700;font-size:1.02rem">制度ごとの詳しい比較はこちら</p><ul style="list-style:none;margin:0;padding:0"><li style="margin:0 0 12px"><a href="/tools/hitorioya-shien-jichitai/" onclick="try{gtag('event','tool_cross',{from:'__SLUG__',to:'hitorioya-shien-jichitai'});}catch(e){}" style="font-weight:700;color:#7c2e42">ひとり親支援は住む区でどれだけ違うか</a><span style="display:block;font-size:.82rem;color:#6b7178;margin-top:2px">東京23区の児童育成手当・医療費助成・住宅支援</span></li><li style="margin:0 0 12px"><a href="/tools/kodomo-iryohi-jichitai/" onclick="try{gtag('event','tool_cross',{from:'__SLUG__',to:'kodomo-iryohi-jichitai'});}catch(e){}" style="font-weight:700;color:#7c2e42">子ども医療費助成、23区で何が違うか</a><span style="display:block;font-size:.82rem;color:#6b7178;margin-top:2px">対象年齢・窓口負担・入院時の食事代の扱い</span></li><li style="margin:0 0 12px"><a href="/tools/byoji-hoiku-ryokin/" onclick="try{gtag('event','tool_cross',{from:'__SLUG__',to:'byoji-hoiku-ryokin'});}catch(e){}" style="font-weight:700;color:#7c2e42">病児保育は1日いくらか</a><span style="display:block;font-size:.82rem;color:#6b7178;margin-top:2px">東京23区の料金・減免・予約方法を並べて確認</span></li><li style="margin:0 0 12px"><a href="/tools/daredemo-tsuen-jichitai/" onclick="try{gtag('event','tool_cross',{from:'__SLUG__',to:'daredemo-tsuen-jichitai'});}catch(e){}" style="font-weight:700;color:#7c2e42">誰でも通園制度、月何時間まで使えるか</a><span style="display:block;font-size:.82rem;color:#6b7178;margin-top:2px">46自治体の上限時間・料金・予約方法</span></li><li style="margin:0 0 12px"><a href="/tools/sangokea-ryokin/" onclick="try{gtag('event','tool_cross',{from:'__SLUG__',to:'sangokea-ryokin'});}catch(e){}" style="font-weight:700;color:#7c2e42">産後ケアの自己負担はいくらか</a><span style="display:block;font-size:.82rem;color:#6b7178;margin-top:2px">43自治体の料金・回数上限・減免</span></li></ul><p style="margin:12px 0 0;font-size:.72rem;color:#8a8f95">いずれも無料・登録不要。公式ページの一次確認にもとづく数字だけを載せています。</p></section>
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:56px auto 64px;padding:36px 28px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">自治体の制度は年度で変わります</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">子ども医療費助成・産後ケア・こども誰でも通園制度など、自治体ごとに違う制度の変更点を月1回お知らせします。<br>お住まいの区の制度について、追加後そのままトークで相談もできます。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_bottom',{tool:'__SLUG__'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加する</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料。いつでも解除できます。</p>
+</section>
+</div>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本ページは各区の公式公開情報（__CHECKED_TXT__）に基づく目安です。制度の適用と最終的な判断は各区が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+(function(){
+"use strict";
+var D=__DATA__;
+var CHECKED=__CHECKED_JS__;
+var NA='情報なし';
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function v(x){return (x===null||x===undefined||x==='')?'<span class="hub-na">'+NA+'</span>':esc(x);}
+function dl(items){var h='<dl>';for(var i=0;i<items.length;i++){h+='<dt>'+esc(items[i][0])+'</dt><dd>'+v(items[i][1])+'</dd>';}return h+'</dl>';}
+function go(href,label,sub){return '<a class="hub-go" href="'+href+'" onclick="try{gtag(\'event\',\'tool_cross\',{from:\'__SLUG__\',to:\''+href.split('/')[2]+'\'});}catch(e){}">'+esc(label)+'<span>'+esc(sub)+'</span></a>';}
+function card(title,key,body,goHtml,checked){
+  return '<div class="hub-card"><h3>'+esc(title)+'</h3><p class="hub-key">'+key+'</p>'+body+goHtml+'<p style="margin:8px 0 0;font-size:.72rem;color:#8a8f95">区の公式ページを'+esc(checked)+'に確認</p></div>';
+}
+function noCard(title){
+  return '<div class="hub-card"><h3>'+esc(title)+'</h3><p class="hub-key hub-na">'+NA+'</p><p style="font-size:.86rem;color:#6b7178;margin:0">この区の値はデータに収録されていません。</p></div>';
+}
+function render(){
+  var key=$('ward').value, w=D[key];
+  if(!w){return;}
+  $('wardName').textContent=w.name;
+  var h='';
+  // 1 ひとり親
+  var a=w.hitorioya;
+  h+= a ? card('ひとり親家庭への支援（児童育成手当ほか）', '育成手当 月額 '+v(a.ikusei)+'／児童1人',
+      dl([['障害手当（月額）',a.ikusei_shogai],['育成手当の所得制限',a.ikusei_shotoku],['医療費助成',a.iryo_name+'：'+a.iryo_futan],['医療費助成の対象年齢',a.iryo_age],['家賃・住宅の助成',a.jutaku],
+          ['区独自の支援', a.dokuji.length? a.dokuji.map(function(x){return x.name+(x.kingaku&&x.kingaku!==NA?'（'+x.kingaku+'）':'');}).join('／') : null]]),
+      go('/tools/hitorioya-shien-jichitai/','ひとり親支援 東京23区ナビで詳しく見る','所得制限の基準額・区独自制度の内容・出典URL'), CHECKED.hitorioya)
+    : noCard('ひとり親家庭への支援');
+  // 2 子ども医療費
+  var k=w.kodomo;
+  h+= k ? card('子ども医療費助成', '対象 '+v(k.age_class)+'まで／'+v(k.jiko.split('（')[0]),
+      dl([['対象年齢',k.age],['所得制限',k.shotoku],['窓口での負担',k.jiko],['入院時の食事代',k.shokuji],['医療証の名称',k.cert]]),
+      go('/tools/kodomo-iryohi-jichitai/','子ども医療費助成 東京23区ナビで詳しく見る','都基準との差・申請方法・出典URL'), CHECKED.kodomo)
+    : noCard('子ども医療費助成');
+  // 3 病児保育
+  var b=w.byoji;
+  h+= b ? card('病児保育', v(b.fee),
+      dl([['減免',b.genmen],['利用できる日数の上限',b.jogen],['予約の経路',b.yoyaku],['対象',b.taisho]]),
+      go('/tools/byoji-hoiku-ryokin/','病児保育の料金 東京23区比較で詳しく見る','施設・登録方法・出典URL'), CHECKED.byoji)
+    : noCard('病児保育');
+  // 4 誰でも通園
+  var d=w.daretsu;
+  h+= d ? card('こども誰でも通園制度', v(d.cap),
+      dl([['上限の内訳',d.cap_note],['利用料',d.fee],['対象年齢',d.age],['予約の経路',d.reserve]]),
+      go('/tools/daredemo-tsuen-jichitai/','こども誰でも通園制度 自治体別ナビで詳しく見る','使いたい回数が枠に収まるかの判定・申込の入口・出典URL'), CHECKED.daretsu)
+    : noCard('こども誰でも通園制度');
+  // 5 産後ケア
+  var s=w.sango;
+  h+= s ? card('産後ケア（宿泊・日帰り・訪問）', '宿泊型 '+v(s.stay),
+      dl([['日帰り型',s.day],['訪問型',s.visit],['宿泊型の上限',s.limit_stay],['日帰り型の上限',s.limit_day],['訪問型の上限',s.limit_visit],['減免',s.genmen],['対象',s.target]]),
+      go('/tools/sangokea-ryokin/','産後ケアの料金ナビで詳しく見る','使いたい回数での自己負担の合計・申込時期・出典URL'), CHECKED.sango)
+    : noCard('産後ケア');
+  $('cards').innerHTML=h;
+  // 保育園の点数：練馬区のときだけ案内を出す（練馬区限定ツール）
+  $('hoikuenNote').innerHTML = (key==='nerima')
+    ? '<div class="hub-note"><strong>練馬区は、保育園の点数（入園指数）の計算とボーダー逆引きも用意しています。</strong> <a href="/tools/hoikuen-tensu-nerima/" onclick="try{gtag(\'event\',\'tool_cross\',{from:\'__SLUG__\',to:\'hoikuen-tensu-nerima\'});}catch(e){}" style="font-weight:700;color:#7c2e42">練馬区の保育園 点数計算＆内定ボーダー逆引き</a></div>'
+    : '';
+  $('srcNote').textContent='各項目の出典URLは、各ブロックのリンク先に区ごとに載せています。最新の内容は必ず区の公式ページでご確認ください。';
+  if(window.__ui)try{gtag('event','tool_result',{tool:'__SLUG__',ward:key});}catch(e){}
+}
+$('run').addEventListener('click',render);
+$('ward').addEventListener('change',render);
+render();
+})();
+</script>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
+</html>

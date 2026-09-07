@@ -162,6 +162,8 @@ TOOL_FAMILY = ("<!-- TOOL-FAMILY -->\n"
                           "病児保育は1日いくらか", "東京23区の料金・減免・予約方法を並べて確認")
                + fam_link("hitorioya-shien-jichitai", "daredemo-tsuen-jichitai",
                           "誰でも通園制度、月何時間まで使えるか", "46自治体の上限時間・料金・予約方法")
+               + fam_link("hitorioya-shien-jichitai", "kosodate-shien-23ku",
+                          "うちの区の子育て支援を1画面で（23区ハブ）", "区を選ぶと、ひとり親手当・医療費助成・病児保育・誰でも通園・産後ケアの5制度が並びます")
                + "</ul><p style=\"margin:12px 0 0;font-size:.72rem;color:#8a8f95\">いずれも無料・登録不要。公式ページの一次確認にもとづく数字だけを載せています。</p></section>")
 
 
@@ -612,6 +614,7 @@ ART_HTML = """<!DOCTYPE html>
 <h2 id="related">関連する記事とツール</h2>
 <ul>
 <li><a href="/tools/hitorioya-shien-jichitai/">ひとり親支援 東京23区ナビ</a></li>
+<li><a href="/tools/kosodate-shien-23ku/">23区の子育て支援を比較｜区を選ぶと5つの制度が1画面</a></li>
 <li><a href="/tools/rikongo-seikatsuhi/">離婚後の生活費と養育費のシミュレーション</a></li>
 <li><a href="/tools/kodomo-iryohi-jichitai/">子ども医療費助成はいつまで？東京23区の条件</a></li>
 <li><a href="/articles/kodomo-iryohi-data/">子ども医療費助成は東京23区でどう違う？差がつくのは入院時の食事代</a></li>

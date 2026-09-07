@@ -321,6 +321,7 @@ def article_josei():
 <ul>
 <li><a href="/tools/sangokea-ryokin/">産後ケアの料金はいくら？自治体別の自己負担</a></li>
 <li><a href="/articles/sangokea-nankai/">産後ケアは何回使える？%s自治体の上限一覧</a></li>
+<li><a href="/tools/kosodate-shien-23ku/">23区の子育て支援を比較｜区を選ぶと5つの制度が1画面</a></li>
 <li><a href="/articles/daredemo-tsuen-ryokin/">こども誰でも通園制度の料金はいくら？46自治体の実額と減免</a></li>
 <li><a href="/articles/futarime-sango/">2人目の産後は何が変わるか</a></li>
 <li><a href="/articles/sango-kaji-buntan/">産後の家事分担はどう決めるか</a></li>

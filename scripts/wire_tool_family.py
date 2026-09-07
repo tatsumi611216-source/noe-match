@@ -23,16 +23,17 @@ DESC = {
  "kodomo-iryohi-jichitai":  ("子ども医療費助成、23区で何が違うか", "対象年齢・窓口負担・入院時の食事代の扱い"),
  "daredemo-tsuen-jichitai": ("誰でも通園制度、月何時間まで使えるか", "46自治体の上限時間・料金・予約方法"),
  "sangokea-ryokin":         ("産後ケアの自己負担はいくらか", "43自治体の料金・回数上限・減免"),
+ "kosodate-shien-23ku":     ("うちの区の子育て支援を1画面で（23区ハブ）", "区を選ぶと、ひとり親手当・医療費助成・病児保育・誰でも通園・産後ケアの5制度が並びます"),
  "funin-josei-jichitai":    ("不妊治療の助成、あなたの区はいくらまで", "東京23区の上乗せ助成の有無と上限額"),
  "ikukyu-encho-hantei":     ("育休延長の条件判定", "延長できる条件と必要書類をその場で判定"),
 }
 
 FAMILY = {
  "funin-josei-jichitai":    ["sangokea-ryokin", "kodomo-iryohi-jichitai", "daredemo-tsuen-jichitai"],
- "sangokea-ryokin":         ["daredemo-tsuen-jichitai", "byoji-hoiku-ryokin", "kodomo-iryohi-jichitai"],
- "daredemo-tsuen-jichitai": ["byoji-hoiku-ryokin", "kodomo-iryohi-jichitai", "sangokea-ryokin"],
- "byoji-hoiku-ryokin":      ["kodomo-iryohi-jichitai", "daredemo-tsuen-jichitai", "sangokea-ryokin"],
- "kodomo-iryohi-jichitai":  ["byoji-hoiku-ryokin", "daredemo-tsuen-jichitai", "sangokea-ryokin"],
+ "sangokea-ryokin":         ["daredemo-tsuen-jichitai", "byoji-hoiku-ryokin", "kodomo-iryohi-jichitai", "kosodate-shien-23ku"],
+ "daredemo-tsuen-jichitai": ["byoji-hoiku-ryokin", "kodomo-iryohi-jichitai", "sangokea-ryokin", "kosodate-shien-23ku"],
+ "byoji-hoiku-ryokin":      ["kodomo-iryohi-jichitai", "daredemo-tsuen-jichitai", "sangokea-ryokin", "kosodate-shien-23ku"],
+ "kodomo-iryohi-jichitai":  ["byoji-hoiku-ryokin", "daredemo-tsuen-jichitai", "sangokea-ryokin", "kosodate-shien-23ku"],
  "ikukyu-encho-hantei":     ["daredemo-tsuen-jichitai", "byoji-hoiku-ryokin", "kodomo-iryohi-jichitai"],
  "hoikuen-tensu-nerima":    ["daredemo-tsuen-jichitai", "byoji-hoiku-ryokin", "kodomo-iryohi-jichitai"],
 }

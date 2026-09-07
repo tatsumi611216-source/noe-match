@@ -241,6 +241,7 @@ def build_article():
 <h2 id="related">関連する記事とツール</h2>
 <ul>
 <li><a href="/tools/kodomo-iryohi-jichitai/">子ども医療費助成 東京23区ナビ</a></li>
+<li><a href="/tools/kosodate-shien-23ku/">23区の子育て支援を比較｜区を選ぶと5つの制度が1画面</a></li>
 <li><a href="/articles/sangokea-josei/">産後ケアの助成はいくら？非課税世帯の減免と所得を問わない減額枠</a></li>
 <li><a href="/articles/shussan-mushouka/">出産費用の無償化はいつから？決まっていることと、まだ決まっていないこと</a></li>
 <li><a href="/articles/daredemo-tsuen-ryokin/">こども誰でも通園制度の料金はいくら？46自治体の実額と減免</a></li>

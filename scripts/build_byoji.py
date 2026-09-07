@@ -260,6 +260,7 @@ def build_article():
 <h2 id="related">関連する記事とツール</h2>
 <ul>
 <li><a href="/tools/byoji-hoiku-ryokin/">病児保育は1日いくら？東京23区の料金と利用条件</a></li>
+<li><a href="/tools/kosodate-shien-23ku/">23区の子育て支援を比較｜区を選ぶと5つの制度が1画面</a></li>
 <li><a href="/articles/kodomo-iryohi-data/">子ども医療費助成は東京23区でどう違う？差がつくのは入院時の食事代</a></li>
 <li><a href="/articles/daredemo-tsuen-ryokin/">こども誰でも通園制度の料金はいくら？46自治体の実額と減免</a></li>
 <li><a href="/articles/sangokea-nankai/">産後ケアは何回使える？43自治体の上限一覧</a></li>
