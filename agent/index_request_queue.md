@@ -939,6 +939,10 @@ soudanjo-hikaku は対照群ルールどおり申請していない。
 スクリーンショットで入力を確認してから Enter を押す手順は今回も誤検査ゼロ。
 
 
+#### 最優先（2026-09-08 追加・当日公開分）
+
+- https://www.noe-match.com/tools/kosodate-shien-23ku/ （区選択ハブ「うちの区の子育て支援」・9/8公開・検品PASS・IndexNow送信済み）
+
 #### 最優先（2026-09-07 追加・当日公開分）
 
 - https://www.noe-match.com/articles/nagano-guide/ （長野でマッチングアプリを使うなら・9/7公開）

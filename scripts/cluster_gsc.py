@@ -104,7 +104,7 @@ TOOLS = {
     "L":    "rikongo-seikatsuhi",
     "制度": ("daredemo-tsuen-jichitai byoji-hoiku-ryokin kodomo-iryohi-jichitai "
              "funin-josei-jichitai ikukyu-encho-hantei hoikuen-tensu-nerima "
-             "hitorioya-shien-jichitai kekkon-shinseikatsu-jichitai"),
+             "hitorioya-shien-jichitai kekkon-shinseikatsu-jichitai kosodate-shien-23ku"),
 }
 
 ORDER = ["A", "B", "C", "C-sub", "D", "E", "F", "J", "L", "M", "N", "制度", "統計"]
