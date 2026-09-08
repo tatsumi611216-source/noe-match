@@ -942,6 +942,8 @@ soudanjo-hikaku は対照群ルールどおり申請していない。
 #### 最優先（2026-09-08 追加・当日公開分）※9/8夕方に手動申請済み（下記「2026-09-08 実行結果」）
 
 - https://www.noe-match.com/tools/kosodate-shien-23ku/ （区選択ハブ「うちの区の子育て支援」・9/8公開・検品PASS・IndexNow送信済み）
+- https://www.noe-match.com/articles/tapple-kaiin-data/ （Tappleの会員数と年齢構成・9/8公開）
+- https://www.noe-match.com/articles/bachelor-shinsa-data/ （バチェラーデートの審査通過率・9/8公開）
 
 #### 最優先（2026-09-07 追加・当日公開分）※9/8夕方に手動申請済み（下記「2026-09-08 実行結果」）
 
