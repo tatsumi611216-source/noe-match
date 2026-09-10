@@ -993,3 +993,18 @@ GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCに
   不変チェックでABORTする安全装置を追加。全23ファイルで「PR枠以外は1文字も変わっていない」
   ことを検算済み。
 - **未着手**: アプリ案件の提携（Pairs/with/タップル/Omiai）はCEO判断。
+
+## 2026-09-10 週次実行
+
+- 新規記事2本公開
+  - /articles/app-ryokin-kaitei-data/ （型A: 料金改定履歴非公表の実態）
+  - /articles/app-taikai-riyu-data/ （型A: 退会理由データ非公表の実態）
+- sitemap.xml・sitemap-all.xml・articles/index.html・index.html を更新（総記事数204→206、データ・統計25→27）
+- keyword_queue.json: app-ryokin-kaitei-data, app-taikai-riyu-data を done に更新
+- silent_scan.py 実行・silent_articles.md 再生成
+- 寄せ直し2本実施
+  - compare-popular: "30代会社員がPairs・with・Omiai比較で選ぶ1本｜婚活目的・現行料金つき" にタイトル変更
+  - free-vs-paid: "初めての課金はいつ？会社員・30代が決めるマッチングアプリ有料化のタイミング" にタイトル変更
+- factory_audit.py: 新規FAIL 0本 / 構造エラー 0件
+- note_drafts: app-ryokin-kaitei-data.md, app-taikai-riyu-data.md 生成
+- index_request_queue.md に新規2URLを追記
