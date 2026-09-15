@@ -20,3 +20,4 @@
 - 実際に行った改善（ファイル・公開確認の結果）: articles/with-seriousness-data/index.html — title・og・twitter・H1・JSON-LD headline を「withの成婚率・結婚率は公表されていない｜代わりに確認できる数字を整理した」に同期、成婚率の定義と公式結婚レポートの現状（9/16確認）を2段落追加、基本データ表の確認日更新、FAQ先頭にQ1「withの成婚率は何％ですか？」追加（FAQPage JSON-LDにも反映）、dateModified 2026-09-16・sitemap lastmod 同期。factory_audit exit 0。公開確認は次行
 - 承認待ちの提案: なし
 - observing 中: with 成婚率 — 2026-09-23（GSCが約5日遅れのため、この日はデータ待ちになる見込み）
+- 公開確認: Deploy to Pages run 35006539284（headSha aca0efb）success。本番 https://www.noe-match.com/articles/with-seriousness-data/ で新title・「結婚レポート」段落・FAQ Q1・最終更新 2026年9月16日 の反映を確認
