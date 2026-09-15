@@ -110,7 +110,7 @@ noe-match 固有の注意:
 ```
 git add agent/seo/watchwords.json agent/seo/rank-history.json agent/seo/improvement-log.json agent/seo/report.md <変更したページ>
 git commit -m "seo-rank-watch: <keyword> を改善（<改善の種類>）"
-git pull --rebase origin main
+git pull --rebase --autostash origin main
 git push origin main
 ```
 - 改善しなかった日も `agent/seo/*.json` と report.md はコミットする。
