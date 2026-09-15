@@ -1,18 +1,118 @@
 {
- "_note": "SEO Rank Watch の監視語。1語＝1つの検索意図＋1つの対象ページ。同じ意図の表記ゆれは variants に入れる（候補一覧から除外されるだけで、順位は keyword で測る）。priority は high/medium/low。初期登録 2026-09-16（GSCアーカイブ 8/15〜9/11 の20位以内・表示あり）。",
+ "_note": "SEO Rank Watch の監視語。1語＝1つの検索意図＋1つの対象ページ。同じ意図の表記ゆれは variants に入れる（候補一覧から除外されるだけで、順位は keyword で測る）。priority は high/medium/low。初期登録 2026-09-16（GSCアーカイブ 8/15〜9/11 の20位以内・表示あり）。 ctaYen はページ内アフィリCTAの最高成果単価（円・2026-09-16時点。ユーブライド6,000/マリッシュ1,800=article_audit.md、保険ランドリー11,329/Oisix1,000=affiliate_targets.md、ハナユメ10,000=AGENT.md推定）。CTAを差し替えたら更新する。",
  "keywords": [
-  {"keyword": "子供 医療費 無料 東京 いつまで", "variants": ["東京 子供 医療費 無料 いつまで"], "targetPath": "/tools/kodomo-iryohi-jichitai/", "priority": "high", "addedOn": "2026-09-16"},
-  {"keyword": "with 成婚率", "variants": ["with 結婚率"], "targetPath": "/articles/with-seriousness-data/", "priority": "high", "addedOn": "2026-09-16"},
-  {"keyword": "ガルガル期 診断", "targetPath": "/tools/garugaru-check/", "priority": "high", "addedOn": "2026-09-16"},
-  {"keyword": "マリッシュ ユーブライド 比較", "targetPath": "/articles/youbride-marrish-hikaku/", "priority": "high", "addedOn": "2026-09-16"},
-  {"keyword": "ペアーズ 成婚率", "variants": ["ペアーズ 結婚 確率", "ペアーズ 結婚率"], "targetPath": "/articles/pairs-marriage-data/", "priority": "medium", "addedOn": "2026-09-16"},
-  {"keyword": "ガルガル 期 同居", "targetPath": "/articles/garugaru-doukyo/", "priority": "medium", "addedOn": "2026-09-16"},
-  {"keyword": "ガルガル期 由来", "variants": ["ガルガル期 名前の由来"], "targetPath": "/articles/garugaru-ki-guide/", "priority": "medium", "addedOn": "2026-09-16"},
-  {"keyword": "with 年齢層", "variants": ["with ユーザー数", "with 年齢"], "targetPath": "/articles/with-nenreiso-data/", "priority": "medium", "addedOn": "2026-09-16"},
-  {"keyword": "with 心理テスト", "variants": ["with 心理テスト攻略", "with 心理テスト どこから", "with 心理テスト どこ"], "targetPath": "/articles/with-guide/", "priority": "medium", "addedOn": "2026-09-16"},
-  {"keyword": "2030年 結婚 良い日", "targetPath": "/tools/nyuseki-calendar/", "priority": "medium", "addedOn": "2026-09-16"},
-  {"keyword": "新生児 面会 いつから", "targetPath": "/articles/shinseiji-menkai/", "priority": "low", "addedOn": "2026-09-16"},
-  {"keyword": "マッチングアプリ 会員数", "targetPath": "/articles/members-data/", "priority": "low", "addedOn": "2026-09-16"},
-  {"keyword": "離婚率 2025", "targetPath": "/articles/rikonritsu-data/", "priority": "low", "addedOn": "2026-09-16"}
+  {
+   "keyword": "子供 医療費 無料 東京 いつまで",
+   "variants": [
+    "東京 子供 医療費 無料 いつまで"
+   ],
+   "targetPath": "/tools/kodomo-iryohi-jichitai/",
+   "priority": "high",
+   "addedOn": "2026-09-16",
+   "ctaYen": 1000
+  },
+  {
+   "keyword": "with 成婚率",
+   "variants": [
+    "with 結婚率"
+   ],
+   "targetPath": "/articles/with-seriousness-data/",
+   "priority": "high",
+   "addedOn": "2026-09-16",
+   "ctaYen": 6000
+  },
+  {
+   "keyword": "ガルガル期 診断",
+   "targetPath": "/tools/garugaru-check/",
+   "priority": "high",
+   "addedOn": "2026-09-16",
+   "ctaYen": 11329
+  },
+  {
+   "keyword": "マリッシュ ユーブライド 比較",
+   "targetPath": "/articles/youbride-marrish-hikaku/",
+   "priority": "high",
+   "addedOn": "2026-09-16",
+   "ctaYen": 6000
+  },
+  {
+   "keyword": "ペアーズ 成婚率",
+   "variants": [
+    "ペアーズ 結婚 確率",
+    "ペアーズ 結婚率"
+   ],
+   "targetPath": "/articles/pairs-marriage-data/",
+   "priority": "medium",
+   "addedOn": "2026-09-16",
+   "ctaYen": 6000
+  },
+  {
+   "keyword": "ガルガル 期 同居",
+   "targetPath": "/articles/garugaru-doukyo/",
+   "priority": "medium",
+   "addedOn": "2026-09-16",
+   "ctaYen": 11329
+  },
+  {
+   "keyword": "ガルガル期 由来",
+   "variants": [
+    "ガルガル期 名前の由来"
+   ],
+   "targetPath": "/articles/garugaru-ki-guide/",
+   "priority": "medium",
+   "addedOn": "2026-09-16",
+   "ctaYen": 11329
+  },
+  {
+   "keyword": "with 年齢層",
+   "variants": [
+    "with ユーザー数",
+    "with 年齢"
+   ],
+   "targetPath": "/articles/with-nenreiso-data/",
+   "priority": "medium",
+   "addedOn": "2026-09-16",
+   "ctaYen": 6000
+  },
+  {
+   "keyword": "with 心理テスト",
+   "variants": [
+    "with 心理テスト攻略",
+    "with 心理テスト どこから",
+    "with 心理テスト どこ"
+   ],
+   "targetPath": "/articles/with-guide/",
+   "priority": "medium",
+   "addedOn": "2026-09-16",
+   "ctaYen": 6000
+  },
+  {
+   "keyword": "2030年 結婚 良い日",
+   "targetPath": "/tools/nyuseki-calendar/",
+   "priority": "medium",
+   "addedOn": "2026-09-16",
+   "ctaYen": 10000
+  },
+  {
+   "keyword": "新生児 面会 いつから",
+   "targetPath": "/articles/shinseiji-menkai/",
+   "priority": "low",
+   "addedOn": "2026-09-16",
+   "ctaYen": 1000
+  },
+  {
+   "keyword": "マッチングアプリ 会員数",
+   "targetPath": "/articles/members-data/",
+   "priority": "low",
+   "addedOn": "2026-09-16",
+   "ctaYen": 6000
+  },
+  {
+   "keyword": "離婚率 2025",
+   "targetPath": "/articles/rikonritsu-data/",
+   "priority": "low",
+   "addedOn": "2026-09-16",
+   "ctaYen": 1000
+  }
  ]
 }

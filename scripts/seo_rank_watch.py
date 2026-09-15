@@ -16,7 +16,7 @@
   （カニバリの検知用。順位の計算には混ぜない）。
 
 使い方:
-  python scripts/seo_rank_watch.py                    # 28日窓で全監視語の状況
+  python scripts/seo_rank_watch.py                    # 28日窓で全監視語の状況・選定順・レビュー判定
   python scripts/seo_rank_watch.py --days 7           # 効果判定用の7日窓
   python scripts/seo_rank_watch.py --append           # 28日窓と7日窓を rank-history.json に追記
   python scripts/seo_rank_watch.py --candidates       # 未登録の有望クエリ（20位以内・表示あり）
@@ -36,7 +36,28 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8")
 
 SITE = "https://www.noe-match.com"
 STALE_DAYS = 7          # アーカイブ最終日が今日からこれ以上古ければ警告（通常でも4〜5日遅れ）
-MIN_JUDGE_IMP = 5       # 7日窓の表示回数がこれ未満なら「判定不能」と表示する
+MIN_JUDGE_IMP = 5       # 判定窓の表示回数がこれ未満なら「判定不能」と表示する
+
+# 掲載順位ごとのクリック率の目安（一般的な公開調査の丸め値。自社データは少なすぎて曲線が引けない）。
+# 選定の並べ替えにだけ使う。見込みクリックを報告で「予測」として断定しないこと。
+CTR_CURVE = [0.28, 0.15, 0.10, 0.07, 0.05, 0.04, 0.03, 0.025, 0.02, 0.018]
+
+
+def ctr_at(rank):
+    if rank is None:
+        return 0.0
+    r = max(1, round(rank))
+    if r <= 10:
+        return CTR_CURVE[r - 1]
+    return 0.01 if r <= 20 else 0.005
+
+
+def score_of(ww, m):
+    """選定スコア = 1位になったときの見込みクリック増（28日） × 受け皿係数（1 + 受け皿単価/5000円）。
+    単価は成果額であって売上ではない（承認率が案件で違う）ので、係数は緩くしてある。"""
+    gain = m["impressions"] * (ctr_at(1) - ctr_at(m["rank"])) if m["rank"] else 0.0
+    coef = 1 + ww.get("ctaYen", 0) / 5000
+    return round(gain, 1), round(gain * coef, 1)
 
 
 def norm_query(q):
@@ -132,7 +153,8 @@ def main():
     locked = {l["path"]: l["until"] for l in log_doc.get("locks", []) if l["until"] >= today.isoformat()}
     observing_paths = {i["targetPath"] for i in log if i.get("status") == "observing"}
 
-    windows = [28, 7] if args.append else sorted({args.days, 7}, reverse=True)
+    # 28日窓＝状況と選定、7日窓＝効果判定、14日窓＝7日窓で表示が足りないときの判定。
+    windows = sorted({28, 14, 7, args.days}, reverse=True)
     results = {}
     for days in windows:
         win, rows = load_archive(repo, days)
@@ -145,6 +167,14 @@ def main():
     if lag >= STALE_DAYS:
         print(f"⚠ アーカイブが{lag}日古い。gsc-archive.yml の実行状況を確認するか --refresh を付ける")
 
+    def status_label(ww):
+        status = status_of.get((ww["keyword"], ww["targetPath"]), {}).get("status", "active")
+        if status == "active" and ww["targetPath"] in locked:
+            return f"locked〜{locked[ww['targetPath']]}"
+        if status == "active" and ww["targetPath"] in observing_paths:
+            return "active(同ページ観察中)"
+        return status
+
     print("\n## 監視キーワード")
     print("| keyword | target | status | rank | 前回 | 差 | imp | clk | 次回review | 他ページ |")
     print("|---|---|---|---|---|---|---|---|---|---|")
@@ -153,33 +183,59 @@ def main():
         pv = prev_rank(history["entries"], ww["keyword"], ww["targetPath"], win["days"], win["end"])
         delta = round(pv["rank"] - m["rank"], 1) if pv and pv["rank"] and m["rank"] else None
         others = " ".join(f"{o['path']}({o['rank']}/{o['impressions']})" for o in m["others"])
-        status = item.get("status", "active")
-        if status == "active" and ww["targetPath"] in locked:
-            status = f"locked〜{locked[ww['targetPath']]}"
-        elif status == "active" and ww["targetPath"] in observing_paths:
-            status = "active(同ページ観察中)"
-        print(f"| {ww['keyword']} | {ww['targetPath']} | {status} | {fmt(m['rank'])} "
+        print(f"| {ww['keyword']} | {ww['targetPath']} | {status_label(ww)} | {fmt(m['rank'])} "
               f"| {fmt(pv['rank'] if pv else None)} | {fmt(delta)} | {m['impressions']} | {m['clicks']} "
               f"| {item.get('nextReviewDate', '-')} | {others} |")
 
+    # 選定順: 28日窓で2〜20位の active 語を、見込みクリック増×受け皿係数の降順に並べる。
+    ranked = []
+    for ww, m in results[28][2]:
+        if status_label(ww) != "active" or not m["rank"] or not (1.5 <= m["rank"] <= 20):
+            continue
+        gain, score = score_of(ww, m)
+        ranked.append((score, gain, ww, m))
+    ranked.sort(key=lambda x: -x[0])
+    print("\n## 選定順（28日窓・2〜20位・active のみ。スコア＝1位時の見込みクリック増×(1+受け皿単価/5000)）")
+    print("| # | keyword | target | rank | imp | 見込み増/28日 | 受け皿単価 | スコア |")
+    print("|---|---|---|---|---|---|---|---|")
+    for n, (score, gain, ww, m) in enumerate(ranked, 1):
+        print(f"| {n} | {ww['keyword']} | {ww['targetPath']} | {m['rank']} | {m['impressions']} | {gain} "
+              f"| {ww.get('ctaYen', 0):,}円 | {score} |")
+    if not ranked:
+        print("候補なし（改善しない）")
+
     # 施策の効果は「施策日の翌日以降だけで7日」そろって初めて測れる。GSCは4〜5日遅れるので、
     # nextReviewDate（施策日+7）の時点ではまだ窓の大半が施策前になる。そこで判定は窓の開始日で縛る。
-    w7, _, ms7 = results[7]
-    m7 = {(ww["keyword"], ww["targetPath"]): m for ww, m in ms7}
+    # 7日窓で表示が足りなければ、施策後だけで14日そろった時点の14日窓で読む。
+    def by_key(days):
+        return {(ww["keyword"], ww["targetPath"]): m for ww, m in results[days][2]}
+    w7, w14 = results[7][0], results[14][0]
+    m7, m14 = by_key(7), by_key(14)
     due = [i for i in log if i.get("status") == "observing" and i.get("nextReviewDate", "9999") <= today.isoformat()]
-    print(f"\n## レビュー期日到来（observing かつ nextReviewDate <= 今日）7日窓 {w7['start']}〜{w7['end']}")
+    print(f"\n## レビュー期日到来（observing かつ nextReviewDate <= 今日）7日窓 {w7['start']}〜{w7['end']} / 14日窓 {w14['start']}〜")
     if not due:
         print("なし")
     for i in due:
-        m = m7.get((i["keyword"], i["targetPath"]), {})
+        key = (i["keyword"], i["targetPath"])
         last = i["actions"][-1] if i.get("actions") else {}
+        head = f"- {i['keyword']} {i['targetPath']}: 施策時 {fmt(last.get('rankAtAction'))}"
         if last.get("date", "") >= w7["start"]:
             ready = (datetime.date.fromisoformat(last["date"]) + datetime.timedelta(days=7)).isoformat()
-            print(f"- {i['keyword']} {i['targetPath']}: データ待ち（施策 {last['date']}・アーカイブ末日が {ready} 以降になったら判定）")
+            print(f"{head} → データ待ち（施策 {last['date']}・アーカイブ末日が {ready} 以降になったら判定）")
             continue
-        note = "（表示不足・判定不能→観察継続）" if m.get("impressions", 0) < MIN_JUDGE_IMP else "（判定可）"
-        print(f"- {i['keyword']} {i['targetPath']}: 施策時 {fmt(last.get('rankAtAction'))} → 7日窓 {fmt(m.get('rank'))}"
-              f" / imp {m.get('impressions', 0)} clk {m.get('clicks', 0)}{note}")
+        m = m7.get(key, {})
+        if m.get("impressions", 0) >= MIN_JUDGE_IMP:
+            print(f"{head} → 7日窓 {fmt(m.get('rank'))} / imp {m['impressions']} clk {m['clicks']}（判定可・7日窓）")
+            continue
+        if last.get("date", "") >= w14["start"]:
+            ready = (datetime.date.fromisoformat(last["date"]) + datetime.timedelta(days=14)).isoformat()
+            print(f"{head} → 7日窓は表示{m.get('impressions', 0)}で不足。14日窓待ち（アーカイブ末日が {ready} 以降）")
+            continue
+        m = m14.get(key, {})
+        if m.get("impressions", 0) >= MIN_JUDGE_IMP:
+            print(f"{head} → 14日窓 {fmt(m.get('rank'))} / imp {m['impressions']} clk {m['clicks']}（判定可・14日窓）")
+        else:
+            print(f"{head} → 14日窓でも表示{m.get('impressions', 0)}で不足（判定不能→active に戻す）")
 
     if args.candidates:
         registered = {norm_query(k) for w in watch for k in [w["keyword"], *w.get("variants", [])]}
@@ -195,7 +251,7 @@ def main():
     if args.append:
         seen = {(h["keyword"], h["targetPath"], h["window"]["end"], h["window"]["days"]) for h in history["entries"]}
         added = 0
-        for days in windows:
+        for days in (28, 7):
             w, _, ms = results[days]
             for ww, m in ms:
                 key = (ww["keyword"], ww["targetPath"], w["end"], days)
