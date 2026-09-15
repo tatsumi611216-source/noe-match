@@ -1,6 +1,31 @@
 {
  "_note": "SEO Rank Watch の改善履歴。items[] は keyword+targetPath ごとに1件。status は active / observing / achieved。actions[] と reviews[] は追記のみ。locks[] は他の施策の判定待ちで触ってはいけないページ（until まで選定から除外）。",
- "items": [],
+ "items": [
+  {
+   "keyword": "with 成婚率",
+   "targetPath": "/articles/with-seriousness-data/",
+   "status": "observing",
+   "nextReviewDate": "2026-09-23",
+   "actions": [
+    {
+     "date": "2026-09-16",
+     "rankAtAction": 4.8,
+     "window": "2026-08-15〜2026-09-11（28日窓）",
+     "rank7dAtAction": 2.6,
+     "window7d": "2026-09-05〜2026-09-11（表示12）",
+     "needs": "withで婚活を考えている人が、withで実際に何%が結婚しているのか、公式の数字があるのかを知りたくて検索している。",
+     "gap": "主要クエリ「with 成婚率」（表示62）に対しtitle/H1は「結婚率」のみで「成婚率」の語が無い。with公式サイトの「結婚レポート」（体験談のみ・数値なし）に触れておらず、公式に何が出ているかの答えが無い。相談所の成婚率とアプリの結婚率の違いの説明が無い。FAQに「withの成婚率は何％？」の直接の問いが無い。上位（matchapps-neo等）も公式非公表と書くのみで公式結婚レポートには触れていない。",
+     "done": "title/og:title/twitter:title/H1/JSON-LD headline を「withの成婚率・結婚率は公表されていない｜…」に同期。結婚率セクションに成婚率の定義（相談所の分母の違い）と公式「結婚レポート」の現状（2026-09-16確認・体験談のみ）を2段落追加。基本データ表の成婚率行の確認日を更新。FAQ先頭にQ1「withの成婚率は何％ですか？」を追加しFAQPage JSON-LDにも反映。dateModified/最終更新を2026-09-16に、sitemap lastmodを同期。",
+     "files": [
+      "articles/with-seriousness-data/index.html",
+      "sitemap.xml",
+      "sitemap-all.xml"
+     ]
+    }
+   ],
+   "reviews": []
+  }
+ ],
  "locks": [
   {
    "path": "/tools/nyuseki-calendar/",
