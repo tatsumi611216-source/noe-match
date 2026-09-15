@@ -1,4 +1,51 @@
 {
- "_note": "SEO Rank Watch の改善履歴。items[] は keyword+targetPath ごとに1件。status は active / observing / achieved。actions[] と reviews[] は追記のみ。",
- "items": []
+ "_note": "SEO Rank Watch の改善履歴。items[] は keyword+targetPath ごとに1件。status は active / observing / achieved。actions[] と reviews[] は追記のみ。locks[] は他の施策の判定待ちで触ってはいけないページ（until まで選定から除外）。",
+ "items": [],
+ "locks": [
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "until": "2026-10-06",
+   "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+  },
+  {
+   "path": "/articles/nyuseki-2027-guide/",
+   "until": "2026-10-06",
+   "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+  },
+  {
+   "path": "/articles/garugaru-ki-guide/",
+   "until": "2026-10-06",
+   "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+  },
+  {
+   "path": "/articles/rikonritsu-data/",
+   "until": "2026-10-06",
+   "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+  },
+  {
+   "path": "/articles/kekkon-okane-data/",
+   "until": "2026-10-06",
+   "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "until": "2026-10-06",
+   "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "until": "2026-10-13",
+   "reason": "国勢調査による統計記事更新（census_update_20260929.md・C50 9/29）の対象"
+  },
+  {
+   "path": "/articles/over50-guide/",
+   "until": "2026-10-13",
+   "reason": "国勢調査による統計記事更新（census_update_20260929.md・C50 9/29）の対象"
+  },
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "until": "2026-10-13",
+   "reason": "国勢調査による統計記事更新（census_update_20260929.md・C50 9/29）の対象"
+  }
+ ]
 }

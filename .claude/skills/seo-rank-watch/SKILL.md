@@ -54,7 +54,7 @@ python scripts/seo_rank_watch.py --append --candidates
 - achieved の語が28日窓で3位より下に落ちていたら、報告に書いた上で active に戻してよい。
 
 ### 3. 今日改善するキーワードを1つ選ぶ
-除外: `observing` と `achieved`。さらに**対象ページが他の observing 項目と同じ**もの（同じページを触ると観察中の計測が汚れる）、**直近7日以内に別の自動化（記事工場 Phase 2・順位パケット等）が触ったページ**（`git log --since=7.days -- <targetPath>index.html` で確認）。
+除外: `observing` と `achieved`、計測表で `locked〜日付` `active(同ページ観察中)` と出ている語（`improvement-log.json` の `locks[]`＝別施策の判定待ちページ。新しい判定待ち施策を見つけたら locks に足す）。さらに**対象ページが他の observing 項目と同じ**もの（同じページを触ると観察中の計測が汚れる）、**直近7日以内に別の自動化（記事工場 Phase 2・順位パケット等）が触ったページ**（`git log --since=7.days -- <targetPath>index.html` で確認）。
 
 次の順で**1つだけ**選ぶ:
 1. 28日窓で 2〜10位 かつ 表示あり — 1位に近いもの（順位が小さいもの）を優先。同程度なら表示回数・priority で決める

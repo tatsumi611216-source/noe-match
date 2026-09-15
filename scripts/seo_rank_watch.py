@@ -125,9 +125,12 @@ def main():
     watch = load_json(os.path.join(seo, "watchwords.json"), {"keywords": []})["keywords"]
     hist_path = os.path.join(seo, "rank-history.json")
     history = load_json(hist_path, {"entries": []})
-    log = load_json(os.path.join(seo, "improvement-log.json"), {"items": []})["items"]
+    log_doc = load_json(os.path.join(seo, "improvement-log.json"), {"items": []})
+    log = log_doc["items"]
     status_of = {(i["keyword"], i["targetPath"]): i for i in log}
     today = datetime.date.today()
+    locked = {l["path"]: l["until"] for l in log_doc.get("locks", []) if l["until"] >= today.isoformat()}
+    observing_paths = {i["targetPath"] for i in log if i.get("status") == "observing"}
 
     windows = [28, 7] if args.append else sorted({args.days, 7}, reverse=True)
     results = {}
@@ -150,7 +153,12 @@ def main():
         pv = prev_rank(history["entries"], ww["keyword"], ww["targetPath"], win["days"], win["end"])
         delta = round(pv["rank"] - m["rank"], 1) if pv and pv["rank"] and m["rank"] else None
         others = " ".join(f"{o['path']}({o['rank']}/{o['impressions']})" for o in m["others"])
-        print(f"| {ww['keyword']} | {ww['targetPath']} | {item.get('status', 'active')} | {fmt(m['rank'])} "
+        status = item.get("status", "active")
+        if status == "active" and ww["targetPath"] in locked:
+            status = f"locked〜{locked[ww['targetPath']]}"
+        elif status == "active" and ww["targetPath"] in observing_paths:
+            status = "active(同ページ観察中)"
+        print(f"| {ww['keyword']} | {ww['targetPath']} | {status} | {fmt(m['rank'])} "
               f"| {fmt(pv['rank'] if pv else None)} | {fmt(delta)} | {m['impressions']} | {m['clicks']} "
               f"| {item.get('nextReviewDate', '-')} | {others} |")
 
