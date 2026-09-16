@@ -32,4 +32,5 @@
 - 実際に行った改善（ファイル・公開確認の結果）: tools/garugaru-check/index.html — 導入の注意書きに産後の人向けの案内1項目を追加／基礎知識の後に「ガルガル期になりやすい人の特徴と、この診断が見ているもの」（特徴×診断の軸の対応表）と「いまガルガル期かもしれないと思ったときの目安」（様子の例・受診相談の目安・/articles/garugaru-sangoutsu-chigai/ への内部リンク）を追加／FAQ「ガルガル期は診断できますか？」を追加し、FAQ 7問をページ上にも表示（JSON-LDと同じ文）。title・JSロジック・アフィリCTAは変更なし。sitemap.xml・sitemap-all.xml の lastmod を 2026-09-16 に。factory_audit exit 0（新規FAIL 0）・キリル文字0・JSON-LD パース確認済み。type: intro / content / faq / internal-link。公開確認は次行
 - 承認待ちの提案: なし
 - observing 中: with 成婚率 — 2026-09-23 / ガルガル期 診断 — 2026-09-23（どちらもGSCの遅れで当日はデータ待ちの見込み）
+- 公開確認: Deploy to Pages run 35111481141（headSha f8f300d）success。本番 https://www.noe-match.com/tools/garugaru-check/ で新セクション（id=now-check・特徴と軸の対応表）とページ上のFAQ（Q1「ガルガル期は診断できますか？」）の反映を確認
 - 型の集計: 判定済みの actions はまだ0件（title・intro・content・faq・internal-link・data いずれも 方向が見えた0／効果なし0／判定不能0）。昇格提案なし
