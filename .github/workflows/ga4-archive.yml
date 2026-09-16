@@ -8,6 +8,9 @@ name: Daily GA4 Archive
 #   GA4プロパティ properties/549779769 に閲覧者として登録済みの
 #   gsc-ga4-analytics@matching-app-analytics.iam.gserviceaccount.com の鍵JSON。
 #   GSC_KEY_JSON とは別のサービスアカウントなので使い回さないこと。
+#   このシークレットが未登録だと fetch_ga4.py はローカルの鍵パスに落ちて認証に失敗する。
+#   2026-09-02〜09-14 はこれで13日ぶん取れていなかった（tee がパイプの終了ステータスを
+#   握りつぶしていたため CI は success のままだった）。set -o pipefail はその再発防止。
 
 on:
   schedule:
@@ -38,6 +41,7 @@ jobs:
           GA4_KEY_JSON: ${{ secrets.GA4_KEY_JSON }}
           GA4_PROPERTY_ID: properties/549779769
         run: |
+          set -o pipefail
           python scripts/fetch_ga4.py | tee /tmp/ga4_archive.txt
           {
             echo '## GA4日別アーカイブ'

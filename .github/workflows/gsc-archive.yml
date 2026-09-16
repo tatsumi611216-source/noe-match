@@ -32,6 +32,7 @@ jobs:
         env:
           GSC_KEY_JSON: ${{ secrets.GSC_KEY_JSON }}
         run: |
+          set -o pipefail
           python scripts/gsc_archive.py | tee /tmp/gsc_archive.txt
           {
             echo '## GSC日別アーカイブ'
