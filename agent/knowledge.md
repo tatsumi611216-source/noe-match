@@ -151,11 +151,16 @@
 - [2026-09-16] **GA4日別アーカイブが12日ぶん欠けていた。CIは全期間 success のまま。** 原因は2つが重なったもの。(1) `GA4_KEY_JSON` が**リポジトリのシークレットに一度も登録されていなかった**（`gh secret list` に GSC_KEY_JSON しか無い）。9/1に「CIを新設した」と書いたが、登録したのはワークフローだけで鍵は入れていない。`fetch_ga4.py` はシークレットが無いとローカルの絶対パス（`C:\Users\tatsu\matching-app\secrets\noe-ga4-key.json`）に落ちるので、CIでは毎回 FileNotFoundError で認証に失敗していた。(2) **`python ... | tee` はパイプの終了ステータスが tee のものになる**ので、スクリプトが 1 を返しても step は成功扱いになる。(1)だけなら赤くなって気づけた。**根拠:** `gh run view 35035710045 --log` に「認証・プロパティ解決に失敗: FileNotFoundError」が出ているのに run は success、かつ agent/ga4_archive が 2026-09-02 で止まっていた。
 - [2026-09-16] **緑のCIは「動いた」証拠にならない。出力物の最新日付で死活を見る。** 対策として ga4-archive.yml と gsc-archive.yml の取得stepに `set -o pipefail` を入れた。**同じ型の `| tee` が factory-check・fetch-gsc(2か所)・index-check にも残っている**が、これらは所見ありで非0を返す設計なので pipefail を入れると常時赤になる。**取得系（出力物が増えるべきもの）と監査系（非0が正常な結果）を混ぜて直さない。** 監視は「アーカイブの最終日 vs 今日」で行うのが正しい。
 - [2026-09-16] **metrics.db の収集も 9/8 で止まっていた。原因はスクリプトではなくスケジュールタスクが `enabled: false` だったこと。** `ops-daily-metrics-collect` は 9/7 21:51 UTC を最後に発火せず、`collect.py` 自体は手動実行で正常に通った（1350件・noematch_ga4 420件）。**収集が止まったときは、まずコレクタではなくタスクの enabled を見る。** 現在 enabled のタスクは daily-job-patrol / noematch-daily-strategy / affiliate-noematch-seo-rank-watch の3本だけで、他は全て停止している。
+- [2026-09-17] **LINE導線の設置を「その時点の着地ページの固定リスト」で3回やった結果、後から流入が来たページが漏れていた。** 8/27〜9/14のGA4アーカイブ（direct・(not set)除き）で3セッション以上の着地ページを `lin.ee` の有無と突き合わせると、8本に導線が無かった。最大は `/articles/hatsushon-nenmei-data/` の9セッション（bing 8）で、流入が始まったのは8/30——**AI着地向けの設置（8/29）の翌日**だった。8/31の bank_freshness（手書きリストで新設バンクが監視から漏れた）と同じ形。**設置対象は毎回アーカイブから計算し直す**（抽出条件は `scripts/add_line_cta_landing_0917.py` のdocstringに記載）。**根拠:** 9/17の突き合わせ。
+- [2026-09-17] **導線の効果は `article` パラメータではなく内蔵 `click` の `pagePath × linkDomain=lin.ee` で測る。** 既存のLINE導線はすべて `line_add_click` に `article` を載せているが、9/4に確認したとおりカスタムディメンション未登録のパラメータはレポートに出ない。外部リンクなので内蔵の outbound click が別に発火し、ページ別に切れる。**根拠:** 9/4のGetMetadata（customEvent 0件）と、aff_click を内蔵 click で代替した実績。
+- [2026-09-17] **令和7年 人口動態統計（確定数）は9/17時点で未公表。** e-Statの公表予定は「2026年9月」で日付未定、`kakutei25/index.html` は404。前年（令和6年）は9/16公表だったので、前年日付で「出ているはず」と見込んで作業を始めない。**根拠:** e-Stat release-calendar（kikanCd=00450）と厚労省URLの実測。
 
 ## 判定予定（結果が出たら知見に昇格させる）
 
 - 9/4: GSC日別アーカイブの自動実行（8/28新設）。`--stats` の「期間内の欠損」が0日のままかを見る。1日でも欠けていたらCIのcron発火を疑う
 
+- 10/15: 着地ページ8本へのLINE導線追加（9/17）。GA4の `click × linkDomain=lin.ee × pagePath` で8ページ合計のクリックと、同期間の友だち数の増分を見る。同期間の8ページのdirect除きセッションを分母にする。0件でも母数が数十なので「効かない」とは判定しない
+- 9/24: Bing流入の水準（9/14=12・9/15=11、それまで日1〜4）が続くか。9/14は13ページに1セッションずつ散っていて特定ページの順位上昇ではない。続けばBing側の評価変化、戻れば一過性
 - 9/21: ツール9本の語寄せ（cycle_20260824）。予測: seikatsuhi（家賃抜き=空白語）は動く、soudanjo/kekkon-shikin（事業者占有語）は動かない
 - 9/23: 11〜30位帯の押し上げ4本＋アンカー128本（cycle_20260826）
 - 9月中旬: 通園ナビの初動（GSC+Bing）。器具×一次データ×施行前の型の検証
