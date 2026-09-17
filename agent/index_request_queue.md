@@ -1027,3 +1027,10 @@ policy/editorial.html の6本がすでに「登録されています」に変化
 |---|-----|------|------|
 | 1 | /articles/app-ryokin-kaitei-data/ | 未登録 | 新規公開 |
 | 2 | /articles/app-taikai-riyu-data/ | 未登録 | 新規公開 |
+
+## 2026-09-17 インデックス登録依頼（週次エージェント）
+
+| # | URL | 状態 | 備考 |
+|---|-----|------|------|
+| 1 | https://www.noe-match.com/articles/yakuzaishi-konkatsu/ | 未登録 | 新規公開 |
+| 2 | https://www.noe-match.com/articles/hoikushi-konkatsu/ | 未登録 | 新規公開 |
