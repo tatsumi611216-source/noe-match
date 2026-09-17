@@ -52,6 +52,34 @@
     }
    ],
    "reviews": []
+  },
+  {
+   "keyword": "子供 医療費 無料 東京 いつまで",
+   "targetPath": "/tools/kodomo-iryohi-jichitai/",
+   "status": "observing",
+   "nextReviewDate": "2026-09-24",
+   "actions": [
+    {
+     "date": "2026-09-17",
+     "rankAtAction": 9.3,
+     "window": "2026-08-17〜2026-09-13",
+     "needs": "東京に住む子育て中の親が、子どもの医療費が無料（助成）なのは何歳・いつまでか、わが子の場合いつ切れるのか、切れた後どうなるのかを知りたい。多摩地域の市に住む人も含む",
+     "gap": "上位は区・市の公式ページで、対象年齢と切れる日を直接答えている。対象ページは title/H1 に「無料」が無く、答え（高校3年生の3月31日まで）が冒頭に無い／生まれた日ごとの終了日の早見表が無い（ツール入力が必要）／23区のみで多摩地域の市町村への言及が無い（上位に府中市・町田市）／助成終了後の扱いと在学不要の説明が無い",
+     "done": "tools/kodomo-iryohi-jichitai/index.html — title・og:title・twitter:title・H1 を「子ども医療費の無料はいつまで？東京は高校3年生の3月31日まで…」に変更、meta description・WebApplication description・hero 導入文の冒頭に答えを追加、「いつまで無料？生まれた日ごとの終了日（早見表）」節（学年別5行・終了後は原則3割・府中市の在学不要の明記を引用）と「多摩地域の市町村に住んでいる場合」節（都基準・町田市・小平市の比較表と出典、9/17確認）を追加、FAQ Q6「助成が終わったら」Q7「多摩地域の市町村も同じか」を追加（JSON-LD同期・8問）、dateModified 2026-09-17、sitemap.xml・sitemap-all.xml lastmod 同期。JSロジック・アフィリCTAは変更なし",
+     "type": [
+      "title",
+      "intro",
+      "content",
+      "faq"
+     ],
+     "files": [
+      "tools/kodomo-iryohi-jichitai/index.html",
+      "sitemap.xml",
+      "sitemap-all.xml"
+     ]
+    }
+   ],
+   "reviews": []
   }
  ],
  "locks": [
