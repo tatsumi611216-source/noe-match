@@ -47,3 +47,4 @@
 - observing 中: with 成婚率 — 2026-09-23 / ガルガル期 診断 — 2026-09-23 / 子供 医療費 無料 東京 いつまで — 2026-09-24（いずれもGSCの遅れで当日はデータ待ちの見込み）
 - 型の集計: 判定済みの actions はまだ0件（title・intro・content・faq・internal-link・data いずれも 方向が見えた0／効果なし0／判定不能0）。昇格提案なし
 - 公開確認: Deploy to Pages run 35170380801（headSha 7abeaa3）success。本番 https://www.noe-match.com/tools/kodomo-iryohi-jichitai/ で新title・早見表（id=hayami）・多摩地域の節（id=tama）・FAQ Q7 の反映を確認
+- 追記（9/17・CEO承認済み）: 上記提案のツールJS修正を適用。tools/kodomo-iryohi-jichitai/index.html の endOfSupport を「18歳の誕生日の前日＝18歳到達日」を含む年度の3月31日を返す式に変更（計算関数1か所のみ・表示文言・CTAは変更なし）。4月1日生まれ・4月2日生まれ・1月1日・2月29日など9ケースをnodeで検証し、早見表と全件一致。検索向けの本文は変えていないため、この語の観察（9/24レビュー）は継続扱い

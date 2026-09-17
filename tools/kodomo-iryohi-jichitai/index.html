@@ -291,12 +291,13 @@ function $(id){return document.getElementById(id);}
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function fmt(d){return d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日';}
 
-/* 助成の終期は「18歳到達後最初の3月31日」。年齢計算の応当日ではなく年度末なので、
-   誕生日を迎えた年度の3月31日を返す。3月生まれと4月生まれで1年近く変わる。 */
+/* 助成の終期は「18歳到達後最初の3月31日」。年度末なので、18歳に達した日を含む年度の3月31日を返す。
+   年齢計算ニ関スル法律により年齢は誕生日の前日に加算されるため、18歳到達日＝18歳の誕生日の前日。
+   これで4月1日生まれは3月31日に18歳到達→その日で終了となり、前の学年と同じ日に終わる。 */
 function endOfSupport(birth){
-  var y=birth.getFullYear()+18;
-  var b18=new Date(y, birth.getMonth(), birth.getDate());
-  /* 18歳の誕生日が1〜3月なら その年の3月31日、4月以降なら 翌年の3月31日 */
+  var b18=new Date(birth.getFullYear()+18, birth.getMonth(), birth.getDate()-1);
+  var y=b18.getFullYear();
+  /* 18歳到達日が1〜3月なら その年の3月31日、4月以降なら 翌年の3月31日 */
   var fyEnd=(b18.getMonth()<=2)?new Date(y,2,31):new Date(y+1,2,31);
   return fyEnd;
 }
