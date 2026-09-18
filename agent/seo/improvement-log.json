@@ -127,6 +127,71 @@
    "path": "/articles/tomobataraki-wariai-data/",
    "until": "2026-10-13",
    "reason": "国勢調査による統計記事更新（census_update_20260929.md・C50 9/29）の対象"
+  },
+  {
+   "path": "/tools/kodomo-iryohi-jichitai/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/daredemo-tsuen-jichitai/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/funin-josei-jichitai/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/kosodate-shien-23ku/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/hitorioya-shien-jichitai/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/articles/with-guide/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/articles/pairs-marriage-data/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/articles/shussan-hiyou-data/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/articles/kekkon-okane-data/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・Aクラスタへの保険設置／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・Aクラスタへの保険設置／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
   }
  ]
 }

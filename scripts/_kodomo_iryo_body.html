@@ -197,7 +197,8 @@ function renderDetail(c){
   function badge(ok,okText,ngText){
     return ok?'<span class="badge b-ok">'+okText+'</span>':'<span class="badge b-ng">'+ngText+'</span>';
   }
-  var shokujiOK=(String(c.shokuji_ryoyohi).indexOf('対象外')<0);
+  // 先頭で判定する。部分一致だと注記で他区の「対象外」に触れている練馬区を誤判定する（2026-09-19）
+  var shokujiOK=!/^\s*(助成)?対象外/.test(String(c.shokuji_ryoyohi));
   $('detail').innerHTML=''+
    '<dt>対象年齢</dt><dd>'+esc(c.age_limit)+'</dd>'+
    '<dt>所得制限'+(c.shotoku_seigen===false?badge(true,'なしと明記',''):badge(false,'','記載なし'))+'</dt>'+
