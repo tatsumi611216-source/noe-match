@@ -91,7 +91,7 @@
           "date": "2026-09-19",
           "window": "2026-08-18〜2026-09-14（28日・対象抽出に使用したGSC窓）",
           "needs": "SERPでtitleが見切れている32字超ページが多い（257本中216本）。表示の87.4%がその216本由来。locks/observing/watchwords対象は除外し、GSC28日で表示20回以上かつ32字超の42ページのみtitleを32字以内に短縮。",
-          "done": "42ページのtitleを短縮（うち2ページはscratchpadの個別提案案1を採用、残り40ページは先頭句維持＋副題/年版表記の優先削除という機械的ルールで短縮）。og:titleとJSON-LD headlineは、変更前のtitleと文字列が完全一致していた場合のみ新titleに同期（それ以外の既存の別文言は不変更）。H1・本文・meta descriptionは無変更。factory_audit.py / quality_audit.py で新規FAIL差分0件を確認。inspectorエージェントで検品しBLOCK1件（tools/daredemo-tsuen-jichitai/、対象範囲『東京23区＋政令市』が23区のみに見える表現になっていた）を修正しPASS。",
+          "done": "42ページのtitleを短縮（うち2ページはscratchpadの個別提案案1を採用、残り40ページは先頭句維持＋副題/年版表記の優先削除という機械的ルールで短縮）。og:titleとJSON-LD headlineは、変更前のtitleと文字列が完全一致していた場合のみ新titleに同期（それ以外の既存の別文言は不変更）。H1・本文・meta descriptionは無変更。factory_audit.py / quality_audit.py で新規FAIL差分0件を確認。inspectorエージェントで検品しBLOCK1件（tools/daredemo-tsuen-jichitai/、対象範囲『東京23区＋政令市』が23区のみに見える表現になっていた）を修正しPASS。 追記2026-09-19: CEO判断で広告位置ロック（10/20判定・cta_baseline_20260919.json）解除対象になった6ページ（with-guide, with-seriousness-data, pairs-marriage-data, shussan-hiyou-data, hitorioya-shien-jichitai, kosodate-shien-23ku）も同じ規則で追加短縮。うち3ページ（with-guide, with-seriousness-data, pairs-marriage-data）はwatchwords.json監視対象だが、本追加はCEOが個別に許可した例外。with-seriousness-dataはtitle_proposals.mdに提案が無かったため先頭句維持＋副題/年版表記の優先削除ルールで独自作成。agent/seo/title_tighten_20260919.jsonに6件追記。factory_audit.py / quality_audit.pyで新規FAIL差分0件、inspectorで検品しWARN1件（with-guide/index.htmlのBreadcrumbList JSON-LD末尾itemのnameが旧titleのまま）を指摘され即修正。PASS。",
           "files": [
             "agent/seo/title_tighten_20260919.json",
             "articles/kyoto-guide/index.html",
@@ -135,7 +135,13 @@
             "articles/byoji-hoiku-data/index.html",
             "articles/profile-text/index.html",
             "articles/soudanjo-hikaku/index.html",
-            "articles/tapple-nenreiso-data/index.html"
+            "articles/tapple-nenreiso-data/index.html",
+            "articles/with-guide/index.html",
+            "articles/with-seriousness-data/index.html",
+            "articles/pairs-marriage-data/index.html",
+            "articles/shussan-hiyou-data/index.html",
+            "tools/hitorioya-shien-jichitai/index.html",
+            "tools/kosodate-shien-23ku/index.html"
           ]
         }
       ],
@@ -397,6 +403,36 @@
       "path": "/articles/tapple-nenreiso-data/",
       "until": "2026-10-05",
       "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+    },
+    {
+      "path": "/articles/with-guide/",
+      "until": "2026-10-05",
+      "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+    },
+    {
+      "path": "/articles/with-seriousness-data/",
+      "until": "2026-10-05",
+      "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+    },
+    {
+      "path": "/articles/pairs-marriage-data/",
+      "until": "2026-10-05",
+      "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+    },
+    {
+      "path": "/articles/shussan-hiyou-data/",
+      "until": "2026-10-05",
+      "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+    },
+    {
+      "path": "/tools/hitorioya-shien-jichitai/",
+      "until": "2026-10-05",
+      "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+    },
+    {
+      "path": "/tools/kosodate-shien-23ku/",
+      "until": "2026-10-05",
+      "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
     }
   ]
 }

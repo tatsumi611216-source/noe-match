@@ -1,7 +1,7 @@
 {
-  "_note": "site-wide title tighten 2026-09-19。GSC 2026-08-18〜09-14（28日）by_page imp合計。判定は施策後7日窓(2026-09-27以降)のサイト全体CTR vs 前7日で行う。",
+  "_note": "site-wide title tighten 2026-09-19。GSC 2026-08-18〜09-14（28日）by_page imp合計。判定は施策後7日窓(2026-09-27以降)のサイト全体CTR vs 前7日で行う。 追記2026-09-19: 広告位置ロック（10/20判定）解除に伴う6ページを追加（うち3ページはtitle_proposals.md案1を採用、1ページはproposalが無かったため独自作成、2ページは既存twitter:titleの短縮版を流用）。",
   "window": "2026-08-18〜2026-09-14",
-  "target_count": 42,
+  "target_count": 48,
   "items": [
     {
       "path": "/articles/kyoto-guide/",
@@ -422,6 +422,72 @@
       "imp28d": 20,
       "og_title_synced": true,
       "headline_synced": true
+    },
+    {
+      "path": "/articles/with-guide/",
+      "before": "with（ウィズ）完全ガイド｜心理テスト機能の使い方・料金・マッチング攻略法",
+      "after": "withの心理テストはどこ？攻略法まとめ",
+      "before_len": 38,
+      "after_len": 20,
+      "imp28d": 167,
+      "og_title_synced": true,
+      "headline_synced": true,
+      "note": "広告位置ロック（〜2026-10-20）解除分。title_proposals.md案1を採用（1st判断=先頭句維持ではなく需要語『心理テストはどこ』を頭語に寄せる案を優先指示された）"
+    },
+    {
+      "path": "/articles/with-seriousness-data/",
+      "before": "withの成婚率・結婚率は公表されていない｜代わりに確認できる数字を整理した",
+      "after": "withの成婚率・結婚率は公表されていない｜会員数のみ公表",
+      "before_len": 38,
+      "after_len": 29,
+      "imp28d": 107,
+      "og_title_synced": true,
+      "headline_synced": false,
+      "note": "広告位置ロック（〜2026-10-20）解除分。title_proposals.md に本ページの案が無かったため、先頭句維持＋副題/年版表記の優先削除ルールで独自作成（要スポットチェック）。JSON-LD headlineは変更前titleと完全一致していなかった（末尾に【2026年版】が付いていた）ため同期せず"
+    },
+    {
+      "path": "/articles/pairs-marriage-data/",
+      "before": "ペアーズの成婚率は非公表｜公表は「毎月約13,000人に恋人」だけ",
+      "after": "ペアーズの成婚率は非公表｜恋人13,000人/月",
+      "before_len": 33,
+      "after_len": 24,
+      "imp28d": 91,
+      "og_title_synced": true,
+      "headline_synced": false,
+      "note": "広告位置ロック（〜2026-10-20）解除分。title_proposals.md案1を採用。JSON-LD headlineは変更前titleと不一致（別文言）だったため同期せず"
+    },
+    {
+      "path": "/articles/shussan-hiyou-data/",
+      "before": "出産費用の平均はいくら？全国519,805円・妊婦合計負担額592,907円（令和6年度）と都道府県別",
+      "after": "出産費用の平均はいくら？519,805円/592,907円",
+      "before_len": 51,
+      "after_len": 29,
+      "imp28d": 17,
+      "og_title_synced": true,
+      "headline_synced": true,
+      "note": "広告位置ロック（〜2026-10-20）解除分。先頭句維持＋副題/年版表記の優先削除ルールで作成。全国519,805円と実質負担592,907円の2数字を保持"
+    },
+    {
+      "path": "/tools/hitorioya-shien-jichitai/",
+      "before": "ひとり親支援は区でどれだけ違う？東京23区の児童育成手当・医療費助成・住宅支援【2026年8月30日確認】",
+      "after": "ひとり親支援は区でどれだけ違う？東京23区の条件",
+      "before_len": 53,
+      "after_len": 24,
+      "imp28d": 5,
+      "og_title_synced": true,
+      "headline_synced": false,
+      "note": "広告位置ロック（〜2026-10-20）解除分。既存twitter:titleの短縮版を採用（JSON-LD headline自体が本ページに存在しない）"
+    },
+    {
+      "path": "/tools/kosodate-shien-23ku/",
+      "before": "23区の子育て支援を比較｜区を選ぶとひとり親手当・医療費助成・病児保育・誰でも通園・産後ケアが1画面【2026年度】",
+      "after": "23区の子育て支援を比較｜区を選ぶと5制度が1画面",
+      "before_len": 58,
+      "after_len": 25,
+      "imp28d": 2,
+      "og_title_synced": true,
+      "headline_synced": false,
+      "note": "広告位置ロック（〜2026-10-20）解除分。既存twitter:titleの短縮版を採用（JSON-LD headline自体が本ページに存在しない）"
     }
   ]
 }
