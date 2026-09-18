@@ -146,6 +146,24 @@
         }
       ],
       "reviews": []
+    },
+    {
+      "keyword": "internal-link reinforcement（2ページ目の高表示7ページへの内部リンク強化）",
+      "targetPath": "site-wide-internal-link",
+      "status": "observing",
+      "nextReviewDate": "2026-10-08",
+      "actions": [
+        {
+          "date": "2026-09-19",
+          "window": "2026-08-14〜2026-09-11（28日・gsc_data.json）／対象抽出はGSC28日・平均順位11〜17位",
+          "needs": "GSCで2ページ目（平均順位11〜17位）にいる高表示ページ7本（with-nenreiso-data 154, hatsushon-nenmei-data 92, kodomo-iryohi-data 85, members-data 77, kekkon-madeno-kikan-data 62, shougai-mikonritsu-data, tapple-nenreiso-data）の被内部リンクを、同じクラスタ（scripts/cluster_gsc.pyのABC軸）の未リンクページから強化し、1ページ目への押し上げを狙う。",
+          "done": "6ターゲット（with-nenreiso-data, hatsushon-nenmei-data, kodomo-iryohi-data, members-data, kekkon-madeno-kikan-data, tapple-nenreiso-data）に各3本、計18本の内部リンクを追加（source側の既存「関連記事」系ブロックへの追加が15本、本文中への新規段落挿入が3本）。リンク元はlocks[]・observing・watchwords.json監視対象を除外し、同クラスタでGSC表示のあるページを優先。同一ページから同一ターゲットへの重複リンクなし。shougai-mikonritsu-dataは同クラスタ（統計＝3本中2本）が両方ロック中のため対象0件（詳細はagent/knowledge.md 2026-09-19項）。H1・本文の既存文（新規追加分以外）・meta descriptionは無変更。factory_audit.py / quality_audit.pyで新規FAIL差分0件を確認。inspectorエージェントで検品しPASS（title短縮作業に対するWARN1件のみ、内部リンク分の指摘なし）。",
+          "files": [
+            "agent/seo/internal_links_20260919.json"
+          ]
+        }
+      ],
+      "reviews": []
     }
   ],
   "locks": [
@@ -433,6 +451,36 @@
       "path": "/tools/kosodate-shien-23ku/",
       "until": "2026-10-05",
       "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+    },
+    {
+      "path": "/articles/with-nenreiso-data/",
+      "until": "2026-10-08",
+      "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
+    },
+    {
+      "path": "/articles/members-data/",
+      "until": "2026-10-08",
+      "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
+    },
+    {
+      "path": "/articles/kekkon-madeno-kikan-data/",
+      "until": "2026-10-08",
+      "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
+    },
+    {
+      "path": "/articles/tapple-nenreiso-data/",
+      "until": "2026-10-08",
+      "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
+    },
+    {
+      "path": "/articles/kodomo-iryohi-data/",
+      "until": "2026-10-08",
+      "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
+    },
+    {
+      "path": "/articles/hatsushon-nenmei-data/",
+      "until": "2026-10-08",
+      "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
     }
   ]
 }

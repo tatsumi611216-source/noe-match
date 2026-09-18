@@ -1,0 +1,151 @@
+{
+  "_note": "内部リンク強化 2026-09-19。ターゲットは2ページ目（GSC28日窓・平均順位11〜17位）にいる高表示ページ7本。同じクラスタ（agent/cluster_map.mdのABC軸・scripts/cluster_gsc.pyの割付）の記事/ツールのうち、まだターゲットへリンクしていないページから1ターゲットあたり最大3本を追加。リンク元はlocks[]・observing・watchwords.jsonの監視語ページを除外し、GSC表示（agent/gsc_data.json 2026-08-14〜09-11・28日窓）があるページを優先。判定はターゲットの平均順位を施策後14日窓 vs 前14日で比較（2026-10-08以降）。",
+  "window": "2026-08-14〜2026-09-11（gsc_data.json 28日窓）",
+  "judge_after": "2026-10-08",
+  "links": [
+    {
+      "target": "/articles/with-nenreiso-data/",
+      "source": "/articles/20s-guide/",
+      "anchor": "withの年齢層のデータ",
+      "placement": "本文中「相性重視の恋活：withの使い方」節の直後に新規段落を追加"
+    },
+    {
+      "target": "/articles/with-nenreiso-data/",
+      "source": "/articles/late-20s-strategy/",
+      "anchor": "withの年齢層のデータ",
+      "placement": "本文中「アプリ選び」節の末尾（sec-4見出し直前）に新規段落を追加"
+    },
+    {
+      "target": "/articles/with-nenreiso-data/",
+      "source": "/articles/tapple-seriousness-data/",
+      "anchor": "withの年齢層のデータ",
+      "placement": "既存「関連記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/hatsushon-nenmei-data/",
+      "source": "/articles/zexy-enmusubi-data/",
+      "anchor": "平均初婚年齢のデータ",
+      "placement": "既存「関連記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/hatsushon-nenmei-data/",
+      "source": "/tools/app-kakin-hikaku/",
+      "anchor": "平均初婚年齢のデータ",
+      "placement": "既存「関連するツールと記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/hatsushon-nenmei-data/",
+      "source": "/articles/pairs-nenreiso-data/",
+      "anchor": "平均初婚年齢のデータ",
+      "placement": "本文中の既存あわせて読みたい段落の直後に新規段落を追加"
+    },
+    {
+      "target": "/articles/kekkon-madeno-kikan-data/",
+      "source": "/articles/omiai-30s-women-data/",
+      "anchor": "交際期間から結婚までのデータ",
+      "placement": "既存「関連記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/kekkon-madeno-kikan-data/",
+      "source": "/articles/app-ryokin-data/",
+      "anchor": "交際期間から結婚までのデータ",
+      "placement": "既存「関連する記事とツール」ブロックに追加"
+    },
+    {
+      "target": "/articles/kekkon-madeno-kikan-data/",
+      "source": "/tools/seikonritsu-hikaku/",
+      "anchor": "交際期間から結婚までのデータ",
+      "placement": "既存「関連するツールと記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/members-data/",
+      "source": "/articles/price-comparison/",
+      "anchor": "マッチングアプリの会員数比較",
+      "placement": "既存「関連記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/members-data/",
+      "source": "/articles/omiai-guide/",
+      "anchor": "マッチングアプリの会員数比較",
+      "placement": "既存「関連記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/members-data/",
+      "source": "/articles/compare-konkatsu/",
+      "anchor": "マッチングアプリの会員数比較",
+      "placement": "既存「関連記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/shougai-mikonritsu-data/",
+      "source": null,
+      "anchor": null,
+      "placement": "追加なし。同クラスタ（統計＝rikonritsu-data, tomobataraki-wariai-dataの2本のみ）は両方ともlocks[]でロック中（頭語押し上げ10/6・国勢調査10/13）で使用不可。本文に「生涯未婚率」を言及する他クラスタの15ページはすべて既に本ターゲットへリンク済みで、新規候補が存在しなかった。"
+    },
+    {
+      "target": "/articles/tapple-nenreiso-data/",
+      "source": "/articles/youbride-seikon-data/",
+      "anchor": "タップルの年齢層データ",
+      "placement": "既存「関連記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/tapple-nenreiso-data/",
+      "source": "/articles/marrish-saikon-data/",
+      "anchor": "タップルの年齢層データ",
+      "placement": "既存「あわせて読みたい関連記事」ブロックに追加"
+    },
+    {
+      "target": "/articles/tapple-nenreiso-data/",
+      "source": "/articles/renkatsu-vs-konkatsu/",
+      "anchor": "タップルの年齢層データ",
+      "placement": "既存「関連記事」ブロック（記事末尾の2つ目のブロック）に追加"
+    },
+    {
+      "target": "/articles/kodomo-iryohi-data/",
+      "source": "/articles/shussan-iryohi-koujo/",
+      "anchor": "子ども医療費助成の一覧",
+      "placement": "既存「関連する記事とツール」ブロックに追加"
+    },
+    {
+      "target": "/articles/kodomo-iryohi-data/",
+      "source": "/articles/shussan-ichijikin-data/",
+      "anchor": "子ども医療費助成の一覧",
+      "placement": "既存「関連する記事とツール」ブロックに追加"
+    },
+    {
+      "target": "/articles/kodomo-iryohi-data/",
+      "source": "/tools/ikukyu-encho-hantei/",
+      "anchor": "子ども医療費助成の一覧",
+      "placement": "既存「関連するツールと記事」ブロックに追加"
+    }
+  ],
+  "before_after_backlink_counts": {
+    "/articles/with-nenreiso-data/": {
+      "before": 10,
+      "after": 13
+    },
+    "/articles/hatsushon-nenmei-data/": {
+      "before": 3,
+      "after": 6
+    },
+    "/articles/kodomo-iryohi-data/": {
+      "before": 12,
+      "after": 15
+    },
+    "/articles/members-data/": {
+      "before": 13,
+      "after": 16
+    },
+    "/articles/kekkon-madeno-kikan-data/": {
+      "before": 24,
+      "after": 27
+    },
+    "/articles/shougai-mikonritsu-data/": {
+      "before": 17,
+      "after": 17
+    },
+    "/articles/tapple-nenreiso-data/": {
+      "before": 5,
+      "after": 8
+    }
+  }
+}
