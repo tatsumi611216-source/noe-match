@@ -99,7 +99,7 @@ RATE_ROWS = [("%d年→%d年" % (a, b), "%+.1f%%" % rate("sengyou", a, b), "%+.1
              for a, b in ((2010, 2015), (2015, 2020), (2020, 2025))]
 
 # ------------------------------------------------------------------ データ記事
-ART_TITLE = "専業主婦の割合は%.1f%%｜%d年の最新値と40年の推移" % (SH_L, LATEST)
+ART_TITLE = "専業主婦世帯の割合は%.1f%%｜%d年最新と40年の推移" % (SH_L, LATEST)
 ART_H1 = "専業主婦の割合は何%%？%d年は%.1f%%｜1985年からの推移を1年刻みで" % (LATEST, SH_L)
 assert len(ART_TITLE) <= 32, len(ART_TITLE)
 
@@ -267,7 +267,7 @@ def build_article():
 
     body.append('<h2 id="related">関連する記事とツール</h2><ul>'
                 '<li><a href="/tools/%s/">専業主婦の割合を年別に調べるツール</a>｜年を選ぶと、その年の世帯数・割合・最新年との差が出ます</li>'
-                '<li><a href="/articles/tomobataraki-wariai-data/">共働き世帯の割合はどれくらい？</a>｜同じ系列を共働きの側から読む</li>'
+                '<li><a href="/articles/tomobataraki-wariai-data/">共働き世帯の割合はどれくらい？</a>｜同じ系列を共働きの側から読む（令和7年版・2024年までの値）</li>'
                 '<li><a href="/articles/sengyoshufu-seikatsuhi/">専業主婦世帯の生活費</a>｜片働きの家計をどう組むか</li>'
                 '<li><a href="/articles/tomobataraki-shokuji-data/">共働き夫婦の食事はどうしている？</a>｜自炊・ミールキット・外食の費用と時間</li>'
                 '<li><a href="/articles/sango-kaji-buntan/">産後の家事分担はどう決めるか</a></li>'
@@ -281,7 +281,7 @@ def build_article():
             "%d年の%.1f%%から40年の推移を1年刻みで全部載せ、割合の分母、50%%を下回った年、5年ごとの増減率、年代別が分からない理由まで整理しました。"
             "内閣府『男女共同参画白書 令和8年版』の公表値を%sに確認。"
             % (LATEST, man(L["sengyou"]), man(L["kyoudou"]), SH_L, bai(LATEST), FIRST, SH_F, CHECKED))
-    ogd = "%d年は専業主婦世帯%s・共働き世帯%s。割合は%.1f%%で、%d年の%.1f%%から半分以下になりました。" % (
+    ogd = "%d年は専業主婦世帯%s・共働き世帯%s。専業主婦世帯の割合は%.1f%%で、%d年の%.1f%%から半分以下になりました。" % (
         LATEST, man(L["sengyou"]), man(L["kyoudou"]), SH_L, FIRST, SH_F)
 
     write(ART_SLUG, ART_TITLE, ART_H1, desc, ogd, FAQ_ART, "\n".join(body), TODAY, CHECKED,
@@ -395,7 +395,7 @@ table.cmp td.n{text-align:right;font-weight:700;color:#7c2e42;white-space:nowrap
   <div id="rCmp"></div>
   <p id="rNote" style="font-size:.8rem;color:#6b7178;margin:14px 0 0;line-height:1.9"></p>
   <div class="bars" id="bars" aria-hidden="true"></div>
-  <p style="font-size:.78rem;color:#6b7178;margin:14px 0 0;line-height:1.9">棒は専業主婦世帯の割合（__FIRST__年〜__LATEST__年）。出典は内閣府『男女共同参画白書 令和8年版』特-5図・特-6図（__CHECKED__確認）。割合と倍率は公表された世帯数から当サイトが計算しています。統計は全体の傾向であり、個々の家庭にとってどちらが良いかを示すものではありません。</p>
+  <p style="font-size:.78rem;color:#6b7178;margin:14px 0 0;line-height:1.9">棒は専業主婦世帯の割合（__FIRST__年〜__LATEST__年）。出典は内閣府『男女共同参画白書 令和8年版』特-5図・特-6図（__CHECKED__確認）。割合と倍率は公表された世帯数から当サイトが計算しています。差は四捨五入する前の値から計算しているため、表示された割合どうしの引き算と0.1ずれることがあります。統計は全体の傾向であり、個々の家庭にとってどちらが良いかを示すものではありません。</p>
   <section id="line-cta-result" style="border:1px solid #e3ddd3;background:#f7f5f2;padding:18px 18px 20px;margin:24px 0 0;text-align:center">
     <p style="margin:0 0 6px;font-size:11px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif">NOE OFFICIAL LINE</p>
     <p style="margin:0 0 10px;font-size:16px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5">公表値が更新されたらお知らせします</p>
@@ -445,7 +445,7 @@ __SRCLIST__
 <h2 id="related">関連するツールと記事</h2>
 <ul>
 <li><a href="/articles/__ART__/">専業主婦の割合｜40年の推移データ</a>｜全41年の表・節目の年・増減率</li>
-<li><a href="/articles/tomobataraki-wariai-data/">共働き世帯の割合はどれくらい？</a>｜同じ系列を共働きの側から読む</li>
+<li><a href="/articles/tomobataraki-wariai-data/">共働き世帯の割合はどれくらい？</a>｜同じ系列を共働きの側から読む（令和7年版・2024年までの値）</li>
 <li><a href="/articles/sengyoshufu-seikatsuhi/">専業主婦世帯の生活費</a>｜片働きの家計をどう組むか</li>
 <li><a href="/articles/tomobataraki-shokuji-data/">共働き夫婦の食事はどうしている？</a>｜自炊・ミールキット・外食の費用と時間</li>
 <li><a href="/tools/seikatsuhi-simulator/">ふたりの生活費シミュレーション</a>｜家賃・食費・分担を試算</li>
@@ -481,9 +481,9 @@ __SRCLIST__
     var b=document.createElement('option');b.value=DATA[i].y;b.textContent=DATA[i].y+'年';y2.appendChild(b);
   }
   function vals(d){
-    if(d.s!==null){return {s:d.s,k:d.k,sh:d.sh,bai:d.bai,ex:false};}
+    if(d.s!==null){return {s:d.s,k:d.k,sh:d.sh,shr:d.s*100/(d.s+d.k),bai:d.bai,ex:false};}
     var sh=Math.round(d.s3*1000/(d.s3+d.k3))/10;
-    return {s:d.s3,k:d.k3,sh:sh,bai:Math.round(d.k3*100/d.s3)/100,ex:true};
+    return {s:d.s3,k:d.k3,sh:sh,shr:d.s3*100/(d.s3+d.k3),bai:Math.round(d.k3*100/d.s3)/100,ex:true};
   }
   function row(th,td){return '<tr><th>'+th+'</th><td>'+td+'</td></tr>';}
   function sign(n,unit){var r=Math.round(n*10)/10;var t=(unit==='ポイント')?r.toFixed(1):fmt(Math.abs(r));if(unit!=='ポイント'){t=(r<0?'-':'')+t;}return (r>0?'+':'')+t+unit;}
@@ -501,16 +501,18 @@ __SRCLIST__
     $('rNum').textContent=v.sh.toFixed(1)+'%';
     var t=row('専業主婦世帯',fmt(v.s)+'万世帯')+row('共働き世帯',fmt(v.k)+'万世帯')+row('共働き世帯 ÷ 専業主婦世帯',v.bai.toFixed(2)+'倍');
     if(d.f!==null){t+=row('共働きのうち妻フルタイム（週35時間以上）',fmt(d.f)+'万世帯')+row('共働きのうち妻パート（週35時間未満）',fmt(d.p)+'万世帯');}
-    if(d.y!=LATEST){t+=row('最新（'+LATEST+'年・'+L.sh.toFixed(1)+'%）との差',sign(L.sh-v.sh,'ポイント'))+row('専業主婦世帯の増減（'+LATEST+'年まで）',sign(L.s-v.s,'万世帯'));}
+    if(d.y!=LATEST){t+=row('最新（'+LATEST+'年・'+L.sh.toFixed(1)+'%）との差',sign(L.shr-v.shr,'ポイント'))+row('専業主婦世帯の増減（'+LATEST+'年まで）',sign(L.s-v.s,'万世帯'));}
     $('rTable').innerHTML=t;
     var c='';
     if(y2.value&&y2.value!=y1.value){
       var e=by[y2.value],w=vals(e);
+      if(v.ex&&e.s3!==null){w=vals({s:null,s3:e.s3,k3:e.k3});}
+      var v0=v;if(w.ex&&!v.ex&&d.s3!==null){v0=vals({s:null,s3:d.s3,k3:d.k3});}
       c='<h3 style="font-size:.96rem;margin:22px 0 0;color:#1d242b">'+d.y+'年と'+e.y+'年を比べる</h3><table class="dt">'
         +row(e.y+'年の専業主婦世帯の割合',w.sh.toFixed(1)+'%'+(w.ex?'（3県を除く参考値）':''))
-        +row('割合の差（'+e.y+'年 − '+d.y+'年）',sign(w.sh-v.sh,'ポイント'))
-        +row('専業主婦世帯の差',sign(w.s-v.s,'万世帯'))
-        +row('共働き世帯の差',sign(w.k-v.k,'万世帯'))+'</table>';
+        +row('割合の差（'+e.y+'年 − '+d.y+'年）'+((w.ex||v0.ex)?'・3県を除く値どうし':''),sign(w.shr-v0.shr,'ポイント'))
+        +row('専業主婦世帯の差',sign(w.s-v0.s,'万世帯'))
+        +row('共働き世帯の差',sign(w.k-v0.k,'万世帯'))+'</table>';
     }
     $('rCmp').innerHTML=c;
     var n=[];
@@ -535,7 +537,7 @@ def build_tool():
             "%d年は専業主婦世帯%s・共働き世帯%sで、割合は%.1f%%。2つの年を比べることもできます。"
             "内閣府『男女共同参画白書 令和8年版』の公表値を%sに確認。割合の分母（妻64歳以下・夫が雇用者の世帯）も明記しています。"
             % (FIRST, LATEST, LATEST, man(L["sengyou"]), man(L["kyoudou"]), SH_L, CHECKED))
-    ogd = "%d年は%.1f%%、%d年は%.1f%%。年を選んで、その年の世帯数と割合を確かめられます。" % (FIRST, SH_F, LATEST, SH_L)
+    ogd = "専業主婦世帯の割合は%d年が%.1f%%、%d年が%.1f%%。年を選んで、その年の世帯数と割合を確かめられます。" % (FIRST, SH_F, LATEST, SH_L)
     faq_ld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
         for q, a in FAQ_TOOL]}, ensure_ascii=False)
