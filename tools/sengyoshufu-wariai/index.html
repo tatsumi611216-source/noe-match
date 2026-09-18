@@ -290,11 +290,14 @@ table.cmp td.n{text-align:right;font-weight:700;color:#7c2e42;white-space:nowrap
     var c='';
     if(y2.value&&y2.value!=y1.value){
       var e=by[y2.value],w=vals(e);
-      if(v.ex&&e.s3!==null){w=vals({s:null,s3:e.s3,k3:e.k3});}
-      var v0=v;if(w.ex&&!v.ex&&d.s3!==null){v0=vals({s:null,s3:d.s3,k3:d.k3});}
+      var sub=null;
+      if(v.ex&&e.s!==null&&e.s3!==null){w=vals({s:null,s3:e.s3,k3:e.k3});sub={y:e.y,v:w};}
+      var v0=v;if(w.ex&&!v.ex&&d.s3!==null){v0=vals({s:null,s3:d.s3,k3:d.k3});sub={y:d.y,v:v0};}
+      var both=(w.ex&&v0.ex);
       c='<h3 style="font-size:.96rem;margin:22px 0 0;color:#1d242b">'+d.y+'年と'+e.y+'年を比べる</h3><table class="dt">'
         +row(e.y+'年の専業主婦世帯の割合',w.sh.toFixed(1)+'%'+(w.ex?'（3県を除く参考値）':''))
-        +row('割合の差（'+e.y+'年 − '+d.y+'年）'+((w.ex||v0.ex)?'・3県を除く値どうし':''),sign(w.shr-v0.shr,'ポイント'))
+        +(sub?row(sub.y+'年の3県を除く値（差の計算に使用）','専業主婦世帯'+fmt(sub.v.s)+'万世帯・共働き世帯'+fmt(sub.v.k)+'万世帯（'+sub.v.sh.toFixed(1)+'%）'):'')
+        +row('割合の差（'+e.y+'年 − '+d.y+'年）'+(both?'・3県を除く値どうし':''),sign(w.shr-v0.shr,'ポイント'))
         +row('専業主婦世帯の差',sign(w.s-v0.s,'万世帯'))
         +row('共働き世帯の差',sign(w.k-v0.k,'万世帯'))+'</table>';
     }
