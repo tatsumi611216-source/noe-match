@@ -9,9 +9,9 @@ SERP1ページ目は区の公式ページ・都のガイド・まとめサイト
 - 年齢上限は23区すべて「18歳到達後最初の3月31日まで（高校生相当）」で差がない
 - 所得制限は13区が「なし」と明記、10区は区ページに記載なし
 - 自己負担は21区が「なし」、2区は記載なし
-- **唯一の実質的な差は入院時食事療養費で、対象14区・対象外9区に割れる**
+- **唯一の実質的な差は入院時食事療養費で、対象15区・対象外8区に割れる**
 東京都の基準は「通院1回につき最大200円の一部負担あり」「入院時食事療養標準負担額は
-助成対象外」なので、食事療養費を対象にしている14区は都基準への上乗せにあたる。
+助成対象外」なので、食事療養費を対象にしている15区は都基準への上乗せにあたる。
 
 器具の計算部分は「子の生年月日 → 助成が切れる日」。18歳到達後最初の3月31日で、
 これは年齢計算の応当日ではなく年度末なので、育休ツールとは別のロジックになる。
@@ -31,8 +31,17 @@ TOOL_URL = "https://www.noe-match.com/tools/%s/" % TOOL_SLUG
 OISIX = "https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77"
 N = len(WARDS)
 
-shokuji_taisho = [w for w in WARDS if "対象外" not in w["shokuji_ryoyohi"]]
-shokuji_gai = [w for w in WARDS if "対象外" in w["shokuji_ryoyohi"]]
+
+
+def is_shokuji_gai(text):
+    """入院時食事療養費が「対象外」か。テキストの先頭で判定する。
+    部分一致（"対象外" in text）だと、練馬区のように注記の中で他区の「対象外」に触れている
+    助成対象の区まで対象外に数えてしまう（2026-09-19 修正・14/9→正しくは15/8）。"""
+    return text.strip().startswith(("対象外", "助成対象外"))
+
+
+shokuji_taisho = [w for w in WARDS if not is_shokuji_gai(w["shokuji_ryoyohi"])]
+shokuji_gai = [w for w in WARDS if is_shokuji_gai(w["shokuji_ryoyohi"])]
 seigen_nashi = [w for w in WARDS if w["shotoku_seigen"] is False]
 seigen_none = [w for w in WARDS if w["shotoku_seigen"] is None]
 
@@ -108,7 +117,7 @@ def build_tool():
         % (w["name"],
            "なしと明記" if w["shotoku_seigen"] is False else "記載なし",
            "なし" if w["jiko_futan"] is False else "記載なし",
-           "対象外" if "対象外" in w["shokuji_ryoyohi"] else "対象")
+           "対象外" if is_shokuji_gai(w["shokuji_ryoyohi"]) else "対象")
         for w in WARDS)
     src_rows = "".join(
         '<tr><td>%s</td><td><a href="%s" rel="noopener" target="_blank">%s</a></td><td>%s</td></tr>'
@@ -211,7 +220,7 @@ def build_article():
                    [(w["name"], w["age_limit_class"],
                      "なしと明記" if w["shotoku_seigen"] is False else "記載なし",
                      "なし" if w["jiko_futan"] is False else "記載なし",
-                     "対象外" if "対象外" in w["shokuji_ryoyohi"] else "対象")
+                     "対象外" if is_shokuji_gai(w["shokuji_ryoyohi"]) else "対象")
                     for w in WARDS], ["", "", "", "", ""]))
 
     p.append('<h2 id="chui">調べるときに間違えやすいところ</h2>')
