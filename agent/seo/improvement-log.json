@@ -182,6 +182,16 @@
    "path": "/articles/kekkon-okane-data/",
    "until": "2026-10-20",
    "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・Aクラスタへの保険設置／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "until": "2026-10-20",
+   "reason": "収益導線の置き場所変更（2026-09-19・Aクラスタへの保険設置／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
   }
  ]
 }

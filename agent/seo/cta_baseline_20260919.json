@@ -339,6 +339,70 @@
     "pos_pct": 89.1,
     "line": 290
    }
+  ],
+  "/tools/sangokea-ryokin/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 4.4,
+    "line": 186
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 5.7,
+    "after_h2": "STEP1｜自治体と使いたい回数を入れる",
+    "line": 197
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 34.0,
+    "line": 325
+   }
+  ],
+  "/tools/garugaru-check/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 12.7,
+    "line": 255
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 18.6,
+    "after_h2": "この診断について",
+    "line": 271
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 20.7,
+    "after_h2": "この診断について",
+    "line": 276
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "結婚相談所比較ネットで無料診断する",
+    "pos_pct": 23.3,
+    "after_h2": "この診断について",
+    "line": 281
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 52.1,
+    "line": 411
+   }
   ]
  },
  "after": {
@@ -750,6 +814,80 @@
     "pos_pct": 89.1,
     "line": 290
    }
+  ],
+  "/tools/sangokea-ryokin/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 4.4,
+    "line": 186
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-hoken",
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 5.8,
+    "after_h2": "STEP1｜自治体と使いたい回数を入れる",
+    "line": 197
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 6.6,
+    "after_h2": "STEP1｜自治体と使いたい回数を入れる",
+    "line": 205
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 34.6,
+    "line": 333
+   }
+  ],
+  "/tools/garugaru-check/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 12.7,
+    "line": 255
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 18.6,
+    "after_h2": "この診断について",
+    "line": 271
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-hoken",
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 20.7,
+    "after_h2": "この診断について",
+    "line": 276
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "結婚相談所比較ネットで無料診断する",
+    "pos_pct": 23.3,
+    "after_h2": "この診断について",
+    "line": 281
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 52.1,
+    "line": 411
+   }
   ]
- }
+ },
+ "_note_2": "2026-09-19 追記: CEO裁定（クラスタAにも収益導線可）を受け /tools/sangokea-ryokin/ に保険を新設、/tools/garugaru-check/ は既存の保険アンカーに id=aff-hoken を付与しコピーを調整（YMYL枠は1ページ1箇所のため2本目は置かない）。"
 }
