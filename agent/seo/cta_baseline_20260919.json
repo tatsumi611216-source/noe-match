@@ -1,0 +1,755 @@
+{
+ "_note": "2026-09-19 収益導線の置き場所変更（アフィリ課）の効果判定用ベースライン。pos_pct は body 内のソース文字位置（概算）。判定は 10/20 に GA4 内蔵 click × linkId × pagePath で行う。",
+ "recorded": "2026-09-19",
+ "judge_on": "2026-10-20",
+ "before": {
+  "/tools/kodomo-iryohi-jichitai/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 5.6,
+    "line": 172
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 8.3,
+    "after_h2": "STEP1｜お子さんの生年月日と区を選ぶ",
+    "line": 183
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 36.6,
+    "line": 272
+   }
+  ],
+  "/tools/daredemo-tsuen-jichitai/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 4.8,
+    "line": 168
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 6.5,
+    "after_h2": "STEP1｜自治体と使いたい回数を選ぶ",
+    "line": 179
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 44.6,
+    "line": 299
+   }
+  ],
+  "/tools/funin-josei-jichitai/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 4.0,
+    "line": 165
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 6.1,
+    "after_h2": "STEP1｜お住まいの区を選ぶ",
+    "line": 176
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 31.4,
+    "line": 255
+   }
+  ],
+  "/tools/kosodate-shien-23ku/": [
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 3.7,
+    "after_h2": "STEP1｜お住まいの区（または候補の区）を選ぶ",
+    "line": 172
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 15.1,
+    "line": 232
+   }
+  ],
+  "/tools/hitorioya-shien-jichitai/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 2.3,
+    "line": 167
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 24.0,
+    "line": 240
+   }
+  ],
+  "/tools/ikukyu-encho-hantei/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 24.4,
+    "line": 269
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 29.9,
+    "after_h2": "STEP1｜状況を選ぶ",
+    "line": 280
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 68.0,
+    "line": 399
+   }
+  ],
+  "/tools/nyuseki-calendar/": [
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "式場の空き状況を見る",
+    "pos_pct": 30.1,
+    "after_h2": "記念日と暦がぶつかったら",
+    "line": 299
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 32.1,
+    "line": 308
+   }
+  ],
+  "/articles/with-guide/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "婚活目的のサービスを見る",
+    "pos_pct": 30.4,
+    "after_h2": "with の料金詳細",
+    "line": 158
+   }
+  ],
+  "/articles/pairs-marriage-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドの公表数値を見る",
+    "pos_pct": 76.3,
+    "after_h2": "著者・監修について",
+    "line": 307
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 90.2,
+    "line": 325
+   }
+  ],
+  "/articles/pairs-kaiin-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを公式サイトで確認する →",
+    "pos_pct": 45.3,
+    "after_h2": "他のアプリとの会員数公表状況比較",
+    "line": 246
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "結婚相談所を無料で比較する →",
+    "pos_pct": 66.3,
+    "after_h2": "会員数データを婚活に活かす考え方",
+    "line": 303
+   }
+  ],
+  "/articles/omiai-danjohi-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを見てみる",
+    "pos_pct": 64.6,
+    "after_h2": "公表値をどう使うか",
+    "line": 248
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを見てみる",
+    "pos_pct": 93.8,
+    "after_h2": "婚活・真剣交際ならユーブライド",
+    "line": 304
+   }
+  ],
+  "/articles/compare-konkatsu/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 23.1,
+    "after_h2": "3アプリの基本スペック",
+    "line": 150
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "公式サイト",
+    "pos_pct": 40.6,
+    "after_h2": "料金詳細比較",
+    "line": 178
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "マリッシュ公式サイトを見る（登録無料）",
+    "pos_pct": 76.1,
+    "after_h2": "よくある質問（FAQ）",
+    "line": 225
+   }
+  ],
+  "/articles/with-seriousness-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 28.7,
+    "after_h2": "withの基本データ（公式発表ベース）",
+    "line": 207
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 70.1,
+    "after_h2": "よくある質問（FAQ）",
+    "line": 325
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 91.5,
+    "line": 362
+   }
+  ],
+  "/articles/with-nenreiso-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを見てみる",
+    "pos_pct": 51.6,
+    "after_h2": "実際に使った人の話",
+    "line": 229
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを見てみる",
+    "pos_pct": 94.0,
+    "after_h2": "真剣交際・婚活ならユーブライドも検討を",
+    "line": 315
+   }
+  ],
+  "/articles/kekkon-okane-data/": [
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "ハナユメで式場見学を予約する",
+    "pos_pct": 49.9,
+    "after_h2": "総額を決める最大の変数は「挙式をするか」",
+    "line": 183
+   }
+  ],
+  "/articles/shussan-hiyou-data/": [
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 87.6,
+    "after_h2": "出典",
+    "line": 195
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 90.1,
+    "line": 200
+   }
+  ],
+  "/articles/kekkon-madeno-kikan-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 32.0,
+    "after_h2": "【公的統計】ネットで知り合った夫婦の交際期間は2.8年",
+    "line": 192
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 64.5,
+    "after_h2": "よくある質問（FAQ）",
+    "line": 258
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 89.1,
+    "line": 290
+   }
+  ]
+ },
+ "after": {
+  "/tools/kodomo-iryohi-jichitai/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 5.5,
+    "line": 172
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-hoken",
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 8.3,
+    "after_h2": "STEP1｜お子さんの生年月日と区を選ぶ",
+    "line": 183
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 10.0,
+    "after_h2": "STEP1｜お子さんの生年月日と区を選ぶ",
+    "line": 191
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 37.8,
+    "line": 280
+   }
+  ],
+  "/tools/daredemo-tsuen-jichitai/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 4.7,
+    "line": 168
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-hoken",
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 6.5,
+    "after_h2": "STEP1｜自治体と使いたい回数を選ぶ",
+    "line": 179
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 7.5,
+    "after_h2": "STEP1｜自治体と使いたい回数を選ぶ",
+    "line": 187
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 45.2,
+    "line": 307
+   }
+  ],
+  "/tools/funin-josei-jichitai/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 3.9,
+    "line": 165
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-hoken",
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 6.1,
+    "after_h2": "STEP1｜お住まいの区を選ぶ",
+    "line": 176
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 7.5,
+    "after_h2": "STEP1｜お住まいの区を選ぶ",
+    "line": 184
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 32.4,
+    "line": 263
+   }
+  ],
+  "/tools/kosodate-shien-23ku/": [
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 3.6,
+    "after_h2": "STEP1｜お住まいの区（または候補の区）を選ぶ",
+    "line": 172
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-hoken",
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 4.6,
+    "after_h2": "STEP1｜お住まいの区（または候補の区）を選ぶ",
+    "line": 179
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 16.1,
+    "line": 239
+   }
+  ],
+  "/tools/hitorioya-shien-jichitai/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 2.3,
+    "line": 167
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-hoken",
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 3.6,
+    "after_h2": "STEP1｜お住まいの区（またはこれから住む区）を選ぶ",
+    "line": 178
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 24.7,
+    "line": 248
+   }
+  ],
+  "/tools/ikukyu-encho-hantei/": [
+   {
+    "type": "cta",
+    "what": "line-cta-result",
+    "pos_pct": 24.4,
+    "line": 269
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-result",
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 29.9,
+    "after_h2": "STEP1｜状況を選ぶ",
+    "line": 280
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 68.0,
+    "line": 399
+   }
+  ],
+  "/tools/nyuseki-calendar/": [
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-shikijo",
+    "text": "式場の空き状況を見る",
+    "pos_pct": 30.1,
+    "after_h2": "記念日と暦がぶつかったら",
+    "line": 299
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 32.2,
+    "line": 308
+   }
+  ],
+  "/articles/with-guide/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "婚活目的のサービスを見る",
+    "pos_pct": 28.9,
+    "after_h2": "with の料金詳細",
+    "line": 158
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": "aff-decide",
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 59.9,
+    "after_h2": "withと合わせて検討したいアプリ",
+    "line": 198
+   }
+  ],
+  "/articles/pairs-marriage-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": "aff-compare",
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 33.8,
+    "after_h2": "他アプリとの比較：成婚実績・真剣度",
+    "line": 217
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": "aff-conclusion",
+    "text": "ユーブライドの公表数値を見る",
+    "pos_pct": 73.0,
+    "after_h2": "まとめ",
+    "line": 309
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 90.7,
+    "line": 333
+   }
+  ],
+  "/articles/pairs-kaiin-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを公式サイトで確認する →",
+    "pos_pct": 45.3,
+    "after_h2": "他のアプリとの会員数公表状況比較",
+    "line": 246
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "結婚相談所を無料で比較する →",
+    "pos_pct": 66.3,
+    "after_h2": "会員数データを婚活に活かす考え方",
+    "line": 303
+   }
+  ],
+  "/articles/omiai-danjohi-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを見てみる",
+    "pos_pct": 64.6,
+    "after_h2": "公表値をどう使うか",
+    "line": 248
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを見てみる",
+    "pos_pct": 93.8,
+    "after_h2": "婚活・真剣交際ならユーブライド",
+    "line": 304
+   }
+  ],
+  "/articles/compare-konkatsu/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 23.1,
+    "after_h2": "3アプリの基本スペック",
+    "line": 150
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "公式サイト",
+    "pos_pct": 40.6,
+    "after_h2": "料金詳細比較",
+    "line": 178
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "マリッシュ公式サイトを見る（登録無料）",
+    "pos_pct": 76.1,
+    "after_h2": "よくある質問（FAQ）",
+    "line": 225
+   }
+  ],
+  "/articles/with-seriousness-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 28.7,
+    "after_h2": "withの基本データ（公式発表ベース）",
+    "line": 207
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": "aff-conclusion",
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 62.9,
+    "after_h2": "データが示す結論：本気の婚活なら専用アプリを",
+    "line": 310
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 91.6,
+    "line": 362
+   }
+  ],
+  "/articles/with-nenreiso-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを見てみる",
+    "pos_pct": 51.6,
+    "after_h2": "実際に使った人の話",
+    "line": 229
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライドを見てみる",
+    "pos_pct": 94.0,
+    "after_h2": "真剣交際・婚活ならユーブライドも検討を",
+    "line": 315
+   }
+  ],
+  "/articles/kekkon-okane-data/": [
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-shikijo",
+    "text": "ハナユメで式場見学を予約する",
+    "pos_pct": 49.8,
+    "after_h2": "総額を決める最大の変数は「挙式をするか」",
+    "line": 183
+   }
+  ],
+  "/articles/shussan-hiyou-data/": [
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": "aff-hoken",
+    "text": "保険ランドリーの相談内容を見る",
+    "pos_pct": 67.0,
+    "after_h2": "数字を読むときの注意",
+    "line": 164
+   },
+   {
+    "type": "aff",
+    "adv": "//px.a8.net",
+    "id": null,
+    "text": "Oisixのおためしセットを見る",
+    "pos_pct": 88.4,
+    "after_h2": "出典",
+    "line": 203
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 90.7,
+    "line": 208
+   }
+  ],
+  "/articles/kekkon-madeno-kikan-data/": [
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 32.0,
+    "after_h2": "【公的統計】ネットで知り合った夫婦の交際期間は2.8年",
+    "line": 192
+   },
+   {
+    "type": "aff",
+    "adv": "//t.afi-b.com",
+    "id": null,
+    "text": "ユーブライド公式サイトを見る（登録無料）",
+    "pos_pct": 64.5,
+    "after_h2": "よくある質問（FAQ）",
+    "line": 258
+   },
+   {
+    "type": "cta",
+    "what": "line-cta",
+    "pos_pct": 89.1,
+    "line": 290
+   }
+  ]
+ }
+}
