@@ -197,5 +197,7 @@
   "sessions": 25,
   "users": 23,
   "views": 23
- }
+ },
+ "clicks": [],
+ "clicks_fetched_at": "2026-09-19T09:11:31"
 }

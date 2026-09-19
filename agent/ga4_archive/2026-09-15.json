@@ -211,5 +211,15 @@
   "garugaru_mode_switch": 1,
   "garugaru_start": 1,
   "tool_calc": 1
- }
+ },
+ "clicks": [
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "linkId": "",
+   "linkDomain": "gender.go.jp",
+   "linkUrl": "https://www.gender.go.jp/about_danjo/whitepaper/r07/zentai/html/honpen/csv/zuhyo00-op01.csv",
+   "count": 3
+  }
+ ],
+ "clicks_fetched_at": "2026-09-19T09:11:39"
 }

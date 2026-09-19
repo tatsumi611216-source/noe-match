@@ -83,5 +83,7 @@
   "session_start": 9,
   "first_visit": 8,
   "user_engagement": 8
- }
+ },
+ "clicks": [],
+ "clicks_fetched_at": "2026-09-19T09:11:38"
 }

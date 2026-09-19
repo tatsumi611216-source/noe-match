@@ -150,5 +150,15 @@
   "tool_result": 9,
   "scroll": 3,
   "click": 2
- }
+ },
+ "clicks": [
+  {
+   "path": "/articles/over50-guide/",
+   "linkId": "",
+   "linkDomain": "goen-s.com",
+   "linkUrl": "https://goen-s.com/",
+   "count": 2
+  }
+ ],
+ "clicks_fetched_at": "2026-09-19T09:11:33"
 }
