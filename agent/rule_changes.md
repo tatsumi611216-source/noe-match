@@ -44,6 +44,20 @@ AGENT.md の判断ルールを変更したら、必ずここに追記する。
   6. 既存8ページの `id="aff-result"` を `aff-<案件>` 形式へ揃えるかどうか（集計を `aff-` 前方一致にすれば不要）
   7. 毎朝のGSC申請タスクの対象に、マージ後の2URL（/tools/sengyoshufu-wariai/・/articles/sengyoshufu-wariai-data/）を足す
   8. トップ `index.html` のツール枠に新ツールのカードを足す（`feat/aff-hoken-20260919` が同ファイルを編集中のため未実施）
+- **同日追記｜CEO承認（9/19「OK」・COO経由で伝達）で4点を適用済み**（ブランチ `feat/tool-databank-20260919`。main 到達はマージ後）:
+  - 上の1と3 → `agent/AGENT.md` の手順を書き換え（旧手順は「2026-09-19 停止」として残置・型Bは停止と明記・
+    打順が尽きたとき／tool_gate が NO-GO・CHECK のときの分岐つき・locks[] と observing は編集禁止）。
+    **出荷基準の「対のデータ記事」は必須から推奨へ変更**（対の有無で当たり率の差を確認できなかったため）
+  - 上の2 → `agent/keyword_queue.json`: pending 27件をすべて `hold`（Eクラスタ・打順に該当するものは0件だった・削除なし）。
+    打順2〜10位の9件を `batting_order`／`not_before` つきで pending 投入（commit `450789c`）
+  - 上の5 → `scripts/fetch_ga4.py` に `clicks` キーを追加・62日ぶんバックフィル・`scripts/result_clicks.py` 新設（commit `dfb1936`）。
+    **実測: 8/13〜9/16 の結果直後クリックは0件**（内蔵click 計15件・広告ドメイン6件はすべて8月・idなし）
+  - 上の4 → `scripts/factory_audit.py` に tools/ 検査を追加。既存23本は `agent/quality_backlog_tools.md` で既知バックログ扱い・新規FAIL 0（commit `6d03afc`）
+  - 上の8（出荷作業の残り）→ トップにツールカードを追加（commit `53aa0b8`）
+- **未承認のまま適用していないもの**: 上の6（`aff-result` と `aff-<案件>` の id 統一）／7（毎朝のGSC申請タスクへの2URL追加）／
+  定期タスク・CIワークフローの設定変更全般
+- **反証条件（手順の書き換えについて）**: 自動実行が2週連続で「作るものなし」で終わる（打順の補充が人待ちで詰まる）なら、
+  候補出し→キュー追加の線引きを見直す
 
 ## 2026-08-09(2) ｜ 出荷の完了条件を「本番200」に変更する（記事2本が8日間404だった）
 
