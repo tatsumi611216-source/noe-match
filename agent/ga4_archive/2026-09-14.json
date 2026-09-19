@@ -221,5 +221,7 @@
   "first_visit": 21,
   "scroll": 5,
   "tool_result": 3
- }
+ },
+ "clicks": [],
+ "clicks_fetched_at": "2026-09-19T09:11:39"
 }

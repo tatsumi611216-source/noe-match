@@ -332,5 +332,15 @@
   "sessions": 46,
   "users": 43,
   "views": 60
- }
+ },
+ "clicks": [
+  {
+   "path": "/articles/bachelor-date-guide/",
+   "linkId": "",
+   "linkDomain": "px.a8.net",
+   "linkUrl": "https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6",
+   "count": 1
+  }
+ ],
+ "clicks_fetched_at": "2026-09-19T09:11:30"
 }

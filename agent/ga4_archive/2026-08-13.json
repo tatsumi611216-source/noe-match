@@ -127,5 +127,22 @@
   "sessions": 17,
   "users": 15,
   "views": 28
- }
+ },
+ "clicks": [
+  {
+   "path": "/articles/dousei-hajimekata/",
+   "linkId": "",
+   "linkDomain": "px.a8.net",
+   "linkUrl": "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U",
+   "count": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "linkId": "shareLine",
+   "linkDomain": "social-plugins.line.me",
+   "linkUrl": "https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fwww.noe-match.com%2Ftools%2Fgarugaru-c",
+   "count": 1
+  }
+ ],
+ "clicks_fetched_at": "2026-09-19T09:11:23"
 }

@@ -240,5 +240,15 @@
   "sessions": 46,
   "users": 30,
   "views": 59
- }
+ },
+ "clicks": [
+  {
+   "path": "/about.html",
+   "linkId": "",
+   "linkDomain": "note.com",
+   "linkUrl": "https://note.com/hachimitsu88812",
+   "count": 1
+  }
+ ],
+ "clicks_fetched_at": "2026-09-19T09:11:26"
 }

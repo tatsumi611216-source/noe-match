@@ -78,5 +78,15 @@
   "sessions": 7,
   "users": 5,
   "views": 11
- }
+ },
+ "clicks": [
+  {
+   "path": "/articles/nurse-guide/",
+   "linkId": "",
+   "linkDomain": "px.a8.net",
+   "linkUrl": "https://px.a8.net/svt/ejp?a8mat=35LVUH+7YYZ4Q+32P0+BXQOH",
+   "count": 1
+  }
+ ],
+ "clicks_fetched_at": "2026-09-19T09:11:28"
 }

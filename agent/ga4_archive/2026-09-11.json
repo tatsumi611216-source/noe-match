@@ -93,5 +93,7 @@
   "user_engagement": 8,
   "tool_calc": 2,
   "tool_result": 2
- }
+ },
+ "clicks": [],
+ "clicks_fetched_at": "2026-09-19T09:11:37"
 }

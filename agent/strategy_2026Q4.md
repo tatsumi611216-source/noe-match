@@ -512,6 +512,8 @@ CEO決定（9/19）「この戦略を強化していこう」を受けた改定�
 2. **結果の直後**に LINE CTA（`id="line-cta-result"`）と、既存案件の広告（`id="aff-..."`・PRラベル・
    `rel="nofollow sponsored noopener"`）。広告は案件台帳（AGENT.md）の文脈ルールに従い、YMYL枠は承認済みslugだけ
 3. **対のデータ記事**（同じ正本から生成。表を手で書かない）
+   - **同日改定（CEO承認）: 3は必須から「推奨」へ変更。** 上の読み取り4のとおり、対の有無による当たり率の差を確認できなかったため。
+     同じ正本から追加コストなしで出せるときだけ作る。
 4. **同クラスタからの内部リンク3本以上**（判定ロック中のページには張らない）
 5. sitemap 2本に追加 → デプロイ後に **GSC申請**（`agent/index_request_queue.md`）
 6. 確認日の明記・数字は正本ファイルからのみ・inspector PASS・`factory_audit.py` と `quality_audit.py` で新規FAILなし
@@ -610,6 +612,22 @@ Direct除き＝`total.sessions` −〔by_page のうち channel=Direct の sessi
     アーカイブの改修は自動化の変更なのでCEO承認後（`agent/rule_changes.md` 2026-09-19 の項の5）。それまでは月末に `aff_clicks.py` を手で回して記録する。
 - **月収の内訳の想定**: アフィリエイト＋自社商品＋B2B。**B2Bは接触そのものがCEO判断のため未確定**で、
   目標額に確定分として織り込んでいない。
+
+### 計器（2026-09-19 追加・CEO承認で適用）
+
+```
+python scripts/fetch_ga4.py                    # 日次取得。clicks キー（pagePath×linkId×linkDomain×linkUrl）も保存する
+python scripts/fetch_ga4.py --backfill-clicks  # 取得済みの日に clicks だけを足す（既存キーは触らない）
+python scripts/result_clicks.py --start 2026-10-01 --end 2026-10-31   # 主KPIと分母（Direct除き）を期間で出す
+```
+
+- 上の「現行のアーカイブは linkId／linkDomain 別の件数が残らない」は、この改修で解消した。7/17〜9/16 の62日ぶんはバックフィル済み。
+- **9月の基準値が確定した: 結果直後のクリック数は 8/13〜9/16 の35日で 0**（linkId が `aff-` の click 0・`lin.ee` の click 0）。
+  同期間の内蔵 click は全部で15件。広告ドメイン（px.a8.net）は6件で、すべて8/13〜8/27・すべて id の無いリンク。
+  9/1〜9/16 は広告クリック0（外部リンク6件は goen-s.com 2・city.shinjuku.lg.jp 1・gender.go.jp 3）。
+  **上程値「7件／16日」に当たる記録は GA4 には無い。**
+- `id="aff-result"` は 9/5 に8ページへ付けたが、以後そのリンクの click は0。つまり「結果直後」の導線は
+  まだ一度も押されていない。目標値の表の「結果直後のクリック数」は**基準0からの出発**として、10月末に初めて数値を置く。
 
 ### 目標値（改訂後）
 

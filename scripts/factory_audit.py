@@ -204,6 +204,77 @@ def audit_article(slug):
     }
 
 
+# ---------------------------------------------------------------- tools/ の検査
+# 2026-09-19 追加（CEO承認）。新ツールの出荷基準（agent/AGENT.md）を機械で止める。
+# 既存ツールの違反は agent/quality_backlog_tools.md に登録して「既知バックログ」扱いにし、
+# CIを赤にしない。新しく作ったツールだけが FAIL になる。
+TOOL_TITLE_MAX = 32
+TOOL_BACKLOG = os.path.join(ROOT, 'agent', 'quality_backlog_tools.md')
+
+
+def tool_slugs():
+    base = os.path.join(ROOT, 'tools')
+    if not os.path.isdir(base):
+        return []
+    return sorted(d for d in os.listdir(base)
+                  if os.path.exists(os.path.join(base, d, 'index.html')))
+
+
+def known_tool_backlog():
+    if not os.path.exists(TOOL_BACKLOG):
+        return set()
+    with open(TOOL_BACKLOG, encoding='utf-8') as f:
+        return set(re.findall(r'^\|\s*tools/([a-z0-9][a-z0-9-]+)\s*\|', f.read(), re.M))
+
+
+def tool_title_core(title):
+    """サフィックス（末尾の【…】と「｜Noe…」のサイト名）を除いた長さで測る"""
+    t = re.sub(r'\s+', ' ', title).strip()
+    prev = None
+    while prev != t:
+        prev = t
+        t = re.sub(r'\s*【[^【】]*】\s*$', '', t)
+        t = re.sub(r'\s*[｜|]\s*(?:Noe|NOE)[^｜|]*$', '', t)
+    return t
+
+
+def audit_tool(slug):
+    path = os.path.join(ROOT, 'tools', slug, 'index.html')
+    with open(path, encoding='utf-8', errors='replace') as f:
+        html = f.read()
+    errors = []
+
+    tm = re.search(r'<title>(.*?)</title>', html, re.S)
+    if not tm:
+        errors.append('title が無い')
+    else:
+        core = tool_title_core(tm.group(1))
+        if len(core) > TOOL_TITLE_MAX:
+            errors.append(f'title {len(core)}字（サフィックス除く・{TOOL_TITLE_MAX}字以内）')
+
+    # 結果領域＝ id が result で始まる最初の要素から、次の <h2 まで
+    m = re.search(r'id="result[^"]*"', html)
+    if not m:
+        errors.append('結果領域（id="result…"）が見つからない')
+    else:
+        nxt = re.search(r'<h2[\s>]', html[m.end():])
+        seg = html[m.start(): m.end() + (nxt.start() if nxt else len(html))]
+        if 'lin.ee' not in seg:
+            errors.append('#result 内に LINE CTA が無い')
+
+    ad_tags = [t for t in re.findall(r'<a[^>]*>', html) if AFFILIATE_RE.search(t)]
+    if ad_tags:
+        if not any(re.search(r'id="aff-[^"]+"', t) for t in ad_tags):
+            errors.append('広告アンカーに id="aff-..." が無い')
+        bad = [t for t in ad_tags
+               if 'sponsored' not in (re.search(r'rel="([^"]*)"', t) or [None, ''])[1]]
+        if bad:
+            errors.append(f'広告アンカー {len(bad)}件の rel に sponsored が無い')
+        if 'class="pr-notice"' not in html and not re.search(r'>\s*PR\s*<', html):
+            errors.append('PR表記が無い（.pr-notice も PRラベルも無い）')
+    return {'slug': 'tools/' + slug, 'ads': len(ad_tags), 'errors': errors}
+
+
 def audit_index_groups():
     """index.html の記事一覧グループを検査する（2026-08-09追加）。
 
@@ -339,6 +410,12 @@ def main():
     structure = audit_structure()
     backlog = set() if args.strict else known_backlog()
 
+    tool_results = [audit_tool(s) for s in tool_slugs()]
+    tool_backlog = set() if args.strict else known_tool_backlog()
+    tool_all = [r for r in tool_results if r['errors']]
+    tool_failed = [r for r in tool_all if r['slug'][len('tools/'):] not in tool_backlog]
+    tool_known = [r for r in tool_all if r['slug'][len('tools/'):] in tool_backlog]
+
     all_failed = [r for r in results if r['errors']]
     failed = [r for r in all_failed if r['slug'] not in backlog]
     known = [r for r in all_failed if r['slug'] in backlog]
@@ -367,13 +444,22 @@ def main():
         for r in warned:
             print(f'  [WARN] {r["slug"]}: ' + ' / '.join(r['warnings']))
 
+    print(f'ツール: {len(tool_results)}本 / 新規エラー(FAIL): {len(tool_failed)}本 / '
+          f'既知バックログ: {len(tool_known)}本')
+    for r in tool_failed:
+        print(f'  [FAIL] {r["slug"]}: ' + ' / '.join(r['errors']))
+    if args.list:
+        for r in tool_known:
+            print(f'  [BACKLOG] {r["slug"]}: ' + ' / '.join(r['errors']))
+
     if args.json:
         with open(args.json, 'w', encoding='utf-8') as f:
             json.dump({'structure': structure, 'articles': results,
-                       'backlog': sorted(backlog)}, f, ensure_ascii=False, indent=1)
+                       'backlog': sorted(backlog), 'tools': tool_results,
+                       'tool_backlog': sorted(tool_backlog)}, f, ensure_ascii=False, indent=1)
         print(f'\n結果を {args.json} に保存した')
 
-    if failed or structure:
+    if failed or structure or tool_failed:
         return 1
     if known:
         print('\n新規違反なし。既知バックログは agent/quality_backlog.md で消化する。')

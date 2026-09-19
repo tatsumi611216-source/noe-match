@@ -175,5 +175,36 @@
   "sessions": 35,
   "users": 23,
   "views": 55
- }
+ },
+ "clicks": [
+  {
+   "path": "/tools/garugaru-check/",
+   "linkId": "",
+   "linkDomain": "px.a8.net",
+   "linkUrl": "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL",
+   "count": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "linkId": "",
+   "linkDomain": "px.a8.net",
+   "linkUrl": "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX",
+   "count": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "linkId": "",
+   "linkDomain": "px.a8.net",
+   "linkUrl": "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA",
+   "count": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "linkId": "shareX",
+   "linkDomain": "x.com",
+   "linkUrl": "https://x.com/intent/post?text=%E8%A8%BA%E6%96%AD%E7%B5%90%E6%9E%9C%EF%BC%9A%E3%81%B2%E3%81%A0%E3%81",
+   "count": 1
+  }
+ ],
+ "clicks_fetched_at": "2026-09-19T09:11:24"
 }
