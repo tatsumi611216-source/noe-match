@@ -512,6 +512,8 @@ CEO決定（9/19）「この戦略を強化していこう」を受けた改定�
 2. **結果の直後**に LINE CTA（`id="line-cta-result"`）と、既存案件の広告（`id="aff-..."`・PRラベル・
    `rel="nofollow sponsored noopener"`）。広告は案件台帳（AGENT.md）の文脈ルールに従い、YMYL枠は承認済みslugだけ
 3. **対のデータ記事**（同じ正本から生成。表を手で書かない）
+   - **同日改定（CEO承認）: 3は必須から「推奨」へ変更。** 上の読み取り4のとおり、対の有無による当たり率の差を確認できなかったため。
+     同じ正本から追加コストなしで出せるときだけ作る。
 4. **同クラスタからの内部リンク3本以上**（判定ロック中のページには張らない）
 5. sitemap 2本に追加 → デプロイ後に **GSC申請**（`agent/index_request_queue.md`）
 6. 確認日の明記・数字は正本ファイルからのみ・inspector PASS・`factory_audit.py` と `quality_audit.py` で新規FAILなし
