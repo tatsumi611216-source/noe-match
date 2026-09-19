@@ -181,5 +181,7 @@
   "first_visit": 14,
   "user_engagement": 11,
   "scroll": 1
- }
+ },
+ "clicks": [],
+ "clicks_fetched_at": "2026-09-19T09:11:36"
 }

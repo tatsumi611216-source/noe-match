@@ -25,6 +25,15 @@ GSCには一切出ない。GSCだけを見ると「データ記事は表示4.1/�
   python scripts/fetch_ga4.py --days 90  さかのぼる日数を変える
   python scripts/fetch_ga4.py --stats    取得済みの集計だけ（API未使用）
   python scripts/fetch_ga4.py --report   ページ種別ごとの実績を出す（API未使用）
+  python scripts/fetch_ga4.py --backfill-clicks   取得済みの日に clicks キーだけを足す（既存キーは触らない）
+
+clicks キー（2026-09-19 追加・CEO承認）:
+  GA4内蔵の click イベントを pagePath × linkId × linkDomain × linkUrl で日別に保存する。
+  主KPI「結果直後のクリック数」（linkId が aff- で始まるもの＋ linkDomain=lin.ee）を
+  後から再計算できるようにするため。集計は scripts/result_clicks.py。
+  既存キー（total / by_page / events ほか）の形は変えていない。clicks が無い古いファイルも
+  そのまま読める（読む側は d.get("clicks", []) とすること）。
+  linkId は <a> に id 属性が付いているときだけ入る。id の無いリンクは "" で保存される。
 
 限界（正直に書く）:
 - GA4は当日ぶんが確定しない。**当日と前日は取りに行かない**（2日前まで）
@@ -79,6 +88,56 @@ def resolve_property(creds):
             return prop
     print("プロパティ自動検出: %s (%s)" % found[0])
     return found[0][1]
+
+
+def fetch_clicks(client, prop, ds):
+    """GA4内蔵 click（外部リンクのクリック）を ページ×linkId×linkDomain×linkUrl で取る。"""
+    from google.analytics.data_v1beta.types import (
+        DateRange, Dimension, Filter, FilterExpression, Metric, RunReportRequest)
+    req = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        dimensions=[Dimension(name="pagePath"), Dimension(name="linkId"),
+                    Dimension(name="linkDomain"), Dimension(name="linkUrl")],
+        metrics=[Metric(name="eventCount")],
+        dimension_filter=FilterExpression(filter=Filter(
+            field_name="eventName",
+            string_filter=Filter.StringFilter(value="click"))),
+        limit=10000)
+    out = []
+    for r in client.run_report(req).rows:
+        v = [d.value for d in r.dimension_values]
+        out.append({"path": v[0], "linkId": "" if v[1] == "(not set)" else v[1],
+                    "linkDomain": "" if v[2] == "(not set)" else v[2],
+                    "linkUrl": "" if v[3] == "(not set)" else v[3],
+                    "count": int(r.metric_values[0].value)})
+    return sorted(out, key=lambda x: (-x["count"], x["path"], x["linkId"]))
+
+
+def backfill_clicks():
+    """取得済みの日次ファイルに clicks キーだけを足す。既存キーは一切書き換えない。"""
+    from google.analytics.data_v1beta import BetaAnalyticsDataClient
+    creds = credentials()
+    prop = resolve_property(creds)
+    client = BetaAnalyticsDataClient(credentials=creds)
+    limit = datetime.date.today() - datetime.timedelta(days=2)
+    n = tot = 0
+    for f in files():
+        d = json.load(io.open(f, encoding="utf-8"))
+        if "clicks" in d or datetime.date.fromisoformat(d["date"]) > limit:
+            continue
+        before = json.dumps({k: v for k, v in d.items()}, ensure_ascii=False, sort_keys=True)
+        clicks = fetch_clicks(client, prop, d["date"])
+        after = json.dumps({k: v for k, v in d.items()}, ensure_ascii=False, sort_keys=True)
+        assert before == after
+        d["clicks"] = clicks
+        d["clicks_fetched_at"] = datetime.datetime.now().isoformat(timespec="seconds")
+        io.open(f, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False, indent=1))
+        n += 1
+        tot += sum(c["count"] for c in clicks)
+        if clicks:
+            print("  %s  click %d件（%d行）" % (d["date"], sum(c["count"] for c in clicks), len(clicks)))
+    print("clicks を足した日: %d ／ click 合計 %d件" % (n, tot))
 
 
 def fetch_day(creds, prop, day):
@@ -145,6 +204,7 @@ def fetch_day(creds, prop, day):
         },
         "by_page": rows,
         "events": events,
+        "clicks": fetch_clicks(client, prop, ds),
     }
 
 
@@ -224,7 +284,10 @@ def main():
     ap.add_argument("--days", type=int, default=DEFAULT_DAYS)
     ap.add_argument("--stats", action="store_true")
     ap.add_argument("--report", action="store_true")
+    ap.add_argument("--backfill-clicks", action="store_true")
     a = ap.parse_args()
+    if a.backfill_clicks:
+        return backfill_clicks()
     if a.stats:
         return stats()
     if a.report:

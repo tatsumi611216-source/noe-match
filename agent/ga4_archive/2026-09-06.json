@@ -108,5 +108,7 @@
   "session_start": 10,
   "user_engagement": 10,
   "tool_result": 1
- }
+ },
+ "clicks": [],
+ "clicks_fetched_at": "2026-09-19T09:11:35"
 }

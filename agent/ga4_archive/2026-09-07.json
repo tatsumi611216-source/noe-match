@@ -111,5 +111,15 @@
   "saigenbyo_complete": 1,
   "saigenbyo_mode_switch": 1,
   "saigenbyo_start": 1
- }
+ },
+ "clicks": [
+  {
+   "path": "/articles/kodomo-iryohi-data/",
+   "linkId": "",
+   "linkDomain": "city.shinjuku.lg.jp",
+   "linkUrl": "https://www.city.shinjuku.lg.jp/kodomo/file03_04_00003.html",
+   "count": 1
+  }
+ ],
+ "clicks_fetched_at": "2026-09-19T09:11:36"
 }
