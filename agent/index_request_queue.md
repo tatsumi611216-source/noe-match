@@ -42,6 +42,13 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
+#### 2026-09-21 修正分（再申請）
+
+```
+https://www.noe-match.com/tools/soudanjo-hiyou-sim/      ← title短縮・#result内にLINE CTA追加
+https://www.noe-match.com/articles/compare-popular/      ← 寄せ直し（30代女性向けタイトルに変更）
+```
+
 #### 最優先（2026-08-29 追加・翌朝の自動タスクはここから取る）
 
 2026-08-29 02:30 の URL Inspection 実測で判明した積み残し。**上から順に処理する。**

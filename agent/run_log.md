@@ -1,5 +1,60 @@
 # Agent Run Log
 
+## 2026-09-21　週次ラン｜新記事なし（ゲートCHECK・打順通過なし） / ツール是正1本 + 寄せ直し1本
+
+### Phase 4-0 計測ゲート
+
+`python3 scripts/tool_gate.py` を実行したが、クラウド環境のアウトバウンド制限によりGoogle Suggests・aramakijake・DuckDuckGoへの接続がすべてブロックされ、**CHECK** を返した。
+batting_order 3（tools/tomobataraki-wariai）はゲート通過できず。
+batting_order 2は `not_before: 2026-09-29`、batting_order 6/10は 新規実査・新規取得が要件のためスキップ。
+→ 打順が尽きたため、フォールバック（quality_backlog_tools.md の是正 + 寄せ直し）を実施。
+
+### ツール是正（quality_backlog_tools.md から1本）
+
+`tools/soudanjo-hiyou-sim` の2件の違反を修正（improvement-log.json の locks[] に含まれていないことを確認済み）：
+
+1. **title短縮**：`結婚相談所の費用は総額いくら？10社を同じ条件で積むシミュレーション` (34字) → `結婚相談所の費用は総額いくら？10社を比べるシミュレーション` (30字)
+   - og:title / twitter:title も同期
+2. **LINE CTAを#result内に追加**：`<section id="line-cta-result">` を `<div id="result">` 内の `<div id="cards">` 直後に挿入
+   - 「料金が改定されたらお知らせします」文言・`https://lin.ee/unbDsCR` リンク
+3. **dateModified**: `2026-08-27` → `2026-09-21`
+4. **sitemap.xml / sitemap-all.xml**: soudanjo-hiyou-sim の `<lastmod>` を `2026-09-21` に更新
+
+`agent/quality_backlog_tools.md` から `tools/soudanjo-hiyou-sim` の行を削除（是正完了）。
+
+### 寄せ直し（silent_scan.py 結果から）
+
+インデックス前提チェック実施：
+- `compare-popular`: coverageState=`Submitted and indexed`（verdict PASS）→ 対象 ✓
+- `free-vs-paid`: coverageState=`Crawled - currently not indexed`（verdict NEUTRAL）→ 除外・index_request_queue.md に追記
+
+`compare-popular` を1本寄せ直し（2度目の寄せ直し）：
+
+| 項目 | 変更前 | 変更後 |
+|------|-------|-------|
+| title/h1 | `30代が婚活で使うPairs・with・Omiai比較｜目的別の違いと選び方【2026年版】` | `Pairs・with・Omiai比較｜30代女性が婚活で選ぶならどれか【2026年版】` |
+| blockquote | Pairs=会員数最多・with=心理マッチ・Omiai=婚活層 | 同上＋「30代女性が婚活目的ならOmiaiとwithが先の候補」を明示 |
+| dateModified | 2026-08-23 | 2026-09-21 |
+
+根拠：前回（2026-08-10）のタイトルは「30代+婚活」属性が既にあったが表示ゼロ継続。今回は「30代女性」という性別固有修飾を前置し、婚活目的を絞り込んだ。
+
+`agent/rewrites.json` に記録済み。
+
+### factory_audit.py
+
+```
+新規エラー(FAIL): 0本 / 既知バックログ: 29本 / 構造エラー: 0件
+ツール 新規エラー(FAIL): 0本 / 既知バックログ: 18本（soudanjo-hiyou-sim是正で22本に削減）
+```
+
+### インデックス申請キュー追加
+
+`agent/index_request_queue.md` の「未申請」欄先頭に追記（申請は人間の作業）：
+- https://www.noe-match.com/tools/soudanjo-hiyou-sim/ （title・LINE CTA修正の再クロール依頼）
+- https://www.noe-match.com/articles/compare-popular/ （寄せ直し後の再クロール依頼）
+
+---
+
 ## 2026-08-17　週次記事工場ラン｜型A×2本生成（omiai-danjohi-data / with-nenreiso-data）+ 寄せ直し2本
 
 ### Phase 4-0 計測ゲート

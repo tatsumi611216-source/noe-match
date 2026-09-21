@@ -8,7 +8,7 @@
 検査項目: title 32字以内（末尾の【…】とサイト名を除く）／`id="result…"` の領域内に LINE CTA（lin.ee）／
 広告アンカーに `id="aff-..."`／広告アンカーの `rel` に `sponsored`／PR表記。
 
-## 一覧（2026-09-19 実測・23本／全27本）
+## 一覧（2026-09-19 実測・23本→22本／全27本）
 
 | ツール | 違反 |
 |---|---|
@@ -33,5 +33,4 @@
 | tools/sangokea-ryokin | title 39字（サフィックス除く・32字以内） |
 | tools/seikatsuhi-simulator | title 33字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
 | tools/seikonritsu-hikaku | title 41字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
-| tools/soudanjo-hiyou-sim | title 34字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
 | tools/soudanjo-simulator | title 37字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
