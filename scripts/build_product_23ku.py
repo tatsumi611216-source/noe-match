@@ -210,8 +210,16 @@ V_STAY = {k: stay_1night(S[k]) for k in ORDER}
 V_DAY = {k: first(S[k]["day_prices"]) for k in ORDER}
 V_VISIT = {k: first(S[k]["visit_prices"]) for k in ORDER}
 
-SHOKUJI_TAISHO = [k for k in ORDER if "対象外" not in K[k]["shokuji_ryoyohi"]]
-SHOKUJI_GAI = [k for k in ORDER if "対象外" in K[k]["shokuji_ryoyohi"]]
+def shokuji_gai(text):
+    """入院時食事療養費が「対象外」か。テキストの先頭で判定する。
+    部分一致（"対象外" in text）だと、練馬区のように注記の中で他区の「対象外」に触れている
+    助成対象の区まで対象外に数えてしまう（2026-09-19 inspector BLOCK B1・14/9→正しくは15/8）。"""
+    return text.strip().startswith(("対象外", "助成対象外"))
+
+
+SHOKUJI_TAISHO = [k for k in ORDER if not shokuji_gai(K[k]["shokuji_ryoyohi"])]
+SHOKUJI_GAI = [k for k in ORDER if shokuji_gai(K[k]["shokuji_ryoyohi"])]
+assert len(SHOKUJI_TAISHO) + len(SHOKUJI_GAI) == N
 SEIGEN_NASHI = [k for k in ORDER if K[k]["shotoku_seigen"] is False]
 SEIGEN_NONE = [k for k in ORDER if K[k]["shotoku_seigen"] is None]
 JIKO_NASHI = [k for k in ORDER if K[k]["jiko_futan"] is False]
@@ -293,7 +301,7 @@ def cross_tables():
         w = K[k]
         seigen = "なし" if w["shotoku_seigen"] is False else "記載なし"
         jiko = "なし" if w["jiko_futan"] is False else "記載なし"
-        shoku = "対象外" if "対象外" in w["shokuji_ryoyohi"] else "助成対象"
+        shoku = "対象外" if shokuji_gai(w["shokuji_ryoyohi"]) else "助成対象"
         L.append("| %s | %s | %s | %s | %s |" % (NAME[k], w["age_limit_class"], seigen, jiko, shoku))
     L.append("")
     L.append("集計: 対象年齢は23区すべて「%s」。所得制限なしと明記している区は%d区（%s）、"
