@@ -66,7 +66,7 @@ table.cmp td.n{{text-align:right;font-weight:700;color:#7c2e42;white-space:nowra
 <p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
 <p style="font-weight:900;margin:0 0 6px;color:#1d242b">{pr_head}</p>
 <p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">{pr_body}</p>
-<a href="{aff_url}" rel="{aff_rel}" target="_blank" style="display:inline-block;background:{aff_color};color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">{aff_text}</a>
+<a id="{aff_id}" href="{aff_url}" rel="{aff_rel}" target="_blank" style="display:inline-block;background:{aff_color};color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">{aff_text}</a>
 <p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">{aff_note}</p>
 </div>
 </article>
@@ -132,11 +132,22 @@ def table(headers, rows, aligns=None):
 
 def write(slug, title, h1, desc, ogd, faq, body, today, checked,
           pr_head, pr_body,
-          aff_url=None, aff_text="Oisixのおためしセットを見る",
+          aff_url=None, aff_id=None, aff_text="Oisixのおためしセットを見る",
           aff_note="食材宅配サービス。本記事の統計とは関係ありません",
           aff_color="#7c2e42", aff_rel="sponsored noopener"):
     """アフィリエイトの差し替えは agent/AGENT.md の案件台帳に許可された文脈だけ。
-    既定はOisix（共働きの食事・おうちデート文脈）。"""
+    既定はOisix（共働きの食事・おうちデート文脈）。
+
+    aff_id は GA4 内蔵 click の linkId になる。**これが無いと案件も位置も判別できない**
+    （2026-09-23: 338本中315本に id が無く、93%のクリックが判定不能だった）。
+    そのとき id は生成済みHTMLへ後から付けたので、シェル側は素のままだった＝
+    記事を再生成すると黙って消える状態になっていた。既定値をここに置いて再発を止める。
+    """
+    if aff_id is None:
+        aff_id = "aff-oisix" if aff_url in (None, OISIX) else None
+    if not aff_id or not aff_id.startswith("aff-"):
+        raise ValueError(
+            "aff_id は 'aff-' で始まる文字列が要る（案件を差し替えたら明示する）: %r" % (aff_id,))
     url = "https://www.noe-match.com/articles/%s/" % slug
     faqld = json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}}
@@ -160,6 +171,7 @@ def write(slug, title, h1, desc, ogd, faq, body, today, checked,
                        today=today, checked=checked, body=body, slug=slug,
                        aff_url=(aff_url or OISIX), aff_text=aff_text,
                        aff_note=aff_note, aff_color=aff_color, aff_rel=aff_rel,
+                       aff_id=aff_id,
                        pr_head=pr_head, pr_body=pr_body)
     os.makedirs("articles/%s" % slug, exist_ok=True)
     io.open("articles/%s/index.html" % slug, "w", encoding="utf-8").write(html)
