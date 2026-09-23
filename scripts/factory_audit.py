@@ -22,6 +22,7 @@ import json
 import os
 import re
 import statistics
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -333,6 +334,37 @@ def audit_index_groups():
     return errors
 
 
+# 2026-09-23: 有料商品の原稿・PDF・CSV を agent/product_drafts/ に置いた。
+# このリポジトリは public なので、追跡対象に入った時点で商品が無料で読める状態になる。
+# .gitignore の1行だけが防波堤になっているため、ここで二重化する。
+# 生成物の置き場を変えるときは LEAK_PATTERNS も一緒に直すこと。
+LEAK_PATTERNS = [
+    (re.compile(r'(^|/)_dist/'), '配布物ディレクトリ'),
+    (re.compile(r'(^|/)product_drafts/'), '商品原稿ディレクトリ'),
+    (re.compile(r'^products/'), '商品ディレクトリ'),
+    (re.compile(r'\.(pdf|epub|zip|docx)$', re.I), '配布用バイナリ'),
+]
+
+
+def audit_repo_leak():
+    """有料商品のファイルが public リポジトリの追跡対象に入っていないか検査する"""
+    try:
+        out = subprocess.run(['git', 'ls-files'], cwd=ROOT, capture_output=True,
+                             text=True, encoding='utf-8', check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return ['git ls-files を実行できず、商品ファイルの混入を検査できなかった']
+
+    errors = []
+    for path in out.splitlines():
+        for pat, label in LEAK_PATTERNS:
+            if pat.search(path):
+                errors.append(
+                    f'public リポジトリの追跡対象に{label}が入っている: {path}'
+                    ' → .gitignore に追加し git rm --cached で外す')
+                break
+    return errors
+
+
 def audit_structure():
     """記事ディレクトリ / sitemap / index.html / redirects.json の整合を検査"""
     errors = []
@@ -407,7 +439,7 @@ def main():
     args = parser.parse_args()
 
     results = [audit_article(s) for s in live_slugs()]
-    structure = audit_structure()
+    structure = audit_repo_leak() + audit_structure()
     backlog = set() if args.strict else known_backlog()
 
     tool_results = [audit_tool(s) for s in tool_slugs()]
