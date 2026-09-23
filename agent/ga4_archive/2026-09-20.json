@@ -1,0 +1,74 @@
+{
+ "date": "2026-09-20",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-22T23:31:34",
+ "total": {
+  "sessions": 5,
+  "users": 5,
+  "views": 7
+ },
+ "total_by_page_sum": {
+  "sessions": 6,
+  "users": 6,
+  "views": 7
+ },
+ "by_page": [
+  {
+   "path": "/articles/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/anti-fraud/",
+   "channel": "Unassigned",
+   "source": "perplexity",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "channel": "Unassigned",
+   "source": "perplexity",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 7,
+  "user_engagement": 7,
+  "session_start": 5,
+  "first_visit": 4,
+  "scroll": 1,
+  "tool_result": 1
+ },
+ "clicks": []
+}
