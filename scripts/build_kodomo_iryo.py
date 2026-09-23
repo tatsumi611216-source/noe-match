@@ -28,7 +28,7 @@ from _kodomo_iryo_data import CHECKED, TOKYO_KIJUN, WARDS
 TODAY = "2026-08-27"
 TOOL_SLUG = "kodomo-iryohi-jichitai"
 TOOL_URL = "https://www.noe-match.com/tools/%s/" % TOOL_SLUG
-OISIX = "https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77"
+OISIX = "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA"
 N = len(WARDS)
 
 

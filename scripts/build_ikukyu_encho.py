@@ -21,7 +21,7 @@ SLUG = "ikukyu-encho-hantei"
 URL = "https://www.noe-match.com/tools/%s/" % SLUG
 TODAY = "2026-08-27"
 CHECKED = "2026年8月27日"
-OISIX = "https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77"
+OISIX = "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA"
 
 TITLE = "育休はいつまで延長できる？条件と必要書類がわかる判定ツール【2025年4月の厳格化に対応】"
 H1 = "育休延長の条件判定｜1歳6か月・2歳まで延ばせるか、給付金は続くかを分けて判定"

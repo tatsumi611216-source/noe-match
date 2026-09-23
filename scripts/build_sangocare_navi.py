@@ -20,7 +20,7 @@ from _sangocare_data import CHECKED, CITIES
 SLUG = "sangokea-ryokin"
 URL = "https://www.noe-match.com/tools/%s/" % SLUG
 TODAY = "2026-08-27"
-OISIX = "https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77"
+OISIX = "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA"
 
 real = [c for c in CITIES if c["key"] != "kokuhyo"]
 N = len(real)

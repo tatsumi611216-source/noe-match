@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _sangocare_data import CHECKED, CITIES
 
 TODAY = "2026-08-27"
-OISIX = "https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77"
+OISIX = "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA"
 GASSAN = ("あわせて", "合わせて", "合算", "通算", "内数", "合計")
 
 real = [c for c in CITIES if c["key"] != "kokuhyo"]

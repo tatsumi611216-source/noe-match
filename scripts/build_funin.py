@@ -33,7 +33,7 @@ TODAY = "2026-08-27"
 TOOL_SLUG = "funin-josei-jichitai"
 ART_SLUG = "funin-josei-data"
 TOOL_URL = "https://www.noe-match.com/tools/%s/" % TOOL_SLUG
-OISIX = "https://px.a8.net/svt/ejp?a8mat=45C0YR+2VBK6Q+3250+5YZ77"
+OISIX = "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA"
 
 # 対象になる費用の範囲。各区の funin_taisho_chiryo の原文から読み取ったラベルで、
 # 優劣ではなく「何にお金が出るか」の区分。表には必ず原文を併記する。
