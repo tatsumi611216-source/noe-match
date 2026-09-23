@@ -1,0 +1,195 @@
+{
+ "date": "2026-09-21",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-23T23:27:22",
+ "total": {
+  "sessions": 32,
+  "users": 30,
+  "views": 32
+ },
+ "total_by_page_sum": {
+  "sessions": 33,
+  "users": 31,
+  "views": 32
+ },
+ "by_page": [
+  {
+   "path": "/articles/compare-popular/",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 9,
+   "users": 9,
+   "views": 9
+  },
+  {
+   "path": "/tools/kodomo-iryohi-jichitai/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3,
+   "users": 3,
+   "views": 3
+  },
+  {
+   "path": "/",
+   "channel": "Organic Social",
+   "source": "t.co",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/byoji-hoiku-ryokin/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/about.html",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/bachelor-date-guide/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/bridal-esthe-guide/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-okane-data/",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/okinawa-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-stories/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tapple-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/app-kekkonritsu-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/funin-josei-jichitai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 32,
+  "session_start": 32,
+  "first_visit": 30,
+  "user_engagement": 25,
+  "scroll": 5,
+  "click": 3,
+  "tool_result": 3,
+  "file_download": 2
+ },
+ "clicks": [
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "linkId": "",
+   "linkDomain": "gender.go.jp",
+   "linkUrl": "https://www.gender.go.jp/about_danjo/whitepaper/r07/zentai/html/honpen/csv/zuhyo00-op01.csv",
+   "count": 2
+  },
+  {
+   "path": "/about.html",
+   "linkId": "",
+   "linkDomain": "note.com",
+   "linkUrl": "https://note.com/hachimitsu88812",
+   "count": 1
+  }
+ ]
+}
