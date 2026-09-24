@@ -33,4 +33,3 @@
 | tools/sangokea-ryokin | title 39字（サフィックス除く・32字以内） |
 | tools/seikatsuhi-simulator | title 33字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
 | tools/seikonritsu-hikaku | title 41字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
-| tools/soudanjo-simulator | title 37字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |

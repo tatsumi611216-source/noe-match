@@ -1,5 +1,57 @@
 # Agent Run Log
 
+## 2026-09-24　週次ラン｜新記事なし（ゲートCHECK・打順通過なし） / ツール是正1本 + 寄せ直し1本
+
+### Phase 4-0 計測ゲート
+
+`asp_results.md` の `last_updated: 2026-08-31`（24日前）→ 30日以内 → **ゲート開放**。
+
+`python3 scripts/tool_gate.py` を実行したが、クラウド環境のアウトバウンド制限によりGoogle Suggests・aramakijake・DuckDuckGoへの接続がすべてブロックされ、**CHECK** を返した。
+batting_order 2は `not_before: 2026-09-29`、batting_order 3（tools/tomobataraki-wariai）・4（articles/koukousei-iryohi-data）はゲートCHECKのためスキップ。batting_order 5（articles/sangokea-tokyo-data）→ data_gate.py も CHECK。batting_order 6（tools/heikin-shokon-nenrei）→「新規実査あり」メモ→ スキップ。batting_order 7/8は `not_before: 2026-10-06`。
+→ 打順が尽きたため、フォールバック（quality_backlog_tools.md の是正 + 寄せ直し）を実施。
+
+### ツール是正（quality_backlog_tools.md から1本）
+
+`tools/soudanjo-simulator` の2件の違反を修正（improvement-log.json の locks[] に含まれていないことを確認済み）：
+
+1. **title短縮**：`結婚相談所の費用は女性・男性でいくら？総額の相場を成婚料・月会費込みで試算【2026年】` (37字) → `結婚相談所の費用は総額いくら？成婚料・月会費込みで試算【2026年】` (27字)
+   - og:title / twitter:title も同期
+2. **LINE CTAを#result内に追加**：`<section id="line-cta-result">` を `<div id="result">` 内の aff-soudanjo ブロック直後に挿入
+   - 「料金が改定されたらお知らせします」文言・`https://lin.ee/unbDsCR` リンク
+3. **dateModified**: `2026-08-23` → `2026-09-24`
+4. **sitemap.xml**: soudanjo-simulator の `<lastmod>` を `2026-09-24` に更新
+
+`agent/quality_backlog_tools.md` から `tools/soudanjo-simulator` の行を削除（是正完了）。
+
+### 寄せ直し（silent_scan.py 結果から）
+
+`free-vs-paid`（無修飾ヘッドターム・2度目の寄せ直し）：
+
+| 項目 | 変更前 | 変更後 |
+|------|-------|-------|
+| title/h1 | `マッチングアプリの課金はいつ始めるべきか｜無料期間で見極める判断基準【2026年版】` | `マッチングアプリの課金タイミング｜30代男性の判断基準と主要5アプリ比較【2026年版】` |
+| lead文 | 一般向け | 30代男性・Pairs/with/Omiai を明示した属性固有修飾へ変更 |
+| dateModified | 2026-08-23 | 2026-09-24 |
+
+根拠：前回（2026-07-30）のタイトルは「課金 いつ」という無修飾ヘッドタームが表示ゼロ継続。今回は「30代男性」「主要5アプリ比較」の固有修飾に絞り込んだ。
+
+`agent/rewrites.json` に記録済み。
+
+### factory_audit.py
+
+```
+新規エラー(FAIL): 0本 / 既知バックログ: 28本 / 構造エラー: 0件
+ツール 新規エラー(FAIL): 0本 / 既知バックログ: 17本（soudanjo-simulator是正で18本→17本）
+```
+
+### インデックス申請キュー追加
+
+`agent/index_request_queue.md` の「未申請」欄先頭に追記（申請は人間の作業）：
+- https://www.noe-match.com/tools/soudanjo-simulator/ （title・LINE CTA修正の再クロール依頼）
+- https://www.noe-match.com/articles/free-vs-paid/ （寄せ直し後の再クロール依頼）
+
+---
+
 ## 2026-09-21　週次ラン｜新記事なし（ゲートCHECK・打順通過なし） / ツール是正1本 + 寄せ直し1本
 
 ### Phase 4-0 計測ゲート

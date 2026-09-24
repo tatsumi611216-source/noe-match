@@ -42,6 +42,13 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
+#### 2026-09-24 修正分（再申請）
+
+```
+https://www.noe-match.com/tools/soudanjo-simulator/      ← title短縮・#result内にLINE CTA追加
+https://www.noe-match.com/articles/free-vs-paid/         ← 寄せ直し（30代男性向けタイトルに変更）
+```
+
 #### 2026-09-21 修正分（再申請）
 
 ```
