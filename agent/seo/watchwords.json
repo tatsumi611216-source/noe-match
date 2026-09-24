@@ -113,6 +113,13 @@
    "priority": "low",
    "addedOn": "2026-09-16",
    "ctaYen": 1000
+  },
+  {
+   "keyword": "専業主婦 割合",
+   "targetPath": "/tools/sengyoshufu-wariai/",
+   "priority": "low",
+   "addedOn": "2026-09-24",
+   "ctaYen": 1000
   }
  ]
 }
