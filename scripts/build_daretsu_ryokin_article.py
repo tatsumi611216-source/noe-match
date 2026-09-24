@@ -234,7 +234,7 @@ HTML = """<!DOCTYPE html>
 <tbody>
 <tr><td>札幌市</td><td>0円</td><td>100円</td></tr>
 <tr><td>台東区</td><td>0円</td><td>100円</td></tr>
-<tr><td>広島市</td><td>0円</td><td>100円（非課税世帯は60円）</td></tr>
+<tr><td>広島市</td><td>0円</td><td>60円（非課税世帯と同じ区分）</td></tr>
 <tr><td>千葉市</td><td>0円</td><td>100円（要支援児童世帯も100円）</td></tr>
 <tr><td>北九州市</td><td>無料</td><td>100円</td></tr>
 <tr><td>岡山市</td><td>300円を減免</td><td>非課税世帯200円を減免</td></tr>
