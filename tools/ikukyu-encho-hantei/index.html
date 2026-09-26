@@ -429,6 +429,7 @@ function reach(birth,months){return addDays(addMonths(birth,months),-1);}
 function run(){
   var bv=$('birth').value;
   if(!bv){alert('お子さんの生年月日を入れてください');return;}
+  $('result').classList.add('show');  /* 結果の枠を表示する（.result は既定で display:none） */
   var birth=new Date(bv+'T00:00:00');
   var kind=rv('kind');
   var ppmm=rv('ppmm')==='yes';

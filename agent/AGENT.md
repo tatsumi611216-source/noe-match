@@ -59,6 +59,10 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
    - **結果の直後**（`id="result…"` の領域内）に LINE CTA（`id="line-cta-result"`）と、既存案件の広告
      （`id="aff-<案件>"`・PRラベル・`rel="nofollow sponsored noopener"`・`target="_blank"`）。冒頭に `.pr-notice`。
      置ける案件が台帳に無い語は LINE CTA だけでよい（広告を無理に置かない）。YMYL枠は承認済みslugだけ
+   - **結果の枠が実画面で見える**こと。共通シェルの CSS は `.result{display:none}`／`.result.show{display:block}`。
+     読み込み時に結果を描く作りなら `class="result show"`、ボタンで描く作りなら run() 内で
+     `classList.add('show')`。`python scripts/check_result_visible.py --browser tools/<slug>` で OK を確認する
+     （2026-09-27 に10本で結果・LINE・広告が一度も表示されていなかった。静的検査は factory_audit に組込み済み）
    - **同クラスタからの内部リンク3本以上**（手順3のページは編集しないので、リンク元に使わない）
    - 対のデータ記事は**推奨**（必須ではない。9/19の実測で対の有無による当たり率の差は確認できなかった）。
      同じ正本から追加コストなしで出せるときだけ作る
@@ -1241,6 +1245,7 @@ Phase 5でルール改定の対象にすること（記事の主題そのもの�
 4. **同クラスタからの内部リンク3本以上**。`agent/seo/improvement-log.json` の `locks[]` にあるページには張らない
 5. sitemap 2本へ追加（`scripts/sitemap_add.py`）→ デプロイ後に `agent/index_request_queue.md` へ追記して GSC 申請
 6. 確認日を明記・数字は正本ファイルからのみ・inspector PASS・`factory_audit.py` と `quality_audit.py` で新規FAILなし
+7. **結果の枠が表示される**（`python scripts/check_result_visible.py --browser tools/<slug>` が OK。2026-09-27 追加）
 
 ### 語の需要実測（tool_gate の使い方）
 
