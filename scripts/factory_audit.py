@@ -210,6 +210,8 @@ def audit_article(slug):
 # 既存ツールの違反は agent/quality_backlog_tools.md に登録して「既知バックログ」扱いにし、
 # CIを赤にしない。新しく作ったツールだけが FAIL になる。
 TOOL_TITLE_MAX = 32
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from check_result_visible import static_check as result_static_check  # noqa: E402
 TOOL_BACKLOG = os.path.join(ROOT, 'agent', 'quality_backlog_tools.md')
 
 
@@ -262,6 +264,9 @@ def audit_tool(slug):
         seg = html[m.start(): m.end() + (nxt.start() if nxt else len(html))]
         if 'lin.ee' not in seg:
             errors.append('#result 内に LINE CTA が無い')
+
+    # 結果の枠が CSS で隠れたまま表示されない（2026-09-27 に10本で発覚。scripts/check_result_visible.py）
+    errors.extend(result_static_check(html))
 
     ad_tags = [t for t in re.findall(r'<a[^>]*>', html) if AFFILIATE_RE.search(t)]
     if ad_tags:
@@ -445,8 +450,10 @@ def main():
     tool_results = [audit_tool(s) for s in tool_slugs()]
     tool_backlog = set() if args.strict else known_tool_backlog()
     tool_all = [r for r in tool_results if r['errors']]
-    tool_failed = [r for r in tool_all if r['slug'][len('tools/'):] not in tool_backlog]
-    tool_known = [r for r in tool_all if r['slug'][len('tools/'):] in tool_backlog]
+    # 結果の枠が表示されない不具合は読者に何も見えない致命傷なので、既知バックログでも FAIL にする
+    tool_failed = [r for r in tool_all if r['slug'][len('tools/'):] not in tool_backlog
+                   or any('結果の枠' in e for e in r['errors'])]
+    tool_known = [r for r in tool_all if r not in tool_failed]
 
     all_failed = [r for r in results if r['errors']]
     failed = [r for r in all_failed if r['slug'] not in backlog]

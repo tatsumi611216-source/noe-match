@@ -174,7 +174,7 @@ article a{overflow-wrap:anywhere;word-break:break-word}
   <button type="button" class="calc-btn" id="run">この自治体の自己負担を見る</button>
 </div>
 
-<div class="result" id="result" aria-live="polite">
+<div class="result show" id="result" aria-live="polite">
   <div class="big">
     <div class="lbl">この使い方での自己負担の合計</div>
     <div class="num" id="total">—</div>
@@ -196,14 +196,6 @@ article a{overflow-wrap:anywhere;word-break:break-word}
 <p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">産後ケアの利用料や助成は自治体が決めていて、こちらで動かせる余地はありません。出産は、加入中の保険が今の家族に合っているかを見直すきっかけの一つです。まず出産育児一時金や育児休業給付などの公的な給付を確かめるのが先です。そのうえで保障に過不足があるかどうかは家計によって答えが違い、一概には言えません。判断材料を集めたい場合は、複数の窓口で話を聞いて比べる方法があります。</p>
 <a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX" id="aff-hoken" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">保険ランドリーの相談内容を見る</a>
 <p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">保険相談サービスの一つです。取り扱い保険会社・相談方法・費用の仕組みは公式サイトでご確認ください。このページは特定の保険商品や窓口を推奨するものではなく、加入・見直しの判断はご自身で行ってください。産後ケア事業の利用可否や助成の適用とは関係ありません。</p>
-</div>
-
-<div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:24px 0 0;background:#faf8f5">
-<p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
-<p style="font-weight:900;margin:0 0 6px;color:#1d242b">産後ケアを使わない日の食事をどうするか</p>
-<p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">産後ケアの回数には上限があります。使える日は限られるので、それ以外の日の負担をどう下げるかが実際の問題になります。買い物と献立を考える時間を削る方法のひとつです。</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA" id="aff-result" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
-<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。産後ケア事業の利用可否とは関係ありません</p>
 </div>
 </div>
 
@@ -463,5 +455,8 @@ $('city').addEventListener('change',run);
 run();
 })();
 </script>
-<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script><!-- AFF-VIEW -->
+<script>(function(){var h=location.hostname,ok=(h==='www.noe-match.com'||h==='noe-match.com');try{var m=/[?&]noe_qa=(0|1)/.exec(location.search);if(m)localStorage.setItem('noe_qa',m[1]);if(localStorage.getItem('noe_qa')==='1')ok=false;}catch(e){}var as=document.querySelectorAll('a[id^="aff-"][rel~="sponsored"]');if(!as.length||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);var n='affv_'+x.target.getAttribute('data-aff').slice(4).replace(/-/g,'_');(window.__affv=window.__affv||[]).push(n);if(ok){try{gtag('event',n);}catch(e){}}});},{threshold:[0.5]});for(var i=0;i<as.length;i++){var a=as[i],b=a.closest('div,section,aside');if(!b||b.getElementsByTagName('a').length>2)b=a;b.setAttribute('data-aff',a.id);io.observe(b);}})();</script>
+<!-- /AFF-VIEW -->
+</body>
 </html>

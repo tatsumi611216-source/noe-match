@@ -314,5 +314,8 @@ $('city').addEventListener('change',run);
 run();
 })();
 </script>
-<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script><!-- AFF-VIEW -->
+<script>(function(){var h=location.hostname,ok=(h==='www.noe-match.com'||h==='noe-match.com');try{var m=/[?&]noe_qa=(0|1)/.exec(location.search);if(m)localStorage.setItem('noe_qa',m[1]);if(localStorage.getItem('noe_qa')==='1')ok=false;}catch(e){}var as=document.querySelectorAll('a[id^="aff-"][rel~="sponsored"]');if(!as.length||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);var n='affv_'+x.target.getAttribute('data-aff').slice(4).replace(/-/g,'_');(window.__affv=window.__affv||[]).push(n);if(ok){try{gtag('event',n);}catch(e){}}});},{threshold:[0.5]});for(var i=0;i<as.length;i++){var a=as[i],b=a.closest('div,section,aside');if(!b||b.getElementsByTagName('a').length>2)b=a;b.setAttribute('data-aff',a.id);io.observe(b);}})();</script>
+<!-- /AFF-VIEW -->
+</body>
 </html>
