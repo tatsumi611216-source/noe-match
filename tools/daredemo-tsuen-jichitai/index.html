@@ -157,7 +157,7 @@ article a{overflow-wrap:anywhere;word-break:break-word}
   <button type="button" class="calc-btn" id="run">この自治体の条件を見る</button>
 </div>
 
-<div class="result" id="result" aria-live="polite">
+<div class="result show" id="result" aria-live="polite">
   <div class="big">
     <div class="lbl">この自治体で使える月の上限</div>
     <div class="num" id="capNum">—</div>
@@ -178,14 +178,6 @@ article a{overflow-wrap:anywhere;word-break:break-word}
 <p style="font-size:.86rem;color:#5a6068;margin:0 0 16px;line-height:1.9">通園制度の利用料や回数は自治体が決めていて、こちらで動かせる余地はありません。一方で、子どもが生まれて家族の人数が変わると、必要な保障の考え方も変わります。加入中の生命保険・医療保険が今の家族に合っているかは家計によって答えが違い、一概には言えません。判断材料を集めたい場合は、複数の窓口で話を聞いて比べる方法があります。</p>
 <a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX" id="aff-hoken" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">保険ランドリーの相談内容を見る</a>
 <p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">保険相談サービスの一つです。取り扱い保険会社・相談方法・費用の仕組みは公式サイトでご確認ください。このページは特定の保険商品や窓口を推奨するものではなく、加入・見直しの判断はご自身で行ってください。通園制度の利用とは関係ありません。</p>
-</div>
-
-<div style="background:#f7f5f2;border:1px solid #e6e2dc;padding:20px 22px;margin:24px 0 0;text-align:center">
-<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
-<p style="font-weight:700;margin:0 0 8px">通園が始まる時期に最初に決まらなくなるのは「毎日の食事」</p>
-<p style="font-size:.8rem;color:#5a6068;margin:0 0 14px">週1回の通園でも、送り迎えの前後に食事の支度が重なります。作る手間を減らす手段を先に確保しておくと段取りが崩れにくくなります。Oisixは食材宅配のおためしセット（内容・価格・配送エリアは公式サイトでご確認ください）。</p>
-<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA" id="aff-result" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
-<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。制度の利用可否とは関係ありません</p>
 </div>
 </div>
 
@@ -362,5 +354,8 @@ $('city').addEventListener('change',run);
 run();
 })();
 </script>
-<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script></body>
+<script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script><!-- AFF-VIEW -->
+<script>(function(){var h=location.hostname,ok=(h==='www.noe-match.com'||h==='noe-match.com');try{var m=/[?&]noe_qa=(0|1)/.exec(location.search);if(m)localStorage.setItem('noe_qa',m[1]);if(localStorage.getItem('noe_qa')==='1')ok=false;}catch(e){}var as=document.querySelectorAll('a[id^="aff-"][rel~="sponsored"]');if(!as.length||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);var n='affv_'+x.target.getAttribute('data-aff').slice(4).replace(/-/g,'_');(window.__affv=window.__affv||[]).push(n);if(ok){try{gtag('event',n);}catch(e){}}});},{threshold:[0.5]});for(var i=0;i<as.length;i++){var a=as[i],b=a.closest('div,section,aside');if(!b||b.getElementsByTagName('a').length>2)b=a;b.setAttribute('data-aff',a.id);io.observe(b);}})();</script>
+<!-- /AFF-VIEW -->
+</body>
 </html>

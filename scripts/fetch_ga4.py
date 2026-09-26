@@ -35,6 +35,11 @@ clicks キー（2026-09-19 追加・CEO承認）:
   そのまま読める（読む側は d.get("clicks", []) とすること）。
   linkId は <a> に id 属性が付いているときだけ入る。id の無いリンクは "" で保存される。
 
+aff_views キー（2026-09-27 追加）:
+  広告の表示イベント affv_<linkId> を pagePath × eventName で日別に保存する（広告枠が画面に50%入ったら1回）。
+  events キーにも同じイベント名の合計は入るが、ページ別はこちら。無い古いファイルは d.get("aff_views", [])。
+  表示→クリックの集計は scripts/aff_funnel.py。
+
 限界（正直に書く）:
 - GA4は当日ぶんが確定しない。**当日と前日は取りに行かない**（2日前まで）
 - 参照元の分類はGA4の既定チャネルグループをそのまま使う。AI検索（chatgpt.com等）は
@@ -112,6 +117,26 @@ def fetch_clicks(client, prop, ds):
                     "linkUrl": "" if v[3] == "(not set)" else v[3],
                     "count": int(r.metric_values[0].value)})
     return sorted(out, key=lambda x: (-x["count"], x["path"], x["linkId"]))
+
+
+def fetch_aff_views(client, prop, ds):
+    """広告の表示イベント（affv_<linkId>・2026-09-27 新設）を ページ×イベント名 で取る。
+    送っているのは scripts/aff_only_20260927.py が差し込む AFF-VIEW。集計は scripts/aff_funnel.py。"""
+    from google.analytics.data_v1beta.types import (
+        DateRange, Dimension, Filter, FilterExpression, Metric, RunReportRequest)
+    req = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        dimensions=[Dimension(name="pagePath"), Dimension(name="eventName")],
+        metrics=[Metric(name="eventCount")],
+        dimension_filter=FilterExpression(filter=Filter(
+            field_name="eventName",
+            string_filter=Filter.StringFilter(
+                value="affv_", match_type=Filter.StringFilter.MatchType.BEGINS_WITH))),
+        limit=10000)
+    out = [{"path": r.dimension_values[0].value, "event": r.dimension_values[1].value,
+            "count": int(r.metric_values[0].value)} for r in client.run_report(req).rows]
+    return sorted(out, key=lambda x: (-x["count"], x["path"], x["event"]))
 
 
 def backfill_clicks():
@@ -205,6 +230,7 @@ def fetch_day(creds, prop, day):
         "by_page": rows,
         "events": events,
         "clicks": fetch_clicks(client, prop, ds),
+        "aff_views": fetch_aff_views(client, prop, ds),
     }
 
 

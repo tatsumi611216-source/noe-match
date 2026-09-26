@@ -298,8 +298,8 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;border-radius:0;padding:22px 20px;margin:28px 0;text-align:center">
 <div style="font-size:.72rem;color:#7c2e42;font-weight:700;margin-bottom:4px">【PR】広告</div>
-<div style="font-size:1.05rem;font-weight:900;color:#1d242b;margin-bottom:8px">結婚相談所の料金・成婚率を一括比較</div>
-<p style="font-size:.88rem;color:#3d454d;margin:0 0 14px">アプリではなく、コンシェルジュ付きで婚活したい方向けに、各社の料金・成婚率・特徴を無料で比較できる。</p>
+<div style="font-size:1.05rem;font-weight:900;color:#1d242b;margin-bottom:8px">結婚相談所の料金・サポートを一括比較</div>
+<p style="font-size:.88rem;color:#3d454d;margin:0 0 14px">アプリではなく、コンシェルジュ付きで婚活したい方向けに、各社の料金・サポート内容・特徴を無料で比較できる。</p>
 <a id="aff-soudanjo" href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:800;padding:13px 32px;border-radius:0;text-decoration:none;font-size:1rem">結婚相談所を無料で比較する →</a>
 </div>
 
@@ -367,5 +367,8 @@ footer{background:var(--ink);color:#9aa0a6;padding:48px 24px;font-size:.76rem;li
 </div></footer>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>onscroll=()=>top.classList.toggle('show',scrollY>300)</script>
+<!-- AFF-VIEW -->
+<script>(function(){var h=location.hostname,ok=(h==='www.noe-match.com'||h==='noe-match.com');try{var m=/[?&]noe_qa=(0|1)/.exec(location.search);if(m)localStorage.setItem('noe_qa',m[1]);if(localStorage.getItem('noe_qa')==='1')ok=false;}catch(e){}var as=document.querySelectorAll('a[id^="aff-"][rel~="sponsored"]');if(!as.length||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);var n='affv_'+x.target.getAttribute('data-aff').slice(4).replace(/-/g,'_');(window.__affv=window.__affv||[]).push(n);if(ok){try{gtag('event',n);}catch(e){}}});},{threshold:[0.5]});for(var i=0;i<as.length;i++){var a=as[i],b=a.closest('div,section,aside');if(!b||b.getElementsByTagName('a').length>2)b=a;b.setAttribute('data-aff',a.id);io.observe(b);}})();</script>
+<!-- /AFF-VIEW -->
 </body>
 </html>
