@@ -534,3 +534,4 @@ tool_gate: 「23区 子育て支援 比較」GO（Google推定208/月・器具�
 - 根拠: 9/25 GPT-6レビューの推奨（評価指標はクリック当たり承認報酬）を CEO が 9/27 に承認。9/27 に収益化をアフィリ単独へ切り替えた判断と対。
 - 実装: `agent/AGENT.md` 手順1の選定条件と「新規制作を停止したクラスタ」節、`agent/keyword_queue.json` の `stopped_clusters` と各 pending の `cluster`。
 - 9/27時点の pending 9件はいずれも停止クラスタに該当しない（統計4・制度3・A1・統計/E境界1）。ただし `rikonritsu-todofuken` と `jukunen-rikon-data` は主題が離婚（Lと隣接）で、9/5確定の割付では**統計**。停止に含めるかはCEO判断待ち。
+- **2026-09-27 CEO裁定**: `tools/rikonritsu-todofuken` と `articles/jukunen-rikon-data` は**統計のまま作る**（停止対象に入れない）。
