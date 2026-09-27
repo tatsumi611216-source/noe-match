@@ -1,5 +1,14 @@
 {
   "description": "記事工場の生成キュー。エージェントは毎回pendingの先頭2件を処理する。優先度順に並んでいる。 ／ 2026-09-19: 生産配分の変更で通常記事の pending 27件を hold に変更（削除はしていない）。以後の pending は打順（strategy_2026Q4.md 2026-09-19節）のツール／データ記事で、batting_order の小さい順・not_before を過ぎたものから処理する。",
+  "stopped_clusters": [
+    "B",
+    "F",
+    "C-sub",
+    "L",
+    "M",
+    "N"
+  ],
+  "stopped_clusters_note": "2026-09-27 CEO承認: この配列にある cluster の件は新規生成しない（agent/AGENT.md 手順1）。既存記事は削除しない。戻すときは空配列にする。",
   "queue": [
     {
       "slug": "sango-nukege-itsu-modoru",
@@ -1822,7 +1831,8 @@
       "published": null,
       "batting_order": 2,
       "notes": "tool_gate 9/19 GO（サジェスト10・月2,880・器具なし）／GSC データ記事 表示25・16.4位。正本 scripts/data/kon_rikon_tomobataraki.json。9/29の国勢調査更新（census_update_20260929.md・C50）で新値を正本に入れてから作る。対のデータ記事 articles/shougai-mikonritsu-data は 10/13 までロック中＝触らない。広告は結婚相談所比較ネット",
-      "not_before": "2026-09-29"
+      "not_before": "2026-09-29",
+      "cluster": "統計"
     },
     {
       "slug": "tools/tomobataraki-wariai",
@@ -1836,7 +1846,8 @@
       "status": "pending",
       "published": null,
       "batting_order": 3,
-      "notes": "GO（月2,880）／GSC 表示515・平均54位。scripts/build_sengyoshufu.py と同じ正本 scripts/data/setai_kyoudou_sengyou.json から作る（半日）。articles/tomobataraki-wariai-data は 10/13 までロック中＝触らない。広告はOisix"
+      "notes": "GO（月2,880）／GSC 表示515・平均54位。scripts/build_sengyoshufu.py と同じ正本 scripts/data/setai_kyoudou_sengyou.json から作る（半日）。articles/tomobataraki-wariai-data は 10/13 までロック中＝触らない。広告はOisix",
+      "cluster": "統計"
     },
     {
       "slug": "articles/koukousei-iryohi-data",
@@ -1849,7 +1860,8 @@
       "status": "pending",
       "published": null,
       "batting_order": 4,
-      "notes": "GO（月800）／GSC 114表示が tools/kodomo-iryohi-jichitai に着地。正本 scripts/_kodomo_iryo_data.py の再切り出し。ツール側は observing（improvement-log）＝触らない。広告はOisix（保険はYMYL枠・承認済みslugのみ）"
+      "notes": "GO（月800）／GSC 114表示が tools/kodomo-iryohi-jichitai に着地。正本 scripts/_kodomo_iryo_data.py の再切り出し。ツール側は observing（improvement-log）＝触らない。広告はOisix（保険はYMYL枠・承認済みslugのみ）",
+      "cluster": "制度"
     },
     {
       "slug": "articles/sangokea-tokyo-data",
@@ -1862,7 +1874,8 @@
       "status": "pending",
       "published": null,
       "batting_order": 5,
-      "notes": "GO（月576）／GSC 既存ツール 表示79・8.3位。正本 scripts/_sangocare_data.py の23区ぶんを再切り出し。広告はOisix"
+      "notes": "GO（月576）／GSC 既存ツール 表示79・8.3位。正本 scripts/_sangocare_data.py の23区ぶんを再切り出し。広告はOisix",
+      "cluster": "A"
     },
     {
       "slug": "tools/heikin-shokon-nenrei",
@@ -1875,7 +1888,8 @@
       "status": "pending",
       "published": null,
       "batting_order": 6,
-      "notes": "「平均初婚年齢」GO（月1,520）／「初婚年齢 平均」は未収録でNO-GO＝割れ。GSC データ記事 表示92・11.0位。都道府県47件の追加取得が要る（人口動態統計）＝新規実査あり。広告は結婚相談所比較ネット"
+      "notes": "「平均初婚年齢」GO（月1,520）／「初婚年齢 平均」は未収録でNO-GO＝割れ。GSC データ記事 表示92・11.0位。都道府県47件の追加取得が要る（人口動態統計）＝新規実査あり。広告は結婚相談所比較ネット",
+      "cluster": "統計"
     },
     {
       "slug": "tools/rikonritsu-todofuken",
@@ -1889,7 +1903,8 @@
       "published": null,
       "batting_order": 7,
       "notes": "GO（月1,280＋208）／GSC データ記事 表示108・16.6位。正本に47件あり。articles/rikonritsu-data は 10/6 までロック中。置ける案件なし＝LINEのみ",
-      "not_before": "2026-10-06"
+      "not_before": "2026-10-06",
+      "cluster": "統計"
     },
     {
       "slug": "articles/jukunen-rikon-data",
@@ -1902,7 +1917,8 @@
       "published": null,
       "batting_order": 8,
       "notes": "GO（月472）／GSC 未実測。正本 doukyo_kikan 14区分。rikonritsu-data と共食いしないよう同居期間別に絞る。置ける案件なし＝LINEのみ",
-      "not_before": "2026-10-06"
+      "not_before": "2026-10-06",
+      "cluster": "統計"
     },
     {
       "slug": "articles/funin-josei-katsushika-data",
@@ -1915,7 +1931,8 @@
       "status": "pending",
       "published": null,
       "batting_order": 9,
-      "notes": "「不妊治療 助成金 東京」GO（月472）／GSC 葛飾区系5語で表示27（60〜90位）。正本 scripts/_byoji_funin_data.py。助成額は計算しない（data_bank.md 9の特記）。置ける案件なし＝LINEのみ"
+      "notes": "「不妊治療 助成金 東京」GO（月472）／GSC 葛飾区系5語で表示27（60〜90位）。正本 scripts/_byoji_funin_data.py。助成額は計算しない（data_bank.md 9の特記）。置ける案件なし＝LINEのみ",
+      "cluster": "制度"
     },
     {
       "slug": "tools/ikukyu-shutokuritsu",
@@ -1928,7 +1945,8 @@
       "status": "pending",
       "published": null,
       "batting_order": 10,
-      "notes": "GO（月1,280）／GSC 未実測。雇用均等基本調査の新規取得が要る。data_bank.md「新しいバンクを取る条件」を満たしてから。広告はOisix"
+      "notes": "GO（月1,280）／GSC 未実測。雇用均等基本調査の新規取得が要る。data_bank.md「新しいバンクを取る条件」を満たしてから。広告はOisix",
+      "cluster": "制度"
     }
   ]
 }
