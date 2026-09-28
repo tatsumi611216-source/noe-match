@@ -100,7 +100,7 @@
   - FAQ Q7「「専業主婦は約3割」と書かれたページもあります。22.2%とどちらが正しいですか？」を追加（HTMLとJSON-LDを同じ文にした）。出典にJILPT図12を追加し、出典の前置きを修正
   - title・meta・JSロジック・CTAは変更なし。sitemap lastmod を 2026-09-28 に更新
   - 検品: `python scripts/factory_audit.py` exit 0（新規FAIL 0）。キリル文字なし
-  - 公開確認: 下記コミット後に確認（結果は実行ログ末尾に追記）
+  - 公開確認: Deploy to Pages（headSha f5f109b）success。本番URLで追加したH3とFAQ Q7の文言を確認済み
 - 承認待ちの提案: なし（9/21 の産後ケア出典404 は引き続き locks 明け待ち）
 - observing 中: site-wide title tighten — 2026-09-27（データ待ち） ／ ガルガル 期 同居 — 2026-09-28（データ待ち） ／ 専業主婦 割合 — 2026-10-05 ／ internal-link reinforcement — 2026-10-08
 - 型の集計（判定済み actions。判定放棄は数えない。1件の action に複数の type が付いているため、型ごとの効果は切り分けられない）:
