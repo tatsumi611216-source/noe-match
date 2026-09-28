@@ -1100,3 +1100,21 @@ GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCに
   不変チェックでABORTする安全装置を追加。全23ファイルで「PR枠以外は1文字も変わっていない」
   ことを検算済み。
 - **未着手**: アプリ案件の提携（Pairs/with/タップル/Omiai）はCEO判断。
+
+## 2026-09-28 週次実行
+
+### Step 4–6: ツールゲート
+- **BO=2 (比較-price-by-purpose)**: not_before=2026-10-03 のためスキップ
+- **BO=3 (app-psychology)**: tool_gate.py → CHECK（ネットワーク不通。クラウド実行環境はGoogle Suggest/DDG SERPへの外向き通信を遮断）
+- **BO=4 (casual-vs-serious)**: tool_gate.py → CHECK（同上）
+- **BO=5 (men-30s-guide)**: tool_gate.py → CHECK（同上）
+- **BO=9 (women-30s-guide)**: tool_gate.py → CHECK（同上）
+- AGENT.md「ネットワーク不通などでゲートが動かないときは作らない」に従い新規記事作成なし
+
+### Step 8: silent_scan リライト（2件）
+- **40s-guide**: "40代のマッチングアプリ活用法｜再婚・新しい出会いのための現実的な戦略" → "40代婚活アプリ｜「40代が多い」を数字で公表しているのはどこか"
+  - データ透明性訴求（over50-guide 型）に角度切り替え
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/byline/intro段落 更新
+- **40s-men**: "40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略" → "40代男性の婚活アプリ｜いいね数の実態と選び直しの基準"
+  - 具体的痛点（いいね数月1〜5件）＋選び直し基準で固有修飾を追加
+  - 同上フィールド更新
