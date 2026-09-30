@@ -1,0 +1,253 @@
+{
+ "date": "2026-09-28",
+ "property": "properties/549779769",
+ "fetched_at": "2026-09-30T00:07:28",
+ "total": {
+  "sessions": 31,
+  "users": 30,
+  "views": 33
+ },
+ "total_by_page_sum": {
+  "sessions": 33,
+  "users": 32,
+  "views": 33
+ },
+ "by_page": [
+  {
+   "path": "/articles/compare-popular/",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 9,
+   "users": 9,
+   "views": 9
+  },
+  {
+   "path": "/articles/byoji-hoiku-data/",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkonshiki-isho-rental/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/omiai-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/omiai-vs-pairs/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/pairs-kaiin-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/pairs-marriage-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "channel": "Organic Search",
+   "source": "cn.bing.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/with-guide/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-vs-pairs/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/funin-josei-jichitai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kodomo-iryohi-jichitai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kodomo-iryohi-jichitai/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 33,
+  "session_start": 31,
+  "first_visit": 30,
+  "user_engagement": 27,
+  "tool_result": 6,
+  "scroll": 4,
+  "affv_youbride": 3,
+  "affv_hoken": 2,
+  "affv_soudanjo": 2,
+  "saigenbyo_complete": 2,
+  "saigenbyo_start": 2,
+  "affv_compare": 1,
+  "click": 1,
+  "file_download": 1,
+  "saigenbyo_mode_switch": 1
+ },
+ "clicks": [
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "linkId": "",
+   "linkDomain": "gender.go.jp",
+   "linkUrl": "https://www.gender.go.jp/about_danjo/whitepaper/r08/zentai/html/honpen/csv/zuhyo00-05.csv",
+   "count": 1
+  }
+ ],
+ "aff_views": [
+  {
+   "path": "/articles/compare-popular/",
+   "event": "affv_soudanjo",
+   "count": 1
+  },
+  {
+   "path": "/articles/compare-popular/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/articles/pairs-kaiin-data/",
+   "event": "affv_soudanjo",
+   "count": 1
+  },
+  {
+   "path": "/articles/pairs-kaiin-data/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/articles/pairs-marriage-data/",
+   "event": "affv_compare",
+   "count": 1
+  },
+  {
+   "path": "/tools/kodomo-iryohi-jichitai/",
+   "event": "affv_hoken",
+   "count": 1
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "event": "affv_hoken",
+   "count": 1
+  }
+ ]
+}
