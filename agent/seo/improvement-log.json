@@ -249,6 +249,33 @@
                 }
             ],
             "reviews": []
+        },
+        {
+            "keyword": "新生児 面会 いつから",
+            "targetPath": "/articles/shinseiji-menkai/",
+            "status": "observing",
+            "nextReviewDate": "2026-10-08",
+            "actions": [
+                {
+                    "date": "2026-10-01",
+                    "rankAtAction": 7.2,
+                    "window": "2026-08-31〜2026-09-27",
+                    "needs": "出産した家族・友人や本人が、新生児にいつから会ってよいか（会わせてよいか）の時期の目安と、その理由を知りたい。",
+                    "gap": "上位（助産師監修note・病院・KIDSNA）は「新生児期＝生後28日未満」「1ヶ月健診後が安心」「予防接種は生後2か月から」を時期の根拠として示すが、このページは時期の表のみで、新生児期の定義・1ヶ月健診が区切りになる理由・生後2か月の区切りと一次出典が無かった。",
+                    "done": "『面会はいつからがよいか』節に H3「「新生児」はいつまでか、なぜ1ヶ月健診が区切りになるのか」を追加（母子保健法第6条第5項の定義、厚労省『生後2か月から推奨される予防接種』の4ワクチン、出典行）。FAQ Q8「「新生児期」とはいつまでですか？」を HTML と JSON-LD に同文で追加。最終更新・dateModified・sitemap lastmod を 2026-10-01 に更新。title・meta・CTA は変更なし。",
+                    "type": [
+                        "content",
+                        "faq",
+                        "data"
+                    ],
+                    "files": [
+                        "articles/shinseiji-menkai/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": []
         }
     ],
     "locks": [
