@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-09-06T05:44:21+00:00",
+ "fetched_at": "2026-10-01T19:00:07+00:00",
  "results": {
   "https://www.noe-match.com/": {
    "checked_at": "2026-09-06T05:12:02+00:00",
@@ -254,6 +254,39 @@
    "userCanonical": "https://www.noe-match.com/articles/app-ryokin-data/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/articles/app-ryokin-kaitei-data/": {
+   "checked_at": "2026-10-01T18:59:33+00:00",
+   "coverageState": "URL is unknown to Google",
+   "crawledAs": null,
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=0uuOj0tmbz-InNBKKIj1YA&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": null,
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
+  },
+  "https://www.noe-match.com/articles/app-taikai-riyu-data/": {
+   "checked_at": "2026-10-01T18:59:40+00:00",
+   "coverageState": "Discovered - currently not indexed",
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED",
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=fNwt96XMXVRsfNmHjWeIaA&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap-all.xml",
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
+  },
   "https://www.noe-match.com/articles/app-tsukare-guide/": {
    "checked_at": "2026-09-06T05:20:44+00:00",
    "coverageState": "Submitted and indexed",
@@ -311,6 +344,23 @@
    ],
    "userCanonical": "https://www.noe-match.com/articles/bachelor-date-guide/",
    "verdict": "PASS"
+  },
+  "https://www.noe-match.com/articles/bachelor-shinsa-data/": {
+   "checked_at": "2026-10-01T18:59:26+00:00",
+   "coverageState": "Discovered - currently not indexed",
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED",
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=wcRZKe7M0cb6h7itWw-eiQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
   },
   "https://www.noe-match.com/articles/batsuichi-guide/": {
    "checked_at": "2026-09-06T05:20:06+00:00",
@@ -1259,6 +1309,25 @@
    "userCanonical": "https://www.noe-match.com/articles/hitorioya-shien-data/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/articles/hoikushi-konkatsu/": {
+   "checked_at": "2026-10-01T18:59:53+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/hoikushi-konkatsu/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=TFFRvKpEgVQ3VKHv8XwUnA&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-09-17T14:05:44Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/articles/hoikushi-konkatsu/",
+   "verdict": "PASS"
+  },
   "https://www.noe-match.com/articles/ikukyu-fuufu-doji/": {
    "checked_at": "2026-09-06T05:35:26+00:00",
    "coverageState": "Submitted and indexed",
@@ -1349,6 +1418,23 @@
    "robotsTxtState": "ALLOWED",
    "sitemap": null,
    "userCanonical": "https://www.noe-match.com/articles/kaden-rental-vs-kounyu/",
+   "verdict": "PASS"
+  },
+  "https://www.noe-match.com/articles/kagoshima-guide/": {
+   "checked_at": "2026-10-01T18:58:52+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/kagoshima-guide/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=7QnDzJIpe_uW5MKqLg16aQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-09-10T07:03:46Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/articles/kagoshima-guide/",
    "verdict": "PASS"
   },
   "https://www.noe-match.com/articles/kaiin-age-cross-data/": {
@@ -1912,6 +1998,23 @@
    "userCanonical": "https://www.noe-match.com/articles/kosodate-zaitaku-guide/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/articles/kumamoto-guide/": {
+   "checked_at": "2026-10-01T18:58:59+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/kumamoto-guide/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=i02g2vOWI_jJuVDY_LwUbQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-09-07T22:40:50Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap-all.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/articles/kumamoto-guide/",
+   "verdict": "PASS"
+  },
   "https://www.noe-match.com/articles/kyoto-guide/": {
    "checked_at": "2026-09-06T05:19:28+00:00",
    "coverageState": "Submitted and indexed",
@@ -2214,6 +2317,23 @@
    "userCanonical": "https://www.noe-match.com/articles/myseed-kuchikomi/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/articles/nagano-guide/": {
+   "checked_at": "2026-10-01T18:58:46+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/nagano-guide/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=3aEHaCcYZqyI59RcSb4rbQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-09-07T16:06:52Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/articles/nagano-guide/",
+   "verdict": "PASS"
+  },
   "https://www.noe-match.com/articles/nagoya-guide/": {
    "checked_at": "2026-09-06T05:18:59+00:00",
    "coverageState": "Submitted and indexed",
@@ -2302,6 +2422,23 @@
     "https://www.noe-match.com/sitemap-all.xml"
    ],
    "userCanonical": "https://www.noe-match.com/articles/nyuseki-2027-guide/",
+   "verdict": "PASS"
+  },
+  "https://www.noe-match.com/articles/okayama-guide/": {
+   "checked_at": "2026-10-01T18:59:06+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/articles/okayama-guide/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=_oo4r9fICpjXS6KInsfhqQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-09-07T16:12:56Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap-all.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/articles/okayama-guide/",
    "verdict": "PASS"
   },
   "https://www.noe-match.com/articles/okinawa-guide/": {
@@ -3339,6 +3476,23 @@
    "userCanonical": "https://www.noe-match.com/articles/sengyoshufu-seikatsuhi/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/articles/sengyoshufu-wariai-data/": {
+   "checked_at": "2026-10-01T19:00:00+00:00",
+   "coverageState": "Discovered - currently not indexed",
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED",
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=xiVGYZ6PjkIgqh_dfgwWaQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
+  },
   "https://www.noe-match.com/articles/shikijo-erabi-guide/": {
    "checked_at": "2026-09-06T05:21:07+00:00",
    "coverageState": "Submitted and indexed",
@@ -3768,6 +3922,23 @@
    "userCanonical": "https://www.noe-match.com/articles/tapple-guide/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/articles/tapple-kaiin-data/": {
+   "checked_at": "2026-10-01T18:59:19+00:00",
+   "coverageState": "Discovered - currently not indexed",
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED",
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=YUk2AmoHignME5EzUyPcRg&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
+  },
   "https://www.noe-match.com/articles/tapple-nenreiso-data/": {
    "checked_at": "2026-09-06T05:39:26+00:00",
    "coverageState": "Submitted and indexed",
@@ -4096,6 +4267,23 @@
    ],
    "userCanonical": "https://www.noe-match.com/articles/yachin-credit-shiharai/",
    "verdict": "PASS"
+  },
+  "https://www.noe-match.com/articles/yakuzaishi-konkatsu/": {
+   "checked_at": "2026-10-01T18:59:46+00:00",
+   "coverageState": "Discovered - currently not indexed",
+   "crawledAs": "CRAWLING_USER_AGENT_UNSPECIFIED",
+   "googleCanonical": null,
+   "indexingState": "INDEXING_STATE_UNSPECIFIED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=kpD11q0e0EvGBVGr3CyZUQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": null,
+   "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED",
+   "referringUrls": null,
+   "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": null,
+   "verdict": "NEUTRAL"
   },
   "https://www.noe-match.com/articles/yokohama-propose-spot/": {
    "checked_at": "2026-09-06T05:32:32+00:00",
@@ -4616,6 +4804,23 @@
    "userCanonical": "https://www.noe-match.com/tools/konkatsu-type-shindan/",
    "verdict": "PASS"
   },
+  "https://www.noe-match.com/tools/kosodate-shien-23ku/": {
+   "checked_at": "2026-10-01T18:59:13+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/tools/kosodate-shien-23ku/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=DRGIx4t1FRy_M7EZmIarYQ&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-09-07T16:04:25Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": null,
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap-all.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/tools/kosodate-shien-23ku/",
+   "verdict": "PASS"
+  },
   "https://www.noe-match.com/tools/nyuseki-calendar/": {
    "checked_at": "2026-09-06T05:37:51+00:00",
    "coverageState": "Submitted and indexed",
@@ -4740,6 +4945,25 @@
     "https://www.noe-match.com/sitemap.xml"
    ],
    "userCanonical": "https://www.noe-match.com/tools/seikonritsu-hikaku/",
+   "verdict": "PASS"
+  },
+  "https://www.noe-match.com/tools/sengyoshufu-wariai/": {
+   "checked_at": "2026-10-01T19:00:07+00:00",
+   "coverageState": "Submitted and indexed",
+   "crawledAs": "MOBILE",
+   "googleCanonical": "https://www.noe-match.com/tools/sengyoshufu-wariai/",
+   "indexingState": "INDEXING_ALLOWED",
+   "inspectionResultLink": "https://search.google.com/search-console/inspect?resource_id=https://www.noe-match.com/&id=M078a7KvH_mX9B0Rb5wzRg&utm_medium=link&utm_source=api",
+   "lastCrawlTime": "2026-09-19T19:45:27Z",
+   "pageFetchState": "SUCCESSFUL",
+   "referringUrls": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "robotsTxtState": "ALLOWED",
+   "sitemap": [
+    "https://www.noe-match.com/sitemap.xml"
+   ],
+   "userCanonical": "https://www.noe-match.com/tools/sengyoshufu-wariai/",
    "verdict": "PASS"
   },
   "https://www.noe-match.com/tools/soudanjo-hiyou-sim/": {
