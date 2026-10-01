@@ -1,0 +1,312 @@
+{
+ "date": "2026-09-29",
+ "property": "properties/549779769",
+ "fetched_at": "2026-10-01T00:25:15",
+ "total": {
+  "sessions": 32,
+  "users": 31,
+  "views": 32
+ },
+ "total_by_page_sum": {
+  "sessions": 33,
+  "users": 32,
+  "views": 32
+ },
+ "by_page": [
+  {
+   "path": "/articles/bachelor-date-guide/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 3,
+   "users": 3,
+   "views": 3
+  },
+  {
+   "path": "/articles/with-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/ikukyu-fuufu-doji/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkonshiki-isho-rental/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kisei-kekkon-aisatsu/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/marrish-guide/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/nagoya-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/nurse-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/rikonritsu-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/safety-guide/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shinseiji-menkai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Organic Search",
+   "source": "cn.bing.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-guide/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/app-kakin-hikaku/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/app-kekkonritsu-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/seikatsuhi-simulator/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/seikatsuhi-simulator/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 32,
+  "session_start": 32,
+  "first_visit": 31,
+  "user_engagement": 25,
+  "tool_result": 12,
+  "scroll": 7,
+  "affv_youbride": 3,
+  "tool_calc": 3,
+  "click": 2,
+  "aff_click": 1,
+  "affv_decide": 1,
+  "affv_hoken": 1,
+  "affv_youbride_2": 1
+ },
+ "clicks": [
+  {
+   "path": "/articles/bachelor-date-guide/",
+   "linkId": "aff-bachelor-2",
+   "linkDomain": "px.a8.net",
+   "linkUrl": "https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6",
+   "count": 1
+  },
+  {
+   "path": "/tools/app-kakin-hikaku/",
+   "linkId": "",
+   "linkDomain": "pairs.lv",
+   "linkUrl": "https://www.pairs.lv/price",
+   "count": 1
+  }
+ ],
+ "aff_views": [
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "event": "affv_youbride_2",
+   "count": 1
+  },
+  {
+   "path": "/articles/with-guide/",
+   "event": "affv_decide",
+   "count": 1
+  },
+  {
+   "path": "/articles/with-guide/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "event": "affv_hoken",
+   "count": 1
+  }
+ ]
+}
