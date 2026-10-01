@@ -1118,3 +1118,40 @@ GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCに
 - **40s-men**: "40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略" → "40代男性の婚活アプリ｜いいね数の実態と選び直しの基準"
   - 具体的痛点（いいね数月1〜5件）＋選び直し基準で固有修飾を追加
   - 同上フィールド更新
+
+## 2026-10-01 週次実行
+
+### Phase 4 ゲート
+- asp_results.md last_updated: 2026-08-31（31日前 > 30日）
+- ⚠️ **Phase 4 ゲート発動**: 新規CTA設置不可。人間によるasp_results.md更新を要請。
+
+### Step 4–6: ツールゲート（今回の対象候補）
+- **BO=2 (shougai-mikonritsu)**: tool_gate.py → CHECK（ネットワーク不通。クラウド実行環境はGoogle Suggest/DDG SERPへの外向き通信を遮断）
+  - 前回GO結果あり（9/19, サジェスト10件・月2,880・器具なし）だが毎回再実行が必要
+  - census_update_20260929.md 対応データ（latest_2025: male=29.88, female=19.58）はスクリプトデータに記入済み→前提条件は充足
+- **BO=3 (tomobataraki-wariai)**: tool_gate.py → CHECK（同上）
+  - setai_kyoudou_sengyou.json データ準備済み（2025年最新値入り）
+- **BO=4 (koukousei-iryohi-data)**: クラスタ=制度、tool_gate 対象外。ただしBO=2,3でゲート通過できないため今回スキップ
+- AGENT.md「ネットワーク不通などでゲートが動かないときは作らない」により新規記事作成なし
+- **スキップ理由**:
+  - heikin-shokon-nenrei: notes「都道府県47件の追加取得が要る」
+  - rikonritsu-todofuken: not_before=2026-10-06
+  - jukunen-rikon-data: not_before=2026-10-06
+  - ikukyu-shutokuritsu: notes「新規取得が要る」
+
+### Step 8: silent_scan リライト（2件）
+- **compare-popular**: "Pairs・with・Omiai比較｜30代女性が婚活で選ぶならどれか【2026年版】" → "Pairs・with・Omiai｜婚活比率を3社で確認した"
+  - 婚活比率非公表という固有の事実に切り口を寄せ、アフィリ系比較記事との差を明示
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/byline/intro段落 更新
+- **free-vs-paid**: "マッチングアプリの課金タイミング｜30代男性の判断基準と主要5アプリ比較【2026年版】" → "マッチングアプリ課金で損するパターン｜5社の無料範囲一覧"
+  - 「損するパターン」という具体的行動切り口と「5社の無料範囲一覧」という情報型訴求に寄せた
+  - 同上フィールド更新
+
+### 品質チェック
+- sitemap_sync.py: compare-popular, free-vs-paid の lastmod を 2026-10-01 に同期（sitemap.xml, sitemap-all.xml 各2件）
+- factory_audit.py: 新規エラー(FAIL) 0件、新規違反なし ✅
+
+### 未着手・継続事項
+- BO=2,3 ツールゲート: 次回もネットワーク障害なら手動GO確認（9/19確認結果）で作成を要検討
+- asp_results.md 更新: 人間作業要（最終更新2026-08-31、31日経過）→ 更新後に次回CTA設置可
+- app-plus-agency リライト（無修飾ヘッドターム優先リストの3番目）: 次回対象
