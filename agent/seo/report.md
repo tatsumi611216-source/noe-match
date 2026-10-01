@@ -132,7 +132,7 @@
   - FAQ Q8「「新生児期」とはいつまでですか？」を追加（HTMLとJSON-LDを同じ文にした）
   - 最終更新表記・dateModified・sitemap.xml / sitemap-all.xml の lastmod を 2026-10-01 に更新（sitemap_sync.py）。title・meta・CTA・URL は変更なし
   - 検品: `python scripts/factory_audit.py` exit 0（新規FAIL 0）。キリル文字なし
-  - 公開確認: 下記コミット後に Deploy to Pages の結果を確認（報告末尾の出力に記載）
+  - 公開確認: Deploy to Pages（headSha fb735fe）success。本番URLで追加したH3・定義文・FAQ Q8・最終更新日の文言を確認済み
 - 承認待ちの提案: なし
 - observing 中: site-wide title tighten — 2026-09-27（14日窓待ち） ／ ガルガル 期 同居 — 2026-09-28（データ待ち） ／ 専業主婦 割合 — 2026-10-05 ／ 新生児 面会 いつから — 2026-10-08 ／ internal-link reinforcement — 2026-10-08
 - 型の集計（判定済み actions。判定放棄は数えない。1件の action に複数の type が付いているため、型ごとの効果は切り分けられない）:
