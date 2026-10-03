@@ -28,7 +28,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _article_shell import SRC_INTRO_KIGYO, faq_html, source_list, table, write
 from _soudanjo_hiyou_data import CHECKED, COMPANIES, UNCONFIRMED
 
-TODAY = "2026-08-27"
+TODAY = "2026-10-04"
 TOOL_SLUG = "soudanjo-hiyou-sim"
 ART_SLUG = "soudanjo-hiyou-data"
 TOOL_URL = "https://www.noe-match.com/tools/%s/" % TOOL_SLUG
@@ -374,7 +374,7 @@ def build_article():
           "本記事の金額は公式ページに載っている項目を足したものです。実際に自分がいくら払うかは、"
           "選ぶコース・活動期間・オプションで変わります。複数社の資料をまとめて取り寄せると、"
           "総額の内訳と、自分の年齢・地域にどんな会員がいるかを並べて確認できます。",
-          aff_url=AFF, aff_text=AFF_TEXT, aff_note=AFF_NOTE, aff_color=AFF_COLOR,
+          aff_url=AFF, aff_id="aff-soudanjo", aff_text=AFF_TEXT, aff_note=AFF_NOTE, aff_color=AFF_COLOR,
           aff_rel="nofollow sponsored noopener")
 
 
