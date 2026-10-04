@@ -46,14 +46,14 @@ __CSS__
 </div></div>
 
 <article>
-<blockquote><strong>同じ制度でも、住んでいる自治体で使える時間が最大16倍違います。</strong>大田区は条件つきで最大月160時間、渋谷区は最大月64時間、一方で足立区・板橋区・杉並区などは国基準どおりの月10時間（2026年8月25日時点の各自治体公式ページ）。上乗せ分はその自治体の中の施設に限られるのが原則で、区外・市外の施設を使うと国基準の月10時間に戻ります。</blockquote>
+<blockquote><strong>同じ制度でも、住んでいる自治体で使える時間が最大16倍違います。</strong>大田区は条件つきで最大月160時間、渋谷区は最大月64時間、一方で足立区・板橋区・杉並区などは国基準どおりの月10時間（2026年10月5日時点の各自治体公式ページ）。上乗せ分はその自治体の中の施設に限られるのが原則で、区外・市外の施設を使うと国基準の月10時間に戻ります。</blockquote>
 
 <h2>STEP1｜自治体と使いたい回数を選ぶ</h2>
 <div class="calc" id="calcForm">
   <div class="fld">
     <label for="city">お住まいの自治体</label>
     <select id="city">__OPTS__</select>
-    <div class="hint">東京23区・政令指定都市20市・中核市ほか3市（計46自治体）は2026年8月25日に全自治体の公式ページを確認して収録しています。それ以外にお住まいの場合は「上記以外の自治体（国の基準）」を選んでください。収録外の自治体は経過措置（令和8・9年度）で月3〜10時間未満に短縮していることが多い点にご注意ください。</div>
+    <div class="hint">東京23区・政令指定都市20市・中核市ほか3市（計46自治体）は2026年10月5日に全自治体の公式ページを確認して収録しています。それ以外にお住まいの場合は「上記以外の自治体（国の基準）」を選んでください。収録外の自治体は経過措置（令和8・9年度）で月3〜10時間未満に短縮していることが多い点にご注意ください。</div>
   </div>
   <div class="row2">
     <div class="fld">
@@ -148,7 +148,7 @@ __FAQHTML__
 </div>
 <footer><div class="footer-inner">
 <div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
-<p class="footer-disc">※本ツールは各自治体およびこども家庭庁の公式公開情報（2026年8月25日確認）に基づく目安です。制度の適用と最終的な判断は各自治体が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+<p class="footer-disc">※本ツールは各自治体およびこども家庭庁の公式公開情報（2026年10月5日確認）に基づく目安です。制度の適用と最終的な判断は各自治体が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
 </div></footer>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>
@@ -187,7 +187,7 @@ function renderDetail(c){
    '<dt>予約の経路</dt><dd>'+esc(c.reserve)+'</dd>'+
    '<dt>申込・認定</dt><dd>'+esc(c.apply)+'</dd>'+
    '<dt>実施施設</dt><dd>'+esc(c.facil)+'</dd>';
-  $('srcNote').innerHTML='出典：<a href="'+c.src+'" rel="noopener" target="_blank">'+esc(c.src_label)+'</a>（2026年8月25日確認）。最新の内容は必ず公式ページでご確認ください。';
+  $('srcNote').innerHTML='出典：<a href="'+c.src+'" rel="noopener" target="_blank">'+esc(c.src_label)+'</a>（2026年10月5日確認）。最新の内容は必ず公式ページでご確認ください。';
   try{gtag('event','tool_result',{tool:'__SLUG__',city:c.key,cap:(c.cap===null?'na':c.cap)});}catch(e){}
 }
 $('run').addEventListener('click',run);
