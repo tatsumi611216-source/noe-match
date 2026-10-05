@@ -1827,10 +1827,10 @@
         "生涯未婚率 推移",
         "生涯未婚率 2025"
       ],
-      "status": "pending",
-      "published": null,
+      "status": "done",
+      "published": "2026-10-05",
       "batting_order": 2,
-      "notes": "tool_gate 9/19 GO（サジェスト10・月2,880・器具なし）／GSC データ記事 表示25・16.4位。正本 scripts/data/kon_rikon_tomobataraki.json。9/29の国勢調査更新（census_update_20260929.md・C50）で新値を正本に入れてから作る。対のデータ記事 articles/shougai-mikonritsu-data は 10/13 までロック中＝触らない。広告は結婚相談所比較ネット",
+      "notes": "tool_gate 9/19 GO（サジェスト10・月2,880・器具なし）／GSC データ記事 表示25・16.4位。正本 scripts/data/kon_rikon_tomobataraki.json。9/29の国勢調査更新（census_update_20260929.md・C50）で新値を正本に入れてから作る。対のデータ記事 articles/shougai-mikonritsu-data は 10/13 までロック中＝触らない。広告は結婚相談所比較ネット。2026-10-05 ASPゲート閉鎖のためアフィリエイトCTAなし・LINE CTAのみ。",
       "not_before": "2026-09-29",
       "cluster": "統計"
     },

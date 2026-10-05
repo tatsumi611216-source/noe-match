@@ -42,6 +42,13 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
+#### 2026-10-05 新規・修正分
+
+```
+https://www.noe-match.com/tools/shougai-mikonritsu/      ← 新規公開（生涯未婚率ツール）
+https://www.noe-match.com/articles/compare-20s/          ← 寄せ直し（20代前半タイトルに変更）
+```
+
 #### 2026-09-24 修正分（再申請）
 
 ```

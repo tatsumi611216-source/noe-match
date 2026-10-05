@@ -1,5 +1,55 @@
 # Agent Run Log
 
+## 2026-10-05　週次ラン｜ツール生成1本（tools/shougai-mikonritsu）
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（35日前）→ **30日超 → ASPゲート閉鎖**。
+
+⚠️ ASP成果データが未供給。今回の記事生成はCTA計測なしで行われる。アフィリエイトCTAは設置しない（LINE CTAのみ）。
+
+→ run 終了後、人手による `agent/asp_results.md` の更新を依頼（後述）。
+
+### Phase 1 打順チェック
+
+- batting_order 2: `tools/shougai-mikonritsu` — `not_before: 2026-09-29` 通過 ✓、`tool_gate 9/19 GO` 記録あり（アウトバウンド制限のため再実行不可・既記録値を採用）、`improvement-log.json` locks[] に含まれない ✓、国勢調査データ更新済み（census_update_20260929.md C50完了） ✓ → **GO**
+
+### Phase 2 コンテンツ生成
+
+`tools/shougai-mikonritsu/index.html` を新規作成。
+
+- タイトル：`生涯未婚率を年・男女で調べる（将来推計つき）`（22字 ≤ 32字 ✓）
+- データ出典：`scripts/data/kon_rikon_tomobataraki.json` shougai_mikonritsu セクション
+  - 2025年（当サイト算出・推計値）：男性29.88%・女性19.58%
+  - 2020年（社人研公表値）：男性28.25%・女性17.81%
+  - 将来推計2030〜2050：社人研年齢階級別未婚率から派生算出
+- ASPゲート閉鎖のため affiliate CTA なし。LINE CTA（id="line-cta-result"）のみ result 内に設置。
+- JSON-LD：WebApplication / FAQPage（6項目）/ BreadcrumbList ✓
+- 内部リンク4本（shougai-mikonritsu-data / rikonritsu-data / appkon-wariai-data / konkatsu-type-shindan）✓
+- pr-notice / 【PR】フッター ✓
+- dateModified: 2026-10-05
+
+### Phase 3 インフラ更新
+
+- `sitemap.xml` / `sitemap-all.xml`：`python3 scripts/sitemap_add.py` → 各+1 ✓
+- `keyword_queue.json` batting_order 2 → status: done, published: 2026-10-05 ✓
+
+### Phase 4 factory_audit / silent_scan
+
+`python3 scripts/factory_audit.py` → 新規FAIL: 0本 / ツール新規FAIL: 0本 ✓
+
+`python3 scripts/silent_scan.py` → 表示ゼロ72本。寄せ直し1本実施：
+- `articles/compare-20s`（無修飾ヘッドターム・初回リライト）：タイトル・h1・og:title を「20代前半」属性固有修飾に絞り込み
+  - 旧：「Tapple vs with vs Pairs 20代向け比較｜年代別に最適なアプリを徹底解説」
+  - 新：「Tapple vs with vs Pairs 比較｜20代前半が最初に選ぶアプリはどれか【2026年版】」
+- rewrites.json に記録 ✓ / sitemap_sync.py で lastmod 更新 ✓
+
+### ASP更新依頼
+
+⚠️ `agent/asp_results.md` の `last_updated` が 2026-08-31（35日経過）。次回ラン前に人手での更新をお願いします。
+
+---
+
 ## 2026-09-24　週次ラン｜新記事なし（ゲートCHECK・打順通過なし） / ツール是正1本 + 寄せ直し1本
 
 ### Phase 4-0 計測ゲート
