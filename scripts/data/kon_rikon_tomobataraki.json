@@ -162,11 +162,11 @@
     "latest": {
       "year": "令和7年(2025)",
       "per_1000": 1.5,
-      "kensu": 179068,
-      "kubun": "概数",
-      "src": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/nengai25/dl/kekka.pdf",
-      "src_label": "厚生労働省『令和7(2025)年 人口動態統計月報年計（概数）の概況』（2026年6月3日公表）",
-      "zennen_hikaku": "前年（令和6年確定数185,904組・1.55）より6,836組減少・0.05ポイント低下"
+      "kensu": 179073,
+      "kubun": "確定数",
+      "src": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei25/dl/05_gaikyouR07.pdf",
+      "src_label": "厚生労働省『令和7(2025)年 人口動態統計（確定数）の概況』（2026年9月30日公表）",
+      "zennen_hikaku": "前年（令和6年確定数185,904組・1.55）より6,831組減少・0.05ポイント低下"
     },
     "latest_kakutei": {
       "year": "令和6年(2024)",
@@ -252,8 +252,8 @@
       {
         "year": "令和7年(2025)",
         "per_1000": 1.5,
-        "kensu": 179068,
-        "kubun": "概数"
+        "kensu": 179073,
+        "kubun": "確定数"
       }
     ],
     "suii_src": "https://www.ipss.go.jp/syoushika/tohkei/Data/Popular2026/T06-02.files/sheet001.htm",
@@ -651,17 +651,17 @@
       "zennen_hikaku": "前年（令和6年確定数185,904組・1.55）より6,831組減少",
       "gaisu_sa": "概数179,068組から+5組",
       "checked": "2026年10月1日",
-      "page_hanei": "未反映。rikonritsu-data は10/6までロック中のため10/7に反映する"
+      "page_hanei": "2026-10-07 反映済み（件数・全国の率・婚姻件数。都道府県別と同居期間別は概数のまま）"
     }
   },
   "konin": {
     "latest": {
       "year": "令和7年(2025)",
-      "kensu": 489119,
+      "kensu": 489158,
       "per_1000": 4.1,
-      "kubun": "概数",
-      "src": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/geppo/nengai25/dl/kekka.pdf",
-      "src_label": "厚生労働省『令和7(2025)年 人口動態統計月報年計（概数）の概況』（2026年6月3日公表）",
+      "kubun": "確定数",
+      "src": "https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei25/dl/05_gaikyouR07.pdf",
+      "src_label": "厚生労働省『令和7(2025)年 人口動態統計（確定数）の概況』（2026年9月30日公表）",
       "note": "2年連続で増加。ピークは昭和47(1972)年の1,099,984組。"
     },
     "latest_kakutei": {
@@ -749,8 +749,8 @@
       {
         "year": "令和7年(2025)",
         "per_1000": 4.1,
-        "kensu": 489119,
-        "kubun": "概数"
+        "kensu": 489158,
+        "kubun": "確定数"
       }
     ],
     "suii_src": "https://www.ipss.go.jp/syoushika/tohkei/Data/Popular2026/T06-01.files/sheet001.htm",
