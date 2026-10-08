@@ -54,6 +54,7 @@ def ledger():
     return led
 
 
+SCLICKS = collections.Counter()   # (path, linkId) → 1セッション1回に絞ったクリック（affc_・2026-10-08〜）
 URLS = {}   # (path, linkId) → クリックされた linkUrl（id の無い古いクリックの案件名に使う）
 
 
@@ -79,6 +80,7 @@ def period(a):
 
 def from_archive(start, end):
     views, clicks, days, no_views = collections.Counter(), collections.Counter(), 0, 0
+    SCLICKS.clear()
     for f in sorted(os.listdir(ARC)):
         ds = f[:-5]
         if not f.endswith(".json") or not (start <= ds <= end):
@@ -89,6 +91,8 @@ def from_archive(start, end):
             no_views += 1
         for r in d.get("aff_views", []):
             views[(r["path"], view_to_link(r["event"]))] += r["count"]
+        for r in d.get("aff_session_clicks", []):
+            SCLICKS[(r["path"], "aff-" + r["event"][len("affc_"):].replace("_", "-"))] += r["count"]
         for c in d.get("clicks", []):
             if c.get("linkDomain") in AFF_DOMAINS:
                 k = (c["path"], c.get("linkId") or "(idなし)")
@@ -144,11 +148,13 @@ def main():
 
     keys = sorted(set(views) | set(clicks), key=lambda k: (-views[k], -clicks[k], k))
     print("\n■ ページ × linkId（表示 → クリック）")
-    print("  %5s %5s %7s  %-44s %-18s %s" % ("表示", "click", "率", "ページ", "linkId", "案件"))
+    keys = sorted(set(keys) | set(SCLICKS), key=lambda k: (-views[k], -clicks[k], k))
+    print("  %5s %5s %6s %7s  %-44s %-18s %s" % ("表示", "click", "1S1回", "率", "ページ", "linkId", "案件"))
     for k in keys:
         v, n = views[k], clicks[k]
         r = "%.1f%%" % (100.0 * n / v) if v else "—"
-        print("  %5d %5d %7s  %-44s %-18s %s" % (v, n, r, k[0][:44], k[1], program_of(k[0], k[1], led)))
+        print("  %5d %5d %6d %7s  %-44s %-18s %s" % (v, n, SCLICKS[k], r, k[0][:44], k[1], program_of(k[0], k[1], led)))
+    print("  ※1S1回＝同じセッション・同じ枠のクリックを1回に絞った数（affc_・2026-10-08 の差し込み以降のみ）")
 
     by_prog_v, by_prog_c = collections.Counter(), collections.Counter()
     for k in keys:

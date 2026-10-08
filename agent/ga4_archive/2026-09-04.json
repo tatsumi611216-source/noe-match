@@ -192,5 +192,159 @@
   "tool_calc": 2
  },
  "clicks": [],
- "clicks_fetched_at": "2026-09-19T09:11:33"
+ "clicks_fetched_at": "2026-09-19T09:11:33",
+ "by_source": [
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 12
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 4
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 3
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "perplexity.ai",
+   "sessions": 2
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "gemini.google.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/articles/matching-app-ranking",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3
+  },
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/kekkon-hoken-minaoshi",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/tapple-guide",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "(not set)",
+   "channel": "AI Assistant",
+   "source": "perplexity.ai",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/hatsushon-nenmei-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/ikukyu-kyufukin-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-tenshoku-guide",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/matching-app-ranking",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/pair-ring-guide",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/sapporo-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/policy/update.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/daredemo-tsuen-jichitai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/kekkon-shinseikatsu-jichitai",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/kodomo-iryohi-jichitai",
+   "channel": "AI Assistant",
+   "source": "gemini.google.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/soudanjo-simulator",
+   "channel": "AI Assistant",
+   "source": "perplexity.ai",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:03:03"
 }

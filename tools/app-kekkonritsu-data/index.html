@@ -173,8 +173,8 @@ article a{overflow-wrap:anywhere;word-break:break-word}
 <!-- AFF1008:soudanjo -->
 <div style="background:#f7f5f2;border:1px solid #e6e2dc;padding:20px 22px;margin:26px 0;text-align:center">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
-<p style="font-weight:700;margin:0 0 10px">結婚までの期限があるなら、結婚相談所の資料も並べて比べる</p>
-<p style="font-size:.88rem;color:#5a6068;margin:0 0 14px;line-height:1.9;text-align:left">上の一覧のとおり、主要アプリは結婚率・成婚率を公表していません。成婚数や成婚率を自社の基準で公表しているのは主に結婚相談所です（数字の定義は相談所ごとに異なります）。結婚相談所比較ネットは、複数の相談所の資料をまとめて無料で請求できる一括比較サービスです。</p>
+<p style="font-weight:700;margin:0 0 10px">費用や支援内容まで比べたい人へ。結婚相談所の資料も並べておく</p>
+<p style="font-size:.88rem;color:#5a6068;margin:0 0 14px;line-height:1.9;text-align:left">結婚率を公表しているかどうかは、サービスの良し悪しを示すものではありません（下のQ6）。アプリとあわせて、月々の費用や担当者による支援の内容まで比べたうえで選びたい人には、結婚相談所の資料をまとめて取り寄せる方法もあります。相談所の成婚率は成婚の定義が各社で異なるため、数字だけで比べないことをおすすめします。結婚相談所比較ネットは、複数の相談所の資料をまとめて無料で請求できる一括比較サービスです。</p>
 <a id="aff-soudanjo" href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c5cbf;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">結婚相談所の資料を無料で比較する</a>
 <p style="font-size:.74rem;color:#888;margin:10px 0 0">料金・対応エリア・入会条件・成婚率の定義は相談所ごとに異なります。詳細は公式サイトでご確認ください</p>
 </div>
@@ -271,130 +271,12 @@ function show(a,btn){
 </div></footer>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>
-(function(){
-"use strict";
-// 金額はすべて万円。出典: /articles/kekkon-okane-data/（編集部調べ・2026年8月時点）
-var DATA={
-  engageRing:[30,40], marriageRing:[20,30],
-  ceremony:{ general:{base:[300,370],ref:60}, small:{base:[100,180],ref:30}, photo:[10,25], none:[0,0] },
-  perGuest:2.5,
-  kaoawase:{ meal:[5,10], yuino:[15,25], none:[0,0] },
-  honeymoon:{ yes:[40,60], no:[0,0] },
-  moving:{ near:[30,40], mid:[40,50], far:[50,60], none:[0,0] },
-  furniture:{ min:[30,40], std:[40,55], high:[55,70] }
-};
-function $(id){return document.getElementById(id);}
-function clampR(r){return [Math.max(0,r[0]),Math.max(0,r[1])];}
-function addR(a,b){return [a[0]+b[0],a[1]+b[1]];}
-function fmtR(r){
-  if(r[0]===0&&r[1]===0)return "0円";
-  if(Math.round(r[0])===Math.round(r[1]))return Math.round(r[0])+"万円";
-  return Math.round(r[0])+"〜"+Math.round(r[1])+"万円";
-}
-function ceremonyRange(style,guests){
-  var c=DATA.ceremony[style];
-  if(Array.isArray(c))return c.slice();
-  var diff=(guests-c.ref)*DATA.perGuest;
-  return clampR([c.base[0]+diff,c.base[1]+diff]);
-}
-function mid(r){return (r[0]+r[1])/2;}
-function calc(){
-  var style=$("style").value;
-  var guests=parseInt($("guests").value,10);
-  if(isNaN(guests)||guests<0)guests=0;
-  if(guests>500)guests=500;
-  $("guests").value=guests;
-  var giftUnit=parseFloat($("giftUnit").value);
-  var hasGuests=(style==="general"||style==="small");
-  var items=[];
-  var cer=ceremonyRange(style,guests);
-  var cerLabel={general:"挙式・披露宴（"+guests+"名）",small:"少人数婚（"+guests+"名）",photo:"フォトウェディング",none:"挙式"}[style];
-  items.push([cerLabel,cer]);
-  if($("engageRing").value==="1")items.push(["婚約指輪",DATA.engageRing]);
-  if($("marriageRing").value==="1")items.push(["結婚指輪（2本）",DATA.marriageRing]);
-  var kao=DATA.kaoawase[$("kaoawase").value];
-  if(kao[1]>0)items.push(["両家顔合わせ・結納",kao]);
-  var hm=DATA.honeymoon[$("honeymoon").value];
-  if(hm[1]>0)items.push(["新婚旅行",hm]);
-  var mv=DATA.moving[$("moving").value];
-  if(mv[1]>0)items.push(["引越し・敷金礼金",mv]);
-  var fn=DATA.furniture[$("furniture").value];
-  items.push(["家具・家電",fn]);
-  var total=[0,0];
-  items.forEach(function(it){ total=addR(total,it[1]); });
-  var gift=hasGuests?guests*giftUnit:0;
-  var self=clampR([total[0]-gift,total[1]-gift]);
-  // 表示
-  $("rTotal").textContent=fmtR(total);
-  $("rGift").textContent=hasGuests?(Math.round(gift*10)/10)+"万円":"0円（披露宴なし）";
-  $("rSelf").innerHTML=(self[0]===self[1]?Math.round(self[0]):Math.round(self[0])+"〜"+Math.round(self[1]))+"<small>万円</small>";
-  var m=mid(self)/12/1;
-  $("rMonthly").textContent=(Math.round(m*10)/10)+"万円";
-  var tb=$("rBreakdown");tb.textContent="";
-  items.forEach(function(it){
-    var tr=document.createElement("tr");
-    var td1=document.createElement("td");td1.textContent=it[0];
-    var td2=document.createElement("td");td2.textContent=fmtR(it[1]);
-    tr.appendChild(td1);tr.appendChild(td2);tb.appendChild(tr);
-  });
-  if(hasGuests){
-    var trg=document.createElement("tr");
-    var g1=document.createElement("td");g1.textContent="ご祝儀見込み（差引）";
-    var g2=document.createElement("td");g2.textContent="−"+(Math.round(gift*10)/10)+"万円";
-    g2.style.color="#2e7d32";g2.style.fontWeight="700";
-    trg.appendChild(g1);trg.appendChild(g2);tb.appendChild(trg);
-  }
-  // 削減候補
-  var cuts=[];
-  if(mid(cer)>0&&(style==="general"||style==="small")){
-    cuts.push(["装花・演出・引出物のグレードを一段下げる",Math.round(mid(cer)*0.12),"挙式費用の1割強が目安"]);
-  }
-  if(style==="general"){
-    var smallCer=ceremonyRange("small",Math.min(guests,30));
-    var diffCer=mid(cer)-mid(smallCer);
-    var giftLoss=hasGuests?(guests-Math.min(guests,30))*giftUnit:0;
-    var net=Math.round(diffCer-giftLoss);
-    if(net>0)cuts.push(["少人数婚（30名）に切り替える",net,"ご祝儀の減少分を差し引いた実質額"]);
-    var photoDiff=Math.round(mid(cer)-mid(DATA.ceremony.photo)-gift);
-    if(photoDiff>0)cuts.push(["フォトウェディングに切り替える",photoDiff,"ご祝儀がなくなる分も織り込み済み"]);
-  }
-  if($("kaoawase").value==="yuino")cuts.push(["結納をやめて食事会のみにする",Math.round(mid(DATA.kaoawase.yuino)-mid(DATA.kaoawase.meal)),""]);
-  if($("furniture").value==="high")cuts.push(["家具・家電を標準グレードにする",Math.round(mid(DATA.furniture.high)-mid(DATA.furniture.std)),""]);
-  if($("furniture").value==="std")cuts.push(["家具・家電を最小限にして順次買い足す",Math.round(mid(DATA.furniture.std)-mid(DATA.furniture.min)),""]);
-  if($("honeymoon").value==="yes")cuts.push(["新婚旅行を後日に回す（費用を一旦外す）",Math.round(mid(DATA.honeymoon.yes)),"行かない選択ではなく時期の分散"]);
-  if($("engageRing").value==="1")cuts.push(["婚約指輪を結婚指輪と兼ねる",Math.round(mid(DATA.engageRing)),"価値観が分かれる項目なので要相談"]);
-  cuts.sort(function(a,b){return b[1]-a[1];});
-  var ul=$("rCuts");ul.textContent="";
-  if(cuts.length===0){
-    var li=document.createElement("li");
-    li.textContent="現在の条件はすでに最小限に近い構成です。";
-    ul.appendChild(li);
-  }else{
-    cuts.slice(0,5).forEach(function(c){
-      var li=document.createElement("li");
-      var span=document.createElement("span");span.className="amt";
-      span.textContent="約−"+c[1]+"万円";
-      li.appendChild(document.createTextNode(c[0]+"："));
-      li.appendChild(span);
-      if(c[2])li.appendChild(document.createTextNode("（"+c[2]+"）"));
-      ul.appendChild(li);
-    });
-  }
-  $("result").classList.add("show");
-}
-$("calcBtn").addEventListener("click",function(){
-  calc();
-  $("result").scrollIntoView({behavior:"smooth",block:"start"});
-});
-["style","guests","giftUnit","engageRing","marriageRing","kaoawase","honeymoon","moving","furniture"].forEach(function(id){
-  $(id).addEventListener("change",function(){
-    if($("result").classList.contains("show"))calc();
-  });
-});
-})();
 onscroll=function(){document.getElementById("top").classList.toggle('show',scrollY>300)};
 </script>
 <script>(function(){['pointerdown','keydown','change'].forEach(function(t){document.addEventListener(t,function(){window.__ui=true},true)})})();</script><script>(function(){var h=location.hostname,ok=(h==='www.noe-match.com'||h==='noe-match.com');try{var m=/[?&]noe_qa=(0|1)/.exec(location.search);if(m)localStorage.setItem('noe_qa',m[1]);if(localStorage.getItem('noe_qa')==='1')ok=false;}catch(e){}var as=document.querySelectorAll('a[id^="aff-"][rel~="sponsored"]');if(!as.length||!('IntersectionObserver' in window))return;var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);var n='affv_'+x.target.getAttribute('data-aff').slice(4).replace(/-/g,'_');(window.__affv=window.__affv||[]).push(n);if(ok){try{gtag('event',n);}catch(e){}}});},{threshold:[0.5]});for(var i=0;i<as.length;i++){var a=as[i],b=a.closest('div,section,aside');if(!b||b.getElementsByTagName('a').length>2)b=a;b.setAttribute('data-aff',a.id);io.observe(b);}})();</script>
+<!-- AFF-VIEW2 -->
+<script>(function(){var h=location.hostname,ok=(h==='www.noe-match.com'||h==='noe-match.com');try{var m=/[?&]noe_qa=(0|1)/.exec(location.search);if(m)localStorage.setItem('noe_qa',m[1]);if(localStorage.getItem('noe_qa')==='1')ok=false;}catch(e){}var MAP={'4B8B4Q+5CWKMY+3RK+2TBJQA':'aff-oisix','4B88SU+EGYEYI+5SFC+BX3J6':'aff-bachelor'};function nm(id){return id.slice(4).replace(/-/g,'_');}function send(n,arr){(window[arr]=window[arr]||[]).push(n);if(ok){try{gtag('event',n);}catch(e){}}}var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);send('affv_'+nm(x.target.getAttribute('data-aff')),'__affv');});},{threshold:[0.5]}):null;function arm(a){if(a.getAttribute('data-affv2'))return;a.setAttribute('data-affv2','1');if(!a.id){var m=/a8mat=([^&]+)/.exec(a.href)||[],k=m[1]||'',id=MAP[k]||('aff-'+((k.split('+')[1]||'x').toLowerCase())),base=id,i=2;while(document.getElementById(id))id=base+'-'+(i++);a.id=id;}var b=a.closest('div,section,aside');if(!b||b.getElementsByTagName('a').length>2)b=a;if(io&&!a.closest('[data-aff]')){b.setAttribute('data-aff',a.id);io.observe(b);}a.addEventListener('click',function(){var n='affc_'+nm(a.id),s=false;try{if(sessionStorage.getItem(n))s=true;else sessionStorage.setItem(n,'1');}catch(e){}if(!s)send(n,'__affc');},true);}function scan(r){var as=(r||document).querySelectorAll('a[rel~="sponsored"]');for(var i=0;i<as.length;i++){if(/(px\.a8\.net|t\.afi-b\.com)/.test(as[i].href))arm(as[i]);}}scan();if('MutationObserver' in window)new MutationObserver(function(){scan();}).observe(document.body,{childList:true,subtree:true});})();</script>
+<!-- /AFF-VIEW2 -->
 </body>
 </html>
 

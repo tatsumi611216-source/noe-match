@@ -50,7 +50,11 @@ def main():
         d = json.load(io.open(os.path.join(ARC, ds + ".json"), encoding="utf-8"))
         n_days += 1
         sessions += d["total"]["sessions"]
-        direct += sum(r["sessions"] for r in d["by_page"] if r.get("channel") == "Direct")
+        # Direct はセッション単位の by_source から引く（2026-10-08 修正）。by_page は
+        # ページ×チャネルの行なので、Direct の重複分だけ引きすぎていた。古いファイルは従来どおり。
+        src = d.get("by_source")
+        direct += sum(r["sessions"] for r in (src if src is not None else d["by_page"])
+                      if r.get("channel") == "Direct")
         if "clicks" not in d:
             missing += 1
             continue

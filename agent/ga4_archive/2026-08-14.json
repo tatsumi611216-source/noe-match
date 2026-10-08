@@ -206,5 +206,129 @@
    "count": 1
   }
  ],
- "clicks_fetched_at": "2026-09-19T09:11:24"
+ "clicks_fetched_at": "2026-09-19T09:11:24",
+ "by_source": [
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 12
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 5
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 3
+  },
+  {
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "channel": "Referral",
+   "source": "adv-console.a8.net",
+   "sessions": 1
+  },
+  {
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 7
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3
+  },
+  {
+   "landing": "/",
+   "channel": "Referral",
+   "source": "noe-hearts.vercel.app",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/garugaru-ki-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/garugaru-check/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/",
+   "channel": "Referral",
+   "source": "adv-console.a8.net",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/compare-price",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kyoto-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/members-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/osaka-guide",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/otaku-konkatsu",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/tapple-seriousness-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:02:29"
 }

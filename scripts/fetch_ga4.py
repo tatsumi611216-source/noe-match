@@ -26,6 +26,7 @@ GSCには一切出ない。GSCだけを見ると「データ記事は表示4.1/�
   python scripts/fetch_ga4.py --stats    取得済みの集計だけ（API未使用）
   python scripts/fetch_ga4.py --report   ページ種別ごとの実績を出す（API未使用）
   python scripts/fetch_ga4.py --backfill-clicks   取得済みの日に clicks キーだけを足す（既存キーは触らない）
+  python scripts/fetch_ga4.py --backfill-session  取得済みの日に by_source / by_landing キーだけを足す
 
 clicks キー（2026-09-19 追加・CEO承認）:
   GA4内蔵の click イベントを pagePath × linkId × linkDomain × linkUrl で日別に保存する。
@@ -39,6 +40,20 @@ aff_views キー（2026-09-27 追加）:
   広告の表示イベント affv_<linkId> を pagePath × eventName で日別に保存する（広告枠が画面に50%入ったら1回）。
   events キーにも同じイベント名の合計は入るが、ページ別はこちら。無い古いファイルは d.get("aff_views", [])。
   表示→クリックの集計は scripts/aff_funnel.py。
+
+by_source / by_landing キー（2026-10-08 追加）:
+  by_page は pagePath（イベント単位）×チャネルなので、複数ページを見たセッションが行の数だけ重複する。
+  「total − by_page の Direct 合計」で Direct を除くと、Direct の重複分だけ引きすぎて
+  Direct除きセッションが過小になる（9/8〜10/5 で 428 と出ていたが、セッション単位では 464。
+  8/11〜9/7 は 166 → 279）。そこでセッション単位の2表を足す:
+    by_source  = sessionDefaultChannelGroup × sessionSource（ページなし。行の合計＝total）
+    by_landing = landingPage × sessionDefaultChannelGroup × sessionSource（入口ページ。1セッション1行）
+  集計は scripts/session_recount.py。無い古いファイルは --backfill-session で足す（既存キーは触らない）。
+
+aff_session_clicks キー（2026-10-08 追加）:
+  affc_<linkIdから aff- を除き - を _ にしたもの> を pagePath × eventName で保存する。広告リンクを押したとき、
+  同じセッションで同じ枠は1回しか送らない（連打・戻って再クリックを数えない）。自社の検品アクセスは送らない。
+  GA4 内蔵の click（clicks キー）は押した回数そのままなので、成果の判定にはこちらを使う。
 
 限界（正直に書く）:
 - GA4は当日ぶんが確定しない。**当日と前日は取りに行かない**（2日前まで）
@@ -119,7 +134,7 @@ def fetch_clicks(client, prop, ds):
     return sorted(out, key=lambda x: (-x["count"], x["path"], x["linkId"]))
 
 
-def fetch_aff_views(client, prop, ds):
+def fetch_aff_views(client, prop, ds, prefix="affv_"):
     """広告の表示イベント（affv_<linkId>・2026-09-27 新設）を ページ×イベント名 で取る。
     送っているのは scripts/aff_only_20260927.py が差し込む AFF-VIEW。集計は scripts/aff_funnel.py。"""
     from google.analytics.data_v1beta.types import (
@@ -132,7 +147,7 @@ def fetch_aff_views(client, prop, ds):
         dimension_filter=FilterExpression(filter=Filter(
             field_name="eventName",
             string_filter=Filter.StringFilter(
-                value="affv_", match_type=Filter.StringFilter.MatchType.BEGINS_WITH))),
+                value=prefix, match_type=Filter.StringFilter.MatchType.BEGINS_WITH))),
         limit=10000)
     out = [{"path": r.dimension_values[0].value, "event": r.dimension_values[1].value,
             "count": int(r.metric_values[0].value)} for r in client.run_report(req).rows]
@@ -163,6 +178,48 @@ def backfill_clicks():
         if clicks:
             print("  %s  click %d件（%d行）" % (d["date"], sum(c["count"] for c in clicks), len(clicks)))
     print("clicks を足した日: %d ／ click 合計 %d件" % (n, tot))
+
+
+def fetch_session_scoped(client, prop, ds):
+    """セッション単位の流入元（by_source）と入口ページ（by_landing）を取る。2026-10-08 追加。"""
+    from google.analytics.data_v1beta.types import (
+        DateRange, Dimension, Metric, RunReportRequest)
+    def run(dims):
+        req = RunReportRequest(
+            property=prop,
+            date_ranges=[DateRange(start_date=ds, end_date=ds)],
+            dimensions=[Dimension(name=x) for x in dims],
+            metrics=[Metric(name="sessions")],
+            limit=100000)
+        return [([d.value for d in r.dimension_values], int(r.metric_values[0].value))
+                for r in client.run_report(req).rows]
+    by_source = [{"channel": v[0], "source": v[1], "sessions": n}
+                 for v, n in run(["sessionDefaultChannelGroup", "sessionSource"])]
+    by_landing = [{"landing": v[0], "channel": v[1], "source": v[2], "sessions": n}
+                  for v, n in run(["landingPage", "sessionDefaultChannelGroup", "sessionSource"])]
+    return (sorted(by_source, key=lambda x: (-x["sessions"], x["channel"], x["source"])),
+            sorted(by_landing, key=lambda x: (-x["sessions"], x["landing"], x["source"])))
+
+
+def backfill_session():
+    """取得済みの日次ファイルに by_source / by_landing キーだけを足す。既存キーは一切書き換えない。"""
+    from google.analytics.data_v1beta import BetaAnalyticsDataClient
+    creds = credentials()
+    prop = resolve_property(creds)
+    client = BetaAnalyticsDataClient(credentials=creds)
+    limit = datetime.date.today() - datetime.timedelta(days=2)
+    n = 0
+    for f in files():
+        d = json.load(io.open(f, encoding="utf-8"))
+        if "by_source" in d or datetime.date.fromisoformat(d["date"]) > limit:
+            continue
+        d["by_source"], d["by_landing"] = fetch_session_scoped(client, prop, d["date"])
+        d["session_fetched_at"] = datetime.datetime.now().isoformat(timespec="seconds")
+        io.open(f, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False, indent=1))
+        n += 1
+        bs = sum(x["sessions"] for x in d["by_source"])
+        print("  %s  by_source 合計 %d（total %d）" % (d["date"], bs, d["total"]["sessions"]))
+    print("by_source / by_landing を足した日: %d" % n)
 
 
 def fetch_day(creds, prop, day):
@@ -218,6 +275,7 @@ def fetch_day(creds, prop, day):
     else:
         total = {"sessions": 0, "users": 0, "views": 0}
 
+    by_source, by_landing = fetch_session_scoped(client, prop, ds)
     return {
         "date": ds, "property": prop,
         "fetched_at": datetime.datetime.now().isoformat(timespec="seconds"),
@@ -231,6 +289,10 @@ def fetch_day(creds, prop, day):
         "events": events,
         "clicks": fetch_clicks(client, prop, ds),
         "aff_views": fetch_aff_views(client, prop, ds),
+        # affc_<id>: 広告のクリックを1セッション1枠1回だけ送る（2026-10-08 新設・scripts/aff_view_20261008.py）
+        "aff_session_clicks": fetch_aff_views(client, prop, ds, prefix="affc_"),
+        "by_source": by_source,
+        "by_landing": by_landing,
     }
 
 
@@ -311,9 +373,12 @@ def main():
     ap.add_argument("--stats", action="store_true")
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--backfill-clicks", action="store_true")
+    ap.add_argument("--backfill-session", action="store_true")
     a = ap.parse_args()
     if a.backfill_clicks:
         return backfill_clicks()
+    if a.backfill_session:
+        return backfill_session()
     if a.stats:
         return stats()
     if a.report:
