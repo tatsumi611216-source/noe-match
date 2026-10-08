@@ -162,7 +162,7 @@
   - H3「心理テストは『期間限定』と『購入すれば常に受けられるもの』に分かれる」を追加（出典: 株式会社with PR TIMES 2023-03-06）
   - FAQ Q3「以前あった心理テストが見つからない。もう受けられない？」を追加（HTML＋FAQPage JSON-LD同期）
   - Q6の運営会社を訂正、最終更新/dateModified 2026-10-08、バイラインの生Markdown修正、sitemap lastmod同期。title/description は変更なし
-  - factory_audit exit 0。公開確認は下記コミット後に実施
+  - factory_audit exit 0。Deploy to Pages（headSha db9ce05）success、本番 www.noe-match.com で追加文言4点の反映を確認
 - 承認待ちの提案: with-guide はCEO裁定待ちの体験談監査（10/8）対象の可能性あり（「斉藤さん」「西田さん」の体験談節・Q2/Q5の一人称）。今回は触れていない
 - observing 中: with 心理テスト — 2026-10-15 / 専業主婦 割合 — 2026-10-05（14日窓待ち） / 新生児 面会 いつから — 2026-10-08（データ待ち）
 - 型の集計（判定済み actions）:
