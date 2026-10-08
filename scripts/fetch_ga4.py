@@ -71,6 +71,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARC = os.path.join(ROOT, "agent", "ga4_archive")
 KEY_PATH = r"C:\Users\tatsu\matching-app\secrets\noe-ga4-key.json"
 PROPERTY_ID = "properties/549779769"   # Noe結婚設計室 noe-match.com（2026-09-01 実機で確認）
+PROD_HOSTS = ("www.noe-match.com", "noe-match.com")   # ローカル検品を除く（2026-10-09）
 SCOPES = ["https://www.googleapis.com/auth/analytics.readonly"]
 DEFAULT_DAYS = 45
 SETUP_HINT = (
@@ -110,6 +111,20 @@ def resolve_property(creds):
     return found[0][1]
 
 
+def _prod(f=None):
+    """本番ホストだけに絞るフィルタ（2026-10-09 追加）。f があれば AND で結ぶ。
+
+    ローカル検品（localhost・127.0.0.1）のイベントが同じプロパティに入っていた。
+    7/1〜10/9で35セッション、9月の tool_result は223件中83件（37%）がローカル由来、
+    10/8の aff_click 6件は全て 127.0.0.1。2026-10-09以降の取得分からこのフィルタが効く。"""
+    from google.analytics.data_v1beta.types import Filter, FilterExpression, FilterExpressionList
+    host = FilterExpression(filter=Filter(field_name="hostName", in_list_filter=Filter.InListFilter(
+        values=list(PROD_HOSTS))))
+    if f is None:
+        return host
+    return FilterExpression(and_group=FilterExpressionList(expressions=[host, f]))
+
+
 def fetch_clicks(client, prop, ds):
     """GA4内蔵 click（外部リンクのクリック）を ページ×linkId×linkDomain×linkUrl で取る。"""
     from google.analytics.data_v1beta.types import (
@@ -120,9 +135,9 @@ def fetch_clicks(client, prop, ds):
         dimensions=[Dimension(name="pagePath"), Dimension(name="linkId"),
                     Dimension(name="linkDomain"), Dimension(name="linkUrl")],
         metrics=[Metric(name="eventCount")],
-        dimension_filter=FilterExpression(filter=Filter(
+        dimension_filter=_prod(FilterExpression(filter=Filter(
             field_name="eventName",
-            string_filter=Filter.StringFilter(value="click"))),
+            string_filter=Filter.StringFilter(value="click")))),
         limit=10000)
     out = []
     for r in client.run_report(req).rows:
@@ -144,10 +159,10 @@ def fetch_aff_views(client, prop, ds, prefix="affv_"):
         date_ranges=[DateRange(start_date=ds, end_date=ds)],
         dimensions=[Dimension(name="pagePath"), Dimension(name="eventName")],
         metrics=[Metric(name="eventCount")],
-        dimension_filter=FilterExpression(filter=Filter(
+        dimension_filter=_prod(FilterExpression(filter=Filter(
             field_name="eventName",
             string_filter=Filter.StringFilter(
-                value=prefix, match_type=Filter.StringFilter.MatchType.BEGINS_WITH))),
+                value=prefix, match_type=Filter.StringFilter.MatchType.BEGINS_WITH)))),
         limit=10000)
     out = [{"path": r.dimension_values[0].value, "event": r.dimension_values[1].value,
             "count": int(r.metric_values[0].value)} for r in client.run_report(req).rows]
@@ -190,6 +205,7 @@ def fetch_session_scoped(client, prop, ds):
             date_ranges=[DateRange(start_date=ds, end_date=ds)],
             dimensions=[Dimension(name=x) for x in dims],
             metrics=[Metric(name="sessions")],
+            dimension_filter=_prod(),
             limit=100000)
         return [([d.value for d in r.dimension_values], int(r.metric_values[0].value))
                 for r in client.run_report(req).rows]
@@ -237,6 +253,7 @@ def fetch_day(creds, prop, day):
                     Dimension(name="sessionSource")],
         metrics=[Metric(name="sessions"), Metric(name="activeUsers"),
                  Metric(name="screenPageViews")],
+        dimension_filter=_prod(),
         limit=100000)
     rows = []
     for r in client.run_report(req).rows:
@@ -254,6 +271,7 @@ def fetch_day(creds, prop, day):
         date_ranges=[DateRange(start_date=ds, end_date=ds)],
         dimensions=[Dimension(name="eventName")],
         metrics=[Metric(name="eventCount")],
+        dimension_filter=_prod(),
         limit=1000)
     events = {r.dimension_values[0].value: int(r.metric_values[0].value)
               for r in client.run_report(ev).rows}
@@ -266,7 +284,8 @@ def fetch_day(creds, prop, day):
         property=prop,
         date_ranges=[DateRange(start_date=ds, end_date=ds)],
         metrics=[Metric(name="sessions"), Metric(name="activeUsers"),
-                 Metric(name="screenPageViews")])
+                 Metric(name="screenPageViews")],
+        dimension_filter=_prod())
     tot_rows = client.run_report(tot_req).rows
     if tot_rows:
         mv = tot_rows[0].metric_values
@@ -277,7 +296,7 @@ def fetch_day(creds, prop, day):
 
     by_source, by_landing = fetch_session_scoped(client, prop, ds)
     return {
-        "date": ds, "property": prop,
+        "date": ds, "property": prop, "hosts": list(PROD_HOSTS),
         "fetched_at": datetime.datetime.now().isoformat(timespec="seconds"),
         "total": total,
         "total_by_page_sum": {
