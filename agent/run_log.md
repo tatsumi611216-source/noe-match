@@ -1168,3 +1168,34 @@ GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCに
 - **40s-men**: "40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略" → "40代男性の婚活アプリ｜いいね数の実態と選び直しの基準"
   - 具体的痛点（いいね数月1〜5件）＋選び直し基準で固有修飾を追加
   - 同上フィールド更新
+
+---
+
+## 2026-10-08 週次実行
+
+### ASPゲート確認
+- asp_results.md last_updated: 2026-08-31 → 38日経過（閾値30日） → **ASPゲート閉鎖**
+- 新規アフィリエイトCTA設置不可。LINE CTAのみ可。
+
+### ツールゲート結果
+- batting_order 3（tools/tomobataraki-wariai）: notes に "GO（月2,880）" 記録あり。アウトバウンド制限のため再実行不可 → **既記録値を採用**
+- batting_order 4, 5: ネットワーク制限によりCHECK → スキップ（BO=3で1記事の上限を消化）
+- batting_order 6（tools/heikin-shokon-nenrei）: notes に「新規実査あり」→ スキップ
+
+### 新規公開
+- **tools/tomobataraki-wariai**（共働き世帯の割合を年別に調べる｜1985〜2025年）
+  - ASPゲート閉鎖のためアフィリエイトCTAなし・LINE CTAのみ
+  - articles/tomobataraki-wariai-data は 10/13 までロック中＝触らない
+  - sitemap.xml・sitemap-all.xml に追加
+  - keyword_queue.json: batting_order 3 → status=done, published=2026-10-08
+
+### silent_scan
+- 表示ゼロ72本 / 計測対象230本
+- **30s-konkatsu**: "30代向け婚活アプリ完全ガイド｜真剣度別おすすめ・選び方" → "30代の婚活アプリ｜Omiai・Pairs・ユーブライドを公表数値で選ぶ【2026年版】"
+- **kosodate-zaitaku-guide**: "子育てと両立できる働き方ガイド｜在宅ワーク化・時短勤務のためのスキルの選び方" → "子育て中に在宅ワークへ転換する方法｜エンジニア・Webデザイン等の学習コストと現実"
+
+### factory_audit
+- 新規FAIL: 0本 / 既知バックログ: 27本
+
+### note下書き
+- agent/note_drafts/tomobataraki-wariai.md（2487字）

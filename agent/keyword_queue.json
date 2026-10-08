@@ -1843,8 +1843,8 @@
         "共働き世帯 割合 2022",
         "共働き世帯 推移"
       ],
-      "status": "pending",
-      "published": null,
+      "status": "done",
+      "published": "2026-10-08",
       "batting_order": 3,
       "notes": "GO（月2,880）／GSC 表示515・平均54位。scripts/build_sengyoshufu.py と同じ正本 scripts/data/setai_kyoudou_sengyou.json から作る（半日）。articles/tomobataraki-wariai-data は 10/13 までロック中＝触らない。広告はOisix",
       "cluster": "統計"
