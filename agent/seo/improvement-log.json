@@ -105,7 +105,7 @@
         {
             "keyword": "site-wide title tighten（32字超・表示20回以上の42ページ）",
             "targetPath": "site-wide",
-            "status": "observing",
+            "status": "active",
             "nextReviewDate": "2026-09-27",
             "actions": [
                 {
@@ -171,13 +171,21 @@
                     "date": "2026-09-27",
                     "result": "一部判定放棄",
                     "note": "CEO決定（2026-09-27）でアフィリ単独の収益化へ切替。次のページは広告を組み替え、ロックも外したため、この施策の判定から除外する（残りのページは従来どおり判定する）: /tools/daredemo-tsuen-jichitai/, /tools/sangokea-ryokin/, /tools/hitorioya-shien-jichitai/, /tools/kosodate-shien-23ku/, /articles/with-seriousness-data/, /articles/with-guide/, /articles/pairs-marriage-data/, /articles/pairs-kaiin-data/, /articles/civil-servant-guide/, /articles/hatsushon-nenmei-data/, /articles/matching-app-ranking/"
+                },
+                {
+                    "date": "2026-10-08",
+                    "window": "2026-09-22〜2026-10-05",
+                    "rankBefore": null,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
                 }
             ]
         },
         {
             "keyword": "internal-link reinforcement（2ページ目の高表示7ページへの内部リンク強化）",
             "targetPath": "site-wide-internal-link",
-            "status": "observing",
+            "status": "active",
             "nextReviewDate": "2026-10-08",
             "actions": [
                 {
@@ -195,13 +203,21 @@
                     "date": "2026-09-27",
                     "result": "一部判定放棄",
                     "note": "CEO決定（2026-09-27）でアフィリ単独の収益化へ切替。次のページは広告を組み替え、ロックも外したため、この施策の判定から除外する（残りのページは従来どおり判定する）: /articles/with-nenreiso-data/, /articles/hatsushon-nenmei-data/, /articles/members-data/"
+                },
+                {
+                    "date": "2026-10-08",
+                    "window": "2026-09-22〜2026-10-05",
+                    "rankBefore": null,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
                 }
             ]
         },
         {
             "keyword": "ガルガル 期 同居",
             "targetPath": "/articles/garugaru-doukyo/",
-            "status": "observing",
+            "status": "active",
             "nextReviewDate": "2026-09-28",
             "actions": [
                 {
@@ -220,6 +236,16 @@
                         "sitemap.xml",
                         "sitemap-all.xml"
                     ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-10-08",
+                    "window": "2026-09-22〜2026-10-05",
+                    "rankBefore": 6.6,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
                 }
             ]
         },
@@ -270,6 +296,32 @@
                     ],
                     "files": [
                         "articles/shinseiji-menkai/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": []
+        },
+        {
+            "keyword": "with 心理テスト",
+            "targetPath": "/articles/with-guide/",
+            "status": "observing",
+            "nextReviewDate": "2026-10-15",
+            "actions": [
+                {
+                    "date": "2026-10-08",
+                    "rankAtAction": 10.0,
+                    "window": "2026-09-08〜2026-10-05",
+                    "needs": "withを使い始めた人・使っている人が、アプリ内の心理テストがどこにあり何種類あるのか、見当たらないテストや有料のテストは何なのか、結果をどう使えば有利かを知りたくて検索している。",
+                    "gap": "上位ページ（kaisuma・ascii等）は心理テストを『期間限定（約2週間で入れ替え）』と『購入で常時受けられるもの』に分けて説明しているが、対象ページは『毎月追加される』とだけ書き、見当たらない・受けられない理由と有料テストの存在に答えていなかった。またQ6の運営会社記述（LINEのグループ傘下）が基本スペック表（エニトグループ）と矛盾していた。",
+                    "done": "H3『心理テストは「期間限定」と「購入すれば常に受けられるもの」に分かれる』を追加（2週間に1回程度の入れ替え・期間終了で参加不可・2023/3開始の購入制（恋愛エニアグラム診断・恋愛SNS診断）・累計2,800万人以上・受ける順番。出典=株式会社with PR TIMES 2023-03-06）。FAQに『以前あった心理テストが見つからない。もう受けられない？』をQ3として追加（HTML＋FAQPage JSON-LD同期・以降繰り下げ）。Q6の運営会社をエニトグループ傘下に訂正。最終更新/dateModifiedを2026-10-08に・バイラインの生Markdown（**著者:**）を<strong>に修正・sitemap lastmod同期。title/descriptionは変更なし。",
+                    "type": [
+                        "content",
+                        "faq"
+                    ],
+                    "files": [
+                        "articles/with-guide/index.html",
                         "sitemap.xml",
                         "sitemap-all.xml"
                     ]
