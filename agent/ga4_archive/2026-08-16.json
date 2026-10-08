@@ -155,5 +155,73 @@
   "views": 53
  },
  "clicks": [],
- "clicks_fetched_at": "2026-09-19T09:11:24"
+ "clicks_fetched_at": "2026-09-19T09:11:24",
+ "by_source": [
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 12
+  },
+  {
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 4
+  },
+  {
+   "landing": "/tools/seikatsuhi-simulator",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 4
+  },
+  {
+   "landing": "/articles/konkatsu-roadmap",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/sengyoshufu-seikatsuhi",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shinseiji-menkai",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/konkatsu-type-shindan",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/rikongo-seikatsuhi",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/saigenbyo-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:02:33"
 }

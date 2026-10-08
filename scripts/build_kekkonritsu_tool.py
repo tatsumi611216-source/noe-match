@@ -129,6 +129,8 @@ def shell():
     style = h[h.find('<link href="https://fonts.googleapis.com'):h.find('<script type="application/ld+json">')]
     header = h[h.find("<body>"):h.find('<div class="breadcrumb"')]
     footer = h[h.rfind("<footer"):]
+    # 結婚資金計算機の計算スクリプトまで流用していた不具合を外す（2026-10-08）
+    footer = __import__("fix_footer_calc_js_20261008").strip_calc(footer)
     return gtag, style, header, footer
 
 

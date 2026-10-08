@@ -251,5 +251,158 @@
   "views": 70
  },
  "clicks": [],
- "clicks_fetched_at": "2026-09-19T09:11:25"
+ "clicks_fetched_at": "2026-09-19T09:11:25",
+ "by_source": [
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 11
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 4
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "channel": "Referral",
+   "source": "adv-console.a8.net",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 4
+  },
+  {
+   "landing": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3
+  },
+  {
+   "landing": "/tools/seikatsuhi-simulator",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "Referral",
+   "source": "adv-console.a8.net",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/appkon-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/compare-20s",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/garugaru-otto-taiou",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/gijikka-ikitakunai",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/matching-app-ranking",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/matching-app-ranking",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/matching-dansei-cost-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/message-strategy",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/success-rate-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/tenshoku-riyu-honne",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/nyuseki-calendar",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/rikongo-seikatsuhi",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:02:35"
 }

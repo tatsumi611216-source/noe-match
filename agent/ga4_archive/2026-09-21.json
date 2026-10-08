@@ -191,5 +191,174 @@
    "linkUrl": "https://note.com/hachimitsu88812",
    "count": 1
   }
- ]
+ ],
+ "by_source": [
+  {
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 9
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 8
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 5
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3
+  },
+  {
+   "channel": "Organic Social",
+   "source": "t.co",
+   "sessions": 2
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/articles/compare-popular",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 9
+  },
+  {
+   "landing": "/tools/kodomo-iryohi-jichitai",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/",
+   "channel": "Organic Social",
+   "source": "t.co",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/byoji-hoiku-ryokin",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/bachelor-date-guide",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/bridal-esthe-guide",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/hatsushon-nenmei-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-okane-data",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/okinawa-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/success-stories",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/tapple-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/tomobataraki-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/tomobataraki-wariai-data",
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/app-kekkonritsu-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/funin-josei-jichitai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sengyoshufu-wariai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:03:28"
 }

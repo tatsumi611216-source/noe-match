@@ -86,5 +86,83 @@
   "user_engagement": 6
  },
  "clicks": [],
- "clicks_fetched_at": "2026-09-19T09:11:38"
+ "clicks_fetched_at": "2026-09-19T09:11:38",
+ "by_source": [
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 3
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3
+  },
+  {
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/articles/members-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/sango-recovery-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/faq-troubleshooting",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/sango-satogaeri",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/time-management",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/with-seriousness-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sangokea-ryokin",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:03:15"
 }

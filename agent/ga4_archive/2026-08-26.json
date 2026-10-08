@@ -153,5 +153,152 @@
   "views": 36
  },
  "clicks": [],
- "clicks_fetched_at": "2026-09-19T09:11:29"
+ "clicks_fetched_at": "2026-09-19T09:11:29",
+ "by_source": [
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 17
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 5
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 3
+  },
+  {
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 3
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/articles/shinkon-koteihi-minaoshi",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 14
+  },
+  {
+   "landing": "/articles/appkon-wariai-data",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 3
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "Organic Search",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/appkon-wariai-data",
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-chokin-mokuhyou",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-okane-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/members-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/sango-biyou-itsukara",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/sengyoshufu-seikatsuhi",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/time-management",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/daredemo-tsuen-jichitai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/kekkon-shikin-keisanki",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/koisaihi-simulator",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/saigenbyo-check",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sango-recovery-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:02:49"
 }

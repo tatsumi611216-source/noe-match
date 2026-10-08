@@ -144,5 +144,50 @@
    "count": 1
   }
  ],
- "clicks_fetched_at": "2026-09-19T09:11:23"
+ "clicks_fetched_at": "2026-09-19T09:11:23",
+ "by_source": [
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 8
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 4
+  },
+  {
+   "landing": "/tools/fugenbyo-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/index.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:02:27"
 }

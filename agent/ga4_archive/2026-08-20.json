@@ -168,5 +168,129 @@
   "views": 20
  },
  "clicks": [],
- "clicks_fetched_at": "2026-09-19T09:11:27"
+ "clicks_fetched_at": "2026-09-19T09:11:27",
+ "by_source": [
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 7
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2
+  },
+  {
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 2
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/articles/kaiin-age-cross-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/age-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/appkon-wariai-data",
+   "channel": "Unassigned",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/bridal-inner-guide",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/ikukyu-fuufu-doji",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/members-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/message-strategy",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/omiai-30s-women-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/photo-tips",
+   "channel": "AI Assistant",
+   "source": "copilot.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/youbride-marrish-hikaku",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ],
+ "session_fetched_at": "2026-10-08T10:02:39"
 }

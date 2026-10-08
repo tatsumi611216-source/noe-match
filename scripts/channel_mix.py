@@ -55,11 +55,16 @@ def main():
     tot = sum(d["total"]["sessions"] for d in data)
     mix = defaultdict(int)
     for d in data:
-        for r in d.get("by_page", []):
+        # by_source（セッション単位・2026-10-08 追加）があればそちらを使う。重複しない。
+        for r in d.get("by_source") or d.get("by_page", []):
             mix[bucket(r["channel"], r.get("source"))] += r["sessions"]
     rows = sum(mix.values())
+    old = sum(1 for d in data if "by_source" not in d)
+    if old:
+        print(f"注意: {old}日は by_source が無く by_page 行で数えた（重複あり）。"
+              "python scripts/fetch_ga4.py --backfill-session で足せる")
     print(f"期間 {data[0]['date']}〜{data[-1]['date']}（{len(data)}日）  total.sessions {tot}")
-    print(f"{'内訳（by_page行の合算・重複あり）':<24} {'行':>5}  {'構成比':>6}")
+    print(f"{'内訳（セッション単位）':<24} {'行':>5}  {'構成比':>6}")
     for k, v in sorted(mix.items(), key=lambda x: -x[1]):
         print(f"  {k:<22} {v:>5}  {100*v/rows:>5.1f}%")
     search = sum(v for k, v in mix.items() if k in ("Google", "Yahoo"))
@@ -73,7 +78,7 @@ def main():
         for d in data:
             dt = datetime.date.fromisoformat(d["date"])
             w = (dt - datetime.timedelta(days=dt.weekday())).isoformat()
-            for r in d.get("by_page", []):
+            for r in d.get("by_source") or d.get("by_page", []):
                 wk[w][bucket(r["channel"], r.get("source"))] += r["sessions"]
         keys = ["Google", "Yahoo", "Bing", "AI（ChatGPT等）", "Direct"]
         print("\n週次（月曜始）")

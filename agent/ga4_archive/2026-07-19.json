@@ -10,5 +10,8 @@
  "by_page": [],
  "events": {},
  "clicks": [],
- "clicks_fetched_at": "2026-09-19T09:11:13"
+ "clicks_fetched_at": "2026-09-19T09:11:13",
+ "by_source": [],
+ "by_landing": [],
+ "session_fetched_at": "2026-10-08T10:01:46"
 }
