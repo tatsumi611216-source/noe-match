@@ -73,7 +73,7 @@ assert len(visit_num) + len(visit_lab) == N
 assert len(visit_yes) + len(visit_no) == N
 assert len(v_cheaper) + len(v_same) + len(v_pricier) == len(both)
 assert visit_med < day_med, "訪問型のほうが安いという本文の前提が崩れている"
-assert len(day_step) == 3 and len(v_pricier) == 3, "本文が件数を名指ししているので要確認"
+assert len(day_step) == 4 and len(v_pricier) == 2, "本文が件数を名指ししているので要確認"
 
 PR_HEAD = "産後ケアを使わない日の負担をどう下げるか"
 PR_BODY = ("産後ケアの回数には上限があります。使える日は限られるので、"
