@@ -188,7 +188,7 @@
 - 実際に行った改善（articles/garugaru-ki-guide/index.html・type=content, faq）:
   - 「ガルガル期とは」節に H3「名前の由来｜『ガルルル』と唸る動物の母親から」を追加（擬音の由来／俗語でSNS・育児掲示板で拡散／初出は未特定と明記／動物行動学の「母性攻撃行動」／産後クライシスとの違い）
   - FAQ Q8「ガルガル期の由来・語源は？」を追加（HTML＋FAQPage JSON-LD 同期）。dateModified と sitemap lastmod を 2026-10-12 に更新。title/description は既に「由来」を含むため変更なし
-  - factory_audit exit 0（初回は sitemap lastmod 不一致で exit 1 → sitemap_sync.py で同期）。キリル文字混入0。公開確認は下記
+  - factory_audit exit 0（初回は sitemap lastmod 不一致で exit 1 → sitemap_sync.py で同期）。キリル文字混入0。Deploy to Pages（headSha d084841）success、本番で追加の見出しとQ8の反映を確認
 - 承認待ちの提案: なし
 - observing 中: 専業主婦 割合 — 2026-10-05（14日窓待ち） / 新生児 面会 いつから — 2026-10-08（14日窓待ち） / with 心理テスト — 2026-10-15 / ガルガル期 由来 — 2026-10-19
 - 型の集計（判定済み actions。今回の新規判定なし）:
