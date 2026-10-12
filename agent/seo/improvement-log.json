@@ -328,6 +328,32 @@
                 }
             ],
             "reviews": []
+        },
+        {
+            "keyword": "ガルガル期 由来",
+            "targetPath": "/articles/garugaru-ki-guide/",
+            "status": "observing",
+            "nextReviewDate": "2026-10-19",
+            "actions": [
+                {
+                    "date": "2026-10-12",
+                    "rankAtAction": 8.2,
+                    "window": "2026-09-11〜2026-10-08",
+                    "needs": "「ガルガル期」という言葉を見聞きした産後の母親やその夫が、名前がどこから来たのか・正式な言葉なのか・いつから使われているのかを知りたい。",
+                    "gap": "上位ページ（キッズライン・アリナミン健康用語集・mamagirl等）は「動物が子を守る威嚇の声」「SNS発のネットスラング」を明示。対象ページは由来が本文中1文のみで、見出し・FAQに由来の答えがなく、俗語としての位置づけ・初出不明・類語（産後クライシス）との違いも無かった。",
+                    "done": "『ガルガル期とは』節にH3「名前の由来｜『ガルルル』と唸る動物の母親から」を追加（擬音の由来・俗語でSNS/育児掲示板で拡散・初出は未特定・動物行動学の母性攻撃行動・産後クライシスとの違い）。FAQにQ8「由来・語源は？」を追加しFAQPage JSON-LDへ同期。dateModifiedとsitemapを2026-10-12に更新。title/metaは既に「由来」を含むため変更なし。",
+                    "type": [
+                        "content",
+                        "faq"
+                    ],
+                    "files": [
+                        "articles/garugaru-ki-guide/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": []
         }
     ],
     "locks": [
