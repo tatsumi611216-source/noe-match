@@ -2,7 +2,7 @@
 """結婚新生活支援（令和8年度の名称は「結婚・妊娠・共育ての相談機会提供・支援プログラム」）の一次データ。
 一都三県の実施自治体・全数。正本。
 
-取得日: 2026年8月31日。各自治体の公式ページからの原文抜粋は agent/research_kekkon/raw_digest.md。
+取得日: 2026年8月31日。再確認: 2026年10月14日（61件の公式ページと4都県の一覧を全件再取得。金額・期間・母集団の変更なし、予算到達による受付終了なし。変わったのは松戸市の受付済み割合のみ）。各自治体の公式ページからの原文抜粋は agent/research_kekkon/raw_digest.md。
 実施自治体の母集団は各都県の公表一覧:
   千葉県 令和8年度地域少子化対策重点推進交付金（30市町村）
   埼玉県 令和8年度地域少子化対策重点推進交付金活用事業（17市町）
@@ -13,7 +13,7 @@
 推測で埋めない。
 """
 
-CHECKED = "2026年8月31日"
+CHECKED = "2026年10月14日"
 
 # 国の基準（令和8年度・こども家庭庁 地域少子化対策重点推進交付金）
 KUNI = {
@@ -29,7 +29,7 @@ M = []
 
 
 def add(**kw):
-    kw.setdefault("checked", "2026-08-31")
+    kw.setdefault("checked", "2026-10-14")
     kw.setdefault("qa_note", "")
     kw.setdefault("age_note", "")
     kw.setdefault("special", "")
@@ -99,7 +99,7 @@ add(pref="千葉県", muni="松戸市", slug="matsudo",
     age_max=39, income_max=5000000, income_note="",
     costs=["取得", "賃借", "リフォーム", "引越"],
     konin=None, apply="令和8年6月1日〜令和9年3月31日（必着）", kouza=True,
-    special="令和8年7月31日時点で予算額の約5パーセントが受付済みと公表",
+    special="令和8年9月30日時点で予算額の約10パーセントが受付済みと公表",
     src="https://www.city.matsudo.chiba.jp/kurashi/sumai/tatemono_jyosei/marriage_new_life.html",
     src_label="結婚新生活住宅支援｜松戸市")
 
@@ -693,9 +693,9 @@ ENDED = [
         "status": "住居費の補助は終了。令和7年4月以降は「おふたりOmeでとう！お祝い金（2.2万円）」と、"
                   "婚姻から5年経過後に住宅を取得している場合の「応援金（10万円＋加算最大50万円）」に移行",
         "note": "東京都の公式ポータル「TOKYOふたりSTORY」からリンクされている旧ページは"
-                "2026年8月31日時点で404になっている",
+                "2026年8月31日・10月14日時点で404になっている",
         "src": "https://www.city.ome.tokyo.jp/soshiki/76/100589.html",
         "src_label": "おふたりOmeでとう！お祝い金&応援金｜青梅市",
-        "checked": "2026-08-31",
+        "checked": "2026-10-14",
     },
 ]
