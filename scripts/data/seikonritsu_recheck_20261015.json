@@ -1,0 +1,302 @@
+{
+ "checked_at": "2026-10-15",
+ "urls": [
+  {
+   "url": "https://www.ibjapan.jp/",
+   "status": "200",
+   "final_url": "https://www.ibjapan.jp/"
+  },
+  {
+   "url": "https://www.ibjapan.jp/information/wp-content/uploads/2026/08/1a604e1ff7f8a6356eab3a204e471408.pdf",
+   "status": "200",
+   "final_url": "https://www.ibjapan.jp/information/wp-content/uploads/2026/08/1a604e1ff7f8a6356eab3a204e471408.pdf"
+  },
+  {
+   "url": "https://www.ibjapan.com/ibj/data/",
+   "status": "200",
+   "final_url": "https://www.ibjapan.com/ibj/data/"
+  },
+  {
+   "url": "https://www.loungemembers.com/result",
+   "status": "200",
+   "final_url": "https://www.loungemembers.com/result"
+  },
+  {
+   "url": "https://www.loungemembers.com/",
+   "status": "200",
+   "final_url": "https://www.loungemembers.com/"
+  },
+  {
+   "url": "https://www.p-a.jp/visitor/method/",
+   "status": "200",
+   "final_url": "https://www.p-a.jp/visitor/method/"
+  },
+  {
+   "url": "https://www.p-a.jp/visitor/method/images/sec01_ph01.png",
+   "status": "200",
+   "final_url": "https://www.p-a.jp/visitor/method/images/sec01_ph01.png"
+  },
+  {
+   "url": "https://www.p-a.jp/introduce/data/",
+   "status": "200",
+   "final_url": "https://www.p-a.jp/introduce/data/"
+  },
+  {
+   "url": "https://www.zwei.com/",
+   "status": "200",
+   "final_url": "https://www.zwei.com/"
+  },
+  {
+   "url": "https://www.zwei.com/service/profile/",
+   "status": "200",
+   "final_url": "https://www.zwei.com/service/profile/"
+  },
+  {
+   "url": "https://www.zwei.com/times/kts417",
+   "status": "200",
+   "final_url": "https://www.zwei.com/times/kts417"
+  },
+  {
+   "url": "https://onet.co.jp/",
+   "status": "200",
+   "final_url": "https://onet.co.jp/"
+  },
+  {
+   "url": "https://onet.co.jp/service/result/",
+   "status": "200",
+   "final_url": "https://onet.co.jp/service/result/"
+  },
+  {
+   "url": "https://www.sunmarie.co.jp/",
+   "status": "200",
+   "final_url": "https://www.sunmarie.co.jp/"
+  },
+  {
+   "url": "https://www.sunmarie.co.jp/profile/",
+   "status": "200",
+   "final_url": "https://www.sunmarie.co.jp/profile/"
+  },
+  {
+   "url": "https://naco-do.com/",
+   "status": "200",
+   "final_url": "https://naco-do.com/"
+  },
+  {
+   "url": "https://naco-do.com/data",
+   "status": "200",
+   "final_url": "https://naco-do.com/data"
+  },
+  {
+   "url": "https://s-marriage.jp/",
+   "status": "200",
+   "final_url": "https://s-marriage.jp/"
+  },
+  {
+   "url": "https://www.recruit.co.jp/newsroom/pressrelease/2024/0701_14464.html",
+   "status": "200",
+   "final_url": "https://www.recruit.co.jp/newsroom/pressrelease/2024/0701_14464.html"
+  },
+  {
+   "url": "https://www.recruit.co.jp/newsroom/pressrelease/2025/1117_145802.html",
+   "status": "200",
+   "final_url": "https://www.recruit.co.jp/newsroom/pressrelease/2025/1117_145802.html"
+  },
+  {
+   "url": "https://www.pairs.lv/",
+   "status": "200",
+   "final_url": "https://www.pairs.lv/"
+  },
+  {
+   "url": "https://with.is/",
+   "status": "200",
+   "final_url": "https://with.is/welcome"
+  },
+  {
+   "url": "https://fb.omiai-jp.com/",
+   "status": "200",
+   "final_url": "https://fb.omiai-jp.com/"
+  },
+  {
+   "url": "https://youbride.jp/",
+   "status": "200",
+   "final_url": "https://youbride.jp/"
+  },
+  {
+   "url": "https://tapple.me/",
+   "status": "200",
+   "final_url": "https://tapple.me/"
+  },
+  {
+   "url": "https://marrish.com/",
+   "status": "200",
+   "final_url": "https://marrish.com/"
+  },
+  {
+   "url": "https://corp.marrish.com/about.html",
+   "status": "200",
+   "final_url": "https://corp.marrish.com/about.html"
+  },
+  {
+   "url": "https://www.ibjapan.jp/information/2026/04/%EF%BC%91-10.html",
+   "status": "200",
+   "final_url": "https://www.ibjapan.jp/information/2026/04/%EF%BC%91-10.html"
+  },
+  {
+   "url": "https://www.zexy-enmusubi.net/",
+   "status": "000",
+   "final_url": "https://www.zexy-enmusubi.net/"
+  },
+  {
+   "url": "https://zexy-enmusubi.net/",
+   "status": "000",
+   "final_url": "https://zexy-enmusubi.net/"
+  },
+  {
+   "url": "https://www.ibjapan.jp/ir/",
+   "status": "200",
+   "final_url": "https://www.ibjapan.jp/ir"
+  },
+  {
+   "url": "https://www.ibjapan.jp/ir/library/",
+   "status": "404",
+   "final_url": "https://www.ibjapan.jp/ir/library/"
+  }
+ ],
+ "companies": [
+  {
+   "key": "ibj",
+   "verdict": "一致",
+   "evidence": "決算説明資料(2026年12月期 第2四半期, 2026/8/14公開)のPDFに 20,970 / 16,398 / (10,054) の記載を再確認。IRページ(/ir/presentation)の最新は同2Q資料で、3Q資料(2026/11頃)は未公開。1Q資料: .../2026/07/ccead8d2dab1b59b56e0157cd77e8920.pdf",
+   "new_src": null
+  },
+  {
+   "key": "ibj_members",
+   "verdict": "一致",
+   "evidence": "「2人に1人以上という高い確率で、婚約まで辿り着いています 1/2 以上 ※2025年1月～12月期間での主要コース実績」",
+   "new_src": null
+  },
+  {
+   "key": "partner_agent",
+   "verdict": "確認不可",
+   "evidence": "21.7%はPNG(sec01_ph01.png 920x192)内でテキストでは確認不可。ページ脚注は「※3 2023年4月～2024年3月の成婚退会者実績」のまま、「※1 年間成婚退会者÷年間平均在籍会員数×100で算出」「※2 株式会社DRC調べ2026年5月」",
+   "new_src": null
+  },
+  {
+   "key": "zwei",
+   "verdict": "一致",
+   "evidence": "「2021年成婚組数1,573組から、2025年成婚組数3,628組へ増加。約2.3倍。」",
+   "new_src": null
+  },
+  {
+   "key": "onet",
+   "verdict": "一致",
+   "evidence": "成婚数/お見合い数「2024年累計」、会員数「2024年12月末時点」、「成婚数No.1のIBJの加盟相談所です」。成婚率の記載は引き続きなし。ただし会員数は12.1万人(トップ)",
+   "new_src": null
+  },
+  {
+   "key": "sunmarie",
+   "verdict": "一致",
+   "evidence": "「1年以内の 成婚率 86.3% ※2023年1月〜2024年12月の成婚退会者実績」(トップ・profileとも)",
+   "new_src": null
+  },
+  {
+   "key": "nacodo",
+   "verdict": "一致",
+   "evidence": "題名「平均6.6ヶ月で成婚、19.1万人からお相手探し」。成婚率の記載なし。「2022年12月時点」の文言は現トップ/dataに見当たらない(トップは「2026年8月14日時点、各社公式サイト掲載情報より」の比較表注記のみ)",
+   "new_src": null
+  },
+  {
+   "key": "smarriage",
+   "verdict": "変更",
+   "evidence": "トップに成婚率を新規掲載: 「1年以内の成婚率 69 % ... 2026年10月時点 「成婚率」はスマリッジで直近1年以内に成婚した会員の方を対象に算出」。8/27時点は「公表なし」",
+   "new_src": null
+  },
+  {
+   "key": "zexy_agent",
+   "verdict": "一致",
+   "evidence": "リリース2024.07.01に「成婚率25%と業界最高水準」の記載あり。算出方法の記載は引き続きなし。サービス自体は2026年3月末終了予定(下記)",
+   "new_src": null
+  },
+  {
+   "key": "zexy_enmusubi",
+   "verdict": "一致",
+   "evidence": "告知: 「『ゼクシィ縁結び』は2026年3月末頃（予定）... 2026年2月末頃：新規会員の受付を終了」。リクルート側の終了告知は健在。サービス自体は終了済みの想定(公式サイトは接続不可)",
+   "new_src": null
+  },
+  {
+   "key": "pairs",
+   "verdict": "一致",
+   "evidence": "「累計登録数2,700万突破！」「ペアーズで交際・結婚した人、累計90万人以上」。成婚率の記載なし",
+   "new_src": null
+  },
+  {
+   "key": "with",
+   "verdict": "一致",
+   "evidence": "画像alt「1日130,000組以上がマッチングしています」(with.is トップ→/welcome へ転送)。成婚率の記載なし。集計期間の記載は引き続き確認できず",
+   "new_src": null
+  },
+  {
+   "key": "omiai",
+   "verdict": "一致",
+   "evidence": "「Omiaiで結婚、お付き合いしたカップル 累計 400,000 人以上 ※...（2024年1月）」",
+   "new_src": null
+  },
+  {
+   "key": "youbride",
+   "verdict": "一致",
+   "evidence": "「累計8万人以上のパートナーが誕生 ※2013年7月〜2026年7月までに...退会された会員様の累計」「毎月約500人」",
+   "new_src": null
+  },
+  {
+   "key": "tapple",
+   "verdict": "一致",
+   "evidence": "「毎月12,000人のカップルが誕生 ...（2025年1月時点）」",
+   "new_src": null
+  },
+  {
+   "key": "marrish",
+   "verdict": "一致",
+   "evidence": "「平均4ヶ月で素敵なカップルができています ※...2022年12月〜2023年11月時点」。corp側は「2025年5月 会員数400万人突破」",
+   "new_src": null
+  }
+ ],
+ "unconfirmed": [
+  {
+   "item": "ゼクシィ縁結び(アプリ)の公表数値と定義",
+   "now": "zexy-enmusubi.net は www有り・無しとも依然接続不可(今回は curl 20秒でタイムアウト、前回は ECONNREFUSED)。リクルートの告知(2025.11.17)では2026年2月末新規受付終了・3月末頃サービス終了予定。サイトの数値は取得できず"
+  },
+  {
+   "item": "ゼクシィ縁結びエージェント25%の算出元",
+   "now": "未解決。2024-07-01リリースに算出方法の記載なし(変化なし)。公式サイトは接続不可"
+  },
+  {
+   "item": "パートナーエージェント /introduce/data/ の成婚率数値",
+   "now": "未解決。ページには年代別構成比などのみで成婚率%は無し(変化なし)"
+  },
+  {
+   "item": "IBJ「数字でIBJチェック!」の年間成婚者数",
+   "now": "取得可。静的HTMLに「2025年に成婚した19,112名のうち、代表的な成婚者像は...」と記載あり(ibjapan.com/ibj/data/)"
+  },
+  {
+   "item": "IBJトップ「30組に1組」の分母年度",
+   "now": "一部変化。現トップに「30組に1組」の文言は見当たらず、脚注は「※IBJ婚の割合：厚生労働省「令和7年（2025年）人口動態統計概数」48万9119組に対する割合 ※入会数：2025年1～12月」。No.1の調査期間は「2026年2月3日～2026年6月26日、2026年6月期」に更新"
+  },
+  {
+   "item": "ツヴァイの成婚率%",
+   "now": "未解決。トップ/profileに成婚率%なし、成婚組数3,628組(2025年)のみ(変化なし)。kts417は「マッチング対象者数11.7万人 ※2026年6月末時点」"
+  },
+  {
+   "item": "サンマリエ86.3%の分母",
+   "now": "未解決。「2023年1月〜2024年12月の成婚退会者実績（成婚退会とは...）」のみ、分母記載なし(変化なし)"
+  },
+  {
+   "item": "with・マリッシュの成婚関連数値",
+   "now": "with: トップ画像altに1日130,000組以上マッチング、成婚数値なし。マリッシュ: 平均4ヶ月(2022年12月〜2023年11月時点)のみ。変化なし"
+  },
+  {
+   "item": "各アプリの現在会員数",
+   "now": "ペアーズ累計登録2,700万(累計)、マリッシュ会員数400万人突破(2025年5月)。現在の在籍会員数は引き続き未公表"
+  }
+ ],
+ "notes": "sources+companies.src+補助URLを curl -sL で取得。IBJ IRの最新は2026年12月期2Q(2026/8/14)。zexy-enmusubi.net は接続不可のまま。"
+}
