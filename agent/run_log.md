@@ -1,5 +1,70 @@
 # Agent Run Log
 
+## 2026-10-15　週次ラン｜新記事なし（ゲートCHECK・ネットワーク閉鎖） / silent_scan寄せ直し2本 + Phase2 CTR最適化1本
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（45日前）→ **30日超 → ASPゲート閉鎖**。
+
+⚠️ 今回の記事生成はCTA計測なしで行われる。新規CTAを設置しない。
+
+### Phase 1 打順チェック・tool_gate
+
+クラウド環境のアウトバウンド制限により Google Suggests・aramakijake・DuckDuckGo へのすべての接続がブロック → 全クエリで **CHECK** を返した。
+
+- batting_order 3: `tools/tomobataraki-wariai` → ゲートCHECK・人の目視待ち
+- batting_order 4: `articles/koukousei-iryohi-data` → ゲートCHECK・人の目視待ち
+- batting_order 5: `articles/sangokea-tokyo-data` → ゲートCHECK・人の目視待ち
+- batting_order 7: `tools/rikonritsu-todofuken` → not_before=2026-10-06 ✓ だがゲートCHECK
+- batting_order 8: `articles/jukunen-rikon-data` → not_before=2026-10-06 ✓ だがゲートCHECK
+- batting_order 9: `articles/funin-josei-katsushika-data` → ゲートCHECK
+
+**→ 新規記事ゼロ。フォールバック（silent_scan 寄せ直し + Phase2 CTR最適化）を実施。**
+
+### Phase 4（フォールバック）silent_scan 寄せ直し 2本
+
+`improvement-log.json` locks[] / observing[] を確認し、対象外であることを確認の上実施。
+
+**① `articles/faq-troubleshooting`（無修飾ヘッドターム・初回リライト）**
+
+| 項目 | 変更前 | 変更後 |
+|------|-------|-------|
+| title/H1 | `マッチングアプリがうまくいかない原因は5つに収束する｜段階別の切り分け方【2026年版】` | `マッチングアプリうまくいかない原因｜30代男性の5パターン分析と返信・デート改善策【2026年版】` |
+| meta description | 一般向け（無修飾） | 30代男性・「返信が来ない」「デートに進まない」の具体症状を明示 |
+| intro | dangling phrase あり | 30代男性角度に寄せ直し・文章修正 |
+| dateModified | 2026-08-23 | 2026-10-15 |
+
+**② `articles/free-vs-paid`（無修飾ヘッドターム・3度目の寄せ直し）**
+
+| 項目 | 変更前 | 変更後 |
+|------|-------|-------|
+| title/H1 | `マッチングアプリの課金タイミング｜30代男性の判断基準と主要5アプリ比較【2026年版】` | `30代男性のマッチングアプリ課金タイミング｜Pairs・with無料の限界と有料切り替え判断【2026年版】` |
+| meta description | 5アプリ羅列 | Pairs・with を明示、「無料の限界」痛点を前面に |
+| intro | 「とりあえず課金も…」書き出し | 「30代男性が…」で角度を冒頭から明示 |
+| dateModified | 2026-09-24 | 2026-10-15 |
+
+`agent/rewrites.json` に記録済み ✓
+
+### Phase 2 CTR最適化 1本
+
+**`tools/kodomo-iryohi-jichitai`**（pos=7.1、ctr=1.5%、imp=204、クエリ：子供 医療費 無料 東京 いつまで）
+
+| 項目 | 変更前 | 変更後 |
+|------|-------|-------|
+| title | `子ども医療費の無料はいつまで？東京は高校3年生の3月31日まで｜23区の所得制限・入院時食事代【2026年10月8日確認】`（長すぎ・SERPで切れる） | `子供の医療費 東京いつまで無料？｜23区・高校3年生3月まで・区別条件確認ツール【2026年10月確認】` |
+| H1 | `子ども医療費の無料はいつまで？｜東京は高校3年生の3月31日まで。…` | `子ども医療費 東京はいつまで無料？｜23区・高校3年生3月31日まで・区別の条件確認` |
+| meta description | 説明文長すぎ（SERP切れ） | 23区全域無料・入院食事代の差・ツール活用を簡潔に |
+| dateModified | 2026-10-08 | 2026-10-15 |
+
+`agent/rewrites.json` に記録済み ✓
+2週間は同一記事を再変更しない（次回変更可能日：2026-10-29〜）
+
+### ASP更新依頼（継続）
+
+⚠️ `agent/asp_results.md` の `last_updated: 2026-08-31`（45日経過）。次回ラン前に人手での更新をお願いします。次回ランでもASPゲート閉鎖となります。
+
+---
+
 ## 2026-10-05　週次ラン｜ツール生成1本（tools/shougai-mikonritsu）
 
 ### Phase 4-0 計測ゲート（ASP）
