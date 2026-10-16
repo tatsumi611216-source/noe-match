@@ -1,0 +1,35 @@
+{
+ "ward": "渋谷区",
+ "fields": [
+  {
+   "cat": "ikusei_teate",
+   "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_teate.html",
+   "status": 200,
+   "final_url": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_teate.html",
+   "verdict": "不一致",
+   "diff": "月額13,500円は一致。障害手当15,500円はsrcページに記載なし(未取得)。所得制限: 正本「通常の育成手当専用の限度額表は見当たらない」→現在は別ページ(https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/kodomo-teate/teate_gendogaku.html)に「児童育成(障害)手当 所得制限限度額（令和8年6月1日現在）」表があり0人3,758,000円/1人4,138,000円/2人4,518,000円/3人4,898,000円/4人5,278,000円/5人5,658,000円（令和8年6月に改定済み。ただし表題は障害手当のみで、通常の育成手当への適用は明記なし）。",
+   "quote": "手当額(月額) 児童1人につき 13,500 円 / 支払時期 原則として、年3回の支払月（2月、6月、10月）。別ページ(更新日2026年8月7日): 児童育成(障害)手当 児童育成（障害）手当所得制限限度額（令和8年6月1日現在） 扶養人数 限度額 0人 3,758,000円 1人 4,138,000円 2人 4,518,000円 3人 4,898,000円 4人 5,278,000円 5人 5,658,000円",
+   "page_updated": "2026年7月1日（所得制限表ページは2026年8月7日）"
+  },
+  {
+   "cat": "iryo_josei",
+   "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_teate.html",
+   "status": 200,
+   "final_url": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_teate.html",
+   "verdict": "一致",
+   "diff": "",
+   "quote": "次のいずれかの状態にある18歳になった直後の3月31日までの児童(中度以上の障害がある場合は20歳未満)を養育している父または母か養育者とその児童に医療費(保険内診療の自己負担分)の一部を助成します。 | 住民税課税世帯（通院） 1割 18,000円 年間上限144,000円 / 住民税課税世帯（入院） 1割 57,600円 多数回該当44,400円 / 住民税非課税世帯（入院・通院） 自己負担なし。別ページ ひとり親医療費助成所得制限限度額（令和7年1月1日現在） 受給者0人2,080,000円 1人2,460,000円 2人2,840,000円 3人3,220,000円 4人3,600,000円 5人3,980,000円 扶養義務者0人2,360,000円 1人2,740,000円 2人3,120,000円 3人3,500,000円 4人3,880,000円 5人4,260,000円",
+   "page_updated": "2026年7月1日（限度額表ページ2026年8月7日）"
+  },
+  {
+   "cat": "jutaku",
+   "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_sumai.html",
+   "status": 200,
+   "final_url": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_sumai.html",
+   "verdict": "一致",
+   "diff": "",
+   "quote": "立ち退きに伴う住み替え家賃補助制度: 取り壊しなどにより立ち退きを求められていて、現在住んでいる民間賃貸住宅などから民間賃貸住宅へ 区内で転居する必要がある、高齢者・障害者・ひとり親世帯に、住み替え後の家賃・転居一時金の一部を補助します。 対象（ひとり親世帯の場合）子どもが18歳未満のひとり親世帯／区内に2年以上居住（住民登録も）している／世帯の総収入額が一定基準額以下／住民税を滞納していない（円建て金額の記載なし）",
+   "page_updated": "2025年5月16日"
+  }
+ ]
+}

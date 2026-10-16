@@ -1,0 +1,35 @@
+{
+ "ward": "荒川区",
+ "fields": [
+  {
+   "cat": "ikusei_teate",
+   "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/ikuseiteate.html",
+   "status": 200,
+   "final_url": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/ikuseiteate.html",
+   "verdict": "一致",
+   "diff": "",
+   "quote": "育成手当:児童1人につき 月額13,500円 / 障害手当:児童1人につき 月額15,500円 / 所得制限（令和8年6月分から改正）0人3,758,000円 1人4,138,000円 2人4,518,000円 3人4,898,000円 4人5,278,000円 5人以上 1人増すごとに380,000円加算",
+   "page_updated": "2026年8月21日"
+  },
+  {
+   "cat": "iryo_josei",
+   "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/iryohijosei.html",
+   "status": 200,
+   "final_url": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/iryohijosei.html",
+   "verdict": "一致",
+   "diff": "正本の「年齢要件の明記なし」は現在ページで明記あり(補足): 18歳になった最初の3月31日まで、中度以上の障がいは20歳未満。数値は一致。",
+   "quote": "課税世帯 定率1割 外来の場合、18,000円／月（年間上限144,000円） 入院の場合、57,600円／月（多数回44,400円） 非課税世帯 自己負担なし / 所得制限限度額 本人 0人2,080,000円 1人2,460,000円 2人2,840,000円 3人3,220,000円 4人3,600,000円 5人3,980,000円、配偶者及び扶養義務者 0人2,360,000円 1人2,740,000円 2人3,120,000円 / 医療証の有効期限は、毎年1月1日から12月31日まで",
+   "page_updated": "2026年1月27日"
+  },
+  {
+   "cat": "jutaku",
+   "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/hitorioyajuutaku.html",
+   "status": 200,
+   "final_url": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/hitorioyajuutaku.html",
+   "verdict": "一致",
+   "diff": "",
+   "quote": "助成額 保証会社に支払った保証料（限度額5万円）/ 緊急連絡先引受契約の契約料（初回保証料と合わせて限度額5万円）/ 2年目以降の更新保証料（限度額5万円）/ 区内に引き続き1年以上居住 / 児童扶養手当受給者又は同等の所得水準。別ページ hitorioyatenkyoshien.html（2026年4月10日）: 補助金の額 上限40万円（多子世帯の場合は上限45万円）/ 区内に引き続き2年以上居住 / 母子・父子自立支援員に事前相談 / 本事業の利用は一度限り",
+   "page_updated": "2026年5月20日（転居支援ページ2026年4月10日）"
+  }
+ ]
+}

@@ -98,7 +98,7 @@ def main(apply_):
             '"""ひとり親家庭支援の一次データ（東京23区）。正本。\n'
             "生成: scripts/merge_hitorioya.py（検算つき）。手で編集しない。\n"
             '取得は agent/research_hitorioya/*.json（区公式ページの原文引用）。"""\n\n'
-            'CHECKED = "2026年8月29日"\n\n'
+            'CHECKED = "2026年10月16日"\n\n'
             "WARDS = " + repr(ok) + "\n")
     io.open(OUT, "w", encoding="utf-8").write(body)
     print("\n書き出し: %s（%d区）" % (OUT, len(ok)))
