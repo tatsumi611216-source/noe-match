@@ -357,24 +357,5 @@ tool_calc・診断系の show/calc（ボタン押下起点）は元から正し�
 - [2026-10-16] **ひとり親支援バンク（48日前）を23区全数再照合したら、児童育成手当の所得制限が都内一斉に引き上げられていた（令和8年6月分から+97,000円・扶養0人3,661,000→3,758,000円）。ただし区ページの更新時期は区ごとにばらばらで、港は8/18・千代田は9/7・中野は8/12規則改正、江東・墨田は10/16時点でまだ旧額表のまま。** 都の制度改定は「全区一斉に値を置き換える」ではなく「区ページごとに原文を見て、更新済みの区だけ直す」でないと、確認日のある表に区公式と食い違う値を載せることになる。同時に世田谷の家賃低廉化補助が令和8年10月から上限4万→5万円。**根拠:** Sonnet 4体の照合JSON（`agent/recheck_hitorioya_1016/`）と、千代田・目黒・世田谷の原文を自分で取得して確認。
 - [2026-10-16] **生成器が公開版より古いハブ（`tools/kosodate-shien-23ku`）は、行置換も文脈つき置換も効かなかった。** 公開版は他バンク（病児など）の確認日が生成器と違うため、変更行の旧行が公開版に1度も現れない（10行中10行MISS）。**埋め込みJSON（`var D=`）を raw_decode で読み、区ごとの `hitorioya` オブジェクトが旧生成と一致する区だけ新生成のオブジェクトで差し替える**と23区とも取り残しなしで入った（文章側の確認日は固定文言の置換）。**根拠:** 10/16の差分移植の実施結果。
 - [2026-10-16] **10/15の tool_result 36件（通常7〜13）は、1セッション（新宿・デスクトップSafari・10時台）が通園ナビで30回結果を出したもの。本番ホストで、自社の検品（Windows/Chrome）ではない。** tool_result はセッション単位の利用者数ではないので、日次の増減は session 数と合わせて見る。10/15の数字: セッション26（前日35）・aff_click 0・line_add_click 0・LINE友だち2（横ばい）。計器は生存（metrics.db 10/16収集・GA4アーカイブ 10/13・GSCアーカイブ 10/12）。**根拠:** GA4 Data API で eventName×hostName×pagePath×hour、同ページの city×device×browser を集計。
-- [2026-10-17] **病児保育バンクの料金を23区全件照合した（変更なし）。ただし正本の CHECKED は動かさなかった。** 病児と不妊が1つの正本（）の1つの  を共有しているため、病児側を確認し終えても、不妊側が旧制度のまま（13区が拡充・見直し中）なので日付を進めると不妊の確認日が嘘になる。**1つの正本に複数のバンクを入れると、片方が古いあいだはもう片方の鮮度も更新できない。** 今回は公開ページに「料金は2026年10月17日に再確認・変更なし」と注記する形にとどめ、 の警告（51日）は不妊の再取得（足立11月・渋谷/台東 令和9年の受付開始後）で解消する。あわせて、**区ページの本文に金額が無く、施設ページにだけ載っている区がある**（杉並：区ページは減免後の0円・1,000円だけで、基本料2,500円は5施設ページのみ）。区ページのテキスト照合だけで「一致」と判定すると取りこぼす。**根拠:** 本日取得の4区PDF（新宿000298682・台東riyouannnaiR8.4.1・豊島20260615175308・板橋 要綱＋r9tebikiallpage p.47）と区HTML19件の金額文字列照合（18件ヒット・杉並のみ0件→施設ページ14378〜14381・17048で確認）。
-- [2026-10-17] **10/16の数字は収集途中（セッション17・fetched 10/17 06:57）のため使わない。確定に近い10/15はセッション29（10/14は35）・aff_click 0・line_add_click 0・LINE友だち2（横ばい）・tool_result 42（10/16の項のとおり1セッションの30回）。** 計器は生存（metrics.db max(date)=10/17・GA4アーカイブ 10/13・GSCアーカイブ 10/12＝アーカイブCIは本日朝8時半以降に発火予定で、通常の遅延）。**根拠:** metrics.db・・completed	success	hitorioya: ひとり親支援バンクを23区再照合（確認日10/16）・児童育成手当の所得制限引き上げ（5区＋目黒）と世田谷の家賃補助…	Factory Audit	main	push	38833528994	11s	2026-10-16T01:08:54Z
-completed	success	hitorioya: ひとり親支援バンクを23区再照合（確認日10/16）・児童育成手当の所得制限引き上げ（5区＋目黒）と世田谷の家賃補助…	Deploy to Pages	main	push	38833528978	33s	2026-10-16T01:08:54Z
-completed	success	sourcing-crawl	sourcing-crawl	main	schedule	38824620518	59s	2026-10-15T23:36:45Z
-completed	success	Daily GA4 Archive	Daily GA4 Archive	main	schedule	38824359137	23s	2026-10-15T23:34:07Z
-completed	success	Daily GSC Archive	Daily GSC Archive	main	schedule	38820638888	15s	2026-10-15T22:58:21Z
-completed	success	seo-rank-watch: 2030年 結婚 良い日 を改善（content・data: 2030年の土日祝の大安17日）	Factory Audit	main	push	38665323276	12s	2026-10-15T01:22:47Z
-completed	success	seo-rank-watch: 2030年 結婚 良い日 を改善（content・data: 2030年の土日祝の大安17日）	Deploy to Pages	main	push	38665323242	33s	2026-10-15T01:22:47Z
-completed	success	sourcing-crawl	sourcing-crawl	main	schedule	38656267215	59s	2026-10-14T23:48:00Z
-completed	success	Daily GA4 Archive	Daily GA4 Archive	main	schedule	38655973212	18s	2026-10-14T23:45:02Z
-completed	success	Daily GSC Archive	Daily GSC Archive	main	schedule	38651919589	20s	2026-10-14T23:05:31Z
-completed	success	sourcing-crawl	sourcing-crawl	main	schedule	38488836257	1m1s	2026-10-14T00:12:37Z
-completed	success	Daily GA4 Archive	Daily GA4 Archive	main	schedule	38488740114	27s	2026-10-14T00:11:38Z
-completed	success	Daily GSC Archive	Daily GSC Archive	main	schedule	38485712942	16s	2026-10-13T23:40:55Z
-completed	success	kekkon: 結婚新生活支援バンク61自治体を全数再確認（確認日10/14・松戸の受付済み割合を更新）	Factory Audit	main	push	38478362354	13s	2026-10-13T22:31:26Z
-completed	success	kekkon: 結婚新生活支援バンク61自治体を全数再確認（確認日10/14・松戸の受付済み割合を更新）	Deploy to Pages	main	push	38478362346	39s	2026-10-13T22:31:26Z
-completed	success	funin: 千代田・中野の令和8年度新制度を取得し r8節・FAQに反映	Factory Audit	main	push	38356009638	11s	2026-10-13T06:18:57Z
-completed	success	funin: 千代田・中野の令和8年度新制度を取得し r8節・FAQに反映	Deploy to Pages	main	push	38356009518	30s	2026-10-13T06:18:57Z
-completed	success	sourcing-crawl	sourcing-crawl	main	schedule	38337114140	1m0s	2026-10-13T02:29:22Z
-completed	success	Daily GA4 Archive	Daily GA4 Archive	main	schedule	38337001993	19s	2026-10-13T02:27:57Z
-completed	success	Daily GSC Archive	Daily GSC Archive	main	schedule	38334464841	17s	2026-10-13T01:55:50Z。
+- [2026-10-17] **病児保育バンクの料金を23区全件照合した（変更なし）。ただし正本の CHECKED は動かさなかった。** 病児と不妊が1つの正本（`_byoji_funin_data.py`）の1つの `CHECKED` を共有しているため、病児側を確認し終えても、不妊側が旧制度のまま（13区が拡充・見直し中）なので日付を進めると不妊の確認日が嘘になる。**1つの正本に複数のバンクを入れると、片方が古いあいだはもう片方の鮮度も更新できない。** 今回は公開ページに「料金は2026年10月17日に再確認・変更なし」と注記する形にとどめ、`bank_freshness.py` の警告（51日）は不妊の再取得（足立11月・渋谷/台東 令和9年の受付開始後）で解消する。あわせて、**区ページの本文に金額が無く、施設ページにだけ載っている区がある**（杉並：区ページは減免後の0円・1,000円だけで、基本料2,500円は5施設ページのみ）。区ページのテキスト照合だけで「一致」と判定すると取りこぼす。**根拠:** 本日取得の4区PDF（新宿000298682・台東riyouannnaiR8.4.1・豊島20260615175308・板橋 要綱＋r9tebikiallpage p.47）と区HTML19件の金額文字列照合（18件ヒット・杉並のみ0件→施設ページ14378〜14381・17048で確認）。
+- [2026-10-17] **10/16の数字は収集途中（セッション17・fetched 10/17 06:57）のため使わない。確定に近い10/15はセッション29（10/14は35）・aff_click 0・line_add_click 0・LINE友だち2（横ばい）・tool_result 42（10/16の項のとおり1セッションの30回）。** 計器は生存（metrics.db max(date)=10/17・GA4アーカイブ 10/13・GSCアーカイブ 10/12＝アーカイブCIは本日朝8時半以降に発火予定で、通常の遅延）。**根拠:** metrics.db・`agent/*_archive`・`gh run list --workflow`。
