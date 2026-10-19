@@ -1942,10 +1942,10 @@
         "育休 取得率",
         "育休 取得率 男性"
       ],
-      "status": "pending",
-      "published": null,
+      "status": "done",
+      "published": "2026-10-20",
       "batting_order": 10,
-      "notes": "GO（月1,280）／GSC 未実測。雇用均等基本調査の新規取得が要る。data_bank.md「新しいバンクを取る条件」を満たしてから。広告はOisix",
+      "notes": "GO（月1,280）／GSC 未実測。雇用均等基本調査の新規取得が要る。data_bank.md「新しいバンクを取る条件」を満たしてから。広告はOisix／2026-10-20 日次戦略で出荷（tool_gate GO・data_gate GO・新バンク条件を確認）。対のデータ記事 articles/ikukyu-shutokuritsu-data も同時公開",
       "cluster": "制度"
     }
   ]

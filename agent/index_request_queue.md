@@ -42,6 +42,13 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
+#### 2026-10-20 新規
+
+```
+https://www.noe-match.com/tools/ikukyu-shutokuritsu/          ← 新規公開（育休取得率ツール）
+https://www.noe-match.com/articles/ikukyu-shutokuritsu-data/  ← 新規公開（育休取得率データ記事）
+```
+
 #### 2026-10-05 新規・修正分
 
 ```
