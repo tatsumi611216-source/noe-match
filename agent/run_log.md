@@ -1168,3 +1168,24 @@ GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCに
 - **40s-men**: "40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略" → "40代男性の婚活アプリ｜いいね数の実態と選び直しの基準"
   - 具体的痛点（いいね数月1〜5件）＋選び直し基準で固有修飾を追加
   - 同上フィールド更新
+
+## 2026-10-19 週次実行
+
+⚠️ ASP成果データが未供給（last_updated: 2026-08-31、49日経過、30日閾値超過）。今回は新CTAなし。
+
+### Step 4–6: ツールゲート（データ記事候補）
+- **BO=3 (tools/tomobataraki-wariai)**: tool_gate.py → CHECK（ネットワーク不通。クラウド実行環境はGoogle Suggest/DDG SERPへの外向き通信を遮断）
+- **BO=4 (articles/koukousei-iryohi-data)**: data_gate.py → CHECK（同上。取得失敗）
+- **BO=5 (articles/sangokea-tokyo-data)**: data_gate.py → CHECK（同上）
+- **BO=6 (tools/heikin-shokon-nenrei)**: スキップ（notes: "新規実査あり"）
+- **BO=7 (tools/rikonritsu-todofuken)**: tool_gate.py → CHECK（ネットワーク不通）
+- AGENT.md「ネットワーク不通などでゲートが動かないときは作らない」に従い新規記事作成なし
+
+### Step 8: silent_scan リライト（2件）
+- **faq-troubleshooting**: "マッチングアプリがうまくいかない原因は5つに収束する｜段階別の切り分け方【2026年版】" → "マッチングアプリうまくいかない｜いいね・返信・デート 段階別の原因チェックと直し方【2026年版】"
+  - 無修飾ヘッドタームに3段階の固有症状（いいね・返信・デート）と手順訴求を付加
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/intro段落 更新
+- **free-vs-paid**: "マッチングアプリの課金タイミング｜30代男性の判断基準と主要5アプリ比較【2026年版】" → "マッチングアプリ男性の無料・有料の機能差｜Pairs・Omiai・with 課金タイミングの判断基準【2026年版】"
+  - 「主要5アプリ」の抽象表記をPairs・Omiai・withの具名固有修飾に切り替え、機能差訴求に寄せた
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/intro段落 更新
+  - breadcrumbの不一致（「課金はいつ始めるべきか…」）も同時に修正
