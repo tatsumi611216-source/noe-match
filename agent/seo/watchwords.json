@@ -120,6 +120,45 @@
    "priority": "low",
    "addedOn": "2026-09-24",
    "ctaYen": 1000
+  },
+  {
+   "keyword": "妻源病 チェック リスト",
+   "targetPath": "/tools/saigenbyo-check/",
+   "priority": "medium",
+   "addedOn": "2026-10-19",
+   "ctaYen": 11329
+  },
+  {
+   "keyword": "ペアーズ 登録者数",
+   "variants": [
+    "ペアーズ 会員数",
+    "pairs 会員数"
+   ],
+   "targetPath": "/articles/pairs-kaiin-data/",
+   "priority": "medium",
+   "addedOn": "2026-10-19",
+   "ctaYen": 6000
+  },
+  {
+   "keyword": "omiai 男女比",
+   "targetPath": "/articles/omiai-danjohi-data/",
+   "priority": "medium",
+   "addedOn": "2026-10-19",
+   "ctaYen": 6000
+  },
+  {
+   "keyword": "練馬区 保育園 点数 ボーダー",
+   "targetPath": "/tools/hoikuen-tensu-nerima/",
+   "priority": "medium",
+   "addedOn": "2026-10-19",
+   "ctaYen": 1000
+  },
+  {
+   "keyword": "マッチングアプリ 選び方 目的別",
+   "targetPath": "/articles/matching-app-ranking/",
+   "priority": "medium",
+   "addedOn": "2026-10-19",
+   "ctaYen": 6000
   }
  ]
 }
