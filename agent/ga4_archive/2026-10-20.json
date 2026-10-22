@@ -1,0 +1,508 @@
+{
+ "date": "2026-10-20",
+ "property": "properties/549779769",
+ "hosts": [
+  "www.noe-match.com",
+  "noe-match.com"
+ ],
+ "fetched_at": "2026-10-22T23:54:42",
+ "total": {
+  "sessions": 37,
+  "users": 33,
+  "views": 39
+ },
+ "total_by_page_sum": {
+  "sessions": 39,
+  "users": 35,
+  "views": 39
+ },
+ "by_page": [
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 4,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/compare-20s/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/compare-20s/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/compare-popular/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/compare-popular/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/futari-kounetsuhi/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/sengyoshufu-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/app-kakin-hikaku/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/appkon-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 3
+  },
+  {
+   "path": "/articles/bachelor-date-guide/",
+   "channel": "Organic Search",
+   "source": "ecosia.org",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/compare-konkatsu/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/daredemo-tsuen-ryokin/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/ikukyu-fuufu-doji/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/ikukyu-fuufu-doji/",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-madeno-kikan-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkonshiki-isho-rental/",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/koninhiyou-guide/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/konyaku-yubiwa-data/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shinseiji-menkai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/youbride-guide/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/kekkon-yarukoto/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/seikonritsu-hikaku/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 39,
+  "session_start": 37,
+  "first_visit": 33,
+  "user_engagement": 29,
+  "click": 2,
+  "scroll": 2,
+  "aff_click": 1,
+  "affv_bachelor": 1,
+  "affv_soudanjo": 1,
+  "file_download": 1,
+  "garugaru_complete": 1,
+  "garugaru_start": 1
+ },
+ "clicks": [
+  {
+   "path": "/articles/compare-konkatsu/",
+   "linkId": "aff-youbride",
+   "linkDomain": "t.afi-b.com",
+   "linkUrl": "https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I",
+   "count": 1
+  },
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "linkId": "",
+   "linkDomain": "gender.go.jp",
+   "linkUrl": "https://www.gender.go.jp/about_danjo/whitepaper/r08/zentai/html/honpen/csv/zuhyo00-05.csv",
+   "count": 1
+  }
+ ],
+ "aff_views": [
+  {
+   "path": "/articles/bachelor-date-guide/",
+   "event": "affv_bachelor",
+   "count": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "event": "affv_soudanjo",
+   "count": 1
+  }
+ ],
+ "aff_session_clicks": [],
+ "by_source": [
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 17
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 7
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 6
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 3
+  },
+  {
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "ecosia.org",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 3
+  },
+  {
+   "landing": "/articles/compare-20s",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/compare-20s",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/compare-popular",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/compare-popular",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/futari-kounetsuhi",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/tomobataraki-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/app-kakin-hikaku",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/bachelor-date-guide",
+   "channel": "Organic Search",
+   "source": "ecosia.org",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/daredemo-tsuen-ryokin",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/ikukyu-fuufu-doji",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/ikukyu-fuufu-doji",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-madeno-kikan-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkonshiki-isho-rental",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/koninhiyou-guide",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/konyaku-yubiwa-data",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/sengyoshufu-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shinseiji-menkai",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shougai-mikonritsu-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shougai-mikonritsu-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/success-rate-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/with-seriousness-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/youbride-guide",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/kekkon-yarukoto",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/nyuseki-calendar",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/seikonritsu-hikaku",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sengyoshufu-wariai",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  }
+ ]
+}
