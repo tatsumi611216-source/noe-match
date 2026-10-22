@@ -1189,3 +1189,24 @@ GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCに
   - 「主要5アプリ」の抽象表記をPairs・Omiai・withの具名固有修飾に切り替え、機能差訴求に寄せた
   - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/intro段落 更新
   - breadcrumbの不一致（「課金はいつ始めるべきか…」）も同時に修正
+
+## 2026-10-22 週次実行
+
+⚠️ ASP成果データが未供給（last_updated: 2026-08-31、52日経過、30日閾値超過）。今回は新CTAなし。
+
+### Step 4–6: ツールゲート（データ記事候補）
+- **BO=3 (tools/tomobataraki-wariai)**: tool_gate.py → CHECK（ネットワーク不通。クラウド実行環境はGoogle Suggest/DDG SERPへの外向き通信を遮断）
+- **BO=4 (articles/koukousei-iryohi-data)**: data_gate.py → CHECK（同上）
+- **BO=5 (articles/sangokea-tokyo-data)**: data_gate.py → CHECK（同上）
+- **BO=6 (tools/heikin-shokon-nenrei)**: スキップ（notes: "新規実査あり"）
+- **BO=7 (tools/rikonritsu-todofuken)**: tool_gate.py → CHECK（ネットワーク不通）
+- AGENT.md「ネットワーク不通などでゲートが動かないときは作らない」に従い新規記事作成なし
+
+### Step 8: silent_scan リライト（2件）
+- **success-stories**: "看護師・会社員がPairs・Omiaiで結婚した体験談｜成婚まで何ヶ月かかったか" → "マッチングアプリ成婚まで期間｜公式未公表・実例9人から見る3〜14ヶ月の幅【2026年版】"
+  - 「公式未公表」と実例9人から見える3〜14ヶ月の幅という固有修飾に切り替え、成婚期間クエリに寄せた
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified（2026-08-23→2026-10-22）/byline/intro段落 更新
+- **compare-20s**: "Tapple vs with vs Pairs 比較｜20代前半が最初に選ぶアプリはどれか【2026年版】" → "Pairs・with・Tapple 20代比較｜20代前半と後半で変わる最適アプリを年齢別に整理【2026年版】"
+  - 前半のみ訴求から前半/後半両対応の年齢別整理に切り替え、年齢段階別アプリ選びクエリに寄せた
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified（2026-10-05→2026-10-22）/byline/intro段落 更新
+  - sitemap.xml・sitemap-all.xml の lastmod を sitemap_sync.py で同期（2件）
