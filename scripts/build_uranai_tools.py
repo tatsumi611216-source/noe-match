@@ -26,7 +26,7 @@ NOTE_C = [
 ]
 NOTE_U18 = '電話占いは有料です（18歳未満は保護者の同意が必要）。'
 PR_HEAD = '【PR】'
-PR_LEAD = '電話占いサービスの広告です。'
+PR_LEAD = '初回登録で3,000円分無料（最大30分）'
 
 TOOLS = {
     'seiza-renai-uranai': {'short': '星座でみる恋愛傾向占い', 'desc': '生年月日から12星座を出し、恋愛の傾向と婚活で生かせるヒントを読む'},
@@ -81,6 +81,7 @@ EXTRA_CSS = """
 .prbox .pr-p{font-size:.86rem;color:var(--ink-soft);margin:0 0 10px;text-align:left}
 .prbox .pr-u18{font-size:.8rem;color:var(--ink-soft);margin:0 0 12px;text-align:left;background:#fff;border-left:3px solid var(--line-strong);padding:8px 12px}
 .prbox .pr-lead{font-size:11.5px;color:var(--sub);margin:0 0 8px;text-align:left}
+.prbox .pr-free{font-size:1.02rem;font-weight:700;color:#7c2e42;margin:0 0 10px;text-align:center}
 .prbox a.pr-btn{display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 30px;text-decoration:none;max-width:100%}
 .prbox a.pr-btn:hover{background:#5c2131}
 .prbox .pr-n{font-size:.74rem;color:#888;margin:10px 0 0}
@@ -139,9 +140,9 @@ def prbox_html(slug, lead):
 <p class="pr-h">{PR_HEAD}</p>
 <p class="pr-p">{esc(lead)}</p>
 
-<p class="pr-lead">{PR_LEAD}</p>
-<a class="pr-btn" id="prLink" href="{COCONALA}" rel="nofollow sponsored noopener" target="_blank">ココナラ電話占いを見る</a>
-<p class="pr-n">1分ごとに料金がかかります。料金と特典の条件は公式サイトで確認してください。</p>
+<p class="pr-free">{PR_LEAD}</p>
+<a class="pr-btn" id="prLink" href="{COCONALA}" rel="nofollow sponsored noopener" target="_blank">ココナラ電話占いを無料で試す</a>
+<p class="pr-n">※無料分は新規登録時の特典です。条件は公式サイトでご確認ください。</p>
 </div>"""
 
 
@@ -409,7 +410,7 @@ def build_seiza():
 <div class="r-block"><h3>相性のよい関わり方</h3><p id="rRelate"></p></div>
 <div class="r-block"><h3>婚活で生かせるヒント</h3><p id="rHint"></p></div>
 <div class="r-block"><h3>エレメントについて</h3><p id="rElem"></p></div>"""
-    pr_lead = '結果を読んで、自分の気持ちを誰かに話して整理したくなったときの選択肢の一つとして、電話で相談できるサービスがあります。利用するかどうかは自由です。'
+    pr_lead = 'あの人の気持ちや恋の行方、プロの占い師に電話で直接聞いてみませんか。'
     data = 'var SIGNS=' + json.dumps([{k: s[k] for k in ('name', 'elem', 'label', 'love', 'relate', 'hint')} | {
         'range': f'{s["start"][0]}月{s["start"][1]}日〜{s["end"][0]}月{s["end"][1]}日'} for s in SIGNS], ensure_ascii=False) + ';\n'
     data += 'var ELEM=' + json.dumps(ELEM_DESC, ensure_ascii=False) + ';'
@@ -497,7 +498,7 @@ def build_suhi():
     bodyr = """<div class="r-block"><h3>結婚観</h3><p id="rView"></p></div>
 <div class="r-block"><h3>パートナーシップの傾向</h3><p id="rPartner"></p></div>
 <div class="r-block"><h3>ふたりで話し合うと良いこと</h3><p id="rTalk"></p></div>"""
-    pr_lead = '結婚観について誰かに話しながら考えを整理したいときの選択肢の一つとして、電話で相談できるサービスがあります。利用するかどうかは自由です。'
+    pr_lead = '結婚のタイミングや相手との未来、プロの占い師に電話で直接みてもらえます。'
     data = 'var NUMS=' + json.dumps({str(k): v for k, v in NUMBERS.items()}, ensure_ascii=False) + ';'
     run = r"""
 $('run').addEventListener('click',function(){
@@ -569,7 +570,7 @@ def build_aisho():
     bodyr = """<div class="r-block"><h3>関係の傾向</h3><p id="rTrend"></p></div>
 <div class="r-block"><h3>すれ違いやすい点</h3><p id="rGap"></p></div>
 <div class="r-block"><h3>話し方のヒント</h3><p id="rTalk"></p></div>"""
-    pr_lead = '二人の関係について、第三者に話しながら気持ちを整理したいときの選択肢の一つとして、電話で相談できるサービスがあります。利用するかどうかは自由です。'
+    pr_lead = '二人の相性、もっと深く知りたくなったら。プロの占い師に電話で直接みてもらえます。'
     data = 'var SIGNS=' + json.dumps([{'name': s['name'], 'elem': s['elem']} for s in SIGNS], ensure_ascii=False) + ';\n'
     data += 'var COMPAT=' + json.dumps({f'{a}-{b}': v for (a, b), v in COMPAT.items()}, ensure_ascii=False) + ';\n'
     data += "var REL={same:'同じエレメント',comp:'補い合うエレメント',diff:'性質の異なるエレメント'};var RHY={same:'数のリズムが近い',diff:'数のリズムが異なる'};"
