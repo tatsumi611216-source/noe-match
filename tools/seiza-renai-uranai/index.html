@@ -322,7 +322,7 @@ function isMinor(dt){
   if(n.getMonth()+1<dt.m||(n.getMonth()+1===dt.m&&n.getDate()<dt.d))age--;
   return age<18;
 }
-function showRes(dt){var box=document.querySelector('.prbox');if(box){var mn=!!dt&&isMinor(dt);box.hidden=mn;box.style.display=mn?'none':'';}
+function showRes(dt,dt2){var box=document.querySelector('.prbox');if(box){var mn=(!!dt&&isMinor(dt))||(!!dt2&&isMinor(dt2));box.hidden=mn;box.style.display=mn?'none':'';}
   $('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});}
 function showErr(){$('err').style.display='block';}
 onscroll=function(){$('top').classList.toggle('show',scrollY>300);};
