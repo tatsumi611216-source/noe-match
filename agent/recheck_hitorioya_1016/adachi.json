@@ -1,0 +1,35 @@
+{
+ "ward": "足立区",
+ "fields": [
+  {
+   "cat": "ikusei_teate",
+   "src": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/hitorioya-ikuse.html",
+   "status": 200,
+   "final_url": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/hitorioya-ikuse.html",
+   "verdict": "一致",
+   "diff": "育成13,500円・所得限度額0人3,758,000円・1人増ごと380,000円加算は一致（4人5,278,000円）。障害手当15,500円は別ページ https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/teate-jidoikusei.html（更新2026年8月1日）で確認し一致。",
+   "quote": "1.手当月額 児童1人につき 13,500円 ／ 所得限度額表 扶養人数 所得制限額 0人 3,758,000円 1人 4,138,000円 2人 4,518,000円 3人 4,898,000円 4人 5,278,000円 ／ （障害ページ）1.手当額 児童1人につき 15,500円",
+   "page_updated": "2026年8月1日"
+  },
+  {
+   "cat": "iryo_josei",
+   "src": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/hitorioya-hitorioya.html",
+   "status": 200,
+   "final_url": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/hitorioya-hitorioya.html",
+   "verdict": "一致",
+   "diff": "全数値一致（令和7年度所得制限 本人0人2,080,000/扶養義務者2,360,000、外来18,000/入院57,600、18歳年度末・障害20歳未満）。補足: 外来年間上限144,000円（8月起算）、特定親族特別控除は令和9年1月適用開始。",
+   "quote": "令和７年度所得制限（令和６年中の所得）※令和８年１月から令和８年１２月分の医療費助成制度に適用 扶養人数 申請者 扶養義務者・配偶者 0人 2,080,000円 2,360,000円 1人 2,460,000円 2,740,000円 2人 2,840,000円 3,120,000円 3人 3,220,000円 3,500,000円 ／ 外来（個人ごと）月額上限18,000円（8月を起算月として）年間上限144,000円 入院（個人ごと）月額上限57,600円 世帯合算 月額上限57,600円 ／ 児童が18歳になった年の年度末まで、規則で定める程度の障がいの状態にある児童は20歳未満",
+   "page_updated": "2026年7月13日"
+  },
+  {
+   "cat": "jutaku",
+   "src": "https://www.city.adachi.tokyo.jp/juutaku/seftynet.html",
+   "status": 200,
+   "final_url": "https://www.city.adachi.tokyo.jp/juutaku/seftynet.html",
+   "verdict": "一致",
+   "diff": "主要値は一致（補助=月額家賃の半額・1,000円未満切捨て・上限5万円、ひとり親は最長10年、児童育成or児童扶養手当受給、区内1年以上居住、配偶者なし、住宅所有者なし）。補足: (a)所得189万6,000円は家族1人の基準で、家族人数別（2人2,276,000/3人2,656,000/4人3,036,000…）。(b)令和8年度の公募は終了、次回時期は未定。(c)補助金の申請者は賃貸人。(d)対象は18歳到達後最初の3月31日までの子と親のみの世帯。",
+   "quote": "補助額 月額家賃の半額（1,000円未満切捨て。※ 上限5万円）／ 足立区内の児童育成手当または児童扶養手当を受給しているひとり親世帯 ／ ひとり親世帯は最長10年間 ／ 令和8年度 公募は終了しました。次回の募集時期等については、本ページにてお知らせいたします。／（PDF https://www.city.adachi.tokyo.jp/documents/62942/202605hojokinnogoannai.pdf）申込者本人が申込日まで足立区に1年以上継続して居住する成年者 ／ 表1 所得基準表 家族人数 所得金額(円) 1人 0～1,896,000 2人 0～2,276,000 3人 0～2,656,000 4人 0～3,036,000 5人 0～3,416,000 6人 0～3,796,000 家族人数が7人以上の世帯は、1人増えるごとに38万円を加算",
+   "page_updated": "2026年9月11日"
+  }
+ ]
+}

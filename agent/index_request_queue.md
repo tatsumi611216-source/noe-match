@@ -42,7 +42,101 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
-（2026-08-19 時点の分はGSC実機で全件「リクエスト済み」を確認し、下の申請済みへ移した）
+#### 2026-10-20 新規
+
+```
+https://www.noe-match.com/tools/ikukyu-shutokuritsu/          ← 新規公開（育休取得率ツール）
+https://www.noe-match.com/articles/ikukyu-shutokuritsu-data/  ← 新規公開（育休取得率データ記事）
+```
+
+#### 2026-10-05 新規・修正分
+
+```
+https://www.noe-match.com/tools/shougai-mikonritsu/      ← 新規公開（生涯未婚率ツール）
+https://www.noe-match.com/articles/compare-20s/          ← 寄せ直し（20代前半タイトルに変更）
+```
+
+#### 2026-09-24 修正分（再申請）
+
+```
+https://www.noe-match.com/tools/soudanjo-simulator/      ← title短縮・#result内にLINE CTA追加
+https://www.noe-match.com/articles/free-vs-paid/         ← 寄せ直し（30代男性向けタイトルに変更）
+```
+
+#### 2026-09-21 修正分（再申請）
+
+```
+https://www.noe-match.com/tools/soudanjo-hiyou-sim/      ← title短縮・#result内にLINE CTA追加
+https://www.noe-match.com/articles/compare-popular/      ← 寄せ直し（30代女性向けタイトルに変更）
+```
+
+#### 最優先（2026-08-29 追加・翌朝の自動タスクはここから取る）
+
+2026-08-29 02:30 の URL Inspection 実測で判明した積み残し。**上から順に処理する。**
+
+```
+[済 8/29] https://www.noe-match.com/tools/sangokea-ryokin/
+[済 8/29] https://www.noe-match.com/policy/editorial.html
+[済 8/29] https://www.noe-match.com/disclaimer.html
+[済 8/29] https://www.noe-match.com/articles/shussan-hiyou-data/
+[済 8/29] https://www.noe-match.com/articles/shussan-ichijikin-data/
+[済 8/29] https://www.noe-match.com/privacy-policy.html
+[済 8/31 登録済] https://www.noe-match.com/articles/uwaki-chousa-kiso/
+```
+
+（uwaki-chousa-kiso は 2026-08-29 の実測で「Crawled - currently not indexed」かつ
+申請記録なしと判明。クロール済み未索引は申請で入る見込みが薄い型だが、枠が余る日に
+低優先で出す。入らなければ品質側の保留として扱い、再申請はしない）
+
+**6本すべて申請成功（2026-08-29 夜・手動実行）。割り当て上限には到達していない。**
+
+**1本目 `/tools/sangokea-ryokin/` が最優先の理由。**
+2026-08-27 公開のデータバンク12本は 8/28 に申請して全て索引済みになったが、
+**このツールだけキューに載せ忘れていた**（上の「データバンク6本」の一覧に無い）。
+実測では `lastCrawlTime: null` ＝ Googleが一度もクロールしていない。
+sitemap には入っており内部リンクも29本（全ツール中最多）、canonical も robots も正常。
+純粋に申請漏れによるクロール待ちで、構造的な問題ではない。
+さらにこのURLは **note予約記事2本（9/11 19:00 産後ケア料金／9/12 07:00 産後ケア日数）の
+着地先**なので、9/11 までに索引に入っていないと送客先が検索から見えない。
+
+**2〜3本目（editorial.html / disclaimer.html）の理由。**
+どちらも `URL is unknown to Google`。編集方針と免責事項は E-E-A-T の土台で、
+本来サイト内で最も早く索引されるべき種類のページ。disclaimer.html は内部リンクが
+255本ありながら未発見で、放置する理由がない。
+
+**4〜5本目**は 2026-08-27 公開のデータ記事だが、上の「データバンク6本」の枠から漏れていた。
+
+なお 2026-08-29 02:35 時点で、上記6本すべて IndexNow へ送信済み（HTTP 200）。
+IndexNow は Bing / Yandex には効くが Google には効かない。当サイトは Copilot 経由の
+流入が実在する（直近30日10セッション・滞在128秒）ため、Bing 側の索引にも意味がある。
+
+
+#### 2026-08-27 公開のデータバンク6本（器具＋記事・最優先）
+
+ツールとデータ記事は1本あたりの流入が通常記事の5倍前後（ツール1.41／データ記事1.28／通常0.24
+セッション/月）。9月中旬の初動判定に間に合わせたいので、既存バックログより先に申請する。
+
+```
+[済 8/28 登録済] https://www.noe-match.com/tools/seikonritsu-hikaku/
+[済 8/28] https://www.noe-match.com/articles/seikonritsu-data/
+[済 8/28] https://www.noe-match.com/tools/soudanjo-hiyou-sim/
+[済 8/28] https://www.noe-match.com/articles/soudanjo-hiyou-data/
+[済 8/28] https://www.noe-match.com/tools/app-kakin-hikaku/
+[済 8/28] https://www.noe-match.com/articles/app-ryokin-data/
+[済 8/28 登録済] https://www.noe-match.com/tools/byoji-hoiku-ryokin/
+[済 8/28] https://www.noe-match.com/articles/byoji-hoiku-data/
+[済 8/28] https://www.noe-match.com/tools/kodomo-iryohi-jichitai/
+[済 8/28] https://www.noe-match.com/articles/kodomo-iryohi-data/
+[済 8/28] https://www.noe-match.com/tools/funin-josei-jichitai/
+[済 8/28] https://www.noe-match.com/articles/funin-josei-data/
+```
+
+並び順は流入と単価が重なる婚活クラスタ（成婚率→費用→アプリ料金）を先に、
+自治体クラスタ（病児保育→子ども医療費→不妊助成）を後に置いている。
+1日の割り当てが約11件なので、初日で婚活6本＋自治体5本、翌日に残り1本が入る想定。
+
+- [済 8/25] /articles/tapple-nenreiso-data/　（2026-08-24 公開）
+- [済 8/25] /articles/pairs-nenreiso-data/　（2026-08-24 公開）
 
 ```
 https://www.noe-match.com/articles/denwa-uranai-konkatsu/
@@ -64,6 +158,68 @@ https://www.noe-match.com/articles/seiza-renai-keiko/
 （tanjobi-renai-keiko / ohitsujiza-renai-keiko / kekkon-jiki-uranai-seinengappi / fuufu-aishou-uranai / birthday-aishou-renai は 2026-10-26 作成・C-003 の SEO記事 #6〜#10。**公開（CEO 承認後）してから申請する**）
 （denwa-uranai-konkatsu と占い診断3本 seiza-renai-uranai / suhi-kekkon-uranai / aisho-uranai は 2026-10-26 作成・C-003。**公開（CEO 承認後）してから申請する**）
 （konkatsu-soudan-saki / pocchari-konkatsu は 2026-08-09 公開。zexy-enmusubi-data / pairs-kaiin-data は 2026-08-10 公開。omiai-danjohi-data / with-nenreiso-data は 2026-08-17 公開。Day バックログとは別枠で申請してよい）
+
+### 2026-08-26 判定分（GSC照合キューの実質未申請 37本）
+
+`affiliate-index-verify-20260826` の判定結果。正本は `agent/gsc_verify_queue.md`「判定結果（2026-08-26）」。**上から順に1日10件（上限が出るまで）。**
+Googleが一度も認識していない（未認識）ものを先頭に置いた。
+
+**Day A（10本）**
+
+```
+[済 8/27] https://www.noe-match.com/articles/compare-price/                    ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/matching-josei-cost-data/         ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/myseed-kuchikomi/                 ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/pairs-guide/                      ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/tapple-guide/                     ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/tapple-vs-pairs/                  ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/tomobataraki-shokuji-data/        ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/with-guide/                       ← Googleがこのページを認識していない
+[済 8/27] https://www.noe-match.com/articles/free-vs-paid/                     ← クロール済み・インデックス未登録
+[済 8/27] https://www.noe-match.com/articles/konkatsu-roadmap/                 ← クロール済み・インデックス未登録
+```
+
+**Day B（10本）**
+
+```
+[済 8/27] https://www.noe-match.com/articles/dousei-kaisho/                    ← 検出済み・未クロール
+[済 8/28] https://www.noe-match.com/articles/dousei-kekkon-hikaku/             ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/first-date-guide/                 ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/fraud-statistics/                 ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/hatsushon-nenmei-data/            ← 検出済み・未クロール
+[済 8/29 登録済] https://www.noe-match.com/articles/kaiin-age-cross-data/             ← 検出済み・未クロール
+[済 8/29 登録済] https://www.noe-match.com/articles/kinsen-kachikan-check/            ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/koninhiyou-guide/                 ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/konkatsu-party-guide/             ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/late-20s-strategy/                ← 検出済み・未クロール
+```
+
+**Day C（10本）**
+
+```
+[済 8/29] https://www.noe-match.com/articles/line-exchange/                    ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/members-data/                     ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/nashikon-data/                    ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/pairs-men/                        ← 検出済み・未クロール
+[済 8/29] https://www.noe-match.com/articles/pairs-women/                      ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/price-comparison/                 ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/privacy-protection/               ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/profile-text/                     ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/renkatsu-vs-konkatsu/             ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/shinkyo-kagu-yosan/               ← 検出済み・未クロール
+```
+
+**Day D（7本）**
+
+```
+[済 8/30] https://www.noe-match.com/articles/usuge-konkatsu-eikyou/            ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/with-vs-pairs/                    ← 検出済み・未クロール
+[済 8/30] https://www.noe-match.com/articles/garugaru-ki-itsumade/             ← Googleがこのページを認識していない
+[済 8/30 登録済] https://www.noe-match.com/articles/garugaru-otto-genkai/             ← 検出済み・未クロール
+[済 8/30 登録済] https://www.noe-match.com/articles/garugaru-sangoutsu-chigai/        ← 検出済み・未クロール
+[済 8/30 登録済] https://www.noe-match.com/articles/sango-iraira/                     ← 検出済み・未クロール
+[済 8/30 登録済] https://www.noe-match.com/articles/shinseiji-menkai/                 ← 検出済み・未クロール
+```
 
 ### 申請済み
 
@@ -202,12 +358,724 @@ pet-konkatsu / shinkon-osechi / shizuoka-niigata-guide / success-stories
 ## 2026-08-23 に申請する（8/22は割り当て上限で持ち越し）
 
 ```
-https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/   ← 寄せ直し済み・対照群解除・最優先
-https://www.noe-match.com/articles/kekkon-houkoku-nengajou/   ← 寄せ直し済み（季節物・10月まで）
-https://www.noe-match.com/articles/propose-guide/             ← 寄せ直し済み
-https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し済み
-https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み
-https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識
-https://www.noe-match.com/articles/success-stories/           ← 未認識
+[済 8/24] https://www.noe-match.com/articles/nurse-konkatsu-soudanjo/   ← 寄せ直し済み・対照群解除・最優先  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/kekkon-houkoku-nengajou/   ← 寄せ直し済み（季節物・10月まで）  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/propose-guide/             ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/kyoto-guide/               ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/success-rate-data/         ← 寄せ直し済み  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/shizuoka-niigata-guide/    ← 未認識  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/success-stories/           ← 未認識  ← 持ち越し（8/23 割り当て上限）
+[済 8/23] https://www.noe-match.com/tools/app-kekkonritsu-data/          ← 新規ツール（8/22公開・E核）  ← [済 8/23]
+https://www.noe-match.com/articles/kekkon-madeno-kikan-data/   ← 8/22公的統計へ差し替え（10.4位・再クロール優先）  ← [済 8/23]
+https://www.noe-match.com/articles/soudanjo-hikaku/            ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/over50-guide/               ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/articles/agency-vs-app/              ← 8/22型A改稿  ← 持ち越し（8/23 割り当て上限）
+[済 8/24] https://www.noe-match.com/tools/kekkon-shikin-keisanki/        ← J核・表示ゼロ。8/23に公表値更新＋ハナユメ結果連動
+[済 8/30 登録済] https://www.noe-match.com/articles/kekkon-okane-data/          ← 8/23公表値へ更新
+[済 8/29] https://www.noe-match.com/articles/nashikon-data/              ← 8/23公表値へ更新
+[済 8/30 登録済] https://www.noe-match.com/articles/shikijo-erabi-guide/        ← 8/23型A全面改稿（ハナユメ受け皿・78位）
+[済 8/30 登録済] https://www.noe-match.com/articles/gosyugi-shiharai-houhou/    ← 8/23寄せ直し＋4,000字
+[済 8/30 登録済] https://www.noe-match.com/articles/shinkon-ryokou-credit/      ← 8/23寄せ直し＋4,000字
+[済 8/30 登録済] https://www.noe-match.com/articles/age-data/                   ← 8/23型A再構成（48表示・Dの主力）
+[済 8/30 登録済] https://www.noe-match.com/articles/youbride-guide/             ← 8/23料金改定反映＋4,000字
+[済 8/30 登録済] https://www.noe-match.com/articles/marrish-guide/              ← 8/23公表状況＋4,000字
+[済 8/30 登録済] https://www.noe-match.com/articles/omiai-guide/                ← 8/23料金・統計を公式値に（15.5位）
+[済 8/30 登録済] https://www.noe-match.com/articles/compare-popular/            ← 8/23抜け殻節を型Aに
 ```
 ※寄せ直した5本は既にインデックス済みだが、タイトル変更の再クロールを早める目的で申請する。
+
+### 2026-08-23 実行結果（自動タスク）
+
+割り当て上限に到達したため **2件成功・11件持ち越し** で打ち切り。
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /tools/app-kekkonritsu-data/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/kekkon-madeno-kikan-data/ | ✅ 優先クロールキューに追加 |
+| 3 | /articles/nurse-konkatsu-soudanjo/ | ❌「割り当て量を超えています」→ここで打ち切り |
+| 4〜13 | 残り10本 | 未実行（持ち越し） |
+
+3本目でダイアログ「1日の割り当て量を超えたため、リクエストを処理できませんでした」。
+8/22 は11件目で上限だったので、**8/22 夜の申請分が24時間窓にまだ残っている**状態。
+再試行・アカウント切替は行っていない。
+
+※この節の残り9本（kekkon-shikin-keisanki / kekkon-okane-data / nashikon-data /
+shikijo-erabi-guide / gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data /
+youbride-guide / marrish-guide）は 8/23 の自動タスクの割り当て対象外。改稿後に別途申請する。
+
+## Fクラスタ（集客装置）の未登録分（2026-08-23起票・8/24以降に1日上限まで）
+
+```
+[済 8/25] https://www.noe-match.com/articles/women-strategy/
+[済 8/25] https://www.noe-match.com/articles/with-women/
+[済 8/25] https://www.noe-match.com/articles/sakuhin-kachikan/
+[済 8/25] https://www.noe-match.com/articles/safety-guide/
+[済 8/30] https://www.noe-match.com/articles/profile-text/
+[済 8/30] https://www.noe-match.com/articles/privacy-protection/
+[済 8/30] https://www.noe-match.com/articles/photo-tips/
+[済 8/29] https://www.noe-match.com/articles/pairs-women/
+[済 8/29] https://www.noe-match.com/articles/pairs-men/
+[済 8/29] https://www.noe-match.com/articles/line-exchange/
+[済 8/29] https://www.noe-match.com/articles/fraud-statistics/
+[済 8/29] https://www.noe-match.com/articles/first-date-guide/
+[済 8/30 登録済] https://www.noe-match.com/articles/anti-fraud/
+```
+※ 8/22までに申請済みのものは「リクエスト済み」表示でスキップされる。Fは26本中16本が未登録で、クリック0の主因。
+
+## 新規ツール（2026-08-23公開）
+
+```
+[済 8/24] https://www.noe-match.com/tools/sango-recovery-check/
+```
+
+## ツール改名分（2026-08-23・再クロール優先）
+
+```
+[済 8/24] https://www.noe-match.com/tools/kekkon-shikin-keisanki/
+[済 8/24] https://www.noe-match.com/tools/koisaihi-simulator/
+[済 8/24] https://www.noe-match.com/tools/seikatsuhi-simulator/
+[済 8/24] https://www.noe-match.com/tools/rikongo-seikatsuhi/
+[済 8/25] https://www.noe-match.com/tools/soudanjo-simulator/
+[済 8/25] https://www.noe-match.com/tools/kekkon-yarukoto/
+```
+※「計算機／シミュレーター」という検索されない機能名から、検索される言い方（自己負担 平均／デート代 平均／二人暮らし 生活費／養育費 いくら／結婚相談所 成婚料／結婚 準備 リスト）へタイトル・h1・descriptionを改名。本体は無変更。
+
+## 2026-08-23 申請実績
+
+- [済 8/23] /tools/seikatsuhi-simulator/（8/22時点で未認識だったため最優先。成功）
+- [済 8/23] /tools/app-kekkonritsu-data/（窓の回復後に1件通過）
+- 3件目（kekkon-madeno-kikan-data）で再び上限。**以降は毎朝8:00の定期タスク `affiliate-gsc-request-20260823` が台帳の未申請を上限まで自動処理する**（8/23 CEO承認で一回限り→毎日に変更）
+
+
+## 産後周辺記事（8/23生成・未申請）
+- [済 8/24] /articles/sango-nukege-itsu-modoru/
+- [済 8/25] /articles/sango-fukeru-taisaku/
+- [済 8/25] /articles/sango-taikei-itsu-modoru/
+- [済 8/25] /tools/hoikuen-tensu-nerima/（8/24新設・練馬区保育園点数ツール）
+
+## 2026-08-24 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**14件成功・15件目で割り当て上限に到達し打ち切り。** 8/22の11件・8/23の2件を上回り、本タスク開始以来の最多。
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /articles/nurse-konkatsu-soudanjo/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/kekkon-houkoku-nengajou/ | ✅ |
+| 3 | /articles/propose-guide/ | ✅ |
+| 4 | /articles/kyoto-guide/ | ✅ |
+| 5 | /articles/success-rate-data/ | ✅ |
+| 6 | /articles/shizuoka-niigata-guide/ | ✅ |
+| 7 | /articles/success-stories/ | ✅ |
+| 8 | /articles/over50-guide/ | ✅ |
+| 9 | /articles/agency-vs-app/ | ✅ |
+| 10 | /tools/sango-recovery-check/ | ✅ |
+| 11 | /tools/kekkon-shikin-keisanki/ | ✅ |
+| 12 | /tools/koisaihi-simulator/ | ✅ |
+| 13 | /tools/seikatsuhi-simulator/ | ✅ |
+| 14 | /tools/rikongo-seikatsuhi/ | ✅ |
+| 15 | /tools/soudanjo-simulator/ | ❌「割り当て量を超えています」→ここで打ち切り |
+
+再試行・アカウント切替は行っていない。`soudanjo-hikaku` は note対照群の残り4本に含まれるため
+台帳ルールどおりスキップした（`nurse-konkatsu-soudanjo` のみ解除済み）。
+
+### 残り（8/25以降）
+
+- ツール改名分：/tools/soudanjo-simulator/ ・ /tools/kekkon-yarukoto/
+- Fクラスタ13本：women-strategy / with-women / sakuhin-kachikan / safety-guide / profile-text /
+  privacy-protection / photo-tips / pairs-women / pairs-men / line-exchange / fraud-statistics /
+  first-date-guide / anti-fraud
+- 産後周辺4本：sango-nukege-itsu-modoru / sango-fukeru-taisaku / sango-taikei-itsu-modoru /
+  tools/hoikuen-tensu-nerima
+- 改稿待ちで対象外のまま：kekkon-okane-data / nashikon-data / shikijo-erabi-guide /
+  gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide /
+  omiai-guide / compare-popular
+
+### 実測メモ：1日の上限は11件固定ではない
+
+8/22は11件目、8/23は3件目で上限だったが、本日は**14件通った**。
+「1日◯件」ではなく24時間移動窓での回復とする 8/22 の見立てを支持する。
+台帳冒頭の「1日10本まで」は下限の目安であって、実際は**上限が出るまで回すのが正しい**。
+
+
+※8/24 手動申請1件で割り当て上限（「割り当て量を超えています」表示）。残る3件（sango-fukeru-taisaku／sango-taikei-itsu-modoru／hoikuen-tensu-nerima）は8/25朝8:00の定期タスクで申請する。
+
+### 2026-08-25 追加分（申請待ち）
+
+- [済 8/25] /tools/daredemo-tsuen-jichitai/（新規公開・最優先）
+- [済 8/25] /tools/hoikuen-tensu-nerima/（8/24時点で「検出-インデックス未登録」）
+- /tools/sango-recovery-check/（8/24時点で「URL は Google に認識されていません」）
+
+## 2026-08-25 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**12件成功・13件目で割り当て上限に到達し打ち切り。**
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /tools/daredemo-tsuen-jichitai/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/tapple-nenreiso-data/ | ✅ |
+| 3 | /articles/pairs-nenreiso-data/ | ✅ |
+| 4 | /tools/soudanjo-simulator/ | ✅ |
+| 5 | /tools/kekkon-yarukoto/ | ✅ |
+| 6 | /articles/sango-fukeru-taisaku/ | ✅（1回目は送信エラー・再実行で成功） |
+| 7 | /articles/sango-taikei-itsu-modoru/ | ✅ |
+| 8 | /tools/hoikuen-tensu-nerima/ | ✅（1回目は送信エラー・再実行で成功） |
+| 9 | /articles/women-strategy/ | ✅ |
+| 10 | /articles/with-women/ | ✅ |
+| 11 | /articles/sakuhin-kachikan/ | ✅ |
+| 12 | /articles/safety-guide/ | ✅ |
+| 13 | /articles/profile-text/ | ❌「割り当て量を超えています」→ここで打ち切り |
+
+再試行・アカウント切替は行っていない（送信エラー2件のみ、同一URLを1回だけ再実行）。
+
+### 実測メモ：送信エラーは割り当て上限とは別物
+
+2件で「インデックス登録リクエストの送信中に問題が発生しました。しばらくしてから
+もう一度お試しください」が出たが、いずれも**同じURLを1回やり直しただけで成功**した。
+「割り当て量を超えています」とは別の一過性エラーなので、打ち切り条件に含めない。
+
+### 残り（8/26以降）
+
+- Fクラスタ9本：profile-text / privacy-protection / photo-tips / pairs-women / pairs-men /
+  line-exchange / fraud-statistics / first-date-guide / anti-fraud
+- 改稿待ちで対象外のまま：kekkon-okane-data / nashikon-data / shikijo-erabi-guide /
+  gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide /
+  omiai-guide / compare-popular
+- note対照群の残り4本（kaden / soudanjo-hikaku / tantei / yachin）は台帳ルールどおり申請しない
+
+### 2026-08-25 申請実施（Chrome MCP経由・4本すべて「インデックス登録をリクエスト済み」を確認）
+
+| URL | 申請時点の状態 |
+|---|---|
+| /tools/daredemo-tsuen-jichitai/ | すでに登録済み → 内容を6区→43自治体に大幅更新したため再リクエスト |
+| /articles/daredemo-tsuen-ryokin/ | 未登録（URLがGoogleに認識されていない）→ 新規リクエスト |
+| /tools/hoikuen-tensu-nerima/ | 8/24は「検出-未登録」だったが**登録済みに変化**していた → 再リクエスト |
+| /tools/sango-recovery-check/ | 8/24は「Google未認識」だったが**登録済みに変化**していた → 再リクエスト |
+
+**手順のメモ**: GSCの `inspect?resource_id=...&id=<URL>` 形式のディープリンクは404になる。
+上部の検索バーに入力してEnterする経路しかない。モーダルが開いている状態でEnterを押すと
+「公開URLをテスト」が走ってしまうので、必ずサマリー画面に戻してから検索バーに入れ直す。
+リクエストボタンは `find` でrefを取ってrefクリックするのが確実（座標クリックは効かないことがある）。
+
+## 2026-08-27 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**11件成功、12件目で割り当て上限に到達し打ち切り。** 処理順は台帳の「2026-08-26 判定分」Day A → Day B。
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /articles/compare-price/ | ✅ 優先クロール キューに追加 |
+| 2 | /articles/matching-josei-cost-data/ | ✅ |
+| 3 | /articles/myseed-kuchikomi/ | ✅ |
+| 4 | /articles/pairs-guide/ | ✅ |
+| 5 | /articles/tapple-guide/ | ✅ |
+| 6 | /articles/tapple-vs-pairs/ | ✅ |
+| 7 | /articles/tomobataraki-shokuji-data/ | ✅ |
+| 8 | /articles/with-guide/ | ✅ |
+| 9 | /articles/free-vs-paid/ | ✅ |
+| 10 | /articles/konkatsu-roadmap/ | ✅ |
+| 11 | /articles/dousei-kaisho/ | ✅ |
+| 12 | /articles/dousei-kekkon-hikaku/ | ❌「割り当て量を超えています」→ここで打ち切り |
+
+Day A（10本）は全件通過。再試行・アカウント切替は行っていない（送信エラーは0件）。
+
+### 残り（8/28以降）
+
+- 2026-08-26 判定分の残26本：Day B の9本（dousei-kekkon-hikaku / first-date-guide / fraud-statistics /
+  hatsushon-nenmei-data / kaiin-age-cross-data / kinsen-kachikan-check / koninhiyou-guide /
+  konkatsu-party-guide / late-20s-strategy）と Day C（10本）・Day D（7本）
+- Fクラスタ9本：profile-text / privacy-protection / photo-tips / pairs-women / pairs-men /
+  line-exchange / fraud-statistics / first-date-guide / anti-fraud
+  ※うち profile-text / privacy-protection / pairs-women / pairs-men / line-exchange は Day C、
+  fraud-statistics / first-date-guide は Day B と重複する。Day 順で処理すればFも埋まる
+- 改稿待ちで対象外のまま：kekkon-okane-data / nashikon-data / shikijo-erabi-guide /
+  gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide /
+  omiai-guide / compare-popular
+- note対照群の残り4本（kaden / soudanjo-hikaku / tantei / yachin）は台帳ルールどおり申請しない
+
+### 実測メモ：上限は11件（8/22と同じ）
+
+8/24は14件、8/25は12件、8/23は2件、8/27は11件。
+24時間移動窓での回復という見立てと矛盾しない。上限が出るまで回す運用を維持する。
+
+
+## 2026-08-27 の状態確認（URL Inspection API で実測）
+
+サイトマップとGSCプロパティの登録状態を、画面ではなくAPIで確認した。
+
+| 項目 | 実測 |
+|---|---|
+| プロパティ `https://www.noe-match.com/` | 登録済み・権限は siteOwner |
+| `/sitemap-all.xml` | エラー0・警告0。最終読込 2026-08-26 23:01 UTC・送信URL 224 |
+| `/sitemap.xml` | エラー0・警告0。最終読込 2026-08-26 15:01 UTC・送信URL 218 |
+| `/sitemap.xm`（綴り間違い） | **エラー1・isPending=True のまま**（2026-07-26送信・以降ずっと失敗） |
+| 本日公開の12URL | **12本すべて「URL が Google に認識されていません」＝未クロール** |
+
+sitemapの `indexed` は API が常に0を返す項目なので、インデックス数の判断には使えない。
+判断には URL Inspection API の `coverageState` を使うこと。
+
+公開当日に未クロールなのは異常ではない。Googleの最終読込（8/26 23:01 UTC）が
+本日の公開より前だったため、まだ拾われていないだけ。両サイトマップを再送信済み
+（PUT → HTTP 204）なので、次のクロールで240件が見える。
+
+**GoogleのIndexing APIは JobPosting と BroadcastEvent 専用で、通常ページには使えない。**
+早めるには GSC のインデックス登録リクエストしかなく、これは毎朝8時の
+`affiliate-gsc-request-20260823` が台帳の上から順に消化する。
+
+### `/sitemap.xm` の登録は削除した（2026-08-27・CEO承認）
+
+2026-08-22から判断待ちだった綴り間違いの登録を、CEO承認のうえ削除した。
+
+削除の前に、消す対象が本当にその登録であることを機械的に確かめている。
+- path が `https://www.noe-match.com/sitemap.xm` と完全一致すること
+- `lastDownloaded` が None＝**一度も取得できていない**こと
+- `errors` が1件以上あること
+この3つが揃わなければ削除しない作りにした（DELETE は取り消せないため）。
+
+結果: DELETE → HTTP 204。登録は3件から2件になり、**サイトマップのエラー合計は0**。
+残ったのは `/sitemap.xml`（送信218）と `/sitemap-all.xml`（送信224）で、どちらもエラー0・警告0。
+
+なお削除したのはGSC側の「登録」だけで、サイト側には元から `sitemap.xm` という
+ファイルは存在しない（だから7/26以来ずっと取得に失敗していた）。失うものは無い。
+
+## 2026-08-28 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**11件成功・2件は既にインデックス登録済みのためスキップ・12本目で割り当て上限に到達し打ち切り（残り未申請 33本）。**
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /tools/seikonritsu-hikaku/ | ⏭️ 既に「URL は Google に登録されています」＝申請不要でスキップ |
+| 2 | /articles/seikonritsu-data/ | ✅ 優先クロールキューに追加 |
+| 3 | /tools/soudanjo-hiyou-sim/ | ✅ |
+| 4 | /articles/soudanjo-hiyou-data/ | ✅ |
+| 5 | /tools/app-kakin-hikaku/ | ✅ |
+| 6 | /articles/app-ryokin-data/ | ✅ |
+| 7 | /tools/byoji-hoiku-ryokin/ | ⏭️ 既にインデックス登録済み＝スキップ |
+| 8 | /articles/byoji-hoiku-data/ | ✅ |
+| 9 | /tools/kodomo-iryohi-jichitai/ | ✅ |
+| 10 | /articles/kodomo-iryohi-data/ | ✅ |
+| 11 | /tools/funin-josei-jichitai/ | ✅ |
+| 12 | /articles/funin-josei-data/ | ✅ |
+| 13 | /articles/dousei-kekkon-hikaku/ | ✅ |
+| 14 | /articles/first-date-guide/ | ❌「1日の割り当て量を超えたため、リクエストを処理できませんでした」→ここで打ち切り |
+
+再試行・アカウント切替は行っていない。次回は Day B の `/articles/first-date-guide/` から再開する。
+
+### 手順から外した判断（2026-08-28・自動タスク側の裁量）
+
+台帳の手順は「リクエスト済みでなければ押す」だが、**既に「URL は Google に登録されています」と
+出ているページには押さなかった**。1日の割り当ては約11件しかなく、未登録が33本残っている状況で
+登録済みページに1枠使うのは目的に反するため。該当2本は `[済 8/28 登録済]` として印を付けてある。
+
+### 実装上の罠（次回のために記録）
+
+申請成功のスナックバー「インデックス登録をリクエスト済み／URL を優先クロール キューに追加しました」は
+**次のURLを検査しても画面に残る**。本文に「リクエスト済み」が含まれるかだけで判定すると、
+次のURLを「申請済み」と誤判定して飛ばしてしまう（実際に `/tools/soudanjo-hiyou-sim/` で1回誤検知した）。
+検査の前後に「表示しない」を押してスナックバーを消してから判定すること。
+
+### 8/27 に未クロールだった12本の翌日の状態
+
+8/27 の実測では公開当日の12本すべてが「Google に認識されていません」だったが、
+8/28 時点で **2本（seikonritsu-hikaku / byoji-hoiku-ryokin）がインデックス登録済み**に変わっていた。
+サイトマップ再送信（8/27・PUT 204）が効いている。残り10本は「検出 - インデックス未登録」で、本日申請済み。
+
+## 2026-08-29 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**11件成功・2件は既にインデックス登録済みのためスキップ・12本目で割り当て上限に到達し打ち切り（残り未申請 22本）。**
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /articles/first-date-guide/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/fraud-statistics/ | ✅ |
+| 3 | /articles/hatsushon-nenmei-data/ | ✅ |
+| 4 | /articles/kaiin-age-cross-data/ | ⏭️ 既に「URL は Google に登録されています」＝申請不要でスキップ |
+| 5 | /articles/kinsen-kachikan-check/ | ⏭️ 既にインデックス登録済み＝スキップ |
+| 6 | /articles/koninhiyou-guide/ | ✅ |
+| 7 | /articles/konkatsu-party-guide/ | ✅ |
+| 8 | /articles/late-20s-strategy/ | ✅ |
+| 9 | /articles/line-exchange/ | ✅ |
+| 10 | /articles/members-data/ | ✅ |
+| 11 | /articles/nashikon-data/ | ✅ |
+| 12 | /articles/pairs-men/ | ✅ |
+| 13 | /articles/pairs-women/ | ✅ |
+| 14 | /articles/price-comparison/ | ❌「1日の割り当て量を超えたため、リクエストを処理できませんでした」→ここで打ち切り |
+
+再試行・アカウント切替は行っていない。**次回は Day C の `/articles/price-comparison/` から再開する。**
+
+Day B は完了。Fクラスタ節に重複していた5本（first-date-guide / fraud-statistics /
+line-exchange / pairs-men / pairs-women）にも同じ印を付けた。
+nashikon-data は「2026-08-23 に申請する」節にも重複していたので同様に印を付けてある。
+
+### 残り（8/30以降）
+
+- Day C 残り5本：price-comparison / privacy-protection / profile-text / renkatsu-vs-konkatsu / shinkyo-kagu-yosan
+- Day D 7本：usuge-konkatsu-eikyou / with-vs-pairs / garugaru-ki-itsumade / garugaru-otto-genkai / garugaru-sangoutsu-chigai / sango-iraira / shinseiji-menkai
+- 8/23節の改稿分 9本：kekkon-okane-data / shikijo-erabi-guide / gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide / omiai-guide / compare-popular
+- Fクラスタ残り 4本：profile-text / privacy-protection / photo-tips / anti-fraud（Day C と重複するものあり）
+- soudanjo-hikaku は対照群のため申請しない（nurse-konkatsu-soudanjo のみ解除済み）
+
+### 実測メモ：上限は11件（8/22・8/28と同じ）
+
+3日連続で「11件成功 → 12件目で割り当て超過」。上限到達までのスキップ（登録済み2本）は
+割り当てを消費していない。8/28 に記録したスナックバー誤検知の罠は、各URL検査の前に
+「表示しない」を押す手順で回避できている（今回は誤検知ゼロ）。
+
+### 8/28 に申請した10本の翌日の状態
+
+未確認（本タスクでは検査していない）。
+
+## 2026-08-29 夜 追加実行（手動・最優先6本）
+
+**6件すべて成功。割り当て上限には到達しなかった（残り本数の上限余力は未確認）。**
+同日朝8:19の自動タスクが11件で上限に達していたが、約11時間後に窓が回復していた。
+
+| # | URL | 申請前の状態 | 結果 |
+|---|-----|------|------|
+| 1 | /tools/sangokea-ryokin/ | 検出 - インデックス未登録 | ✅ 優先クロールキューに追加 |
+| 2 | /policy/editorial.html | URL が Google に認識されていません | ✅ |
+| 3 | /disclaimer.html | 検出 - インデックス未登録 | ✅ |
+| 4 | /articles/shussan-hiyou-data/ | 検出 - インデックス未登録 | ✅ |
+| 5 | /articles/shussan-ichijikin-data/ | 検出 - インデックス未登録 | ✅ |
+| 6 | /privacy-policy.html | 検出 - インデックス未登録 | ✅ |
+
+再試行・再申請・アカウント切替は行っていない。送信エラーは0件。
+**「最優先（2026-08-29 追加）」節は消化完了。** 残りの未申請は下記のとおり（21本）。
+
+#### 最優先（2026-08-31 追加・当日公開分）
+
+- [済 8/31] https://www.noe-match.com/articles/shussan-iryohi-koujo/ （出産費用×医療費控除データ記事・8/31公開）
+- [済 8/31] https://www.noe-match.com/tools/kekkon-shinseikatsu-jichitai/ （結婚新生活支援 一都三県ナビ・8/31公開）
+- [済 8/31] https://www.noe-match.com/articles/kekkon-shinseikatsu-data/ （結婚新生活支援データ記事・8/31公開）
+
+#### 最優先（2026-08-30 追加）
+
+- [済 8/30] https://www.noe-match.com/tools/hitorioya-shien-jichitai/ （ひとり親支援 東京23区ナビ・8/30公開）
+- [済 8/30] https://www.noe-match.com/articles/hitorioya-shien-data/ （ひとり親支援データ記事・8/30公開）
+
+#### 最優先（2026-09-06 追加・API全数取り直し×GSC表示で絞った再申請リスト）
+
+9/6に `index_check.py --refresh`（254URL）を回し、**APIが未索引と返した27本のうち、GSC表示が28日でゼロのもの**だけを残した
+（表示が1でも出ているページは実際には索引済み。APIは shussan-hiyou-data / shussan-ichijikin-data を「未認識」と返したが、
+画面検査では「登録されています」だった。**APIの未索引判定は画面より遅れる。表示ゼロと突き合わせてから申請する**）。
+いずれも 8/29〜9/1 に申請済みで、5〜8日経ってもまだ入っていない**再申請**。
+
+- [済 9/7] https://www.noe-match.com/articles/daredemo-tsuen-yoyaku/   ← 9/6 画面で「検出 - 未登録」確認。再リクエストは送信エラー2回（一過性・要再試行）。9/7 未登録確認・再リクエスト成功
+- [登録済 9/7・申請不要] https://www.noe-match.com/articles/garugaru-ki-itsumade/
+- [済 9/7] https://www.noe-match.com/articles/ikukyu-kyufukin-data/
+- [登録済 9/7・申請不要] https://www.noe-match.com/articles/konkatsu-party-guide/
+- [登録済 9/7・申請不要] https://www.noe-match.com/articles/sangokea-higaeri/
+- [登録済 9/7・申請不要] https://www.noe-match.com/articles/youikuhi-kousei-shosho/
+- [登録済 9/7・申請不要] https://www.noe-match.com/tools/ikukyu-encho-hantei/
+- [登録済 9/7・申請不要] https://www.noe-match.com/policy/editorial.html （優先度低・サイト共通ページ）
+
+申請の見込みが薄い型（申請しない）: free-vs-paid（クロール済み未索引・表示0）。
+
+9/6 実測メモ: Search Console の画面が終日不安定だった（検査の1回目が「エラーが発生しました」、リクエスト送信が
+「送信中に問題が発生しました」×2、スクリーンショットのレンダラ停止）。台帳8/25の「1回やり直せば通る」が今回は通らず、
+**画面での申請は打ち切って翌朝の自動タスクへ引き継ぐ**。
+
+#### 最優先（2026-09-01 追加・実測で作り直した未申請リスト）
+
+**9/1 追加分（当日公開の3本）はすべて申請済み:**
+- [済 9/1] https://www.noe-match.com/articles/kekkon-hojokin-tokyo/
+- [済 9/1] https://www.noe-match.com/articles/kekkon-hojokin-reigai/
+- [済 9/1] https://www.noe-match.com/articles/youikuhi-kousei-shosho/
+
+（9/1の申請は計12本。Googleの上限に当たらずすべて「優先クロールキューに追加しました」を確認）
+
+
+**台帳の「残り21本」は古かった。** 9/1に URL Inspection API（251URL全数）と突き合わせたところ、
+21本のうち多くは既にインデックス済みで、**未インデックスかつ未申請は13本**だった。
+以後、この節は台帳の記憶ではなく `agent/index_status.json` との突き合わせで作る。
+
+251URLの被覆状態（2026-09-01実測）: Submitted and indexed 220 ／ Discovered - currently not indexed 20 ／
+Crawled - currently not indexed 6 ／ URL is unknown to Google 5。
+
+- [済 9/1] https://www.noe-match.com/articles/sangokea-higaeri/        ← Googleが認識していない
+- [済 9/1] https://www.noe-match.com/articles/daredemo-tsuen-yoyaku/   ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/ikukyu-kyufukin-data/    ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/omiai-danjohi-data/      ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/pairs-kaiin-data/        ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/tokyo-futari-seikatsuhi/          ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/tomobataraki-wariai-data/         ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/articles/zexy-enmusubi-data/               ← 検出済み・未クロール
+- [済 9/1] https://www.noe-match.com/tools/ikukyu-encho-hantei/          ← 検出済み・未クロール
+
+**申請の見込みが薄い型（後回し）** — クロール済み未索引の4本。申請では入りにくいので、
+中身か狙う語を直すほうが先:
+35s-strategy ／ 40s-guide ／ app-plus-agency ／ omiai-vs-pairs
+
+**IndexNow（Bing/Yandex）には13本すべて送信済み（9/1・HTTP 200）。**
+
+### 残り（8/30以降・21本 ※2026-09-01に上の実測へ置き換え）
+
+- Day C 残り5本：price-comparison / privacy-protection / profile-text / renkatsu-vs-konkatsu / shinkyo-kagu-yosan
+- Day D 7本：usuge-konkatsu-eikyou / with-vs-pairs / garugaru-ki-itsumade / garugaru-otto-genkai / garugaru-sangoutsu-chigai / sango-iraira / shinseiji-menkai
+- 8/23節の改稿分 9本：kekkon-okane-data / shikijo-erabi-guide / gosyugi-shiharai-houhou / shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide / omiai-guide / compare-popular
+- Fクラスタ残り：photo-tips / anti-fraud（他はDay Cと重複）
+- soudanjo-hikaku は対照群のため申請しない
+
+### 実測メモ：割り当ての回復は「翌朝」を待たなくてよい
+
+朝8:19に11件で上限 → **同日19時台に6件がすべて通った**。1日固定ではなく24時間移動窓という
+8/22の見立てを再度支持する。**朝の自動タスクで打ち切った分は、その日の夜に手動で拾える。**
+
+### 実測メモ：検索バーの操作で踏んだ罠（次回のために記録）
+
+1. **結果画面のままEnterを押すと「公開URLをテスト」が走る**（台帳8/25の記録どおり再現）。
+   1〜2分かかるうえ申請にならないので、キャンセルして**必ずサマリー画面に戻してから**入力し直す。
+   確実な手順は「サマリーへnavigate → find で検索バーのref取得 → クリック → 入力 → Enter」。
+2. **find で取ったrefは1回目のクリックで効かないことがある**（画面再描画でrefが陳腐化する）。
+   入力後に**スクリーンショットで文字が入ったことを確認してからEnter**を押すと空振りしない。
+   座標クリック（520,22）は効かなかった。refクリックが正。
+
+## タイトル差し替え8本の再クロール待ち（2026-08-29 夜・CTR是正）
+
+4〜10位でクリック0だった8本の title / description を差し替えた（コミット参照）。
+IndexNow送信済み。GSCの申請枠は明朝の自動タスクを優先し、この8本は
+**再申請しない**（既に索引済みのページはクロールで自然に更新される。
+再申請は枠の無駄）。9/12ごろに「表示が同水準でクリックが出たか」で効果を判定する。
+
+対象: with-seriousness-data / with-nenreiso-data / pairs-marriage-data /
+kekkon-madeno-kikan-data / success-rate-data / mens-make-konkatsu /
+hoikuen-tensu-nerima / kekkon-okane-data
+
+## 2026-08-30 実行結果（自動タスク）
+
+**8件成功・9件目「割り当て量を超えています」で打ち切り（残 17件）。**
+
+| # | URL | 結果 |
+|---|-----|------|
+| 1 | /articles/price-comparison/ | ✅ 優先クロールキューに追加 |
+| 2 | /articles/privacy-protection/ | ✅ 優先クロールキューに追加 |
+| 3 | /articles/profile-text/ | ✅ 優先クロールキューに追加 |
+| 4 | /articles/renkatsu-vs-konkatsu/ | ✅ 優先クロールキューに追加 |
+| 5 | /articles/shinkyo-kagu-yosan/ | ✅ 優先クロールキューに追加 |
+| 6 | /articles/usuge-konkatsu-eikyou/ | ✅ 優先クロールキューに追加 |
+| 7 | /articles/with-vs-pairs/ | ✅ 優先クロールキューに追加 |
+| 8 | /articles/garugaru-ki-itsumade/ | ✅ 優先クロールキューに追加 |
+| 9 | /articles/garugaru-otto-genkai/ | ❌「割り当て量を超えています」→ここで打ち切り |
+
+これで Day C（10本）は完了。Day D は 8本中1本のみ消化。
+8/29夜の手動6本が24時間窓に残っていたため、8件で上限に当たったと見られる。
+再試行・アカウント切替は行っていない。
+
+**残り17件（次回はここから上から順に）**
+
+- Day D 残り4本：garugaru-otto-genkai / garugaru-sangoutsu-chigai / sango-iraira / shinseiji-menkai
+- 8/23節の改稿分 10本：kekkon-okane-data / shikijo-erabi-guide / gosyugi-shiharai-houhou /
+  shinkon-ryokou-credit / age-data / youbride-guide / marrish-guide / omiai-guide / compare-popular
+  ＋ kekkon-madeno-kikan-data（行末に「[済 8/23]」の記録あり・行頭マーク未付与。次回スキップ可否は要確認）
+- Fクラスタ残り2本：photo-tips / anti-fraud
+- 最優先枠の低優先1本：uwaki-chousa-kiso（クロール済み未索引・枠が余る日のみ）
+- soudanjo-hikaku は対照群のため申請しない
+
+※ 8/22・8/29の実測どおり割り当ては24時間移動窓で回復するため、
+本日分の残りは夜に手動で拾える見込み。
+
+## 2026-08-30 実行結果（第2便・Chrome MCP手動バッチ）
+
+**リクエスト6件成功・登録済みスキップ17件・割り当て上限には未到達。「残り（8/30以降・21本）」節は消化完了。**
+
+⚠️ **重複申請の注意**：本バッチ開始時点の台帳には「2026-08-30 実行結果（自動タスク）」節が
+まだ書き込まれておらず、朝の自動タスクが同じリスト先頭8件を消化済みであることを検知できなかった。
+URL検査の結果画面には「同日中に申請済み」であることが表示されないため、下記のうち
+privacy-protection / profile-text / renkatsu-vs-konkatsu / with-vs-pairs / garugaru-ki-itsumade の
+5件は**朝の自動タスク分と重複申請**になっている（Googleの仕様上、複数回送信は順位に影響しないが
+枠を二重消費した）。実質の新規申請は photo-tips の1件のみ。
+
+| # | URL | 検査結果 | 処理 |
+|---|-----|------|------|
+| 1 | /articles/price-comparison/ | URL は Google に登録されています | ⏭️ スキップ（朝の申請が同日中に索引化） |
+| 2 | /articles/privacy-protection/ | 検出 - インデックス未登録 | ✅ リクエスト成功（朝と重複） |
+| 3 | /articles/profile-text/ | 検出 - インデックス未登録 | ✅ リクエスト成功（朝と重複） |
+| 4 | /articles/renkatsu-vs-konkatsu/ | クロール済み - インデックス未登録 | ✅ リクエスト成功（朝と重複） |
+| 5 | /articles/shinkyo-kagu-yosan/ | 登録されています | ⏭️ スキップ |
+| 6 | /articles/usuge-konkatsu-eikyou/ | 登録されています | ⏭️ スキップ |
+| 7 | /articles/with-vs-pairs/ | クロール済み - インデックス未登録 | ✅ リクエスト成功（朝と重複） |
+| 8 | /articles/garugaru-ki-itsumade/ | クロール済み - インデックス未登録 | ✅ リクエスト成功（朝と重複） |
+| 9 | /articles/garugaru-otto-genkai/ | 登録されています | ⏭️ スキップ |
+| 10 | /articles/garugaru-sangoutsu-chigai/ | 登録されています | ⏭️ スキップ |
+| 11 | /articles/sango-iraira/ | 登録されています | ⏭️ スキップ |
+| 12 | /articles/shinseiji-menkai/ | 登録されています | ⏭️ スキップ |
+| 13 | /articles/kekkon-okane-data/ | 登録されています | ⏭️ スキップ（8/29夜の「再申請しない」方針とも一致） |
+| 14 | /articles/shikijo-erabi-guide/ | 登録されています | ⏭️ スキップ |
+| 15 | /articles/gosyugi-shiharai-houhou/ | 登録されています | ⏭️ スキップ |
+| 16 | /articles/shinkon-ryokou-credit/ | 登録されています | ⏭️ スキップ |
+| 17 | /articles/age-data/ | 登録されています | ⏭️ スキップ |
+| 18 | /articles/youbride-guide/ | 登録されています | ⏭️ スキップ |
+| 19 | /articles/marrish-guide/ | 登録されています | ⏭️ スキップ |
+| 20 | /articles/omiai-guide/ | 登録されています | ⏭️ スキップ |
+| 21 | /articles/compare-popular/ | 登録されています | ⏭️ スキップ |
+| 22 | /articles/photo-tips/ | 検出 - インデックス未登録 | ✅ リクエスト成功（**実質新規はこの1件**） |
+| 23 | /articles/anti-fraud/ | 登録されています | ⏭️ スキップ |
+
+送信エラー0件・「割り当て量を超えています」0件。再試行・アカウント切替は行っていない。
+soudanjo-hikaku は対照群ルールどおり申請していない。
+
+### 実測メモ
+
+1. **朝の自動タスクの「残り17件」は本バッチですべて消化済み**（Day D残り4・8/23節9・F残り2は
+   全件「登録されています」でスキップ、photo-tips のみ申請）。次回の未申請キューは
+   uwaki-chousa-kiso（低優先）のみ。
+2. 8/23節の改稿9本は申請不要のまま全件索引化していた。「検出済み・未登録」も sitemap 再送信
+   （8/27）以降の自然クロールでかなり入っている。**申請前の検査でのスキップ判定が有効に働いた**
+   （17件ぶんの枠を節約）。
+3. 朝8時台に8件で上限→夜には6件連続で通った。24時間移動窓での回復（8/22・8/29の見立て）を再々確認。
+4. 台帳の並行編集に注意：朝の自動タスクの結果節は本バッチ開始後に書き込まれた。**同日に2便走る日は、
+   開始時に台帳を再読込しても「済」印が間に合わないことがある**。二重申請を確実に防ぐには
+   台帳ではなくGSC画面の「リクエスト済み」スナックバー／申請履歴では判定できないため、
+   自動タスク側が申請直後に行頭マークを書き込む運用にするのが確実。
+5. 検索バーは「navigate直後の1回目のrefクリック＋type」が必ず空振りする（今回23回中23回再現）。
+   2回目の同一バッチ（click→type→screenshot）で確実に入る。スクリーンショット確認→Enter の
+   手順で誤検査ゼロ。
+
+## 2026-08-30 実行結果（第3便・最優先2本）
+
+**2件とも成功。割り当て上限には未到達。**
+
+| # | URL | 検査結果 | 処理 |
+|---|-----|------|------|
+| 1 | /tools/hitorioya-shien-jichitai/ | URL が Google に認識されていません（参照元サイトマップ未検出） | ✅ 優先クロールキューに追加 |
+| 2 | /articles/hitorioya-shien-data/ | URL が Google に認識されていません（参照元サイトマップ未検出） | ✅ 優先クロールキューに追加 |
+
+送信エラー0件・再試行なし・アカウント切替なし。手順は第2便と同じ
+（サマリー→検索バー→スクショで入力確認→Enter→スナックバーは「表示しない」で消してから次へ）。
+両URLとも公開当日のため「参照元サイトマップが検出されませんでした」だが、
+sitemap反映前の申請漏れ防止としてはこれで正しい（8/29 sangokea-ryokin の教訓どおり）。
+
+## 2026-08-31 実行結果（自動タスク affiliate-gsc-request-20260823）
+
+**1件成功・1件スキップ（登録済み）。割り当て上限には到達せず、キューは空になった。**
+
+| # | URL | 検査結果 | 処理 |
+|---|-----|------|------|
+| 1 | /articles/shussan-iryohi-koujo/ | URL が Google に登録されていません（未認識・参照元サイトマップ未検出） | ✅ 優先クロールキューに追加 |
+| 2 | /articles/uwaki-chousa-kiso/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+
+送信エラー0件・「割り当て量を超えています」0件・再試行なし・アカウント切替なし。
+soudanjo-hikaku は対照群ルールどおり申請していない。
+
+### 台帳に載っていなかった当日公開分を1件追加した（自動タスク側の判断）
+
+台帳の未申請キューは開始時点で uwaki-chousa-kiso の1本のみだったが、
+`git log` で当日（8/31）公開の `/articles/shussan-iryohi-koujo/`（出産費用×医療費控除の
+データ記事・資産#4の4面目）が台帳未記載であることを確認したため、
+「最優先（2026-08-31 追加・当日公開分）」節を作って先頭に置き、最初に申請した。
+**公開当日は sitemap 反映前で「未認識」になるが、8/29 sangokea-ryokin・8/30 ひとり親2本と
+同じく申請漏れ防止としてこれで正しい。**
+
+### uwaki-chousa-kiso は申請せずに索引化した
+
+8/29 の実測では「クロール済み - インデックス未登録」で、
+台帳には「クロール済み未索引は申請で入る見込みが薄い。枠が余る日に低優先で出す」と
+書いてあった。本日の検査時点で**申請しないまま「登録されています」に変わっていた**ため、
+枠を使わずにスキップした。8/30 第2便の教訓（申請前の検査でスキップ判定が枠を節約する）と同じ形。
+
+### 残り
+
+- **未申請ゼロ。** 次回は当日公開分の有無を `git log` で確認するところから始める。
+- soudanjo-hikaku は対照群のため申請しない（nurse-konkatsu-soudanjo のみ解除済み）。
+
+### 実測メモ：検索バーの空振りは「navigate直後の1回目」だけ
+
+8/30 第2便の記録どおり再現した。1本目（サマリー画面をロードしてから find→click→type）は
+1回で入り、2本目（申請後に navigate でサマリーへ戻した直後）は1回目が空振りして
+2回目で入った。**navigate を挟んだ直後だけ click→type を2回打つ**のが確実。
+スクリーンショットで入力を確認してから Enter を押す手順は今回も誤検査ゼロ。
+
+
+#### 最優先（2026-09-08 追加・当日公開分）※9/8夕方に手動申請済み（下記「2026-09-08 実行結果」）
+
+- https://www.noe-match.com/tools/kosodate-shien-23ku/ （区選択ハブ「うちの区の子育て支援」・9/8公開・検品PASS・IndexNow送信済み）
+- https://www.noe-match.com/articles/tapple-kaiin-data/ （Tappleの会員数と年齢構成・9/8公開）
+- https://www.noe-match.com/articles/bachelor-shinsa-data/ （バチェラーデートの審査通過率・9/8公開）
+
+#### 最優先（2026-09-07 追加・当日公開分）※9/8夕方に手動申請済み（下記「2026-09-08 実行結果」）
+
+- https://www.noe-match.com/articles/nagano-guide/ （長野でマッチングアプリを使うなら・9/7公開）
+- https://www.noe-match.com/articles/kagoshima-guide/ （鹿児島でマッチングアプリを使うなら・9/7公開）
+- https://www.noe-match.com/articles/kumamoto-guide/ （熊本でマッチングアプリを使うなら・9/7公開）
+- https://www.noe-match.com/articles/okayama-guide/ （岡山でマッチングアプリを使うなら・9/7公開）
+
+## 2026-09-07 実行結果（サブエージェント・再申請8本）
+
+**2件成功・6件スキップ（登録済み）。割り当て上限には到達せず、送信エラー・失敗ともに0件。**
+
+| # | URL | 検査結果 | 処理 |
+|---|-----|------|------|
+| 1 | /articles/daredemo-tsuen-yoyaku/ | URL が Google に登録されていません | ✅ 優先クロールキューに追加 |
+| 2 | /articles/garugaru-ki-itsumade/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 3 | /articles/ikukyu-kyufukin-data/ | URL が Google に登録されていません | ✅ 優先クロールキューに追加 |
+| 4 | /articles/konkatsu-party-guide/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 5 | /articles/sangokea-higaeri/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 6 | /articles/youikuhi-kousei-shosho/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 7 | /tools/ikukyu-encho-hantei/ | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+| 8 | /policy/editorial.html | URL は Google に登録されています | ⏭️ スキップ（申請不要） |
+
+送信エラー0件・「割り当て量を超えています」0件・再試行なし。
+9/6に「送信エラー2回」と記録されていた daredemo-tsuen-yoyaku は、9/7 は1回目で成功した
+（9/6の画面不安定は一過性で、今回は再現しなかった）。
+
+### 6本が「登録済み」に変わっていた
+
+9/6時点では27本の未索引候補から絞った8本だったが、9/7の実機検査では garugaru-ki-itsumade /
+konkatsu-party-guide / sangokea-higaeri / youikuhi-kousei-shosho / tools/ikukyu-encho-hantei /
+policy/editorial.html の6本がすでに「登録されています」に変化していた。
+8/29〜9/1に申請済みだった分がこの数日で自然に入ったとみられる。**申請前に必ず検査してから
+撃つ**ことで、枠を6件分節約できた。
+
+### 実測メモ：今回は検索バーの罠が毎回再現した
+
+台帳記載の「navigate直後の1回目は空振りする」が8URL中7回で再現（1回目のtypeが空振り、
+2回目で入力成功）。スクリーンショットで入力確認してからEnterを押す手順のおかげで誤検査は
+0件。「送信中に問題が発生しました」エラーは今回は発生しなかった。
+
+### 残り
+
+- 台帳の「最優先（2026-09-06追加）」節は全8本処理済み（申請2本・登録済みスキップ6本）。
+- free-vs-paid は台帳の指示どおり申請していない（クロール済み未索引・表示0のため見込み薄）。
+
+## 2026-09-08 実行結果（手動・Chrome MCP・最優先5本＋ハブ再クロール1本）
+
+**リクエスト6件成功・スキップ0件・送信エラー0件。割り当て上限には到達せず。**
+朝の自動タスクは9/7〜9/8公開分の5本を拾っていなかった（index_requests_done.json に記録なし）ため手動で申請した。
+
+| # | URL | 検査結果 | 処理 |
+|---|-----|------|------|
+| 1 | /tools/kosodate-shien-23ku/ | URL が Google に登録されていません（参照元サイトマップなし） | ✅ リクエスト成功 |
+| 2 | /articles/nagano-guide/ | 検出 - インデックス未登録（sitemap.xml 参照あり） | ✅ リクエスト成功 |
+| 3 | /articles/kagoshima-guide/ | 検出 - インデックス未登録 | ✅ リクエスト成功（ボタン反応の確認漏れで2回押下・重複の可能性） |
+| 4 | /articles/kumamoto-guide/ | URL が Google に認識されていません | ✅ リクエスト成功 |
+| 5 | /articles/okayama-guide/ | URL が Google に認識されていません | ✅ リクエスト成功 |
+| 6 | /articles/garugaru-ki-guide/ | 登録されています | ✅ 再クロール要求（9/8 本文作り直し・順位パケット①） |
+
+### 実測メモ
+
+- プロパティは **URLプレフィックス `https://www.noe-match.com/`**。`sc-domain:noe-match.com` を resource_id に入れると「アクセス権がありません」になる。inspect 画面への直リンク（`/inspect?...&id=<URL>`）は404。
+- 検索バーの罠は今回も全件で再現。結果画面から続けて検査するときは **navigate を挟まなくても1回目の type は空振り**し、2回目は `ctrl+a` の「a」が先頭に混入した（`ahttps://…`）。**3回目に ctrl+a → type で確定**が安定。Enter 前の zoom 確認で誤検査は0件。
+- 「インデックス登録をリクエスト」ボタンは、結果表示直後のクリックが効かないことが2/6回あった。**クリック後3秒でダイアログ（テスト中）が出ているかを見て、出ていなければもう一度押す**。既登録URLでは結果カードの高さが違い、ボタン位置が少し上（y≈332）にずれる。
+
+## 2026-09-08 夕方 追加実行（手動・Chrome MCP・順位パケット②の再クロール2本）
+
+| # | URL | 検査結果 | 処理 |
+|---|-----|------|------|
+| 7 | /tools/nyuseki-calendar/ | 登録されています | ✅ 再クロール要求（先に結論＋年別天赦日一覧を追加） |
+| 8 | /articles/nyuseki-2027-guide/ | 登録されています | ✅ 再クロール要求（冒頭にハブへの文脈リンク） |
+
+本日の合計: リクエスト8件（新規5・再クロール3）・送信エラー0・割り当て上限なし。
+検索バーの罠は今回も同じ（1回目空振り→2回目「a」混入→3回目 ctrl+a で確定）。ボタンは3秒後のダイアログ確認で2本とも1回で通った。
+
+
+## 2026-09-14 インデックス登録依頼（週次エージェント）
+
+| # | URL | 状態 | 備考 |
+|---|-----|------|------|
+| 1 | /articles/app-ryokin-kaitei-data/ | 未登録 | 新規公開 |
+| 2 | /articles/app-taikai-riyu-data/ | 未登録 | 新規公開 |
+
+## 2026-09-17 インデックス登録依頼（週次エージェント）
+
+| # | URL | 状態 | 備考 |
+|---|-----|------|------|
+| 1 | https://www.noe-match.com/articles/yakuzaishi-konkatsu/ | 未登録 | 新規公開 |
+| 2 | https://www.noe-match.com/articles/hoikushi-konkatsu/ | 未登録 | 新規公開 |

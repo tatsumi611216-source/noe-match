@@ -45,17 +45,27 @@ def load_gsc():
     d = json.load(io.open(p, encoding="utf-8"))
     out = {}
     for r in d["by_query_page"]:
-        m = re.search(r"/articles/([\w\-]+)/", r.get("page", "") or "")
+        # 記事とツールの両方を拾う。ツールは `tools/<slug>` で持ち、記事のslugと衝突させない。
+        # （2026-09-21まで /articles/ しか見ておらず、ツールを対象にした施策は
+        #   凍結データが空のまま判定日を迎えていた＝測れない計器だった）
+        page = r.get("page", "") or ""
+        m = re.search(r"/(articles|tools)/([\w\-]+)/", page)
         if not m:
             continue
-        slug = m.group(1)
-        e = out.setdefault(slug, {"imp": 0, "clk": 0, "best": 999, "queries": {}})
-        e["imp"] += r.get("impressions", 0)
+        slug = m.group(2) if m.group(1) == "articles" else "tools/" + m.group(2)
+        e = out.setdefault(slug, {"imp": 0, "clk": 0, "best": 999, "wpos": 0.0, "queries": {}})
+        imp = r.get("impressions", 0)
+        pos = r.get("position", 999)
+        e["imp"] += imp
         e["clk"] += r.get("clicks", 0)
-        e["best"] = min(e["best"], r.get("position", 999))
+        e["best"] = min(e["best"], pos)
+        e["wpos"] += pos * imp          # 表示加重の平均順位（best=最良クエリの順位とは別物）
         q = (r.get("query") or "").strip()
         if q:
-            e["queries"][q] = round(r.get("position", 999), 1)
+            e["queries"][q] = round(pos, 1)
+    for e in out.values():
+        e["pos"] = round(e["wpos"] / e["imp"], 1) if e["imp"] else None
+        del e["wpos"]
     return d.get("period"), out
 
 
@@ -74,7 +84,11 @@ def freeze(note):
     io.open(path, "w", encoding="utf-8").write(
         json.dumps(obj, ensure_ascii=False, indent=1))
     print("凍結: %s" % os.path.basename(path))
-    print("  対象 %d本 / 判定日 %s" % (len(gsc), obj["judge_at"]))
+    n_tool = len([k for k in gsc if k.startswith("tools/")])
+    print("  対象 %d本（うちツール %d本） / 判定日 %s" % (len(gsc), n_tool, obj["judge_at"]))
+    if ("ツール" in note or "tools/" in note) and n_tool == 0:
+        print("  ★警告: noteはツールの施策だが、凍結データにツールが1本も入っていない。"
+              "GSCに表示の無いツールは後から差分を取れない（判定不能になる）")
 
 
 def check():
@@ -114,16 +128,21 @@ def check():
             d_pos = (n["best"] - v["best"]) if (v["best"] < 999 and n["best"] < 999) else None
             rows.append((d_pos if d_pos is not None else 0, slug, v, n, d_pos))
         rows.sort()
-        L.append("| 記事 | 順位 | 表示 | 判定 |")
-        L.append("|---|---|---|---|")
+        L.append("| ページ | 最良クエリ順位 | 表示加重の平均順位 | 表示 | 判定 |")
+        L.append("|---|---|---|---|---|")
         for _, slug, v, n, d_pos in rows[:40]:
             pos = "{:.1f} → {:.1f}".format(v["best"], n["best"]) if d_pos is not None else "—"
+            # 表示加重の平均順位。古い凍結データには pos が無いので「—」になる
+            wp = "{} → {}".format(v.get("pos") or "—", n.get("pos") or "—")
             mark = ""
             if d_pos is not None:
                 mark = "**改善 {:+.1f}**".format(d_pos) if d_pos < -3 else (
                     "悪化 {:+.1f}".format(d_pos) if d_pos > 3 else "横ばい")
-            L.append("| `{}` | {} | {} → {} | {} |".format(
-                slug, pos, v["imp"], n["imp"], mark))
+                # 順位が上がっていても表示が大きく減っていれば、尾が消えただけのことがある
+                if d_pos < -3 and n["imp"] * 2 < v["imp"]:
+                    mark += "（表示が半減。順位改善の根拠にならない）"
+            L.append("| `{}` | {} | {} | {} → {} | {} |".format(
+                slug, pos, wp, v["imp"], n["imp"], mark))
         L.append("")
     out = os.path.join(BASE, "agent", "pdca_result.md")
     io.open(out, "w", encoding="utf-8", newline="").write("\n".join(L) + "\n")

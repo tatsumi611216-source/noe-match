@@ -27,7 +27,7 @@ OUT_DIR = os.path.join(ROOT, "tools", "seikatsuhi-simulator")
 SITE = "https://www.noe-match.com"
 URL = SITE + "/tools/seikatsuhi-simulator/"
 
-TITLE = "ふたりの生活費シミュレーター｜月額の内訳と「収入比でいくらずつ」を試算【2026年版】"
+TITLE = "二人暮らしの生活費の平均は？内訳・家賃抜き・分担をシミュレーション【2026年】"
 DESC = ("新婚・二人暮らしの生活費を月額で試算し、折半・収入比・定額＋按分の3案で"
         "「どちらがいくら出すか」まで出す無料シミュレーター。家賃・光熱・通信・食費の"
         "内訳と、削れる固定費の余地も表示します。登録不要。")
@@ -75,6 +75,8 @@ def shell():
               h.find('<script type="application/ld+json">')]
     header = h[h.find("<body>"):h.find('<div class="breadcrumb"')]
     footer = h[h.rfind("<footer"):]
+    # 結婚資金計算機の計算スクリプトまで流用していた不具合を外す（2026-10-08）
+    footer = __import__("fix_footer_calc_js_20261008").strip_calc(footer)
     return gtag, style, header, footer
 
 

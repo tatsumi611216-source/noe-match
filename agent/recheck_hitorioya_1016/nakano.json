@@ -1,0 +1,35 @@
+{
+ "ward": "中野区",
+ "fields": [
+  {
+   "cat": "ikusei_teate",
+   "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/teate/teate/jidoikusei.html",
+   "status": 200,
+   "final_url": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/teate/teate/jidoikusei.html",
+   "verdict": "不一致",
+   "diff": "所得制限: 正本 扶養0人3,661,000円/1人4,041,000円/2人4,421,000円/3人4,801,000円（令和7年7月18日付）→現在 0人3,758,000円/1人4,138,000円/2人4,518,000円/3人4,898,000円（令和8年8月12日付規則改正）。4人目以降380,000円加算は同じ。月額13,500円・障害15,500円は一致。",
+   "quote": "育成手当 13,500円 / 障害手当 15,500円 / ※令和8年8月12日付、中野区児童育成手条例施行規則が一部改正され、所得制限が見直されました。 | PDF(所得限度額表)原文: 児童育成(障害）手当 申請者 ０人 3,758,000円 １人 4,138,000円 ２人 4,518,000円 ３人 4,898,000円 ４人目以降 １人につき 380,000円加算",
+   "page_updated": "2026年8月28日"
+  },
+  {
+   "cat": "iryo_josei",
+   "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/teate_jyosei/iryojyosei.html",
+   "status": 200,
+   "final_url": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/teate_jyosei/iryojyosei.html",
+   "verdict": "一致",
+   "diff": "",
+   "quote": "外来（個人）自己負担額の月額上限は18,000円、年間上限（8月1日～翌年7月31日）は144,000円 / 入院（個人）月額上限57,600円 / 世帯合算 月額上限57,600円 / 住民税非課税世帯 全額を助成。対象: 区内に住所があり、出生から18歳到達後最初の3月31日(中程度以上の障害がある場合は20歳未満)。所得限度額: 児童育成手当と同一の最新PDF表で マル親申請者 0人2,080,000円 1人2,460,000円 2人2,840,000円 3人3,220,000円 4人目以降380,000円加算、扶養義務者 0人2,360,000円 1人2,740,000円 2人3,120,000円 3人3,500,000円（マル親PDF gendogaku.pdf自体は画像PDFで文字抽出不可・最新の統合表で確認）",
+   "page_updated": "2026年8月31日"
+  },
+  {
+   "cat": "jutaku",
+   "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/sumai/hitorioyazyuutakushien.html",
+   "status": 200,
+   "final_url": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/sumai/hitorioyazyuutakushien.html",
+   "verdict": "一致",
+   "diff": "",
+   "quote": "補助額 負担している対象経費の額（上限300,000円）/ 対象経費 引越にかかる費用、民間賃貸住宅の賃貸借契約に係る礼金、仲介手数料及び前払い家賃 / 収入限度額表 0人3,343,000円 1人3,850,000円 2人4,325,000円 3人4,800,000円 4人5,275,000円 5人目以降1人につき475,000円加算 / 区内に引き続き1年以上居住 / 申請期限 転居日から6か月以内",
+   "page_updated": "2025年3月25日"
+  }
+ ]
+}

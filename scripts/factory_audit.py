@@ -22,6 +22,7 @@ import json
 import os
 import re
 import statistics
+import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -204,6 +205,82 @@ def audit_article(slug):
     }
 
 
+# ---------------------------------------------------------------- tools/ の検査
+# 2026-09-19 追加（CEO承認）。新ツールの出荷基準（agent/AGENT.md）を機械で止める。
+# 既存ツールの違反は agent/quality_backlog_tools.md に登録して「既知バックログ」扱いにし、
+# CIを赤にしない。新しく作ったツールだけが FAIL になる。
+TOOL_TITLE_MAX = 32
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from check_result_visible import static_check as result_static_check  # noqa: E402
+TOOL_BACKLOG = os.path.join(ROOT, 'agent', 'quality_backlog_tools.md')
+
+
+def tool_slugs():
+    base = os.path.join(ROOT, 'tools')
+    if not os.path.isdir(base):
+        return []
+    return sorted(d for d in os.listdir(base)
+                  if os.path.exists(os.path.join(base, d, 'index.html')))
+
+
+def known_tool_backlog():
+    if not os.path.exists(TOOL_BACKLOG):
+        return set()
+    with open(TOOL_BACKLOG, encoding='utf-8') as f:
+        return set(re.findall(r'^\|\s*tools/([a-z0-9][a-z0-9-]+)\s*\|', f.read(), re.M))
+
+
+def tool_title_core(title):
+    """サフィックス（末尾の【…】と「｜Noe…」のサイト名）を除いた長さで測る"""
+    t = re.sub(r'\s+', ' ', title).strip()
+    prev = None
+    while prev != t:
+        prev = t
+        t = re.sub(r'\s*【[^【】]*】\s*$', '', t)
+        t = re.sub(r'\s*[｜|]\s*(?:Noe|NOE)[^｜|]*$', '', t)
+    return t
+
+
+def audit_tool(slug):
+    path = os.path.join(ROOT, 'tools', slug, 'index.html')
+    with open(path, encoding='utf-8', errors='replace') as f:
+        html = f.read()
+    errors = []
+
+    tm = re.search(r'<title>(.*?)</title>', html, re.S)
+    if not tm:
+        errors.append('title が無い')
+    else:
+        core = tool_title_core(tm.group(1))
+        if len(core) > TOOL_TITLE_MAX:
+            errors.append(f'title {len(core)}字（サフィックス除く・{TOOL_TITLE_MAX}字以内）')
+
+    # 結果領域＝ id が result で始まる最初の要素から、次の <h2 まで
+    m = re.search(r'id="result[^"]*"', html)
+    if not m:
+        errors.append('結果領域（id="result…"）が見つからない')
+    else:
+        nxt = re.search(r'<h2[\s>]', html[m.end():])
+        seg = html[m.start(): m.end() + (nxt.start() if nxt else len(html))]
+        if 'lin.ee' not in seg:
+            errors.append('#result 内に LINE CTA が無い')
+
+    # 結果の枠が CSS で隠れたまま表示されない（2026-09-27 に10本で発覚。scripts/check_result_visible.py）
+    errors.extend(result_static_check(html))
+
+    ad_tags = [t for t in re.findall(r'<a[^>]*>', html) if AFFILIATE_RE.search(t)]
+    if ad_tags:
+        if not any(re.search(r'id="aff-[^"]+"', t) for t in ad_tags):
+            errors.append('広告アンカーに id="aff-..." が無い')
+        bad = [t for t in ad_tags
+               if 'sponsored' not in (re.search(r'rel="([^"]*)"', t) or [None, ''])[1]]
+        if bad:
+            errors.append(f'広告アンカー {len(bad)}件の rel に sponsored が無い')
+        if 'class="pr-notice"' not in html and not re.search(r'>\s*PR\s*<', html):
+            errors.append('PR表記が無い（.pr-notice も PRラベルも無い）')
+    return {'slug': 'tools/' + slug, 'ads': len(ad_tags), 'errors': errors}
+
+
 def audit_index_groups():
     """index.html の記事一覧グループを検査する（2026-08-09追加）。
 
@@ -259,6 +336,37 @@ def audit_index_groups():
                 if int(m.group(1)) != total:
                     errors.append(f'{name} の「全{m.group(1)}記事」が実数{total}本と不一致')
                     break
+    return errors
+
+
+# 2026-09-23: 有料商品の原稿・PDF・CSV を agent/product_drafts/ に置いた。
+# このリポジトリは public なので、追跡対象に入った時点で商品が無料で読める状態になる。
+# .gitignore の1行だけが防波堤になっているため、ここで二重化する。
+# 生成物の置き場を変えるときは LEAK_PATTERNS も一緒に直すこと。
+LEAK_PATTERNS = [
+    (re.compile(r'(^|/)_dist/'), '配布物ディレクトリ'),
+    (re.compile(r'(^|/)product_drafts/'), '商品原稿ディレクトリ'),
+    (re.compile(r'^products/'), '商品ディレクトリ'),
+    (re.compile(r'\.(pdf|epub|zip|docx)$', re.I), '配布用バイナリ'),
+]
+
+
+def audit_repo_leak():
+    """有料商品のファイルが public リポジトリの追跡対象に入っていないか検査する"""
+    try:
+        out = subprocess.run(['git', 'ls-files'], cwd=ROOT, capture_output=True,
+                             text=True, encoding='utf-8', check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return ['git ls-files を実行できず、商品ファイルの混入を検査できなかった']
+
+    errors = []
+    for path in out.splitlines():
+        for pat, label in LEAK_PATTERNS:
+            if pat.search(path):
+                errors.append(
+                    f'public リポジトリの追跡対象に{label}が入っている: {path}'
+                    ' → .gitignore に追加し git rm --cached で外す')
+                break
     return errors
 
 
@@ -336,8 +444,16 @@ def main():
     args = parser.parse_args()
 
     results = [audit_article(s) for s in live_slugs()]
-    structure = audit_structure()
+    structure = audit_repo_leak() + audit_structure()
     backlog = set() if args.strict else known_backlog()
+
+    tool_results = [audit_tool(s) for s in tool_slugs()]
+    tool_backlog = set() if args.strict else known_tool_backlog()
+    tool_all = [r for r in tool_results if r['errors']]
+    # 結果の枠が表示されない不具合は読者に何も見えない致命傷なので、既知バックログでも FAIL にする
+    tool_failed = [r for r in tool_all if r['slug'][len('tools/'):] not in tool_backlog
+                   or any('結果の枠' in e for e in r['errors'])]
+    tool_known = [r for r in tool_all if r not in tool_failed]
 
     all_failed = [r for r in results if r['errors']]
     failed = [r for r in all_failed if r['slug'] not in backlog]
@@ -367,13 +483,22 @@ def main():
         for r in warned:
             print(f'  [WARN] {r["slug"]}: ' + ' / '.join(r['warnings']))
 
+    print(f'ツール: {len(tool_results)}本 / 新規エラー(FAIL): {len(tool_failed)}本 / '
+          f'既知バックログ: {len(tool_known)}本')
+    for r in tool_failed:
+        print(f'  [FAIL] {r["slug"]}: ' + ' / '.join(r['errors']))
+    if args.list:
+        for r in tool_known:
+            print(f'  [BACKLOG] {r["slug"]}: ' + ' / '.join(r['errors']))
+
     if args.json:
         with open(args.json, 'w', encoding='utf-8') as f:
             json.dump({'structure': structure, 'articles': results,
-                       'backlog': sorted(backlog)}, f, ensure_ascii=False, indent=1)
+                       'backlog': sorted(backlog), 'tools': tool_results,
+                       'tool_backlog': sorted(tool_backlog)}, f, ensure_ascii=False, indent=1)
         print(f'\n結果を {args.json} に保存した')
 
-    if failed or structure:
+    if failed or structure or tool_failed:
         return 1
     if known:
         print('\n新規違反なし。既知バックログは agent/quality_backlog.md で消化する。')

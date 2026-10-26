@@ -1,0 +1,35 @@
+{
+ "ward": "江戸川区",
+ "fields": [
+  {
+   "cat": "ikusei_teate",
+   "src": "https://www.city.edogawa.tokyo.jp/e049/kosodate/kosodate/teateshien/shisaku/teate/ikusei.html",
+   "status": 200,
+   "final_url": "https://www.city.edogawa.tokyo.jp/e049/kosodate/kosodate/teateshien/shisaku/teate/ikusei.html",
+   "verdict": "一致",
+   "diff": "正本記載の項目は一致（育成13,500円、前年中・1-7月分は前々年中の所得判定）。ただし正本に所得限度額の数値が無い。現在は令和8年6月分から引上げ: 0人3,758,000/1人4,138,000/2人4,518,000/3人4,898,000/4人5,278,000円、1人増ごと380,000円加算（老人100,000円・特定/16-19歳250,000円）。障害手当15,500円は同ページに無く、障害者福祉課自立援助係の所管（別ページ、未取得）。",
+   "quote": "令和8年6月分の手当より所得制限限度額が引き上げられました。／ 手当の支給には所得制限があり、申請者の前年中（1月～7月分の手当は前々年中）の所得額が限度額以上の場合、申請はできません。／ 扶養親族等の数 所得制限限度額 0人 3,758,000円 1人 4,138,000円 2人 4,518,000円 3人 4,898,000円 4人 5,278,000円 扶養親族1人増すごと 380,000円を加算 ／ 手当額 支給対象児童1人につき月額13,500円 ／（注）「障害手当」については、障害者福祉課自立援助係でおこなっています。",
+   "page_updated": "2026年10月6日"
+  },
+  {
+   "cat": "iryo_josei",
+   "src": "https://www.city.edogawa.tokyo.jp/e049/kosodate/kosodate/teateshien/shisaku/iryohijose.html",
+   "status": 200,
+   "final_url": "https://www.city.edogawa.tokyo.jp/e049/kosodate/kosodate/teateshien/shisaku/iryohijose.html",
+   "verdict": "一致",
+   "diff": "一致（課税=1割・通院18,000/年144,000・入院57,600/多数回44,400、非課税は自己負担なし、18歳年度末・20歳未満障害、前々年所得判定）。補足: 所得限度額（本人0人2,080,000/扶養義務者2,360,000等）は正本に無いがページに有り。",
+   "quote": "住民税課税世帯（注1）通院 1割 18,000円 年間上限：144,000円（注2）入院 1割 57,600円（注3）多数回該当：44,400円（注4）住民税非課税世帯（注1）入院・通院 自己負担なし ／ 申請者及び扶養義務者（同居している三親等以内の直系親族及び兄弟姉妹）等のそれぞれの前々年中の所得額が限度額以上の場合は申請できません。／ 扶養親族等の数 本人 孤児等の養育者・配偶者・扶養義務者 0人 2,080,000円 2,360,000円 1人 2,460,000円 2,740,000円",
+   "page_updated": "2026年6月23日"
+  },
+  {
+   "cat": "jutaku",
+   "src": "https://www.city.edogawa.tokyo.jp/e090/kosodate/kosodate/teateshien/shisaku/jutakuyachin.html",
+   "status": 200,
+   "final_url": "https://www.city.edogawa.tokyo.jp/e090/kosodate/kosodate/teateshien/shisaku/jutakuyachin.html",
+   "verdict": "一致",
+   "diff": "一致（金額非公表・老朽化による取り壊しで立退きを求められたひとり親世帯、所得制限あり）。ページは2024年4月1日更新のまま、令和8年度の変更記載なし。",
+   "quote": "ひとり親家庭の世帯（18歳未満の児童とで構成する世帯）が、民間賃貸住宅に居住していて、老朽化による建物の取り壊しで家主から立ち退きを求められているとき、転居後の家賃などの一部を助成して、住まいの安定を図ります。（所得制限があります。詳しくはお問い合わせください。）",
+   "page_updated": "2024年4月1日"
+  }
+ ]
+}

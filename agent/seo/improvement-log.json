@@ -1,0 +1,857 @@
+{
+    "_note": "SEO Rank Watch の改善履歴。items[] は keyword+targetPath ごとに1件。status は active / observing / achieved。actions[] と reviews[] は追記のみ。locks[] は他の施策の判定待ちで触ってはいけないページ（until まで選定から除外）。 status abandoned は判定放棄（CEO決定などで判定を打ち切ったもの）。locks_removed[] は期限前に外したロックの記録（removedAt・removeReason 付き・追記のみ）。",
+    "items": [
+        {
+            "keyword": "with 成婚率",
+            "targetPath": "/articles/with-seriousness-data/",
+            "status": "abandoned",
+            "nextReviewDate": "2026-09-23",
+            "actions": [
+                {
+                    "date": "2026-09-16",
+                    "rankAtAction": 4.8,
+                    "window": "2026-08-15〜2026-09-11（28日窓）",
+                    "rank7dAtAction": 2.6,
+                    "window7d": "2026-09-05〜2026-09-11（表示12）",
+                    "needs": "withで婚活を考えている人が、withで実際に何%が結婚しているのか、公式の数字があるのかを知りたくて検索している。",
+                    "gap": "主要クエリ「with 成婚率」（表示62）に対しtitle/H1は「結婚率」のみで「成婚率」の語が無い。with公式サイトの「結婚レポート」（体験談のみ・数値なし）に触れておらず、公式に何が出ているかの答えが無い。相談所の成婚率とアプリの結婚率の違いの説明が無い。FAQに「withの成婚率は何％？」の直接の問いが無い。上位（matchapps-neo等）も公式非公表と書くのみで公式結婚レポートには触れていない。",
+                    "done": "title/og:title/twitter:title/H1/JSON-LD headline を「withの成婚率・結婚率は公表されていない｜…」に同期。結婚率セクションに成婚率の定義（相談所の分母の違い）と公式「結婚レポート」の現状（2026-09-16確認・体験談のみ）を2段落追加。基本データ表の成婚率行の確認日を更新。FAQ先頭にQ1「withの成婚率は何％ですか？」を追加しFAQPage JSON-LDにも反映。dateModified/最終更新を2026-09-16に、sitemap lastmodを同期。",
+                    "files": [
+                        "articles/with-seriousness-data/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-09-27",
+                    "result": "判定放棄",
+                    "note": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py。同ページの広告を組み替えたため、以後の順位・クリックの変化をこの施策に帰属できない。"
+                }
+            ]
+        },
+        {
+            "keyword": "ガルガル期 診断",
+            "targetPath": "/tools/garugaru-check/",
+            "status": "active",
+            "nextReviewDate": "2026-09-23",
+            "actions": [
+                {
+                    "date": "2026-09-16",
+                    "rankAtAction": 8.1,
+                    "window": "2026-08-16〜2026-09-12",
+                    "needs": "産後の自分や妻がガルガル期か確かめたい人と、なりやすいかを事前に知りたい人が、セルフチェックの方法を探している。上位は「なりやすい人の特徴」と今の状態の見分け方・相談先を載せた解説記事",
+                    "gap": "上位が軸にする「なりやすい人の特徴」の説明が無い／ページは事前診断のみで、産後いま渦中の人への案内（今の状態の目安・受診の目安）が無い／FAQがJSON-LDにしか無く、ページ上に表示されていない",
+                    "done": "導入の注意書きに産後の人向けの案内1項目を追加。基礎知識の後に「ガルガル期になりやすい人の特徴と、この診断が見ているもの」（特徴×診断の軸の対応表）と「いまガルガル期かもしれないと思ったときの目安」（様子の例・受診相談の目安・産後うつ記事への内部リンク）を追加。FAQ「ガルガル期は診断できますか？」を追加し、FAQ 7問をページ上にも表示（JSON-LDと同一文）。title・JSロジック・CTAは変更なし。sitemap lastmod 2026-09-16",
+                    "type": [
+                        "intro",
+                        "content",
+                        "faq",
+                        "internal-link"
+                    ],
+                    "files": [
+                        "tools/garugaru-check/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-09-28",
+                    "window": "2026-09-18〜2026-09-24（7日窓）",
+                    "rankBefore": 8.1,
+                    "rankAfter": 7.5,
+                    "impressions": 6,
+                    "verdict": "効果なし"
+                }
+            ]
+        },
+        {
+            "keyword": "子供 医療費 無料 東京 いつまで",
+            "targetPath": "/tools/kodomo-iryohi-jichitai/",
+            "status": "abandoned",
+            "nextReviewDate": "2026-09-24",
+            "actions": [
+                {
+                    "date": "2026-09-17",
+                    "rankAtAction": 9.3,
+                    "window": "2026-08-17〜2026-09-13",
+                    "needs": "東京に住む子育て中の親が、子どもの医療費が無料（助成）なのは何歳・いつまでか、わが子の場合いつ切れるのか、切れた後どうなるのかを知りたい。多摩地域の市に住む人も含む",
+                    "gap": "上位は区・市の公式ページで、対象年齢と切れる日を直接答えている。対象ページは title/H1 に「無料」が無く、答え（高校3年生の3月31日まで）が冒頭に無い／生まれた日ごとの終了日の早見表が無い（ツール入力が必要）／23区のみで多摩地域の市町村への言及が無い（上位に府中市・町田市）／助成終了後の扱いと在学不要の説明が無い",
+                    "done": "tools/kodomo-iryohi-jichitai/index.html — title・og:title・twitter:title・H1 を「子ども医療費の無料はいつまで？東京は高校3年生の3月31日まで…」に変更、meta description・WebApplication description・hero 導入文の冒頭に答えを追加、「いつまで無料？生まれた日ごとの終了日（早見表）」節（学年別5行・終了後は原則3割・府中市の在学不要の明記を引用）と「多摩地域の市町村に住んでいる場合」節（都基準・町田市・小平市の比較表と出典、9/17確認）を追加、FAQ Q6「助成が終わったら」Q7「多摩地域の市町村も同じか」を追加（JSON-LD同期・8問）、dateModified 2026-09-17、sitemap.xml・sitemap-all.xml lastmod 同期。JSロジック・アフィリCTAは変更なし",
+                    "type": [
+                        "title",
+                        "intro",
+                        "content",
+                        "faq"
+                    ],
+                    "files": [
+                        "tools/kodomo-iryohi-jichitai/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-09-27",
+                    "result": "判定放棄",
+                    "note": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py。同ページの広告を組み替えたため、以後の順位・クリックの変化をこの施策に帰属できない。"
+                }
+            ]
+        },
+        {
+            "keyword": "site-wide title tighten（32字超・表示20回以上の42ページ）",
+            "targetPath": "site-wide",
+            "status": "active",
+            "nextReviewDate": "2026-09-27",
+            "actions": [
+                {
+                    "date": "2026-09-19",
+                    "window": "2026-08-18〜2026-09-14（28日・対象抽出に使用したGSC窓）",
+                    "needs": "SERPでtitleが見切れている32字超ページが多い（257本中216本）。表示の87.4%がその216本由来。locks/observing/watchwords対象は除外し、GSC28日で表示20回以上かつ32字超の42ページのみtitleを32字以内に短縮。",
+                    "done": "42ページのtitleを短縮（うち2ページはscratchpadの個別提案案1を採用、残り40ページは先頭句維持＋副題/年版表記の優先削除という機械的ルールで短縮）。og:titleとJSON-LD headlineは、変更前のtitleと文字列が完全一致していた場合のみ新titleに同期（それ以外の既存の別文言は不変更）。H1・本文・meta descriptionは無変更。factory_audit.py / quality_audit.py で新規FAIL差分0件を確認。inspectorエージェントで検品しBLOCK1件（tools/daredemo-tsuen-jichitai/、対象範囲『東京23区＋政令市』が23区のみに見える表現になっていた）を修正しPASS。 追記2026-09-19: CEO判断で広告位置ロック（10/20判定・cta_baseline_20260919.json）解除対象になった6ページ（with-guide, with-seriousness-data, pairs-marriage-data, shussan-hiyou-data, hitorioya-shien-jichitai, kosodate-shien-23ku）も同じ規則で追加短縮。うち3ページ（with-guide, with-seriousness-data, pairs-marriage-data）はwatchwords.json監視対象だが、本追加はCEOが個別に許可した例外。with-seriousness-dataはtitle_proposals.mdに提案が無かったため先頭句維持＋副題/年版表記の優先削除ルールで独自作成。agent/seo/title_tighten_20260919.jsonに6件追記。factory_audit.py / quality_audit.pyで新規FAIL差分0件、inspectorで検品しWARN1件（with-guide/index.htmlのBreadcrumbList JSON-LD末尾itemのnameが旧titleのまま）を指摘され即修正。PASS。",
+                    "files": [
+                        "agent/seo/title_tighten_20260919.json",
+                        "articles/kyoto-guide/index.html",
+                        "articles/matching-app-ranking/index.html",
+                        "articles/success-rate-data/index.html",
+                        "articles/age-data/index.html",
+                        "articles/nagoya-guide/index.html",
+                        "articles/okinawa-guide/index.html",
+                        "articles/osaka-guide/index.html",
+                        "articles/30s-konkatsu/index.html",
+                        "articles/hatsushon-nenmei-data/index.html",
+                        "tools/daredemo-tsuen-jichitai/index.html",
+                        "articles/kodomo-iryohi-data/index.html",
+                        "articles/pairs-kaiin-data/index.html",
+                        "tools/sangokea-ryokin/index.html",
+                        "articles/civil-servant-guide/index.html",
+                        "articles/kekkon-madeno-kikan-data/index.html",
+                        "articles/student-guide/index.html",
+                        "articles/funin-josei-data/index.html",
+                        "articles/mitocore-kuchikomi/index.html",
+                        "articles/fukuoka-guide/index.html",
+                        "tools/konkatsu-type-shindan/index.html",
+                        "articles/sango-satogaeri/index.html",
+                        "tools/funin-josei-jichitai/index.html",
+                        "articles/batsuichi-guide/index.html",
+                        "articles/daredemo-tsuen-yoyaku/index.html",
+                        "articles/pet-konkatsu/index.html",
+                        "articles/gijikka-ikitakunai/index.html",
+                        "articles/kekkon-shinseikatsu-data/index.html",
+                        "articles/marrish-guide/index.html",
+                        "tools/app-kekkonritsu-data/index.html",
+                        "articles/mitas-formen-kuchikomi/index.html",
+                        "articles/nashikon-data/index.html",
+                        "articles/agency-vs-app/index.html",
+                        "articles/fuufu-credit-kanri/index.html",
+                        "articles/omiai-danjohi-data/index.html",
+                        "articles/nurse-konkatsu-soudanjo/index.html",
+                        "tools/koisaihi-simulator/index.html",
+                        "articles/time-management/index.html",
+                        "articles/appkon-wariai-data/index.html",
+                        "articles/byoji-hoiku-data/index.html",
+                        "articles/profile-text/index.html",
+                        "articles/soudanjo-hikaku/index.html",
+                        "articles/tapple-nenreiso-data/index.html",
+                        "articles/with-guide/index.html",
+                        "articles/with-seriousness-data/index.html",
+                        "articles/pairs-marriage-data/index.html",
+                        "articles/shussan-hiyou-data/index.html",
+                        "tools/hitorioya-shien-jichitai/index.html",
+                        "tools/kosodate-shien-23ku/index.html"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-09-27",
+                    "result": "一部判定放棄",
+                    "note": "CEO決定（2026-09-27）でアフィリ単独の収益化へ切替。次のページは広告を組み替え、ロックも外したため、この施策の判定から除外する（残りのページは従来どおり判定する）: /tools/daredemo-tsuen-jichitai/, /tools/sangokea-ryokin/, /tools/hitorioya-shien-jichitai/, /tools/kosodate-shien-23ku/, /articles/with-seriousness-data/, /articles/with-guide/, /articles/pairs-marriage-data/, /articles/pairs-kaiin-data/, /articles/civil-servant-guide/, /articles/hatsushon-nenmei-data/, /articles/matching-app-ranking/"
+                },
+                {
+                    "date": "2026-10-08",
+                    "window": "2026-09-22〜2026-10-05",
+                    "rankBefore": null,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
+                }
+            ]
+        },
+        {
+            "keyword": "internal-link reinforcement（2ページ目の高表示7ページへの内部リンク強化）",
+            "targetPath": "site-wide-internal-link",
+            "status": "active",
+            "nextReviewDate": "2026-10-08",
+            "actions": [
+                {
+                    "date": "2026-09-19",
+                    "window": "2026-08-14〜2026-09-11（28日・gsc_data.json）／対象抽出はGSC28日・平均順位11〜17位",
+                    "needs": "GSCで2ページ目（平均順位11〜17位）にいる高表示ページ7本（with-nenreiso-data 154, hatsushon-nenmei-data 92, kodomo-iryohi-data 85, members-data 77, kekkon-madeno-kikan-data 62, shougai-mikonritsu-data, tapple-nenreiso-data）の被内部リンクを、同じクラスタ（scripts/cluster_gsc.pyのABC軸）の未リンクページから強化し、1ページ目への押し上げを狙う。",
+                    "done": "6ターゲット（with-nenreiso-data, hatsushon-nenmei-data, kodomo-iryohi-data, members-data, kekkon-madeno-kikan-data, tapple-nenreiso-data）に各3本、計18本の内部リンクを追加（source側の既存「関連記事」系ブロックへの追加が15本、本文中への新規段落挿入が3本）。リンク元はlocks[]・observing・watchwords.json監視対象を除外し、同クラスタでGSC表示のあるページを優先。同一ページから同一ターゲットへの重複リンクなし。shougai-mikonritsu-dataは同クラスタ（統計＝3本中2本）が両方ロック中のため対象0件（詳細はagent/knowledge.md 2026-09-19項）。H1・本文の既存文（新規追加分以外）・meta descriptionは無変更。factory_audit.py / quality_audit.pyで新規FAIL差分0件を確認。inspectorエージェントで検品しPASS（title短縮作業に対するWARN1件のみ、内部リンク分の指摘なし）。",
+                    "files": [
+                        "agent/seo/internal_links_20260919.json"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-09-27",
+                    "result": "一部判定放棄",
+                    "note": "CEO決定（2026-09-27）でアフィリ単独の収益化へ切替。次のページは広告を組み替え、ロックも外したため、この施策の判定から除外する（残りのページは従来どおり判定する）: /articles/with-nenreiso-data/, /articles/hatsushon-nenmei-data/, /articles/members-data/"
+                },
+                {
+                    "date": "2026-10-08",
+                    "window": "2026-09-22〜2026-10-05",
+                    "rankBefore": null,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
+                }
+            ]
+        },
+        {
+            "keyword": "ガルガル 期 同居",
+            "targetPath": "/articles/garugaru-doukyo/",
+            "status": "active",
+            "nextReviewDate": "2026-09-28",
+            "actions": [
+                {
+                    "date": "2026-09-21",
+                    "rankAtAction": 6.6,
+                    "window": "28日窓 2026-08-21〜2026-09-17（imp 17・clk 0）",
+                    "needs": "義母と同居しながら産後を迎えた本人（または夫）が、同居という逃げ場のない環境でこの状態がいつまで続くのか、どう凌ぐのかを知りたくて検索している。",
+                    "gap": "上位は『いつまで／原因／乗り越え方』を先頭で扱う一般解説と、同居の体験談。対象ページは同居特有の設計は厚いが、本文に『いつまで』の答えが一切なく（言及は親記事へのリンク文言のみ）、クラスタ全体で最も強い併存意図に答えていなかった。",
+                    "done": "H2『同居だと、いつまで続くのか』を新設。(1)ガルガル期は俗語で期間の公的統計は確認できていないと明示、(2)訪問は相手が帰れば接触が終わるが同居では曝露条件が自然には終わらないため『待つ』戦略が効きにくい、区切りは暦ではなく曝露条件が変わった日、という同居固有の説明、(3)産後ケア事業は母子保健法第17条の2で対象が『出産後一年を経過しない女子及び乳児』＝産後1年の期限がある制度である点と、法の定める3類型（宿泊・通所・訪問）の同居家庭での使い分け表、出典リンク（e-Gov条文で実物確認）。あわせてFAQに Q2『同居だとガルガル期は長引きますか？いつまで続くのでしょうか。』を追加し JSON-LD FAQPage を同期、目次・dateModified・sitemap lastmod を更新。title と meta description は site-wide title tighten（〜2026-10-05）の判定を汚さないため変更していない。",
+                    "type": [
+                        "content",
+                        "faq"
+                    ],
+                    "files": [
+                        "articles/garugaru-doukyo/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-10-08",
+                    "window": "2026-09-22〜2026-10-05",
+                    "rankBefore": 6.6,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
+                }
+            ]
+        },
+        {
+            "keyword": "専業主婦 割合",
+            "targetPath": "/tools/sengyoshufu-wariai/",
+            "status": "active",
+            "nextReviewDate": "2026-10-05",
+            "actions": [
+                {
+                    "date": "2026-09-28",
+                    "rankAtAction": 11.9,
+                    "window": "2026-08-28〜2026-09-24",
+                    "needs": "今の日本で専業主婦世帯がどれくらいの割合かを1つの数字で知りたい人。上位ページは「約3割」「2024年は508万世帯・共働き1,300万世帯」を示し、年代別の話題も多い。",
+                    "gap": "上位や他サイトで広く引用される「約3割・508万世帯」（JILPT図12＝妻の年齢上限なし系列）と、このページの22.2%（白書＝妻64歳以下系列）の違いが説明されておらず、検索者がどちらを信じればよいか分からない。",
+                    "done": "定義の節に「他のサイトで約3割・508万世帯と出るのはなぜ？」を追加（2系列×2024/2025年の世帯数と割合の対比表・使い分け）。JILPT図12のExcel（2026-03-03更新）で2025年476万/1,333万=26.3%を一次確認。FAQ Q7を追加（HTMLとJSON-LD同文）。出典にJILPT図12を追加し出典の前置きを修正。title・JSロジック・CTAは変更なし。sitemap lastmod 2026-09-28",
+                    "type": [
+                        "content",
+                        "faq",
+                        "data"
+                    ],
+                    "files": [
+                        "tools/sengyoshufu-wariai/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-10-19",
+                    "window": "2026-10-02〜2026-10-15（14日窓）",
+                    "rankBefore": 11.9,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
+                }
+            ]
+        },
+        {
+            "keyword": "新生児 面会 いつから",
+            "targetPath": "/articles/shinseiji-menkai/",
+            "status": "active",
+            "nextReviewDate": "2026-10-08",
+            "actions": [
+                {
+                    "date": "2026-10-01",
+                    "rankAtAction": 7.2,
+                    "window": "2026-08-31〜2026-09-27",
+                    "needs": "出産した家族・友人や本人が、新生児にいつから会ってよいか（会わせてよいか）の時期の目安と、その理由を知りたい。",
+                    "gap": "上位（助産師監修note・病院・KIDSNA）は「新生児期＝生後28日未満」「1ヶ月健診後が安心」「予防接種は生後2か月から」を時期の根拠として示すが、このページは時期の表のみで、新生児期の定義・1ヶ月健診が区切りになる理由・生後2か月の区切りと一次出典が無かった。",
+                    "done": "『面会はいつからがよいか』節に H3「「新生児」はいつまでか、なぜ1ヶ月健診が区切りになるのか」を追加（母子保健法第6条第5項の定義、厚労省『生後2か月から推奨される予防接種』の4ワクチン、出典行）。FAQ Q8「「新生児期」とはいつまでですか？」を HTML と JSON-LD に同文で追加。最終更新・dateModified・sitemap lastmod を 2026-10-01 に更新。title・meta・CTA は変更なし。",
+                    "type": [
+                        "content",
+                        "faq",
+                        "data"
+                    ],
+                    "files": [
+                        "articles/shinseiji-menkai/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-10-19",
+                    "window": "2026-10-02〜2026-10-15（14日窓）",
+                    "rankBefore": 7.2,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
+                }
+            ]
+        },
+        {
+            "keyword": "with 心理テスト",
+            "targetPath": "/articles/with-guide/",
+            "status": "active",
+            "nextReviewDate": "2026-10-15",
+            "actions": [
+                {
+                    "date": "2026-10-08",
+                    "rankAtAction": 10.0,
+                    "window": "2026-09-08〜2026-10-05",
+                    "needs": "withを使い始めた人・使っている人が、アプリ内の心理テストがどこにあり何種類あるのか、見当たらないテストや有料のテストは何なのか、結果をどう使えば有利かを知りたくて検索している。",
+                    "gap": "上位ページ（kaisuma・ascii等）は心理テストを『期間限定（約2週間で入れ替え）』と『購入で常時受けられるもの』に分けて説明しているが、対象ページは『毎月追加される』とだけ書き、見当たらない・受けられない理由と有料テストの存在に答えていなかった。またQ6の運営会社記述（LINEのグループ傘下）が基本スペック表（エニトグループ）と矛盾していた。",
+                    "done": "H3『心理テストは「期間限定」と「購入すれば常に受けられるもの」に分かれる』を追加（2週間に1回程度の入れ替え・期間終了で参加不可・2023/3開始の購入制（恋愛エニアグラム診断・恋愛SNS診断）・累計2,800万人以上・受ける順番。出典=株式会社with PR TIMES 2023-03-06）。FAQに『以前あった心理テストが見つからない。もう受けられない？』をQ3として追加（HTML＋FAQPage JSON-LD同期・以降繰り下げ）。Q6の運営会社をエニトグループ傘下に訂正。最終更新/dateModifiedを2026-10-08に・バイラインの生Markdown（**著者:**）を<strong>に修正・sitemap lastmod同期。title/descriptionは変更なし。",
+                    "type": [
+                        "content",
+                        "faq"
+                    ],
+                    "files": [
+                        "articles/with-guide/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-10-19",
+                    "window": "2026-10-09〜2026-10-15（7日窓）",
+                    "rankBefore": 10.0,
+                    "rankAfter": 10.8,
+                    "impressions": 45,
+                    "verdict": "効果なし"
+                }
+            ]
+        },
+        {
+            "keyword": "ガルガル期 由来",
+            "targetPath": "/articles/garugaru-ki-guide/",
+            "status": "observing",
+            "nextReviewDate": "2026-10-19",
+            "actions": [
+                {
+                    "date": "2026-10-12",
+                    "rankAtAction": 8.2,
+                    "window": "2026-09-11〜2026-10-08",
+                    "needs": "「ガルガル期」という言葉を見聞きした産後の母親やその夫が、名前がどこから来たのか・正式な言葉なのか・いつから使われているのかを知りたい。",
+                    "gap": "上位ページ（キッズライン・アリナミン健康用語集・mamagirl等）は「動物が子を守る威嚇の声」「SNS発のネットスラング」を明示。対象ページは由来が本文中1文のみで、見出し・FAQに由来の答えがなく、俗語としての位置づけ・初出不明・類語（産後クライシス）との違いも無かった。",
+                    "done": "『ガルガル期とは』節にH3「名前の由来｜『ガルルル』と唸る動物の母親から」を追加（擬音の由来・俗語でSNS/育児掲示板で拡散・初出は未特定・動物行動学の母性攻撃行動・産後クライシスとの違い）。FAQにQ8「由来・語源は？」を追加しFAQPage JSON-LDへ同期。dateModifiedとsitemapを2026-10-12に更新。title/metaは既に「由来」を含むため変更なし。",
+                    "type": [
+                        "content",
+                        "faq"
+                    ],
+                    "files": [
+                        "articles/garugaru-ki-guide/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
+                    ]
+                }
+            ],
+            "reviews": []
+        },
+        {
+            "keyword": "2030年 結婚 良い日",
+            "targetPath": "/tools/nyuseki-calendar/",
+            "status": "observing",
+            "nextReviewDate": "2026-10-22",
+            "actions": [
+                {
+                    "date": "2026-10-15",
+                    "rankAtAction": 3.8,
+                    "window": "2026-09-14〜2026-10-11",
+                    "needs": "2030年に結婚式・入籍を考える人が、2030年の縁起のいい日（特に休日に取れる大安と、吉日が重なる日）を一覧で知りたい。",
+                    "gap": "上位（bestcalendar.jp の2030年月別大安ページ）は2030年の大安を月ごとに列挙。当ページは2030年は天赦日6日しか出しておらず、休日の大安や大安×一粒万倍日の日付が本文に無かった。",
+                    "done": "年別表の直後に h3『2030年の結婚に良い日｜土日祝の大安17日』を追加。ページ自身の暦計算で算出した土日祝の大安17日の表（一粒万倍日・寅の日・巳の日の重なり付き）、平日の天赦日×大安（11/25）と大安×一粒万倍日9日、式場予約の注意を記載。大安9日分を公表カレンダーと照合し一致。JSロジックは変更なし。",
+                    "type": [
+                        "content",
+                        "data"
+                    ],
+                    "files": [
+                        "tools/nyuseki-calendar/index.html"
+                    ]
+                }
+            ],
+            "reviews": []
+        }
+    ],
+    "locks": [
+        {
+            "path": "/articles/nyuseki-2027-guide/",
+            "until": "2026-10-06",
+            "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+        },
+        {
+            "path": "/articles/garugaru-ki-guide/",
+            "until": "2026-10-06",
+            "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+        },
+        {
+            "path": "/articles/rikonritsu-data/",
+            "until": "2026-10-06",
+            "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+        },
+        {
+            "path": "/articles/kekkon-okane-data/",
+            "until": "2026-10-06",
+            "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+        },
+        {
+            "path": "/tools/hoikuen-tensu-nerima/",
+            "until": "2026-10-06",
+            "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定"
+        },
+        {
+            "path": "/articles/shougai-mikonritsu-data/",
+            "until": "2026-10-13",
+            "reason": "国勢調査による統計記事更新（census_update_20260929.md・C50 9/29）の対象"
+        },
+        {
+            "path": "/articles/over50-guide/",
+            "until": "2026-10-13",
+            "reason": "国勢調査による統計記事更新（census_update_20260929.md・C50 9/29）の対象"
+        },
+        {
+            "path": "/articles/tomobataraki-wariai-data/",
+            "until": "2026-10-13",
+            "reason": "国勢調査による統計記事更新（census_update_20260929.md・C50 9/29）の対象"
+        },
+        {
+            "path": "/tools/funin-josei-jichitai/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+        },
+        {
+            "path": "/articles/shussan-hiyou-data/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+        },
+        {
+            "path": "/articles/kekkon-okane-data/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+        },
+        {
+            "path": "/tools/garugaru-check/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・Aクラスタへの保険設置／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json"
+        },
+        {
+            "path": "/articles/kyoto-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/success-rate-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/age-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/nagoya-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/okinawa-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/osaka-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/30s-konkatsu/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/kodomo-iryohi-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/kekkon-madeno-kikan-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/student-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/funin-josei-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/mitocore-kuchikomi/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/fukuoka-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/tools/konkatsu-type-shindan/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/sango-satogaeri/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/tools/funin-josei-jichitai/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/batsuichi-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/daredemo-tsuen-yoyaku/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/pet-konkatsu/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/gijikka-ikitakunai/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/kekkon-shinseikatsu-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/marrish-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/tools/app-kekkonritsu-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/mitas-formen-kuchikomi/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/nashikon-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/agency-vs-app/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/fuufu-credit-kanri/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/omiai-danjohi-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/nurse-konkatsu-soudanjo/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/tools/koisaihi-simulator/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/time-management/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/appkon-wariai-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/byoji-hoiku-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/profile-text/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/soudanjo-hikaku/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/tapple-nenreiso-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/shussan-hiyou-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。"
+        },
+        {
+            "path": "/articles/kekkon-madeno-kikan-data/",
+            "until": "2026-10-08",
+            "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
+        },
+        {
+            "path": "/articles/tapple-nenreiso-data/",
+            "until": "2026-10-08",
+            "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
+        },
+        {
+            "path": "/articles/kodomo-iryohi-data/",
+            "until": "2026-10-08",
+            "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。"
+        },
+        {
+            "path": "/articles/with-seriousness-data/",
+            "until": "2026-11-06",
+            "reason": "広告の判断の場面への移設試験（2026-10-08・ブランチ feat/aff-monetize-20261008・結婚相談所比較ネット aff-soudanjo）の判定待ち。本番反映の翌日から28日（判定日は反映日+29日。10/8反映なら11/5〜6）まで、title・本文・ほかの広告・内部リンクを変えない。判定は agent/aff_trial_20261008.md の暫定基準（GPT-6 提言 2026-10-08 §2）: 広告を見たセッション30未満は判定保留／30以上・別セッション2クリック以上・表示後クリック率3%以上なら類似1〜2ページへ追加試験／60以上見られて0クリックなら文言でなく案件と読者の目的の一致を見直す。until は 10/8 反映を前提にした仮の日付で、反映日がずれたら反映日+29日に延ばす。"
+        },
+        {
+            "path": "/articles/compare-popular/",
+            "until": "2026-11-06",
+            "reason": "広告の判断の場面への移設試験（2026-10-08・ブランチ feat/aff-monetize-20261008・結婚相談所比較ネット aff-soudanjo）の判定待ち。本番反映の翌日から28日（判定日は反映日+29日。10/8反映なら11/5〜6）まで、title・本文・ほかの広告・内部リンクを変えない。判定は agent/aff_trial_20261008.md の暫定基準（GPT-6 提言 2026-10-08 §2）: 広告を見たセッション30未満は判定保留／30以上・別セッション2クリック以上・表示後クリック率3%以上なら類似1〜2ページへ追加試験／60以上見られて0クリックなら文言でなく案件と読者の目的の一致を見直す。until は 10/8 反映を前提にした仮の日付で、反映日がずれたら反映日+29日に延ばす。"
+        },
+        {
+            "path": "/tools/app-kekkonritsu-data/",
+            "until": "2026-11-06",
+            "reason": "広告の判断の場面への移設試験（2026-10-08・ブランチ feat/aff-monetize-20261008・結婚相談所比較ネット aff-soudanjo）の判定待ち。本番反映の翌日から28日（判定日は反映日+29日。10/8反映なら11/5〜6）まで、title・本文・ほかの広告・内部リンクを変えない。判定は agent/aff_trial_20261008.md の暫定基準（GPT-6 提言 2026-10-08 §2）: 広告を見たセッション30未満は判定保留／30以上・別セッション2クリック以上・表示後クリック率3%以上なら類似1〜2ページへ追加試験／60以上見られて0クリックなら文言でなく案件と読者の目的の一致を見直す。until は 10/8 反映を前提にした仮の日付で、反映日がずれたら反映日+29日に延ばす。"
+        }
+    ],
+    "locks_removed": [
+        {
+            "path": "/tools/nyuseki-calendar/",
+            "until": "2026-10-06",
+            "reason": "頭語押し上げ（strategy_2026Q4.md 9/6）の判定待ち。9/20順位判定(C49)・10/6クリック確定",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/kodomo-iryohi-jichitai/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/daredemo-tsuen-jichitai/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/kosodate-shien-23ku/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/hitorioya-shien-jichitai/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/with-guide/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/pairs-marriage-data/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/with-seriousness-data/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/nyuseki-calendar/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・保険相談の設置／CTAの決断地点への移設／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/sangokea-ryokin/",
+            "until": "2026-10-20",
+            "reason": "収益導線の置き場所変更（2026-09-19・Aクラスタへの保険設置／linkId付与）の判定待ち。10/20に GA4 click×linkId×pagePath で判定。ベースラインは agent/seo/cta_baseline_20260919.json",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/matching-app-ranking/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/hatsushon-nenmei-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/daredemo-tsuen-jichitai/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/pairs-kaiin-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/sangokea-ryokin/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/civil-servant-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/with-guide/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/with-seriousness-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/pairs-marriage-data/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/hitorioya-shien-jichitai/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/tools/kosodate-shien-23ku/",
+            "until": "2026-10-05",
+            "reason": "site-wide title tighten（2026-09-19、広告位置ロック解除分の追加6ページ）の判定待ち。施策後7日窓（〜2026-09-27）のサイト全体CTRを前7日と比較して判定するまで、このページのtitleに再度手を入れない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/with-nenreiso-data/",
+            "until": "2026-10-08",
+            "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/members-data/",
+            "until": "2026-10-08",
+            "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        },
+        {
+            "path": "/articles/hatsushon-nenmei-data/",
+            "until": "2026-10-08",
+            "reason": "内部リンク強化（2026-09-19・agent/seo/internal_links_20260919.json）の判定待ち。施策後14日窓（〜2026-10-08）の平均順位を前14日と比較して判定するまで、このページへの内部リンク構成・title/H1に無用な変更を加えない。",
+            "removedAt": "2026-09-27",
+            "removeReason": "CEO決定（2026-09-27）: アフィリ単独での収益化へ切替。流入上位ページのロックを外して高単価案件を入れるため、このロックの判定は放棄する（9/23以前の変更の効果が判定不能になることはCEO了承済み）。作業ブランチ feat/aff-only-20260927・scripts/aff_only_20260927.py"
+        }
+    ]
+}

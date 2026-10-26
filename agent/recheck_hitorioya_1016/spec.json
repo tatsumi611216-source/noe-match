@@ -1,0 +1,1135 @@
+[
+ {
+  "ward": "千代田区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "請求者（配偶者を含む）の所得が一定額以上ある場合は不支給。基準額は「扶養人数0人の場合は3,661,000円で、扶養人数が1人増える毎に380,000円加算」。",
+   "src": "https://www.city.chiyoda.lg.jp/koho/kosodate/kosodate/hitorioya/teate/jidoikuse.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等の医療費助成（ひとり親医療証）",
+   "futan": "住民税課税世帯は「健康保険適用後の医療費負担割合3割のうち2割が助成対象となり、1割が自己負担」。上限は通院「月額上限18,000円、年間上限144,000円」、入院「月額上限57,600円（多数回該当44,400円）」。住民税非課税世帯は「3割の全額が助成対象」＝負担なし。",
+   "shotoku_seigen": "扶養親族0人で申請者2,080,000円、配偶者・扶養義務者2,360,000円。以上の場合は助成されない。",
+   "age_limit": "18歳に達する日以後最初の3月31日までの間にある児童（一定の障害がある場合は20歳未満）。",
+   "src": "https://www.city.chiyoda.lg.jp/koho/kosodate/kosodate/hitorioya/teate/hitorioya-i.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "居住安定支援家賃助成",
+   "kingaku": "「一律月額57,000円（実際の家賃が月額57,000円未満の場合は家賃の実費相当分を助成）（最長5年間）」。",
+   "joken": "「18歳以下の子と同居し扶養しているひとり親世帯・DV被害者世帯」が対象区分に含まれる（高齢者・障害者世帯と並ぶ複数対象制度）。「千代田区内に引き続き2年以上居住し、住民登録している」「世帯の所得が月額200,000円以下」「同居する者全員が、住民税を滞納していない」「生活保護を受給していない」。",
+   "src": "https://www.city.chiyoda.lg.jp/koho/machizukuri/sumai/jose/yachinjose.html"
+  },
+  "dokuji": [
+   {
+    "name": "都営交通無料パス等",
+    "kingaku": "無料乗車券の交付（金額表記なし）",
+    "src": "https://www.city.chiyoda.lg.jp/koho/kosodate/kosodate/hitorioya/teate/toekotsu.html"
+   },
+   {
+    "name": "母子家庭及び父子家庭自立支援給付金",
+    "kingaku": "教育訓練＝「受講料の60パーセント（上限20万円）」。高等職業訓練＝訓練促進給付金「100,000円/月（住民税非課税世帯）」「70,500円/月（課税世帯）」＋修了支援給付金「50,000円（非課税）」「25,000円（課税）」。",
+    "src": "https://www.city.chiyoda.lg.jp/koho/kosodate/kosodate/hitorioya/teate/boshijiritsu.html"
+   },
+   {
+    "name": "養育費確保支援事業",
+    "kingaku": "公正証書作成等費用助成「合計5万円（上限）」、保証契約締結費用助成「5万円（上限）」。",
+    "src": "https://www.city.chiyoda.lg.jp/koho/kosodate/kosodate/hitorioya/teate/yoikuhi-shien.html"
+   },
+   {
+    "name": "寡婦（寡夫）控除等のみなし適用",
+    "kingaku": "税制上のみなし適用（金額は個別算定）",
+    "src": "https://www.city.chiyoda.lg.jp/koho/kosodate/kosodate/hitorioya/minashi.html"
+   }
+  ]
+ },
+ {
+  "ward": "中央区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "扶養親族0人「3,758,000」円、1人「4,138,000」円、2人「4,518,000」円、3人以上は「1人につき38万円加算」（育成・障害手当共通）。",
+   "src": "https://www.city.chuo.lg.jp/a0020/kosodate/kosodate/hitorioya/teate/jidouikusei.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成",
+   "futan": "課税世帯は通院「1割」で「一月あたりの負担上限額 18,000円」（年間上限144,000円）、入院「1割」で「57,600円」（多数回該当44,400円）。非課税世帯は「医療費の自己負担はありません。病院等に支払った入院時食事療養標準負担額（生活療養標準負担額）は、口座振込でお支払します。」",
+   "shotoku_seigen": "申請者本人：扶養親族0人 2,080,000円、1人 2,460,000円、2人 2,840,000円、3人 3,220,000円、4人以上は1人につき38万円加算。",
+   "age_limit": "「18歳到達後の最初の3月31日までの児童（児童が条例で定める程度の障害を有する場合は20歳未満まで）」。",
+   "src": "https://www.city.chuo.lg.jp/a0020/kosodate/kosodate/hitorioya/teate/iryohizyosei.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "区立ひとり親世帯住宅",
+   "kingaku": "晴海ガーデンコート「2DK（52.0平方メートル・6戸・34,000円）」、晴海アーバンプラザ「2DK（55.6平方メートル・9戸・36,000円）」。「世帯の所得金額に応じた応能家賃となっています。」",
+   "joken": "「区内に引き続き1年以上居住していること」「同居者が扶養関係にある18歳未満の児童のみのひとり親世帯であること」「年間所得金額が240万円以内であること」「現に住宅に困っていること」。",
+   "src": "https://www.city.chuo.lg.jp/a0042/kurashi/sumai/koutekijuutaku/hitorioyajyutaku.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭ホームヘルプサービス",
+    "kingaku": "「申請者の所得に応じた額」（早朝・夜間は付加分加算）。",
+    "src": "https://www.city.chuo.lg.jp/a0020/kosodate/kosodate/hitorioya/kashitsuke/hormuherupu.html"
+   },
+   {
+    "name": "ひとり親家庭休養ホーム事業（日帰り施設）",
+    "kingaku": "「4月1日から翌年3月31日の間で1回」「1人上限3,000円の助成が受けられる特別利用券」。",
+    "src": "https://www.city.chuo.lg.jp/a0020/kosodate/kosodate/hitorioya/kashitsuke/hormuzigyohigaeri.html"
+   },
+   {
+    "name": "ひとり親家庭観劇・スポーツ観戦等利用助成",
+    "kingaku": "「4月1日から翌年3月31日までの間で、一人あたり3,000円まで」。",
+    "src": "https://www.city.chuo.lg.jp/a0020/kosodate/kosodate/hitorioya/kashitsuke/kangekizyosei.html"
+   },
+   {
+    "name": "ひとり親家庭高等職業訓練促進給付金",
+    "kingaku": "課税世帯 月70,500円（最後の12か月は110,500円）＋修了支援給付金25,000円。非課税世帯 月141,000円＋修了支援給付金50,000円。",
+    "src": "https://www.city.chuo.lg.jp/a0020/kosodate/kosodate/hitorioya/shuurou/fkoso_20090327160053151.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援教育訓練給付金",
+    "kingaku": "「教育訓練の受講のために本人が支払った費用の60％（上限があり、講座によって上限額が異なります。12,000円以下の場合は支給対象外。）」",
+    "src": "https://www.city.chuo.lg.jp/a0020/kosodate/kosodate/hitorioya/shuurou/bosikatei.html"
+   }
+  ]
+ },
+ {
+  "ward": "港区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "「令和７年８月以降、所得制限の限度額を引き上げました。※令和７年８月からは令和６年中の所得で判定します。」扶養親族数0人＝3,661,000円、1人＝4,041,000円、2人＝4,421,000円、3人＝4,801,000円、4人＝5,181,000円、1人増す毎の加算額380,000円。",
+   "src": "https://www.city.minato.tokyo.jp/kodomokyufu/kodomo/kate/teate/jidoikuse.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成",
+   "futan": "「健康保険による医療を受けた際の医療費のうち、対象者が負担すべき額の一部または全部を助成します。」とのみ記載。課税/非課税世帯別の負担割合（1割等）・上限額は制度ページにもFAQにも記載がなく非公表。自己負担の具体的区分は区への確認が必要。",
+   "shotoku_seigen": "扶養親族数0人＝本人2,080,000円／配偶者・扶養義務者2,360,000円、1人＝2,460,000円／2,740,000円、2人＝2,840,000円／3,120,000円、3人＝3,220,000円／3,500,000円、4人＝3,600,000円／3,880,000円、1人増す毎380,000円（令和7年1月1日改定）。",
+   "age_limit": "「児童が18歳に到達後最初の3月31日まで。児童に中度以上の障害がある場合は20歳未満まで」。",
+   "src": "https://www.city.minato.tokyo.jp/kateisoudan/kodomo/kodomo/hitorioya/iryo.html"
+  },
+  "jutaku": {
+   "exists": false,
+   "seido_name": "ひとり親向け住宅費助成・家賃助成は現行サイトで確認できず",
+   "kingaku": "—",
+   "joken": "—",
+   "src": "https://www.city.minato.tokyo.jp/kodomo/kodomo/hitorioya/"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭ホームヘルプサービス",
+    "kingaku": "所得に基づく7段階の利用者負担。最低階層（所得239万9999円以下）は無料、最高階層（所得771万8001円以上）は1時間1,290円。",
+    "src": "https://www.city.minato.tokyo.jp/kateisoudan/kodomo/kodomo/hitorioya/home-help.html"
+   },
+   {
+    "name": "ひとり親世帯等フードサポート事業",
+    "kingaku": "年12回（月1回）配送の現物給付。",
+    "src": "https://www.city.minato.tokyo.jp/kodomoshien/foodsupport.html"
+   },
+   {
+    "name": "都営交通無料パス・JR通勤定期3割引",
+    "kingaku": "都営交通は無料、JR定期は3割引。",
+    "src": "https://www.city.minato.tokyo.jp/kodomokyufu/kodomo/kodomo/hitorioya/kotsu.html"
+   },
+   {
+    "name": "ひとり親家庭高等職業訓練促進給付金・自立支援教育訓練給付金",
+    "kingaku": "高等職業訓練：修学中 月額10万円または7万500円（最終12ヶ月は月額4万円増）、修了後5万円または2万5千円。教育訓練：本人が支払った費用の60%（上限・下限あり）。",
+    "src": "https://www.city.minato.tokyo.jp/kateisoudan/faq/046.html"
+   }
+  ]
+ },
+ {
+  "ward": "新宿区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "扶養親族0人=3,758,000円／1人=4,138,000円／2人=4,518,000円／3人=4,898,000円／4人=5,278,000円、5人以上は1人増すごとに380,000円加算（令和8年5月〜令和9年4月の申請に適用）。",
+   "src": "https://www.city.shinjuku.lg.jp/kodomo/file03_04_00007.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成制度",
+   "futan": "住民税課税世帯「医療費　1割負担」（上限：外来月18,000円、世帯ごと月57,600円まで）。住民税非課税世帯「医療費　負担なし」。「入院時食事療養費は助成対象外」。",
+   "shotoku_seigen": "申請者及び扶養義務者の所得で判定。扶養親族0人の場合：本人2,080,000円、配偶者等2,360,000円。",
+   "age_limit": "「18歳に達する日以後の最初の3月31日までの間にある児童（児童が中度以上の障害を有するときは20歳未満）」。",
+   "src": "https://www.city.shinjuku.lg.jp/kodomo/file03_04_00005.html"
+  },
+  "jutaku": {
+   "exists": false,
+   "seido_name": "ひとり親専用の家賃助成なし",
+   "kingaku": "—",
+   "joken": "—",
+   "src": "https://www.city.shinjuku.lg.jp/seikatsu/file07_02_00017.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭家事援助者雇用費助成",
+    "kingaku": "自己負担は「所得に応じて自己負担金があります（1時間あたり、0円から1，290円）」。",
+    "src": "https://www.city.shinjuku.lg.jp/kodomo/file03_05_00004.html"
+   },
+   {
+    "name": "ひとり親家庭休養ホーム",
+    "kingaku": "日帰り1人1回2,000円以内、宿泊は大人1泊7,000円以内・小人1泊5,000円以内（夏季7/21〜8/25は1泊1,000円加算）。",
+    "src": "https://www.city.shinjuku.lg.jp/kodomo/kodomok02_001029.html"
+   },
+   {
+    "name": "高校三年生進路支援助成",
+    "kingaku": "上限50,000円（年額）。",
+    "src": "https://www.city.shinjuku.lg.jp/kodomo/kodomok02_000001_00025.html"
+   },
+   {
+    "name": "都営交通の無料乗車券",
+    "kingaku": "都営交通無料乗車券（世帯1枚）。",
+    "src": "https://www.city.shinjuku.lg.jp/fukushi/file06_04_00076.html"
+   }
+  ]
+ },
+ {
+  "ward": "文京区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "「所得制限額(年額）扶養人数0＝3,758,000円／1＝4,138,000円／2＝4,518,000円／3＝4,898,000円／4＝5,278,000円　扶養1人あたりの加算額380,000円」「※令和８年６月支給分より、所得制限額が引き上げられました。」",
+   "src": "https://www.city.bunkyo.lg.jp/b022/p001472.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成（マル親医療証）",
+   "futan": "非課税世帯は「自己負担（3割）を全額助成」＝負担なし。課税世帯は「自己負担（3割）のうち3分の2を助成」＝実質1割負担。一部負担金（保険適用医療費の1割分）には上限があり、通院月18,000円超・世帯月57,600円超（多数回該当44,400円）・通院年間144,000円超は申請により還付。",
+   "shotoku_seigen": "「扶養人数0人＝申請者2,080,000円／扶養義務者2,360,000円　1人＝2,460,000円／2,740,000円　2人＝2,840,000円／3,120,000円　3人＝3,220,000円／3,500,000円　扶養一人あたりの加算額380,000円」",
+   "age_limit": "「18歳に到達した年度の末日以前（一定以上の障害を有する児童は20歳未満）の児童を養育する方」。",
+   "src": "https://www.city.bunkyo.lg.jp/b022/p001408.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "ひとり親世帯移転費用等助成（ほか住まいの支援4事業）",
+   "kingaku": "「住環境改善等の理由により区内の民間賃貸住宅へ転居した場合、移転費用及び家賃差額を助成(要件あり)」。具体的な金額はPDF内に記載なし＝非公表。",
+   "joken": "要件の詳細はPDFに記載なし（「詳細及び最新情報は、各事業担当にご確認ください」）。",
+   "src": "https://www.city.bunkyo.lg.jp/documents/1439/r8nendoban.pdf"
+  },
+  "dokuji": [
+   {
+    "name": "養育費確保支援事業・親子交流支援事業",
+    "kingaku": "金額は原文になし＝非公表。",
+    "src": "https://www.city.bunkyo.lg.jp/documents/1439/r8nendoban.pdf"
+   },
+   {
+    "name": "ひとり親家庭子育て訪問支援券事業",
+    "kingaku": "非公表（所得に応じた負担）。",
+    "src": "https://www.city.bunkyo.lg.jp/documents/1439/r8nendoban.pdf"
+   },
+   {
+    "name": "中学生学校外学習費用助成金",
+    "kingaku": "上限額/年：10万円。",
+    "src": "https://www.city.bunkyo.lg.jp/documents/1439/r8nendoban.pdf"
+   },
+   {
+    "name": "JR定期券3割引・都営交通無料乗車券・水道下水道料金一部免除・粗大ごみ手数料免除",
+    "kingaku": "JR定期3割引／都営交通無料／水道・下水道一部免除／粗大ごみ手数料全額免除。",
+    "src": "https://www.city.bunkyo.lg.jp/documents/1439/r8nendoban.pdf"
+   },
+   {
+    "name": "こども宅食プロジェクト",
+    "kingaku": "現物給付（食品配送）。",
+    "src": "https://www.city.bunkyo.lg.jp/documents/1439/r8nendoban.pdf"
+   }
+  ]
+ },
+ {
+  "ward": "台東区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "「令和8年度（令和7年分）所得　扶養人数0人：3,838,000円未満／1人：4,218,000円未満／2人：4,598,000円未満／3人：4,978,000円未満／4人目以降：1人につき38万円加算　※所得制限額には、社会保険料控除相当額（8万円）を加算してあります。」（育成・障害共通）",
+   "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/teate_josei/teate/jidoikuseiteate.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成（（親）医療証）",
+   "futan": "住民税課税世帯は「保険診療の1割分を自己負担金として医療機関窓口で支払ってください」。上限：個人・外来18,000円（年間144,000円）、個人・入院57,600円（多数回該当44,400円）、世帯合算57,600円。住民税非課税世帯は「保険診療の自己負担金が全額助成されます」（入院時食事療養費・生活療養費は対象外）。",
+   "shotoku_seigen": "令和7年度（令和6年分）所得：扶養人数0人＝父母または養育者2,160,000円未満／配偶者・扶養義務者2,440,000円未満（1人増すごとに38万円加算）。",
+   "age_limit": "「18歳になった最初の3月31日まで（身体に中度以上の障害がある場合は20歳未満）の児童を養育している父、母、または養育者とその児童」。",
+   "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/teate_josei/iryohijosei/hitorioya.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "高齢者等住み替え居住支援制度（ひとり親世帯を対象区分に明記）",
+   "kingaku": "「礼金・仲介手数料・引越し費用の合計額」を対象に最大15万円を助成（千円未満切り捨て）。あわせて家賃債務保証会社の「初回保証料の2分の1」助成（限度額：単身20,000円／2人30,000円／3人以上40,000円）。",
+   "joken": "「立ち退きにより転居する高齢者･障害者･ひとり親世帯の方」。ひとり親世帯の定義は「児童と同居し扶養する父又は母のみで構成される世帯」。",
+   "src": "https://www.city.taito.lg.jp/kenchiku/jutaku/sumai/yachinhojo/sumikae.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭ホームヘルプサービス",
+    "kingaku": "所得3,604,000円以下の世帯は無料。3,604,001円以上は1時間250〜1,290円（早朝・夜間は追加料金）。",
+    "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/hitorioya/home_help/home_help.html"
+   },
+   {
+    "name": "高等職業訓練促進給付金等事業",
+    "kingaku": "訓練促進給付金（上限4年）：非課税世帯 月額15万円（12ヶ月未満は月額14万円）／課税世帯 月額7万500円（最終1年は月額11万500円）。訓練修了支援給付金：非課税5万円／課税2万5千円。",
+    "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/hitorioya/shugyou/shokugyou_kyufu.html"
+   },
+   {
+    "name": "自立支援教育訓練給付金事業",
+    "kingaku": "「講座受講に要する費用の最大60%を支給」。一般教育訓練講座等：1万2千円〜20万円。専門実践教育訓練講座：受講年数×40万円（最大4年160万円）。修了後就職者への加算給付：受講費用の25%（最大80万円）。",
+    "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/hitorioya/shugyou/kyouikukunren_kyufu.html"
+   },
+   {
+    "name": "母子生活支援施設（さくら荘）",
+    "kingaku": "金額記載なし（入所・相談支援）。",
+    "src": "https://www.city.taito.lg.jp/kosodatekyouiku/kosodate/mokutei/hitorioya/shisetsu/sakura_sou.html"
+   }
+  ]
+ },
+ {
+  "ward": "墨田区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "申請者(父母又は養育者)の令和6年中の所得が上表の所得制限以上であるときは、児童育成手当は支給されません。",
+   "src": "https://www.city.sumida.lg.jp/kosodate_kyouiku/kosodate_site/teate_jyosei_shien/teate_zyosei/teate/jidouikuseiteate.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成【マル親】",
+   "futan": "住民税課税世帯：外来「医療費の1割」、入院「医療費の1割、食事療養費、生活療養費」／住民税非課税世帯：外来「自己負担なし」、入院「食事療養費、生活療養費のみ」",
+   "shotoku_seigen": "申請者及び扶養義務者等の年中の所得が上表の所得制限以上であるときは、この制度を受けることができません。所得制限額は扶養人数により異なり、扶養0人で2,080,000円～2,360,000円（令和7年1月から所得限度額が引き上げ）。",
+   "age_limit": "18歳の誕生日を迎えたあとの3月末までの者、心身に中度以上の障害を有する場合は20歳未満の者",
+   "src": "https://www.city.sumida.lg.jp/kosodate_kyouiku/kosodate_site/teate_jyosei_shien/teate_zyosei/jyosei/hitorioyairyou.html"
+  },
+  "jutaku": {
+   "exists": false,
+   "seido_name": "",
+   "kingaku": "",
+   "joken": "",
+   "src": "https://www.city.sumida.lg.jp/kosodate_kyouiku/kosodate_site/teate_jyosei_shien/hitori_oya/jyutaku_shien.html"
+  },
+  "dokuji": [
+   {
+    "name": "墨田区ひとり親家庭等子どもの学習支援事業",
+    "kingaku": "無料",
+    "src": "https://www.city.sumida.lg.jp/kosodate_kyouiku/kosodate_site/teate_jyosei_shien/hitori_oya/hitorioyagakushu.html"
+   },
+   {
+    "name": "児童養育家庭ホームヘルプサービス（家事が困難なとき）",
+    "kingaku": "世帯の課税状況に応じた段階制の自己負担。生活保護世帯・非課税世帯は1時間0円、均等割のみ課税世帯は450～500円、その他世帯は900～1000円。",
+    "src": "https://www.city.sumida.lg.jp/kosodate_kyouiku/kosodate_site/sodan/konnan.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援教育訓練給付金",
+    "kingaku": "受講料の60％相当額を受講修了確認後に支給。限度額は講座により異なり、一般・特定一般教育訓練は20万円、専門実践教育訓練は160万円（上限）。",
+    "src": "https://www.city.sumida.lg.jp/kosodate_kyouiku/kosodate_site/teate_jyosei_shien/hitori_oya/ta802000202203111541.html"
+   },
+   {
+    "name": "ひとり親家庭高等職業訓練促進給付金",
+    "kingaku": "生活費として非課税世帯の場合は月額100,000円、課税世帯の場合は月額70,500円を支給（最終年は4万円加算）。修了時に非課税世帯の場合は50,000円、課税世帯の場合は25,000円を支給。",
+    "src": "https://www.city.sumida.lg.jp/kosodate_kyouiku/kosodate_site/teate_jyosei_shien/hitori_oya/ta802000202203111541.html"
+   },
+   {
+    "name": "児童扶養手当受給者のための優遇制度（都営交通無料乗車券等）",
+    "kingaku": "都営交通無料乗車券の交付、JR通勤定期3割引、水道基本料金免除等（乗車券・免除等の現物給付であり、定額の給付金額は原文に記載なし）",
+    "src": "https://www.city.sumida.lg.jp/faq/kosodate_kyouiku/teate_jyosei_shien/1604.html"
+   }
+  ]
+ },
+ {
+  "ward": "江東区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "扶養親族0人で本人の所得が3,661,000円以上の場合は対象外。扶養親族が増えるごとに380,000円加算されます。（障害手当も同じ限度額表を使用。配偶者がいる場合は配偶者も同様の所得制限が適用され、どちらか一方が超過した場合は支給対象外）",
+   "src": "https://www.city.koto.lg.jp/281011/kodomo/kosodate/teate/6029.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成（マル親）",
+   "futan": "課税世帯：定率1割負担で、外来は月額上限18,000円、入院・外来合算は月額上限57,600円（多数回該当44,000円）。非課税世帯：自己負担なし。申請者本人が非課税でも扶養義務者が課税の場合は『住民税課税世帯』扱いとなる。",
+   "shotoku_seigen": "申請者本人（扶養親族0人）の限度額は令和7年1月から208万円。扶養義務者等は236万円。所得制限は前々年の所得で判定され、認定時に受け取った養育費の80％を所得額に加算する。",
+   "age_limit": "18歳に達した最初の3月31日までの児童、または20歳未満で中度以上の障害を有する児童",
+   "src": "https://www.city.koto.lg.jp/281011/kodomo/kosodate/teate/6030.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "お部屋探しサポート事業（高齢者世帯・障害者世帯・ひとり親世帯共通の住み替え支援）",
+   "kingaku": "『前年の所得が基準（2,568,000円）以内の方には、契約が成立したときに、契約金の一部を助成します』。電子申請メニューには契約金助成金交付申請と保証料助成金交付申請があるが、当該ページ本文には具体的な助成上限額の記載はない。",
+   "joken": "申込み条件（原文要約）：区内在住であること、『高齢者世帯、ひとり親世帯、または障害者世帯に該当』すること、日常生活を自分で営めること、住宅に困っていること、身元保証人がいること。生活保護受給世帯は対象外。ひとり親世帯の定義は同事業の別ページで『扶養する18歳未満の子とひとり親のみで構成する世帯』とされている。",
+   "src": "https://www.city.koto.lg.jp/391102/fukushi/koresha/sumai/oheyasagasikyojyusien.html"
+  },
+  "dokuji": [
+   {
+    "name": "高等職業訓練促進給付金事業",
+    "kingaku": "訓練促進給付金：非課税世帯は月額100,000円（修業期間の最後の12ヵ月は月額140,000円）、課税世帯は月額70,500円（修業期間の最後の12ヵ月は月額110,500円）。訓練修了支援給付金：非課税世帯50,000円、課税世帯25,000円。訓練促進給付金は修業期間の全期間（上限4年）支給。",
+    "src": "https://www.city.koto.lg.jp/250251/kodomo/kosodate/kate/shokugyo/27646.html"
+   },
+   {
+    "name": "自立支援教育訓練給付金事業",
+    "kingaku": "一般教育訓練・特定一般教育訓練：受講費用の6割相当額、上限20万円。専門実践教育訓練：受講費用の6割相当額、上限は修学年数×40万円（160万円を超えるときは160万円）。修了後1年以内に資格取得・就職した場合は受講費用の8割5分相当額、上限は修学年数×60万円（240万円を超えるときは240万円）。",
+    "src": "https://www.city.koto.lg.jp/250251/kodomo/kosodate/kate/shokugyo/27645.html"
+   },
+   {
+    "name": "母子・父子自立支援プログラム策定事業",
+    "kingaku": "非公表（給付金ではなく計画策定・就労支援サービスであり、金額の記載自体が存在しない）",
+    "src": "https://www.city.koto.lg.jp/250251/kodomo/kosodate/kate/shokugyo/27643.html"
+   },
+   {
+    "name": "都営交通無料乗車券",
+    "kingaku": "無料乗車券の交付（金額表記なし）",
+    "src": "https://www.city.koto.lg.jp/281011/kodomo/kosodate/kate/genmen/6042.html"
+   },
+   {
+    "name": "JR定期券の割引",
+    "kingaku": "JR通勤定期を3割引で購入可能（証明書の交付）",
+    "src": "https://www.city.koto.lg.jp/281011/kodomo/kosodate/kate/genmen/6043.html"
+   },
+   {
+    "name": "都営水道料金の減免",
+    "kingaku": "非公表（区公式ページに具体的な減免率・金額の記載なし）",
+    "src": "https://www.city.koto.lg.jp/281011/kodomo/kosodate/kate/genmen/6044.html"
+   },
+   {
+    "name": "粗大ごみ等の収集手数料の免除",
+    "kingaku": "手数料全額免除（金額そのものの記載なし）",
+    "src": "https://www.city.koto.lg.jp/281011/kodomo/kosodate/kate/genmen/6045.html"
+   },
+   {
+    "name": "母子生活支援施設",
+    "kingaku": "利用料金は入所者の所得に応じて変動。生活保護世帯・住民税非課税世帯は本人負担なし。",
+    "src": "https://www.city.koto.lg.jp/250251/kodomo/kosodate/kate/6039.html"
+   }
+  ]
+ },
+ {
+  "ward": "品川区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "令和8年8月1日より改正され、令和8年6月分の手当から以下の所得制限限度額で審査します。扶養親族0人：3,758,000円／1人：4,138,000円／2人：4,518,000円／3人：4,898,000円／4人：5,278,000円",
+   "src": "http://www.city.shinagawa.tokyo.jp/PC/kodomo/kodomo-hitorioya/hpg000001249.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成",
+   "futan": "住民税非課税世帯（負担者番号：81137093）：「医療費の自己負担額はありません」。住民税課税世帯（負担者番号：81136095）：「医療機関窓口で、医療費のうち1割分をお支払いください」。外来は月18,000円（年間上限144,000円）、入院は月57,600円（多数回該当時44,400円/月）が上限額として記載。",
+   "shotoku_seigen": "扶養親族0人の場合、本人（申請者）は2,080,000円未満、扶養義務者は2,360,000円未満。扶養親族1人増すごとに38万円加算。",
+   "age_limit": "18歳到達後の最初の3月31日までの児童（児童が政令で定める程度の障害を有する場合は20歳未満まで）",
+   "src": "https://www.city.shinagawa.tokyo.jp/PC/kodomo/kodomo-hitorioya/hpg000001247.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "ひとり親家庭住宅入居支援事業",
+   "kingaku": "初回保証委託料の実費額（上限10万円）を助成",
+   "joken": "品川区に引き続き6カ月以上居住するひとり親家庭の母または父で、次を全て満たす方。児童扶養手当を受給していること。「賃貸借契約上の連帯保証人を立てることができないこと」。「生活保護、中国残留邦人等の支援給付を受けていないこと」。「転居先が品川区内であること」。「過去に本事業を利用したことがないこと」。契約前にひとり親相談係への連絡が必須で、「契約後は受け付けられませんのでご注意ください」。初回保証委託料支払日から30日以内に請求手続きが必要。",
+   "src": "https://www.city.shinagawa.tokyo.jp/PC/kodomo/kodomo-hitorioya/20200116093231.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭一時介護事業",
+    "kingaku": "ページに利用料金の記載なし（区公式ページで自己負担額についての記述は確認できなかった）",
+    "src": "https://www.city.shinagawa.tokyo.jp/PC/kodomo/kodomo-hitorioya/hpg000016372.html"
+   },
+   {
+    "name": "ひとり親家庭休養ホーム事業",
+    "kingaku": "低額または無料（具体的な自己負担額の数字はページ本文に記載なし）",
+    "src": "https://www.city.shinagawa.tokyo.jp/PC/kodomo/kodomo-hitorioya/hpg000016379.html"
+   },
+   {
+    "name": "ひとり親家庭学習支援事業（ぐんぐんスクール）",
+    "kingaku": "無料",
+    "src": "https://www.city.shinagawa.tokyo.jp/PC/kodomo/kodomo-hitorioya/hpg000020110.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援給付金事業",
+    "kingaku": "高等職業訓練促進給付金：住民税非課税世帯 月額100,000円／住民税課税世帯 月額70,500円。修了支援給付金：50,000円〜25,000円。",
+    "src": "https://www.city.shinagawa.tokyo.jp/PC/kodomo/kodomo-hitorioya/hpg000016382.html"
+   },
+   {
+    "name": "ひとり親家庭体験格差改善事業",
+    "kingaku": "無料の体験プラン利用（1人につき1回限り）",
+    "src": "https://www.city.shinagawa.tokyo.jp/PC/kodomo/kodomo-hitorioya/20250815112916.html"
+   }
+  ]
+ },
+ {
+  "ward": "目黒区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "児童育成手当は、申請者の所得に制限があります。令和7年度（令和7年6月分）手当より、所得制限額が57,000円引き上げられました。（具体的な限度額は別掲の「子どものための諸手当各種所得制限限度額表」を参照する必要があり、本ページ本文中には数値の直接記載を確認できなかった）",
+   "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/ikuseiteate.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成制度",
+   "futan": "「対象者には『ひとり親家庭等医療証』を交付します。医療機関等で、健康保険の対象となる診療または投薬を受けた時の自己負担分の一部または全部を助成します」（区報PDFにも同旨で「医療費（保険診療）の自己負担分（一部または全部）を助成します」とあり）。通院・入院別の負担割合や、住民税課税世帯＝1割負担（上限あり）・非課税世帯＝負担なし、といった具体的な数値・区分は、確認できた区公式ページ（josei.html）およびめぐろ区報PDF（2024年10月15日号）の本文には記載が見当たらなかった。",
+   "shotoku_seigen": "「申請者および同居の扶養義務者の所得が一定以上の場合は対象外となります」。令和7年1月から申請者本人の所得制限額が改正され、区報PDF記載の表では、扶養人数0人＝改正前192万円→改正後208万円、1人＝改正前230万円→改正後246万円、2人＝改正前268万円→改正後284万円（以下、扶養人数が1人増すごとに38万円を加算）。",
+   "age_limit": "18歳に達する日の以後の最初の3月31日までの児童（20歳未満で中度以上の障害がある児童を含む）。※めぐろ区報PDF（2024/10/15号）では「18歳到達後最初の3月31日まで。中度以上の障害がある場合は19歳まで」との記載もあり、ページ間で年齢上限の表現に差異がある（19歳までか20歳未満かは原文のまま両方記録）。",
+   "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/josei.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "居住支援制度（家賃等債務保証料の助成）",
+   "kingaku": "「新規契約時及び初回更新時の保証料の一部（いずれも上限20,000円）を助成します。」",
+   "joken": "対象世帯の一つとして「ひとり親世帯」が明記されている（対象世帯は高齢者世帯・障害者世帯・ひとり親世帯・火災等り災世帯）。ひとり親世帯の定義は「扶養する18歳未満の子とひとり親だけの世帯」。まず「民間賃貸住宅の情報提供」の対象世帯として決定されたうえで、賃貸借契約にあたり保証会社を利用した場合に保証料の一部を助成する仕組み。問い合わせ先：住宅課 居住支援係（03-5722-9878）。",
+   "src": "https://www.city.meguro.tokyo.jp/juutaku/kurashi/sumai/kyojusien.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭ホームヘルプサービス",
+    "kingaku": "非公表（本文中に利用料・助成額の具体的記載を確認できず。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/homehelp.html）",
+    "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/homehelp.html"
+   },
+   {
+    "name": "ひとり親家庭高等職業訓練促進給付金",
+    "kingaku": "非公表（金額の明記を区ページ本文で確認できず。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/hitorioyakateikunnrennsokusinnhi.html）",
+    "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/hitorioyakateikunnrennsokusinnhi.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援教育訓練給付金",
+    "kingaku": "講座受講料の60パーセント相当額（原文表記。上限額の記載は本文からは未確認）",
+    "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/kunrenkyufu.html"
+   },
+   {
+    "name": "母子及び父子福祉資金の貸付",
+    "kingaku": "非公表（貸付制度のため金額は用途・種類により異なり、本文からは一律の額を確認できず）",
+    "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/kashitsuke.html"
+   },
+   {
+    "name": "養育費確保支援事業",
+    "kingaku": "非公表（区ページ本文で金額を確認できず。URL: https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/r31001youikuhi.html）",
+    "src": "https://www.city.meguro.tokyo.jp/kosodateshien/kosodatekyouiku/kosodate/r31001youikuhi.html"
+   },
+   {
+    "name": "居住支援制度（家賃等債務保証料の助成）",
+    "kingaku": "新規契約時及び初回更新時の保証料の一部（いずれも上限20,000円）",
+    "src": "https://www.city.meguro.tokyo.jp/juutaku/kurashi/sumai/kyojusien.html"
+   }
+  ]
+ },
+ {
+  "ward": "大田区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "（育成手当）令和7年度所得制限限度額：扶養親族等の数が0人の場合3,758,000円、1人増すごとに380,000円加算。（障害手当）0人：3,758,000円、1人：4,138,000円、2人：4,518,000円、3人以上は1人増すごとに380,000円加算。",
+   "src": "https://www.city.ota.tokyo.jp/seikatsu/kodomo/teate/jidouteate/ikusei.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等に対する医療費助成（大田区ひとり親家庭の医療費の助成に関する条例、通称マル親医療証）",
+   "futan": "住民税課税世帯（原文の負担者番号81136111の世帯）：通院『月：18,000円　年間：144,000円』（総医療費の1割）、入院『月：57,600円　多数回：44,400円』（総医療費の1割）。住民税非課税世帯（負担者番号81137119の世帯）：『医療機関等受診時に一部負担金は発生しません』。詳細は区ページの表1〜表3に記載。",
+   "shotoku_seigen": "令和6年中所得で判定。扶養親族0人の場合『申請者本人2,080,000円未満』『孤児等養育者等2,360,000円未満』。",
+   "age_limit": "『18歳に達した日の属する年度の末日（3月31日）までの者』、および20歳未満で障害状態にある者。",
+   "src": "https://www.city.ota.tokyo.jp/seikatsu/kodomo/teate/hitorioya.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "立退き等に伴う転居費用の助成（大田区転居一時金助成）／家賃等債務保証会社加入費助成",
+   "kingaku": "転居一時金助成：『礼金・仲介手数料・権利金』の限度額100,000円。家賃等債務保証会社加入費助成：『初回加入費の50％』で『限度額12,000円』。",
+   "joken": "対象は『18歳未満の児童及び同居してこれを扶養する父もしくは母又はこれに準じる方のみで構成される世帯』（高齢者世帯・障がい者世帯と共通制度）。転居一時金助成は『現住居の取壊しや、家主の都合による契約更新拒否で、立退きを要求されている』ことが条件で、『家主等が転居のための費用（引越し代や家賃免除等）を負担する場合は、助成の対象となりません』。いずれも『大田区内に居住し、住民登録している世帯であること』『生活保護または支援給付を受けていないこと』『過去にこの制度の助成金を受けていないこと』が共通条件。",
+   "src": "https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/sumai/koreisha_jutakukakuho/tenkyo_ichijikin.html"
+  },
+  "dokuji": [
+   {
+    "name": "大田区ひとり親家庭等ホームヘルプサービス事業",
+    "kingaku": "利用料『0円から1,500円（1時間あたり）』で所得により変動。生活保護受給者・住民税非課税者は0円。交通費は利用者負担。",
+    "src": "https://www.city.ota.tokyo.jp/seikatsu/kodomo/shien/shien/hitorioyakateitouhomehelp060801.html"
+   },
+   {
+    "name": "母子家庭及び父子家庭自立支援給付金（自立支援教育訓練給付金／高等職業訓練促進給付金等／高等学校卒業程度認定試験合格支援）",
+    "kingaku": "①受講費の60%（上限20万円、1万2千円以下は対象外）。②月額10万円（住民税非課税世帯）または月額7万5百円（課税世帯）。③受講開始時40%（通信のみ上限10万円）、修了時50%、合格時10%。",
+    "src": "https://www.city.ota.tokyo.jp/seikatsu/kodomo/shien/shien/boshiziritsu.html"
+   },
+   {
+    "name": "緊急連絡先代行サービスの紹介・利用料助成",
+    "kingaku": "『初回利用料2年間分の50％、5,000円』を助成（団体への利用料自体は『賃貸期間2年間分　11,000円（税込）』）。",
+    "src": "https://www.city.ota.tokyo.jp/seikatsu/fukushi/kourei/sumai/koreisha_jutakukakuho/kinkyu_daikou.html"
+   },
+   {
+    "name": "母子（女性）緊急一時保護",
+    "kingaku": "非公表（区公式ページに費用・利用条件の詳細な記載がなく確認できなかった。生活福祉課への個別問い合わせが必要と案内されている）。",
+    "src": "https://www.city.ota.tokyo.jp/seikatsu/kodomo/shien/shien/bosikinkyuu.html"
+   }
+  ]
+ },
+ {
+  "ward": "世田谷区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "扶養親族等の数0人：3,758,000円、1人：4,138,000円、2人：4,518,000円、3人：4,898,000円（令和8年5月～令和9年4月申請分の所得制限限度額）",
+   "src": "https://www.city.setagaya.lg.jp/kyoutsu/kodomo/1308.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等の医療費助成制度(マル親医療証の交付)",
+   "futan": "「保険診療内の自己負担分の一部を助成します」。取り扱っている医療機関で受診するときは「保険証等と医療証を提示して、自己負担金が生じた場合はお支払いください」。取り扱わない医療機関で受診するときは「保険証等を提示して保険適用の自己負担分を支払い、必要な項目の記載された領収書を受け取ってください」「自己負担分は、各地域の子ども家庭支援課に、医療助成費支給申請書(領収書を添付)を提出すると、助成対象分が申請者名義の口座に振り込まれます」",
+   "shotoku_seigen": "所得制限限度額表（税法上の扶養数：受給者／配偶者・扶養義務者孤児等の養育者）0人：2,080,000円／2,360,000円、1人：2,460,000円／2,740,000円、2人：2,840,000円／3,120,000円、3人：3,220,000円／3,500,000円。「以降1人増すごとに380,000円加算されます」「受給者が父または母の場合、本人の所得に養育費の8割が加算されます」「所得合計額から社会保険料控除相当額である一律8万円を控除します」「給与所得又は公的年金等所得がある方は、所得合計額から一律10万円を控除します」",
+   "age_limit": "「18歳到達後最初の年度末（3月31日、ただし4月1日生まれの方は前日の3月31日まで)までの児童(20歳未満で中度以上の障害を有する児童を含む)」",
+   "src": "https://www.city.setagaya.lg.jp/kyoutsu/kodomo/1325.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "ひとり親世帯向け家賃低廉化補助事業",
+   "kingaku": "「本来家賃－公営住宅並み家賃（※）＝減額となる金額（上限4万円）」（※住宅の面積、所得金額等によって変わります）。例：家賃月額10万円（共益費等別）、補助額4万円の場合、入居者負担額「月額6万円＋共益費等／戸」、区補助金「月額4万円／戸」。「区より賃貸人（家主等）に4万円を補助しますので、入居者が実際に賃貸人（家主等）に支払う家賃額は、月額6万円（共益費等別）となります。」",
+   "joken": "「18歳未満のお子さんを養育するひとり親世帯の方が、区内の民間賃貸住宅等（本制度の対象住宅に限る）に転居される場合に、区が賃貸人（家主等）に家賃の一部を補助することで、入居者の家賃負担額が減額される制度です」。入居者の資格要件（下記①～⑧をすべて満たす必要）：①「世田谷区内に1年以上在住していること」（賃貸借契約を締結する時点を基準）／②「配偶者と婚姻（内縁関係を含む）を解消した方」「配偶者が死亡した方」「配偶者の生死が明らかでない方」「ドメスティック・バイオレンス（配偶者からの暴力をいう。）で裁判所からの保護命令が出された方」「婚姻せず子どもを出産し又は養育をしている方（事実婚の場合を除く。）」のいずれかに該当し、かつ「18歳に達する日以後の最初の3月31日までの子どもを養育する世帯であること」／③「入居世帯員全員の所得を合算した金額が月額21万4千円以下（多子世帯（18歳未満の子どもが3人以上いる世帯）の場合は月額25万9千円以下）であること」（算定方法：入居する方全員の所得金額の合計－各種控除÷12ヶ月）／④生活保護法の住宅扶助費等を受給していないこと／⑤補助対象住宅の賃貸人の親族ではないこと／⑥入居日時点で補助対象賃貸人が所属する法人等の職員及び従業員でないこと／⑦暴力団関係者でないこと／⑧住宅を所有していないこと。減額を受けられる期間は「最長10年間」（※補助期間・補助総額は、入居する住宅や所得金額によって変わります）。",
+   "src": "https://www.city.setagaya.lg.jp/documents/3722/202604tebiki.pdf"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭親子でスマイル体験応援事業（休養ホーム事業）",
+    "kingaku": "「保護者・子ども1人につき上限3,000円」",
+    "src": "https://www.city.setagaya.lg.jp/02413/1322.html"
+   },
+   {
+    "name": "家事などのお手伝い（ホームヘルパーの訪問）",
+    "kingaku": "「利用者負担はありません」",
+    "src": "https://www.city.setagaya.lg.jp/mokuji/kodomo/009/001/003/d00032120.html"
+   },
+   {
+    "name": "ひとり親家庭の子どもの学習支援（かるがもスタディルーム）",
+    "kingaku": "「無料」",
+    "src": "https://www.city.setagaya.lg.jp/mokuji/kodomo/009/001/001/d00154545.html"
+   },
+   {
+    "name": "養育費確保のための強制執行申立てにかかる費用の一部助成",
+    "kingaku": "着手金等：上限10万円／実費：上限5万円",
+    "src": "https://www.city.setagaya.lg.jp/02413/online_tetsuzuki/24877.html"
+   },
+   {
+    "name": "ひとり親家庭の各種優遇制度（JR通勤定期割引・都営交通無料乗車券等）",
+    "kingaku": "JR通勤定期乗車券：3割引／都営交通：無料乗車券交付（1人限り）",
+    "src": "https://www.city.setagaya.lg.jp/kyoutsu/kodomo/1324.html"
+   }
+  ]
+ },
+ {
+  "ward": "渋谷区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "所得制限があります。（具体的な限度額表は「各種手当所得制限限度額」ページにあるが、同ページには『児童育成(障害)手当』と『児童扶養手当』の限度額表のみが掲載されており、『児童育成手当』（非障害・通常）専用の限度額表は見当たらなかった）",
+   "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_teate.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭などへの医療費助成（ひとり親家庭等医療証、通称マル親）",
+   "futan": "「一部負担金について」表（区分／負担割合／1月あたりの負担上限額）：住民税課税世帯（通院）＝負担割合1割・1月あたりの負担上限額18,000円・年間上限144,000円（注2）／住民税課税世帯（入院）＝負担割合1割・1月あたりの負担上限額57,600円（注3）・多数回該当44,400円（注4）／住民税非課税世帯（入院・通院）＝自己負担なし・自己負担なし。（注1）計算期間（毎年8月1日から翌年7月31日まで）において、月の外来療養に係るマル親自己負担額の合計が144,000円を超えた場合、超えた分を高額医療費として助成。（注3）過去12か月以内に3回以上、上限額に達した場合は、4回目から「多数回」となり、上限額が44,400円にさがります。",
+   "shotoku_seigen": "「所得制限があります。」（本文原文）。別ページ「各種手当所得制限限度額」の『ひとり親医療費助成』表（令和7年1月1日現在）：受給者＝扶養0人2,080,000円/1人2,460,000円/2人2,840,000円/3人3,220,000円/4人3,600,000円/5人3,980,000円。扶養義務者＝0人2,360,000円/1人2,740,000円/2人3,120,000円/3人3,500,000円/4人3,880,000円/5人4,260,000円。（注）所得には一定の控除があります。",
+   "age_limit": "次のいずれかの状態にある18歳になった直後の3月31日までの児童(中度以上の障害がある場合は20歳未満)を養育している父または母か養育者とその児童に医療費(保険内診療の自己負担分)の一部を助成します。",
+   "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_teate.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "立ち退きに伴う住み替え家賃補助制度",
+   "kingaku": "「取り壊しなどにより立ち退きを求められていて、現在住んでいる民間賃貸住宅などから民間賃貸住宅へ区内で転居する必要がある、高齢者・障害者・ひとり親世帯に、住み替え後の家賃・転居一時金の一部を補助します。」（具体的な円建ての金額・補助率はこのページに記載なし）",
+   "joken": "対象（ひとり親世帯の場合）：「子どもが18歳未満のひとり親世帯」「区内に2年以上居住（住民登録も）している」「世帯の総収入額が一定基準額以下」「住民税を滞納していない」",
+   "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_sumai.html"
+  },
+  "dokuji": [
+   {
+    "name": "家事援助者の派遣（ホームヘルプ）",
+    "kingaku": "派遣日数：月12回以内（1回2時間以上8時間以内）、おおむね6か月を限度。費用：利用者の所得に応じて自己負担があります（具体的な自己負担額の数字は原文になし）。",
+    "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_shien.html"
+   },
+   {
+    "name": "ひとり親家庭等福祉事業",
+    "kingaku": "無料または低料金（具体的な金額の記載なし）",
+    "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/hitorioya_shien.html"
+   },
+   {
+    "name": "養育費に関する公正証書作成手数料等補助金",
+    "kingaku": "公正証書（強制執行認諾約款付き）の公証人手数料：上限43,000円。家庭裁判所の調停・審判・裁判に要した収入印紙代等：上限20,000円。ADR（裁判外紛争解決手続き）の申込料及び依頼料等：上限50,000円。",
+    "src": "https://www.city.shibuya.tokyo.jp/kodomo/kodomo-teate-josei/hitorioya/youikuhishien.html"
+   }
+  ]
+ },
+ {
+  "ward": "中野区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "所得限度額表（PDF形式：149KB）にて確認。本文には「前年の所得（1月分から5月分までの手当は、前々年所得）が所得限度額を超えた方は、児童育成手当の申請はできません。」とのみ記載。PDF内の限度額表（児童育成(障害)手当・申請者）は、扶養人数0人＝3,661,000円、1人＝4,041,000円、2人＝4,421,000円、3人＝4,801,000円、4人目以降1人につき380,000円加算（令和7年7月18日付で所得制限が見直された）。",
+   "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/teate/teate/jidoikusei.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成制度（マル親）",
+   "futan": "住民税課税世帯（申請者または扶養義務者のうち、住民税が課税されている方がいる世帯）：「医療機関の窓口等で一部負担金（総医療費の1割分）のお支払いが必要です。」自己負担限度額は、外来（個人）「自己負担額の月額上限は18,000円、年間上限（8月1日～翌年7月31日）は144,000円です。」入院（個人）「自己負担額の月額上限は、57,600円です。」外来・入院（世帯合算）「同一月のマル親世帯内の自己負担額を合算した金額の月額上限は、57,600円です。」住民税非課税世帯（申請者および扶養義務者全員が住民税非課税の世帯）：「保険診療に係る医療費の自己負担分の全額を助成します。」",
+   "shotoku_seigen": "「申請者または扶養義務者（申請者の同居親族）の所得が所得限度額（PDF形式：400KB）以上の方」は対象外。所得限度額表（児童育成手当と同一PDF内、マル親申請者欄）：扶養人数0人＝2,080,000円、1人＝2,460,000円、2人＝2,840,000円、3人＝3,220,000円、4人目以降1人につき380,000円加算。扶養義務者・配偶者・養育者欄：0人＝2,360,000円、1人＝2,740,000円、2人＝3,120,000円、3人＝3,500,000円、4人目以降380,000円加算。",
+   "age_limit": "「区内に住所があり、出生から18歳到達後最初の3月31日(中程度以上の障害がある場合は20歳未満)までの」児童を養育している方。",
+   "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/teate_jyosei/iryojyosei.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "中野区ひとり親家庭住宅支援補助金交付事業",
+   "kingaku": "「負担している対象経費の額（上限300,000円）」。対象経費は「引越にかかる費用、民間賃貸住宅の賃貸借契約に係る礼金、仲介手数料及び前払い家賃」。",
+   "joken": "「18歳（高校3年生等）までの子を養育している区内在住のひとり親または実質ひとり親（離婚協議中であることを明らかにすることができる書類を有する者）」で、次のいずれかの理由により住み替える必要があること（1 離婚に向けた協議に進展等があること／2 住居の取り壊し等に伴い1年以内の退去を求められていること／3 児童の成長等により養育環境に変化があること）に加え、「区内に引き続き1年以上居住していること」「民間賃貸住宅に転居し、対象経費を自ら負担していること」「申請日から1年間の収入の見込額が、収入限度額に満たないこと」（収入限度額表：扶養人数0人＝3,343,000円、1人＝3,850,000円、2人＝4,325,000円、3人＝4,800,000円、4人＝5,275,000円、5人目以降1人につき475,000円加算）「母子生活支援施設を利用していないこと」「生活保護法による保護を受けていないこと」「過去にこの要綱による補助金の交付を受けていないこと」。申請期限は「転居日から6か月以内」。",
+   "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/sumai/hitorioyazyuutakushien.html"
+  },
+  "dokuji": [
+   {
+    "name": "中野区実質ひとり親家庭への子育て支援給付事業",
+    "kingaku": "「支給対象児童1人につき10万円（一括）」。雑所得にあたるため収入として認定される旨の記載あり。",
+    "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/teate_jyosei/shienjigyo.html"
+   },
+   {
+    "name": "養育費に関する公正証書等作成費用の補助",
+    "kingaku": "「負担している対象経費の額（上限20,000円）」",
+    "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/teate_jyosei/koseisyosyo.html"
+   },
+   {
+    "name": "養育費の取決めに関する裁判外紛争解決手続（ADR）利用費用の補助",
+    "kingaku": "非公表（「ひとり親家庭へのサポート」一覧ページ内にリンクのみ確認）",
+    "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/index.html"
+   },
+   {
+    "name": "子育て家庭ホームヘルプサービス（病児保育も実施）",
+    "kingaku": "非公表（自己負担額は「所得に応じて」発生するとの記載のみで、具体的な金額表は本文中に確認できず。利用登録通知書に自己負担額を記載して送付する旨のみ記載）",
+    "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/ichijihoiku/azukari/homehelp.html"
+   },
+   {
+    "name": "母子家庭等自立支援教育訓練給付金事業",
+    "kingaku": "一般・特定一般教育訓練給付金：「指定講座の修了後に、入学料及び受講料の60％を支給します。（上限20万円）」専門実践訓練給付金：「入学料及び受講料の60％を支給します。（上限40万円×修行年数上限4年）」＋資格取得・就職等をした場合に25％追加支給（最大85％、上限60万円×修行年数上限4年）。支給額が12,000円以下の場合は支給対象外。",
+    "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/syuroshien.html"
+   },
+   {
+    "name": "母子家庭等高等職業訓練促進給付金等事業",
+    "kingaku": "促進給付金：「非課税世帯の方：月額100,000円（最終学年は140,000円）」「課税世帯の方：月額70,500円（最終学年は110,500円）」。修了支援給付金：「非課税世帯の方：50,000円」「課税世帯の方：25,000円」。",
+    "src": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hitorioya/syuroshien.html"
+   }
+  ]
+ },
+ {
+  "ward": "杉並区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 17000,
+   "shotoku_seigen": "【A表】所得制限限度額（児童育成手当ページ）：扶養人数0人＝3,758,000円、1人＝4,138,000円、2人＝4,518,000円、3人以上は1人増すごとに380,000円を加算。申請者の前年中（1月から4月までの申請については前々年中）の所得金額から控除額を差し引いた後の金額がこの限度額未満であれば対象。",
+   "src": "https://www.city.suginami.tokyo.jp/s053/1143.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費の助成（ひとり親医療証）",
+   "futan": "住民税課税世帯：外来＝「医療費の1割負担（個人）　月額上限 18,000円・年間上限 144,000円」、入院＝「医療費の1割負担　月額上限 57,600円」（＋食事療養費等別途）。住民税非課税世帯：外来＝「医療費の負担なし」、入院＝「食事療養標準負担額または生活療養標準負担額」。",
+   "shotoku_seigen": "扶養人数0人：【ひとり親家庭等の父または母および養育者（孤児以外を養育）】2,080,000円／【扶養義務者・配偶者および養育者（孤児等を養育）】2,360,000円。1人：2,460,000円／2,740,000円。2人：2,840,000円／3,120,000円。3人以上は1人増すごとに380,000円を加算。申請者の前々年の所得金額に養育費の8割相当額を合算した金額から控除額を差し引いた金額がこの限度額未満であれば助成対象。",
+   "age_limit": "18歳に達する日以後の最初の3月31日（中度以上の障害を有する場合は20歳未満）までの児童",
+   "src": "https://www.city.suginami.tokyo.jp/s053/1714.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "家賃助成",
+   "kingaku": "助成金額：30万円（注）申請年度の途中で、賃貸借契約が終了する場合は、賃貸借契約の期間内で決定します。（25,000円×契約期間の月数）",
+   "joken": "対象世帯：助成申請の前年度に優遇抽選の方法で区営住宅に申し込み、落選したひとり親、多子世帯。助成要件：前年度に、区営住宅の使用許可期限を定めた優遇抽せんの対象として申し込み、落選したひとり親世帯又は多子世帯であること。区営住宅の申込者資格要件を満たしていること（区内に2年以上住民登録、世帯の月額所得214,000円以下、など）。世帯員が賃貸借契約を締結した区内の民間賃貸住宅に居住していること。助成対象となるひとり親世帯又は多子世帯のみが居住していること。対象外：家賃滞納中、過去2年度分受給済み、生活保護受給中。助成限度：1世帯2回まで（1年度単位を1回とする）。",
+   "src": "https://www.city.suginami.tokyo.jp/s093/19877.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭ホームヘルプサービス",
+    "kingaku": "1時間当たり0円～1,500円（所得に応じた利用者負担）。杉並子育て応援券の使用可。",
+    "src": "https://www.city.suginami.tokyo.jp/s053/1713.html"
+   },
+   {
+    "name": "ひとり親家庭休養ホーム",
+    "kingaku": "宿泊施設：「1人1泊6,500円を上限に宿泊料金の一部を助成」。日帰り施設：「1人1回2,000円を上限に料金の一部を助成」。",
+    "src": "https://www.city.suginami.tokyo.jp/s053/1712.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援教育訓練給付金",
+    "kingaku": "一般・特定一般教育訓練：入学料・受講料の60%（上限20万円、下限12,001円）。専門実践教育訓練：60%（修業年数×40万円まで）、修了1年以内に資格取得・就職した場合は追加給付で合計85%。",
+    "src": "https://www.city.suginami.tokyo.jp/s053/1710.html"
+   },
+   {
+    "name": "ひとり親家庭高等職業訓練促進給付金等",
+    "kingaku": "訓練促進給付金：非課税世帯月額10万円、課税世帯月額7万500円（最終12カ月は月額4万円増額）。修了支援給付金：非課税世帯5万円、課税世帯2万5千円。",
+    "src": "https://www.city.suginami.tokyo.jp/s053/1710.html"
+   },
+   {
+    "name": "ひとり親家庭高等学校卒業程度認定試験合格支援事業",
+    "kingaku": "受講費用の最大60%（通信制上限15万円、通学制上限30万円）。",
+    "src": "https://www.city.suginami.tokyo.jp/s053/1710.html"
+   },
+   {
+    "name": "養育費確保支援（公正証書作成等費用助成）",
+    "kingaku": "本人が負担した費用のうち上限4万3千円。",
+    "src": "https://www.city.suginami.tokyo.jp/s053/1717.html"
+   },
+   {
+    "name": "養育費確保支援（養育費保証契約締結費用助成）",
+    "kingaku": "初回保証料として負担した費用のうち上限5万円。",
+    "src": "https://www.city.suginami.tokyo.jp/s053/1717.html"
+   },
+   {
+    "name": "高齢者等入居支援事業（家賃等債務保証の保証料助成）",
+    "kingaku": "30,000円を限度に保証料の額を助成（以前に支給を受けた場合、2回目の支給は不可）。",
+    "src": "https://www.city.suginami.tokyo.jp/s093/1908.html"
+   }
+  ]
+ },
+ {
+  "ward": "豊島区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "所得制限あり。区ページ本文に具体的な限度額の記載なし。",
+   "src": "https://www.city.toshima.lg.jp/261/kosodate/kosodate/hitorioya/005893.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成（マル親医療証）",
+   "futan": "本人または扶養義務者が住民税課税の場合: 医療費の1割が自己負担、外来の自己負担上限は月18,000円（年間上限144,000円・8/1〜翌7/31）、入院の上限は月57,600円（世帯合算あり・直近12か月で3回超過なら4回目以降44,400円）。本人および扶養義務者全員が住民税非課税の場合: 自己負担なし（保険診療分全額助成）。",
+   "shotoku_seigen": "所得制限あり。具体的な限度額の記載は原文になし。",
+   "age_limit": "区公式ページ本文に年齢要件の明記なし。",
+   "src": "https://www.city.toshima.lg.jp/261/kosodate/kosodate/hitorioya/005898.html"
+  },
+  "jutaku": {
+   "exists": false,
+   "seido_name": "（ひとり親専用の家賃補助・住宅手当は専用制度なし）",
+   "kingaku": "該当なし",
+   "joken": "該当なし",
+   "src": "https://www.city.toshima.lg.jp/kosodate/kosodate/hitorioya/index.html"
+  },
+  "dokuji": [
+   {
+    "name": "エアコン購入費用等助成",
+    "kingaku": "10万円まで。",
+    "src": "https://www.city.toshima.lg.jp/2506021621.html"
+   },
+   {
+    "name": "母子家庭及び父子家庭高等職業訓練促進給付金",
+    "kingaku": "月額: 住民税非課税世帯100,000円・課税世帯70,500円（最終学年の最後12か月は4万円加算）。修了時に修了支援給付金: 非課税50,000円・課税25,000円。",
+    "src": "https://www.city.toshima.lg.jp/259/kosodate/kosodate/hitorioya/1507161302.html"
+   },
+   {
+    "name": "ひとり親家庭ホームヘルプサービス",
+    "kingaku": "ひとり親要件発生から1年間は児童育成手当受給家庭無料・その他1時間500円、1年後以降は児童育成手当受給家庭1時間500円・その他900円（生活保護・非課税世帯は常に無料）。",
+    "src": "https://www.city.toshima.lg.jp/265/kosodate/kosodate/hitorioya/2404091747.html"
+   },
+   {
+    "name": "都営交通無料乗車券・JR通勤定期割引・上下水道料金減免（詳細未調査）",
+    "kingaku": "不明（区ページ本文で確認できず）",
+    "src": "https://www.city.toshima.lg.jp/kosodate/kosodate/hitorioya/index.html"
+   }
+  ]
+ },
+ {
+  "ward": "北区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "所得制限あり。区ページ本文に具体的な限度額の記載なし。",
+   "src": "https://www.city.kita.lg.jp/children-edu/childcare/1002909/1002926/1002927.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成制度（マル親）",
+   "futan": "課税世帯=定率1割負担（外来の自己負担上限 月18,000円・年間上限144,000円、入院 月57,600円・多数回該当44,400円）、非課税世帯=自己負担なし（入院時の食事療養標準負担額等は自己負担）。",
+   "shotoku_seigen": "所得制限あり。具体的な限度額の記載は原文になし。",
+   "age_limit": "区公式ページ本文に年齢要件の明記なし。",
+   "src": "https://www.city.kita.lg.jp/children-edu/childcare/1002909/1002936/1002937.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "障害者世帯及びひとり親世帯転居費用助成／家賃債務保証料助成",
+   "kingaku": "(1)転居費用助成: 礼金+仲介手数料の合算額を上限15万円まで。(2)家賃債務保証料助成: 上限2万円/戸。",
+   "joken": "(1)自己都合によらない立ち退きで区内民間賃貸→区内民間賃貸へ転居、区内1年以上居住・所得基準あり・1回限り。(2)ひとり親世帯（18歳以下の児童を扶養）が区内民間賃貸の契約・更新時、区内1年以上居住・所得基準あり。",
+   "src": "https://www.city.kita.lg.jp/living/housing/1009223/1009229.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭養育費確保支援事業",
+    "kingaku": "公正証書の作成=上限5万円、養育費立替保証契約の初回保証料=上限5万円、ADR（裁判外紛争解決手続）利用=上限3万円。",
+    "src": "https://www.city.kita.lg.jp/children-edu/childcare/1002833/1002848/1016857.html"
+   },
+   {
+    "name": "ひとり親家庭高等職業訓練促進給付金",
+    "kingaku": "月額10万円（非課税世帯）/7万500円（課税世帯）（最後の12か月は各+4万円）。修了時に修了支援給付金5万円/2万5千円。",
+    "src": "https://www.city.kita.lg.jp/children-edu/childcare/1002833/1002848/1002851.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援教育訓練給付金",
+    "kingaku": "入学料+受講料の60%を支給（上限20万円）。専門実践教育訓練は修学年数×40万円で最大160万円、資格取得+就職なら85%・最大240万円。",
+    "src": "https://www.city.kita.lg.jp/children-edu/childcare/1002833/1002848/1002850.html"
+   },
+   {
+    "name": "そらまめ相談室（ひとり親家庭等相談室）",
+    "kingaku": "無料（相談事業のため金額情報なし）",
+    "src": "https://www.city.kita.lg.jp/children-edu/childcare/1002833/1002848/1016856.html"
+   },
+   {
+    "name": "母子生活支援施設",
+    "kingaku": "所得に応じた負担金（詳細は区ページ本文に記載なし）",
+    "src": "https://www.city.kita.lg.jp/children-edu/childcare/1002833/1002848/1002854.html"
+   }
+  ]
+ },
+ {
+  "ward": "荒川区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "所得制限は令和8年6月分から改正（扶養0人:3,758,000円〜）。",
+   "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/ikuseiteate.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭医療費助成（マル親）",
+   "futan": "住民税課税世帯は自己負担『定率1割』（自己負担限度額: 外来18,000円/月・年間上限144,000円、入院57,600円/月・多数回該当44,400円）、住民税非課税世帯は『自己負担なし』。",
+   "shotoku_seigen": "所得制限あり（本人 扶養1人:2,460,000円等）。",
+   "age_limit": "区公式ページ本文に児童の年齢要件の明記なし。医療証の有効期限は毎年1/1〜12/31。",
+   "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/iryohijosei.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "ひとり親世帯等民間賃貸住宅入居支援事業／ひとり親家庭等転居支援補助金交付事業",
+   "kingaku": "(1)保証料補助: 保証料上限5万円、緊急連絡先引受契約料も初回保証料と合わせ上限5万円、更新保証料上限5万円・更新は最大4回。(2)転居支援補助金: 上限40万円（3人以上の児童を扶養する多子世帯は上限45万円）。",
+   "joken": "(1)区内在住1年以上・児童扶養手当受給者又は同等所得水準等の要件、区と協定を結ぶ保証会社との契約に限る。(2)区内→区内の民間賃貸住宅への転居、区内在住2年以上・母子父子自立支援員への事前相談必須・利用は一度限り。",
+   "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/hitorioyajuutaku.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親高等職業訓練促進給付金等事業",
+    "kingaku": "住民税非課税世帯は月額100,000円・課税世帯は月額70,500円（最終学年1年間は月額40,000円増額）。修了時に修了支援給付金（非課税50,000円・課税25,000円）。",
+    "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/shokugyokunren.html"
+   },
+   {
+    "name": "ひとり親自立支援教育訓練給付金事業",
+    "kingaku": "詳細金額は確認できていない（ひとり親支援トップからのリンクで制度の存在を確認）。",
+    "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/shienkyoiku.html"
+   },
+   {
+    "name": "ひとり親家庭サポート事業",
+    "kingaku": "2人世帯で年収518万円以下は費用負担なし、それ以外は1時間0円〜1,290円。",
+    "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/supportjigyo.html"
+   },
+   {
+    "name": "ひとり親家庭休養ホーム",
+    "kingaku": "指定宿泊施設（清里高原ロッジ・ホテルグリーンパール那須）は上限3,000円、日帰り施設（あらかわ遊園等）は上限2,000円。",
+    "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/kyuyohome.html"
+   },
+   {
+    "name": "荒川区養育費に関する公正証書等作成促進補助金事業",
+    "kingaku": "上限3万円。",
+    "src": "https://www.city.arakawa.tokyo.jp/a035/kosodate/hitorioyakatei/youikuhi_kakuho.html"
+   }
+  ]
+ },
+ {
+  "ward": "板橋区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "所得限度額一覧表（令和7年6月分以降）扶養親族等の数：0人3,661,000円、1人4,041,000円、2人4,421,000円、3人4,801,000円、4人5,181,000円。「次の方は資格対象外です　申請者の前年中（1月から4月までの申請については前々年中）の所得が所得制限限度額以上のとき」",
+   "src": "https://www.city.itabashi.tokyo.jp/kosodate/teate/teate/1004635.html / https://www.city.itabashi.tokyo.jp/kosodate/teate/teate/1004636.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成（ひとり親医療証／マル親）",
+   "futan": "「（1）令和7年度住民税非課税世帯（81137から始まる医療証をお持ちの方）の場合(令和8年1月～12月に適用）入院時の食事療養費標準負担額を負担いただきます。」「（2）令和7年度住民税課税世帯（81136から始まる医療証をお持ちの方）の場合(令和8年1月～12月に適用）外来：医療費の1割相当額を負担いただきます。入院：医療費の1割相当額及び食事療養費標準負担額を負担いただきます。」高額療養費の1か月の上限額は「外来(個人ごと)18,000円(ただし年間上限144,000円)」「入院＋外来(世帯ごと)57,600円(多数回該当の場合は44,400円)」（負担者番号「81136」で始まるマル親医療証をお持ちの方が対象）。",
+   "shotoku_seigen": "「受給家庭の父又は母あるいは養育している方・同居の扶養義務者（親の両親・兄弟姉妹等）の所得が限度額以上の時はひとり親家庭等医療費助成制度の対象になりません。」具体的な限度額表は添付PDF「所得限度額表」に記載されており、本文（HTML）には数値の明記なし。",
+   "age_limit": "「児童とは18歳未満の方（4月1日現在）あるいは一定の障がいのある場合は20歳の誕生日前日までの方」。「医療費助成期間が満了した時（児童が18歳になった最初の3月31日、一定の障がいのある場合は20歳の誕生日前日）」に資格消滅。",
+   "src": "https://www.city.itabashi.tokyo.jp/kosodate/teate/iryohi/1053935/1053938.html"
+  },
+  "jutaku": {
+   "exists": false,
+   "seido_name": "",
+   "kingaku": "",
+   "joken": "",
+   "src": "https://www.city.itabashi.tokyo.jp/kosodate/hitorioya/sumai/index.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭ホームヘルパー派遣",
+    "kingaku": "「所得制限はありませんが、所得により本人負担があります。」「初回利用日の属する月から1年を超えない期間は、負担額が免除になります。」（具体的な負担額表は本文に数値の明記なし）",
+    "src": "https://www.city.itabashi.tokyo.jp/kosodate/hitorioya/kurashi/1004677.html"
+   },
+   {
+    "name": "ひとり親家庭休養ホーム事業（レジャー施設補助）",
+    "kingaku": "具体的な利用料金・本人負担額は添付PDF「利用料金（紙チケット）」「利用料金（電子チケット）」に記載されており、本文（HTML）には数値の明記なし。",
+    "src": "https://www.city.itabashi.tokyo.jp/kosodate/hitorioya/kurashi/1004676.html"
+   }
+  ]
+ },
+ {
+  "ward": "練馬区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "所得制限があります。配偶者がいる場合（父母障害等で受給中の方）は、配偶者も同様の所得制限となります。どちらか一方が所得制限以上の場合は手当は受給できません。所得制限限度額表では、扶養親族0人の場合3,838,000円、扶養親族1人増すごとに380,000円を加算。給与収入額の目安は扶養親族0人で5,472,000円から（所得制限額表には社会保険料相当額一律8万円を加算し、給与所得または公的年金に係る所得を有する方はその合計額から10万円（合計額が10万円を下回る場合はその額）を控除して判定）。所得判定年は毎年6月分の手当から切り替わり、令和7年6月分から令和8年5月分までは令和6年中の所得金額で判定。",
+   "src": "https://www.city.nerima.tokyo.jp/kosodatekyoiku/kodomo/teateiryo/ikuseiteate.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成（マル親医療証）",
+   "futan": "医療機関窓口で1割分をお支払いください（課税世帯）。限度額は、ひと月あたり18,000円（外来個人）、ひと月あたり57,600円（入院＋外来世帯）。非課税世帯は、入院時食事療養標準負担額または生活療養標準負担額のみが一部負担となります（＝通院・入院の自己負担分は生じない）。医療証取扱機関では提示により現場で助成、非取扱機関では領収書原本を持参のうえ児童手当係窓口で払い戻しの申請が必要です。",
+   "shotoku_seigen": "所得制限があります。申請者本人および扶養義務者に制限があり、扶養人数ゼロの場合、申請者本人の所得金額は2,160,000円未満、配偶者・扶養義務者は2,440,000円未満が基準です。",
+   "age_limit": "18歳になった後の最初の3月31日まで（中度以上の障害児は20歳の誕生日の前日まで）。対象児童の要件には、親の離婚・死亡・重度障害・生死不明・遺棄・拘禁・婚外子・DV保護命令の各ケースが該当。",
+   "src": "https://www.city.nerima.tokyo.jp/hokenfukushi/iryo/iryojosei/hitorioya.html"
+  },
+  "jutaku": {
+   "exists": false,
+   "seido_name": "",
+   "kingaku": "",
+   "joken": "",
+   "src": ""
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭転宅支援給付金",
+    "kingaku": "敷金、礼金、仲介手数料、火災保険料、保証料、鍵交換費用、原状回復費用、引越し費用を対象に、上限40万円",
+    "src": "https://www.city.nerima.tokyo.jp/kurashi/jinken/hitorioya/tentakushien.html"
+   },
+   {
+    "name": "ひとり親家庭ホームヘルプサービス",
+    "kingaku": "前年度の所得に応じた費用負担があります（定額の記載なし）",
+    "src": "https://www.city.nerima.tokyo.jp/kurashi/jinken/hitorioya/homehelp.html"
+   },
+   {
+    "name": "ひとり親家庭向け学習支援事業（学習クーポン）",
+    "kingaku": "中学校1年生および2年生は年間上限10万円、高校1年生および2年生は年間上限15万円（子ども1人当たり）",
+    "src": "https://www.city.nerima.tokyo.jp/kurashi/jinken/hitorioya/gakushu-coupon.html"
+   },
+   {
+    "name": "ひとり親家庭向け家庭訪問型学習支援事業",
+    "kingaku": "非公表（募集終了ページのため、金額・単価の記載を確認できなかった）",
+    "src": "https://www.city.nerima.tokyo.jp/kurashi/jinken/hitorioya/hitorioya_gakusyu.html"
+   }
+  ]
+ },
+ {
+  "ward": "足立区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "前年の所得から各種控除を差引いた金額を「所得限度額表」と比較。扶養親族等の数が0人の場合の限度額は3,758,000円で、1人増えるごとに380,000円加算される。",
+   "src": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/hitorioya-ikuse.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成制度（マル親医療証）",
+   "futan": "マル食（住民税非課税世帯）の場合：「保険診療の自己負担額が無くなります」。一部マル食（住民税課税世帯）の場合：「医療費（保険適用分）の１割を自己負担金として医療機関にお支払い」。ただし高額療養費の観点から自己負担には上限があり、「外来（個人ごと）月額上限18,000円、入院（個人ごと）月額上限57,600円」。",
+   "shotoku_seigen": "令和７年度（令和６年中の所得）の場合、申請者本人は扶養0人で2,080,000円、扶養義務者・配偶者は2,360,000円が所得限度額。",
+   "age_limit": "児童が18歳になった年の年度末まで。規則で定める程度の障がいの状態にある児童は20歳未満まで対象。",
+   "src": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/hitorioya-hitorioya.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "住宅確保要配慮者専用賃貸住宅の家賃低廉化補助（住宅セーフティネット制度）",
+   "kingaku": "「月額家賃の半額（1,000円未満切捨て。※ 上限5万円）」。補助対象期間は「ひとり親世帯は最長10年間」。",
+   "joken": "「足立区内の児童育成手当または児童扶養手当を受給しているひとり親世帯」であること、「足立区に継続して1年以上居住している」こと、「世帯の年間所得が189万6,000円（15万8,000円/月）以下である」こと、「配偶者がいない」こと、「住宅を所有していない」こと。対象住戸は国の制度に登録された住宅確保要配慮者専用賃貸住宅（セーフティネット住宅）に限られる。",
+   "src": "https://www.city.adachi.tokyo.jp/juutaku/seftynet.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭高等職業訓練促進給付金",
+    "kingaku": "月額給付は「非課税世帯：月額１０万円」「課税世帯：月額７万５００円」。修業期間中の最後の12ヶ月間は月額に4万円を加算。修了時に修了支援給付金（非課税5万円／課税2万5千円）、区内就職時に付加給付金（非課税5万円／課税2万5千円）を追加支給。",
+    "src": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/20250801kousyoku.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援教育訓練給付金",
+    "kingaku": "一般教育訓練・特定一般教育訓練は「上限２０万円（支払った受講費用の６０％）」。専門実践教育訓練は「上限４０万円（支払った受講費用の６０％）×修業年数　※最大で１６０万円まで」。",
+    "src": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/20250804kyoukun.html"
+   },
+   {
+    "name": "ひとり親家庭高校卒業程度認定試験合格支援",
+    "kingaku": "通信講座の場合、受講開始時給付金は40％相当・最大10万円、受講修了時給付金は10％相当（合算最大12万5千円）、合格時給付金は10％相当（合算最大15万円）。通学講座または併用の場合は受講開始時40％相当・最大20万円、受講修了時10％相当（合算最大25万円）、合格時10％相当（合算最大30万円）。",
+    "src": "https://www.city.adachi.tokyo.jp/oyako/k-kyoiku/kosodate/20250804kousotu.html"
+   },
+   {
+    "name": "育児支援サービス利用料金助成事業",
+    "kingaku": "「養成機関の在籍中、年間３万６千円を上限に助成」",
+    "src": "https://www.city.adachi.tokyo.jp/oyako/ikujishienriyoujyosei.html"
+   }
+  ]
+ },
+ {
+  "ward": "葛飾区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "所得限度額（令和7年6月分より引き上げ）扶養親族の数：0人 3,661,000円／1人 4,041,000円／2人 4,421,000円／3人 4,801,000円／4人 5,181,000円／5人 5,561,000円。加算：老人控除対象配偶者または老人扶養親族1人につき10万円加算、特定扶養親族または16歳以上19歳未満の控除対象扶養親族1人につき25万円加算",
+   "src": "https://www.city.katsushika.lg.jp/kosodate/1000056/1002336/1002413.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成制度",
+   "futan": "住民税課税世帯：通院「定率1割　各月上限　18,000円（年間上限　144,000円）」、入院「定率1割　各月上限　57,600円（多数回該当　44,400円）」＋食事療養標準負担額。住民税非課税世帯：通院「自己負担なし」、入院は食事療養標準負担額のみ",
+   "shotoku_seigen": "前々年の所得が所得制限限度額以上の場合は対象外。令和7年1月1日適用の限度額表では、扶養親族0人の場合、ひとり親は2,080,000円、配偶者等は2,360,000円",
+   "age_limit": "18歳に達した日以後の最初の3月31日までの間にある児童（20歳未満で政令で定める程度の障害の状態にあるものを含む。）",
+   "src": "https://www.city.katsushika.lg.jp/kosodate/1000056/1002341/1002467.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "家賃債務保証制度利用助成",
+   "kingaku": "財団または認定事業者に支払った初回分の保証料（30,000円が限度です。）",
+   "joken": "葛飾区内に1年以上居住し、新たに区内の民間賃貸住宅に転居する世帯のうち、次のいずれかに該当する世帯：高齢者世帯（60歳以上の方、または介護保険認定を受けている60歳未満の方を含む世帯）／障害者世帯（身体障害1～6級、精神障害1～3級、知的障害1～3度の認定を受けている方を含む世帯）／ひとり親世帯（18歳以下の扶養義務のある児童を含む世帯）",
+   "src": "https://www.city.katsushika.lg.jp/kurashi/1003399/1030172/1003440.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭等ホームヘルパー派遣",
+    "kingaku": "非公表（ページ本文に具体的な料金・利用者負担額の記載なし。詳細は葛飾区社会福祉協議会〈電話03-5698-3216〉へ問い合わせる案内のみ）",
+    "src": "https://www.city.katsushika.lg.jp/kosodate/1000056/1002341/1002468.html"
+   },
+   {
+    "name": "養育費の受け取りを支援します（公正証書等作成助成・弁護士費用助成）",
+    "kingaku": "公正証書等作成助成：助成限度額43,000円（一回限り）／弁護士費用助成：助成限度額33,000円（一回限り）",
+    "src": "https://www.city.katsushika.lg.jp/kosodate/1000056/1002341/1026583.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援給付金事業（自立支援教育訓練給付金・高等職業訓練促進給付金等）",
+    "kingaku": "自立支援教育訓練給付金：一般・特定一般教育訓練は受講費用（年間1万6,001円以上20万円以下）の80%、専門実践教育訓練は受講費用（年間1万2,001円以上40万円以下×年数）の60%、資格取得・就職時に最大85%。高等職業訓練促進給付金：月額20万円または17万0,500円（上限4年）。修了支援給付金：5万円または2万5,000円。職業訓練受講給付金等差額給付金：月額15万円（上限4年）",
+    "src": "https://www.city.katsushika.lg.jp/kosodate/1000056/1002341/1002470.html"
+   }
+  ]
+ },
+ {
+  "ward": "江戸川区",
+  "ikusei_teate": {
+   "exists": true,
+   "monthly": 13500,
+   "shogai_monthly": 15500,
+   "shotoku_seigen": "申請者の前年中（1月～7月分の手当は前々年中）の所得額が限度額以上の場合、申請はできません",
+   "src": "https://www.city.edogawa.tokyo.jp/e049/kosodate/kosodate/teateshien/shisaku/teate/ikusei.html"
+  },
+  "iryo_josei": {
+   "seido_name": "ひとり親家庭等医療費助成",
+   "futan": "住民税課税世帯（注1）：通院＝負担割合1割・一月あたりの負担上限額18,000円、年間上限144,000円（注2）／入院＝負担割合1割・一月あたりの負担上限額57,600円（注3）、多数回該当44,400円（注4）／住民税非課税世帯（注1）：入院・通院ともに自己負担なし。「一部負担金が下表の上限額を超えた場合には払い戻しできる可能性があります」との記載あり。",
+   "shotoku_seigen": "申請者及び扶養義務者等のそれぞれの前々年中の所得額が限度額以上の場合は申請できません",
+   "age_limit": "18歳に達する日以降の最初の3月31日までの間にある者又は20歳未満で政令で定める程度の障害の状態にある者",
+   "src": "https://www.city.edogawa.tokyo.jp/e049/kosodate/kosodate/teateshien/shisaku/iryohijose.html"
+  },
+  "jutaku": {
+   "exists": true,
+   "seido_name": "ひとり親家庭民間賃貸住宅家賃等助成",
+   "kingaku": "非公表",
+   "joken": "ひとり親家庭の世帯（18歳未満の児童とで構成する世帯）が、民間賃貸住宅に居住していて、老朽化による建物の取り壊しで家主から立ち退きを求められているとき、転居後の家賃などの一部を助成して、住まいの安定を図ります。所得制限があります。詳しくはお問い合わせください。",
+   "src": "https://www.city.edogawa.tokyo.jp/e090/kosodate/kosodate/teateshien/shisaku/jutakuyachin.html"
+  },
+  "dokuji": [
+   {
+    "name": "ひとり親家庭ホームヘルプサービス",
+    "kingaku": "非公表（『所得に応じて自己負担額があります』とのみ記載され、所得階層ごとの具体的な金額表はページに掲載されていない）",
+    "src": "https://www.city.edogawa.tokyo.jp/e090/kosodate/kosodate/teateshien/shisaku/ervice.html"
+   },
+   {
+    "name": "ひとり親家庭高等職業訓練促進給付金",
+    "kingaku": "非課税世帯：月額100,000円／課税世帯：月額70,500円／修学最終年次はそれぞれに40,000円加算",
+    "src": "https://www.city.edogawa.tokyo.jp/e090/kosodate/kosodate/teateshien/shisaku/koutoukyuuhu.html"
+   },
+   {
+    "name": "ひとり親家庭自立支援教育訓練給付金",
+    "kingaku": "一般・特定一般教育訓練：本人が支払った費用（入学料、受講料に限る）の80パーセント、上限200,000円（16,000円以下は不支給）／専門実践教育訓練：本人が支払った費用（入学料、受講料に限る）の最大85パーセント（12,000円以下は不支給）",
+    "src": "https://www.city.edogawa.tokyo.jp/e090/kosodate/kosodate/teateshien/shisaku/kyufukin.html"
+   },
+   {
+    "name": "養育費確保支援補助金",
+    "kingaku": "公正証書（強制執行認諾条項付）：公証役場に支払った公証人手数料を補助（例：月額50,000円の養育費の場合、約13,000～17,000円）／家庭裁判所の調停・審判・裁判：調停申立てや裁判に要した収入印紙代等の実費（例：子ども1人の場合、離婚調停時1,200円）／ADR（裁判外紛争解決手続）：1回目上限20,000円、2回目以降上限30,000円（公正証書作成時のみ）",
+    "src": "https://www.city.edogawa.tokyo.jp/e090/kosodate/kosodate/teateshien/shisaku/youikuhi_torikime.html"
+   }
+  ]
+ }
+]

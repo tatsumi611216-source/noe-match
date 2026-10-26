@@ -1,0 +1,446 @@
+# -*- coding: utf-8 -*-
+"""GA4のセッションを日次で取り込む（2026-09-01 新設）
+
+なぜ必要か:
+GSCは自動取得しているのにGA4は手動読み取りしかしておらず、**データ記事とバンクの
+価値が継続的に測れていない**。データ記事の主な流入はAI（chatgpt・copilot）とBingで、
+GSCには一切出ない。GSCだけを見ると「データ記事は表示4.1/本で最弱」に見えるが、
+2026-08-27に手でGA4を見たときはデータ記事1.28セッション/本・通常記事0.24（5.3倍）だった。
+**判断の土台が片方しか自動化されていない状態を解消する。**
+
+設計は scripts/gsc_archive.py と揃える:
+- 日別に1ファイル（agent/ga4_archive/YYYY-MM-DD.json）。取得済みの日は飛ばす
+- 直近N日の欠損を埋め直す差分モード（数日落ちても自力で復旧する）
+- 認証は「環境変数 → ファイル」の2経路（CIに載せられる形にしておく）
+
+認証（2026-09-01 に実機で確認・追加の権限付与は不要だった）:
+  GA4のプロパティ「Noe結婚設計室 noe-match.com」（properties/549779769）には、既に
+  gsc-ga4-analytics@matching-app-analytics.iam.gserviceaccount.com が閲覧者として
+  登録されていた。その鍵を secrets/noe-ga4-key.json に置いて使う。
+  **GSC用の noe-gsc-reader とは別のサービスアカウント（プロジェクトも別）** なので、
+  CIに載せるときは GSC_KEY_JSON ではなく GA4_KEY_JSON に入れる。
+
+使い方:
+  python scripts/fetch_ga4.py            未取得日を埋める（既定45日ぶん）
+  python scripts/fetch_ga4.py --days 90  さかのぼる日数を変える
+  python scripts/fetch_ga4.py --stats    取得済みの集計だけ（API未使用）
+  python scripts/fetch_ga4.py --report   ページ種別ごとの実績を出す（API未使用）
+  python scripts/fetch_ga4.py --backfill-clicks   取得済みの日に clicks キーだけを足す（既存キーは触らない）
+  python scripts/fetch_ga4.py --backfill-session  取得済みの日に by_source / by_landing キーだけを足す
+
+clicks キー（2026-09-19 追加・CEO承認）:
+  GA4内蔵の click イベントを pagePath × linkId × linkDomain × linkUrl で日別に保存する。
+  主KPI「結果直後のクリック数」（linkId が aff- で始まるもの＋ linkDomain=lin.ee）を
+  後から再計算できるようにするため。集計は scripts/result_clicks.py。
+  既存キー（total / by_page / events ほか）の形は変えていない。clicks が無い古いファイルも
+  そのまま読める（読む側は d.get("clicks", []) とすること）。
+  linkId は <a> に id 属性が付いているときだけ入る。id の無いリンクは "" で保存される。
+
+aff_views キー（2026-09-27 追加）:
+  広告の表示イベント affv_<linkId> を pagePath × eventName で日別に保存する（広告枠が画面に50%入ったら1回）。
+  events キーにも同じイベント名の合計は入るが、ページ別はこちら。無い古いファイルは d.get("aff_views", [])。
+  表示→クリックの集計は scripts/aff_funnel.py。
+
+by_source / by_landing キー（2026-10-08 追加）:
+  by_page は pagePath（イベント単位）×チャネルなので、複数ページを見たセッションが行の数だけ重複する。
+  「total − by_page の Direct 合計」で Direct を除くと、Direct の重複分だけ引きすぎて
+  Direct除きセッションが過小になる（9/8〜10/5 で 428 と出ていたが、セッション単位では 464。
+  8/11〜9/7 は 166 → 279）。そこでセッション単位の2表を足す:
+    by_source  = sessionDefaultChannelGroup × sessionSource（ページなし。行の合計＝total）
+    by_landing = landingPage × sessionDefaultChannelGroup × sessionSource（入口ページ。1セッション1行）
+  集計は scripts/session_recount.py。無い古いファイルは --backfill-session で足す（既存キーは触らない）。
+
+aff_session_clicks キー（2026-10-08 追加）:
+  affc_<linkIdから aff- を除き - を _ にしたもの> を pagePath × eventName で保存する。広告リンクを押したとき、
+  同じセッションで同じ枠は1回しか送らない（連打・戻って再クリックを数えない）。自社の検品アクセスは送らない。
+  GA4 内蔵の click（clicks キー）は押した回数そのままなので、成果の判定にはこちらを使う。
+
+限界（正直に書く）:
+- GA4は当日ぶんが確定しない。**当日と前日は取りに行かない**（2日前まで）
+- 参照元の分類はGA4の既定チャネルグループをそのまま使う。AI検索（chatgpt.com等）は
+  多くが Referral に入るため、sessionSource も一緒に保存して後から数え直せるようにする
+"""
+import argparse
+import datetime
+import io
+import json
+import os
+import sys
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ARC = os.path.join(ROOT, "agent", "ga4_archive")
+KEY_PATH = r"C:\Users\tatsu\matching-app\secrets\noe-ga4-key.json"
+PROPERTY_ID = "properties/549779769"   # Noe結婚設計室 noe-match.com（2026-09-01 実機で確認）
+PROD_HOSTS = ("www.noe-match.com", "noe-match.com")   # ローカル検品を除く（2026-10-09）
+SCOPES = ["https://www.googleapis.com/auth/analytics.readonly"]
+DEFAULT_DAYS = 45
+SETUP_HINT = (
+    "GA4のAPIが使えない。次の2つを1回だけ済ませる必要がある:\n"
+    "  1) GCPプロジェクト noe-gsc で Google Analytics Data API と Admin API を有効化\n"
+    "  2) GA4のプロパティのアクセス管理で "
+    "noe-gsc-reader@noe-gsc.iam.gserviceaccount.com に「閲覧者」を付与")
+
+
+def credentials():
+    from google.oauth2 import service_account
+    key_json = os.environ.get("GA4_KEY_JSON")
+    if key_json:
+        return service_account.Credentials.from_service_account_info(
+            json.loads(key_json), scopes=SCOPES)
+    return service_account.Credentials.from_service_account_file(KEY_PATH, scopes=SCOPES)
+
+
+def resolve_property(creds):
+    """プロパティIDを決める。環境変数 → 定数 → Admin APIで自動検出。"""
+    pid = os.environ.get("GA4_PROPERTY_ID") or PROPERTY_ID
+    if pid:
+        return pid if pid.startswith("properties/") else "properties/%s" % pid
+    from google.analytics.admin import AnalyticsAdminServiceClient
+    client = AnalyticsAdminServiceClient(credentials=creds)
+    found = []
+    for s in client.list_account_summaries():
+        for p in s.property_summaries:
+            found.append((p.display_name, p.property))
+    if not found:
+        raise SystemExit("GA4のプロパティが1つも見えない。\n" + SETUP_HINT)
+    for name, prop in found:
+        if "noe-match" in name.lower() or "noe" in name.lower():
+            print("プロパティ自動検出: %s (%s)" % (name, prop))
+            return prop
+    print("プロパティ自動検出: %s (%s)" % found[0])
+    return found[0][1]
+
+
+def _prod(f=None):
+    """本番ホストだけに絞るフィルタ（2026-10-09 追加）。f があれば AND で結ぶ。
+
+    ローカル検品（localhost・127.0.0.1）のイベントが同じプロパティに入っていた。
+    7/1〜10/9で35セッション、9月の tool_result は223件中83件（37%）がローカル由来、
+    10/8の aff_click 6件は全て 127.0.0.1。2026-10-09以降の取得分からこのフィルタが効く。"""
+    from google.analytics.data_v1beta.types import Filter, FilterExpression, FilterExpressionList
+    host = FilterExpression(filter=Filter(field_name="hostName", in_list_filter=Filter.InListFilter(
+        values=list(PROD_HOSTS))))
+    if f is None:
+        return host
+    return FilterExpression(and_group=FilterExpressionList(expressions=[host, f]))
+
+
+def fetch_clicks(client, prop, ds):
+    """GA4内蔵 click（外部リンクのクリック）を ページ×linkId×linkDomain×linkUrl で取る。"""
+    from google.analytics.data_v1beta.types import (
+        DateRange, Dimension, Filter, FilterExpression, Metric, RunReportRequest)
+    req = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        dimensions=[Dimension(name="pagePath"), Dimension(name="linkId"),
+                    Dimension(name="linkDomain"), Dimension(name="linkUrl")],
+        metrics=[Metric(name="eventCount")],
+        dimension_filter=_prod(FilterExpression(filter=Filter(
+            field_name="eventName",
+            string_filter=Filter.StringFilter(value="click")))),
+        limit=10000)
+    out = []
+    for r in client.run_report(req).rows:
+        v = [d.value for d in r.dimension_values]
+        out.append({"path": v[0], "linkId": "" if v[1] == "(not set)" else v[1],
+                    "linkDomain": "" if v[2] == "(not set)" else v[2],
+                    "linkUrl": "" if v[3] == "(not set)" else v[3],
+                    "count": int(r.metric_values[0].value)})
+    return sorted(out, key=lambda x: (-x["count"], x["path"], x["linkId"]))
+
+
+def fetch_aff_views(client, prop, ds, prefix="affv_"):
+    """広告の表示イベント（affv_<linkId>・2026-09-27 新設）を ページ×イベント名 で取る。
+    送っているのは scripts/aff_only_20260927.py が差し込む AFF-VIEW。集計は scripts/aff_funnel.py。"""
+    from google.analytics.data_v1beta.types import (
+        DateRange, Dimension, Filter, FilterExpression, Metric, RunReportRequest)
+    req = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        dimensions=[Dimension(name="pagePath"), Dimension(name="eventName")],
+        metrics=[Metric(name="eventCount")],
+        dimension_filter=_prod(FilterExpression(filter=Filter(
+            field_name="eventName",
+            string_filter=Filter.StringFilter(
+                value=prefix, match_type=Filter.StringFilter.MatchType.BEGINS_WITH)))),
+        limit=10000)
+    out = [{"path": r.dimension_values[0].value, "event": r.dimension_values[1].value,
+            "count": int(r.metric_values[0].value)} for r in client.run_report(req).rows]
+    return sorted(out, key=lambda x: (-x["count"], x["path"], x["event"]))
+
+
+def backfill_clicks():
+    """取得済みの日次ファイルに clicks キーだけを足す。既存キーは一切書き換えない。"""
+    from google.analytics.data_v1beta import BetaAnalyticsDataClient
+    creds = credentials()
+    prop = resolve_property(creds)
+    client = BetaAnalyticsDataClient(credentials=creds)
+    limit = datetime.date.today() - datetime.timedelta(days=2)
+    n = tot = 0
+    for f in files():
+        d = json.load(io.open(f, encoding="utf-8"))
+        if "clicks" in d or datetime.date.fromisoformat(d["date"]) > limit:
+            continue
+        before = json.dumps({k: v for k, v in d.items()}, ensure_ascii=False, sort_keys=True)
+        clicks = fetch_clicks(client, prop, d["date"])
+        after = json.dumps({k: v for k, v in d.items()}, ensure_ascii=False, sort_keys=True)
+        assert before == after
+        d["clicks"] = clicks
+        d["clicks_fetched_at"] = datetime.datetime.now().isoformat(timespec="seconds")
+        io.open(f, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False, indent=1))
+        n += 1
+        tot += sum(c["count"] for c in clicks)
+        if clicks:
+            print("  %s  click %d件（%d行）" % (d["date"], sum(c["count"] for c in clicks), len(clicks)))
+    print("clicks を足した日: %d ／ click 合計 %d件" % (n, tot))
+
+
+def fetch_session_scoped(client, prop, ds):
+    """セッション単位の流入元（by_source）と入口ページ（by_landing）を取る。2026-10-08 追加。"""
+    from google.analytics.data_v1beta.types import (
+        DateRange, Dimension, Metric, RunReportRequest)
+    def run(dims):
+        req = RunReportRequest(
+            property=prop,
+            date_ranges=[DateRange(start_date=ds, end_date=ds)],
+            dimensions=[Dimension(name=x) for x in dims],
+            metrics=[Metric(name="sessions")],
+            dimension_filter=_prod(),
+            limit=100000)
+        return [([d.value for d in r.dimension_values], int(r.metric_values[0].value))
+                for r in client.run_report(req).rows]
+    by_source = [{"channel": v[0], "source": v[1], "sessions": n}
+                 for v, n in run(["sessionDefaultChannelGroup", "sessionSource"])]
+    by_landing = [{"landing": v[0], "channel": v[1], "source": v[2], "sessions": n}
+                  for v, n in run(["landingPage", "sessionDefaultChannelGroup", "sessionSource"])]
+    return (sorted(by_source, key=lambda x: (-x["sessions"], x["channel"], x["source"])),
+            sorted(by_landing, key=lambda x: (-x["sessions"], x["landing"], x["source"])))
+
+
+def backfill_session():
+    """取得済みの日次ファイルに by_source / by_landing キーだけを足す。既存キーは一切書き換えない。"""
+    from google.analytics.data_v1beta import BetaAnalyticsDataClient
+    creds = credentials()
+    prop = resolve_property(creds)
+    client = BetaAnalyticsDataClient(credentials=creds)
+    limit = datetime.date.today() - datetime.timedelta(days=2)
+    n = 0
+    for f in files():
+        d = json.load(io.open(f, encoding="utf-8"))
+        if "by_source" in d or datetime.date.fromisoformat(d["date"]) > limit:
+            continue
+        d["by_source"], d["by_landing"] = fetch_session_scoped(client, prop, d["date"])
+        d["session_fetched_at"] = datetime.datetime.now().isoformat(timespec="seconds")
+        io.open(f, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False, indent=1))
+        n += 1
+        bs = sum(x["sessions"] for x in d["by_source"])
+        print("  %s  by_source 合計 %d（total %d）" % (d["date"], bs, d["total"]["sessions"]))
+    print("by_source / by_landing を足した日: %d" % n)
+
+
+def fetch_day(creds, prop, day):
+    from google.analytics.data_v1beta import BetaAnalyticsDataClient
+    from google.analytics.data_v1beta.types import (
+        DateRange, Dimension, Metric, RunReportRequest)
+    client = BetaAnalyticsDataClient(credentials=creds)
+    ds = day.isoformat()
+
+    req = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        dimensions=[Dimension(name="pagePath"),
+                    Dimension(name="sessionDefaultChannelGroup"),
+                    Dimension(name="sessionSource")],
+        metrics=[Metric(name="sessions"), Metric(name="activeUsers"),
+                 Metric(name="screenPageViews")],
+        dimension_filter=_prod(),
+        limit=100000)
+    rows = []
+    for r in client.run_report(req).rows:
+        rows.append({
+            "path": r.dimension_values[0].value,
+            "channel": r.dimension_values[1].value,
+            "source": r.dimension_values[2].value,
+            "sessions": int(r.metric_values[0].value),
+            "users": int(r.metric_values[1].value),
+            "views": int(r.metric_values[2].value),
+        })
+
+    ev = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        dimensions=[Dimension(name="eventName")],
+        metrics=[Metric(name="eventCount")],
+        dimension_filter=_prod(),
+        limit=1000)
+    events = {r.dimension_values[0].value: int(r.metric_values[0].value)
+              for r in client.run_report(ev).rows}
+
+    # 合計は必ずディメンションなしで取り直す（2026-09-04 修正）。
+    # by_page（pagePath×channel×source）の sessions を足し上げると、複数ページを見た
+    # セッションが行の数だけ重複する。8月は 487 と出ていたが実数は 363（34%の水増し）で、
+    # 「月570セッション」「1面あたり月2.0」などの判断がこの水増し値の上に載っていた。
+    tot_req = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        metrics=[Metric(name="sessions"), Metric(name="activeUsers"),
+                 Metric(name="screenPageViews")],
+        dimension_filter=_prod())
+    tot_rows = client.run_report(tot_req).rows
+    if tot_rows:
+        mv = tot_rows[0].metric_values
+        total = {"sessions": int(mv[0].value), "users": int(mv[1].value),
+                 "views": int(mv[2].value)}
+    else:
+        total = {"sessions": 0, "users": 0, "views": 0}
+
+    by_source, by_landing = fetch_session_scoped(client, prop, ds)
+    return {
+        "date": ds, "property": prop, "hosts": list(PROD_HOSTS),
+        "fetched_at": datetime.datetime.now().isoformat(timespec="seconds"),
+        "total": total,
+        "total_by_page_sum": {
+            "sessions": sum(x["sessions"] for x in rows),
+            "users": sum(x["users"] for x in rows),
+            "views": sum(x["views"] for x in rows),
+        },
+        "by_page": rows,
+        "events": events,
+        "clicks": fetch_clicks(client, prop, ds),
+        "aff_views": fetch_aff_views(client, prop, ds),
+        # affc_<id>: 広告のクリックを1セッション1枠1回だけ送る（2026-10-08 新設・scripts/aff_view_20261008.py）
+        "aff_session_clicks": fetch_aff_views(client, prop, ds, prefix="affc_"),
+        "by_source": by_source,
+        "by_landing": by_landing,
+    }
+
+
+# ---------------- 集計（APIを使わない） ----------------
+import re  # noqa: E402
+
+BANK = re.compile(r"(daredemo-tsuen|sangokea|kodomo-iryohi|hitorioya|ikukyu|shussan"
+                  r"|kekkon-shinseikatsu|byoji|funin-josei|hoikuen-tensu)")
+
+
+def kind_of(path):
+    p = path.strip("/")
+    if p.startswith("tools/"):
+        return "ツール（バンク由来）" if BANK.search(p) else "ツール（その他）"
+    if p.startswith("articles/"):
+        s = p[len("articles/"):]
+        if BANK.search(s):
+            return "データ記事（バンク由来）"
+        if s.endswith("-data"):
+            return "データ記事（統計）"
+        return "通常記事"
+    if p in ("", "index.html"):
+        return "トップ"
+    return "その他"
+
+
+def files():
+    return sorted([os.path.join(ARC, f) for f in os.listdir(ARC)]) if os.path.isdir(ARC) else []
+
+
+def stats():
+    fs = files()
+    if not fs:
+        print("まだ1日も取得していない。")
+        return
+    days = [os.path.basename(f)[:-5] for f in fs]
+    tot = {"sessions": 0, "users": 0, "views": 0}
+    for f in fs:
+        t = json.load(io.open(f, encoding="utf-8"))["total"]
+        for k in tot:
+            tot[k] += t.get(k, 0)
+    print("保存日数: %d日（%s 〜 %s）" % (len(fs), days[0], days[-1]))
+    print("合計  セッション %d / ユーザー %d / PV %d" % (tot["sessions"], tot["users"], tot["views"]))
+    d0 = datetime.date.fromisoformat(days[0]); d1 = datetime.date.fromisoformat(days[-1])
+    want = {(d0 + datetime.timedelta(n)).isoformat() for n in range((d1 - d0).days + 1)}
+    miss = sorted(want - set(days))
+    print("期間内の欠損: %d日 %s" % (len(miss), miss[:10]))
+
+
+def report(days=28):
+    fs = files()[-days:]
+    if not fs:
+        print("まだ1日も取得していない。")
+        return
+    import collections
+    agg = collections.defaultdict(lambda: [0, 0, set()])
+    ch = collections.Counter()
+    src = collections.Counter()
+    for f in fs:
+        d = json.load(io.open(f, encoding="utf-8"))
+        for r in d["by_page"]:
+            k = kind_of(r["path"])
+            a = agg[k]
+            a[0] += r["sessions"]; a[1] += r["views"]; a[2].add(r["path"])
+            ch[r["channel"]] += r["sessions"]
+            src[r["source"]] += r["sessions"]
+    print("直近%d日（%s〜%s）" % (len(fs), os.path.basename(fs[0])[:-5], os.path.basename(fs[-1])[:-5]))
+    print("\n%-22s %5s %8s %8s %10s" % ("種別", "本数", "セッション", "PV", "1本あたり"))
+    for k, (s, v, ps) in sorted(agg.items(), key=lambda kv: -kv[1][0]):
+        print("%-24s %4d %8d %8d %10.2f" % (k, len(ps), s, v, s / max(len(ps), 1)))
+    print("\nチャネル別セッション:", dict(ch.most_common(8)))
+    print("参照元 上位:", dict(src.most_common(10)))
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--days", type=int, default=DEFAULT_DAYS)
+    ap.add_argument("--stats", action="store_true")
+    ap.add_argument("--report", action="store_true")
+    ap.add_argument("--backfill-clicks", action="store_true")
+    ap.add_argument("--backfill-session", action="store_true")
+    a = ap.parse_args()
+    if a.backfill_clicks:
+        return backfill_clicks()
+    if a.backfill_session:
+        return backfill_session()
+    if a.stats:
+        return stats()
+    if a.report:
+        return report()
+
+    os.makedirs(ARC, exist_ok=True)
+    end = datetime.date.today() - datetime.timedelta(days=2)   # 当日・前日は確定しない
+    start = end - datetime.timedelta(days=a.days - 1)
+    have = {os.path.basename(f)[:-5] for f in files()}
+    todo = [start + datetime.timedelta(n) for n in range((end - start).days + 1)
+            if (start + datetime.timedelta(n)).isoformat() not in have]
+    print("対象 %d日 ／ 未取得 %d日（%s 〜 %s）" % (a.days, len(todo), start, end))
+    if not todo:
+        return stats()
+
+    try:
+        creds = credentials()
+        prop = resolve_property(creds)
+    except SystemExit:
+        raise
+    except Exception as e:
+        print("認証・プロパティ解決に失敗: %s: %s" % (type(e).__name__, str(e)[:200]))
+        print(SETUP_HINT)
+        return 1
+
+    n = 0
+    for day in todo:
+        try:
+            d = fetch_day(creds, prop, day)
+        except Exception as e:
+            print("  %s 取得失敗: %s: %s" % (day, type(e).__name__, str(e)[:160]))
+            print(SETUP_HINT)
+            break
+        io.open(os.path.join(ARC, "%s.json" % day.isoformat()), "w", encoding="utf-8").write(
+            json.dumps(d, ensure_ascii=False, indent=1))
+        t = d["total"]
+        print("  %s  セッション %3d  ユーザー %3d  PV %3d  ページ %d"
+              % (day, t["sessions"], t["users"], t["views"], len(d["by_page"])))
+        n += 1
+    print("新規保存: %d日" % n)
+    stats()
+
+
+if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
+    sys.exit(main() or 0)

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="px.a8.net"],a[href*="t.afi-b.com"]');if(a){try{gtag('event','aff_click',{link_domain:(a.href.indexOf('a8.net')>-1?'a8':'afb'),page_slug:location.pathname});}catch(x){}}},true);</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>__TITLE__</title>
+<meta name="description" content="__DESC__">
+<link rel="canonical" href="__URL__">
+<meta property="og:title" content="__TITLE__">
+<meta property="og:description" content="__OGD__">
+<meta property="og:type" content="website">
+<meta property="og:url" content="__URL__">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="こども誰でも通園制度は月何時間使える？自治体別の早見表">
+<meta name="twitter:description" content="__OGD__">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
+__CSS__
+<style>
+.num-cell{font-weight:800;color:#7c2e42;white-space:nowrap}
+.cityout dt{font-weight:700;color:#1d242b;margin-top:14px;font-size:.9rem}
+.cityout dd{margin:4px 0 0;font-size:.88rem;line-height:1.9;color:#3a4148}
+.fitbox{padding:14px 16px;border-radius:6px;margin:14px 0;font-size:.9rem;line-height:1.9}
+.fit-ok{background:#edf3ee;border:1px solid #cfe0d4}
+.fit-ng{background:#f6f0e1;border:1px solid #e6d8b4}
+</style>
+<script type="application/ld+json">__FAQLD__</script>
+<script type="application/ld+json">__APPLD__</script>
+<script type="application/ld+json">__BCLD__</script>
+</head>
+<body>
+<header><div class="header-inner">
+<a href="/" class="logo">Noe結婚設計室<span class="logo-badge">2026</span></a>
+<nav><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#faq">FAQ</a><a href="/#about">運営者</a></nav>
+</div></header>
+<div class="wrap">
+<div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ こども誰でも通園制度 自治体別ナビ</div>
+
+<div class="tool-hero" style="background-image:url('../../images/lp/room-light.jpg')"><div class="tool-hero-inner">
+<h1>__H1__</h1>
+<p>国の基準は月10時間（令和8・9年度は経過措置で月3時間以上10時間未満に短縮している自治体も多い）。一方で大都市は上乗せしており、実際に使える時間は3時間から160時間まで開いています。東京23区・政令指定都市20市・中核市ほか3市の計46自治体を調べました。自治体を選ぶと、上限時間・利用料・予約の経路・申込の入口が出ます。無料・登録不要。</p>
+</div></div>
+
+<article>
+<blockquote><strong>同じ制度でも、住んでいる自治体で使える時間が最大16倍違います。</strong>大田区は条件つきで最大月160時間、渋谷区は最大月64時間、一方で足立区・板橋区・杉並区などは国基準どおりの月10時間（2026年10月5日時点の各自治体公式ページ）。上乗せ分はその自治体の中の施設に限られるのが原則で、区外・市外の施設を使うと国基準の月10時間に戻ります。</blockquote>
+
+<h2>STEP1｜自治体と使いたい回数を選ぶ</h2>
+<div class="calc" id="calcForm">
+  <div class="fld">
+    <label for="city">お住まいの自治体</label>
+    <select id="city">__OPTS__</select>
+    <div class="hint">東京23区・政令指定都市20市・中核市ほか3市（計46自治体）は2026年10月5日に全自治体の公式ページを確認して収録しています。それ以外にお住まいの場合は「上記以外の自治体（国の基準）」を選んでください。収録外の自治体は経過措置（令和8・9年度）で月3〜10時間未満に短縮していることが多い点にご注意ください。</div>
+  </div>
+  <div class="row2">
+    <div class="fld">
+      <label for="per">1回あたりの利用時間</label>
+      <select id="per"><option value="2">2時間</option><option value="3">3時間</option><option value="4" selected>4時間</option><option value="6">6時間</option><option value="8">8時間</option></select>
+    </div>
+    <div class="fld">
+      <label for="times">月に使いたい回数</label>
+      <select id="times"><option value="2">月2回</option><option value="4" selected>月4回（週1回ペース）</option><option value="8">月8回（週2回ペース）</option><option value="12">月12回（週3回ペース）</option></select>
+    </div>
+  </div>
+  <button type="button" class="calc-btn" id="run">この自治体の条件を見る</button>
+</div>
+
+<div class="result show" id="result" aria-live="polite">
+  <div class="big">
+    <div class="lbl">この自治体で使える月の上限</div>
+    <div class="num" id="capNum">—</div>
+  </div>
+  <div id="fit" class="fitbox"></div>
+  <dl class="cityout" id="detail"></dl>
+  <p class="sub-num" id="srcNote"></p>
+</div>
+
+<h2>東京23区の早見表（上限時間の多い順）</h2>
+<div class="table-wrap"><table>
+<tr><th>自治体</th><th>月の上限</th><th>利用料</th><th>予約の経路</th></tr>
+__ROWS__
+</table></div>
+<p>上限時間の差は、国の基準（月10時間）に区が独自の枠を上乗せしているかどうかで生まれています。上乗せ分はその区の施設でしか使えないのが原則です。23区のうち上乗せを確認できたのは大田・渋谷・世田谷・練馬・江東・品川・港・江戸川・中央・豊島・葛飾で、残りは国基準どおりでした。引っ越し先を検討している段階なら、この差は預けられる時間の差としてそのまま効いてきます。</p>
+
+<h2>政令指定都市の早見表（20市）</h2>
+<div class="table-wrap"><table>
+<tr><th>自治体</th><th>月の上限</th><th>利用料</th><th>予約の経路</th></tr>
+__ROWS_SEIREI__
+</table></div>
+<p><strong>政令指定都市20市を全部調べたところ、時間を上乗せしていたのは京都市の1市だけでした。</strong>京都市は「国の上限利用時間である10時間に本市が独自に2時間を上乗せし、合計12時間」としています（上乗せ分は京都市が認可・確認した施設でのみ使えます）。ほかの18市はいずれも国基準どおりの月10時間。福岡市は令和8年度の上限時間を公式ページに載せていません（令和7年度の市政だよりには「月最大40時間」「国の上限の4倍に拡充」とありましたが、令和8年度の一次情報では確認できませんでした）。<strong>時間の上乗せ競争は、東京23区にほぼ固有の現象です。</strong></p>
+<p>そのかわり政令市は<strong>所得による減免を敷くタイプ</strong>が主流です。札幌市・千葉市・横浜市・さいたま市・神戸市・広島市・熊本市・仙台市・北九州市・相模原市・静岡市・岡山市などが、生活保護世帯を0円〜300円上限、市町村民税所得割合算額77,101円未満の世帯を100〜200円とする軽減を公表しています。基準額の77,101円は全国でほぼ共通です。東京23区が「無償化して時間を伸ばす」方向なのに対し、政令市は「時間は国基準のまま、払える額に応じて下げる」方向で設計されている、という違いに見えます。</p>
+
+<h2>中核市ほかの早見表</h2>
+<div class="table-wrap"><table>
+<tr><th>自治体</th><th>月の上限</th><th>利用料</th><th>予約の経路</th></tr>
+__ROWS_CHUKAKU__
+</table></div>
+<p><strong>八王子市は「月の利用時間に制限はありません」と明記していて、時間の上限そのものを設けていません。</strong>かわりに「保育料は利用金額に応じ、月48,000円を上限として補助されます」という金額の上限で運用しています。時間で区切るか金額で区切るかという設計の違いがあり、葛飾区も同じく月48,000円の金額上限型でした。船橋市と姫路市は国基準の月10時間です。</p>
+
+<h2>予約の経路が自治体で違う（つまずきやすい点）</h2>
+<p>多くの自治体は国の「こども誰でも通園制度総合支援システム」（つうえんポータル）で施設を検索して予約します。ただし練馬区は区内施設について「総合支援システムでは予約できない」と明記しており、実施施設一覧の申込先へ直接申し込む方式です。足立区も各施設へ電話等で面談予約をします。<strong>システムに登録したのに自分の区の園が予約画面に出てこない、という詰まり方をするのはここです。</strong></p>
+
+<h2>申込から利用開始までにかかる時間</h2>
+<p>認定には時間がかかります。練馬区は「認定まで3週間程度」、足立区は「10営業日程度」と公表しています。渋谷区は認定申請の受付が令和8年2月2日から、認定証の発行が令和8年3月下旬、システムの利用開始が令和8年4月1日以降というスケジュールでした。使いたい月の直前に動き始めても間に合わないことがあり、さらに多くの施設で利用前の事前面談が必要です。</p>
+
+<h2>この早見表の前提（出典をすべて示します）</h2>
+<div class="table-wrap"><table>
+<tr><th>自治体</th><th>出典</th><th>確認日</th></tr>
+__SRCROWS__
+</table></div>
+<blockquote><strong>本ツールが再現していないもの：</strong>施設ごとの受入時間・空き状況、上乗せ枠の細かい適用条件、年度途中の制度変更、収録した46自治体以外の個別条件。中野区と荒川区は令和8年度の内容を公式ページで確認できませんでした（表示にもその旨を出しています）。制度は2026年度に本格実施へ移ったところで、各自治体が運用を更新しています。<strong>申込の前に必ずお住まいの自治体の公式ページで最新の内容をご確認ください。</strong></blockquote>
+
+<h2>保活とこの制度は別の話（混同しやすい）</h2>
+<p>こども誰でも通園制度は、保育所に通っていない子どもが時間単位で通う仕組みです。認可保育園の入園選考（指数・点数）とは別の制度で、この制度を使ったことが入園選考で有利になるわけではありません。認可の入園を狙う場合の点数計算は<a href="/tools/hoikuen-tensu-nerima/">練馬区の保育園 点数計算＆内定ボーダー逆引き</a>に分けてあります。</p>
+
+<h2>あわせて読む</h2>
+<ul>
+<li><a href="/articles/daredemo-tsuen-ryokin/">こども誰でも通園制度の料金はいくら？46自治体の実額と減免</a></li>
+<li><a href="/tools/hoikuen-tensu-nerima/">【無料】練馬区の保育園 点数計算＆内定ボーダー逆引き</a></li>
+<li><a href="/tools/sango-recovery-check/">【無料】産後リカバリー診断｜復職前の体調と段取りを整理</a></li>
+<li><a href="/tools/garugaru-check/">【無料】ガルガル期セルフチェック</a></li>
+</ul>
+
+<h2>よくある質問</h2>
+__FAQHTML__
+
+<div style="background:#f7f5f2;border:1px solid #e6e2dc;padding:20px 22px;margin:22px 0;text-align:center">
+<p style="font-size:.7rem;color:#999;margin:0 0 6px;text-align:left">PR</p>
+<p style="font-weight:700;margin:0 0 8px">通園が始まる時期に最初に決まらなくなるのは「毎日の食事」</p>
+<p style="font-size:.8rem;color:#5a6068;margin:0 0 14px">週1回の通園でも、送り迎えの前後に食事の支度が重なります。作る手間を減らす手段を先に確保しておくと段取りが崩れにくくなります。Oisixは食材宅配のおためしセット（内容・価格・配送エリアは公式サイトでご確認ください）。</p>
+<a href="https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA" rel="nofollow sponsored noopener" target="_blank" style="display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 32px;text-decoration:none">Oisixのおためしセットを見る</a>
+<p style="font-size:.72rem;color:#8a8f95;margin:10px 0 0">食材宅配サービス。制度の利用可否とは関係ありません</p>
+</div>
+</article>
+
+<!-- LINE-CTA -->
+<section id="line-cta" style="max-width:680px;margin:56px auto 64px;padding:36px 28px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+  <p style="margin:0 0 10px;font-size:12px;letter-spacing:.18em;color:#7c2e42;font-family:Georgia,'Times New Roman',serif;">NOE OFFICIAL LINE</p>
+  <p style="margin:0 0 14px;font-size:20px;font-weight:600;color:#1d242b;font-family:'Yu Mincho','游明朝',serif;line-height:1.5;">子育ての制度とお金のFACTをLINEで</p>
+  <p style="margin:0 0 22px;font-size:14px;color:#5a6068;line-height:1.9;">結婚・出産・育児まわりの制度とお金のFACTだけを、週1回・短文で届けます。<br>気になることの相談も、追加後そのままトークでどうぞ。</p>
+  <a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'__SLUG__'});}catch(e){}"
+     style="display:inline-block;background:#7c2e42;color:#ffffff;padding:14px 36px;font-size:15px;font-weight:600;text-decoration:none;">友だち追加して受け取る</a>
+  <p style="margin:14px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は週1回だけ。いつでも解除できます。</p>
+</section>
+</div>
+<footer><div class="footer-inner">
+<div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p class="footer-disc">※本ツールは各自治体およびこども家庭庁の公式公開情報（2026年10月5日確認）に基づく目安です。制度の適用と最終的な判断は各自治体が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</div></footer>
+<button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<script>
+(function(){
+"use strict";
+var D=__DATA__;
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function run(){
+  var c=D[$('city').value];
+  var per=+$('per').value, times=+$('times').value, need=per*times;
+  var f=$('fit');
+  if(c.cap===null){
+    $('capNum').textContent='非公表';
+    f.className='fitbox fit-ng';
+    f.innerHTML='<strong>'+esc(c.name)+'は、月あたりの上限時間を公式ページで確認できませんでした。</strong>'+esc(c.cap_note)+'　希望する使い方は'+per+'時間 × 月'+times+'回 ＝ 月'+need+'時間です。この数字を持って区に確認してください。';
+    renderDetail(c); return;
+  }
+  $('capNum').textContent=c.cap+'時間';
+  var over=need-c.cap;
+  if(over<=0){
+    f.className='fitbox fit-ok';
+    f.innerHTML='<strong>希望する使い方（'+per+'時間 × 月'+times+'回 ＝ 月'+need+'時間）は、'+esc(c.name)+'の上限 月'+c.cap+'時間に収まります。</strong>残りは月'+(c.cap-need)+'時間です。';
+  }else{
+    var maxTimes=Math.floor(c.cap/per), maxPer=Math.floor(c.cap/times);
+    f.className='fitbox fit-ng';
+    f.innerHTML='<strong>希望する使い方（'+per+'時間 × 月'+times+'回 ＝ 月'+need+'時間）は、'+esc(c.name)+'の上限 月'+c.cap+'時間を'+over+'時間超えます。</strong>超えた分はこの制度の枠外で、施設が定める料金や一時預かりなど別の枠を使うことになります。回数を月'+maxTimes+'回までにするか、1回を'+maxPer+'時間までにすると収まります。';
+  }
+  renderDetail(c);
+}
+function renderDetail(c){
+  $('detail').innerHTML=''+
+   '<dt>上限時間</dt><dd>'+esc(c.cap_label)+'／'+esc(c.cap_note)+'</dd>'+
+   '<dt>利用料</dt><dd>'+esc(c.fee)+' '+esc(c.fee_extra)+'</dd>'+
+   '<dt>対象年齢</dt><dd>'+esc(c.age)+'</dd>'+
+   '<dt>予約の経路</dt><dd>'+esc(c.reserve)+'</dd>'+
+   '<dt>申込・認定</dt><dd>'+esc(c.apply)+'</dd>'+
+   '<dt>実施施設</dt><dd>'+esc(c.facil)+'</dd>';
+  $('srcNote').innerHTML='出典：<a href="'+c.src+'" rel="noopener" target="_blank">'+esc(c.src_label)+'</a>（2026年10月5日確認）。最新の内容は必ず公式ページでご確認ください。';
+  try{gtag('event','tool_result',{tool:'__SLUG__',city:c.key,cap:(c.cap===null?'na':c.cap)});}catch(e){}
+}
+$('run').addEventListener('click',run);
+$('city').addEventListener('change',run);
+run();
+})();
+</script>
+</body>
+</html>

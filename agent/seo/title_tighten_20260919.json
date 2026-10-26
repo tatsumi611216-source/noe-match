@@ -1,0 +1,493 @@
+{
+  "_note": "site-wide title tighten 2026-09-19。GSC 2026-08-18〜09-14（28日）by_page imp合計。判定は施策後7日窓(2026-09-27以降)のサイト全体CTR vs 前7日で行う。 追記2026-09-19: 広告位置ロック（10/20判定）解除に伴う6ページを追加（うち3ページはtitle_proposals.md案1を採用、1ページはproposalが無かったため独自作成、2ページは既存twitter:titleの短縮版を流用）。",
+  "window": "2026-08-18〜2026-09-14",
+  "target_count": 48,
+  "items": [
+    {
+      "path": "/articles/kyoto-guide/",
+      "before": "烏丸・河原町で出会うなら｜京都で使えるマッチングアプリTOP3とエリア別の使い分け",
+      "after": "烏丸・河原町で出会うなら｜マッチングアプリTOP3の使い分け",
+      "before_len": 41,
+      "after_len": 30,
+      "imp28d": 232,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/matching-app-ranking/",
+      "before": "2026年最新マッチングアプリランキングTOP15｜総合比較・目的別おすすめ完全ガイド",
+      "after": "2026年最新マッチングアプリランキングTOP15｜総合比較",
+      "before_len": 43,
+      "after_len": 30,
+      "imp28d": 161,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/success-rate-data/",
+      "before": "マッチングアプリの結婚率｜婚活目的45.2%と登録者全体2〜4%の違い",
+      "after": "マッチングアプリの結婚率｜婚活目的45.2%と全体2〜4%の違い",
+      "before_len": 35,
+      "after_len": 32,
+      "imp28d": 133,
+      "og_title_synced": true,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/age-data/",
+      "before": "マッチングアプリの年齢層｜年齢構成を公表しているアプリと、していないアプリ（公的統計つき・2026年8月）",
+      "after": "マッチングアプリの年齢層｜公表アプリと非公表アプリ",
+      "before_len": 53,
+      "after_len": 25,
+      "imp28d": 112,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/nagoya-guide/",
+      "before": "名古屋でマッチングアプリを使うなら｜出会えるアプリTOP3と車社会ならではの攻略法",
+      "after": "名古屋でマッチングアプリを使うなら｜TOP3と車社会攻略法",
+      "before_len": 41,
+      "after_len": 29,
+      "imp28d": 103,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/okinawa-guide/",
+      "before": "沖縄でマッチングアプリを使うなら｜移住者・地元の出会い事情と攻略法",
+      "after": "沖縄でマッチングアプリを使うなら｜移住者・地元の出会い事情",
+      "before_len": 33,
+      "after_len": 29,
+      "imp28d": 103,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/osaka-guide/",
+      "before": "大阪でマッチングアプリを使うなら｜出会いが多いアプリTOP3とエリア別攻略法",
+      "after": "大阪でマッチングアプリを使うなら｜TOP3とエリア別攻略法",
+      "before_len": 38,
+      "after_len": 29,
+      "imp28d": 101,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/30s-konkatsu/",
+      "before": "30代向け婚活アプリ完全ガイド｜真剣度別おすすめ・選び方と成功戦略",
+      "after": "30代向け婚活アプリ完全ガイド｜真剣度別おすすめ・選び方",
+      "before_len": 33,
+      "after_len": 28,
+      "imp28d": 100,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/hatsushon-nenmei-data/",
+      "before": "平均初婚年齢は何歳？男性31.0歳・女性29.7歳【2025年最新データ】｜男女別の推移と婚活を始める年齢",
+      "after": "平均初婚年齢は何歳？男性31.0女性29.7【25年】",
+      "before_len": 53,
+      "after_len": 27,
+      "imp28d": 92,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/tools/daredemo-tsuen-jichitai/",
+      "before": "こども誰でも通園制度は月何時間使える？東京23区＋政令市20市ほかの上限時間・利用料早見表【令和8年度】",
+      "after": "こども誰でも通園制度は月何時間使える？東京23区＋政令市上限時間",
+      "before_len": 52,
+      "after_len": 32,
+      "imp28d": 91,
+      "og_title_synced": true,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/kodomo-iryohi-data/",
+      "before": "子ども医療費助成は東京23区でどう違う？入院時食事代が9区で対象外",
+      "after": "子ども医療費助成は東京23区でどう違う？入院時食事代が9区対象外",
+      "before_len": 33,
+      "after_len": 32,
+      "imp28d": 85,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/pairs-kaiin-data/",
+      "before": "Pairsの会員数はどこまで本当か｜累計登録者数と実稼働の違いを整理する【2026年版】",
+      "after": "Pairsの会員数はどこまで本当？累計と実稼働",
+      "before_len": 44,
+      "after_len": 23,
+      "imp28d": 79,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/tools/sangokea-ryokin/",
+      "before": "産後ケアの料金はいくら？東京23区＋政令指定都市43自治体の自己負担・回数上限【2026年度】",
+      "after": "産後ケアの料金はいくら？東京23区＋政令市43自治体の自己負担",
+      "before_len": 47,
+      "after_len": 31,
+      "imp28d": 79,
+      "og_title_synced": true,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/civil-servant-guide/",
+      "before": "公務員に出会いがないのはなぜか｜職場が狭い人の出会いの場と身バレ対策",
+      "after": "公務員に出会いがないのはなぜか｜出会いの場と身バレ対策",
+      "before_len": 34,
+      "after_len": 27,
+      "imp28d": 70,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/kekkon-madeno-kikan-data/",
+      "before": "アプリ婚の交際期間は平均2.8年｜恋愛結婚4.9年との差はどこから来るか",
+      "after": "アプリ婚の交際期間は平均2.8年｜恋愛結婚4.9年との差",
+      "before_len": 36,
+      "after_len": 28,
+      "imp28d": 62,
+      "og_title_synced": true,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/student-guide/",
+      "before": "20代の社会人・学生向けマッチングアプリガイド｜始め方と注意点【2026年版】",
+      "after": "20代の社会人・学生向けマッチングアプリガイド｜始め方と注意点",
+      "before_len": 39,
+      "after_len": 31,
+      "imp28d": 62,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/funin-josei-data/",
+      "before": "不妊治療の区独自助成は東京23区でどう違う？実施17区・同じ5万円でも中身が正反対【2026年8月27日確認】",
+      "after": "不妊治療の区独自助成は東京23区でどう違う？実施17区",
+      "before_len": 55,
+      "after_len": 27,
+      "imp28d": 48,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/mitocore-kuchikomi/",
+      "before": "ミトコア300mgは月2万円前後｜「効果」を誰も謳えない理由と成分の事実",
+      "after": "ミトコア300mgは月2万円前後｜「効果」を誰も謳えない理由",
+      "before_len": 36,
+      "after_len": 30,
+      "imp28d": 48,
+      "og_title_synced": true,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/fukuoka-guide/",
+      "before": "福岡でマッチングアプリを使うなら｜出会えるアプリTOP3と天神・博多エリア攻略法",
+      "after": "福岡でマッチングアプリを使うなら｜TOP3と天神・博多攻略法",
+      "before_len": 40,
+      "after_len": 30,
+      "imp28d": 42,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/tools/konkatsu-type-shindan/",
+      "before": "婚活タイプ診断｜自分に合った婚活はどれか無料で診断【登録なし・2026年版】",
+      "after": "婚活タイプ診断｜自分に合った婚活はどれか無料診断【登録なし】",
+      "before_len": 38,
+      "after_len": 30,
+      "imp28d": 39,
+      "og_title_synced": true,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/sango-satogaeri/",
+      "before": "産後の里帰りはいつからいつまで？期間の決め方と、戻ったあとに崩れないための設計",
+      "after": "産後の里帰りはいつからいつまで？期間の決め方",
+      "before_len": 39,
+      "after_len": 22,
+      "imp28d": 38,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/tools/funin-josei-jichitai/",
+      "before": "不妊治療の区独自助成は東京23区のどこにある？実施17区・上限額と対象になる費用【2026年8月27日確認】",
+      "after": "不妊治療の区独自助成は東京23区のどこにある？実施17区の一覧",
+      "before_len": 54,
+      "after_len": 31,
+      "imp28d": 38,
+      "og_title_synced": true,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/batsuichi-guide/",
+      "before": "バツイチの恋愛は難しい？恋愛対象外にされる理由と、そこを外して探す方法",
+      "after": "バツイチの恋愛は難しい？対象外にされる理由と探し方",
+      "before_len": 35,
+      "after_len": 25,
+      "imp28d": 37,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/daredemo-tsuen-yoyaku/",
+      "before": "こども誰でも通園制度の予約はどこから？46自治体の経路と、システムで予約できない自治体",
+      "after": "こども誰でも通園制度の予約はどこから？46自治体の経路と予約方法",
+      "before_len": 43,
+      "after_len": 32,
+      "imp28d": 35,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/pet-konkatsu/",
+      "before": "ペット好きの婚活はどう進めるか｜犬・猫と暮らす前提で相手を探す方法",
+      "after": "ペット好きの婚活はどう進めるか｜犬・猫と暮らす前提で相手探し",
+      "before_len": 33,
+      "after_len": 30,
+      "imp28d": 35,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/gijikka-ikitakunai/",
+      "before": "産後に義実家へ行きたくないのは甘えじゃない｜角が立たない断り方の文例5つと、夫から伝える言い方",
+      "after": "産後に義実家へ行きたくないのは甘えじゃない｜断り方の文例5つ",
+      "before_len": 47,
+      "after_len": 30,
+      "imp28d": 34,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/kekkon-shinseikatsu-data/",
+      "before": "結婚新生活支援の補助金｜一都三県61自治体の一覧【2026年8月31日確認】",
+      "after": "結婚新生活支援の補助金｜一都三県61自治体の一覧",
+      "before_len": 38,
+      "after_len": 24,
+      "imp28d": 30,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/marrish-guide/",
+      "before": "再婚向けマッチングアプリとしてのマリッシュ｜公式が明記している再婚応援機能と、公表していない数字【2026年8月】",
+      "after": "再婚向けマッチングアプリとしてのマリッシュ｜公式の再婚応援機能",
+      "before_len": 57,
+      "after_len": 31,
+      "imp28d": 30,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/tools/app-kekkonritsu-data/",
+      "before": "マッチングアプリの結婚率をアプリ別に比較｜結婚率が高いアプリはどこか公表データで確認【2026年8月】",
+      "after": "マッチングアプリの結婚率をアプリ別に比較｜結婚率が高いのはどこか",
+      "before_len": 51,
+      "after_len": 32,
+      "imp28d": 30,
+      "og_title_synced": false,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/mitas-formen-kuchikomi/",
+      "before": "mitas for men（ミタス男性用）の口コミ・成分検証｜夫婦で始める妊活サプリ",
+      "after": "mitas for men（ミタス男性用）の口コミ｜妊活サプリ",
+      "before_len": 42,
+      "after_len": 31,
+      "imp28d": 29,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/nashikon-data/",
+      "before": "結婚式をしない「ナシ婚」の割合データ｜後悔する人・しない人の分かれ目",
+      "after": "結婚式をしない「ナシ婚」の割合データ｜後悔する人・しない人",
+      "before_len": 34,
+      "after_len": 29,
+      "imp28d": 29,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/agency-vs-app/",
+      "before": "マッチングアプリがうまくいかない人が結婚相談所に移るときの費用｜公表されている数字と、されていない数字（2026年8月）",
+      "after": "マッチングアプリがうまくいかない人が結婚相談所に移るときの費用",
+      "before_len": 60,
+      "after_len": 31,
+      "imp28d": 28,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/fuufu-credit-kanri/",
+      "before": "夫婦のクレジットカードは家族カードか別々か｜メリット・デメリットを整理",
+      "after": "夫婦のクレジットカードは家族カードか別々か｜メリット・デメリット",
+      "before_len": 35,
+      "after_len": 32,
+      "imp28d": 28,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/omiai-danjohi-data/",
+      "before": "Omiaiの男女比は約5対5｜公式が公表した年齢構成と数字の読み方【2026年版】",
+      "after": "Omiaiの男女比は約5対5｜公式が公表した年齢構成と読み方",
+      "before_len": 41,
+      "after_len": 30,
+      "imp28d": 28,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/nurse-konkatsu-soudanjo/",
+      "before": "看護師の婚活｜出会いがない理由と、不規則勤務でも続く進め方（アプリ・相談所・特化型の比較）",
+      "after": "看護師の婚活｜出会いがない理由と不規則勤務でも続く進め方",
+      "before_len": 45,
+      "after_len": 28,
+      "imp28d": 26,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/tools/koisaihi-simulator/",
+      "before": "デート代の平均は一回・月いくら？社会人・20代の目安と割り勘まで試算【2026年・無料】",
+      "after": "デート代の平均は一回・月いくら？社会人・20代の目安を試算",
+      "before_len": 44,
+      "after_len": 29,
+      "imp28d": 26,
+      "og_title_synced": false,
+      "headline_synced": false
+    },
+    {
+      "path": "/articles/time-management/",
+      "before": "マッチングアプリの時間管理｜忙しい人でも出会える効率的な時間の使い方",
+      "after": "マッチングアプリの時間管理｜忙しい人でも出会える時間の使い方",
+      "before_len": 34,
+      "after_len": 30,
+      "imp28d": 24,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/appkon-wariai-data/",
+      "before": "アプリ婚・マッチングアプリ経由の婚姻割合データ｜出会い方別の推移と現状【2026年版】",
+      "after": "アプリ婚・マッチングアプリ経由の婚姻割合データ｜出会い方別の推移",
+      "before_len": 43,
+      "after_len": 32,
+      "imp28d": 23,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/byoji-hoiku-data/",
+      "before": "病児保育は1日いくら？東京23区の料金・減免・利用上限と、料金より先に詰まるところ【2026年8月27日確認】",
+      "after": "病児保育は1日いくら？東京23区の料金・減免・利用上限",
+      "before_len": 55,
+      "after_len": 27,
+      "imp28d": 23,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/profile-text/",
+      "before": "マッチングアプリのプロフィール文｜いいねが増える自己紹介の書き方と実例",
+      "after": "マッチングアプリのプロフィール文｜いいねが増える自己紹介の書き方",
+      "before_len": 35,
+      "after_len": 32,
+      "imp28d": 23,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/soudanjo-hikaku/",
+      "before": "オンライン結婚相談所は本当に安いのか｜公式に1年総額を明示しているのは1社だけだった【2026年8月・公表料金の比較】",
+      "after": "オンライン結婚相談所は本当に安いのか｜1年総額を明示は1社のみ",
+      "before_len": 59,
+      "after_len": 31,
+      "imp28d": 22,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/tapple-nenreiso-data/",
+      "before": "タップルの年齢層は公表されているか｜年齢層設定の仕組みと公式が出していない数字",
+      "after": "タップルの年齢層は公表されているか｜年齢層設定の仕組み",
+      "before_len": 39,
+      "after_len": 27,
+      "imp28d": 20,
+      "og_title_synced": true,
+      "headline_synced": true
+    },
+    {
+      "path": "/articles/with-guide/",
+      "before": "with（ウィズ）完全ガイド｜心理テスト機能の使い方・料金・マッチング攻略法",
+      "after": "withの心理テストはどこ？攻略法まとめ",
+      "before_len": 38,
+      "after_len": 20,
+      "imp28d": 167,
+      "og_title_synced": true,
+      "headline_synced": true,
+      "note": "広告位置ロック（〜2026-10-20）解除分。title_proposals.md案1を採用（1st判断=先頭句維持ではなく需要語『心理テストはどこ』を頭語に寄せる案を優先指示された）"
+    },
+    {
+      "path": "/articles/with-seriousness-data/",
+      "before": "withの成婚率・結婚率は公表されていない｜代わりに確認できる数字を整理した",
+      "after": "withの成婚率・結婚率は公表されていない｜会員数のみ公表",
+      "before_len": 38,
+      "after_len": 29,
+      "imp28d": 107,
+      "og_title_synced": true,
+      "headline_synced": false,
+      "note": "広告位置ロック（〜2026-10-20）解除分。title_proposals.md に本ページの案が無かったため、先頭句維持＋副題/年版表記の優先削除ルールで独自作成（要スポットチェック）。JSON-LD headlineは変更前titleと完全一致していなかった（末尾に【2026年版】が付いていた）ため同期せず"
+    },
+    {
+      "path": "/articles/pairs-marriage-data/",
+      "before": "ペアーズの成婚率は非公表｜公表は「毎月約13,000人に恋人」だけ",
+      "after": "ペアーズの成婚率は非公表｜恋人13,000人/月",
+      "before_len": 33,
+      "after_len": 24,
+      "imp28d": 91,
+      "og_title_synced": true,
+      "headline_synced": false,
+      "note": "広告位置ロック（〜2026-10-20）解除分。title_proposals.md案1を採用。JSON-LD headlineは変更前titleと不一致（別文言）だったため同期せず"
+    },
+    {
+      "path": "/articles/shussan-hiyou-data/",
+      "before": "出産費用の平均はいくら？全国519,805円・妊婦合計負担額592,907円（令和6年度）と都道府県別",
+      "after": "出産費用の平均はいくら？519,805円/592,907円",
+      "before_len": 51,
+      "after_len": 29,
+      "imp28d": 17,
+      "og_title_synced": true,
+      "headline_synced": true,
+      "note": "広告位置ロック（〜2026-10-20）解除分。先頭句維持＋副題/年版表記の優先削除ルールで作成。全国519,805円と実質負担592,907円の2数字を保持"
+    },
+    {
+      "path": "/tools/hitorioya-shien-jichitai/",
+      "before": "ひとり親支援は区でどれだけ違う？東京23区の児童育成手当・医療費助成・住宅支援【2026年8月30日確認】",
+      "after": "ひとり親支援は区でどれだけ違う？東京23区の条件",
+      "before_len": 53,
+      "after_len": 24,
+      "imp28d": 5,
+      "og_title_synced": true,
+      "headline_synced": false,
+      "note": "広告位置ロック（〜2026-10-20）解除分。既存twitter:titleの短縮版を採用（JSON-LD headline自体が本ページに存在しない）"
+    },
+    {
+      "path": "/tools/kosodate-shien-23ku/",
+      "before": "23区の子育て支援を比較｜区を選ぶとひとり親手当・医療費助成・病児保育・誰でも通園・産後ケアが1画面【2026年度】",
+      "after": "23区の子育て支援を比較｜区を選ぶと5制度が1画面",
+      "before_len": 58,
+      "after_len": 25,
+      "imp28d": 2,
+      "og_title_synced": true,
+      "headline_synced": false,
+      "note": "広告位置ロック（〜2026-10-20）解除分。既存twitter:titleの短縮版を採用（JSON-LD headline自体が本ページに存在しない）"
+    }
+  ]
+}

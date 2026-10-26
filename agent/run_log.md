@@ -1,5 +1,162 @@
 # Agent Run Log
 
+## 2026-10-05　週次ラン｜ツール生成1本（tools/shougai-mikonritsu）
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（35日前）→ **30日超 → ASPゲート閉鎖**。
+
+⚠️ ASP成果データが未供給。今回の記事生成はCTA計測なしで行われる。アフィリエイトCTAは設置しない（LINE CTAのみ）。
+
+→ run 終了後、人手による `agent/asp_results.md` の更新を依頼（後述）。
+
+### Phase 1 打順チェック
+
+- batting_order 2: `tools/shougai-mikonritsu` — `not_before: 2026-09-29` 通過 ✓、`tool_gate 9/19 GO` 記録あり（アウトバウンド制限のため再実行不可・既記録値を採用）、`improvement-log.json` locks[] に含まれない ✓、国勢調査データ更新済み（census_update_20260929.md C50完了） ✓ → **GO**
+
+### Phase 2 コンテンツ生成
+
+`tools/shougai-mikonritsu/index.html` を新規作成。
+
+- タイトル：`生涯未婚率を年・男女で調べる（将来推計つき）`（22字 ≤ 32字 ✓）
+- データ出典：`scripts/data/kon_rikon_tomobataraki.json` shougai_mikonritsu セクション
+  - 2025年（当サイト算出・推計値）：男性29.88%・女性19.58%
+  - 2020年（社人研公表値）：男性28.25%・女性17.81%
+  - 将来推計2030〜2050：社人研年齢階級別未婚率から派生算出
+- ASPゲート閉鎖のため affiliate CTA なし。LINE CTA（id="line-cta-result"）のみ result 内に設置。
+- JSON-LD：WebApplication / FAQPage（6項目）/ BreadcrumbList ✓
+- 内部リンク4本（shougai-mikonritsu-data / rikonritsu-data / appkon-wariai-data / konkatsu-type-shindan）✓
+- pr-notice / 【PR】フッター ✓
+- dateModified: 2026-10-05
+
+### Phase 3 インフラ更新
+
+- `sitemap.xml` / `sitemap-all.xml`：`python3 scripts/sitemap_add.py` → 各+1 ✓
+- `keyword_queue.json` batting_order 2 → status: done, published: 2026-10-05 ✓
+
+### Phase 4 factory_audit / silent_scan
+
+`python3 scripts/factory_audit.py` → 新規FAIL: 0本 / ツール新規FAIL: 0本 ✓
+
+`python3 scripts/silent_scan.py` → 表示ゼロ72本。寄せ直し1本実施：
+- `articles/compare-20s`（無修飾ヘッドターム・初回リライト）：タイトル・h1・og:title を「20代前半」属性固有修飾に絞り込み
+  - 旧：「Tapple vs with vs Pairs 20代向け比較｜年代別に最適なアプリを徹底解説」
+  - 新：「Tapple vs with vs Pairs 比較｜20代前半が最初に選ぶアプリはどれか【2026年版】」
+- rewrites.json に記録 ✓ / sitemap_sync.py で lastmod 更新 ✓
+
+### ASP更新依頼
+
+⚠️ `agent/asp_results.md` の `last_updated` が 2026-08-31（35日経過）。次回ラン前に人手での更新をお願いします。
+
+---
+
+## 2026-09-24　週次ラン｜新記事なし（ゲートCHECK・打順通過なし） / ツール是正1本 + 寄せ直し1本
+
+### Phase 4-0 計測ゲート
+
+`asp_results.md` の `last_updated: 2026-08-31`（24日前）→ 30日以内 → **ゲート開放**。
+
+`python3 scripts/tool_gate.py` を実行したが、クラウド環境のアウトバウンド制限によりGoogle Suggests・aramakijake・DuckDuckGoへの接続がすべてブロックされ、**CHECK** を返した。
+batting_order 2は `not_before: 2026-09-29`、batting_order 3（tools/tomobataraki-wariai）・4（articles/koukousei-iryohi-data）はゲートCHECKのためスキップ。batting_order 5（articles/sangokea-tokyo-data）→ data_gate.py も CHECK。batting_order 6（tools/heikin-shokon-nenrei）→「新規実査あり」メモ→ スキップ。batting_order 7/8は `not_before: 2026-10-06`。
+→ 打順が尽きたため、フォールバック（quality_backlog_tools.md の是正 + 寄せ直し）を実施。
+
+### ツール是正（quality_backlog_tools.md から1本）
+
+`tools/soudanjo-simulator` の2件の違反を修正（improvement-log.json の locks[] に含まれていないことを確認済み）：
+
+1. **title短縮**：`結婚相談所の費用は女性・男性でいくら？総額の相場を成婚料・月会費込みで試算【2026年】` (37字) → `結婚相談所の費用は総額いくら？成婚料・月会費込みで試算【2026年】` (27字)
+   - og:title / twitter:title も同期
+2. **LINE CTAを#result内に追加**：`<section id="line-cta-result">` を `<div id="result">` 内の aff-soudanjo ブロック直後に挿入
+   - 「料金が改定されたらお知らせします」文言・`https://lin.ee/unbDsCR` リンク
+3. **dateModified**: `2026-08-23` → `2026-09-24`
+4. **sitemap.xml**: soudanjo-simulator の `<lastmod>` を `2026-09-24` に更新
+
+`agent/quality_backlog_tools.md` から `tools/soudanjo-simulator` の行を削除（是正完了）。
+
+### 寄せ直し（silent_scan.py 結果から）
+
+`free-vs-paid`（無修飾ヘッドターム・2度目の寄せ直し）：
+
+| 項目 | 変更前 | 変更後 |
+|------|-------|-------|
+| title/h1 | `マッチングアプリの課金はいつ始めるべきか｜無料期間で見極める判断基準【2026年版】` | `マッチングアプリの課金タイミング｜30代男性の判断基準と主要5アプリ比較【2026年版】` |
+| lead文 | 一般向け | 30代男性・Pairs/with/Omiai を明示した属性固有修飾へ変更 |
+| dateModified | 2026-08-23 | 2026-09-24 |
+
+根拠：前回（2026-07-30）のタイトルは「課金 いつ」という無修飾ヘッドタームが表示ゼロ継続。今回は「30代男性」「主要5アプリ比較」の固有修飾に絞り込んだ。
+
+`agent/rewrites.json` に記録済み。
+
+### factory_audit.py
+
+```
+新規エラー(FAIL): 0本 / 既知バックログ: 28本 / 構造エラー: 0件
+ツール 新規エラー(FAIL): 0本 / 既知バックログ: 17本（soudanjo-simulator是正で18本→17本）
+```
+
+### インデックス申請キュー追加
+
+`agent/index_request_queue.md` の「未申請」欄先頭に追記（申請は人間の作業）：
+- https://www.noe-match.com/tools/soudanjo-simulator/ （title・LINE CTA修正の再クロール依頼）
+- https://www.noe-match.com/articles/free-vs-paid/ （寄せ直し後の再クロール依頼）
+
+---
+
+## 2026-09-21　週次ラン｜新記事なし（ゲートCHECK・打順通過なし） / ツール是正1本 + 寄せ直し1本
+
+### Phase 4-0 計測ゲート
+
+`python3 scripts/tool_gate.py` を実行したが、クラウド環境のアウトバウンド制限によりGoogle Suggests・aramakijake・DuckDuckGoへの接続がすべてブロックされ、**CHECK** を返した。
+batting_order 3（tools/tomobataraki-wariai）はゲート通過できず。
+batting_order 2は `not_before: 2026-09-29`、batting_order 6/10は 新規実査・新規取得が要件のためスキップ。
+→ 打順が尽きたため、フォールバック（quality_backlog_tools.md の是正 + 寄せ直し）を実施。
+
+### ツール是正（quality_backlog_tools.md から1本）
+
+`tools/soudanjo-hiyou-sim` の2件の違反を修正（improvement-log.json の locks[] に含まれていないことを確認済み）：
+
+1. **title短縮**：`結婚相談所の費用は総額いくら？10社を同じ条件で積むシミュレーション` (34字) → `結婚相談所の費用は総額いくら？10社を比べるシミュレーション` (30字)
+   - og:title / twitter:title も同期
+2. **LINE CTAを#result内に追加**：`<section id="line-cta-result">` を `<div id="result">` 内の `<div id="cards">` 直後に挿入
+   - 「料金が改定されたらお知らせします」文言・`https://lin.ee/unbDsCR` リンク
+3. **dateModified**: `2026-08-27` → `2026-09-21`
+4. **sitemap.xml / sitemap-all.xml**: soudanjo-hiyou-sim の `<lastmod>` を `2026-09-21` に更新
+
+`agent/quality_backlog_tools.md` から `tools/soudanjo-hiyou-sim` の行を削除（是正完了）。
+
+### 寄せ直し（silent_scan.py 結果から）
+
+インデックス前提チェック実施：
+- `compare-popular`: coverageState=`Submitted and indexed`（verdict PASS）→ 対象 ✓
+- `free-vs-paid`: coverageState=`Crawled - currently not indexed`（verdict NEUTRAL）→ 除外・index_request_queue.md に追記
+
+`compare-popular` を1本寄せ直し（2度目の寄せ直し）：
+
+| 項目 | 変更前 | 変更後 |
+|------|-------|-------|
+| title/h1 | `30代が婚活で使うPairs・with・Omiai比較｜目的別の違いと選び方【2026年版】` | `Pairs・with・Omiai比較｜30代女性が婚活で選ぶならどれか【2026年版】` |
+| blockquote | Pairs=会員数最多・with=心理マッチ・Omiai=婚活層 | 同上＋「30代女性が婚活目的ならOmiaiとwithが先の候補」を明示 |
+| dateModified | 2026-08-23 | 2026-09-21 |
+
+根拠：前回（2026-08-10）のタイトルは「30代+婚活」属性が既にあったが表示ゼロ継続。今回は「30代女性」という性別固有修飾を前置し、婚活目的を絞り込んだ。
+
+`agent/rewrites.json` に記録済み。
+
+### factory_audit.py
+
+```
+新規エラー(FAIL): 0本 / 既知バックログ: 29本 / 構造エラー: 0件
+ツール 新規エラー(FAIL): 0本 / 既知バックログ: 18本（soudanjo-hiyou-sim是正で22本に削減）
+```
+
+### インデックス申請キュー追加
+
+`agent/index_request_queue.md` の「未申請」欄先頭に追記（申請は人間の作業）：
+- https://www.noe-match.com/tools/soudanjo-hiyou-sim/ （title・LINE CTA修正の再クロール依頼）
+- https://www.noe-match.com/articles/compare-popular/ （寄せ直し後の再クロール依頼）
+
+---
+
 ## 2026-08-17　週次記事工場ラン｜型A×2本生成（omiai-danjohi-data / with-nenreiso-data）+ 寄せ直し2本
 
 ### Phase 4-0 計測ゲート
@@ -898,3 +1055,168 @@ Phase 2の強化対象なし（唯一の候補が2週間ルールに抵触）。
 |-------|---------|------|------|
 | 該当なし（全クエリに対応記事あり） | - | - | - |
 
+## 2026-09-01 11〜20位の押し上げ（CEO指示・優先1位）
+
+GSC実測（28日窓）で11〜20位・表示のあるクエリを4本抽出したが、**うち2本は手を付けられなかった**。
+
+| ページ | クエリ | 順位 | 表示 | 対応 |
+|---|---|---|---|---|
+| with-nenreiso-data | with 年齢層 | 10.8位 | 49 | **見送り**（8/29にタイトル差し替え済み・9/12に効果判定するため2週間ルールで凍結） |
+| garugaru-ki-guide | ガルガル期 由来 | 10.5位 | 38 | **タイトル差し替え** |
+| pairs-marriage-data | ペアーズ 結婚率 | 10.2位 | 16 | **見送り**（同上・8/29差し替え済み） |
+| shinkon-seikatsu-guide | 新婚生活 引越し | 17.2位 | 13 | **本文追記**（順位が10位圏外なので看板ではなく中身の問題と判断） |
+
+### garugaru-ki-guide のタイトル
+- 旧: ガルガル期とは？いつからいつまで続くか・原因・夫の対処法【セルフ診断つき】（37字）
+- 新: ガルガル期の由来と意味｜いつまで続く・原因・夫の対処法【無料セルフ診断】（36字）
+- 根拠: 「ガルガル期 由来」で10.5位・38表示・クリック0。記事は冒頭で由来（動物の母親が「ガルルル」と
+  唸る様子）を説明しているのに、タイトルに「由来」の語が無かった＝語の不一致。記事にある内容だけを出した。
+- **2026-09-15 まで再変更しない。**
+
+### shinkon-seikatsu-guide の追記（SERP網羅チェック）
+上位陣が共通して持っていて自記事に無かったのは「手続きの法定期限」だった。
+住民基本台帳法第22条（転入届は住み始めた日から14日以内）と第52条第2項（5万円以下の過料）を
+手続きチェックリストの冒頭に追記。切り口（順序が本体）は変えていない。
+
+### 判定
+9/12以降のGSCで、ガルガル期の由来クエリのCTRと、新婚生活 引越しの順位を見る。
+
+## 2026-09-01 A〜C 実行（CEO指示）
+
+GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCには出ない」を前提に、
+**追加の実査ゼロで面を増やす**方針で実行した。
+
+### A. 結婚新生活支援バンクの再切り出し（2本）
+- `articles/kekkon-hojokin-tokyo`（東京編）… 狙う語「結婚 補助金 東京」256／「新婚 補助金 東京」312。
+  検索数の実測でGO帯だったので出した
+- `articles/kekkon-hojokin-reigai`（年齢・所得の例外）… 狙う語は**いずれも未収録**。
+  検索では正当化できないと明記したうえで、AI経由狙いとして出した
+- **3本目は取りやめた。** 年齢と所得を別記事にする案だったが、どちらの語も未収録だったため1本に統合
+
+### B. ひとり親バンクの再切り出し（1本／1本は保留）
+- `articles/youikuhi-kousei-shosho`（養育費の公正証書・ADR・保証・強制執行の区差・11区）…
+  「養育費 公正証書 費用」136＝CHECK帯。AI経由と合わせて出した
+- **ホームヘルプの料金差は保留した。** 「ひとり親 ホームヘルプ」等はすべて未収録で、
+  検索需要が確認できない。例外編（AI狙いのみ）の初動を9月中旬に見てから判断する
+- **区選択ハブ（ツール）も保留。** ツールにはゲート（200以上）を適用する必要があり、
+  該当語の検索数が測れていない
+
+### C. トップページの出口
+- Direct除きでトップは最多の着地（28日で24セッション）だが、**新しいツール2本
+  （結婚新生活支援・ひとり親支援）がトップに載っていなかった**。25本中23本しか出ていない状態。
+  2本を追加して25本にした
+- トップにアフィリエイトを置くことは**しない**。回遊のハブとして機能させ、
+  CTR4〜5%の器具へ送るほうが構造に合う（器具のCTRは記事の4倍・GA4/GSC実測）
+
+### 判定
+9月中旬にGA4のAI経由セッションで、例外編と養育費編が引かれているかを見る。
+引かれていなければ「検索需要のない語でデータ記事を出す」型そのものを見直す。
+
+## 2026-09-04 計器の決着と判定設計の改訂
+
+- **A8とGA4の25倍の食い違いは、A8側の水増しと確定。** GA4内蔵のoutbound click計測が
+  最初から動いており（自作リスナーとは別系統）、8/13〜9/3の22日でpx.a8.netへのクリックは
+  6件。同期間のA8は概算30件。決定打は7月の実測で、GSCクリック3件の月にA8は52件を計上していた。
+- **ページ別の広告効果は既に測れていた**（内蔵clickに pagePath と linkUrl が乗る）。
+  9/1の「測る手段が無い」は誤り。`scripts/aff_clicks.py` を正式な計器として新設。
+- **GA4側に2つのバグ**: ①日次合計をby_pageの足し上げで作りセッションを29%水増し（8月487→363）。
+  ②GA4のデータは8/13以前が存在しない（「45日」の窓は実質22日）。①は修正しアーカイブも置換。
+- **判定設計をGA4基準へ改訂**（CEO決定）。11月のアフィリ転換率判定を取り下げ、
+  自社商品の販売数＋月次セッションの軌道に差し替え。アフィリは月2,000セッションまで棚上げ。
+- 残る未決: Cクラスタの広告64本を外すか、制度ツール9本のCTAを結果直後へ移すか。
+
+## 2026-09-04（続き）制度ツール9本の結果直後CTA（③）
+
+- **9/3のガルガルCTA判定は判定不能と確定**。①`pos` はカスタムディメンション未登録でAPIから
+  切り分け不能 ②発火3件はすべて実装当日8/27（自社検品の疑い）③その後ページの母数が消えた。
+- **計器を修正**: 位置をイベント名に持たせる（`line_add_result` / `line_add_bottom`）。
+  登録なしで測れる。garugaru-check も同じ名前へ揃えた。
+- **制度ツール9本の結果直後にLINE CTAを設置**（`scripts/add_result_cta.py`）。
+  8本は `#result` の最後の子として（結果と一緒に表示される）、
+  kekkon-shinseikatsu-jichitai だけ `#out` がinnerHTMLで再描画されるため直後＋MutationObserver。
+- 実機確認（localhost:8765）: hitorioya はCTAがページ高の**38%地点**（最下部CTAは95%）、
+  kekkon-shinseikatsu は実行前hidden→実行後に表示、コンソールエラーなし。
+- **未着手**: garugaru-check の流入消失の原因調査。②Cクラスタの広告64本。
+
+## 2026-09-04（続き）Dクラスタのオファー移設
+
+- **診断**: ①オファーが55〜92%地点で到達率11% ②ChatGPT経由は35秒・関与率40%
+  ③案件がユーブライド（afi-b）1つだけで、比較対象のアプリの案件を持っていない
+- **実施**: PR枠を「最初の表＋出典注記の直後」へ移設（22本）＋新設（3本）。
+  実画面での位置は **55〜92% → 5〜26%**（mobile 375×812で実測）。
+  1変数だけ（位置のみ）。文言も案件も変えていない。
+- **事故と対策**: 本文中のインラインリンクをブロックと誤認し、matching-app-ranking の
+  節3つを巻き込んで切り出した。全戻ししたうえで、対象をPR枠に限定＋長さ/タグ数の
+  不変チェックでABORTする安全装置を追加。全23ファイルで「PR枠以外は1文字も変わっていない」
+  ことを検算済み。
+- **未着手**: アプリ案件の提携（Pairs/with/タップル/Omiai）はCEO判断。
+
+## 2026-09-28 週次実行
+
+### Step 4–6: ツールゲート
+- **BO=2 (比較-price-by-purpose)**: not_before=2026-10-03 のためスキップ
+- **BO=3 (app-psychology)**: tool_gate.py → CHECK（ネットワーク不通。クラウド実行環境はGoogle Suggest/DDG SERPへの外向き通信を遮断）
+- **BO=4 (casual-vs-serious)**: tool_gate.py → CHECK（同上）
+- **BO=5 (men-30s-guide)**: tool_gate.py → CHECK（同上）
+- **BO=9 (women-30s-guide)**: tool_gate.py → CHECK（同上）
+- AGENT.md「ネットワーク不通などでゲートが動かないときは作らない」に従い新規記事作成なし
+
+### Step 8: silent_scan リライト（2件）
+- **40s-guide**: "40代のマッチングアプリ活用法｜再婚・新しい出会いのための現実的な戦略" → "40代婚活アプリ｜「40代が多い」を数字で公表しているのはどこか"
+  - データ透明性訴求（over50-guide 型）に角度切り替え
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/byline/intro段落 更新
+- **40s-men**: "40代男性向けマッチングアプリ攻略｜ステータスを活かしたアプリ選択とプロフィール戦略" → "40代男性の婚活アプリ｜いいね数の実態と選び直しの基準"
+  - 具体的痛点（いいね数月1〜5件）＋選び直し基準で固有修飾を追加
+  - 同上フィールド更新
+
+## 2026-10-26 週次実行
+
+⚠️ ASP成果データが未供給（last_updated: 2026-08-31、56日経過、30日閾値超過）。今回は新CTAなし。
+
+### Step 4–6: ツールゲート（データ記事候補）
+- **BO=3 (tools/tomobataraki-wariai)**: tool_gate.py → CHECK（ネットワーク不通。クラウド実行環境はGoogle Suggest/DDG SERPへの外向き通信を遮断）
+- **BO=4 (articles/koukousei-iryohi-data)**: data_gate.py → CHECK（同上）
+- **BO=5 (articles/sangokea-tokyo-data)**: data_gate.py → CHECK（同上）
+- **BO=6 (tools/heikin-shokon-nenrei)**: スキップ（notes: "新規実査あり"）
+- **BO=7 (tools/rikonritsu-todofuken)**: tool_gate.py → CHECK（ネットワーク不通）
+- **BO=8 (articles/jukunen-rikon-data)**: data_gate.py → CHECK（ネットワーク不通）
+- **BO=9 (articles/funin-josei-katsushika-data)**: data_gate.py → CHECK（ネットワーク不通）
+- AGENT.md「ネットワーク不通などでゲートが動かないときは作らない」に従い新規記事作成なし
+
+### Step 8: silent_scan リライト（2件）
+- **privacy-protection**: "マッチングアプリで知り合いを見つけた・見つかった時の対処｜バレた後にどうするか【2026年版】" → "マッチングアプリで職場・学校の知り合いにバレた｜発見した側・された側の対処法【2026年版】"
+  - 無修飾ヘッドタームに「職場・学校」の属性固有修飾を追加、バレた後の対処クエリに角度を切り替え
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/intro段落 更新
+- **renkatsu-vs-konkatsu**: "恋活から婚活に切り替えるタイミング｜目的が変わった時のアプリの乗り換え方【2026年版】" → "25〜29歳が恋活から婚活に切り替えるタイミング｜判断基準とアプリの乗り換え方【2026年版】"
+  - 「25〜29歳」の年代固有修飾を追加、切り替えタイミング判断クエリに寄せた
+  - 同上フィールド更新
+
+### 品質バックログ修正（1件）
+- **tools/garugaru-check**: title 36字 → 27字に短縮（32字以内、ロック期限2026-10-20切れを確認）
+  - "潜在ガルガル度チェック診断｜産後の「ガルガル期」危険度を53問で事前診断【無料】" → "ガルガル期チェック｜産後の潜在危険度を53問で事前診断【無料】"
+  - title/og:title/twitter:title/h1/breadcrumb 更新、quality_backlog_tools.md から削除
+
+### 監査結果
+- factory_audit.py: 新規FAIL 0本（既知バックログ 27本、ツール 16本）
+- sitemap_sync.py: privacy-protection・renkatsu-vs-konkatsu の lastmod を 2026-10-26 に更新
+
+## 2026-10-19 週次実行
+
+⚠️ ASP成果データが未供給（last_updated: 2026-08-31、49日経過、30日閾値超過）。今回は新CTAなし。
+
+### Step 4–6: ツールゲート（データ記事候補）
+- **BO=3 (tools/tomobataraki-wariai)**: tool_gate.py → CHECK（ネットワーク不通。クラウド実行環境はGoogle Suggest/DDG SERPへの外向き通信を遮断）
+- **BO=4 (articles/koukousei-iryohi-data)**: data_gate.py → CHECK（同上。取得失敗）
+- **BO=5 (articles/sangokea-tokyo-data)**: data_gate.py → CHECK（同上）
+- **BO=6 (tools/heikin-shokon-nenrei)**: スキップ（notes: "新規実査あり"）
+- **BO=7 (tools/rikonritsu-todofuken)**: tool_gate.py → CHECK（ネットワーク不通）
+- AGENT.md「ネットワーク不通などでゲートが動かないときは作らない」に従い新規記事作成なし
+
+### Step 8: silent_scan リライト（2件）
+- **faq-troubleshooting**: "マッチングアプリがうまくいかない原因は5つに収束する｜段階別の切り分け方【2026年版】" → "マッチングアプリうまくいかない｜いいね・返信・デート 段階別の原因チェックと直し方【2026年版】"
+  - 無修飾ヘッドタームに3段階の固有症状（いいね・返信・デート）と手順訴求を付加
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/intro段落 更新
+- **free-vs-paid**: "マッチングアプリの課金タイミング｜30代男性の判断基準と主要5アプリ比較【2026年版】" → "マッチングアプリ男性の無料・有料の機能差｜Pairs・Omiai・with 課金タイミングの判断基準【2026年版】"
+  - 「主要5アプリ」の抽象表記をPairs・Omiai・withの具名固有修飾に切り替え、機能差訴求に寄せた
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/intro段落 更新
+  - breadcrumbの不一致（「課金はいつ始めるべきか…」）も同時に修正

@@ -34,7 +34,7 @@ OUT_DIR = os.path.join(ROOT, "tools", "nyuseki-calendar")
 SITE = "https://www.noe-match.com"
 URL = SITE + "/tools/nyuseki-calendar/"
 
-TITLE = "入籍日カレンダー2026〜2030｜大安・天赦日・一粒万倍日から縁起のいい日を無料で絞り込む"
+TITLE = "入籍日はいつがいい？縁起のいい日カレンダー2026〜2030｜大安・天赦日・一粒万倍日で絞り込む"
 DESC = ("2026年から2030年までの入籍日を、六曜（大安）・天赦日・一粒万倍日・寅の日・巳の日と"
         "曜日・祝日・語呂合わせから絞り込める無料カレンダー。土日がいい、平日がいいといった条件で"
         "候補日を出します。登録不要。")
@@ -72,6 +72,8 @@ def shell():
               h.find('<script type="application/ld+json">')]
     header = h[h.find("<body>"):h.find('<div class="breadcrumb"')]
     footer = h[h.rfind("<footer"):]
+    # 結婚資金計算機の計算スクリプトまで流用していた不具合を外す（2026-10-08）
+    footer = __import__("fix_footer_calc_js_20261008").strip_calc(footer)
     return gtag, style, header, footer
 
 

@@ -28,7 +28,88 @@ noe-matchは「結婚・婚活」を軸に採用し、転職・固定費・エ�
 
 このファイルは、週次で自動実行されるエージェントへの指示書です。エージェントはこのリポジトリ（noe-match.com のソース）をcloneした状態で起動します。
 
-## あなたのタスク（毎回実行）
+## あなたのタスク（毎回実行・2026-09-19 改定＝CEO承認）
+
+**通常記事を週2本作る旧手順は 2026-09-19 に停止した**（下の「旧手順」に残してある。手順1〜2は実行しない）。
+根拠は `agent/strategy_2026Q4.md`「2026-09-19 CEO決定」節と `agent/cluster_analysis_20260919.md`
+（ツール＋データ記事は本数23%でクリック56%。型別の当たり率は制度×自治体62%・横断比較0%）。
+
+### 手順
+
+1. **作るものを1つ選ぶ。** `agent/keyword_queue.json` の `status: "pending"` を `batting_order` の小さい順に見て、
+   次の条件をすべて満たす最初の1件を選ぶ。1回の実行で作るのは**1件（ツール1本 または データ記事1本）**。
+   - `not_before` が無い、または今日がその日付以降
+   - `notes` に「新規実査あり」「新規取得が要る」と書かれていない（書かれているものは自動実行では作らない。
+     `agent/run_log.md` に「実査待ち」と記録して次へ）
+   - `hold` のものは選ばない（`hold` を `pending` に戻すのは CEO 判断）
+   - **`cluster` が `B` `F` `C-sub` `L` `M` `N` のものは選ばない**（2026-09-27 CEO承認＝新規制作停止。下の「新規制作を停止したクラスタ」）。
+     `cluster` が無い件は `agent/cluster_map.md` の割付で帰属を決め、停止クラスタなら作らずに `run_log.md` へ「停止クラスタのため見送り」と記録して次へ
+2. **需要をもう一度測る。** 選んだ件の `target_queries` の先頭語と言い換え1語の**計2語**を
+   `python3 scripts/tool_gate.py "<語1>" "<語2>"` に通す（データ記事なら `python3 scripts/data_gate.py "<語>"` も）。
+   - 2語とも **NO-GO** → 作らない。その件の `status` を `"hold"`、`hold_reason` に判定結果と日付を書き、手順1へ戻って次の件を選ぶ
+   - **CHECK** → 作らない（人がGoogleのSERPを見てから）。`run_log.md` に「CHECK・人の目視待ち」と書いて次の件へ
+   - どちらかが **GO** → 手順3へ
+   - ネットワーク不通などでゲートが動かないときは作らない（需要を実測できないものは作らない）
+3. **触ってはいけないページを確かめる。** `agent/seo/improvement-log.json` の `locks[]` にある path と、
+   `items[]` のうち `status` が `observing` の `targetPath` は、**本文・title・内部リンクを一切編集しない**
+   （リンクを張る先として参照するのはよい。そのページ自体を書き換えない）。
+4. **作る。** 数字は正本（`scripts/_*_data.py`・`scripts/data/*.json`）からだけ取り、表を手で書かない。
+   ビルダーは `scripts/build_sengyoshufu.py` を型として使う（正本の検算 assert・title 32字の assert・
+   JSON-LD は `json.dumps`）。確認日を明記する。表現ルール・YMYL枠・案件台帳は下の各節に従う。
+5. **出荷基準を満たす**（ツールの場合・全部）:
+   - title は全体で **32字以内**
+   - **結果の直後**（`id="result…"` の領域内）に LINE CTA（`id="line-cta-result"`）と、既存案件の広告
+     （`id="aff-<案件>"`・PRラベル・`rel="nofollow sponsored noopener"`・`target="_blank"`）。冒頭に `.pr-notice`。
+     置ける案件が台帳に無い語は LINE CTA だけでよい（広告を無理に置かない）。YMYL枠は承認済みslugだけ
+   - **結果の枠が実画面で見える**こと。共通シェルの CSS は `.result{display:none}`／`.result.show{display:block}`。
+     読み込み時に結果を描く作りなら `class="result show"`、ボタンで描く作りなら run() 内で
+     `classList.add('show')`。`python scripts/check_result_visible.py --browser tools/<slug>` で OK を確認する
+     （2026-09-27 に10本で結果・LINE・広告が一度も表示されていなかった。静的検査は factory_audit に組込み済み）
+   - **同クラスタからの内部リンク3本以上**（手順3のページは編集しないので、リンク元に使わない）
+   - 対のデータ記事は**推奨**（必須ではない。9/19の実測で対の有無による当たり率の差は確認できなかった）。
+     同じ正本から追加コストなしで出せるときだけ作る
+   データ記事の場合は下の「記事の品質基準」と `factory_audit.py` の基準（本文6,000字・FAQ5問・内部リンク3本・冒頭の広告表記）に従う。
+6. `python3 scripts/sitemap_add.py` で sitemap 2本に追加する。データ記事は `articles/index.html` の最も近いグループに1行足す。
+7. その件の `status` を `"done"`、`published` に日付を入れる。
+8. **`python3 scripts/silent_scan.py` の寄せ直し（最大2本）は従来どおり行う**（下の「表示ゼロ記事の寄せ直し」）。
+   ただし手順3のページは対象から外す。
+9. **`python3 scripts/factory_audit.py` を実行し、FAILと構造エラーが0件であることを確認する。**
+   2026-09-19 から tools/ も検査される（既存ツールの違反は `agent/quality_backlog_tools.md` の既知バックログ）。
+10. すべてコミットし `main` に到達させる。完了条件は「本番URLが200」（下の「出荷の完了条件」）。
+11. 公開したURLを `agent/index_request_queue.md` の未申請欄に追記する。
+
+### 打順が尽きたとき（条件を満たす pending が1件も無い）
+
+新しい語を自分で足して作り始めない。次の順で1つだけ行い、`run_log.md` に何をしたか書く。
+
+1. **Eクラスタの通常記事**（案件を持つアプリの指名×公表データ＝下の型A）を1本。`keyword_queue.json` に型Aの `pending` があればそれ、
+   無ければ作らない
+2. 既存ツール・データ記事の保守: `agent/quality_backlog_tools.md` の違反を1本是正する（手順3のページを除く）
+3. `python3 scripts/bank_freshness.py` で期限の近い正本があれば、出典の**最新版が出ていないか**を確認して `run_log.md` に報告する
+   （正本の書き換えと記事の再生成は報告まで。適用は人が判断する）
+
+次の打順の候補出し（GSC の by_query_page で表示があるのに専用ページが無い語の抽出と tool_gate）は、結果を
+`run_log.md` に書くところまで。**キューへの追加は人が決める。**
+
+### 新規制作を停止したクラスタ（2026-09-27 CEO承認）
+
+- **停止**: B（新生活・生活費）・F（アプリ運用）・C-sub（地域）・L（離婚・別居）・M（キャリア・働き方）・N（妊活）。
+  この6クラスタのツール・データ記事・通常記事は**新規に作らない**。既存記事は削除しない（保守・寄せ直し・誤り修正は続けてよい）。
+- **注力**: D（アプリの選定）・E（アプリの実績データ）・C（婚活の手段選び）。**次点**: J（結婚式・結婚準備）。
+  制度・A（ガルガル期・産後）は限定実験のまま（キューにある件だけ。新しい語を足さない）。統計は従来どおりキューにある件だけ。
+- クラスタ定義の正本は `agent/cluster_map.md`（8/16割付＋9/5確定）。根拠は同ファイル「2026-09-27 新規制作の停止」節。
+- **元に戻すとき**: この節と手順1の停止条件の行を消し、`keyword_queue.json` の `stopped_clusters` を空配列にする（CEO判断）。
+
+### 通常記事の扱い
+
+- **新規は Eクラスタ（型A: アプリ指名×公表データ）だけ。**
+- **型B（属性・地域×婚活）は 2026-09-19 に停止。** キューの該当27件は `hold`（削除していない）。
+- 既存の通常記事は保守（加筆・title・内部リンク・寄せ直し）だけを続ける。
+
+## 旧手順（2026-09-19 停止）｜あなたのタスク（毎回実行）
+
+**この節の手順1〜2（pending の先頭2件から通常記事を生成）は 2026-09-19 に停止した。上の改定版に従うこと。**
+手順3〜9の中身（sitemap・一覧・寄せ直し・検品・出荷・インデックス申請）は改定版に引き継いでいる。経緯を復元できるよう本文は消さずに残す。
 
 1. `agent/keyword_queue.json` を読み、`status: "pending"` の先頭 **2件** を選ぶ。キューが空の場合は、既存クラスタの空白キーワードを自分で発掘してキューに補充してから処理する。**発掘時の判断基準は「10位以内に入れる見込み」であり、表示回数の見込みではない**（下記「キーワード選定基準」を必ず参照すること）
 2. 各キーワードについて記事を1本生成する（下記の品質基準に厳密に従う）
@@ -439,23 +520,23 @@ success-rate-data 1本（52表示・平均34.8位・1クリック）が稼いで
 | ユーブライド（afb） | https://t.afi-b.com/visit.php?a=62571t-63703183&p=C982892I | 【推定3,000円】※相場: 婚活サイト有料課金3,000〜10,000円。要実測 婚活文脈の記事のみ。1記事1〜2箇所。必ず rel="nofollow sponsored noopener"・target="_blank"。CTAブロックには小さくPRラベルを付ける |
 | マリッシュ（afb） | https://t.afi-b.com/visit.php?a=p8318c-9288783U&p=C982892I | 【推定3,000円】※同上。要実測 再婚・バツイチ・40代・婚活比較の文脈のみ。1記事1箇所。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 | ALG探偵社（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3DGK1M+3IKY+64RJ6 | 新規問合せ15,000円。探偵・調査文脈のみ（tantei-erabikata・uwaki-chousa-kiso・kekkon-sokou-chousa・tanshin-uwaki-mikiwame・rikon-junbi-jyunban）。**対応エリアは東京・埼玉・千葉・横浜に限られるためCTA文中に必ず明記**。不安を煽る表現・断定は厳禁、「まず自分でできる確認」を主軸にした上での最終手段として提示。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
-| ビジモ光（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U | 新規開通30,000円・確定率100%（**現時点で期待値最大の案件**）。光回線・新生活・固定費見直し文脈のみ（futari-hikari-kaisen・shinkon-koteihi-minaoshi・dousei-hajimekata・shinkon-seikatsu-guide・shinkon-net-kaisen-dandori・kazoku-simhikaku・kekkon-chokin-mokuhyou・futari-sumaho-minaoshi・**tools/seikatsuhi-simulator**〔2026-08-16追加・固定費見直し文脈〕・**futari-kounetsuhi**〔2026-08-16 CEO承認で追加・光熱費の見直し＝固定費見直し文脈として成立。ただし光熱費と通信費は別物なので、本文でつなぎを入れてから提示すること〕）。キャッシュバック条件/提供エリア/工事要否は物件により異なるため「公式サイトで確認を」を必ず併記し、金額や条件を断定しない。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
+| ビジモ光（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5H2LVE+4BRI+1HL85U | 新規開通30,000円・確定率100%（**現時点で期待値最大の案件**）。光回線・新生活・固定費見直し文脈のみ（futari-hikari-kaisen・shinkon-koteihi-minaoshi・dousei-hajimekata・shinkon-seikatsu-guide・shinkon-net-kaisen-dandori・kazoku-simhikaku・kekkon-chokin-mokuhyou・futari-sumaho-minaoshi・**tools/seikatsuhi-simulator**〔2026-08-16追加・固定費見直し文脈〕・**futari-kounetsuhi**〔2026-08-16 CEO承認で追加・光熱費の見直し＝固定費見直し文脈として成立。ただし光熱費と通信費は別物なので、本文でつなぎを入れてから提示すること〕・**tools/kekkon-shinseikatsu-jichitai** と **articles/kekkon-shinseikatsu-data**〔2026-09-01 CEO承認で追加・新居の回線は補助の対象外である事実を本文に書いたうえで、補助では戻らない固定費として提示する〕）。キャッシュバック条件/提供エリア/工事要否は物件により異なるため「公式サイトで確認を」を必ず併記し、金額や条件を断定しない。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
 | ハローストレージ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5SDUD6+1I9M+669JL | 成約6,000円・確定率88%。同棲/新生活の荷物・収納文脈のみ（dousei-nimotsu-trunkroom・shinkon-seikatsu-guide・dousei-hajimekata）。料金/空き状況は店舗差があるため断定せず「公式で確認を」を併記。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
 | 原一探偵事務所（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3F8UUY+1T7S+TZE0X | 無料相談9,091円・確定率43%・**全国対応**（関東限定のALG探偵社を補完する位置づけ。地方読者にはこちらを優先）。探偵・浮気調査文脈のみ。不安煽り厳禁・「まず自分でできる確認」主軸を維持。CTAボタン色は#e8913a（ALGと視覚的に区別）。1記事1箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
-| 結婚相談所比較ネット（A8・じげん） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL | 初回資料請求3,800円・**確定率81.6%（提携中で最高水準）**。結婚相談所の比較・検討文脈のみ（soudanjo-hikaku・agency-vs-app・app-plus-agency・app-tsukare-guide・konkatsu-roadmap・**tools/konkatsu-type-shindan**〔2026-08-17追加・**診断結果が「結婚相談所」のときだけ表示する結果連動型**。結果と無関係な広告は出さない〕）。無料の一括比較サービスである事実のみ訴求し、成婚率等の効果は断定しない。CTA色は#7c5cbf。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
+| 結婚相談所比較ネット（A8・じげん） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2VLJWA+1PJA+2BJRBL | 初回資料請求3,800円・**確定率81.6%（提携中で最高水準）**。結婚相談所の比較・検討文脈のみ（soudanjo-hikaku・agency-vs-app・app-plus-agency・app-tsukare-guide・konkatsu-roadmap・**tools/seikonritsu-hikaku**〔2026-08-27追加・成婚率の比較＝相談所の検討文脈そのもの。ただし本ページは「成婚率は比較に使えない」と結論する内容なので、CTAでは成婚率に一切触れず「会員データと総額を並べて見る」導線としてのみ提示する〕・**articles/seikonritsu-data**〔2026-08-27追加・同上〕・**tools/konkatsu-type-shindan**〔2026-08-17追加・**診断結果が「結婚相談所」のときだけ表示する結果連動型**。結果と無関係な広告は出さない〕・**2026-09-27 CEO決定（アフィリ単独への切替）で流入上位の婚活記事9本の末尾に設置**〔with-seriousness-data・with-guide・pairs-marriage-data・civil-servant-guide・with-nenreiso-data・hatsushon-nenmei-data・matching-app-ranking・compare-popular・members-data。id="aff-soudanjo"・「著者・監修について」の直前。pairs-kaiin-data の既存枠は広告文から「成婚率」を外した〕）。無料の一括比較サービスである事実のみ訴求し、成婚率等の効果は断定しない。CTA色は#7c5cbf。1記事1〜2箇所。rel="nofollow sponsored noopener"・PRラベル必須 |
 | 白衣コン（A8・ブライダルチューリップ） | https://px.a8.net/svt/ejp?a8mat=35LVUH+7YYZ4Q+32P0+BXQOH | 新規入会40,000円（**提携中で最高単価**）。看護師×婚活文脈のみ（nurse-guide）。不規則勤務の読者への「サポートの厚い選択肢」として提示し、成婚を保証する表現は禁止。CTA色は#c2547e。1記事1〜2箇所 |
 | レバウェル看護（A8） | https://px.a8.net/svt/ejp?a8mat=35LLMU+8OKM56+2JK4+601S1 | 会員登録15,000円・確定率83%（期待値12,450円）。**結婚を機の働き方見直し文脈のみ**（nurse-guide・kekkon-tenshoku-guide）。転職ノウハウそのものの深掘りはしない（広間口パターンの原則）。CTA色は#2f9e8f。1記事1箇所 |
 | エクセレンス青山（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+33C6RE+VO0+C03K1 | 無料相談3,000円・入会18,500円・確定率56.5%。結婚相談所文脈のみ。**東京・青山の相談所のため首都圏読者向けであることをCTA内に明記**（soudanjo-hikaku・tokyo-guide）。1記事1箇所 |
 | 匠本舗（A8・おせち） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+555XRU+1ZWM+BYLJL | 購入8%・確定率93.8%。おせち・年末年始文脈のみ（shinkon-osechi・kisei-kekkon-aisatsu）。**9〜12月が商戦期**。早割の締切・内容量は断定せず公式確認を促す。1記事1〜2箇所 |
 | NULL BBクリーム（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5FAB22+328C+ZRQ0X | 購入1,000円・確定率100%。メンズメイク・第一印象文脈のみ（mens-make-konkatsu）。**化粧品のため薬機法厳守**：「カバーする」等の範囲内表現のみ、肌質改善・効果の断定は禁止。1記事1箇所 |
 | クレカリ賃貸（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5K1RWA+532U+5YRHE | 新規利用1,000円・確定率100%。**商品名SERPが提携中で最も弱い**（上位は個人ブログのみ・大手不在）＝狙い目。家賃クレカ払い・新生活の資金繰り文脈のみ（yachin-credit-shiharai・dousei-hajimekata）。**手数料3.6%でポイント還元は赤字になる事実を隠さず書き、「支払いタイミングを買う」価値で訴求する**こと。1記事1箇所 |
-| 引越し侍（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX | 見積667円・確定率100%（単価は低いが成果地点が無料見積もりで**件数が出やすい**）。同棲・新生活の引っ越し文脈のみ（dousei-hajimekata・shinkon-seikatsu-guide・dousei-nimotsu-trunkroom・**tokyo-futari-seikatsuhi**〔2026-08-16 CEO承認で追加・エリア移動＝新婚世帯の引っ越し文脈〕）。汎用の「引っ越し 見積もり」KWは大手比較サイトの独占なので狙わず、**新婚・同棲文脈でのみ提示**する。1記事1箇所 |
+| 引越し侍（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5L8N3U+ZXM+HVFKX | 見積667円・確定率100%（単価は低いが成果地点が無料見積もりで**件数が出やすい**）。同棲・新生活の引っ越し文脈のみ（dousei-hajimekata・shinkon-seikatsu-guide・dousei-nimotsu-trunkroom・**tokyo-futari-seikatsuhi**〔2026-08-16 CEO承認で追加・エリア移動＝新婚世帯の引っ越し文脈〕・**tools/kekkon-shinseikatsu-jichitai** と **articles/kekkon-shinseikatsu-data**〔2026-09-01 CEO承認で追加・補助の対象になる引越費用が業者への支払いに限られる文脈〕）。汎用の「引っ越し 見積もり」KWは大手比較サイトの独占なので狙わず、**新婚・同棲文脈でのみ提示**する。1記事1箇所 |
 | 家電レンタルみんなのHappy（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5IUWOQ+5MMG+5ZEMP | 申込2,100円・確定率100%。家電のレンタルvs購入・新生活文脈のみ（kaden-rental-vs-kounyu・shinkon-seikatsu-guide）。**長期利用ではレンタルが割高になる事実を隠さず、短期・転勤前提の読者にのみ提示**する |
-| Oisixおためしセット（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA | 購入1,000円・確定率79.7%。共働きの食事・おうちデート文脈のみ（tomobataraki-shokuji-data・ouchi-date-guide・shinkon-seikatsu-guide） |
+| Oisixおためしセット（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5CWKMY+3RK+2TBJQA | 購入1,000円・確定率79.7%。共働きの食事・おうちデート文脈のみ（tomobataraki-shokuji-data・ouchi-date-guide・shinkon-seikatsu-guide）・**制度ツール7本**〔daredemo-tsuen-jichitai・byoji-hoiku-ryokin・kodomo-iryohi-jichitai・funin-josei-jichitai・ikukyu-encho-hantei・hoikuen-tensu-nerima・sangokea-ryokin。8/26設置・**2026-09-05に結果直後（#result内・LINE CTA直後）へ移設、アンカーは id="aff-result"**。⚠うち5本は `_article_shell.py` 由来の媒体ID `45C0YR` で、台帳の `4B8B4Q` と異なる。A8管理画面で自社媒体か要確認〕。**2026-09-27 CEO決定で制度ツール4本（kodomo-iryohi-jichitai・daredemo-tsuen-jichitai・sangokea-ryokin・kosodate-shien-23ku）から外した**（読者の場面＝医療費助成・通園・産後ケア・区比較と合わないため。結果直後は保険ランドリー1本にした）。byoji-hoiku-ryokin・funin-josei-jichitai・ikukyu-encho-hantei・hoikuen-tensu-nerima は今回の対象外で残っている |
 | シャディギフトモール（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+59BZ0A+4DMG+60OXE | 購入5%。内祝い・手土産・ギフト文脈のみ（kekkon-uchiiwai-guide・kisei-kekkon-aisatsu） |
 | THE KISS（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+633N96+1O28+IISMP | 【推定1,000円】※ジュエリー通販は料率型。要実測 購入5%。ペアリング・ジュエリー文脈のみ（pair-ring-guide・propose-guide・konyaku-yubiwa-data） |
 | PARTY☆PARTY（A8・IBJ） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3AHE0Q+FOG+3H6DXV | 男性参加1,575円/女性741円・確定率46.7%。婚活パーティー文脈のみ（konkatsu-party-guide） |
-| ハナユメ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3K0BP6+3DOK+60OXF | 【推定10,000円】※式場来店は業界的に高単価。要実測 式場見学予約。**単価1〜2万円級で提携中トップ帯**。式場探し・結婚費用文脈のみ（shikijo-erabi-guide・kekkon-okane-data・kekkon-hiyou-futan〔2026-08-16 CEO承認で追加・負担割合の検討＝式場費用を考える段階のため〕・**tools/nyuseki-calendar**〔2026-08-17追加・日取りが決まると会場の空き確認に進むため〕）。**特典の金額・適用条件・対象会場は時期で変わるため断定せず「公式サイトで確認を」を必ず併記**。1記事1箇所 |
+| ハナユメ（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3K0BP6+3DOK+60OXF | 【推定10,000円】※式場来店は業界的に高単価。要実測 式場見学予約。**単価1〜2万円級で提携中トップ帯**。式場探し・結婚費用文脈のみ（shikijo-erabi-guide・kekkon-okane-data・kekkon-hiyou-futan〔2026-08-16 CEO承認で追加・負担割合の検討＝式場費用を考える段階のため〕・**tools/nyuseki-calendar**〔2026-08-17追加・日取りが決まると会場の空き確認に進むため。**2026-09-27 に本文中から結果の直後（#res の中）へ移設**・id="aff-hanayume"〕）。**特典の金額・適用条件・対象会場は時期で変わるため断定せず「公式サイトで確認を」を必ず併記**。1記事1箇所 |
 | naco-do（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2ZRL4Q+4HHW+61RI9 | 【推定10,000円】※オンライン相談所の入会。要実測 オンライン完結型の結婚相談所。**店舗型（45〜100万円）との対比でのみ提示**（agency-vs-app・app-plus-agency）。安さだけを訴求せず「サポートが薄いぶん自走力が要る」構造も併記する。成婚を保証する表現は禁止。1記事1箇所 |
 | Photojoy（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+38P37E+4HMW+5YZ77 | 【推定3,000円】※撮影予約。要実測 マッチングアプリ専門のプロフィール写真撮影。**大手不在で競合が弱い**。写真戦略文脈のみ（konkatsu-photo-guide・photo-tips）。「マッチ率が上がる」等の効果断定は禁止、作例・納品枚数・料金という確認できる事実で訴求する。1記事1箇所 |
 | 挨拶状ドットコム（A8） | https://px.a8.net/svt/ejp?a8mat=3Z97VF+B5A8TM+1IEW+ZW0CI | 【推定500円】※印刷物の料率型。要実測 結婚報告はがき・年賀状の印刷。**早期割引の締切が11月頃＝商戦期は9〜11月**。kekkon-houkoku-nengajou のみ。割引率・締切・宛名印刷や投函代行の可否は断定せず公式確認を促す。1記事1箇所 |
@@ -465,7 +546,7 @@ success-rate-data 1本（52表示・平均34.8位・1クリック）が稼いで
 | ヒーローマリッジ（A8・アルファブル） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2W6ZI2+4HMW+NTRMQ | 【推定10,000円】※要実測 男性サポート特化の結婚相談所。**男性の伝え方・条件面の不利を扱う文脈のみ**（seishain-igai-guide・男性向け記事）。雇用形態や収入を否定的に扱う表現は禁止 |
 | RIVERET（A8・仲吉商事） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+5NMDIY+5TJW+5ZMCH | 天然素材の食器。新生活の家具・食器予算文脈のみ（shinkyo-kagu-yosan・shinkon-seikatsu-guide）。「大型家具を下げて毎日使うものに配分」という予算組み替えの文脈で提示 |
 | L&Co.（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4FKARE+4UT2+5YJRM | 【推定1,000円】※同上。要実測 ペアジュエリー。**THE KISSとの価格帯比較**として提示（pair-ring-guide）。同一記事でTHE KISSと併置する場合も合計2箇所まで |
-| 保険ランドリー（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX | 保険相談。**YMYL枠につき最も慎重に扱う**。設置先＝`kekkon-hoken-minaoshi` ＋ **産後・ライフイベント文脈（クラスタA：ガルガル／産後／夫源病・妻源病の記事とツール）**・1ページ1箇所。**2026-08-15にCEO判断で設置先の限定を解除**（従来は保険見直し記事のみ。出産＝保険の見直し事由であり文脈は成立するとの判断）。ただし表現の制約は解除しない：「複数の窓口で比較する」という選択肢提示の中の一例としてのみ置き、**特定商品・窓口の推奨と読める表現は禁止**、「契約の判断はご自身で」を注記に必ず入れる。**産後文脈では不安を煽る導入を禁止**（「備えないと大変」等）。集客が主・キャッシュが従の主従を崩さないこと（`agent/cluster_map.md`） |
+| 保険ランドリー（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+42GRGA+3S2C+614CX | 保険相談。**YMYL枠につき最も慎重に扱う**。設置先＝`kekkon-hoken-minaoshi` ＋ **産後・ライフイベント文脈（クラスタA：ガルガル／産後／夫源病・妻源病の記事とツール）**・1ページ1箇所。**2026-08-15にCEO判断で設置先の限定を解除**（従来は保険見直し記事のみ。出産＝保険の見直し事由であり文脈は成立するとの判断）。ただし表現の制約は解除しない：「複数の窓口で比較する」という選択肢提示の中の一例としてのみ置き、**特定商品・窓口の推奨と読める表現は禁止**、「契約の判断はご自身で」を注記に必ず入れる。**産後文脈では不安を煽る導入を禁止**（「備えないと大変」等）。集客が主・キャッシュが従の主従を崩さないこと（`agent/cluster_map.md`）。**2026-09-23 CEO承認（追認）: 制度クラスタ7ページを正式な設置先とする** ＝ tools/kodomo-iryohi-jichitai・tools/daredemo-tsuen-jichitai・tools/funin-josei-jichitai・tools/kosodate-shien-23ku・tools/hitorioya-shien-jichitai・tools/sangokea-ryokin・articles/shussan-hiyou-data。経緯: 9/19に「承認まで公開しない」として実装したが、同日のmainマージで本番に出ていた（9/23に発覚）。医療費助成・出産費用・産後ケアは保険の見直し事由として文脈が成立するとのCEO判断で追認。表現の制約（1ページ1箇所・断定禁止・「契約の判断はご自身で」の注記必須・不安を煽る導入の禁止）は従来どおり維持する。 |
 | 街角相談所-探偵（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+3BO98A+5BYA+5Z6WX | 探偵の比較・見積もりサービス（個別事務所ではない）。kekkon-sokou-chousa のみ。**tantei-erabikata には置かない**（既に3本＋「特定事務所を推奨しない」と明記しており、4本目は記事の中立性の主張と矛盾するため・2026-07-30判断）。不安を煽らず「1社で決めないため」の文脈で提示 |
 | ABEMAプレミアム（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4T99OA+4EKC+60WN6 | 動画配信。**おうちデート文脈のみ**（ouchi-date-sakuhin）。「次の約束につながる連続もの」という機能で訴求し、作品数の多寡は断定しない。1記事1箇所 |
 | WOWOWオンデマンド（A8） | https://px.a8.net/svt/ejp?a8mat=4B8B4Q+4SNU2I+5DFW+5Z6WX | 動画配信。**重めの作品＝関係が安定してから**という文脈のみ（date-sakuhin-ng）。ABEMAとは記事を分け、同一記事に併置しない |
@@ -492,6 +573,10 @@ success-rate-data 1本（52表示・平均34.8位・1クリック）が稼いで
 | バチェラーデート（A8） | https://px.a8.net/svt/ejp?a8mat=4B88SU+EGYEYI+5SFC+BX3J6 | 【推定5,000円】※AI型マッチング・審査制のため高め想定。要実測 審査制・AIデート・忙しい人/メッセージ苦手文脈のみ（bachelor-date-guide・time-management・都市部記事・**tools/konkatsu-type-shindan**〔2026-08-17追加・診断結果連動〕）。1記事1〜2箇所。効果断定禁止・審査基準の推測記述禁止。rel="nofollow sponsored noopener"・target="_blank"・PRラベル必須 |
 
 ### 新規記事はこの2型に限る（2026-08-02制定・上位ルール）
+
+> **2026-09-19 改定（CEO承認）: 型Bは停止。** 新規の通常記事は型A（Eクラスタ）だけ。新規生産の中心はツールとデータ記事へ移した
+> （冒頭「あなたのタスク（毎回実行・2026-09-19 改定）」）。型Bのインデックス率は高いが、1本あたりクリックは
+> ツール1.00・データ記事0.42に対し通常記事0.14だった（GSC 8/18〜9/14）。以下の表と本文は経緯として残す。
 
 インデックス実測（記事142本・2026-08-01）でクラスタ別の通過率が0〜100%に割れた。
 **新規記事は率の高い2型だけを作る。**
@@ -1112,6 +1197,7 @@ Phase 5でルール改定の対象にすること（記事の主題そのもの�
    - 順位10位以内のクエリの記事は触らない
    - **平均掲載順位31位以下の記事は触らない**（追記しても順位が動かないことが実証済み）
    - `agent/run_log.md` を確認し、2週間以内に強化済みの記事はスキップする
+   - **`agent/seo/improvement-log.json` で status が `observing` の targetPath は触らない**（SEO Rank Watch の観察中。触ると効果判定が汚れる。2026-09-16追加）
 4. **新規需要の発見**：表示されたクエリに対応する記事が存在しない場合、`keyword_queue.json` に `status: "proposed"` で追加する（自動生成はしない・人間レビュー用）
 5. 実行結果（生成・強化した記事、対象クエリ、判断理由の要約）を `agent/run_log.md` に追記する
 
@@ -1140,3 +1226,47 @@ Phase 5でルール改定の対象にすること（記事の主題そのもの�
 - `tokyo-guide` — クエリ「マッチング アプリ 東京」。2026-07-06・07-25の2回強化で改善せず打ち切り
 
 打ち切った記事は削除もリライトもしない。放置して、他クエリで自然に評価が付くのを待つ。
+
+---
+
+## ツールとデータ記事を優先する（2026-09-19 CEO決定・上位ルール）
+
+根拠・型別の当たり率・打順は `agent/strategy_2026Q4.md` の「2026-09-19 CEO決定」節。ここには工場が守る規則だけを書く。
+**この節は、上の「あなたのタスク（毎回実行）」の手順1〜2（keyword_queue から通常記事を2本生成）を
+まだ書き換えていない。** 自動実行の挙動を変える箇所は CEO 承認後に別途改める（一覧は `agent/rule_changes.md` の 2026-09-19 の項）。
+
+> **同日追記: 手順1〜2の書き換えは CEO 承認を得て適用済み**（冒頭「あなたのタスク（毎回実行・2026-09-19 改定）」）。
+> あわせて下の出荷基準3「対のデータ記事」は**必須から推奨へ変更**した（当たり率の実測で対の効果を確認できなかったため）。
+
+### 生産配分
+
+- 新規生産は**ツールとデータ記事**を優先する。1組＝ツール1本＋対のデータ記事1本（同じ正本から生成）。
+- **通常記事の新規は、Eクラスタ（案件を持つアプリの指名×公表データ＝型A）以外は作らない。**
+  既存の通常記事は保守（加筆・title・内部リンク）だけを行う。
+- 型の優先順位: 制度×自治体 ＞ 公的統計 ＞ アプリ個社の公表値。費用シミュレーター・事業者横断比較・民間相場は、
+  下の「語の需要実測」を通った語だけ。
+
+### 新ツールの出荷基準（全部満たしてから出す）
+
+1. title は**全体で32字以内**（ビルダーに assert を入れる）
+2. **結果の直後**に LINE CTA（`id="line-cta-result"`）と既存案件の広告（`id="aff-<案件>"`・PRラベル・
+   `rel="nofollow sponsored noopener"`・`target="_blank"`）。冒頭に `.pr-notice`。
+   広告は上の案件台帳の文脈ルールに従う。**YMYL枠（保険・クレカ）は承認済みslug以外に置かない**
+3. ~~**対のデータ記事**がある~~ → **推奨**（2026-09-19 同日改定。作るなら表を手で書かず、正本から生成する）
+4. **同クラスタからの内部リンク3本以上**。`agent/seo/improvement-log.json` の `locks[]` にあるページには張らない
+5. sitemap 2本へ追加（`scripts/sitemap_add.py`）→ デプロイ後に `agent/index_request_queue.md` へ追記して GSC 申請
+6. 確認日を明記・数字は正本ファイルからのみ・inspector PASS・`factory_audit.py` と `quality_audit.py` で新規FAILなし
+7. **結果の枠が表示される**（`python scripts/check_result_visible.py --browser tools/<slug>` が OK。2026-09-27 追加）
+
+### 語の需要実測（tool_gate の使い方）
+
+- ゲートに入れる語は、**GSCに既に表示が出ている語**か**サジェストに実在する語**から取る。ツールを先に決めて語を後付けしない。
+- `python scripts/tool_gate.py "<語>"` の判定に、**GSCの既存表示（by_query_page で専用ページが無い語）**を証拠として併記する。
+- 語尾違いで判定が割れるので、**頭語と言い換えを最低2通り**通す。
+- 実測できない需要は「未実測」と書く。推測で順位をつけない。
+
+### 設置の記録（2026-09-19）
+
+- Oisix を `tools/sengyoshufu-wariai`（結果直後・`id="aff-oisix"`）と `articles/sengyoshufu-wariai-data`（末尾PR枠）に設置。
+  共働き・家事の総量の文脈。非YMYLのため承認不要の範囲（上の「表中のslug列挙をどう読むか」）。
+  **結果直後の広告idは既存8ページが `aff-result`、今回から `aff-<案件>` 形式**。集計側は `aff-` 前方一致で拾うこと。
