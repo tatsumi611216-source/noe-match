@@ -185,7 +185,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
   <button class="calc-btn" id="run" type="button">結果を見る</button>
   <p class="err" id="err">生年月日を正しく選んでください（存在しない日付は選べません）。</p>
 </div>
-<div class="note-src note-c"><p>この診断は娯楽のための占いです。入力された生年月日をもとに、あらかじめ用意した文章をプログラムが自動で選んで表示しています。占い師や霊能者が鑑定したものではなく、AI による自動生成の文章を含みます。結果は将来を予言・保証するものではありません。恋愛・結婚・お金・健康などの大切な判断は、結果だけで決めないでください。</p><p>入力した内容はお使いのブラウザの中だけで計算し、当サイトのサーバーや第三者には送りません（保存もしません）。</p><p>下に紹介する電話占いは有料のサービス（1分ごとに料金がかかります）で、18歳未満の方は利用条件をご確認のうえ、保護者の方と相談してください。</p></div>
+<div class="note-src note-c"><p>この診断は娯楽のための占いです。入力された生年月日をもとに、あらかじめ用意した文章をプログラムが自動で選んで表示しています。占い師や霊能者が鑑定したものではなく、AI による自動生成の文章を含みます。結果は将来を予言・保証するものではありません。恋愛・結婚・お金・健康などの大切な判断は、結果だけで決めないでください。</p><p>入力した内容はお使いのブラウザの中だけで計算し、当サイトのサーバーや第三者には送りません（保存もしません）。</p><p>下に紹介する電話占いは有料のサービス（1分ごとに料金がかかります）です。18歳未満の方がココナラを利用するには、保護者（法定代理人）の同意が必要です（ココナラの利用規約による）。</p></div>
 
 <div class="result" id="res" aria-live="polite">
 <div class="result-head">
@@ -209,7 +209,7 @@ a[style*="#7c2e42"]:hover{background:#5c2131!important}
 <div class="prbox">
 <p class="pr-h">【PR】相談サービスの紹介（広告）</p>
 <p class="pr-p">結婚観について誰かに話しながら考えを整理したいときの選択肢の一つとして、電話で相談できるサービスがあります。利用するかどうかは自由です。</p>
-<p class="pr-u18">電話占いは有料のサービス（1分ごとに料金がかかります）です。18歳未満の方は利用条件をご確認のうえ、保護者の方と相談してください。</p>
+<p class="pr-u18">電話占いは有料のサービス（1分ごとに料金がかかります）です。18歳未満の方がココナラを利用するには、保護者（法定代理人）の同意が必要です（ココナラの利用規約による）。</p>
 <p class="pr-lead">【PR】以下は電話占いサービスの広告です。</p>
 <a class="pr-btn" id="prLink" href="https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU" rel="nofollow sponsored noopener" target="_blank">ココナラ電話占いを見る</a>
 <p class="pr-n">1分ごとに料金がかかります。料金と特典の条件は公式サイトで確認してください。</p>
@@ -307,7 +307,14 @@ $('shareCopy').addEventListener('click',function(){
   track('uranai_share',{tool:SLUG,result:lastResult});
 });
 $('prLink').addEventListener('click',function(){track('uranai_pr_click',{tool:SLUG,result:lastResult});});
-function showRes(){$('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});}
+// 年齢はこのブラウザ内で計算するだけ（送信・保存・GA4・URLに載せない）。18歳未満なら送客枠（広告）を出さない
+function isMinor(dt){
+  var n=new Date(),age=n.getFullYear()-dt.y;
+  if(n.getMonth()+1<dt.m||(n.getMonth()+1===dt.m&&n.getDate()<dt.d))age--;
+  return age<18;
+}
+function showRes(dt){var box=document.querySelector('.prbox');if(box){var mn=!!dt&&isMinor(dt);box.hidden=mn;box.style.display=mn?'none':'';}
+  $('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});}
 function showErr(){$('err').style.display='block';}
 onscroll=function(){$('top').classList.toggle('show',scrollY>300);};
 
@@ -323,7 +330,7 @@ $('run').addEventListener('click',function(){
   $('rPartner').textContent=r.partner;
   $('rTalk').textContent=r.talk;
   setShare(nm);
-  showRes();
+  showRes(dt);
   track('uranai_complete',{tool:SLUG,result:nm});
 });
 

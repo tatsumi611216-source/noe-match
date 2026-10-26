@@ -24,9 +24,9 @@ UPDATED = '2026-10-26'
 NOTE_C = [
     'この診断は娯楽のための占いです。入力された生年月日をもとに、あらかじめ用意した文章をプログラムが自動で選んで表示しています。占い師や霊能者が鑑定したものではなく、AI による自動生成の文章を含みます。結果は将来を予言・保証するものではありません。恋愛・結婚・お金・健康などの大切な判断は、結果だけで決めないでください。',
     '入力した内容はお使いのブラウザの中だけで計算し、当サイトのサーバーや第三者には送りません（保存もしません）。',
-    '下に紹介する電話占いは有料のサービス（1分ごとに料金がかかります）で、18歳未満の方は利用条件をご確認のうえ、保護者の方と相談してください。',
+    '下に紹介する電話占いは有料のサービス（1分ごとに料金がかかります）です。18歳未満の方がココナラを利用するには、保護者（法定代理人）の同意が必要です（ココナラの利用規約による）。',
 ]
-NOTE_U18 = '電話占いは有料のサービス（1分ごとに料金がかかります）です。18歳未満の方は利用条件をご確認のうえ、保護者の方と相談してください。'
+NOTE_U18 = '電話占いは有料のサービス（1分ごとに料金がかかります）です。18歳未満の方がココナラを利用するには、保護者（法定代理人）の同意が必要です（ココナラの利用規約による）。'
 PR_HEAD = '【PR】相談サービスの紹介（広告）'
 PR_LEAD = '【PR】以下は電話占いサービスの広告です。'
 
@@ -251,7 +251,14 @@ $('shareCopy').addEventListener('click',function(){
   track('uranai_share',{tool:SLUG,result:lastResult});
 });
 $('prLink').addEventListener('click',function(){track('uranai_pr_click',{tool:SLUG,result:lastResult});});
-function showRes(){$('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});}
+// 年齢はこのブラウザ内で計算するだけ（送信・保存・GA4・URLに載せない）。18歳未満なら送客枠（広告）を出さない
+function isMinor(dt){
+  var n=new Date(),age=n.getFullYear()-dt.y;
+  if(n.getMonth()+1<dt.m||(n.getMonth()+1===dt.m&&n.getDate()<dt.d))age--;
+  return age<18;
+}
+function showRes(dt){var box=document.querySelector('.prbox');if(box){var mn=!!dt&&isMinor(dt);box.hidden=mn;box.style.display=mn?'none':'';}
+  $('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});}
 function showErr(){$('err').style.display='block';}
 onscroll=function(){$('top').classList.toggle('show',scrollY>300);};
 """
@@ -435,7 +442,7 @@ $('run').addEventListener('click',function(){
   if(!dt){showErr();return;}
   var i=signOf(dt.m,dt.d);
   render(i,edgeOf(dt.m,dt.d));
-  showRes();
+  showRes(dt);
   track('uranai_complete',{tool:SLUG,result:SIGNS[i].name});
 });
 """
@@ -506,7 +513,7 @@ $('run').addEventListener('click',function(){
   $('rPartner').textContent=r.partner;
   $('rTalk').textContent=r.talk;
   setShare(nm);
-  showRes();
+  showRes(dt);
   track('uranai_complete',{tool:SLUG,result:nm});
 });
 """
@@ -591,7 +598,7 @@ $('run').addEventListener('click',function(){
   $('rGap').textContent=t.gap;
   $('rTalk').textContent=t.talk;
   setShare(t.name);
-  showRes();
+  showRes(a);
   track('uranai_complete',{tool:SLUG,result:t.name});
 });
 """
