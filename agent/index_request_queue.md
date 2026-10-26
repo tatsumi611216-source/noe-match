@@ -42,10 +42,27 @@ noteがクロール需要を動かすかを測っている対照群で、申請�
 
 ### 未申請
 
-（なし——2026-08-19にGSC実機で全件「リクエスト済み」を確認し、下の申請済みへ移した）
+（2026-08-19 時点の分はGSC実機で全件「リクエスト済み」を確認し、下の申請済みへ移した）
 
 ```
+https://www.noe-match.com/articles/denwa-uranai-konkatsu/
+https://www.noe-match.com/tools/seiza-renai-uranai/
+https://www.noe-match.com/tools/suhi-kekkon-uranai/
+https://www.noe-match.com/tools/aisho-uranai/
+https://www.noe-match.com/articles/tanjobi-renai-keiko/
+https://www.noe-match.com/articles/ohitsujiza-renai-keiko/
+https://www.noe-match.com/articles/kekkon-jiki-uranai-seinengappi/
+https://www.noe-match.com/articles/fuufu-aishou-uranai/
+https://www.noe-match.com/articles/birthday-aishou-renai/
+https://www.noe-match.com/articles/birthday-aishou-kekkon/
+https://www.noe-match.com/articles/suhi-aishou-kekkon/
+https://www.noe-match.com/articles/kekkonun-seinengappi/
+https://www.noe-match.com/articles/kekkon-aite-uranai-seinengappi/
+https://www.noe-match.com/articles/seiza-renai-keiko/
 ```
+（birthday-aishou-kekkon / suhi-aishou-kekkon / kekkonun-seinengappi / kekkon-aite-uranai-seinengappi / seiza-renai-keiko は 2026-10-26 作成・C-003 の SEO記事 #1〜#5。**公開（CEO 承認後）してから申請する**）
+（tanjobi-renai-keiko / ohitsujiza-renai-keiko / kekkon-jiki-uranai-seinengappi / fuufu-aishou-uranai / birthday-aishou-renai は 2026-10-26 作成・C-003 の SEO記事 #6〜#10。**公開（CEO 承認後）してから申請する**）
+（denwa-uranai-konkatsu と占い診断3本 seiza-renai-uranai / suhi-kekkon-uranai / aisho-uranai は 2026-10-26 作成・C-003。**公開（CEO 承認後）してから申請する**）
 （konkatsu-soudan-saki / pocchari-konkatsu は 2026-08-09 公開。zexy-enmusubi-data / pairs-kaiin-data は 2026-08-10 公開。omiai-danjohi-data / with-nenreiso-data は 2026-08-17 公開。Day バックログとは別枠で申請してよい）
 
 ### 申請済み
