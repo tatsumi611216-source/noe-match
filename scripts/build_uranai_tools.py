@@ -22,11 +22,9 @@ COCONALA = 'https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU'
 UPDATED = '2026-10-26'
 
 NOTE_C = [
-    'この診断は娯楽のための占いです。入力された生年月日をもとに、あらかじめ用意した文章をプログラムが自動で選んで表示しています。占い師や霊能者が鑑定したものではなく、AI による自動生成の文章を含みます。結果は将来を予言・保証するものではありません。恋愛・結婚・お金・健康などの大切な判断は、結果だけで決めないでください。',
-    '入力した内容はお使いのブラウザの中だけで計算し、当サイトのサーバーや第三者には送りません（保存もしません）。',
-    '下に紹介する電話占いは有料のサービス（1分ごとに料金がかかります）です。18歳未満の方がココナラを利用するには、保護者（法定代理人）の同意が必要です（ココナラの利用規約による）。',
+    '気軽に楽しむ無料の占いです。入力した生年月日は送信・保存しません。',
 ]
-NOTE_U18 = '電話占いは有料のサービス（1分ごとに料金がかかります）です。18歳未満の方がココナラを利用するには、保護者（法定代理人）の同意が必要です（ココナラの利用規約による）。'
+NOTE_U18 = '電話占いは有料です（18歳未満は保護者の同意が必要）。'
 PR_HEAD = '【PR】相談サービスの紹介（広告）'
 PR_LEAD = '【PR】以下は電話占いサービスの広告です。'
 
@@ -103,7 +101,7 @@ HEADER = """<header><div class="header-inner">
 
 FOOTER = """<footer><div class="footer-inner">
 <div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
-<p class="footer-disc">※このページの占いは娯楽を目的としたもので、結果は傾向とヒントです。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+<p class="footer-disc"><strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
 </div></footer>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>"""
 
@@ -133,14 +131,14 @@ def date_fields(prefix, label):
 
 
 def note_c_html():
-    return '<div class="note-src note-c">' + ''.join(f'<p>{esc(p)}</p>' for p in NOTE_C) + '</div>'
+    return ''
 
 
 def prbox_html(slug, lead):
     return f"""<div class="prbox">
 <p class="pr-h">{PR_HEAD}</p>
 <p class="pr-p">{esc(lead)}</p>
-<p class="pr-u18">{NOTE_U18}</p>
+
 <p class="pr-lead">{PR_LEAD}</p>
 <a class="pr-btn" id="prLink" href="{COCONALA}" rel="nofollow sponsored noopener" target="_blank">ココナラ電話占いを見る</a>
 <p class="pr-n">1分ごとに料金がかかります。料金と特典の条件は公式サイトで確認してください。</p>
@@ -241,7 +239,7 @@ var started=false;
 var lastResult='';
 function setShare(name){
   lastResult=name;
-  var text=TITLE+'の結果は「'+name+'」でした｜Noe結婚設計室（無料・娯楽）';
+  var text=TITLE+'の結果は「'+name+'」でした｜Noe結婚設計室（無料）';
   $('shareX').href='https://x.com/intent/post?text='+encodeURIComponent(text)+'&url='+encodeURIComponent(PAGE_URL);
 }
 $('shareX').addEventListener('click',function(){track('uranai_share',{tool:SLUG,result:lastResult});});
@@ -350,7 +348,7 @@ def result_shell(slug, head_inner, body_inner, pr_lead):
 </div>
 <div class="result-body">
 {body_inner}
-<p class="r-disclaimer">※娯楽のための占いです。結果は生年月日から決まった文章を選んで表示した「傾向」と「ヒント」で、将来を予言・保証するものではありません。</p>
+
 {share_html()}
 {prbox_html(slug, pr_lead)}
 {other_links(slug)}
@@ -361,9 +359,9 @@ def result_shell(slug, head_inner, body_inner, pr_lead):
 # ---------------------------------------------------------------- 星座
 def build_seiza():
     slug = 'seiza-renai-uranai'
-    name = '星座でみる恋愛傾向占い（無料・娯楽）'
+    name = '星座でみる恋愛傾向占い（無料）'
     title = '星座でみる恋愛傾向占い（無料）｜12星座の恋愛傾向と婚活のヒント'
-    desc = '生年月日を選ぶと12星座を出し、恋愛の傾向・相性のよい関わり方・婚活で生かせるヒントを表示する無料の娯楽占いです。入力はブラウザの中だけで計算し、送信・保存しません。'
+    desc = '生年月日を選ぶと12星座を出し、恋愛の傾向・相性のよい関わり方・婚活で生かせるヒントを表示する無料占いです。入力はブラウザの中だけで計算し、送信・保存しません。'
     rows = ''.join(
         f'<tr><td>{s["name"]}</td><td>{s["start"][0]}月{s["start"][1]}日〜{s["end"][0]}月{s["end"][1]}日</td><td>{s["elem"]}</td></tr>'
         for s in SIGNS)
@@ -392,7 +390,7 @@ def build_seiza():
         ('誕生日が星座の境目です。どちらの星座を見ればよいですか？',
          '太陽が星座を移る日は、生まれた年により1日ほど前後します。この占いでは一般的な区切りの日付で判定し、境目の前後1日に生まれた方には、となりの星座の結果も読めるボタンを表示します。両方を読み比べて、しっくりくるほうを参考にしてください。'),
         ('星座で恋愛の相性や結果が決まりますか？',
-         '決まりません。この占いは娯楽を目的としたもので、星座ごとに用意した文章を表示しています。恋愛や結婚の進み方は、二人の話し合いや行動によって変わります。結果は自分を振り返るきっかけとして使ってください。'),
+         '決まりません。星座ごとに用意した文章を表示しています。恋愛や結婚の進み方は、二人の話し合いや行動によって変わります。結果は自分を振り返るきっかけとして使ってください。'),
         ('入力した生年月日はどこかに送られますか？',
          '送られません。星座の計算はお使いのブラウザの中だけで行い、当サイトのサーバーや第三者には送信せず、保存もしません。アクセス解析には、表示した星座の名前だけを個人が分からない形で記録することがあります。'),
         ('生まれた時間や場所は使いますか？',
@@ -447,9 +445,9 @@ $('run').addEventListener('click',function(){
 });
 """
     return slug, page(slug, title=title, desc=desc,
-                      og_title='星座でみる恋愛傾向占い（無料・娯楽）',
+                      og_title='星座でみる恋愛傾向占い（無料）',
                       og_desc='生年月日から12星座を出し、恋愛の傾向・相性のよい関わり方・婚活で生かせるヒントを表示します。',
-                      h1='星座でみる恋愛傾向占い（無料・娯楽）',
+                      h1='星座でみる恋愛傾向占い（無料）',
                       hero_p='生年月日から12星座を出し、恋愛の傾向と婚活で生かせるヒントを読みます。登録なし・入力は生年月日だけ。',
                       hero_img='room-light.jpg', emblem='sun.png', bg='room-light.jpg',
                       lead_html=lead, form_html=form, result_html=result_shell(slug, head, bodyr, pr_lead),
@@ -459,9 +457,9 @@ $('run').addEventListener('click',function(){
 # ---------------------------------------------------------------- 数秘
 def build_suhi():
     slug = 'suhi-kekkon-uranai'
-    name = '数秘術でみる結婚観占い（無料・娯楽）'
+    name = '数秘術でみる結婚観占い（無料）'
     title = '数秘術でみる結婚観占い（無料）｜ライフパスナンバーで読む結婚観'
-    desc = '生年月日からライフパスナンバー（1〜9・11・22・33）を出し、結婚観・パートナーシップの傾向・ふたりで話し合うと良いことを表示する無料の娯楽占いです。入力は送信・保存しません。'
+    desc = '生年月日からライフパスナンバー（1〜9・11・22・33）を出し、結婚観・パートナーシップの傾向・ふたりで話し合うと良いことを表示する無料占いです。入力は送信・保存しません。'
     rows = ''.join(f'<tr><td>{n}</td><td>{NUMBERS[n]["label"]}</td></tr>' for n in NUMBERS)
     body = f"""<h2>ライフパスナンバーの出し方</h2>
 <p>数秘術では、生年月日の数字をすべて一桁ずつ足し、一桁になるまで足し続けた数を「ライフパスナンバー」と呼びます。途中で11・22・33になった場合は、そこで止めて特別な数として扱います。</p>
@@ -518,9 +516,9 @@ $('run').addEventListener('click',function(){
 });
 """
     return slug, page(slug, title=title, desc=desc,
-                      og_title='数秘術でみる結婚観占い（無料・娯楽）',
+                      og_title='数秘術でみる結婚観占い（無料）',
                       og_desc='生年月日からライフパスナンバーを出し、結婚観・パートナーシップの傾向・話し合うと良いことを表示します。',
-                      h1='数秘術でみる結婚観占い（無料・娯楽）',
+                      h1='数秘術でみる結婚観占い（無料）',
                       hero_p='生年月日のライフパスナンバーから、結婚観とふたりで話し合うと良いことを読みます。登録なし・入力は生年月日だけ。',
                       hero_img='rings-bouquet.jpg', emblem='rings.png', bg='rings-bouquet.jpg',
                       lead_html=lead, form_html=form, result_html=result_shell(slug, head, bodyr, pr_lead),
@@ -530,9 +528,9 @@ $('run').addEventListener('click',function(){
 # ---------------------------------------------------------------- 相性
 def build_aisho():
     slug = 'aisho-uranai'
-    name = '生年月日でみる二人の相性占い（無料・娯楽）'
+    name = '生年月日でみる二人の相性占い（無料）'
     title = '生年月日でみる二人の相性占い（無料）｜関係の傾向と話し方のヒント'
-    desc = '二人の生年月日から、星座のエレメントと数秘術のナンバーを組み合わせて6つの相性タイプに分け、関係の傾向・すれ違いやすい点・話し方のヒントを表示する無料の娯楽占いです。入力は送信・保存しません。'
+    desc = '二人の生年月日から、星座のエレメントと数秘術のナンバーを組み合わせて6つの相性タイプに分け、関係の傾向・すれ違いやすい点・話し方のヒントを表示する無料占いです。入力は送信・保存しません。'
     types = ''.join(f'<li><strong>{v["name"]}</strong>——{v["trend"].split("。")[0]}。</li>' for v in COMPAT.values())
     body = f"""<h2>相性タイプの決め方</h2>
 <p>この占いは、二人それぞれの<strong>星座のエレメント</strong>（火・地・風・水）と、<strong>数秘術のライフパスナンバー</strong>を組み合わせて、相性のタイプを決めています。</p>
@@ -603,9 +601,9 @@ $('run').addEventListener('click',function(){
 });
 """
     return slug, page(slug, title=title, desc=desc,
-                      og_title='生年月日でみる二人の相性占い（無料・娯楽）',
+                      og_title='生年月日でみる二人の相性占い（無料）',
                       og_desc='二人の生年月日から6つの相性タイプを出し、関係の傾向・すれ違いやすい点・話し方のヒントを表示します。',
-                      h1='生年月日でみる二人の相性占い（無料・娯楽）',
+                      h1='生年月日でみる二人の相性占い（無料）',
                       hero_p='二人の生年月日から、星座のエレメントと数秘術で相性のタイプを出し、話し方のヒントを読みます。登録なし・入力は生年月日だけ。',
                       hero_img='hands-touch.jpg', emblem='couple.png', bg='hands-touch.jpg',
                       lead_html=lead, form_html=form, result_html=result_shell(slug, head, bodyr, pr_lead),
@@ -623,7 +621,7 @@ def build_og(slug, title, sub, chips):
     d.rectangle([0, 0, 18, H], fill='#7c2e42')
     d.rectangle([60, 60, W - 60, H - 60], outline='#e6e2dc', width=2)
     f_site = ImageFont.truetype(fr, 26)
-    d.text((100, 92), 'Noe結婚設計室｜無料・娯楽の占い', font=f_site, fill='#7c2e42')
+    d.text((100, 92), 'Noe結婚設計室｜無料の占い', font=f_site, fill='#7c2e42')
     size = 64
     f_t = ImageFont.truetype(font, size)
     while d.textlength(title, font=f_t) > W - 200 and size > 40:
