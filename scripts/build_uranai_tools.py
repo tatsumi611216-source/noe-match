@@ -25,8 +25,8 @@ NOTE_C = [
     '気軽に楽しむ無料の占いです。入力した生年月日は送信・保存しません。',
 ]
 NOTE_U18 = '電話占いは有料です（18歳未満は保護者の同意が必要）。'
-PR_HEAD = '【PR】相談サービスの紹介（広告）'
-PR_LEAD = '【PR】以下は電話占いサービスの広告です。'
+PR_HEAD = '【PR】'
+PR_LEAD = '電話占いサービスの広告です。'
 
 TOOLS = {
     'seiza-renai-uranai': {'short': '星座でみる恋愛傾向占い', 'desc': '生年月日から12星座を出し、恋愛の傾向と婚活で生かせるヒントを読む'},
@@ -49,7 +49,7 @@ def base_css():
 
 
 EXTRA_CSS = """
-.pr-top{font-size:.78rem;color:var(--sub);margin:0 0 14px}
+.pr-top{font-size:11.5px;color:var(--sub);margin:0 0 14px}
 .calc select{width:100%;padding:11px 8px;font-size:16px;border:1px solid var(--line-strong);border-radius:4px;background:#fff;color:var(--text);font-family:inherit}
 .date-row{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px}
 .person-ttl{font-weight:700;font-size:.92rem;color:var(--ink);margin:4px 0 8px}
@@ -77,10 +77,10 @@ EXTRA_CSS = """
 .share-btn.x{background:#0f1419;color:#fff}
 .share-btn.copy{background:#fff;color:var(--text);border:1px solid var(--line-strong)}
 .prbox{background:var(--alt);border:1px solid var(--hair);padding:20px 20px;margin:24px 0 0;text-align:center}
-.prbox .pr-h{font-weight:700;margin:0 0 8px;text-align:left;font-size:.95rem;color:var(--ink)}
+.prbox .pr-h{font-weight:400;margin:0 0 2px;text-align:left;font-size:11.5px;color:var(--sub)}
 .prbox .pr-p{font-size:.86rem;color:var(--ink-soft);margin:0 0 10px;text-align:left}
 .prbox .pr-u18{font-size:.8rem;color:var(--ink-soft);margin:0 0 12px;text-align:left;background:#fff;border-left:3px solid var(--line-strong);padding:8px 12px}
-.prbox .pr-lead{font-size:.8rem;color:var(--sub);margin:0 0 8px;text-align:left}
+.prbox .pr-lead{font-size:11.5px;color:var(--sub);margin:0 0 8px;text-align:left}
 .prbox a.pr-btn{display:inline-block;background:#7c2e42;color:#fff;font-weight:700;padding:13px 30px;text-decoration:none;max-width:100%}
 .prbox a.pr-btn:hover{background:#5c2131}
 .prbox .pr-n{font-size:.74rem;color:#888;margin:10px 0 0}
