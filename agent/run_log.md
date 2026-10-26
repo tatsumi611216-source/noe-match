@@ -1169,6 +1169,37 @@ GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCに
   - 具体的痛点（いいね数月1〜5件）＋選び直し基準で固有修飾を追加
   - 同上フィールド更新
 
+## 2026-10-26 週次実行
+
+⚠️ ASP成果データが未供給（last_updated: 2026-08-31、56日経過、30日閾値超過）。今回は新CTAなし。
+
+### Step 4–6: ツールゲート（データ記事候補）
+- **BO=3 (tools/tomobataraki-wariai)**: tool_gate.py → CHECK（ネットワーク不通。クラウド実行環境はGoogle Suggest/DDG SERPへの外向き通信を遮断）
+- **BO=4 (articles/koukousei-iryohi-data)**: data_gate.py → CHECK（同上）
+- **BO=5 (articles/sangokea-tokyo-data)**: data_gate.py → CHECK（同上）
+- **BO=6 (tools/heikin-shokon-nenrei)**: スキップ（notes: "新規実査あり"）
+- **BO=7 (tools/rikonritsu-todofuken)**: tool_gate.py → CHECK（ネットワーク不通）
+- **BO=8 (articles/jukunen-rikon-data)**: data_gate.py → CHECK（ネットワーク不通）
+- **BO=9 (articles/funin-josei-katsushika-data)**: data_gate.py → CHECK（ネットワーク不通）
+- AGENT.md「ネットワーク不通などでゲートが動かないときは作らない」に従い新規記事作成なし
+
+### Step 8: silent_scan リライト（2件）
+- **privacy-protection**: "マッチングアプリで知り合いを見つけた・見つかった時の対処｜バレた後にどうするか【2026年版】" → "マッチングアプリで職場・学校の知り合いにバレた｜発見した側・された側の対処法【2026年版】"
+  - 無修飾ヘッドタームに「職場・学校」の属性固有修飾を追加、バレた後の対処クエリに角度を切り替え
+  - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/intro段落 更新
+- **renkatsu-vs-konkatsu**: "恋活から婚活に切り替えるタイミング｜目的が変わった時のアプリの乗り換え方【2026年版】" → "25〜29歳が恋活から婚活に切り替えるタイミング｜判断基準とアプリの乗り換え方【2026年版】"
+  - 「25〜29歳」の年代固有修飾を追加、切り替えタイミング判断クエリに寄せた
+  - 同上フィールド更新
+
+### 品質バックログ修正（1件）
+- **tools/garugaru-check**: title 36字 → 27字に短縮（32字以内、ロック期限2026-10-20切れを確認）
+  - "潜在ガルガル度チェック診断｜産後の「ガルガル期」危険度を53問で事前診断【無料】" → "ガルガル期チェック｜産後の潜在危険度を53問で事前診断【無料】"
+  - title/og:title/twitter:title/h1/breadcrumb 更新、quality_backlog_tools.md から削除
+
+### 監査結果
+- factory_audit.py: 新規FAIL 0本（既知バックログ 27本、ツール 16本）
+- sitemap_sync.py: privacy-protection・renkatsu-vs-konkatsu の lastmod を 2026-10-26 に更新
+
 ## 2026-10-19 週次実行
 
 ⚠️ ASP成果データが未供給（last_updated: 2026-08-31、49日経過、30日閾値超過）。今回は新CTAなし。

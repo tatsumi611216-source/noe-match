@@ -17,7 +17,6 @@
 | tools/daredemo-tsuen-jichitai | title 45字（サフィックス除く・32字以内） |
 | tools/fugenbyo-check | title 33字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
 | tools/funin-josei-jichitai | title 40字（サフィックス除く・32字以内） |
-| tools/garugaru-check | title 36字（サフィックス除く・32字以内） |
 | tools/hitorioya-shien-jichitai | title 39字（サフィックス除く・32字以内） |
 | tools/kekkon-shikin-keisanki | title 46字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
 | tools/kekkon-shinseikatsu-jichitai | 結果領域（id="result…"）が見つからない |
