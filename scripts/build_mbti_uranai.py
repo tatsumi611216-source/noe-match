@@ -201,7 +201,7 @@ def main():
 <button class="share-btn copy" id="shareCopy" type="button">リンクをコピー</button>
 </div></div>
 {prbox}
-<div class="next-links"><h3>あわせて読む・試す</h3><ul><li><a href="/tools/aisho-uranai/">生年月日でみる二人の相性占い</a></li><li><a href="/tools/seiza-renai-uranai/">星座でみる恋愛傾向占い</a></li><li><a href="/tools/suhi-kekkon-uranai/">数秘術でみる結婚観占い</a></li><li><a href="/tools/konkatsu-type-shindan/">婚活タイプ診断（自分に合う婚活の進め方を選ぶ）</a></li></ul></div>
+<div class="next-links"><h3>あわせて読む・試す</h3><ul><li><a href="/tools/renai-type-shindan/">16タイプ恋愛診断（12問であなたの恋愛タイプがわかる）</a></li><li><a href="/tools/aisho-uranai/">生年月日でみる二人の相性占い</a></li><li><a href="/tools/seiza-renai-uranai/">星座でみる恋愛傾向占い</a></li><li><a href="/tools/suhi-kekkon-uranai/">数秘術でみる結婚観占い</a></li><li><a href="/tools/konkatsu-type-shindan/">婚活タイプ診断（自分に合う婚活の進め方を選ぶ）</a></li></ul></div>
 </div>
 </div>
 
