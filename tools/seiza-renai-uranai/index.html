@@ -269,6 +269,8 @@ var ELEM={"火": "火のエレメントは、気持ちが行動に出やすく�
 
 function track(n,p){try{if(typeof gtag==='function')gtag('event',n,p);}catch(e){}}
 function $(id){return document.getElementById(id);}
+// 年の選択肢の上限は「ページを開いた年 − 18」（JSで動的に作る。JSなしでは静的な選択肢のまま）
+(function(){var max=new Date().getFullYear()-18;['ay','by'].forEach(function(id){var s=$(id);if(!s)return;var h='<option value="">年</option>';for(var y=max;y>=1940;y--)h+='<option value="'+y+'">'+y+'年</option>';s.innerHTML=h;});})();
 function readDate(p){
   var y=+$(p+'y').value,m=+$(p+'m').value,d=+$(p+'d').value;
   if(!y||!m||!d)return null;
