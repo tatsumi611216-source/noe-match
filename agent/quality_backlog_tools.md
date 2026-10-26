@@ -32,3 +32,6 @@
 | tools/sangokea-ryokin | title 39字（サフィックス除く・32字以内） |
 | tools/seikatsuhi-simulator | title 33字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
 | tools/seikonritsu-hikaku | title 41字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
+| tools/seiza-renai-uranai | 結果領域は id="res"・LINE CTA なし。送客枠と未成年の非表示に関わる設計判断のため C-003 試運転後に検討（HQ 10/26） |
+| tools/suhi-kekkon-uranai | 同上（id="res"・LINE CTA なし／HQ 10/26） |
+| tools/aisho-uranai | 同上（id="res"・LINE CTA なし／HQ 10/26） |

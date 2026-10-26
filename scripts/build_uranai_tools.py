@@ -362,7 +362,7 @@ def result_shell(slug, head_inner, body_inner, pr_lead):
 def build_seiza():
     slug = 'seiza-renai-uranai'
     name = '星座でみる恋愛傾向占い（無料・娯楽）'
-    title = '星座でみる恋愛傾向占い（無料・娯楽）｜生年月日から12星座の恋愛傾向と婚活のヒント'
+    title = '星座でみる恋愛傾向占い（無料）｜12星座の恋愛傾向と婚活のヒント'
     desc = '生年月日を選ぶと12星座を出し、恋愛の傾向・相性のよい関わり方・婚活で生かせるヒントを表示する無料の娯楽占いです。入力はブラウザの中だけで計算し、送信・保存しません。'
     rows = ''.join(
         f'<tr><td>{s["name"]}</td><td>{s["start"][0]}月{s["start"][1]}日〜{s["end"][0]}月{s["end"][1]}日</td><td>{s["elem"]}</td></tr>'
@@ -460,7 +460,7 @@ $('run').addEventListener('click',function(){
 def build_suhi():
     slug = 'suhi-kekkon-uranai'
     name = '数秘術でみる結婚観占い（無料・娯楽）'
-    title = '数秘術でみる結婚観占い（無料・娯楽）｜生年月日のライフパスナンバーで読む結婚観と話し合いのヒント'
+    title = '数秘術でみる結婚観占い（無料）｜ライフパスナンバーで読む結婚観'
     desc = '生年月日からライフパスナンバー（1〜9・11・22・33）を出し、結婚観・パートナーシップの傾向・ふたりで話し合うと良いことを表示する無料の娯楽占いです。入力は送信・保存しません。'
     rows = ''.join(f'<tr><td>{n}</td><td>{NUMBERS[n]["label"]}</td></tr>' for n in NUMBERS)
     body = f"""<h2>ライフパスナンバーの出し方</h2>
@@ -531,7 +531,7 @@ $('run').addEventListener('click',function(){
 def build_aisho():
     slug = 'aisho-uranai'
     name = '生年月日でみる二人の相性占い（無料・娯楽）'
-    title = '生年月日でみる二人の相性占い（無料・娯楽）｜星座と数秘で読む関係の傾向と話し方のヒント'
+    title = '生年月日でみる二人の相性占い（無料）｜関係の傾向と話し方のヒント'
     desc = '二人の生年月日から、星座のエレメントと数秘術のナンバーを組み合わせて6つの相性タイプに分け、関係の傾向・すれ違いやすい点・話し方のヒントを表示する無料の娯楽占いです。入力は送信・保存しません。'
     types = ''.join(f'<li><strong>{v["name"]}</strong>——{v["trend"].split("。")[0]}。</li>' for v in COMPAT.values())
     body = f"""<h2>相性タイプの決め方</h2>
