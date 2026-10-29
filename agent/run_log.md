@@ -1,5 +1,49 @@
 # Agent Run Log
 
+## 2026-10-29　週次ラン｜ツール生成1本（tools/tomobataraki-wariai）
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（59日前）→ **30日超 → ASPゲート閉鎖**。
+
+⚠️ ASP成果データが未供給。今回の記事生成はCTA計測なしで行われる。アフィリエイトCTAは設置しない（LINE CTAのみ）。
+
+### Phase 1 打順チェック
+
+- batting_order 3: `tools/tomobataraki-wariai` — `tool_gate GO（月2,880）` 既記録値採用（アウトバウンド制限のため再実行不可）、`improvement-log.json` locks[] に含まれない ✓、cluster: 統計（停止クラスタ外） ✓ → **GO**
+
+### Phase 2 コンテンツ生成
+
+`tools/tomobataraki-wariai/index.html` を新規作成。
+
+- タイトル：`共働き世帯の割合を年別に調べる｜1985〜2025年`（26字 ≤ 32字 ✓）
+- データ出典：`scripts/data/setai_kyoudou_sengyou.json`（内閣府『男女共同参画白書 令和8年版』、2026年9月19日確認）
+  - 2025年：共働き世帯1,254万世帯・専業主婦世帯358万世帯、共働き世帯の割合77.8%（3.50倍）
+  - 1985年：共働き世帯718万世帯・専業主婦世帯936万世帯、共働き世帯の割合43.4%
+  - 初めて50%超：1991年（50.2%）、一度だけ50%を下回った最後の年：1995年（49.4%）、以降は50%超継続
+  - 初めて70%超：2019年（71.4%）
+- ASPゲート閉鎖のため Oisix affiliate CTA なし。LINE CTA（id="line-cta-result"）のみ result 内に設置。
+- JSON-LD：WebApplication / FAQPage（7項目）/ BreadcrumbList ✓
+- 内部リンク5本（tomobataraki-wariai-data / sengyoshufu-wariai / sengyoshufu-wariai-data / tomobataraki-shokuji-data / seikatsuhi-simulator）✓
+- pr-notice / 【PR】フッター ✓
+- datePublished: 2026-10-29
+- ビルドスクリプト：`scripts/build_tomobataraki_wariai.py`（正本からのみ数値取得・assertあり）
+
+### Phase 3 サイトマップ・インデックス
+
+- `sitemap.xml` / `sitemap-all.xml` に `/tools/tomobataraki-wariai/` 追加（sitemap_add.py）
+
+### Phase 5 factory_audit
+
+- 稼働記事 244本：新規FAIL 0件 ✓
+- ツール 35本：新規FAIL 2件（**私のツールではない**）
+  - `tools/mbti-aisho-uranai`：title 40字超・result領域欠如（既存の設計問題、今回触っていない）
+  - `tools/renai-type-shindan`：title 39字超・result領域欠如（既存の設計問題、今回触っていない）
+  - `tools/tomobataraki-wariai`：FAIL なし ✓
+- silent_scan：表示ゼロ 80本 / 今回は寄せ直し対象なし（quota上限の兼ね合いで見送り）
+
+---
+
 ## 2026-10-05　週次ラン｜ツール生成1本（tools/shougai-mikonritsu）
 
 ### Phase 4-0 計測ゲート（ASP）
