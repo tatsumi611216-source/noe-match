@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>縁と運｜結婚相手を選んで7代つなぐ家系ゲーム（無料）</title>
+<meta name="description" content="江戸後期の1835年から令和まで、7代ぶんの結婚相手を選んで家系をつなぐ無料のブラウザゲーム。選んだ相手の力は子や孫の代に表れ、最後に「選び方」と「運」のどちらが家を決めたかの内訳が出ます。登録不要・スマホで遊べます。">
+<link rel="canonical" href="https://www.noe-match.com/tools/en-to-un/">
+<meta property="og:title" content="縁と運｜7代の結婚で家系をつなぐゲーム">
+<meta property="og:description" content="天保の大飢饉から令和へ。7代ぶんの結婚を選んで、あなたに至る家系をつなぐゲーム。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.noe-match.com/tools/en-to-un/">
+<meta property="og:image" content="https://www.noe-match.com/images/en-to-un-og.png">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="縁と運｜7代の結婚で家系をつなぐゲーム">
+<meta name="twitter:description" content="天保の大飢饉から令和へ。7代ぶんの結婚を選んで、あなたに至る家系をつなぐゲーム。">
+<meta name="twitter:image" content="https://www.noe-match.com/images/en-to-un-og.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"無料ツール","item":"https://www.noe-match.com/#tools"},{"@type":"ListItem","position":3,"name":"縁と運","item":"https://www.noe-match.com/tools/en-to-un/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"縁と運","url":"https://www.noe-match.com/tools/en-to-un/","description":"江戸後期の1835年から令和まで、7代ぶんの結婚相手を選んで家系をつなぐ無料のブラウザゲーム。選んだ相手の力は子や孫の代に表れ、最後に「選び方」と「運」のどちらが家を決めたかの内訳が出ます。登録不要・スマホで遊べます。","inLanguage":"ja","genre":"人生シミュレーション","gamePlatform":"Web browser","applicationCategory":"Game","operatingSystem":"Any","isAccessibleForFree":true,"publisher":{"@type":"Organization","name":"Noe結婚設計室","url":"https://www.noe-match.com/"}}</script>
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg,#E9EDEC);color:var(--ink,#17242C)}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one narrow column; a 15-tick era strip on top is the progress bar, the end screen is a vertical 年表 on a spine */
+:root{
+  --bg:#E9EDEC; --card:#F7F9F8; --ink:#17242C; --muted:#56646A; --line:#C6D0D0;
+  --ai:#24457A; --ai-soft:#DCE4F1; --gold:#9A6F0E; --gold-soft:#F1E6C8; --bad:#9E3A2A; --bad-soft:#F2DDD8;
+  --era-l:38%; --era:hsl(var(--era-h,215) 45% var(--era-l));
+  --f-disp:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",system-ui,sans-serif;
+  --f-num:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0F151A; --card:#172028; --ink:#E2E8E6; --muted:#95A3A8; --line:#2B3740;
+  --ai:#93B3EA; --ai-soft:#1D2B42; --gold:#DDB453; --gold-soft:#33291A; --bad:#E6826D; --bad-soft:#3A221D; --era-l:72%; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F151A; --card:#172028; --ink:#E2E8E6; --muted:#95A3A8; --line:#2B3740;
+  --ai:#93B3EA; --ai-soft:#1D2B42; --gold:#DDB453; --gold-soft:#33291A; --bad:#E6826D; --bad-soft:#3A221D; --era-l:72%; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.7}
+.wrap{--era:hsl(var(--era-h,215) 45% var(--era-l));max-width:720px;margin:0 auto;padding-block:20px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--f-disp);text-wrap:balance;margin:0;line-height:1.3}
+p{margin:0}
+.num{font-family:var(--f-num);font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}
+.label{font-size:12px;letter-spacing:.08em;color:var(--muted)}
+button{font:inherit;cursor:pointer;border-radius:6px}
+button:focus-visible{outline:3px solid var(--ai);outline-offset:2px}
+.btn{background:var(--ai);color:var(--bg);border:0;padding:12px 22px;font-weight:700;font-size:16px}
+.btn.ghost{background:transparent;color:var(--ai);border:1.5px solid var(--ai);padding:9px 18px;font-size:14px}
+
+/* era strip */
+.strip{display:grid;grid-template-columns:repeat(15,1fr);gap:3px;align-items:end}
+.strip i{display:block;height:6px;background:var(--line);border-radius:2px}
+.strip i.done{background:var(--ai)}
+.strip i.now{background:var(--gold);height:12px}
+.striplbl{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px}
+
+.era{display:flex;flex-direction:column;gap:6px}
+.era .y{font-family:var(--f-num);color:var(--gold);font-size:13px}
+.era h2{font-size:30px;font-weight:800}
+.values{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px}
+.values b{font-weight:500}
+.values .st{color:var(--gold);letter-spacing:1px}
+
+.heir{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.heir > *{min-width:0}
+.heir h3{font-size:22px}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:999px;background:var(--ai-soft);color:var(--ai);font-weight:500}
+.tag.gold{background:var(--gold-soft);color:var(--gold)}
+.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.bars{display:grid;grid-template-columns:auto 1fr auto;gap:3px 8px;align-items:center;font-size:12px}
+.bar{height:7px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar span{display:block;height:100%;background:var(--ai)}
+.bar span.top{background:var(--gold)}
+
+.next{border-left:3px solid var(--gold);padding:4px 0 4px 12px;font-size:13px;color:var(--muted)}
+.cands{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cand{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.cand h3{font-size:19px}
+.cand .meta{font-size:12px;color:var(--muted);line-height:1.5}
+.cand .trait{font-size:13px}
+.cand button{margin-top:auto;background:transparent;border:1.5px solid var(--ai);color:var(--ai);padding:8px;font-weight:700}
+.cand button:hover:not(:disabled){background:var(--ai);color:var(--bg)}
+.cand.gray{opacity:.45}
+.cand.pp{border-color:var(--gold);border-width:2px}
+.cand.gray button{border-style:dashed;cursor:not-allowed;color:var(--muted);border-color:var(--muted)}
+
+.born{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.event{padding:10px 12px;border-radius:6px;font-size:14px;background:var(--bad-soft);color:var(--bad)}
+.event.good{background:var(--gold-soft);color:var(--gold)}
+.event.fate{border-left:3px solid currentColor}
+.notes{display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
+.notes li{padding-left:16px;position:relative;font-size:14px}
+.notes li::before{content:"";position:absolute;left:2px;top:.75em;width:6px;height:6px;border-radius:50%;background:var(--ai)}
+.notes li.luck::before{background:var(--gold)}
+.notes li.miss::before{background:var(--bad)}
+.use{display:flex;align-items:baseline;gap:8px}
+.use .num{font-size:28px;color:var(--ai)}
+
+.log{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:2px}
+
+/* intro */
+.hero{display:flex;flex-direction:column;gap:14px;padding-top:12px}
+.hero h1{font-size:clamp(44px,12vw,72px);font-weight:800;letter-spacing:.04em}
+.hero .lead{font-size:17px;max-width:34em}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rules div{border-top:2px solid var(--ai);padding-top:8px;font-size:13px;min-width:0}
+.rules b{display:block;font-family:var(--f-disp);font-size:16px;margin-bottom:2px}
+
+/* chronicle */
+.chron{list-style:none;margin:0;padding:0;position:relative}
+.chron::before{content:"";position:absolute;left:86px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.chron li{display:grid;grid-template-columns:76px 1fr;gap:20px;padding-bottom:16px;position:relative}
+.chron li::after{content:"";position:absolute;left:81px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--ai)}
+.chron li.you::after{background:var(--gold);border-color:var(--gold)}
+.chron li.end::after{background:var(--bad);border-color:var(--bad)}
+.chron .yr{font-family:var(--f-num);font-size:11px;line-height:1.4;color:var(--gold);text-align:right;padding-top:3px}
+.chron .body{min-width:0;display:flex;flex-direction:column;gap:2px}
+.chron .who{font-weight:700}
+.chron .era-n{font-size:12px;color:var(--muted)}
+.chron .pair{font-size:13px;color:var(--muted)}
+.chron .nt{font-size:13px}
+.chron.sample{opacity:.85}
+
+.summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.summary div{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;min-width:0}
+.summary .num{font-size:22px;display:block;color:var(--ai)}
+.summary span.l{font-size:12px;color:var(--muted)}
+.final{font-family:var(--f-disp);font-size:24px;line-height:1.5}
+.ask{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-family:var(--f-disp);font-size:19px;line-height:1.7}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+textarea{width:100%;box-sizing:border-box;font:inherit;font-size:13px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:10px;resize:vertical}
+
+.mini{display:inline-flex;flex-wrap:wrap;gap:2px 7px;font-size:12px;color:var(--muted);font-weight:400}
+.mini .top{color:var(--gold)}
+.mini .tot{color:var(--ai)}
+.hidden-st{font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:4px 8px}
+.eps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;font-size:13px}
+.eps li{padding-left:12px;position:relative}
+.eps li::before{content:"「";position:absolute;left:0;color:var(--muted)}
+.eps li::after{content:"」";color:var(--muted)}
+.spec{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:0;font-size:13px}
+.spec dt{color:var(--muted)}
+.spec dd{margin:0;font-weight:700}
+.mode{font-size:13px;color:var(--muted)}
+.chron .nt.hit{color:var(--gold)}
+.chron .nt.miss{color:var(--bad)}
+.ledger{display:flex;flex-direction:column;gap:2px;font-size:13px;border-top:1px solid var(--line);padding-top:10px}
+.lrow{display:flex;justify-content:space-between;gap:12px}
+.lrow.bad{color:var(--bad)}.lrow.good{color:var(--gold)}
+.lrow.tot{border-top:1px solid var(--line);padding-top:4px;margin-top:2px;font-weight:700}
+.spark{width:100%;height:auto;display:block}
+.story{display:flex;flex-direction:column;gap:8px;margin:0;padding:0;list-style:none}
+.story li{padding-left:14px;border-left:2px solid var(--gold)}
+.seedbox{display:flex;flex-direction:column;gap:2px}
+.seedbox input{font:inherit;font-family:var(--f-num);text-transform:uppercase;letter-spacing:.1em;width:11em;padding:8px 10px;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink)}
+.four{border-collapse:collapse;font-size:12px;width:100%}
+.four th,.four td{padding:7px 5px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.four th:first-child{text-align:left;font-weight:500;white-space:normal}
+.four thead th{font-size:12px;color:var(--muted);font-weight:500}
+.four td.best{color:var(--gold);font-weight:700}
+.four tr.you th,.four tr.you td{background:var(--ai-soft);color:var(--ai);font-weight:700}
+[hidden]{display:none!important}
+.lessons{margin:0;padding-left:1.4em;display:flex;flex-direction:column;gap:12px}
+.lessons li{padding-left:4px}
+.lessons b{display:block;font-family:var(--f-disp);font-size:18px;margin-bottom:2px}
+.lessons span{font-size:14px}
+.strip i.now{background:var(--era)}
+.era{position:relative;overflow:hidden;border-left:4px solid var(--era);padding-left:12px}
+.era .wm{position:absolute;right:-6px;top:-18px;font-family:var(--f-disp);font-weight:800;font-size:92px;line-height:1;color:var(--era);opacity:.13;pointer-events:none;white-space:nowrap}
+.era .y{color:var(--era)}
+.av{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;flex:none;font-family:var(--f-disp);font-weight:800;font-size:16px;color:#fff;background:hsl(var(--h) 35% 45%);vertical-align:middle;margin-right:8px}
+.who-h{display:flex;align-items:center}
+details.rules-era summary{cursor:pointer;font-size:13px;color:var(--muted)}
+details.rules-era[open] summary{margin-bottom:6px}
+.goals{display:flex;flex-wrap:wrap;gap:8px}
+.goals button{background:var(--card);border:1.5px solid var(--line);color:var(--ink);padding:8px 14px;font-size:14px}
+.goals button[aria-pressed="true"]{border-color:var(--ai);background:var(--ai-soft);color:var(--ai);font-weight:700}
+.feel{display:flex;flex-direction:column;gap:4px;font-size:14px;border-left:3px solid var(--era);padding-left:10px}
+.feel .goal{color:var(--ai);font-weight:700}
+.grade{display:flex;align-items:center;gap:16px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.grade .g{font-family:var(--f-disp);font-weight:800;font-size:48px;line-height:1;color:var(--ai)}
+.fold{border-top:1px solid var(--line);padding-top:12px}
+.fold>summary{cursor:pointer;font-family:var(--f-disp);font-size:18px;color:var(--ai);padding:6px 0}
+.foldin{display:flex;flex-direction:column;gap:20px;margin-top:14px}
+.life{display:flex;flex-direction:column;gap:14px;border-top:3px double var(--line);border-bottom:3px double var(--line);padding-block:20px}
+.formula{font-family:var(--f-disp);font-size:20px;line-height:1.6;color:var(--ai)}
+.dbar{display:flex;height:30px;border-radius:6px;overflow:hidden;font-size:12px;font-weight:700}
+.dbar span{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;color:var(--bg)}
+.d-init{background:var(--muted)}.d-choice{background:var(--ai)}.d-luck{background:var(--gold)}.d-mix{background:var(--bad)}
+.dtable{overflow-x:auto}
+.closing{display:flex;flex-direction:column;gap:8px;font-family:var(--f-disp);font-size:18px;line-height:1.8}
+.closing .q{font-size:22px;color:var(--ai)}
+.four.rec td,.four.rec th{text-align:left;white-space:normal;vertical-align:top;font-size:12px}
+.four.rec td.num{text-align:right}
+.plist{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;margin:0;font-size:13px}
+.plist dt{font-weight:700;color:var(--ai);white-space:nowrap}
+.plist dd{margin:0;min-width:0}
+@media (max-width:640px){.plist{grid-template-columns:1fr}.plist dd{margin-bottom:6px}}
+.art{margin:0}
+.art img{display:block;width:100%;max-width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px;background:var(--line)}
+.ill svg{display:block;width:100%;height:auto;border-radius:8px}
+.ill .bgc{fill:var(--card)} .ill .s{fill:var(--era);opacity:.14} .ill .s2{fill:var(--era);opacity:.3} .ill .s3{fill:var(--era);opacity:.5}
+.ill .k{fill:var(--ink);opacity:.8} .ill .k2{fill:var(--ink);opacity:.45} .ill .k3{fill:var(--ink);opacity:.16}
+.ill .g{fill:var(--gold)} .ill .gs{fill:var(--gold);opacity:.32} .ill .rs{fill:var(--bad);opacity:.28}
+.ill .ln{fill:none;stroke:var(--ink);stroke-opacity:.7;stroke-width:1.5;stroke-linecap:round}
+.ill .lg{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-linecap:round} .ill .lr{fill:none;stroke:var(--bad);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round}
+.ftree{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.ftree svg{display:block;width:100%;min-width:300px;max-width:460px;height:auto;margin:0 auto}
+.ftree text{font-family:var(--f-body);fill:var(--ink)}
+.ftree .fn rect{fill:var(--card);stroke:var(--line);stroke-width:1}
+.ftree .fn.h rect{stroke:var(--ai)} .ftree .fn.you rect{stroke:var(--gold);stroke-width:2;fill:var(--gold-soft)} .ftree .fn.solo rect{stroke-dasharray:4 3}
+.ftree .fn1{font-size:12.5px;font-weight:700} .ftree .fn2{font-size:9.5px;fill:var(--muted)} .ftree .fn3{font-size:10.5px}
+.ftree .fl{stroke:var(--muted);stroke-width:1.4;fill:none} .ftree .fk{font-size:9.5px;fill:var(--muted)} .ftree .fy{font-size:11px;font-weight:700;fill:var(--gold)}
+.fb-open{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:20;background:var(--card);color:var(--bad);border:1.5px solid var(--bad);padding:8px 14px;font-size:13px;font-weight:700;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.fb{position:fixed;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:21;max-width:520px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;flex-direction:column;gap:6px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.fb[hidden]{display:none!important}
+.fb textarea{width:100%;box-sizing:border-box;font:inherit;font-size:13px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px}
+a.btn{text-decoration:none;display:inline-block}
+.luck{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+@media (max-width:640px){
+  .cands,.rules{grid-template-columns:1fr}
+  .heir{grid-template-columns:1fr}
+  .summary{grid-template-columns:repeat(2,1fr)}
+  .era h2{font-size:26px}
+  .chron::before{left:62px}
+  .chron li{grid-template-columns:54px 1fr;gap:18px}
+  .chron li::after{left:57px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .fade{animation:fade .35s ease-out both}
+  @keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}
+}
+
+/* noe-match のサイト枠（ヘッダー・案内・関連記事・フッター）。ゲーム本体のクラスと衝突しないよう nm- で始める */
+.nm-head{background:var(--card);border-bottom:1px solid var(--line)}
+.nm-head-in{max-width:720px;margin:0 auto;padding:12px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.nm-logo{font-family:var(--f-disp);font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:.06em}
+.nm-nav a{color:var(--muted);text-decoration:none;font-size:12px;padding:6px 8px}
+.nm-nav a:hover{color:var(--ink)}
+@media(max-width:640px){.nm-nav{display:none}}
+.nm-crumb{max-width:720px;margin:0 auto;padding:10px max(16px,env(safe-area-inset-left,0px)) 0;font-size:12px;color:var(--muted)}
+.nm-crumb a{color:var(--muted);text-decoration:none}
+.nm-about{max-width:720px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px)) 40px;display:flex;flex-direction:column;gap:16px;font-family:var(--f-body);color:var(--ink);line-height:1.9;font-size:14.5px}
+.nm-about section{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px}
+.nm-about h2{font-family:var(--f-disp);font-size:18px;font-weight:600;margin:0 0 8px;letter-spacing:.04em}
+.nm-about p{margin:8px 0}
+.nm-about ol{margin:8px 0 8px 1.3em;padding:0}
+.nm-about li{margin:4px 0}
+.nm-rel ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.nm-rel a{display:block;border:1px solid var(--line);border-radius:6px;padding:10px 14px;color:var(--ink);text-decoration:none;font-size:13.5px;background:var(--bg)}
+.nm-rel a:hover{border-color:var(--ai)}
+.nm-foot{background:#1d242b;color:#9aa3aa;padding:28px 16px 72px;font-size:12px;line-height:1.8;text-align:center}
+.nm-foot a{color:#b9c2c8;text-decoration:none;margin:0 8px}
+.nm-foot a:hover{color:#fff}
+.nm-foot p{margin:10px 0 0;color:#78868f;font-size:11px}
+
+</style>
+</head>
+<body>
+<header class="nm-head"><div class="nm-head-in"><a href="/" class="nm-logo">Noe結婚設計室</a><nav class="nm-nav"><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#about">運営者</a></nav></div></header>
+<div class="nm-crumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 縁と運</div>
+<main>
+<div class="wrap" id="app"></div>
+<div class="nm-about">
+<section>
+<h2>縁と運は、7代ぶんの結婚を選ぶゲームです</h2>
+<p>江戸後期の1835年から令和の2026年まで、あなたは一つの家の当主として、代ごとに結婚相手を選びます。相手の体力・知恵・手先・人当たり・感性は、すぐには見えません。噂や肩書きを手がかりに選び、その力が子や孫の代にどう出るかを見ていきます。</p>
+<p>時代が変われば、求められる力も変わります。飢饉の時代に役立った力が、令和では目立たないこともあります。最後の画面で、家の行方を決めたのが選び方だったのか、運だったのかの内訳が出ます。</p>
+</section>
+<section>
+<h2>遊び方</h2>
+<ol>
+<li>目標（家を富ませる、など）を選んで、はじめる</li>
+<li>代ごとに、候補の中から結婚相手を一人選ぶ（結婚しない道もあります）</li>
+<li>生まれた子の中から跡継ぎを選び、次の時代へ進む</li>
+<li>令和まで続いたら、あなたに至る年表と結果が出る</li>
+</ol>
+<p>シードを友達と揃えると、同じ時代に同じ出来事が起きます。選び方の違いだけで年表がどこまで変わるかを比べられます。1回およそ5〜10分です。</p>
+</section>
+<section class="nm-rel">
+<h2>結婚相手選びと相性の記事</h2>
+<ul>
+<li><a href="/articles/kekkon-aite-uranai-seinengappi/">結婚相手を生年月日の占いで見る｜タイプの傾向と、相手選びで聞く質問リスト</a></li>
+<li><a href="/articles/fuufu-aishou-uranai/">夫婦の相性占いの読み方｜結果を良し悪しでなく話し合いのきっかけにする</a></li>
+<li><a href="/articles/kekkon-madeno-kikan-data/">アプリ婚の交際期間は平均2.8年｜恋愛結婚4.9年との差</a></li>
+<li><a href="/tools/konkatsu-type-shindan/">婚活タイプ診断（無料）</a></li>
+</ul>
+</section>
+</div>
+</main>
+<footer class="nm-foot">
+<div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p><strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</footer>
+<button class="fb-open" id="fbOpen" type="button">ここが変</button>
+<div class="fb" id="fb" hidden role="dialog" aria-labelledby="fbTitle">
+  <h3 id="fbTitle">ここが変、を送る</h3>
+  <p class="muted" style="font-size:13px">変だと思った文を選んでからボタンを押すと、その文が入ります。「Xの投稿文を作る」を押すと、シードと場面を入れた投稿文ができます（ハッシュタグ #縁と運フィードバック）。作り手が同じ場面を再現して直します。</p>
+  <label class="label" for="fbSel">どの文が変？</label>
+  <textarea id="fbSel" rows="2" maxlength="300"></textarea>
+  <label class="label" for="fbText">どう変？（例：この時代に女性の徴兵はない）</label>
+  <textarea id="fbText" rows="3" maxlength="400"></textarea>
+  <div class="row"><button class="btn" id="fbSend" type="button">Xの投稿文を作る</button><button class="btn ghost" id="fbCancel" type="button">閉じる</button></div>
+  <p id="fbStatus" style="font-size:13px"></p>
+  <div id="fbAlt" hidden style="display:flex;flex-direction:column;gap:6px">
+    <p style="font-size:13px">下の文で X に投稿してください。</p>
+    <div class="row"><a class="btn" id="fbX" target="_blank" rel="noopener">Xで送る</a><button class="btn ghost" id="fbCopy" type="button">文をコピー</button></div>
+    <textarea id="fbAltText" rows="4" readonly></textarea>
+  </div>
+</div>
+
+<script>
+const S=['str','int','dex','soc','art'];
+const SL={str:'体力',int:'知恵',dex:'手先',soc:'人当たり',art:'感性'};
+const WL=['困窮','貧しい','ふつう','ゆとり','裕福','名家'];
+const SELFJOB=new Set(['配信者・VTuber','インフルエンサー・モデル','イラスト・ハンドメイド販売','フリーランス（個人事業主）','個人投資家','起業家']);
+const J=(n,f,t,w,o,g=0,x={})=>({n,f,t,w,o,g,inc:x.inc??t,vol:x.vol||0,sx:x.sx||null,sk:x.sk||1,sh:x.sh||0,mn:x.mn||null,fn:x.fn||null,fo:x.fo??null,self:SELFJOB.has(n)});
+// 男性が就いたときの呼び名（看護婦→看護士など）
+const gJob=(j,g)=>g==='m'&&j&&j.mn?{...j,n:j.mn,base:j.base||j.n}:g==='f'&&j&&j.fn?{...j,n:j.fn,base:j.base||j.n,inc:1}:j;
+const incOf=j=>j.inc??j.t;
+
+// 名前プール（時代ごと）
+const NAMES={
+ pre:{m:['イワ','トビ','クマ','カガリ','ホムラ','ナギ','ハヤ','ツチ'],f:['ヒナ','ミオ','ススキ','アシ','ユリ','タキ','サヤ','コノハ']},
+ yay:{m:['タケヒコ','ヤスヒコ','オシクマ','ツヌガ','イクメ','ナガヒコ'],f:['トヨ','タマヨリ','ワカヒメ','イワナ','ヌナ','オトヒメ']},
+ nara:{m:['広足','浄成','宅麻呂','道成','春雄','秀臣','真成'],f:['刀自女','小鷹','真刀自','阿古','藤子','小町','若子']},
+ chu:{m:['太郎','次郎','小四郎','弥五郎','又七','孫六','源八','甚兵衛'],f:['つる','千代','まつ','かめ','ふく','とら','あこ','いと']},
+ edo:{m:['吉兵衛','平助','清吉','与七','庄三郎','文蔵','善六','佐吉'],f:['おはる','おきく','おすみ','おとめ','おしげ','おりん','おせい','おみつ']},
+ mei:{m:['清','正雄','寅吉','勇','茂','武夫','一郎','義雄'],f:['ハル','キヨ','ツル','千代子','静子','文子','ウメ','トミ']},
+ sho:{m:['浩','誠','博','隆','健一','修','実','和夫'],f:['恵子','洋子','幸子','久美子','京子','由美子','和子','典子']},
+ hei:{m:['翔太','大輔','拓也','健太','達也','直樹','亮','雄太'],f:['美咲','彩','愛','麻衣','沙織','舞','優子','千尋']},
+ rei:{m:['蓮','湊','陽翔','蒼','律','樹','碧','悠真'],f:['陽葵','紬','凛','芽依','澪','結菜','葵','杏']}
+};
+const SURN=['田中','中村','山本','小林','石井','森','竹内','金子','大野','井上','佐野','岡田'];
+const TRAIT={
+ str:['体が丈夫で風邪ひとつひかない','働き者で朝が早い','力自慢'],
+ int:['物覚えがとにかくいい','よく考えてから話す','頭の回転が速い'],
+ dex:['手先が器用と評判','壊れた物を何でも直してしまう','細かい仕事が苦にならない'],
+ soc:['人の輪の中心にいる','誰とでもすぐ打ち解ける','頼まれごとを断らない'],
+ art:['歌がうまい','絵心がある','変わった物の見方をする']
+};
+
+// 時代データ。h=親の職を継ぐ確率、v=その時代に食べていける能力（表示用）、jobs: o=口のある確率, g=家の暮らしの最低ライン
+const ERAS=[
+ {y:'約3万年前',e:'旧石器時代',d:'氷期の列島。獲物を追って移動しながら暮らす。',h:.2,nm:'pre',v:{str:3,int:1,dex:2,soc:1,art:1},
+  org:['川向こうの群れ','北から来た群れ','海辺の群れ','同じ洞窟の群れ'],
+  jobs:[J('採集者','food',0,{int:1,dex:1,str:1},1),J('狩人','food',1,{str:3,dex:1},.8),J('石器づくり','craft',1,{dex:3,int:1},.45),J('まじない師','faith',2,{art:2,soc:2},.15)],
+  ev:[]},
+ {y:'約5000年前',e:'縄文時代',d:'定住が始まる。貝塚、土器、遠くの村との交易。',h:.3,nm:'pre',v:{str:2,int:1,dex:2,soc:2,art:2},
+  org:['隣のムラ','貝塚のムラ','山のムラ','丸木舟で来た人'],
+  jobs:[J('採集と栽培','food',0,{int:1,str:1},1),J('漁と狩り','food',1,{str:2,dex:1},.85),J('土器づくり','craft',1,{dex:2,art:2},.5),J('黒曜石の交易人','trade',2,{soc:2,int:1},.2),J('祭りの長','faith',2,{soc:2,art:2},.2)],
+  ev:[{p:.3,t:'海の幸に恵まれた年が続いた',w:1,good:1}]},
+ {y:'紀元前200年ごろ',e:'弥生時代',d:'稲作と金属。蓄えができ、持つ者と持たない者が分かれ始める。',h:.5,nm:'yay',v:{str:3,int:1,dex:2,soc:2,art:1},
+  org:['環濠のムラ','大陸から渡ってきた一族','川下のクニ','首長の縁者'],
+  jobs:[J('稲作の民','food',0,{str:2,int:1},1),J('兵','war',1,{str:3},.5),J('鍛冶・青銅工','craft',1,{dex:2,str:1},.35),J('祭司・巫女','faith',2,{art:2,soc:1},.15,1),J('首長の側近','rule',3,{soc:2,int:2},.1,2)],
+  ev:[{p:.4,t:'ムラ同士の争いが起きた',w:-1,die:.04,open:{war:1.5}}]},
+ {y:'西暦500年ごろ',e:'古墳時代',d:'豪族が巨大な墓を築く。大陸から技術者が渡ってくる。',h:.6,nm:'yay',v:{str:2,int:2,dex:2,soc:2,art:1},
+  org:['豪族の村','渡来人の集落','海沿いの里','山あいの里'],
+  jobs:[J('農民','food',0,{str:2},1),J('豪族の家人','war',1,{str:2,soc:1},.4),J('埴輪・須恵器の職人','craft',1,{dex:2,art:1},.4),J('渡来の技術者の弟子','craft',2,{dex:2,int:2},.15,1),J('豪族','rule',3,{soc:2,int:1,str:1},.04,3)],
+  ev:[{p:.4,t:'大陸から須恵器と乗馬の技術が入ってきた',open:{craft:1.6},good:1}]},
+ {y:'西暦740年ごろ',e:'奈良時代',d:'律令国家。文字が読めると役人や僧への道が開ける。',h:.6,nm:'nara',v:{str:1,int:3,dex:1,soc:1,art:2},
+  org:['都の近く','東国の村','寺の門前','国府の町'],
+  jobs:[J('公民（農民）','food',0,{str:2},1),J('防人','war',1,{str:2},.3),J('仏師・写経生','craft',2,{dex:2,art:2,int:1},.18),J('僧','faith',2,{int:2,art:1},.18,1),J('下級役人','learn',2,{int:3},.12,2)],
+  ev:[{p:.45,t:'天然痘の大流行（735〜737年）。人口の3割近くが亡くなったとも言われる',w:-1,die:.06}]},
+ {y:'西暦1000年ごろ',e:'平安時代',d:'貴族の世。身分はほぼ生まれで決まる。結婚も家同士の話。',h:.85,arr:1,nm:'nara',v:{str:1,int:2,dex:1,soc:3,art:3},
+  org:['同じ荘園','都の下町','国司の館','寺の近く'],
+  jobs:[J('農民','food',0,{str:2},1),J('職人','craft',1,{dex:2},.4),J('荘園の武士','war',1,{str:2,soc:1},.3),J('僧','faith',2,{int:2,art:1},.18,1),J('宮仕え（文官・女房）','learn',2,{art:2,soc:2,int:1},.08,3),J('貴族','rule',3,{soc:2,art:2},0,4)],
+  ev:[{p:.35,t:'飢饉と疫病が都を襲った',w:-1,die:.03}]},
+ {y:'1270年ごろ',e:'鎌倉時代',d:'武士の世へ。新しい仏教が庶民に広がる。',h:.75,nm:'chu',v:{str:3,int:1,dex:2,soc:1,art:1},
+  org:['隣の荘園','鎌倉の町','市の立つ宿','落ち延びてきた家'],
+  jobs:[J('農民','food',0,{str:2},1),J('職人','craft',1,{dex:2},.4),J('市の商人','trade',1,{soc:2,int:1},.3),J('僧（新しい仏教）','faith',2,{soc:2,int:1},.22),J('御家人（武士）','war',2,{str:3,soc:1},.15,2)],
+  ev:[{p:.4,t:'元寇（1274・1281年）。九州へ動員がかかった',die:.03,open:{war:1.5}}]},
+ {y:'1560年ごろ',e:'戦国時代',d:'下剋上。腕と才覚があれば、生まれに関係なく成り上がれた数少ない時代。',h:.35,nm:'chu',v:{str:3,int:2,dex:2,soc:2,art:1},
+  org:['城下','街道の宿場','堺の町','山城の麓'],
+  jobs:[J('農民','food',0,{str:2},1),J('足軽','war',1,{str:2},.8),J('商人','trade',2,{soc:2,int:2},.3),J('鉄砲鍛冶','craft',2,{dex:3,int:1},.22),J('茶人','art',2,{art:3,soc:2},.07,2),J('武将','rule',3,{str:2,int:2,soc:2},.06,1)],
+  ev:[{p:.45,t:'戦乱で村が焼かれた',w:-1,die:.04},{p:.3,t:'下剋上の風が吹いた',open:{rule:3,war:1.3},good:1}]},
+ {y:'1700年ごろ',e:'江戸時代（前期）',d:'泰平の世。士農工商、職も結婚も家で決まる。',h:.9,arr:1,nm:'edo',v:{str:1,int:2,dex:2,soc:2,art:2},
+  org:['同じ村','江戸の下町','城下の町家','街道筋'],
+  jobs:[J('百姓','food',0,{str:2,int:1},1),J('職人','craft',1,{dex:3},.4),J('戯作者・絵師','art',1,{art:3},.07),J('町人（商人）','trade',2,{soc:2,int:2},.25),J('医者','learn',2,{int:3},.1,1),J('武士','war',2,{int:1,str:1},0,4)],
+  ev:[{p:.35,t:'元禄の好景気。町人文化が花開いた',w:1,open:{trade:1.4,art:1.5},good:1}]},
+ {y:'1835年ごろ',e:'江戸時代（後期）',d:'寺子屋が広がり、読み書きできる庶民が増える。蘭学も入ってくる。',h:.85,arr:1,nm:'edo',v:{str:2,int:2,dex:2,soc:3,art:1},
+  org:['同じ村','江戸の長屋','大坂の町','宿場町'],
+  jobs:[J('小作・水呑','food',0,{str:3,dex:1},1),J('丁稚・下男奉公','labor',0,{str:2,dex:1,soc:2},.6,0,{sx:'m'}),J('女中奉公','labor',0,{str:2,dex:1,soc:2,vis:1},.6,0,{sx:'f'}),J('機織り','craft',0,{str:1,dex:3,art:1},.5,0,{sx:'f'}),J('本百姓','food',2,{str:3,int:1,dex:1,soc:1},.5,1,{inc:1}),J('漁師','food',1,{str:3,dex:2},.3,0,{sx:'m',fo:.3}),J('職人（大工・鍛冶）','craft',1,{str:2,dex:3,art:1},.35,0,{sx:'m'}),J('小商人・行商','trade',1,{str:2,int:1,soc:2},.35),J('寺子屋の師匠','learn',2,{int:2,soc:1},.12,1,{inc:1,fo:.5}),J('産婆','care',1,{int:1,dex:2,soc:2},.05,0,{sx:'f',inc:1}),J('三味線・踊りの師匠','art',1,{dex:1,soc:2,art:3},.025,0,{sx:'f',inc:1}),J('芸者','art',0,{dex:1,soc:2,art:3,vis:3},.05,0,{sx:'f',inc:2,vol:2}),J('浮世絵師・戯作者','art',1,{int:2,dex:3,art:3},.04,0,{sx:'m',vol:3,fo:.1}),J('医者','learn',2,{int:3,dex:2,soc:2},.07,1,{sx:'m',inc:2,fo:.05}),J('僧侶・神職','faith',3,{int:2,soc:2,art:1},.06,1,{sx:'m',inc:2,fo:.25,fn:'尼・巫女'}),J('問屋・両替商','trade',1,{int:3,soc:3},.08,2,{sx:'m',inc:3,vol:2,fo:.15}),J('蘭学者','learn',3,{int:3},.03,2,{sx:'m',inc:2}),J('下級武士','war',3,{str:2,int:1,dex:1,soc:1},0,4,{sx:'m',inc:1}),J('庄屋・名主','rule',3,{int:2,soc:3},0,4,{sx:'m',inc:3}),J('豪商','trade',2,{int:3,soc:3},0,5,{sx:'m',inc:4,vol:2,fo:.1})],
+  ev:[{p:1,t:'天保の大飢饉（1833〜37年）',w:-1,die:.02}]},
+ {y:'1865年ごろ',e:'幕末',d:'開国で物価が跳ね上がり、身分の壁が揺らぎはじめる。',h:.75,arr:1,nm:'edo',v:{str:3,int:3,dex:2,soc:2,art:1},
+  org:['同じ村','江戸の町家','横浜の居留地の近く','西国から出てきた家'],
+  jobs:[J('百姓','food',1,{str:3,int:1,dex:1,soc:1},1,0,{inc:0}),J('女中・乳母','labor',0,{str:2,dex:1,soc:2,vis:1},.5,0,{sx:'f'}),J('養蚕・製糸','craft',1,{int:1,dex:3},.4,0,{inc:2}),J('職人・鍛冶','craft',1,{str:2,dex:3,art:1},.35,0,{sx:'m',inc:2}),J('船乗り・廻船','labor',1,{str:3,int:1,dex:1,soc:1},.15,0,{sx:'m',vol:1}),J('商人・両替商','trade',1,{int:2,soc:3},.25,0,{inc:2,vol:2}),J('諸隊・農兵','war',1,{str:3,dex:2,soc:1},.15,0,{sx:'m',vol:1}),J('産婆','care',1,{int:1,dex:2,soc:2},.05,0,{sx:'f',inc:1}),J('三味線・踊りの師匠','art',1,{dex:1,soc:2,art:3},.025,0,{sx:'f',inc:1}),J('芸者','art',0,{dex:1,soc:3,art:3,vis:3},.05,0,{sx:'f',inc:2,vol:2}),J('通詞（通訳）','learn',2,{int:3,soc:2},.04,1,{sx:'m'}),J('蘭学者・洋学者','learn',2,{int:3,dex:1,soc:1},.06,1,{sx:'m',vol:2,fo:.05}),J('僧侶・神職','faith',3,{int:2,soc:2,art:1},.05,1,{sx:'m',inc:2,fo:.25,fn:'尼・巫女'}),J('浪士・志士','rule',2,{str:3,int:2,dex:1,soc:2},.05,0,{sx:'m',inc:0,vol:2}),J('横浜の生糸売込商','trade',1,{int:3,soc:3},.03,2,{sx:'m',inc:4,vol:3,fo:.1}),J('下級武士','war',3,{str:2,int:1,dex:1,soc:1},0,4,{sx:'m',inc:1}),J('庄屋・大店','rule',3,{int:2,soc:3},0,4,{sx:'m',inc:3,fo:.1})],
+  ev:[{p:1,t:'開港（1859年）のあと物価が急騰した',a:.85},{p:.3,t:'戊辰戦争（1868〜69年）に巻き込まれた',die:.03,open:{war:1.3}}]},
+ {y:'1895年ごろ',e:'明治時代',d:'身分制がなくなり、学校と試験が新しい階段になる。',h:.5,arr:1,nm:'mei',v:{str:2,int:3,dex:3,soc:2,art:1},
+  org:['同じ村','東京','大阪','炭鉱町'],
+  jobs:[J('小作農','food',0,{str:3,dex:1},1),J('自作農','food',2,{str:3,int:1,dex:1,soc:1},.5,1,{inc:1}),J('製糸・紡績の女工','labor',0,{str:2,dex:3},.5,0,{sx:'f'}),J('鉱夫','labor',0,{str:3,dex:1},.3,0,{sx:'m',inc:1,fo:.3}),J('人力車夫','labor',0,{str:3,soc:1},.3,0,{sx:'m'}),J('女中','labor',0,{str:2,dex:1,soc:2,vis:1},.4,0,{sx:'f'}),J('職人・大工','craft',1,{str:2,dex:3,art:1},.35,0,{sx:'m'}),J('商店主・行商','trade',1,{str:1,int:1,soc:3},.3,0,{inc:2}),J('巡査','war',2,{str:3,int:1,soc:1},.12,0,{sx:'m',inc:1}),J('小学校の教員','learn',3,{int:2,soc:2,art:1},.12,1,{inc:1,fo:.4}),J('産婆','care',1,{int:1,dex:2,soc:2},.07,0,{sx:'f',inc:1}),J('看護婦','care',2,{str:2,int:1,dex:2,soc:2},.05,1,{sx:'f',inc:1}),J('芸妓','art',0,{dex:1,soc:3,art:3,vis:3},.04,0,{sx:'f',inc:2,vol:2}),J('新聞記者・文士','art',2,{int:3,soc:1,art:3},.04,1,{sx:'m',inc:1,vol:3,fo:.1}),J('軍人（将校）','war',4,{str:2,int:2,soc:1},.04,2,{sx:'m',inc:2}),J('官吏','rule',4,{int:3,soc:2},.04,3,{sx:'m',inc:3}),J('実業家','trade',3,{int:3,soc:3},.03,3,{sx:'m',inc:4,vol:3,fo:.05}),J('寄生地主','food',3,{int:2,soc:2},0,4,{sx:'m',inc:3,fo:.1})],
+  ev:[{p:1,t:'秩禄処分（1876年）で武士の俸禄が打ち切られた',hitFam:'war',jp:1},{p:1,t:'殖産興業。各地に工場ができた',open:{labor:1.3},good:1}]},
+ {y:'1925年ごろ',e:'大正〜昭和初期',d:'都市に月給取りが現れる。震災と恐慌をくぐり、やがて戦争へ。',h:.45,arr:1,nm:'mei',v:{str:2,int:3,dex:2,soc:2,art:2},
+  org:['同じ村','東京の下町','大阪','炭鉱町'],
+  jobs:[J('農業（自作・小作）','food',1,{str:3,int:1,dex:1,soc:1},1,0,{inc:0}),J('工場労働者','labor',1,{str:3,dex:2},.6,0,{sx:'m',inc:1,fo:.3}),J('女工','labor',0,{str:1,dex:3},.4,0,{sx:'f'}),J('女中','labor',0,{str:2,dex:1,soc:2,vis:1},.3,0,{sx:'f'}),J('職人','craft',1,{str:2,dex:3,art:1},.3,0,{sx:'m',fo:.1}),J('漁師','food',1,{str:3,dex:2},.15,0,{sx:'m',fo:.2}),J('商店主','trade',1,{str:1,int:1,soc:3},.3,0,{inc:2}),J('軍人','war',2,{str:3,soc:1},.15,1,{sx:'m',inc:1}),J('職業婦人（タイピスト・交換手）','office',2,{int:1,dex:2,soc:2,vis:2},.12,1,{sx:'f',inc:1}),J('カフェーの女給','art',1,{dex:1,soc:3,art:1,vis:3},.04,0,{sx:'f',inc:1,vol:2}),J('映画俳優','art',1,{dex:1,soc:2,art:3,vis:3},0.020,0,{inc:1,vol:3}),J('月給取り（サラリーマン）','office',3,{int:3,soc:2},.2,2,{sx:'m',inc:2,fo:.1}),J('教員','learn',3,{int:2,soc:2,art:1},.12,2,{inc:2,fo:.6}),J('産婆','care',1,{int:1,dex:2,soc:2},.06,0,{sx:'f',inc:1}),J('看護婦','care',2,{str:2,int:1,dex:2,soc:2},.08,1,{sx:'f',inc:1}),J('作家・記者・画家','art',2,{int:3,dex:1,soc:1,art:3},.03,1,{inc:1,vol:3,fo:.5}),J('相場師','trade',1,{int:3,soc:1},.03,2,{sx:'m',inc:2,vol:4}),J('医師','learn',4,{int:3,dex:2,soc:2},.03,3,{sx:'m',inc:4,fo:.05}),J('官僚・将校','rule',4,{str:1,int:3,soc:2},.03,3,{sx:'m',inc:3}),J('地主','food',3,{int:1,soc:1},0,4,{sx:'m',inc:3,fo:.1}),J('会社重役','office',4,{int:2,soc:3},.02,3,{sx:'m',inc:4})],
+  ev:[{p:.3,t:'関東大震災（1923年）で被災した',w:-1,die:.02,jp:1},{p:1,t:'昭和恐慌（1930年）で、生糸や米の値が暴落した',w:-1,a:.7},{p:1,t:'日中戦争から太平洋戦争へ（1937〜45年）',w:-1,die:.04,open:{war:2}}]},
+ {y:'1960年ごろ',e:'昭和（戦後・高度成長期）',d:'焼け跡から立ち直り、会社に入れば一生安泰と言われた時代へ。',h:.25,nm:'sho',v:{str:2,int:2,dex:2,soc:3,art:1},
+  org:['同じ職場','団地の隣','お見合い','大学の同級生'],
+  jobs:[J('工場労働者（金の卵）','labor',1,{str:2,dex:3,soc:1},1,0,{inc:2}),J('農業（兼業）','food',1,{str:3,int:1,dex:1,soc:1},1,0,{inc:1}),J('建設作業員・出稼ぎ','labor',0,{str:3,dex:2},0.768,0,{sx:'m',inc:2}),J('炭鉱夫','labor',0,{str:3,dex:1},0.165,0,{sx:'m',inc:1}),J('漁師','food',1,{str:3,dex:2},0.301,0,{sx:'m'}),J('個人商店主','trade',1,{str:1,int:1,soc:3},0.433,0,{inc:2}),J('職人・町工場','craft',1,{str:1,int:1,dex:3,soc:1},0.282,0,{inc:2,vol:1}),J('OL（事務）','office',2,{int:1,dex:1,soc:2,vis:2},1,0,{sx:'f',inc:1}),J('看護婦','care',2,{str:2,int:1,dex:2,soc:2},1,1,{sx:'f',inc:1}),J('大企業の会社員','office',3,{int:2,soc:3},1,1,{sx:'m',inc:3}),J('公務員','learn',3,{int:2,soc:2},1,1,{inc:2}),J('教師','learn',3,{int:2,soc:2,art:1},1,1,{inc:2}),J('テレビタレント・歌手','art',2,{dex:1,soc:3,art:3,vis:3},0.003,0,{inc:1,vol:4}),J('医師・弁護士','learn',4,{int:3,dex:2,soc:2},0.605,3,{inc:4}),J('会社役員','office',4,{int:2,soc:3},0.352,3,{inc:4})],
+  ev:[{p:1,t:'高度経済成長（1955〜73年）',w:1,open:{office:1.3},good:1}]},
+ {y:'1990年ごろ',e:'昭和末〜平成',d:'バブルの絶頂と崩壊。そのあと正社員の席が急に減った。',h:.2,nm:'hei',v:{str:1,int:2,dex:1,soc:3,art:2},
+  org:['職場','合コン','地元の同級生','大学のサークル'],
+  jobs:[J('アルバイト・派遣社員','labor',0,{str:1,dex:1,soc:1},1,0,{sh:5}),J('一般職のOL','office',2,{int:1,dex:1,soc:2,vis:2},1,1,{inc:1,sx:'f',sh:8}),J('総合職の会社員（営業・企画）','office',3,{int:2,soc:3},0.215,1,{inc:3,sk:.4,sh:10}),J('中小企業の会社員','office',2,{str:1,int:1,dex:1,soc:2},1,0,{inc:2,sh:12}),J('銀行員','office',3,{int:2,soc:2},0.073,1,{inc:3,sh:1.5}),J('商社・広告の会社員','office',3,{int:2,soc:3,vis:1},0.023,2,{inc:4,sk:.4,sh:.8}),J('証券・不動産の営業','trade',2,{str:2,int:1,soc:3,vis:1},0.04,1,{inc:4,vol:2,sk:.4,sh:1.2}),J('百貨店・小売の販売員','trade',1,{soc:2,str:1,vis:1},0.958,0,{inc:1,sk:2,sh:6}),J('飲食店の店員・調理','labor',1,{str:2,dex:2,soc:1},0.047,0,{inc:1,sh:4}),J('製造ライン','labor',1,{str:2,dex:3},1,0,{inc:2,sh:12}),J('工場の熟練工','craft',1,{dex:3,int:1,str:1},0.171,0,{inc:2,sk:.2,sh:3}),J('建設作業員・大工','labor',1,{str:3,dex:2},0.407,0,{inc:2,sk:.1,sh:6}),J('トラック・タクシー運転手','labor',1,{str:2,dex:1,soc:1},1,0,{inc:2,sk:.1,sh:3.5}),J('看護婦','care',2,{str:2,int:1,dex:2,soc:2},0.207,1,{inc:2,sk:6,sh:2,mn:'看護士'}),J('保母（保育士）','care',2,{soc:2,art:1,str:1},0.073,0,{inc:1,sk:8,sh:1,mn:'保父（保育士）'}),J('教員','learn',3,{int:2,soc:2,art:1},0.011,1,{inc:2,sh:2}),J('公務員（役所）','learn',3,{int:2,soc:2},0.172,1,{inc:2,sh:3.5}),J('警察官・消防士','war',3,{str:3,soc:1,int:1},0.024,0,{inc:2,sk:.2,sh:1}),J('自衛官','war',2,{str:3,soc:1},0.011,0,{inc:2,sk:.1,sh:.5}),J('SE・プログラマー','tech',2,{int:3,dex:2},0.059,0,{inc:2,vol:1,sk:.4,sh:2}),J('美容師','art',2,{dex:3,art:2,soc:1,vis:1},0.076,0,{inc:1,sk:2,sh:1}),J('農業','food',1,{str:3,int:1,dex:1},0.122,0,{inc:1,sh:6}),J('漁師','food',1,{str:3,dex:2},0.173,0,{inc:1,sk:.1,sh:.6}),J('喫茶店・商店の自営','trade',1,{str:1,int:1,soc:3},0.746,1,{inc:2,vol:1,sh:6}),J('主婦のパート','labor',0,{dex:1,soc:1},1,0,{sx:'f',sh:3}),J('清掃・警備','labor',0,{str:2},0.18,0,{sh:2}),J('医師','learn',4,{int:3,dex:2,soc:2},0.003,3,{inc:4,sh:.5}),J('弁護士・会計士','learn',4,{int:3,soc:2},0.015,3,{inc:4,sh:.3}),J('会社経営','trade',3,{int:2,soc:3},0.051,3,{inc:4,vol:2,sh:1.5}),J('芸能人・漫画家','art',2,{int:1,dex:2,soc:2,art:3,vis:3},0.028,0,{inc:1,vol:4,sh:.3}),J('ホステス','art',0,{soc:3,art:1,vis:3},0.109,0,{sx:'f',inc:3,vol:2,sh:.4})],
+  ev:[{p:1,t:'バブル景気（1986〜91年）とその崩壊',a:1.1,jp:1},{p:0,t:'就職氷河期（1993〜2005年ごろ）に就職の時期が重なった',w:-1,open:{office:.55,learn:.8},jp:1}]},
+ {y:'2026年',e:'令和',d:'あなたの時代。',h:.15,nm:'rei',v:{str:1,int:3,dex:2,soc:2,art:3},
+  org:[],
+  jobs:[J('非正規（パート・派遣）','labor',0,{str:1,dex:1,soc:1},1,0,{sh:7}),J('一般事務','office',2,{int:2,dex:1,soc:1},0.304,1,{inc:2,sk:1.8,sh:12}),J('営業職','office',2,{str:1,int:1,soc:3},0.313,0,{inc:2,sk:.6,sh:8}),J('販売・接客','trade',1,{str:1,soc:2,vis:1},0.354,0,{inc:1,sk:1.3,sh:6}),J('飲食店スタッフ・調理','labor',1,{str:2,dex:2,soc:1},0.265,0,{inc:1,sh:4}),J('介護福祉士','care',2,{str:2,int:1,soc:2},0.253,0,{inc:1,sk:2,sh:5}),J('保育士','care',2,{str:1,soc:2,art:1},0.1,0,{inc:1,sk:4,sh:2}),J('看護師','care',3,{str:2,int:2,dex:2,soc:2},0.088,1,{inc:2,sk:4,sh:3}),J('薬剤師','learn',3,{int:3,dex:1},0.003,2,{inc:3,sh:.6}),J('教員','learn',3,{int:2,soc:2},0.055,1,{inc:2,sh:2}),J('市役所の職員（公務員）','learn',3,{int:2,soc:2},0.068,1,{inc:2,sh:3}),J('警察官・消防士','war',3,{str:3,soc:1,int:1},0.023,0,{inc:2,sk:.3,sh:1.2}),J('自衛官','war',2,{str:3,soc:1},0.016,0,{inc:2,sk:.2,sh:.6}),J('ITエンジニア','tech',3,{int:3,dex:2,art:1},0.033,1,{inc:3,vol:1,sk:.4,sh:3}),J('Webデザイナー','tech',2,{dex:2,art:3},0.016,0,{inc:2,sh:.8}),J('製造オペレーター','labor',1,{str:2,dex:2},1,0,{inc:1,sk:.5,sh:10}),J('トラック・配送ドライバー','labor',1,{str:2,dex:1},0.124,0,{inc:2,sk:.1,sh:3}),J('建設作業員・施工管理','labor',1,{str:3,dex:2,int:1},0.2,0,{inc:2,sk:.1,sh:4}),J('電気工事士・設備','craft',2,{str:1,int:1,dex:3},0.032,0,{inc:2,sk:.1,sh:1.5}),J('美容師','art',2,{dex:3,art:2,soc:1,vis:1},0.034,0,{inc:1,sk:2,sh:1}),J('清掃・警備','labor',0,{str:2},0.369,0,{sh:3}),J('銀行員・保険','office',3,{int:2,soc:2},0.003,1,{inc:3,sh:1.5}),J('商社・広告・マスコミ','office',3,{int:2,soc:3,art:1,vis:1},0.017,2,{inc:4,sh:.8}),J('会社の管理職','office',3,{int:2,soc:3},0.037,1,{inc:3,sk:.3,sh:2}),J('外資金融・コンサル','office',4,{str:1,int:3,soc:3,vis:1},0.01,3,{inc:4,sh:.4}),J('研究者・大学教員','learn',4,{int:3,art:1},0.003,3,{inc:3,sh:.4}),J('医師・歯科医','learn',4,{int:3,dex:2,soc:2},0.023,3,{inc:4,sh:.7}),J('弁護士・会計士','learn',4,{int:3,soc:2},0.006,3,{inc:4,sh:.4}),J('農業','food',1,{str:2,int:1,dex:1},0.156,0,{inc:1,sh:2}),J('漁師','food',1,{str:3,dex:2},0.048,0,{inc:1,sk:.1,sh:.3}),J('飲食店・美容室の経営','trade',2,{int:1,dex:1,soc:2},0.033,1,{inc:2,vol:2,sh:1}),J('フリーランス（個人事業主）','trade',1,{int:2,dex:2,soc:1,art:1},0.11,0,{inc:1,vol:2,sh:3}),J('起業家','trade',3,{str:1,int:3,soc:3,art:1},0.008,1,{inc:2,vol:4,sh:.8}),J('イラスト・ハンドメイド販売','art',1,{dex:3,art:3},0.019,0,{inc:1,vol:2,sh:.6}),J('配信者・VTuber','art',1,{int:1,dex:2,soc:2,art:3,vis:2},0.017,0,{inc:1,vol:4,sh:.4}),J('インフルエンサー・モデル','art',1,{soc:2,art:2,vis:3},0.004,0,{inc:1,vol:3,sh:.2}),J('個人投資家','trade',1,{int:3},0.006,2,{inc:2,vol:4,sh:.3}),J('ギグワーカー（配達）','labor',0,{str:3},0.116,0,{sh:.8})],
+  ev:[{p:1,t:'新型コロナの流行（2020年〜）',a:.95},{p:1,t:'生成AIが仕事の形を変えはじめた',open:{tech:1.3,office:.85},good:1}]}
+];
+
+// ---------- 乱数ユーティリティ ----------
+// シード付き乱数（同じシードなら同じ時代に同じ運命が起きる）
+let RS=1,RMATH=false;
+function R(){if(RMATH)return Math.random();RS=RS+0x6D2B79F5|0;let t=Math.imul(RS^RS>>>15,1|RS);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}
+const hashS=x=>{let h=1779033703^x.length;for(let i=0;i<x.length;i++){h=Math.imul(h^x.charCodeAt(i),3432918353);h=h<<13|h>>>19}return h>>>0};
+const reseed=(...a)=>{if(!RMATH)RS=hashS(state.seed+'|'+a.join('|'))};
+const genSeed=()=>Array.from({length:6},()=>'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'[Math.floor(Math.random()*32)]).join('');
+const pick=a=>a[Math.floor(R()*a.length)];
+const wpick=(a,wf)=>{const w=a.map(wf),t=w.reduce((x,y)=>x+y,0);if(!(t>0))return pick(a);let r=R()*t;for(let i=0;i<a.length;i++){r-=w[i];if(r<0)return a[i]}return a[a.length-1]};
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const gauss=()=>{let u=0,v=0;while(!u)u=R();while(!v)v=R();return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v)};
+const util=(st,j)=>{let a=0,b=0;for(const k in j.w){a+=(st[k]??5.5)*j.w[k];b+=j.w[k]*10}return a/b};
+const qualified=(st,j,i)=>i===0||util(st,j)>=.4+.07*j.t;
+const topStat=st=>S.reduce((a,k)=>st[k]>st[a]?k:a,S[0]);
+const tierOf=w=>Math.min(4,Math.floor(w*.8));
+
+function nameFor(era,g,surname){
+  const n=pick(NAMES[ERAS[era].nm][g]);
+  return {given:n,full:surname?surname+' '+n:n};
+}
+function randStats(base=2,span=7){const s={};S.forEach(k=>s[k]=clamp(Math.round(base+R()*span),1,10));return s}
+
+// ---------- 職業の決定（能力・時代・家・見た目・運） ----------
+// 女性の職業：制度上ほぼ閉じていた軍・官は閉じたまま。それ以外は「機会の差」で表す（fo＝女性がその職に就ける確率の倍率。男の職の既定は0）
+const FEMALE_NG=new Set(['官吏','武将','御家人（武士）']);
+const sxo=(j,g,era)=>j.sx===g?1:(j.sx&&g==='m')?0:g!=='f'||era>=14?1:(era<=12&&(j.f==='war'||FEMALE_NG.has(j.n)))?0:(j.fo??(j.sx?0:1));
+const allowed=(j,g,era)=>sxo(j,g,era)>0;
+const LOOKFAM=new Set(['art','office','trade','rule','faith']);
+function decideJob(era,st0,famW,parentJob,openMul,g='m',lookB=0,amb=5.5,vis=5.5,stumble=false){
+  const E=ERAS[era],st={...st0,vis};
+  const all=E.jobs.map((j,i)=>({j,i,u:util(st,j)})).filter(x=>allowed(x.j,g,era));
+  const maxU=Math.max(...all.map(x=>x.u));
+  const ideal=all.filter(x=>qualified(st,x.j,x.i)&&x.j.o>0).sort((a,b)=>(b.u+b.j.t*.12)-(a.u+a.j.t*.12))[0];
+  if(parentJob&&R()<E.h&&openMul[parentJob.f]!==0){
+    const same=all.map(x=>x.j).filter(j=>j.f===parentJob.f&&(sxo(j,g,era)>=1||R()<sxo(j,g,era))).sort((a,b)=>Math.abs(a.t-parentJob.t)-Math.abs(b.t-parentJob.t));
+    if(same.length) return {job:same[0],how:'inherit',ideal,maxU};
+  }
+  const cand=[],gate=[],shut=[];
+  for(const x of all){
+    if(!qualified(st,x.j,x.i))continue;
+    if(x.j.g>famW-(stumble?1:0)+(stumble?0:0)||(stumble&&x.j.g+1>famW&&x.j.t>=3)){gate.push(x.j);continue}
+    const o=x.i===0?1:(openMul[x.j.f]===0?0:1)*(x.j.self?Math.min(1,x.j.o*(amb>=7?4:amb>=5?2:.7)):1)*Math.min(1,x.j.self?1:x.j.o*(openMul[x.j.f]||1)*(LOOKFAM.has(x.j.f)?1+lookB*.15:1)*(famW>=4&&x.j.t>=3?1.4:1)*(x.j.self?1/Math.max(.001,x.j.o):1));
+    const o2=Math.min(1,o*(x.j.sk!==1?(g==='f'?Math.sqrt(x.j.sk):1/Math.sqrt(x.j.sk)):1))*(x.i===0?1:sxo(x.j,g,era));
+    if(R()<o2)cand.push({...x,o:o2});else shut.push(x.j);
+  }
+  if(!cand.length)cand.push({j:E.jobs[0],u:util(st,E.jobs[0]),o:1});
+  // 近代以降は学校と試験が階段になる：知恵が高いほど格の高い職に届きやすい
+  cand.forEach(c=>c.s=c.u*(era>=11?2:1.5)+(c.j.t+incOf(c.j))*.06+(era>=11?(st.int-5.5)*.05*c.j.t+famW*.025*c.j.t:0)+(amb-5.5)*.03*c.j.t+R()*.15);
+  cand.sort((a,b)=>b.s-a.s);
+  return {job:cand[0].j,how:'free',ideal,maxU,gate,shut,o:cand[0].o};
+}
+
+// ---------- 見た目（時代で美の基準が変わる） ----------
+const FG=[['色白','よく日に焼けている'],['ふくよか','細身','がっしりしている'],['えくぼがある','眉が太い'],['目が大きい','切れ長の目'],['黒髪が長い','丸顔','鼻筋が通っている']];
+const grp=f=>FG.findIndex(g=>g.includes(f));
+// L=見た目が暮らしや仕事に効く度合い（ルッキズムの強さ）
+const BEAUTY=[
+ {L:.15,p:['がっしりしている','背が高い'],m:['細身'],t:'丈夫そうな体'},
+ {L:.15,p:['がっしりしている','ふくよか'],m:['細身'],t:'丈夫で豊かそうな体'},
+ {L:.2,p:['がっしりしている','ふくよか'],m:[],t:'力強さ'},
+ {L:.25,p:['ふくよか','背が高い'],m:[],t:'堂々とした体格'},
+ {L:.3,p:['ふくよか','丸顔'],m:['細身'],t:'ふくよかな丸顔'},
+ {L:.5,p:['色白','黒髪が長い','切れ長の目'],m:['よく日に焼けている'],t:'色白・長い黒髪・引目鉤鼻'},
+ {L:.25,p:['がっしりしている','背が高い'],m:[],t:'たくましさ'},
+ {L:.25,p:['がっしりしている','背が高い'],m:['小柄'],t:'たくましさ'},
+ {L:.4,p:['色白','細身','切れ長の目'],m:['よく日に焼けている'],t:'色白・細面・切れ長の目'},
+ {L:.4,p:['色白','細身','切れ長の目'],m:['よく日に焼けている'],t:'色白・細面'},
+ {L:.4,p:['色白','細身','切れ長の目'],m:['よく日に焼けている'],t:'色白・細面'},
+ {L:.35,p:['色白','鼻筋が通っている'],m:['よく日に焼けている'],t:'色白・西洋風の通った鼻筋'},
+ {L:.35,p:['色白','目が大きい'],m:[],t:'色白・ぱっちりした目'},
+ {L:.5,p:['目が大きい','背が高い','細身'],m:[],t:'ぱっちりした目・すらりとした体'},
+ {L:.7,p:['細身','目が大きい','鼻筋が通っている'],m:['ふくよか'],t:'細身・小顔・二重'},
+ {L:.9,p:['細身','目が大きい','鼻筋が通っている','色白'],m:['ふくよか'],t:'細身・小顔・肌のきれいさ'}
+];
+function randFeat(){const gs=[0,1,2,3,4].sort(()=>R()-.5).slice(0,2);return gs.map(g=>pick(FG[g]))}
+function childFeat(a,b){
+  let pool=[...a,...b].sort(()=>R()-.5),out=[];
+  for(const f of pool){if(out.length<2&&!out.some(o=>grp(o)===grp(f)))out.push(f)}
+  if(R()<.15){const g=[0,1,2,3,4].filter(g=>!out.some(o=>grp(o)===g));out[Math.floor(R()*2)]=pick(FG[pick(g)])}
+  return out;
+}
+// 見た目は「顔立ち（遺伝しやすい）」「身長（遺伝＋栄養）」「身だしなみ（育ちと感性で身につく）」の合計で評価される
+const HGT={9:156,10:156,11:157,12:160,13:165,14:170,15:171};
+const hMean=(g,era)=>(HGT[era]||158)-(g==='f'?12:0);
+const SW={9:.3,10:.3,11:.4,12:.5,13:.5,14:.7,15:.8},HW={9:.3,10:.3,11:.4,12:.5,13:.6,14:.7,15:.7};
+const perceived=(p,era)=>clamp(p.vis+1.5*p.feat.filter(f=>BEAUTY[era].p.includes(f)).length-1.5*p.feat.filter(f=>BEAUTY[era].m.includes(f)).length
+  +((p.style??5.5)-5.5)*(SW[era]??.3)-(p.fat&&era>=13&&p.fat>=8?(era>=14?.6:.3):0)-(p.g==='m'&&era>=13&&(p.bald||0)>=8?.8:0)-(era>=13&&(p.myo||0)>=8?.3:0)+(p.hgt?(p.hgt-hMean(p.g,era))/6*(p.g==='f'?.1:(HW[era]??.3)):0),1,10);
+const styleWord=v=>v>=7.5?'身なりがあか抜けている':v<=3.5?'身なりに無頓着':'身なりは人並み';
+// 隠れた気質：野心・衝動性・体質の弱さ・落ち込みやすさ（どれも本人にも相手にも見えない）
+const hiddenTraits=()=>({joy:clamp(Math.round(2+R()*7),1,10),amb:clamp(Math.round(2+R()*7),1,10),imp:clamp(Math.round(2+R()*7),1,10),gene:clamp(Math.round(2+R()*7),1,10),mood:clamp(Math.round(2+R()*7),1,10),...genome()});
+// 遺伝子：潜性（劣性）の遺伝病（2本そろうと発症）、顕性（優性）の遺伝病（1本で発症）、色覚の特性（X染色体・男性に出やすい）
+// 近視・太りやすさは多くの遺伝子が関わる（遺伝率は高め）。どれも本人も相手も知らないまま結婚する
+const genome=()=>({rec:(R()<.08?1:0)+(R()<.08?1:0),dom:R()<.02?1:0,xcb:R()<.08?1:0,myo:clamp(Math.round(2+R()*7),1,10),fat:clamp(Math.round(2+R()*7),1,10),
+  alc:(R()<.22?1:0)+(R()<.22?1:0),fert:clamp(Math.round(2+R()*7),1,10),twin:clamp(Math.round(2+R()*7),1,10),bald:clamp(Math.round(2+R()*7),1,10)});
+function childGenome(m,f,g){const a=x=>x===2?1:x===1?(R()<.5?1:0):0,mo=m.g==='f'?m:f,fa=m.g==='f'?f:m;
+  return {rec:a(m.rec||0)+a(f.rec||0),dom:((m.dom&&R()<.5)||(f.dom&&R()<.5))?1:0,xcb:g==='m'?((mo.xcb||0)&&R()<.5?1:0):(((mo.xcb||0)&&R()<.5)||((fa.xcb||0))?1:0),
+    myo:clamp(Math.round(5.5+.7*(((m.myo||5.5)+(f.myo||5.5))/2-5.5)+gauss()*1.3),1,10),fat:clamp(Math.round(5.5+.7*(((m.fat||5.5)+(f.fat||5.5))/2-5.5)+gauss()*1.3),1,10),
+    alc:a(m.alc||0)+a(f.alc||0),fert:clamp(Math.round(5.5+.3*(((m.fert||5.5)+(f.fert||5.5))/2-5.5)+gauss()*1.8),1,10),twin:clamp(Math.round(5.5+.5*((mo.twin||5.5)-5.5)+gauss()*1.6),1,10),
+    bald:clamp(Math.round(5.5+.6*(((mo.bald||5.5)*.7+(fa.bald||5.5)*.3)-5.5)+gauss()*1.5),1,10)}}
+// 成人した人の平均的な寿命（その時代に大人になった人）
+const LEX={8:55,9:55,10:55,11:58,12:60,13:72,14:80,15:84};
+const lifeOf=(x,era,w)=>Math.round(clamp((LEX[era]||60)+(5.5-(x.gene||5.5))*1.6+((w??2)-2)*2+((x.st?x.st.str:5.5)-5.5)*.8+gauss()*9-((x.rec||0)>=2?14:0)-(x.dom?7:0)-((x.fat||5)>=8&&era>=13?4:0),25,101));
+const inheritTrait=(a,b,h2)=>clamp(Math.round(5.5+h2*((a+b)/2-5.5)+gauss()*1.6),1,10);
+function lookLabel(p,era){const v=perceived(p,era);return v>=7.5?(p.g==='f'?'美人':era>=14?'イケメン':'美男子'):v>=4?'普通':'当世風ではない'}
+const lookB=(p,era)=>BEAUTY[era].L*(perceived(p,era)-5)/5;
+
+// ---------- 見えるもの（エピソード・肩書き） ----------
+// 噂は時代ごとに言い回しが変わる（江戸〜幕末／明治〜戦前／戦後／平成〜）
+const EPG=g=>g<=10?0:g<=12?1:g===13?2:g===14?3:4;
+const EP={
+ str:{hi:[['冬の川を平気で渡っていた','重い米俵をひとりで担いでいた','熱を出したところを誰も見たことがない'],['M:徴兵検査で甲種合格だったそうだ','F:田植えでは誰より手が速いと評判','力仕事でも音を上げない','風邪ひとつひかない'],['残業続きでもけろりとしている','運動会ではいつも一番だった','力仕事を頼まれる側の人'],['フルマラソンを走ったことがある','ジム通いを続けている','徹夜明けでも元気']],lo:[['少し歩くとすぐ息が上がる','季節の変わり目によく寝込む'],['病気がちで学校をよく休んだ','重いものを持つとすぐ腰を痛める'],['すぐ疲れたと言う','体育が苦手だった'],['体力に自信がないと言っていた','よく体調を崩して休む']]},
+ int:{hi:[['一度聞いた話を正確に覚えていた','揉め事の筋道を真っ先に見抜いた','そろばんが誰より速い'],['小学校で一番の成績だった','新聞を隅から隅まで読んでいる','計算が恐ろしく速い'],['学校の成績はいつも上位','難しい本を好んで読む','話の要点をすぐつかむ'],['資格試験に一発で受かったらしい','説明がとにかく分かりやすい','何でもすぐ調べて覚える']],lo:[['同じ失敗を何度も繰り返していた','段取りを考えるのは苦手そうだった'],['読み書きが苦手だと聞く','言われたことをよく忘れる'],['勉強はさっぱりだった','話が飛びがち'],['書類仕事が苦手らしい','同じミスを繰り返す']]},
+ dex:{hi:[['壊れた道具をその場で直してみせた','細かい細工を黙々と仕上げていた','何を作らせても形がきれい'],['機械の扱いがうまい','裁縫の腕がいいと評判','手先の仕事なら任せておけ、と言われる'],['ラジオを自分で組み立てた','料理の手際がいい','工作が得意だった'],['何でも自分で修理してしまう','手作りの品が売れるほどの腕','ワープロの扱いがやたら速い'],['何でも自分で修理してしまう','手作りの品がネットで売れるほどの腕','パソコンの扱いがやたら速い']],lo:[['道具の扱いが危なっかしい','手元がよく狂う'],['不器用で針仕事が苦手','機械を触るとよく壊す'],['不器用だと自分で言う','細かい作業が続かない'],['ビデオの録画予約ができない','字が読めないほど汚い'],['スマホの設定を人に頼む','字が読めないほど汚い']]},
+ soc:{hi:[['初対面の相手ともすぐ笑い合っていた','言い争いを一言で収めた','この人の周りには自然と人が集まる'],['顔が広く、頼みごとをよくされる','寄り合いではいつも話の中心','人を笑わせるのがうまい'],['職場の宴会の盛り上げ役','誰とでもすぐ打ち解ける','面倒見がいいと慕われている'],['友だちがやたら多い','初対面でも会話が途切れない','場の空気を読むのがうまい']],lo:[['人前ではほとんど口をきかない','言い方がきつく、よく揉める'],['口下手で誤解されやすい','人付き合いを避けている'],['無口で何を考えているか分からない','すぐ人とぶつかる'],['人見知りが激しい','言葉がきつくて敬遠されがち']]},
+ art:{hi:[['祭り囃子の節をすぐに覚えてしまう','反故紙の端に描いた絵が妙にうまい','季節の移ろいを言葉にするのがうまい'],['唱歌がうまいと評判','絵を描かせると見入るほど','俳句を詠むのが好き'],['ギターを弾いて歌う','服の色合わせがうまい','映画や音楽に詳しい'],['描いた漫画を同人誌で売っている','部屋のセンスがいい','写真の撮り方がうまい'],['イラストをSNSに上げると反応がいい','動画の編集がうまい','部屋のセンスがいい']],lo:[['飾り気のない物を好む','歌や踊りの場では居心地が悪そうだった'],['芸事には関心がない','着る物には頓着しない'],['音痴だと笑われていた','流行には興味がない'],['センスがないと言われがち','趣味らしい趣味がない']]},
+ amb:{hi:[['いつか一旗揚げると言っている'],['立身出世を口癖にしている'],['いずれは自分の店を持つと言っている'],['将来は起業したいと話している']],lo:[['欲がなく、今の暮らしで十分だと言う'],['出世には興味がないらしい'],['のんびりした性分だ'],['がつがつしたところがない']]},
+ imp:{hi:[['かっとなると手が出ることがある'],['酒が入ると人が変わるらしい'],['勢いで物事を決めてしまう'],['衝動買いが多いと聞く']],lo:[['何をするにも慎重だ'],['石橋を叩いて渡る性分'],['怒ったところを見たことがない'],['落ち着いていて動じない']]},
+ gene:{hi:[['親族に早死にが多いと聞く'],['家系に病人が多いらしい'],['親が若くして病で亡くなった'],['親族に同じ病気の人が多いらしい']],lo:[['親族はみな長生きだという'],['祖父母がそろって長寿'],['家族に病気知らずが多い'],['祖父母が九十を超えて元気']]},
+ mood:{hi:[['ときどき、ふさぎ込んで部屋から出てこない'],['気がふさぐと何日も寝込む'],['思い詰めやすい性分らしい'],['落ち込むと長く引きずるらしい']],lo:[['いつも明るく、くよくよしない'],['何があっても前向きだ'],['からっとした性格'],['切り替えが早い']]}
+};
+// 噂は事実に基づくが、見えるのは一部だけで、少しぶれる。隠れた気質もときどき噂に出る（家系の病気は噂にしない）
+function episodes(st,n,hid,gen){
+  const G=EPG(gen??state.gen??9);
+  const keys=[...S.map(k=>({k,v:st[k]})),...(hid?['amb','imp'].filter(k=>hid[k]!=null&&R()<.45).map(k=>({k,v:hid[k]})):[])];
+  const seen=keys.map(x=>({k:x.k,v:x.v+gauss()*1.0})).filter(x=>x.v>=7||x.v<=3).sort((a,b)=>Math.abs(b.v-5.5)-Math.abs(a.v-5.5)).slice(0,n);
+  const gg=hid&&hid.g;
+  return seen.length?seen.map(x=>{const L=EP[x.k][x.v>=7?'hi':'lo'];const pool=L[Math.min(G,L.length-1)].filter(t=>!(t.startsWith('M:')&&gg==='f')&&!(t.startsWith('F:')&&gg==='m'));return pick(pool.length?pool:L[Math.min(G,L.length-1)]).replace(/^[MF]:/,'')}):['これといった噂は聞かない'];
+}
+// 性格の手がかり（人当たり・感性）。相性は「性格が近いか」で決まるので、ここから推し量れる
+function persona(st){const a=st.soc+gauss()*.9,b=st.art+gauss()*.9;
+  return [a>=7?'人付き合いが好き':a<=4?'一人の時間を好む':'人付き合いはほどほど',b>=7?'美しいものや歌に惹かれる':b<=4?'飾り気より実用を好む':'趣味はほどほど'].join('／')}
+const PLV={'一人の時間を好む':0,'人付き合いはほどほど':1,'人付き合いが好き':2,'飾り気より実用を好む':0,'趣味はほどほど':1,'美しいものや歌に惹かれる':2};
+function feelOf(a,b){const x=(a||'').split('／').map(t=>PLV[t]??1),y=(b||'').split('／').map(t=>PLV[t]??1),n=4-Math.abs(x[0]-y[0])-Math.abs(x[1]-y[1]);return n>=4?['話が合いそう','gold']:n>=2?['ふつう','']:['話が合わなさそう','bad']}
+// 相手を知る手がかりは時代で変わる：噂 → 家柄＋噂 → 肩書き＋スペック
+const modeOf=gen=>gen<=4?'ep':gen<=10?'mix':'spec';
+const MODE_TXT={ep:'この時代、相手を知る手がかりは見た目と噂と性格だけ',mix:'家柄と肩書きが見えるようになった',spec:'肩書きと学歴が前に出る時代'};
+// 学歴：実在の学校名。職業とつながり、ランクは知恵と家の豊かさで決まる
+function eduFor(gen,g,job,w,st){
+  const n=(job&&(job.base||job.n))||'',q=(st.int-5.5)*.5+(w-2)*.6+gauss()*1.2,pk=a=>pick(a);
+  if(gen<=10){if(/武士|庄屋|名主|医者|蘭学|洋学|通詞|豪商|問屋|僧侶|尼・巫女/.test(n))return /武士/.test(n)?'藩校':pk(['寺子屋','私塾']);return q>-.5?'寺子屋':'学校には行っていない'}
+  if(gen===11){ // 1895年ごろ：まだ「帝国大学」は1校、早稲田・明治などは前身の名前
+    if(/官吏|官僚/.test(n))return '帝国大学 法科大学';
+    if(/将校/.test(n))return g==='m'?pk(['陸軍士官学校','海軍兵学校']):'高等女学校';
+    if(/医師/.test(n))return g==='m'?pk(['帝国大学 医科大学','医学校']):'私立の医学校';
+    if(/教員/.test(n))return g==='m'?'師範学校':'女子師範学校';
+    if(/看護婦|産婆/.test(n))return '看護婦・産婆の養成所';
+    if(g==='m'&&/月給取り|重役|実業家|記者/.test(n))return q>1.5?'帝国大学':pk(['東京専門学校','慶應義塾','明治法律学校','私立の法律学校']);
+    if(g==='f')return q>3?'女子高等師範学校':q>1.2?'高等女学校':q>-1?'高等小学校':'尋常小学校';
+    return q>3.2?'帝国大学':q>2.6?pk(['東京専門学校','慶應義塾','明治法律学校']):q>1.2?'尋常中学校':q>-.5?'高等小学校':'尋常小学校';
+  }
+  if(gen<=12){
+    if(/官吏|官僚/.test(n))return '東京帝国大学 法科';
+    if(/将校/.test(n))return g==='m'?pk(['陸軍士官学校','海軍兵学校']):'高等女学校';
+    if(/医師/.test(n))return g==='m'?pk(['東京帝国大学 医科','医学専門学校']):'東京女子医学専門学校';
+    if(/教員/.test(n))return g==='m'?'師範学校':'女子師範学校';
+    if(/看護婦|産婆/.test(n))return '看護婦・産婆の養成所';
+    if(g==='m'&&/月給取り|重役|実業家|記者/.test(n))return q>1.5?pk(['東京帝国大学','京都帝国大学']):pk(['早稲田大学','慶應義塾','明治大学','中央大学']);
+    if(g==='f')return q>3?pk(['日本女子大学校','東京女子高等師範学校']):q>1.2?'高等女学校':q>-1?'高等小学校':'尋常小学校';
+    return q>3.2?pk(['東京帝国大学','京都帝国大学']):q>2.6?pk(['早稲田大学','慶應義塾','明治大学']):q>1.2?'旧制中学':q>-.5?'高等小学校':'尋常小学校';
+  }
+  const top=['東京大学','京都大学','一橋大学','東京工業大学'],wk=['早稲田大学','慶應義塾大学'],mid=gen>=14?['明治大学','青山学院大学','立教大学','中央大学','法政大学','関西大学','関西学院大学','同志社大学','立命館大学']:['明治大学','中央大学','同志社大学','立命館大学'];
+  const univ=()=>q>3.3?pk(top):q>2.6?pk(wk):q>1.6?pk(['地方の国立大学',...mid]):pk(['地元の私立大学','地方の私立大学']);
+  if(/医師/.test(n))return (q>2?pk(top):pk(['地方の国立大学','私立大学']))+' 医学部';
+  if(/薬剤師/.test(n))return pk(['国立大学','私立大学'])+' 薬学部';
+  if(/弁護士/.test(n))return (q>2?pk(top):pk(wk))+(gen>=15?' 法科大学院':' 法学部');
+  if(/研究者/.test(n))return pk(top)+' 大学院';
+  if(/看護/.test(n))return gen>=15&&q>.5?'看護大学':'看護専門学校';
+  if(/美容/.test(n))return '美容専門学校';
+  if(/保育|保母|保父/.test(n))return gen>=14?pk(['保育の専門学校','短期大学 保育科']):'保育の専門学校';
+  if(/介護/.test(n))return pk(['介護福祉の専門学校','高校 普通科']);
+  if(/調理|飲食/.test(n))return pk(['調理師専門学校','高校 普通科']);
+  if(/ITエンジニア|SE|プログラマ/.test(n))return q>1?univ()+' 情報系':'情報処理の専門学校';
+  if(/Web|デザイン|イラスト/.test(n))return 'デザイン専門学校';
+  if(/電気|工場|製造|熟練工|整備/.test(n))return pk(['工業高校','高校 普通科']);
+  if(/ドライバー|運転手|建設|大工|清掃|警備|ギグ/.test(n))return gen===13?pk(['中学校','高校 普通科']):pk(['高校 普通科','工業高校','高校中退']);
+  if(/教員|教師|教育/.test(n))return gen===13?'教育大学':univ()+' 教育学部';
+  if(/商社|広告|マスコミ|外資|コンサル|銀行|総合職|管理職|役員/.test(n))return univ();
+  if(/OL|事務/.test(n))return gen<=14&&g==='f'?pk(['短期大学','商業高校']):q>.5?univ():pk(['商業高校','短期大学']);
+  if(/警察|消防|自衛/.test(n))return pk(['高校 普通科',univ()]);
+  if(/公務員|役所/.test(n))return q>.8?univ():'高校 普通科';
+  if(/金の卵/.test(n))return '中学校';
+  const uq=gen===13?2:gen===14?1:.2;
+  return gen===13?(q>uq?univ():q>.3?pk(['高校 普通科','商業高校','工業高校']):'中学校'):(q>uq?univ():q>uq-1.2?pk(['高校 普通科','商業高校','工業高校',gen>=15?'専門学校':'短期大学']):'高校 普通科');
+}
+function eduOf(gen,w,st,g){
+  const i=clamp(w+(st.int>=8&&R()<.5?1:0),0,5);
+  if(gen<=12)return (g==='f'?['尋常小学校','尋常小学校','高等小学校','高等女学校','高等女学校','女子高等師範']:['尋常小学校','尋常小学校','高等小学校','旧制中学','旧制中学','帝国大学'])[i];
+  return ['中卒','高卒','高卒','短大・専門卒','大卒','有名大卒'][i];
+}
+
+// ---------- 運命（選択と関係なく、本当にランダムに起きる） ----------
+const FATE=[
+ {p:.06,t:()=>'家が火事で焼けた',w:-1},
+ {p:.05,t:()=>'働き手が大けがをして、暮らしが傾いた',w:-1},
+ {p:.04,t:g=>g>=5?'親が人にだまされて財産を失った':'蓄えていた食べ物を獣に荒らされた',w:-2},
+ {p:.05,t:()=>'跡取りになるはずだった子が事故で亡くなり、きょうだいが家を継いだ',swap:1,need:2},
+ {p:.04,t:()=>'子は生まれつき体が弱かった',stat:{str:-3}},
+ {p:.04,t:g=>g>=13?'宝くじが当たった':g>=8&&g<=10?'富くじが当たった':'思いがけず大きな実入りがあった',w:1,good:1},
+ {p:.05,t:()=>'旅先で恩人に出会い、思わぬ道が開けた',open:2.5,good:1},
+ {p:.04,t:()=>'たまたま出会った師匠に見込まれ、技を仕込まれた',stat:{dex:2,int:1},good:1},
+ {p:.02,t:()=>'一家が流行り病に倒れた',die:.35}
+];
+
+// ---------- 資産（今のお金に換算した万円。弥生時代から蓄えが生まれる） ----------
+const EARN=[24,100,280,1000,2500];
+const EARN_M=[480,780,1300,2400,4200];        // 戦後は職による稼ぎの差が縮まる（一代で残せる額）            // 一代で残せる額の目安（職の格ごと）
+const DOWRY=[0,12,60,240,1000,3600];    // 相手の家が持ち込む財（家柄ごと）
+const fmtA=m=>m<10?'ほとんど無い':m>=10000?(m/10000).toFixed(m>=100000?0:1)+'億円':Math.round(m).toLocaleString()+'万円';
+// 資産＝その代が60代のときの家の純資産。戦後は円で、戦前は「その時代の中での位置」で示す（戦前の財を今の円に直す確かな方法は無いため）
+const ERA_DIST={},ERA_FINAL={},ERA_STATS={};
+function ensureDist(start){
+  if(ERA_DIST[start])return;
+  const saved=state,savedRS=RS,by={},fin=[];SIM=true;RMATH=true;
+  const cp=[],seqs=[],mob={sib:[],rich:[],poor:[],mid:[],lr:[],lp:[],lm:[]};
+  for(let k=0;k<300;k++){newGame(null,start);
+    while(state.phase!=='end'){if(state.phase==='choose'){const ok=state.cands.filter(c=>!c.gray);marry(state.cands.indexOf(pick(ok)))}else if(state.phase==='kids'){const ok=state.ks.ch.map((c,k)=>c.dead?-1:k).filter(k=>k>=0);pickHeir(pick(ok))}else if(state.phase==='adopt')adopt(R()<.8);else advance()}
+    state.line.forEach((r,i,L)=>{(by[r.era]=by[r.era]||[]).push(r.a||0);if(r.partner&&!r.partner.solo){const nx=L[i+1];cp.push({both:!!r.bothAttr,affair:!!r.affair,div:!!r.divorce,hap:r.hap,w:r.w,mis:!!r.mistress,cHap:nx&&nx.partner&&!nx.partner.solo?nx.hap:null,cAdv:nx?nx.adv:null,cMent:nx?!!nx.mental:null})}});
+    const L=state.line,y=L[L.length-1],hs=L.filter(r=>r.hap);
+    seqs.push(L.filter(r=>r.partner&&!r.partner.solo).map(r=>r.w>=3&&r.hap>=7&&!r.divorce));
+    L.forEach((r,i)=>{const nx=L[i+1];if(r.sibOut&&r.sibOut.length)mob.sib.push(r.sibBetter>0);if(nx&&nx.job){(r.w>=4?mob.rich:r.w<=1?mob.poor:mob.mid).push(incOf(nx.job)>=2)};if(r.lifespan&&r.era>=13){(r.w>=4?mob.lr:r.w<=2?mob.lp:mob.lm).push(r.lifespan)}});
+    fin.push(state.extinct?null:{s:sum(y.st),w:y.w,a:y.a,kids:L.reduce((q,r)=>q+(r.kids||0),0),hap:hs.reduce((q,r)=>q+r.hap,0)/Math.max(1,hs.length)})}
+  SIM=false;RMATH=false;RS=savedRS;state=saved;
+  for(const e in by)by[e].sort((a,b)=>a-b);
+  const pc=(a,f)=>a.length?Math.round(a.filter(f).length/a.length*100):0;
+  const B=cp.filter(x=>x.both),O=cp.filter(x=>!x.both),HP=cp.filter(x=>x.hap>=7&&x.cHap!=null),UP=cp.filter(x=>x.hap<=3&&x.cHap!=null);
+  const A0=cp.filter(x=>x.cAdv===0),A1=cp.filter(x=>x.cAdv>=1&&x.cAdv<=2),A3=cp.filter(x=>x.cAdv>=3);
+  ERA_STATS[start]={bothAff:pc(B,x=>x.affair),bothDiv:pc(B,x=>x.div),othAff:pc(O,x=>x.affair),othDiv:pc(O,x=>x.div),
+    hapHap:pc(HP,x=>x.cHap>=7),unhHap:pc(UP,x=>x.cHap>=7),m0:pc(A0,x=>x.cMent),m1:pc(A1,x=>x.cMent),m3:pc(A3,x=>x.cMent),
+    misRich:pc(cp.filter(x=>x.w>=4),x=>x.mis),misOth:pc(cp.filter(x=>x.w<=2),x=>x.mis),nB:B.length,n:cp.length};
+  {let g=0,gg=0,all=0,goodAll=0,three=0;seqs.forEach(q=>{q.forEach((v,i)=>{all++;if(v)goodAll++;if(i>0&&q[i-1]){g++;if(v)gg++}});if(q.some((v,i)=>i>=2&&v&&q[i-1]&&q[i-2]))three++});
+   const av=a=>a.length?Math.round(a.reduce((q,x)=>q+x,0)/a.length):0;
+   Object.assign(ERA_STATS[start],{sibBetter:pc(mob.sib,x=>x),upRich:pc(mob.rich,x=>x),upPoor:pc(mob.poor,x=>x),upMid:pc(mob.mid,x=>x),lifeRich:av(mob.lr),lifePoor:av(mob.lp),goodBase:Math.round(goodAll/Math.max(1,all)*100),goodNext:Math.round(gg/Math.max(1,g)*100),good3:Math.round(three/Math.max(1,seqs.length)*100)})}
+  ERA_DIST[start]=by;ERA_FINAL[start]=fin;
+}
+function posOf(era,a){const arr=(ERA_DIST[state.start||0]||{})[era];if(!arr||!arr.length)return null;const above=arr.filter(x=>x>a).length;return clamp(Math.ceil(above/arr.length*100),1,100)}
+const qA=(era,a)=>era>=13?`資産は${fmtA(a)}`:`家は「${dispA(era,a)}」`;
+const rankTxt=p=>p<=50?`上位${p}%`:`下位${Math.max(1,101-p)}%`;
+const posWord=p=>p<=1?'指折りの資産家':p<=10?'上位1割の資産家':p<=30?'ゆとりのある家':p<=70?'並の家':p<=90?'乏しい家':'蓄えのない家';
+function dispA(era,a){if(era>=13)return fmtA(a);if(era<2)return '—';const p=posOf(era,a);return p?`${posWord(p)}（${rankTxt(p)}）`:'—'}
+const aTier=a=>a>=8000?5:a>=2000?4:a>=400?3:0;
+const RICHFAM=new Set(['trade','rule']);
+ERAS[13].ev.unshift({p:.85,t:'戦後のインフレで預貯金や債券の値打ちが大きく目減りした。地主だった家は、農地改革（1946〜50年）で小作地を手放した',a:.25,jp:1});
+ERAS[14].ev[1].a=.75;
+
+// ---------- 結婚観（時代で結婚の意味が変わる） ----------
+const MARR=['どんな結婚の形だったかは、実はよく分かっていない。','どんな結婚の形だったかは、実はよく分かっていない。','どんな結婚の形だったかは、よく分かっていない。首長の家どうしの結びつきはあったと考えられている。','豪族どうしの婚姻が、勢力の結びつきに使われた。',
+ '夫が妻のもとに通う形が多く、子は妻の家で育つことも多かった。','夫が妻の家に通う「通い婚」が中心。結婚は家どうしの話でもあった。','武家では妻を家に迎える嫁入りが広がり、結婚は家と家の同盟になっていく。','結婚は家と家の同盟。政略結婚も多かった。',
+ '武家では家の存続が第一。一方、庶民は離婚も再婚も珍しくなかった（三行半）。','武家では家の存続が第一。庶民の離婚・再婚は珍しくなかった。','結婚はまだ家と家のもの。身分を越えた結婚は難しかった。','1898年に明治民法が施行されてからは、家制度のもとで結婚に戸主の同意が要った。結婚は家を続けるためのもの。','見合いが中心。結婚は家を続けるためのもので、本人の気持ちは二の次になりがちだった。',
+ '憲法24条（1947年）で、結婚は「両性の合意のみ」に基づくものになった。1960年代後半には恋愛結婚が見合いを上回る。','晩婚化と非婚化が進む。結婚しない、子を持たないという選択も珍しくなくなった。','結婚も、子を持つことも、それぞれ別の選択。事実婚や、結婚しない生き方も広がっている。'];
+// ゲームの仮定：夫婦の幸せは肩書きではなく、気の合い方（人当たり・感性が近いか）と、困窮していないかで決まる（本人たちにも見えない）
+const compat=(a,b)=>clamp(10-(Math.abs(a.st.soc-b.st.soc)+Math.abs(a.st.art-b.st.art))*.9,0,10);
+const hapLabel=v=>v>=7?'幸せだった':v>=4?'まずまずだった':'つらいことが多かった';
+
+const ERA_HUE=[30,25,35,20,200,330,210,0,220,215,8,28,350,175,280,140];
+const ERA_SHORT=['旧石器','縄文','弥生','古墳','奈良','平安','鎌倉','戦国','江戸','江戸','幕末','明治','大正','昭和','平成','令和'];
+const GOALS={wealth:{n:'富を築く',k:'a',u:'令和の家の資産'},kids:{n:'子孫を増やす',k:'kids',u:'血筋が生んだ子の総数'},hap:{n:'幸せな家庭を続ける',k:'hap',u:'夫婦の幸せの平均'},abil:{n:'才能を未来につなぐ',k:'s',u:'令和の「あなた」の能力'}};
+let pendingGoal='wealth';
+const avatar=p=>`<span class="av" style="--h:${p.g==='f'?345:210}" aria-hidden="true">${(p.given||'?')[0]}</span>`;
+const HAP_TXT=v=>v>=7?'笑い声の絶えない家だったらしい':v>=4?'大きな波風もなく暮らしたらしい':'すれ違いの多い夫婦だったらしい';
+
+// ---------- 外国から来た相手と、住む国 ----------
+const NATS={west:{n:'欧米',ctry:'アメリカ',m:['ジョン','ウィリアム','ヘンリー','トーマス'],f:['メアリー','エリザベス','アン','マーガレット']},
+ cn:{n:'中国',ctry:'中国',m:['王 偉','李 明','張 強','劉 洋'],f:['王 芳','李 静','張 麗','劉 英']},
+ kr:{n:'朝鮮半島',ctry:'韓国',m:['金 哲','朴 成','李 浩','崔 勇'],f:['金 順','朴 英','李 淑','崔 美']},
+ ru:{n:'ロシア',ctry:'ロシア',m:['イワン','ミハイル','アレクセイ'],f:['オリガ','ナターシャ','アンナ']},
+ ph:{n:'フィリピン',ctry:'フィリピン',m:['ホセ','マーク'],f:['マリア','アナ','ジェニー']},
+ br:{n:'ブラジル',ctry:'ブラジル',m:['ジョアン','カルロス'],f:['アナ','ルシア']}};
+const FOREIGN={10:{p:.02,pool:['west','cn']},11:{p:.02,pool:['west','cn','ru']},12:{p:.03,pool:['kr','cn','ru','west']},13:{p:.04,pool:['west','west','kr','cn']},14:{p:.15,pool:['cn','cn','cn','ph','ph','kr','kr','west','br','ru']}};
+const rec_repat=(st,next)=>st.loc==='満州'&&next===13;
+// 住む地域：農村／町／大都市。時代によって人が都市へ流れ、転勤もある
+const REGION_OPEN={'農村':{food:1.5,office:.6,tech:.5,art:.6,care:.8},'城下町':{trade:1.2,craft:1.2},'宿場町':{trade:1.3,labor:1.2},'地方の町':{office:.9,trade:1.1},'大都市':{office:1.4,tech:1.5,art:1.5,trade:1.2,food:.05,care:1.1}};
+// 離婚しやすさ（江戸の庶民は離婚・再婚が珍しくなく、明治〜戦後は低く、平成以降に上がる）
+const DIVORCE={8:.17,9:.17,10:.2,11:.08,12:.06,13:.05,14:.17};
+
+const PARAMS=`<details class="fold params"><summary>パラメーターの一覧（何に効くか・どれくらい遺伝するか）</summary><div class="foldin">
+<p class="muted" style="font-size:13px">遊んでいる間に見えるのは「見えるもの」だけ。残りは裏で決まっていて、最後の年表で明かされる。遺伝する割合は双子研究などの目安。</p>
+<dl class="plist">
+<dt>見えるもの</dt><dd>見た目（顔立ち・身長・身だしなみの合計。時代で好みが変わる）／噂（能力や気質の一部がにじむ。ときどき外れる）／性格（人当たりと感性の手がかり）／相性の手応え（性格が近いほど話が合う）／肩書き・家柄・学歴（家と運で決まる部分が大きい）</dd>
+<dt>隠れた能力</dt><dd>体力・知恵・手先・人当たり・感性。職業の向き不向きと稼ぎに効く。親子の相関は約0.4（知恵）。</dd>
+<dt>隠れた気質</dt><dd>野心（出世や大当たりのしやすさ。遺伝は約4割）／衝動性（罪や浮気、酒の失敗に効く）／落ち込みやすさ（心の病に効く）／幸せの感じやすさ（同じ出来事でも幸せに感じやすいか。遺伝は3〜4割）</dd>
+<dt>体の遺伝</dt><dd>顔立ち（遺伝約6割）／身長（約8割＋時代の栄養。男性は収入にもわずかに効く）／太りやすさ（約7割。戦後の見た目と寿命）／近視（約7割。戦前は手仕事・兵役に不利、明治以降は眼鏡）／薄毛（男性。戦後の見た目）／酒の強さ（ALDH2の型。日本人の約4割は弱いか飲めない。依存症と接待に効く）／子のできやすさ（子の数と、子が生まれない確率）／双子の生まれやすさ（母方から）／体質の弱さ（寿命）／劣性の遺伝病（両親とも保因者だと4人に1人）・優性の遺伝病（2人に1人）・色覚の特性（男性に出やすい）</dd>
+<dt>環境</dt><dd>家の暮らし向き（教育・職・寿命に効く）／住む地域と国（就ける職が変わる）／両親の仲と離婚（子の結婚の質と心に効く）／子ども時代の逆境（少しなら打たれ強く、重なると傷になる）／生まれた年回り（戦争・バブル・氷河期）</dd>
+<dt>時代のルール</dt><dd>結婚の決まり（縁談か本人どうしか）／家の継ぎ方（長男相続か均分相続か）／評価される能力／好まれる見た目／戦争・災害・病気</dd>
+<dt>結果</dt><dd>資産（戦後は円、戦前は時代の中での位置）／子孫の数／夫婦の幸せ／享年</dd>
+</dl></div></details>`;
+
+// ---------- 絵の枠 ----------
+// 絵のファイルを art/ に置いて、ここにパスを書くと表示される。書いていない枠は何も出さない（文字だけで動く）
+const ART={
+  'era:9':'art/era-1835.svg',
+  'era:10':'art/era-1865.svg',
+  'era:11':'art/era-1895.svg',
+  'era:12':'art/era-1925.svg',
+  'era:13':'art/era-1960.svg',
+  'era:14':'art/era-1990.svg',
+  'era:15':'art/era-2026.svg',
+  'scene:wedding':'art/scene-wedding.svg',
+  'scene:birth':'art/scene-birth.svg',
+  'scene:war':'art/scene-war.svg',
+  'scene:divorce':'art/scene-divorce.svg',
+  'scene:adopt':'art/scene-adopt.svg',
+  'scene:abroad':'art/scene-abroad.svg',
+  'end:you':'art/end-you.svg',
+  'end:war':'art/end-war.svg',
+  'end:single':'art/end-single.svg',
+  'end:nochild':'art/end-nochild.svg',
+  'end:event':'art/end-event.svg',
+};
+const art=(key,alt)=>ART[key]?`<figure class="art"><img src="${ART[key]}" alt="${alt||''}" loading="lazy" decoding="async"></figure>`:'';
+// ---------- 場面の挿絵（ファイル内のSVG。色はCSS変数なのでダークモードでも見える。文字・顔は描かない） ----------
+const ILL=(()=>{
+  const f=n=>+n.toFixed(1);
+  const fig=(x,y,h,c='k')=>{const r=h*.12,t=y-h,sh=t+2.2*r;return `<circle class="${c}" cx="${f(x)}" cy="${f(t+r)}" r="${f(r)}"/><path class="${c}" d="M${f(x-h*.11)} ${f(sh)}L${f(x+h*.11)} ${f(sh)}L${f(x+h*.2)} ${y}L${f(x-h*.2)} ${y}Z"/>`};
+  const house=(x,y,w,h,c='k2',rc='k')=>`<rect class="${c}" x="${x}" y="${y-h}" width="${w}" height="${h}"/><path class="${rc}" d="M${f(x-w*.12)} ${y-h}L${f(x+w/2)} ${f(y-h-h*.7)}L${f(x+w*1.12)} ${y-h}Z"/>`;
+  const carp=(x,y,l,c)=>`<path class="${c}" d="M${x} ${y-l*.12}Q${f(x+l*.55)} ${f(y-l*.22)} ${f(x+l)} ${y}l${f(l*.14)} ${f(-l*.13)}l0 ${f(l*.26)}l${f(-l*.14)} ${f(-l*.13)}Q${f(x+l*.55)} ${f(y+l*.22)} ${x} ${f(y+l*.12)}Z"/><circle class="bgc" cx="${f(x+l*.13)}" cy="${y}" r="${f(l*.04)}"/>`;
+  const crow=(x,y)=>`<path class="ln" d="M${x} ${y}q5 -5 10 0q5 -5 10 0"/>`;
+  const svg=(h,body)=>`<svg viewBox="0 0 320 ${h}" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect class="bgc" width="320" height="${h}"/><rect class="s" width="320" height="${h}"/>${body}</svg>`;
+  let stalks='';for(let i=0;i<13;i++){const x=14+i*23+(i%2)*4;stalks+=`<path class="ln" d="M${x} 158Q${x+2} 128 ${x+10} 120Q${x+16} 118 ${x+17} ${126+(i%3)*3}"/>`}
+  let town='';[[146,12,20],[168,16,22],[192,11,18],[212,18,24],[238,13,20],[260,16,22],[284,12,20],[304,14,18]].forEach(([x,h,w])=>{town+=house(x,130,w,h,'k','k')});
+  let queue='';[[24,30,'k'],[42,26,'k2'],[58,33,'k'],[76,28,'k2'],[93,31,'k'],[110,24,'k2'],[126,32,'k']].forEach(([x,h,c])=>{queue+=fig(x,152,h,c)});
+  let cols='';for(let i=0;i<5;i++)cols+=`<rect class="k2" x="${172+i*26}" y="90" width="10" height="52"/>`;
+  // タイトル：二本の糸が七つの輪をつくり、輪ごとに一軒の家の灯りへ降りていく（七代）
+  const hx0=34,hx1=304,hp=(hx1-hx0)/7,hy=56,ha=17,strand=sg=>{let d='';for(let x=hx0;x<=hx1+.01;x+=2)d+=(d?'L':'M')+f(x)+' '+f(hy+sg*ha*Math.sin(Math.PI*(x-hx0)/hp));return d};
+  let rungs='',homes='';
+  for(let i=0;i<7;i++){const c=hx0+hp*(i+.5);[-.28,0,.28].forEach(o=>{const x=c+o*hp,h=ha*Math.abs(Math.sin(Math.PI*(x-hx0)/hp));rungs+=`<path class="ln" style="stroke-opacity:.22" d="M${f(x)} ${f(hy-h+2)}V${f(hy+h-2)}"/>`});
+    homes+=`<path class="lg" style="stroke-dasharray:2 4;opacity:.7" d="M${f(c)} ${hy+ha+4}V${i<5?106:110}"/>`+(i<5?house(f(c-11),130,22,14,'k2','k'):`<rect class="k2" x="${f(c-10)}" y="${i===5?108:104}" width="20" height="${i===5?22:26}"/>`)+`<rect class="gs" x="${f(c-3)}" y="120" width="6" height="7"/><circle class="g" cx="${f(c)}" cy="${hy+ha+4}" r="1.8"/>`}
+  return {
+    // タイトル：人と遺伝子のめぐりあわせ
+    hero:svg(150,`<circle class="gs" cx="290" cy="20" r="11"/><path class="s2" d="M0 128Q80 112 160 124T320 118V150H0Z"/><rect class="s3" y="136" width="320" height="14"/>${fig(13,132,26)}${fig(27,132,22,'k2')}${rungs}<path class="ln" style="stroke-width:2" d="${strand(1)}"/><path class="lg" style="stroke-width:2" d="${strand(-1)}"/>${homes}`),
+    // 縁：橋の両端に立つ二人を、金の糸が結ぶ
+    en:svg(90,`<circle class="g" cx="292" cy="16" r="7"/><rect class="s2" y="64" width="320" height="26"/><path class="k2" d="M58 66Q160 18 262 66L262 71Q160 24 58 71Z"/><path class="ln" d="M64 56Q160 10 256 56"/>${[96,128,160,192,224].map(x=>`<path class="ln" d="M${x} ${x===160?33:x===128||x===192?37:47}v8"/>`).join('')}<path class="k3" d="M70 78h40M140 84h50M210 78h36"/><path class="lg" d="M50 40Q160 -4 270 40"/>${fig(44,66,30)}${fig(276,66,30)}`),
+    // 子が生まれた：家と、空を泳ぐ鯉のぼり
+    birth:svg(180,`<circle class="gs" cx="272" cy="40" r="20"/><path class="s2" d="M0 132Q80 104 170 126T320 118V180H0Z"/><rect class="s3" y="146" width="320" height="34"/>${house(46,146,112,58)}<rect class="gs" x="92" y="116" width="20" height="30"/><rect class="gs" x="60" y="104" width="18" height="14"/><rect class="gs" x="126" y="104" width="18" height="14"/><path class="ln" style="stroke-width:2.5" d="M214 146V36"/><circle class="g" cx="214" cy="33" r="4"/>${carp(216,50,74,'k2')}${carp(216,74,60,'s3')}${carp(216,95,46,'g')}${crow(260,76)}`),
+    // 家を継ぐ子を選ぶ：家の前に並ぶ背丈の違う子どもたち
+    heir:svg(90,`<rect class="s2" y="74" width="320" height="16"/>${house(212,74,82,32)}<rect class="gs" x="244" y="56" width="16" height="18"/><path class="ln" d="M198 40v8"/><rect class="g" x="193" y="48" width="10" height="13" rx="4"/><path class="lg" style="stroke-dasharray:3 4" d="M140 82Q190 86 250 75"/>${fig(70,74,40)}${fig(100,74,32)}${fig(126,74,24)}<path class="k2" d="M22 74l12 -30l12 30Z"/><path class="k2" d="M26 58l8 -22l8 22Z"/>`),
+    // 飢饉：枯れて垂れた稲穂と、白く照りつける日
+    famine:svg(180,`<circle class="gs" cx="234" cy="52" r="32"/><circle class="g" style="opacity:.5" cx="234" cy="52" r="18"/><rect class="s2" y="118" width="320" height="62"/>${house(24,118,40,18,'k2','k2')}<path class="ln" style="stroke-opacity:.3" d="M80 168l14 -8l10 6l16 -10M170 172l12 -6l8 5l20 -9M250 166l10 -7l14 4"/>${stalks}${crow(120,40)}${crow(150,56)}${crow(96,62)}`),
+    // 震災：傾いた家並み、倒れかけた電柱、地面の割れ目と土煙
+    quake:svg(180,`<circle class="k3" cx="90" cy="54" r="22"/><circle class="k3" cx="118" cy="44" r="26"/><circle class="k3" cx="150" cy="58" r="18"/><circle class="k3" cx="230" cy="40" r="16"/><circle class="k3" cx="252" cy="52" r="20"/><rect class="s2" y="136" width="320" height="44"/><g transform="rotate(-9 80 136)">${house(36,136,84,46)}</g><g transform="rotate(11 226 136)">${house(194,136,70,40)}</g><path class="ln" style="stroke-width:3" d="M150 136L136 72"/><path class="ln" style="stroke-width:2" d="M126 82l22 -5"/><path class="rs" d="M146 136L156 146L148 154L162 164L154 172L166 180H176L164 172L172 164L158 154L166 146L158 136Z"/><rect class="k2" x="270" y="146" width="16" height="6" transform="rotate(20 278 149)"/><rect class="k2" x="20" y="150" width="20" height="5" transform="rotate(-14 30 152)"/><rect class="k2" x="112" y="156" width="12" height="5"/>`),
+    // 戦争：赤く染まる遠くの町、立ちのぼる煙、丘から見つめる親子
+    war:svg(180,`<rect class="k3" width="320" height="180"/><circle class="g" cx="40" cy="26" r="1.5"/><circle class="g" cx="96" cy="16" r="1.2"/><circle class="g" cx="132" cy="40" r="1.2"/><ellipse class="rs" cx="224" cy="130" rx="150" ry="34"/><path class="k3" d="M200 80Q190 60 206 46T200 10H216Q226 40 212 56T216 80Z"/><path class="k3" d="M260 94Q252 72 266 58T262 24H276Q284 50 272 64T276 94Z"/>${town}<rect class="s2" y="130" width="320" height="50"/><path class="s3" d="M0 180V146Q60 128 130 150Q150 160 160 180Z"/>${fig(58,144,32)}<circle class="k2" cx="66" cy="124" r="6"/>${fig(76,146,20)}`),
+    // 恐慌：扉を閉ざした銀行の前の行列、落ちていく線、散らばる小銭
+    crash:svg(180,`<path class="lr" d="M16 26L48 34L70 28L100 52L122 46L150 74"/><rect class="s2" y="150" width="320" height="30"/><path class="k" d="M160 90L237 56L314 90Z"/><rect class="k" x="160" y="86" width="154" height="6"/>${cols}<rect class="k" x="222" y="104" width="30" height="38"/><rect class="k2" x="154" y="142" width="166" height="5"/><rect class="k2" x="148" y="147" width="172" height="5"/>${queue}<circle class="g" cx="40" cy="166" r="3"/><circle class="g" cx="88" cy="170" r="2.5"/><circle class="g" cx="132" cy="164" r="3"/><circle class="g" cx="170" cy="170" r="2.5"/>`),
+    // 年表の頭：七つの実をつけた一本の大きな木
+    end:svg(180,`<circle class="gs" cx="64" cy="128" r="26"/><path class="s2" d="M0 140Q90 118 170 136T320 128V180H0Z"/><rect class="s3" y="156" width="320" height="24"/><circle class="s3" cx="160" cy="62" r="44"/><circle class="s3" cx="122" cy="80" r="30"/><circle class="s3" cx="198" cy="80" r="30"/><circle class="s2" cx="160" cy="40" r="30"/><path class="k" d="M154 156L156 100Q140 88 124 84L126 80Q144 82 157 92L158 66L162 66L163 92Q176 82 194 80L196 84Q180 88 164 100L166 156Z"/><path class="ln" d="M154 156q-12 4 -24 3M166 156q12 4 24 3M160 156v8"/>${[[124,98],[196,98],[140,72],[180,72],[160,52],[132,48],[188,48]].map(([x,y])=>`<circle class="g" cx="${x}" cy="${y}" r="5"/>`).join('')}`)
+  };
+})();
+const ill=(key,cls='')=>ILL[key]?`<figure class="art ill ${cls}" aria-hidden="true">${ILL[key]}</figure>`:'';
+// 大きな出来事に合う挿絵（重い出来事は絵にしない）
+const evIll=evs=>{const t=(evs||[]).map(e=>e.t||'').join('／');return /震災|地震/.test(t)?'quake':/戦争|戦乱|元寇/.test(t)?'war':/飢饉/.test(t)?'famine':/恐慌|バブル|氷河期|インフレ/.test(t)?'crash':''};
+// ---------- 家系図（結果画面。年表と同じ state.line から描く） ----------
+function famTree(L,ext){
+  const NW=140,NH=50,X0=10,X1=170,RH=84,T=8;
+  const cut=(s,n)=>{s=String(s||'');return s.length>n?s.slice(0,n-1)+'…':s};
+  const node=(x,y,p,era,sub,cls)=>`<g class="fn ${cls}"><rect x="${x}" y="${y}" width="${NW}" height="${NH}" rx="6"/><text class="fn1" x="${x+8}" y="${y+17}">${cut(p.full,10)}</text><text class="fn2" x="${x+8}" y="${y+31}">${ERA_SHORT[era]}の生まれ${sub?'・'+sub:''}</text><text class="fn3" x="${x+8}" y="${y+44}">${cut(p.job&&p.job.n,12)}</text></g>`;
+  let b='';
+  L.forEach((r,i)=>{
+    const y=T+i*RH,cy=y+NH/2,gm=y+NH+(RH-NH)/2,last=i===L.length-1,pa=r.partner;
+    b+=node(X0,y,r,r.era,i>0?r.ordL:'',r.you?'you':'h');
+    if(pa&&!pa.solo){b+=`<path class="fl" d="M${X0+NW} ${cy-2}H${X1}M${X0+NW} ${cy+2}H${X1}"/>`+node(X1,y,pa,r.era,'','')}
+    else if(pa&&pa.solo)b+=`<path class="fl" style="stroke-dasharray:3 3" d="M${X0+NW} ${cy}H${X1}"/><g class="fn solo"><rect x="${X1}" y="${y+8}" width="${NW}" height="${NH-16}" rx="6"/><text class="fk" x="${X1+8}" y="${cy+4}">ひとりで子を育てた</text></g>`;
+    else if(r.you)b+=`<text class="fy" x="${X1}" y="${cy+4}">← あなた</text>`;
+    else if(r.solo==='none')b+=`<text class="fk" x="${X1}" y="${cy+4}">結婚しなかった</text>`;
+    if(!last){
+      const mid=pa?X0+NW+(X1-X0-NW)/2:X0+NW/2,o=(r.kids||1)-1;
+      b+=`<path class="fl" d="M${mid} ${pa?cy:y+NH}V${gm}H${X0+NW/2}V${y+RH}"/>`;
+      if(r.adopted)b+=`<text class="fk" x="${mid+6}" y="${gm+4}">養子を迎えた</text>`;
+      else if(o>0)b+=`<text class="fk" x="${mid+6}" y="${gm+4}">ほかに子${o}人</text>`;
+    }else if(ext)b+=`<text class="fk" x="${X0+8}" y="${y+NH+16}">${r.kids?`子${r.kids}人。`:''}血筋はここで途絶えた</text>`;
+  });
+  const H=T+(L.length-1)*RH+NH+(ext?26:10);
+  return `<section class="ftree-sec" style="display:flex;flex-direction:column;gap:10px">
+    <h2 style="font-size:24px">家系図</h2>
+    ${ill('end')}
+    <div class="ftree"><svg viewBox="0 0 320 ${H}" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${L.length}代の家系図">${b}</svg></div>
+    <p class="muted" style="font-size:12px">左が当主、右が結婚相手。線の先が家を継いだ子。</p>
+  </section>`;
+}
+
+// ---------- 状態 ----------
+let state={phase:'intro'},SIM=false;
+
+function newGame(seed,start=0,goal,initSeed){
+  if(!SIM)ensureDist(start);
+  const sd=(seed||genSeed()).toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,12)||genSeed();
+  if(!RMATH)RS=hashS((initSeed||sd)+'|start');
+  const g=pick(['m','f']);
+  const st=randStats();
+  const nm=nameFor(start,g);
+  const p={g,vis:clamp(Math.round(2+R()*7),1,10),feat:randFeat(),hgt:Math.round(hMean(g,start)+clamp(gauss(),-2.5,2.5)*5.5),style:clamp(Math.round(3+R()*5),1,10),...hiddenTraits()};
+  // 明治版：家柄はランダム。苗字はすでにある
+  const w0=start?pick([0,1,1,2,2,2,3,4]):1,sn=start>=11?pick(SURN):null;
+  if(sn){nm.full=sn+' '+nm.given}
+  const tp=tierOf(w0),pj=start?(wpick(ERAS[start].jobs.filter(j=>j.t===tp&&allowed(j,g,start)),j=>g==='f'?sxo(j,g,start)*Math.max(.15,Math.min(1,j.o*5)):1)||null):null;
+  const r=decideJob(start,st,w0,pj,{},g,lookB(p,start),p.amb,perceived(p,start));
+  state={phase:'choose',loc:'日本',seed:sd,goal:goal||pendingGoal,start,gen:start,surname:sn,line:[],
+    heir:{...nm,...p,region:r.job.f==='food'?'農村':pick(['城下町','農村','宿場町']),st,job:g==='f'&&r.job.fn?gJob(r.job,'f'):r.job,w:w0,a:start?DOWRY[w0]*2:0,use:Math.min(100,Math.round(util({...st,vis:perceived(p,start)},r.job)/r.maxU*100)),ep:episodes(st,1,p,start),pers:persona(st),notes:[start?'血筋の記録はここから。':'血筋のはじまり。']}};
+  state.heir.lifespan=lifeOf(state.heir,start,w0);state.heir.edu=eduFor(start,g,r.job,w0,st);
+  state.cands=makeCands();
+  render();
+}
+
+// 釣り合い＝隠れた能力＋見た目＋家柄。離れすぎた相手とは縁がない（理由は明かさない）
+const match=(p,era)=>sum(p.st)+1.5*perceived(p,era)+2*p.w;
+function makeCands(){
+  reseed(state.gen,'c');
+  for(let k=0;k<30;k++){const c=makeCands1(),n=c.filter(x=>!x.gray).length;if(n>=2||k===29){if(n<2)c.sort((a,b)=>a.gap-b.gap).forEach((x,i)=>x.gray=i>=2);
+    // 縁談の時代、格の高い家では親が相手を決める（家柄と肩書きだけを見て）
+    if(ERAS[state.gen].arr&&state.heir.w>=3){const ok=c.filter(x=>!x.gray);ok.reduce((a,x)=>(x.w*10+x.job.t)>(a.w*10+a.job.t)?x:a).parentPick=true}
+    return c}}
+}
+function makeCands1(){
+  const {gen,heir}=state,E=ERAS[gen],g=heir.g==='m'?'f':'m',mode=modeOf(gen);
+  const specs=[...S].sort(()=>R()-.5);
+  const offs=[-1,0,1,pick([-1,0,1]),pick([-1,0,1])].sort(()=>R()-.5);
+  const used=new Set([heir.given]),usedJob=new Set();
+  const list=specs.map((sp,idx)=>{
+    // 人としての総合的な当たり外れ（見た目とは無関係。見た目も中身もいい人もいる）
+    const q=gauss()*1.1,st={};S.forEach(k=>st[k]=clamp(Math.round(2+R()*6+q),1,10));st[sp]=clamp(st[sp]+3+Math.round(R()),1,10);
+    let w=heir.w+offs[idx];
+    if(!E.arr&&E.h<.5&&idx===3&&R()<.25)w+=1;
+    w=clamp(w,0,5);
+    const p={g,vis:clamp(Math.round(2+R()*7),1,10),feat:randFeat(),hgt:Math.round(hMean(g,gen)+clamp(gauss(),-2.5,2.5)*5.5),style:clamp(Math.round(2+w*.6+R()*4),1,10),...hiddenTraits()};
+    // 肩書きは能力ではなく「家と運」で決まる（親の職をこの時代の世襲度で継ぐ）
+    const t=tierOf(w);
+    // 戦前の相手の女性は多くが「○○の家の娘」として見られたが、暮らしの楽でない家ほど本人の仕事（機織り・女工・女中・芸事など）で知られた
+    const daughter=g==='f'&&gen<=12&&!(R()<({9:.3,10:.3,11:.35,12:.45})[gen]*(w<=1?1:w===2?.5:.15));
+    let pp=E.jobs.filter(j=>incOf(j)===t&&(daughter?j.sx!=='f':allowed(j,g,gen)));if(!pp.length)pp=E.jobs.filter(j=>Math.abs(incOf(j)-t)<=1&&(daughter?j.sx!=='f':allowed(j,g,gen)));if(!pp.length)pp=[E.jobs[0]];
+    // 戦前の女性は、家の職業で見られた（「○○の家の娘」）
+    let job;for(let k=0;k<4;k++){job=daughter?pick(pp):decideJob(gen,st,w,pick(pp),{},g,lookB(p,gen),p.amb,perceived(p,gen)).job;if(!usedJob.has(job.n))break}
+    job=gJob(job,g);usedJob.add(job.n);
+    let nm;for(let k=0;k<10;k++){nm=nameFor(gen,g,null);if(!used.has(nm.given))break}
+    used.add(nm.given);
+    if(state.surname){let sn;do{sn=pick(SURN)}while(sn===state.surname);nm.full=sn+' '+nm.given}
+    if(heir.crime)w=clamp(w-1,0,5);
+    const c={...nm,...p,st,w,job,daughter,org:E.org.length?pick(E.org):'',
+      ep:episodes(st,mode==='ep'?3:2,p,gen),pers:persona(st),edu:gen>=11?eduFor(gen,g,daughter?null:job,w,st):null,mode,arr:!!E.arr};
+    // ときどき、外国から来た相手がいる
+    const F=FOREIGN[gen];
+    if(F&&idx===4&&R()<F.p){const nk=pick(F.pool),N=NATS[nk];c.nat=nk;c.full=c.given=pick(N[g]);c.org=(nk==='kr'&&gen<=12?'朝鮮半島':N.n)+'から来た';if(c.daughter){const fj=E.jobs.filter(j=>allowed(j,g,gen)&&Math.abs(incOf(j)-tierOf(w))<=1);c.job=fj.length?pick(fj):E.jobs[0]}c.daughter=false;if(c.edu)c.edu='海外の学校';}
+    c.gap=Math.abs(match(c,gen)-match(heir,gen));c.gray=c.gap>11;
+    return c;
+  });
+  // 肩書きは普通だが「何か光るものを感じる」相手。7割は、その人の得意が次の時代に評価されるもの
+  const NV=ERAS[gen+1]&&ERAS[gen+1].v,low=list.filter(c=>!c.gray&&c.job.t<=1);
+  if(NV&&low.length&&R()<.4){const c=pick(low),tops=S.filter(k=>NV[k]===Math.max(...S.map(x=>NV[x])));c.spark=true;
+    if(R()<.7){const k=pick(tops);c.st[k]=clamp(Math.max(c.st[k],7)+1,1,10);c.sparkKey=k;c.sparkTrue=true}else c.sparkTrue=false;
+    c.ep=episodes(c.st,c.mode==='ep'?3:2,c,gen)}
+  return list;
+}
+
+function adopt(yes){
+  const K=state.ks,rec=K.adoptRec,h=state.heir,next=state.gen+1;
+  state.line.pop();
+  if(!yes){rec.kids=0;state.line.push(rec);state.phase='end';state.extinct={era:next,kind:'nochild'};render();return}
+  reseed(state.gen,'a');
+  rec.adopted=true;rec.kids=1;
+  const g=pick(['m','f']);let nm;for(let t=0;t<10;t++){nm=nameFor(next,g,state.surname);if(nm.given!==h.given&&nm.given!==rec.partner.given)break}
+  const c={...nm,g,st:randStats(),vis:clamp(Math.round(2+R()*7),1,10),feat:randFeat(),hgt:Math.round(hMean(g,next)+clamp(gauss(),-2.5,2.5)*5.5),style:clamp(Math.round(3+K.famW*.5+R()*3),1,10),...hiddenTraits(),
+    ordL:'養子',notes:['養子として迎えられた。この家との血のつながりはない。'],up:[],adv:0,res:0,parentDiv:false};
+  c.ep=episodes(c.st,2,c,next);c.pers=persona(c.st);
+  state.ks={elope:false,sold:null,ch:[c],events:K.events,fates:K.fates,kids:1,famW:K.famW,openMul:K.openMul,dw:K.dw,i:K.i,rec,primo:false,def:0,auto:true};
+  state.line.length&&0;
+  pickHeir(0);
+}
+
+function marrySolo(kind){
+  const h=state.heir;
+  if(kind==='none'){
+    reseed(state.gen,'s');
+    const rec={...h,era:state.gen,partner:null,kids:0,solo:'none',hap:clamp(Math.round(5.5+(h.w-2)*.4+(h.res||0)*.5+gauss()),1,10)};
+    state.line.push(rec);state.phase='end';state.extinct={era:state.gen+1,kind:'single'};render();return;
+  }
+  const g=h.g==='m'?'f':'m';
+  const P={full:'（結婚しなかった相手）',given:'',g,st:randStats(2,6),vis:clamp(Math.round(2+R()*7),1,10),feat:randFeat(),hgt:Math.round(hMean(g,state.gen)+clamp(gauss(),-2.5,2.5)*5.5),style:5,...hiddenTraits(),
+    w:Math.max(0,h.w-1),job:{n:'—',f:'none',t:0,inc:0},pers:'',ep:[],mode:'spec',solo:true,org:''};
+  state.cands.push(P);marry(state.cands.length-1);
+}
+
+function marry(i){
+  reseed(state.gen,'m');
+  const p=state.cands[i],h=state.heir,next=state.gen+1,E=ERAS[next];
+  let dw=0,die=0;const openMul={},events=[];
+  const abroad=state.loc!=='日本';
+  const evs=rec_repat(state,next)?[{p:1,t:'敗戦で満州から、ほとんどすべてを失って引き揚げた',a:.05,die:.05,w:-2}].concat(E.ev):abroad?E.ev.filter(ev=>!ev.jp).concat(next===12&&state.loc==='アメリカ'?[{p:.9,t:'日系人として強制収容された（1942年〜）',w:-1,a:.4}]:next===12&&state.loc==='ハワイ'?[{p:.02,t:'日系社会の世話役だったため、日系人として拘束・収容された（1942年〜。ハワイの日系人の大半は収容されなかった）',w:-1,a:.6}]:[]).concat([{p:.5,t:`${state.loc}で、言葉や習慣の壁に苦しんだ`,a:.85}]):E.ev;
+  for(const ev of evs){ if(ev.hitFam&&h.job.f!==ev.hitFam)continue; if(R()<ev.p){ events.push(ev); dw+=ev.w||0; die=Math.max(die,ev.die||0); for(const k in ev.open||{})openMul[k]=(openMul[k]||1)*ev.open[k]; } }
+  const famW=clamp(Math.round(h.w*.6+p.w*.4),0,5);
+  let kids=clamp(Math.round(1.5+(h.st.str+p.st.str)/8+famW*.4+gauss()),1,9);
+  kids=clamp(Math.round(kids+(((h.fert||5.5)+(p.fert||5.5))/2-5.5)*.25),1,9);
+  if(next>=13)kids=clamp(Math.round(kids*.45),1,4);
+  if(p.solo)kids=1;
+  const mother=h.g==='f'?h:p,twins=!p.solo&&(mother.twin||5)>=8&&R()<.15;if(twins)kids++;
+  const elope=state.cands.some(c=>c.parentPick)&&!p.parentPick;
+  const rec={...h,twins,era:state.gen,partner:p,others:p.solo?[]:state.cands.filter((c,k)=>k!==i&&!c.gray&&!c.solo),kids,elope,arranged:!!p.parentPick,solo:p.solo?'child':null};
+  const fates=FATE.filter(f=>(!f.need||kids>=f.need)&&!(f.die&&kids>1)&&R()<f.p).slice(0,2);
+  // 幸せは合成値：相性がいちばん効き、暮らしの安定（ある程度で頭打ち）、健康、本人の気質、つらい出来事、偶然が重なる
+  // 浮気：見た目のいい者どうしほど起きやすい。相性が悪くても起きやすい
+  const ph=perceived(h,state.gen),pq=perceived(p,state.gen),cp=compat(h,p);
+  const husband=h.g==='m'?h:p,bothAttr=ph>=7.5&&pq>=7.5;
+  const affair=!p.solo&&R()<.06+(bothAttr?.035:(ph>=7.5||pq>=7.5)?.015:0)+(h.w>=4?.04:0)+(cp<4?.05:0)+(Math.max(h.imp||5,p.imp||5)>=8?.03:0);
+  // 妾・愛人：裕福な家の夫ほど持ちやすい（新律綱領1870は妾を二等親とした。旧刑法1882で規定が消える）
+  const MP=state.gen<=12?[.01,.01,.01,.03,.15,.45]:[.02,.02,.02,.02,.05,.15];
+  const mistress=!p.solo&&husband&&R()<MP[h.w];
+  const hf={'幸せの感じやすさ':(((h.joy||5.5)+(p.joy||5.5))/2-5.5)*.45,'気が合った':cp*.35-1.75,'浮気':affair?-2:0,'妾・愛人':mistress?-1.5:0,'育ち':(h.trust||0)+(h.res||0)*.5+(h.crime?-1:0),'ひとり親':p.solo?-1:0,'暮らし向き':[-1.8,-.8,0,.3,.4,.4][h.w],'体の丈夫さ':((h.st.str+p.st.str)/2-5.5)*.2,'本人の気質':(h.st.soc-5.5)*.15,'出来事':-fates.filter(f=>f.w<0||f.swap).length+fates.filter(f=>f.good).length*.5};
+  rec.hap=clamp(Math.round(6+Object.values(hf).reduce((q,v)=>q+v,0)+gauss()),1,10);
+  rec.affair=affair;rec.mistress=mistress;rec.bothAttr=bothAttr;
+  if(!p.solo&&p.lifespan==null)p.lifespan=lifeOf(p,state.gen,p.w);
+  if(state.gen===12&&husband&&!p.solo&&R()<.12){rec.husbandWar=true;rec.hap=Math.min(rec.hap,4);const age=Math.round(25+R()*13);if(h.g==='m')rec.lifespan=Math.min(rec.lifespan||99,age);else p.lifespan=Math.min(p.lifespan||lifeOf(p,state.gen,p.w),age)}
+  rec.divorce=!p.solo&&R()<Math.min(.85,(DIVORCE[state.gen]||.05)*(cp<4?2:1)*(affair?3:1)*(h.w<=1?1.4:1)*(h.parentDiv?1.8:1)*(bothAttr?1.1:1)*(p.parentPick?.8:1));
+  if(rec.divorce){rec.hap=Math.min(rec.hap,4);if(R()<(state.gen<=12?.6:.3)){rec.remarry=true;rec.hap=Math.min(10,rec.hap+1)}}
+  // 住む国：外国から来た相手とは、その国へ移ることがある。貧しい家は移民に出ることがある。異国からは帰ることもある
+  rec.loc=state.loc;
+  if(p.nat&&R()<.4)state.loc=NATS[p.nat].ctry;
+  else if(state.loc==='日本'&&h.w<=1&&(next===11||next===12)&&R()<(next===11?.03:.04))state.loc=next===11?'ハワイ':pick(['ブラジル','満州']);
+  else if(state.loc==='満州'&&next===13){state.loc='日本';rec.repat=true}
+  else if(state.loc!=='日本'&&R()<.25)state.loc='日本';
+  rec.moved=state.loc!==rec.loc?state.loc:null;
+  rec.region=state.region;
+  if(state.loc==='日本'){
+    const urb=next===11?.08:next===12?.12:next===13?.35:0;
+    if(['農村','城下町','宿場町'].includes(state.region)&&R()<urb){state.region='大都市';rec.regionMove=next===13?'集団就職で都会へ出た':'仕事を求めて都会へ出た'}
+    else if(next>=14&&['office','tech','learn'].includes(h.job.f)&&R()<.3){state.region=state.region==='大都市'?'地方の町':'大都市';rec.regionMove='転勤で'+state.region+'へ移った'}
+    else if(next>=11&&['城下町','宿場町'].includes(state.region))state.region='地方の町';
+  }
+  const hk=Object.entries(hf).sort((a,b)=>b[1]-a[1]),nmUp=k=>k==='出来事'?'いい出来事':k,nmDn=k=>k==='出来事'?'つらい出来事':k==='育ち'?'育った家の影':k;rec.hapUp=hk[0][1]>.4?nmUp(hk[0][0]):null;rec.hapDown=hk[hk.length-1][1]<-.4?nmDn(hk[hk.length-1][0]):null;
+  rec.compatBest=Math.max(...[p,...rec.others].map(c=>compat(h,c)))===compat(h,p);
+  for(const f of fates){if(f.die)die=Math.max(die,f.die);if(f.open)Object.keys({food:1,war:1,craft:1,trade:1,faith:1,rule:1,learn:1,art:1,labor:1,office:1,tech:1,care:1}).forEach(k=>openMul[k]=(openMul[k]||1)*f.open);dw+=f.w||0}
+  // 子が生まれない夫婦もいる（およそ1割）
+  if(!p.solo&&R()<.09*(Math.min(h.fert||5.5,p.fert||5.5)<=3?2:Math.min(h.fert||5.5,p.fert||5.5)>=8?.5:1)){state.line.push(rec);state.ks={adoptRec:rec,events,fates:fates.map(f=>({t:f.t(next),good:!!f.good,w:f.w||0,swap:!!f.swap,stat:!!f.stat})),famW,openMul,dw,i};rec.childless=true;state.phase='adopt';render();return}
+  // 子が多いほど、災いがあっても誰かは生き残る
+  if(R()<die*clamp(3/kids,.4,1.3)){
+    state.line.push(rec);
+    state.phase='end';state.extinct={era:next,ev:events.find(e=>e.die)||(fates.find(f=>f.die)&&{t:fates.find(f=>f.die).t(next)}),kids};
+    render();return;
+  }
+  // 子どもたち（能力は両親の平均＋少しだけ平均へ回帰＋揺らぎ）
+  const inheritSt=()=>{const o={};S.forEach(k=>o[k]=clamp(Math.round((h.st[k]+p.st[k])/2*.75+5.5*.25+gauss()*1.7),1,10));return o};
+  const ch=[],used=new Set([h.given,p.given].filter(Boolean));let mi=0,fi=0;
+  for(let k=0;k<Math.min(kids,3);k++){
+    const g=pick(['m','f']);let nm;for(let t=0;t<10;t++){nm=nameFor(next,g,state.surname);if(!used.has(nm.given))break}used.add(nm.given);
+    const st=inheritSt();
+    ch.push({...nm,g,st,vis:clamp(Math.round((h.vis+p.vis)/2*.9+5.5*.1+gauss()*1.2),1,10),feat:childFeat(h.feat,p.feat),
+      ordL:g==='m'?['長男','次男','三男'][mi++]:['長女','次女','三女'][fi++],notes:[]});
+  }
+  if(fates.some(f=>f.swap)&&ch.length>=2)ch[0].dead=true;
+  // 戦争で子が死ぬ：太平洋戦争の世代は男子の戦死が多い。戊辰・日露の世代にも少し。都市は空襲も
+  const WARD={10:.03,11:.03,12:.18}[next]||0,abroadNow=state.loc!=='日本';
+  // 同じ時代の中でも、生まれ年の数年の差で運命が分かれる
+  ch.forEach(c=>{c.cohort=R()<.5?'early':'late'});
+  if(ch[0]&&R()<.35)ch[0].st.int=clamp(ch[0].st.int+1,1,10);
+  if(WARD)ch.forEach(c=>{if(!c.dead&&c.g==='m'&&R()<WARD*(next===12?(c.cohort==='early'?1.5:.5):1)){c.dead=true;c.war=true}});
+  if(next===12&&state.region==='大都市'&&!abroadNow)ch.forEach(c=>{if(!c.dead&&R()<.04){c.dead=true;c.raid=true}});
+  const warDead=ch.filter(c=>c.war).length,raidDead=ch.filter(c=>c.raid).length;
+  if(!ch.some(c=>!c.dead)){state.line.push(rec);state.phase='end';state.extinct={era:next,kind:'war',ev:{t:next===12?'太平洋戦争で子がみな亡くなった':'戦で子がみな亡くなった'},kids};render();return}
+  for(const f of fates)if(f.stat){const c=pick(ch.filter(c=>!c.dead));for(const k in f.stat)c.st[k]=clamp(c.st[k]+f.stat[k],1,10);c.notes.push('【運命】'+f.t(next))}
+  if(R()<.12){const c=pick(ch.filter(c=>!c.dead)),k=pick(S);c.st[k]=clamp(c.st[k]+3,1,10);c.mut=k}
+  // 育った家の影響：伸びる力と伸びない力がある。良すぎても悪すぎても、それぞれ別の方向に振れる
+  const rough=rec.hap<=3||rec.divorce,warm=rec.hap>=7&&!rec.divorce;
+  // 逆境の数：貧しさ・両親の不和や離婚・つらい運命・親の服役や心の病・戦争
+  const advBase=(famW<=1?1:0)+(rough?1:0)+fates.filter(f=>f.w<0||f.swap).length+(h.crime?1:0)+(h.mental?1:0)+(events.some(e=>e.die)?1:0);
+  // 妾の子（庶子）。1898〜1947年は庶子にも家督の順位があった
+  if(mistress&&R()<.6&&ch.length<4){const g2=pick(['m','f']);let nm2;for(let t=0;t<10;t++){nm2=nameFor(next,g2,state.surname);if(!used.has(nm2.given))break}used.add(nm2.given);ch.push({...nm2,g:g2,st:inheritSt(),vis:clamp(Math.round(h.vis*.6+5.5*.4+gauss()*1.4),1,10),feat:childFeat(h.feat,randFeat()),ordL:g2==='m'?'庶子（妾の子・男）':'庶子（妾の子・女）',shoshi:true,notes:['妾の子として生まれた。']})}
+  // 貧しい家では、娘が遊郭へ身売りされることがあった（1958年の売春防止法の完全施行まで）
+  let sold=null;if(next<=12&&famW<=0&&R()<.3){const d=ch.find(c=>c.g==='f'&&!c.dead);if(d){sold=d.shoshi?'妾の子の娘':d.ordL}}
+  ch.forEach(c=>{
+    c.up=[];let amb=inheritTrait(h.amb||5.5,p.amb||5.5,.4);
+    c.imp=inheritTrait(h.imp||5.5,p.imp||5.5,.4);c.joy=inheritTrait(h.joy||5.5,p.joy||5.5,.35);c.gene=inheritTrait(h.gene||5.5,p.gene||5.5,.5);c.mood=inheritTrait(h.mood||5.5,p.mood||5.5,.4);
+    c.hgt=Math.round(clamp(hMean(c.g,next)+.8*((h.hgt?h.hgt-hMean(h.g,state.gen):0)+(p.hgt?p.hgt-hMean(p.g,state.gen):0))/2+gauss()*3.5,hMean(c.g,next)-13,hMean(c.g,next)+16));
+    c.style=clamp(Math.round(2.5+(c.st.art-5.5)*.3+famW*.6+(state.region==='大都市'?1:0)+gauss()),1,10);
+    c.parentDiv=!!rec.divorce;
+    Object.assign(c,childGenome(h,p,c.g));
+    const adv=advBase+(sold&&c.ordL!==sold?1:0);c.adv=adv;c.res=adv===0?0:adv<=2?1:-1;
+    if(famW>=4){amb-=.5;c.st.int=clamp(c.st.int+1,1,10);c.up.push('豊かな家で育ち、よい教育を受けた')}
+    if(famW<=1){amb+=.5;c.st.int=clamp(c.st.int-1,1,10);c.st.str=clamp(c.st.str+1,1,10);c.up.push('貧しい家で育ち、学ぶ機会は少なかったが、体は鍛えられた')}
+    if(rough){amb+=1;c.st.soc=clamp(c.st.soc+1,1,10);c.trust=-.4;c.up.push(rec.divorce?'両親の離婚を見て育ち、人の顔色を読むのがうまくなったが、人を信じきれないところが残った':'両親の仲が悪い家で育ち、人の顔色を読むのがうまくなったが、人を信じきれないところが残った')}
+    if(warm){c.trust=.3;c.up.push('仲のいい両親のもとで、安心して育った')}
+    if(c.res>0)c.up.push('小さな逆境をいくつか経験し、打たれ強くなった');else if(c.res<0)c.up.push('逆境が重なりすぎて、心に傷が残った');
+    if(sold&&c.ordL!==sold)c.up.push(`家が貧しく、${sold}が遊郭へ身売りされていった。`);
+    if(p.sparkTrue&&p.sparkKey){c.st[p.sparkKey]=clamp(c.st[p.sparkKey]+1,1,10);c.spark=true}
+    if(p.nat&&R()<.5){c.full=c.given=pick(NATS[p.nat][c.g]);c.mixed=true}
+    c.amb=clamp(Math.round(amb),1,10);
+  });
+  ch.forEach(c=>{c.ep=episodes(c.st,2,c,next);c.pers=persona(c.st)});
+  const primo=next>=8&&next<=12;
+  const alive=ch.map((c,k)=>c.dead?-1:k).filter(k=>k>=0);
+  const def=primo?(alive.find(k=>ch[k].g==='m'&&!ch[k].shoshi)??alive.find(k=>ch[k].g==='m'&&ch[k].shoshi&&next>=11)??alive.find(k=>!ch[k].shoshi)??alive[0]):(alive.find(k=>!ch[k].shoshi)??alive[0]);
+  if(warDead)rec.warDead=warDead;if(raidDead)rec.raidDead=raidDead;
+  state.ks={sold,elope,ch,events,fates:fates.map(f=>({t:f.t(next),good:!!f.good,w:f.w||0,swap:!!f.swap,stat:!!f.stat})),kids,famW,openMul,dw,i,rec,primo,def};
+  // 跡継ぎを選ぶのは、長男が継ぐ時代に子が2人以上いるときだけ。それ以外は自動で進む
+  if(!primo||alive.length<2){state.ks.auto=true;pickHeir(def);return}
+  state.phase='kids';
+  render();
+}
+
+function pickHeir(k){
+  reseed(state.gen,'h');
+  const K=state.ks,{openMul,dw,kids,rec,events}=K,p=rec.partner,h=state.heir,next=state.gen+1,E=ERAS[next];
+  const famW=K.elope?clamp(K.famW-2,0,5):K.famW;
+  const c=K.ch[k],st=c.st,g=c.g,looks={g,vis:c.vis,feat:c.feat,hgt:c.hgt,style:c.style};
+  rec.sibs=K.ch.filter((x,j)=>j!==k&&!x.dead);rec.heirPicked=c;rec.autoHeir=!!K.auto;
+  // 家を出たきょうだいのその後（家業も財もほとんど継がない。都会へ出ることも多い）
+  rec.sibOut=rec.sibs.slice(0,2).map(x=>{
+    const sl={g:x.g,vis:x.vis,feat:x.feat,hgt:x.hgt,style:x.style},city=next>=11&&R()<.4;
+    const so={...openMul};if(city){const RO=REGION_OPEN['大都市'];for(const kk in RO)so[kk]=(so[kk]||1)*RO[kk]}
+    const rj=decideJob(next,x.st,Math.max(0,famW-1),null,so,x.g,lookB(sl,next),x.amb,perceived(sl,next),x.res<0);
+    const uu=util({...x.st,vis:perceived(sl,next)},rj.job),vol=rj.job.vol||0;
+    let e=next<2?0:(next>=13?EARN_M:EARN)[incOf(rj.job)]*(.9+uu*.2)*Math.exp(gauss()*(next>=13?.45:.65));
+    if(vol&&R()<[0,.06,.12,.22,.35][vol]*(uu>=.7?1:.35))e*=next>=13?3+R()*R()*30:2+R()*8;
+    const sa=Math.round((next<2?0:(h.a+DOWRY[p.w]*1.2)*(next>=13?1/kids*.3:.2/Math.max(1,kids-1)))+e);
+    return {g:x.g,ordL:x.ordL,given:x.given,job:gJob(rj.job,x.g),a:sa,city,lifespan:lifeOf(x,next,Math.max(0,famW-1))};
+  });
+  const lb=lookB(looks,next);
+  let parentJob=h.job;
+  if(p.job.t>h.job.t&&R()<.5)parentJob=p.job;
+  if(K.elope)parentJob=null;
+  const om={...openMul};let cohortNote=null,cohortE=1;
+  // 海外に住んでいる間は、日本の官職・軍・地主などには就けない
+  if(state.loc!=='日本'){om.war=0;om.rule=0;om.learn=(om.learn||1)*.3;om.food=(om.food||1)*1.3}
+  const badEyes=next<=12&&(c.myo||5)>=8;if(badEyes){om.craft=(om.craft??1)*.7;om.war=(om.war??1)*.5}
+  if(next===14){if(c.cohort==='early'){om.office=(om.office||1)*1.3;cohortE=1.15;cohortNote='就職の年がバブル期と重なり、大企業に入りやすかった。'}else if(state.loc==='日本'){om.office=(om.office||1)*.55;om.learn=(om.learn||1)*.8;cohortE=.85;cohortNote='就職の年が氷河期と重なり、正社員の席が少なかった。'}}
+  if(next===12&&c.cohort==='early'&&g==='m')cohortNote='徴兵される年回りに生まれた。';
+  if(next===12&&c.cohort==='late'&&g==='m')cohortNote='兵隊に取られる前に戦争が終わる年回りだった。';if(state.loc==='日本'){const RO=REGION_OPEN[state.region]||{};for(const k in RO)om[k]=(om[k]||1)*RO[k]}
+  const r=decideJob(next,st,famW,parentJob,om,g,lb,c.amb,perceived(looks,next),c.res<0||!!h.crime);
+  // 平成以降は、若いころ非正規でも、のちに別の職に就く人がいる（出遅れた分、稼ぎは少し減る）
+  if(g==='f'&&r.job.fn){const oj=r.job;r.job=gJob(oj,'f');if(r.ideal&&r.ideal.j===oj)r.ideal={...r.ideal,j:r.job}}
+  let firstJob=null,lateStart=1;
+  if(next>=14&&r.job===E.jobs[0]&&R()<.8){const om2={...om};for(const kk in om2)om2[kk]*=2.5;let r2=null;for(let tr=0;tr<3&&(!r2||r2.job===E.jobs[0]);tr++)r2=decideJob(next,st,famW,null,{...om2,office:(om2.office||1.6),trade:(om2.trade||1.6),care:(om2.care||1.6),tech:(om2.tech||1.6)},g,lb,c.amb,perceived(looks,next),c.res<0||!!h.crime);if(r2&&r2.job!==E.jobs[0]){firstJob=r.job;Object.assign(r,r2,{how:'free'});lateStart=.85}}
+  // 専業主婦：大正〜昭和初期は都市の中流以上、戦後に最も多く、平成・令和で減る。戦前の農家の妻は家業を担ったので含めない
+  const HW_P={12:.2,13:.55,14:.35,15:.25}[next]||0;
+  let housewife=g==='f'&&HW_P>0&&r.job.f!=='food'&&!(next===12&&(famW<2||state.region==='農村'))&&R()<HW_P*(famW>=3?1.2:famW<=1?.6:1)*(state.region==='大都市'?1.15:1);
+  const u=util({...st,vis:perceived(looks,next)},r.job);
+  // 自営・商売は規模の幅が大きい：ひとりで細々と／従業員数人／年商数億
+  const SELF=/自営|商店|個人事業主|フリーランス|起業家|会社経営|町工場|商人|行商|問屋|両替商|売込商|実業家|配信者|インフルエンサー|イラスト|投資家/;
+  let scale=-1;if(SELF.test(r.job.n)){const pb=clamp(.04+(u-.5)*.12+((c.amb||5.5)-5.5)*.012,.01,.2),pm=.28;const x=R();scale=x<pb?2:x<pb+pm?1:0;if(/小商人|行商/.test(r.job.n)&&scale>1)scale=1}
+  const scaleE=scale<0?1:[.6,1.5,4.5][scale],scaleTxt=scale<0?'':(next<=10?['（ひとりで）','（奉公人を数人）','（大店を構える）']:next<=12?['（ひとりで細々と）','（従業員数人）','（大きな商家・会社）']:['（ひとりで細々と）','（従業員数人）','（年商数億の規模）'])[scale];
+  // 酒の強さ（ALDH2）：飲めない体質は依存症になりにくいが、接待の多い時代の会社勤めでは不利。強い体質で衝動的だと酒に溺れることがある
+  const alcohol=(c.alc||0)===0&&(c.imp||5)>=7&&R()<(next>=13?.12:.08),settai=next>=13&&next<=14&&['office','trade'].includes(r.job.f);
+  // 富の継承：戦前は跡取りがほぼ総取り、戦後（1947年の民法改正）は子どもで均等に分ける
+  const share=next>=13?1/kids:.8;
+  // 土地や事業を持つ大きな家ほど、資産が資産を生む
+  const grow=(RICHFAM.has(h.job.f)?1.5:1.1)*(next>=13?(h.a>15000?2.2:h.a>4000?1.6:1):1)*Math.exp(gauss()*(next>=13?.7:.35));
+  // 戦後は長寿化で、相続は親の老後資金と介護で目減りしてから届く
+  let inh=next<2||K.elope?0:(h.a+DOWRY[p.w]*1.2)*share*grow*(next>=13?.3:1);
+  let aMul=1,bonus=0;const losses=[];
+  for(const ev of events){const m=ev.hitFam?.25:ev.a??(ev.w<0?.6:ev.w>0?1.3:1);if(m!==1){aMul*=m;if(m<1)losses.push(ev.t)}}
+  for(const f of K.fates){if(f.w<0){const m=f.w<=-2?.3:.6;aMul*=m;losses.push(f.t)}if(f.w>0)bonus+=next>=13?2000:next>=8?120:40}
+  const usurp=K.primo&&k!==K.def;
+  if(usurp){aMul*=.7;losses.push('跡継ぎの順番を飛ばして家を継がせ、家督争いが起きた')}
+  if(rec.divorce){aMul*=.8;losses.push('親の離婚で財産が分かれた')}
+  if(rec.husbandWar){aMul*=.6;losses.push('一家の大黒柱が戦死した')}
+  const lost=Math.round(inh*(1-aMul));
+  // 稼ぎ：能力は効くが控えめ（能力と年収の相関は約0.2）。見た目は美人・美男子+5%・見劣り−9%（Hamermesh & Biddle）を、その時代のルッキズムの強さで割り引く
+  const pv=perceived(looks,next),lookE=pv>=7.5?1+.05*BEAUTY[next].L/.9:pv<4?1-.09*BEAUTY[next].L/.9:1;
+  // 時代と噛み合ったときの大当たり：めったに口の無い職に、ぴったりの能力で就けた人だけ
+  // 当たり外れの大きい職ほど、大当たりも大損も起きる。能力が合い、野心があるほど当たりやすい
+  let jack=1,bust=false;
+  const ambJ=1+((c.amb||5.5)-5.5)*.12,vol=r.job.vol||0;
+  if(r.how!=='inherit'&&(vol>0||(c.spark&&r.job!==E.jobs[0]&&incOf(r.job)>=1))&&R()<([0,.06,.12,.22,.35][vol]+(c.spark?.15:0))*(u>=.7?1:.35)*ambJ)jack=next>=13?3+R()*R()*(vol>=4?60:30):2+R()*(vol>=3?14:8);
+  else if(vol>=3&&R()<.2)bust=true;
+  if(housewife&&jack>1)housewife=false;
+  // 近代以降は稼ぎの比重が上がり、家の格（教育・つて）も稼ぎに効く
+  const earn=next<2?0:(next>=13?EARN_M:EARN)[incOf(r.job)]*(.9+u*.2)*(1+famW*(next>=13?.16:.12))*Math.exp(gauss()*(next>=13?.45:.65))*lookE*jack*cohortE*lateStart*scaleE*(housewife?.7:1)*(alcohol?.7:1)*(settai?((c.alc||0)===2?.9:(c.alc||0)===0?1.05:1):1)*(bust?.2:1)*(1+((c.amb||5.5)-5.5)*.03)*(c.g==='m'&&next>=11?1+.0065*((c.hgt||hMean('m',next))-hMean('m',next)):1);
+  // 道を外れる：貧しさ、家庭の不和、強すぎる野心が重なると起きやすい
+  // 罪を犯すかどうかは、貧しさそのものより衝動性と親の犯罪歴が効く（貧しさは小さな間接効果）
+  const crime=R()<(c.g==='m'?.025:.007)*Math.max(.2,1+((c.imp||5.5)-5.5)*.35)*(h.crime?2:1)*(famW<=1?1.2:1)*(c.res<0?1.3:1);
+  // 遊郭への身売り（当主自身が娘で、極端に貧しい家の場合）。身請けされることもあった
+  const soldSelf=next<=12&&g==='f'&&famW<=0&&!K.sold&&R()<.06,ransom=soldSelf&&R()<.3;
+  // 大きな財産を継ぐと、働く意欲が下がりやすい（カーネギー効果）
+  const carnegie=inh*aMul>(next>=13?6000:800)&&R()<.5;
+  const sideGig=next>=15&&!r.job.self&&r.ideal&&r.ideal.j.self&&r.ideal.j!==r.job&&R()<.5;
+  // 専業主婦でも受け継いだ資産は持っている。運用する人もいる（増えることも減ることもある）
+  const invest=housewife&&inh*aMul>0&&next>=13&&R()<.35,invM=invest?Math.exp(.15+gauss()*.45):1;
+  const a=Math.max(0,Math.round(inh*aMul*invM+(sideGig?EARN_M[0]*.2:0)+earn*(crime?.4:1)*(carnegie?.6:1)*(soldSelf&&!ransom?.2:1)+bonus));
+  const w=clamp(Math.max(Math.round(E.h*famW+(1-E.h)*(incOf(r.job)*1.1+u*1.2+lb*.8)+dw),aTier(a))-(crime?1:0),0,5);
+  // 健康と寿命：体質（遺伝）、暮らし、体力、心の病で決まる。貧困や逆境が重なると心の病が起きやすい
+  const LE=LEX[next]||60;
+  const mental=R()<clamp(.04+((c.mood||5.5)-5.5)*.012+(c.res<0?.05:c.res>0?-.015:0)+(famW<=1?.03:0)+(rec.divorce?.02:0)+(crime?.03:0)+(soldSelf?.06:0),.005,.4);
+  const suicide=mental&&R()<(.06+(famW<=1?.05:0)+(c.g==='m'?.03:0)+(crime?.04:0));
+  const illness=(c.gene||5.5)>=8&&R()<.35;
+  const recDis=(c.rec||0)>=2,domDis=!!c.dom,obese=(c.fat||5)>=8&&next>=13,myopic=(c.myo||5)>=8;
+  let lifespan=Math.round(clamp(LE+(5.5-(c.gene||5.5))*1.6+(famW-2)*2+(st.str-5.5)*.8+gauss()*9-(crime?3:0)-(mental?4:0)-(illness?8:0)-(recDis?14:0)-(domDis?7:0)-(obese?4:0)-(alcohol?8:0)-(soldSelf&&!ransom?10:0),25,(illness||recDis||domDis)?LE+6:101));
+  const isYou=next===ERAS.length-1;
+  if(suicide)lifespan=Math.min(lifespan,Math.round(32+R()*25));
+  // 時代の病と事故（現実の死亡の多さに近い確率）
+  const DEATHS={10:[['コレラの流行',.02]],11:[['コレラの流行',.01],['スペイン風邪（1918〜20年）',.007],['結核',.05]],12:[['結核',.05]],13:[['結核',.01],['交通事故',.006]],14:[['交通事故',.003]],15:[['新型コロナ',.001]]}[next]||[];
+  let cause=null;for(const [n,q] of isYou?[]:DEATHS){if(!cause&&R()<q){cause=n;lifespan=Math.min(lifespan,Math.round(n==='新型コロナ'?60+R()*25:26+R()*20))}}
+  // 理由（本人には見えない。年表で明かす）
+  const notes=[...K.fates.filter(f=>(f.w||f.swap||f.good)&&!f.stat).map(f=>'【運命】'+f.t),...c.notes];let luck=0;
+  const ts=topStat(st);
+  notes.push(...(c.up||[]));
+  if(cohortNote)notes.push(cohortNote);
+  if(housewife)notes.push(`結婚して専業主婦になった（結婚前は「${r.job.n}」）。`);
+  if(housewife&&invest)notes.push(invM>=1?'受け継いだ資産を運用し、増やした。':'受け継いだ資産を運用したが、減らした。');
+  if(firstJob)notes.push(`若いころは「${firstJob.n}」で働いていたが、のちに「${r.job.n}」に就いた。`);
+  if(soldSelf)notes.push(ransom?'家が極端に貧しく、遊郭へ身売りされた。のちに客に身請けされ、遊郭を出た。':'家が極端に貧しく、遊郭へ身売りされた。');
+  if(carnegie)notes.push('大きな財産を継ぎ、働く意欲が薄れた。');
+  if(jack>1&&false)0;
+  if(bust)notes.push(`「${r.job.n}」で大きく損をした。`);
+  if(illness)notes.push('体質の弱い家系で、病を抱えた。');
+  if(recDis)notes.push('潜性遺伝の病気を発症した。両親とも、自分では気づかない保因者だった。');
+  if(domDis)notes.push('親から顕性遺伝の病気を受け継いだ。');
+  if(g==='m'&&c.xcb)notes.push('母方から色覚の特性を受け継いだ（男性に出やすい）。');
+  if(obese)notes.push('太りやすい体質を受け継いだ。中年以降、体を悪くする危険が高まった。');
+  if(myopic)notes.push(next<=11?'目が悪く、細かい手仕事や兵役には向かなかった。':next===12?'目が悪く眼鏡をかけていた。細かい手仕事や兵役には向かなかった。':'強い近視で、眼鏡が手放せなかった。');
+  if(alcohol)notes.push('酒に強い体質で、酒に溺れて仕事も体も崩した。');
+  if(settai&&(c.alc||0)===2)notes.push('酒を受けつけない体質で、接待の多い職場では苦労した。');
+  if(g==='m'&&(c.bald||0)>=8&&next>=11)notes.push('若いうちから髪が薄くなった。');
+  if(mental&&!suicide)notes.push('心の病を抱えた時期があった。');
+  if(suicide&&!isYou)notes.push(`心の病を抱え、${lifespan}歳で自ら命を絶った。`);
+  if(cause&&!suicide)notes.push(`${cause}で、${lifespan}歳で亡くなった。`);
+  if(crime)notes.push(next<=10?'若いころ盗みで捕まり、入墨のうえ村を追われた時期があった。':'若いころ詐欺と窃盗で捕まり、数年服役した。');
+  if(c.mixed)notes.push('外国から来た親の名前を受け継いだ。');
+  if(c.shoshi)notes.push('正妻の子ではなかったが、家を継いだ。');
+  if(K.primo&&g==='f'&&!K.ch.some(x=>x.g==='m'&&!x.dead))notes.push('男子がいなかったため、婿を取って家を継いだ。');
+  if(K.elope)notes.push('親が駆け落ちしたため勘当されていた。家の財も家業も受け継げなかった。');
+  if(usurp)notes.push(`${c.ordL}だが、${K.ch[K.def]?K.ch[K.def].ordL.replace(/（.*）/,''):'上の子'}を差し置いて家を継いだ。家督争いで資産の3割を失った。`);
+  if(c.mut)notes.push(`突然、${SL[c.mut]}に秀でた子が生まれていた。`);
+  const oldWays=E.h>=.5,baseJob=r.job===E.jobs[0]||(incOf(r.job)===0&&r.job.t===0);
+  if(soldSelf){}
+  else if(r.how==='inherit'){
+    if(r.ideal&&r.ideal.j!==r.job&&u<.65)notes.push(oldWays?`親の家業を継ぐのが当たり前の時代。本当は「${gJob(r.ideal.j,g).n}」向きだった。`:`親と同じ道に進んだ。本当は「${gJob(r.ideal.j,g).n}」向きだった。`);
+    else notes.push(oldWays?'親の家業を継いだ。性にも合っていた。':'親と同じ道に進んだ。性にも合っていた。');
+  }else{
+    const id=r.ideal&&r.ideal.j;
+    if(id===r.job){ if(r.o<=.15){notes.push(`「${r.job.n}」の口はめったに無いが、運よく巡ってきた。`);luck++} else notes.push(baseJob?`ほかに道がなく、「${r.job.n}」として働いた。`:'向いている仕事に就けた。'); }
+    else if(id&&r.gate.includes(id))notes.push(`「${gJob(id,g).n}」の才があったが、家の暮らし向きでは手が届かなかった。`);
+    else if(id&&r.shut.includes(id)){if(id.self)notes.push(`「${gJob(id,g).n}」に向いていたが、挑戦しなかった。`);else{notes.push(`「${gJob(id,g).n}」に向いていたが、その口が無かった。`);luck--}}
+  }
+  if(st[ts]>=8&&E.v[ts]<=1)notes.push(`${SL[ts]}は家系随一だったが、この時代それで食べていくのは難しかった。`);
+  if(jack>1)notes.push(`能力と時代が噛み合い、「${r.job.n}」で大当たりした。${next>=13?`一代で${fmtA(Math.round(earn))}を残した。`:'一代で家の蓄えを大きく押し上げた。'}`);
+  if(BEAUTY[next].L>=.5&&Math.abs(lb)>=.3&&(LOOKFAM.has(r.job.f)||r.job.w.vis))notes.push(lb>0?'見た目のよさが道を開いた。':'見た目で損をすることが多かった。');
+  // 副業：本業とは別に、向いていることを小さく始める（令和）
+  if(sideGig)notes.push(`本業のかたわら、「${gJob(r.ideal.j,g).n}」としても活動した。`);
+  for(let q=0;q<notes.length;q++)if(!/[。）」]$/.test(notes[q]))notes[q]+='。';
+  let surNote=null,full=c.full;
+  if(next===11&&!state.surname){state.surname=pick(SURN);surNote=`苗字必称義務令（1875年）で「${state.surname}」を名乗る。`;notes.unshift(surNote);full=state.surname+' '+c.given}
+  const child={edu:eduFor(next,g,r.job,famW,st),joy:c.joy,alive:isYou,alcoholic:alcohol,alc:c.alc,fert:c.fert,twin:c.twin,bald:c.bald,rec:c.rec,dom:c.dom,xcb:c.xcb,myo:c.myo,fat:c.fat,recDis,domDis,amb:carnegie?clamp(c.amb-2,1,10):c.amb,imp:c.imp,gene:c.gene,mood:c.mood,hgt:c.hgt,style:c.style,res:c.res,adv:c.adv,parentDiv:c.parentDiv,mental,suicide:suicide&&!isYou,illness,lifespan:isYou?null:lifespan,soldSelf,ransom,region:state.region,amb2:c.amb,trust:c.trust,crime,spark:!!c.spark,pers:c.pers,given:c.given,full,...looks,st,job:r.job,w,a,aLog:{inh:Math.round(inh),lost,earn:Math.round(earn),bonus,share,losses},
+    use:Math.min(100,Math.round(u/r.maxU*100)),notes,inherit:r.how==='inherit',luck,mut:c.mut,ep:c.ep,ordL:c.ordL,jobLoc:state.loc,job:g==='m'&&r.job.mn&&!scaleTxt?gJob(r.job,'m'):soldSelf&&!ransom?{...r.job,n:'遊女（身売り）'}:housewife?{...r.job,n:'専業主婦',base:r.job.n,inc:Math.max(0,incOf(r.job)-1)}:ransom?{...r.job,n:'身請けされ、遊郭を出た',base:r.job.n}:scaleTxt?{...r.job,n:r.job.n+scaleTxt,base:r.job.n}:r.job};
+  rec.sibBetter=(rec.sibOut||[]).filter(x=>x.a>a*1.3).length;
+  state.line.push(rec);
+  const rep_=sum(st)-(sum(h.st)+sum(p.st))/2+gauss()*2;
+  const repTxt=rep_>2.5?'親より出来がいいと評判だった':rep_<-2.5?'親ほどではない、と言われて育った':'親によく似ている、と言われて育った';
+  state.born={child,events:K.auto?K.events:[],surNote,kids,fates:K.auto?K.fates:[],hapTxt:HAP_TXT(rec.hap),repTxt,war:rec.warDead?`きょうだいのうち${rec.warDead}人が戦死した。`:rec.husbandWar?'父は戦死した。':'',totalKids:state.line.reduce((q,r)=>q+(r.kids||0),0)};
+  state.ks=null;state.phase='born';
+  render();
+}
+
+function advance(){
+  state.heir=state.born.child;state.gen++;
+  if(state.gen===ERAS.length-1){state.line.push({...state.heir,era:state.gen,you:1});state.phase='end';}
+  else{state.cands=makeCands();state.phase='choose';}
+  state.born=null;render();
+}
+
+const CMP=()=>['title','looks','ability','compat'].map(pol=>({pol,r:simulate(120,state.start||0,pol).filter(Boolean)}));
+// 運と選択の比較用：でたらめに選んだ場合を裏で回す
+function simulate(n,start=0,pol='random'){
+  const saved=state,savedRS=RS,out=[];SIM=true;RMATH=true;
+  for(let k=0;k<n;k++){
+    newGame(null,start);
+    while(state.phase!=='end'){
+      if(state.phase==='choose'){
+        const ok=state.cands.filter(c=>!c.gray),h=state.heir,best=f=>ok.reduce((a,c)=>f(c)>f(a)?c:a);
+        const c=pol==='title'?best(c=>c.w*10+c.job.t):pol==='looks'?best(c=>perceived(c,state.gen)):pol==='ability'?best(c=>sum(c.st)):pol==='compat'?best(c=>compat(h,c)):pick(ok);
+        marry(state.cands.indexOf(c));
+      }else if(state.phase==='kids'){const ok=state.ks.ch.map((c,k)=>c.dead?-1:k).filter(k=>k>=0);pickHeir(pick(ok))}else if(state.phase==='adopt')adopt(R()<.8);else advance()}
+    const L=state.line,y=L[L.length-1],hs=L.filter(r=>r.hap);
+    out.push(state.extinct?null:{s:sum(y.st),w:y.w,a:y.a,kids:L.reduce((q,r)=>q+(r.kids||0),0),hap:hs.reduce((q,r)=>q+r.hap,0)/Math.max(1,hs.length)});
+  }
+  SIM=false;RMATH=false;RS=savedRS;state=saved;return out;
+}
+const pct=(arr,v)=>{const n=arr.length;if(!n)return 50;const below=arr.filter(x=>x<v).length,eq=arr.filter(x=>x===v).length;return clamp(Math.round(100-(below+eq/2)/n*100),1,100)};
+
+// ---------- 描画 ----------
+const $=s=>document.querySelector(s);
+const sum=st=>S.reduce((a,k)=>a+st[k],0);
+const stars=n=>'★'.repeat(n)+'<span class="muted">'+'☆'.repeat(3-n)+'</span>';
+const SH={str:'体',int:'知',dex:'手',soc:'人',art:'感'};
+function mini(st,amb){const t=topStat(st);return `<span class="mini num">${S.map(k=>`<span class="${k===t?'top':''}">${SH[k]}${st[k]}</span>`).join('')}${amb?`<span>野心${amb}</span>`:''}<span class="tot">計${sum(st)}</span></span>`}
+const lookTag=(p,era)=>{const l=lookLabel(p,era);return `<span class="tag ${l==='普通'?'':l==='当世風ではない'?'bad':'gold'}">${l}</span>`};
+const featTxt=p=>p.feat.join('・');
+const hidden=`<p class="hidden-st">能力値：？？？（年表で明かされる）</p>`;
+function strip(gen){const st=state.start||0,n=ERAS.length-st;return `<div><div class="strip" style="grid-template-columns:repeat(${n},1fr)">${ERAS.slice(st).map((_,j)=>{const i=j+st;return `<i class="${i<gen?'done':i===gen?'now':''}"></i>`}).join('')}</div><div class="striplbl"><span>${ERAS[st].y}</span><span>${Math.min(gen-st+1,n)}代目${state.goal?'・目標：'+GOALS[state.goal].n:''}</span><span>2026年</span></div></div>`}
+
+function render(){
+  if(SIM)return;
+  const app=$('#app');
+  const eg=state.phase==='born'||state.phase==='kids'?state.gen+1:state.gen;app.style.setProperty('--era-h',ERA_HUE[clamp(eg??9,0,15)]??215);
+  window.scrollTo(0,0);
+  if(state.phase==='intro')app.innerHTML=introView();
+  else if(state.phase==='choose')app.innerHTML=chooseView();
+  else if(state.phase==='kids')app.innerHTML=kidsView();
+  else if(state.phase==='adopt')app.innerHTML=adoptView();
+  else if(state.phase==='born'){app.innerHTML=bornView();if(state.gen+1===ERAS.length-1&&!state.cmp)setTimeout(()=>{if(!state.cmp&&state.phase==='born')state.cmp=CMP()},400)}
+  else app.innerHTML=endView();
+}
+
+function introView(){
+  return `<section class="hero fade">
+    ${ill('hero')}
+    <span class="label">1835年ごろ → 2026年　7世代・5〜10分</span>
+    <h1>縁と運</h1><span class="label" style="letter-spacing:.2em">あなたに至る七代</span>
+    <p class="lead">江戸後期のある家から、7代にわたって結婚相手を選んでいくゲーム。子は両親の能力と見た目を受け継ぐ。能力は最後まで見えない。判断の材料は、見た目、噂、性格、時代が進むと肩書きや学歴。</p>
+    <div style="display:flex;flex-direction:column;gap:6px"><span class="label">この家の目標を選ぶ</span>
+      <div class="goals" role="group" aria-label="目標">${Object.entries(GOALS).map(([k,g])=>`<button data-goal="${k}" aria-pressed="${k===pendingGoal}">${g.n}</button>`).join('')}</div>
+      <p class="muted" style="font-size:13px">最後に、目標をどこまで達成できたかが出る。ほかの物差しでどうだったかも。</p></div>
+    <div class="row"><button class="btn" id="start">はじめる</button>
+      <label class="seedbox" for="seed"><span class="label">シード（友達と比べるとき）</span><input id="seed" maxlength="12" placeholder="空欄ならランダム" value="${(location.hash.match(/^#s-([A-Za-z0-9]+)/)||[])[1]||''}"></label></div>
+  </section>
+  <div class="rules">
+    <div><b>能力は見えない</b>体力・知恵・手先・人当たり・感性。数値は最後の年表まで分からない。手がかりは噂だけで、ときどき外れる。</div>
+    <div><b>時代ごとにルールが変わる</b>結婚の決まり（縁談か、本人どうしか）、家の継ぎ方、評価される能力、好まれる見た目、相手を見る手がかり。どれも時代とともに変わっていく。</div>
+    <div><b>肩書きは家と運で付く</b>親の職を継ぐのが当然の時代や、向いた仕事の口が無い時代がある。名家の生まれが有能とは限らない。</div>
+  </div>
+  ${PARAMS}
+  <section style="display:flex;flex-direction:column;gap:10px">
+    <span class="label">最後に出る年表の例</span>
+    <ol class="chron sample">
+      <li><span class="yr">1835年ごろ</span><div class="body"><span class="who">与七（本百姓）</span><span class="pair">× おりん（普通）　<span class="mini num"><span>体4</span><span>知8</span><span>手6</span><span>人5</span><span>感3</span><span class="tot">計26</span></span></span><span class="nt hit">家柄と噂で、選べた相手の中でいちばん能力の高い相手を選んでいた。</span></div></li>
+      <li><span class="yr">1895年ごろ</span><div class="body"><span class="who">中村 勇（小学校の教員）</span><span class="pair">× 岡田 静子（官吏の家の娘・高等女学校）　<span class="mini num"><span>体3</span><span>知4</span><span>手3</span><span>人5</span><span>感4</span><span class="tot">計19</span></span></span><span class="nt miss">選ばなかった「製糸・紡績の女工」のキヨは計31だった。</span></div></li>
+      <li class="you"><span class="yr">2026年</span><div class="body"><span class="who">中村 紬（ITエンジニア）＝あなた</span><span class="nt">見た目の評価は、時代が違えば変わっていた。</span></div></li>
+    </ol>
+  </section>`;
+}
+
+function chooseView(){
+  const {gen,heir,cands}=state,E=ERAS[gen],N=ERAS[gen+1],mode=modeOf(gen),B=BEAUTY[gen];
+  const HAPM=v=>v>=7?'仲がよかった':v>=4?'まずまず':'すれ違いが多かった';
+  const log=state.line.length?`<div class="dtable"><table class="four rec"><thead><tr><th>代</th><th>当主と相手</th><th>見た目</th><th>暮らし・蓄え</th><th>夫婦の様子</th><th>子</th></tr></thead><tbody>${state.line.map((r,i)=>`<tr><th>${i+1}代目<br><span class="muted">${ERAS[r.era].y}</span></th><td>${r.full}（${r.job.n}）<br>× ${r.partner.full}</td><td>${lookLabel(r,r.era)}</td><td>${WL[r.w]}${r.era>=2?'<br><span class="muted">'+dispA(r.era,r.a||0)+'</span>':''}</td><td>${r.adopted?'子が生まれず養子を迎えた<br>':''}${r.solo==='child'?'結婚せず子を持った':r.divorce?(r.remarry?'離婚し、再婚した':'離婚した'):HAPM(r.hap)}${r.affair?'<br><span class="muted">浮気があった</span>':''}${r.mistress?`<br><span class="muted">${r.era<=12?'妾がいた':'愛人がいた'}</span>`:''}${r.moved?`<br><span class="muted">${r.moved}へ移った</span>`:''}${r.regionMove?`<br><span class="muted">${r.regionMove}</span>`:''}${r.warDead?`<br><span class="muted">子${r.warDead}人が戦死</span>`:''}${r.husbandWar?'<br><span class="muted">夫が戦死</span>':''}</td><td class="num">${r.kids}人</td></tr>`).join('')}</tbody></table></div>`:'';
+  return `${strip(gen)}
+  ${art('era:'+gen,E.e)}
+  <section class="era fade">
+    <span class="wm" aria-hidden="true">${ERA_SHORT[gen]}</span>
+    <span class="y">${E.y}</span>
+    <h2>${E.e}</h2>
+    <p class="muted">${E.d}${state.loc!=='日本'?`　<b>この家はいま${state.loc}で暮らしている。</b>`:''}</p>
+    <p style="font-size:13px"><span class="label">この時代の結婚</span>　${MARR[gen]}</p>
+    <details class="rules-era"><summary>この時代のルールをもっと見る（評価される能力・好まれた見た目）</summary>
+      <div class="values"><span class="label" style="width:100%">この時代（親の代）に食べていける能力</span>${S.map(k=>`<span><b>${SL[k]}</b> <span class="st">${stars(E.v[k])}</span></span>`).join('')}</div>
+      <p style="font-size:13px;margin-top:6px"><span class="label">好まれた見た目</span>　${B.t}　<span class="muted">見た目が暮らしに効く度合い</span> <span class="st" style="color:var(--gold)">${stars(B.L<.3?1:B.L<.6?2:3)}</span></p>
+    </details>
+  </section>
+  ${gen===state.start?E.ev.filter(e=>/飢饉/.test(e.t)).map(e=>`${ill('famine')}<p class="event">${e.t}のさなか。米の値が跳ね上がり、東北を中心に多くの人が飢えて亡くなった。</p>`).join(''):''}
+  <section class="heir">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span class="label">${gen-(state.start||0)+1}代目</span>
+      <h3 class="who-h">${avatar(heir)}${heir.full}</h3>
+      <div class="row"><span class="tag">${heir.job.n}</span><span class="tag gold">暮らし：${WL[heir.w]}</span></div>
+      <p style="font-size:13px"><span class="label">見た目</span>　${lookTag(heir,gen)}</p>
+      ${heir.edu?`<p style="font-size:13px"><span class="label">学歴</span>　${heir.edu}</p>`:''}
+      <p style="font-size:13px"><span class="label">${gen>=13?'資産（60代時点）':'蓄え'}</span>　<b class="num">${gen<2?'—（まだ蓄えという考えがない）':dispA(gen,heir.a)}</b></p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <p class="muted" style="font-size:13px">${featTxt(heir)}・${heir.hgt}cm・${styleWord(heir.style)}</p>
+      <p style="font-size:13px"><span class="label">性格</span>　${heir.pers||''}</p>
+      <ul class="eps">${heir.ep.map(e=>`<li>${e}</li>`).join('')}</ul>
+      ${hidden}
+    </div>
+  </section>
+  <p class="next">次は <b>${N.e}</b>（${N.y}）に子が生まれる。親の職を継ぐ確率 <span class="num">${Math.round(N.h*100)}%</span>。その時代に何が評価されるかは、生まれてみるまで分からない。</p>
+  <section style="display:flex;flex-direction:column;gap:10px">
+    ${ill('en','band')}
+    <h3 style="font-size:18px">${E.arr?'家同士の縁談':'結ばれる相手'}を選ぶ</h3>
+    <p class="mode"><span class="tag ${mode==='ep'?'':'gold'}">${mode==='ep'?'見た目と噂':mode==='mix'?'家柄と噂':'肩書きとスペック'}</span> ${MODE_TXT[mode]}</p>
+    ${cands.some(x=>x.parentPick)?'<p class="mode"><span class="tag bad">格の高い家</span> 相手は親が家柄と肩書きで決めた。ほかの人を選ぶと駆け落ちになり、勘当されて家の財も家業も子に継がせられない。</p>':E.arr?'<p class="mode"><span class="tag">庶民の家</span> 縁談の時代でも、格の低い家は比較的自由に相手を決められた。</p>':''}
+    <div class="cands">${cands.map((c,i)=>`<article class="cand ${c.gray?'gray':''} ${c.parentPick?'pp':''}">
+      <div>${c.parentPick?'<span class="tag gold">親が決めた縁談</span>':''}${c.spark?'<span class="tag gold">何か光るものを感じる</span>':''}<h3 class="who-h">${avatar(c)}${c.full}</h3><p class="meta">${c.org||''}</p></div>
+      <dl class="spec"><dt>相性の手応え</dt><dd>${(f=>`<span class="tag ${f[1]}">${f[0]}</span>`)(feelOf(c.pers,heir.pers))}</dd><dt>見た目</dt><dd>${lookLabel(c,gen)}<span class="muted" style="font-weight:400">（${featTxt(c)}・${c.hgt}cm・${styleWord(c.style)}）</span></dd>${c.mode!=='ep'?`<dt>肩書き</dt><dd>${c.daughter?c.job.n+'の家の娘':c.job.n}</dd><dt>家柄</dt><dd>${WL[c.w]}</dd>${c.edu?`<dt>学歴</dt><dd>${c.edu}</dd>${gen>=13?'':`<dt>持参する財</dt><dd>${['ほぼ無し','少し','並','多い','かなり多い','莫大'][c.w]}</dd>`}`:''}`:''}</dl>
+      <p style="font-size:13px"><span class="label">性格</span>　${c.pers||''}</p>
+      <ul class="eps">${c.ep.map(e=>`<li>${e}</li>`).join('')}</ul>
+      ${c.gray?'<button disabled>縁がなかった</button>':`<button data-i="${i}">${c.parentPick?'親の決めた縁談を受ける':cands.some(x=>x.parentPick)?'駆け落ちしてこの人と結ばれる':c.arr?'この縁談を受ける':'この人と結ばれる'}</button>`}
+    </article>`).join('')}</div>
+    ${gen>=13?`<div class="cands solo">
+      <article class="cand"><div><h3>結婚しない</h3><p class="meta">子は持たない</p></div><p style="font-size:13px">この家系はこの代で終わる。50歳の時点で結婚していない人は、男性で約3割、女性で約2割（2020年）。</p><button data-solo="none">結婚しない</button></article>
+      <article class="cand"><div><h3>結婚せずに子を持つ</h3><p class="meta">ひとりで育てる</p></div><p style="font-size:13px">家系は続く。相手の能力は分からない。結婚していない親から生まれる子は全体の約2%。</p><button data-solo="child">結婚せずに子を持つ</button></article>
+    </div>`:''}
+  </section>
+  ${log?`<section style="display:flex;flex-direction:column;gap:6px"><span class="label">これまでの家の記録（能力は伏せてある）</span>${log}</section>`:''}`;
+}
+
+function adoptView(){
+  const next=state.gen+1,E=ERAS[next],h=state.heir,old=next<=12;
+  return `${strip(next)}
+  <section class="era fade"><span class="wm" aria-hidden="true">${ERA_SHORT[next]}</span><span class="y">${E.y}</span><h2>${E.e}</h2></section>
+  <section class="born fade">
+    <h3 style="font-size:20px">${h.full}の夫婦には、子が生まれなかった</h3>
+    <p style="font-size:14px">${old?'この時代、子のない家は養子を迎えて家を継がせるのが普通だった。武家でも商家でも、家を絶やさないことが何より大事とされた。':'子を持たない夫婦も珍しくない時代。養子を迎える家は少なくなっている。'}養子を迎えれば家は続くが、能力や体質は受け継がれない。</p>
+    <div class="row"><button class="btn" data-adopt="yes">養子を迎える</button><button class="btn ghost" data-adopt="no">迎えない（家はここで終わる）</button></div>
+  </section>`;
+}
+
+function kidsView(){
+  const K=state.ks,next=state.gen+1,E=ERAS[next];
+  return `${strip(next)}
+  ${ill(evIll(K.events)||'birth')}
+  <section class="era fade"><span class="wm" aria-hidden="true">${ERA_SHORT[next]}</span><span class="y">${E.y}</span><h2>${E.e}</h2><p class="muted">${E.d}</p></section>
+  ${K.events.map(e=>`<p class="event ${e.good?'good':''}">${e.t}</p>`).join('')}
+  ${K.fates.map(f=>`<p class="event fate ${f.good?'good':''}"><span class="label">運命</span>　${f.t}</p>`).join('')}
+  <section style="display:flex;flex-direction:column;gap:10px">
+    ${ill('heir','band')}
+    <h3 style="font-size:18px">子は${K.kids}人。誰に家を継がせるか</h3>
+    <p class="mode">${K.primo?'<span class="tag gold">長男が継ぐ時代</span> 家は長男が継ぐもの（男子がいなければ長女に婿を取る）。ほかの子に継がせると家督争いになり、資産の3割を失う。':next>=13?'<span class="tag">均分相続</span> 資産はきょうだいで均等に分ける。誰の人生を追うかを選ぶ。':'<span class="tag">継ぐ子は親が決める</span> 生まれ順の決まりはまだゆるい。'}</p>
+    <div class="cands">${K.ch.map((c,k)=>`<article class="cand ${c.dead?'gray':''}">
+      <div><h3 class="who-h">${avatar(c)}${c.full}</h3><p class="meta">${c.ordL}${K.primo&&k===K.def?'・家を継ぐ立場':''}</p></div>
+      <dl class="spec"><dt>見た目</dt><dd>${lookTag(c,next)}</dd><dt>顔立ち</dt><dd><span class="muted" style="font-weight:400">${featTxt(c)}</span></dd></dl>
+      <p style="font-size:13px"><span class="label">性格</span>　${c.pers||''}</p>
+      <ul class="eps">${c.ep.map(e=>`<li>${e}</li>`).join('')}</ul>
+      ${c.dead?`<button disabled>${c.war?'戦死した':c.raid?'空襲で亡くなった':'事故で亡くなった'}</button>`:`<button data-h="${k}">${K.primo&&k!==K.def?'あえてこの子に継がせる':'この子に継がせる'}</button>`}
+    </article>`).join('')}</div>
+    ${K.kids>K.ch.length?`<p class="muted" style="font-size:13px">ほかに${K.kids-K.ch.length}人の子がいる。</p>`:''}
+    ${hidden}
+  </section>`;
+}
+
+function bornView(){
+  const {child,events,surNote,kids}=state.born,next=state.gen+1,E=ERAS[next];
+  return `${strip(next)}
+  ${(()=>{const R0=state.line[state.line.length-1]||{};const k=R0.warDead||R0.husbandWar?'scene:war':R0.divorce?'scene:divorce':R0.adopted?'scene:adopt':R0.moved?'scene:abroad':(next%2?'scene:wedding':'scene:birth');return art(k,'')||art('era:'+next,E.e)})()}
+  <section class="era fade"><span class="wm" aria-hidden="true">${ERA_SHORT[next]}</span><span class="y">${E.y}</span><h2>${E.e}</h2></section>
+  ${events.map(e=>`<p class="event ${e.good?'good':''}">${e.t}</p>`).join('')}
+  ${(state.born.fates||[]).map(f=>`<p class="event fate ${f.good?'good':''}"><span class="label">運命</span>　${f.t}</p>`).join('')}
+  <section class="born fade">
+    <div class="feel">
+      <span>親の代の夫婦は、${state.born.hapTxt}。</span>
+      <span>跡を継いだ子は、${state.born.repTxt}。</span>
+      ${state.born.war?`<span>${state.born.war}</span>`:''}
+      ${state.goal==='wealth'&&next>=2?`<span class="goal">目標「富を築く」：家は${dispA(next,child.a)}</span>`:''}${state.goal==='kids'?`<span class="goal">目標「子孫を増やす」：これまでに生まれた子は合計${state.born.totalKids}人</span>`:''}${state.goal==='hap'?`<span class="goal">目標「幸せな家庭」：さっきの夫婦の様子が手がかり</span>`:''}${state.goal==='abil'?`<span class="goal">目標「才能を未来につなぐ」：子の評判が手がかり（ときどき外れる）</span>`:''}
+    </div>
+    <div><span class="label">子は${kids}人。家を継いだのは${child.ordL}</span><h3 style="font-size:24px" class="who-h">${avatar(child)}${child.full}</h3></div>
+    <div class="row"><span class="tag">${child.job.n}</span><span class="tag gold">暮らし：${WL[child.w]}</span>${child.inherit?'<span class="tag">家業を継いだ</span>':''}</div>
+    <p class="muted" style="font-size:13px">${featTxt(child)}</p>
+    <ul class="eps">${child.ep.map(e=>`<li>${e}</li>`).join('')}</ul>
+    ${next>=13?`<div class="ledger"><span class="label">資産の動き（60代時点）</span>
+      <div class="lrow"><span>受け継いだ${child.aLog.share<1?`（きょうだい${kids}人で均等に分けた）`:''}</span><b class="num">${fmtA(child.aLog.inh)}</b></div>
+      ${child.aLog.lost?`<div class="lrow bad"><span>出来事で失った</span><b class="num">−${fmtA(child.aLog.lost)}</b></div>`:''}
+      ${child.aLog.bonus?`<div class="lrow good"><span>思いがけない実入り</span><b class="num">＋${fmtA(child.aLog.bonus)}</b></div>`:''}
+      <div class="lrow"><span>一代で稼いで残した（${child.job.n}）</span><b class="num">＋${fmtA(child.aLog.earn)}</b></div>
+      <div class="lrow tot"><span>この代の資産</span><b class="num">${fmtA(child.a)}</b></div></div>`
+    :next>=2?`<div class="ledger"><span class="label">蓄えの動き</span>
+      <div class="lrow"><span>受け継いだ蓄え</span><b>${child.aLog.inh>0?(child.aLog.inh>=child.a*.5?'蓄えの大半':'蓄えの一部'):'なし'}</b></div>
+      ${child.aLog.lost?`<div class="lrow bad"><span>出来事で失った</span><b class="num">受け継いだ分の${Math.round(child.aLog.lost/Math.max(1,child.aLog.inh+child.aLog.lost)*100)}%</b></div>`:''}
+      ${child.aLog.bonus?`<div class="lrow good"><span>思いがけない実入り</span><b>あり</b></div>`:''}
+      <div class="lrow tot"><span>この代の蓄え</span><b>${dispA(next,child.a)}</b></div></div>`:''}
+    ${surNote?`<p style="font-size:14px">${surNote}</p>`:''}
+    ${hidden}
+    <div class="row"><button class="btn" id="next">${next===ERAS.length-1?'年表を見る':'この子の代へ'}</button></div>
+  </section>`;
+}
+
+function corr(xs,ys){const n=xs.length,mx=xs.reduce((a,b)=>a+b,0)/n,my=ys.reduce((a,b)=>a+b,0)/n;let a=0,b=0,c=0;for(let i=0;i<n;i++){a+=(xs[i]-mx)*(ys[i]-my);b+=(xs[i]-mx)**2;c+=(ys[i]-my)**2}return b&&c?a/Math.sqrt(b*c):0}
+function wealthView(L,alive,ext){
+  const R2=L.filter(r=>r.era>=2);if(R2.length<2)return '';
+  const last=L[L.length-1];
+  // 資産の推移（対数目盛）
+  const W=640,H=200,pad=34,lg=v=>Math.log10(1+v);
+  const pos=R2.map(r=>posOf(r.era,r.a||0)||50);
+  const X=i=>pad+i*(W-pad*2)/(R2.length-1),Y=p=>30+(p-1)/99*(H-66);
+  const pts=R2.map((r,i)=>`${X(i).toFixed(1)},${Y(pos[i]).toFixed(1)}`).join(' ');
+  const bi=pos.indexOf(Math.min(...pos)),peak=R2[bi];
+  const svg=`<svg class="spark" viewBox="0 0 ${W} ${H}" role="img" aria-label="その時代の中での家の豊かさの推移"><line x1="${pad}" x2="${W-pad}" y1="${Y(50)}" y2="${Y(50)}" stroke="var(--line)" stroke-dasharray="4 4"/><text x="${W-pad}" y="${Y(50)-4}" font-size="20" fill="var(--muted)" text-anchor="end">真ん中</text><polyline points="${pts}" fill="none" stroke="var(--gold)" stroke-width="4"/>${R2.map((r,i)=>`<circle cx="${X(i)}" cy="${Y(pos[i])}" r="${r===last?9:6}" fill="${r===last?'var(--ai)':'var(--gold)'}"/>`).join('')}<text x="${X(bi)}" y="${Math.max(22,Y(pos[bi])-14)}" text-anchor="middle" font-size="22" fill="var(--ink)">${rankTxt(pos[bi])}</text><text x="${pad}" y="${H-6}" font-size="20" fill="var(--muted)">${ERAS[R2[0].era].e}</text><text x="${W-pad}" y="${H-6}" font-size="20" fill="var(--muted)" text-anchor="end">${ERAS[last.era].e}</text></svg>`;
+  // 解説
+  const st=[];
+  const builder=R2.slice(0,-1).reduce((a,r,i)=>{const nx=R2[i+1];const g=(nx.aLog?nx.aLog.earn:0);return !a||g>a.g?{r,g,nx}:a},null);
+  const big=R2.filter(r=>r.aLog&&r.aLog.lost>0).reduce((a,r)=>!a||r.aLog.lost>a.aLog.lost?r:a,null);
+  if(!ext){
+    const inh=last.aLog?Math.round(last.aLog.inh/Math.max(1,last.a)*100):0;
+    const ap=posOf(last.era,last.a)||50, sp=alive.length?pct(alive.map(x=>x.s),sum(last.st)):50;
+    st.push(`あなたが60代になったときの資産の見込みは${fmtA(last.a)}。でたらめに選んだ300回の中で${rankTxt(ap)}。そのうち約${clamp(inh,0,100)}%は先祖から受け継いだ分。`);
+    if(last.job.t<=1&&ap<=30)st.push(`肩書きは「${last.job.n}」。それでも資産が多いのは、本人の稼ぎではなく先祖の蓄えのおかげ。`);
+    else if(last.job.t>=2&&ap>=70)st.push(`肩書きは「${last.job.n}」と立派だが、受け継いだ財はほとんど無い。一代でゼロから積み上げている。`);
+    if(sp<=30&&ap>=60)st.push(`能力は${rankTxt(sp)}と高いのに、資産は少ない。能力と富は比例しなかった。`);
+    else if(sp>=70&&ap<=30)st.push(`能力は平均より下（${rankTxt(sp)}）だが、富はある。富を決めたのは能力より家だった。`);
+    const ideal=(last.notes||[]).find(n=>n.includes('向き')||n.includes('才があった'));
+    if(ideal)st.push(`本人の仕事について：${ideal}`);
+  }
+  if(builder&&builder.g>0)st.push(`この家の富をいちばん大きく積み上げたのは、${ERAS[builder.nx.era].e}の${builder.nx.full}（${builder.nx.job.n}）。${builder.nx.era>=13?`一代で${fmtA(builder.g)}を残した。`:`家の蓄えを「${dispA(builder.nx.era,builder.nx.a||0)}」まで押し上げた。`}`);
+  if(big)st.push(`いちばん大きく失ったのは${ERAS[big.era].e}。${big.aLog.losses[0]||'不運が重なった'}。${big.era>=13?`これで${fmtA(big.aLog.lost)}が消えた。`:`受け継いだ蓄えの${Math.round(big.aLog.lost/Math.max(1,big.aLog.inh+big.aLog.lost)*100)}%が消えた。`}`);
+  return `<section style="display:flex;flex-direction:column;gap:10px">
+    <h2 style="font-size:24px">家の豊かさの移り変わり</h2>
+    <p class="muted" style="font-size:13px">その時代の中で、この家がどのくらい豊かだったか（上に行くほど豊か）。</p>
+    <div style="overflow-x:auto">${svg}</div>
+    <ul class="story">${st.map(t=>`<li>${t}</li>`).join('')}</ul>
+  </section>`;
+}
+
+function fourView(L,alive,ext,extRate){
+  const avg=(r,k)=>r.length?r.reduce((q,x)=>q+x[k],0)/r.length:0;
+  // 資産は一部の大当たりで平均が大きくぶれるので、真ん中の値（中央値）で比べる
+  const med=(r,k)=>{if(!r.length)return 0;const a=r.map(x=>x[k]).sort((x,y)=>x-y);return a[a.length>>1]};
+  const NAME={title:'肩書き・家柄がいちばん立派な相手',looks:'見た目がいちばんの相手',ability:'本当の能力がいちばんの相手 ※',compat:'本当にいちばん気の合う相手 ※',random:'でたらめに選ぶ'};
+  const rows=[...state.cmp.map(c=>({n:NAME[c.pol],r:c.r})),{n:NAME.random,r:alive}].map(x=>({n:x.n,s:avg(x.r,'s'),a:med(x.r,'a'),k:avg(x.r,'kids'),h:avg(x.r,'hap')}));
+  const hs=L.filter(r=>r.hap),last=L[L.length-1];
+  if(!ext)rows.unshift({n:'あなたの選び方',you:1,s:sum(last.st),a:last.a,k:L.reduce((q,r)=>q+(r.kids||0),0),h:hs.reduce((q,r)=>q+r.hap,0)/Math.max(1,hs.length)});
+  const top=k=>Math.max(...rows.filter(r=>!r.you).map(r=>r[k]));
+  const cell=(r,k,txt)=>`<td class="num ${!r.you&&r[k]===top(k)?'best':''}">${txt}</td>`;
+  return `<section style="display:flex;flex-direction:column;gap:10px">
+    <h2 style="font-size:24px">選び方ごとの結果</h2>
+    <p class="muted" style="font-size:13px">同じ時代設定で、選び方だけ変えて${state.cmp[0].r.length}回ずつ遊ばせた結果（起きる出来事は毎回ちがう）。令和の「あなた」の能力と資産、血筋が生んだ子の総数、夫婦の幸せ（10点満点）。</p>
+    <div style="overflow-x:auto"><table class="four"><thead><tr><th>選び方</th><th>能力</th><th>資産（中央値）</th><th>子孫</th><th>幸せ</th></tr></thead><tbody>
+    ${rows.map(r=>`<tr class="${r.you?'you':''}"><th>${r.n}</th>${cell(r,'s',r.s.toFixed(1))}${cell(r,'a',fmtA(r.a))}${cell(r,'k',r.k.toFixed(1)+'人')}${cell(r,'h',r.h.toFixed(1))}</tr>`).join('')}
+    </tbody></table></div>
+    <p class="muted" style="font-size:12px">※ 本当の能力や相性は、ゲーム中は見えない。見えていたらどうなったか、の参考。途中で途絶えた血筋（でたらめに選んだ場合 ${extRate}%）は平均から除いている。</p>
+  </section>`;
+}
+
+// 最後に伝える教訓：このプレイヤーの選択と、その血筋に起きたことで語る
+function lessonView(L,alive,ext){
+  const P=L.filter(r=>r.era>=2);if(P.length<3)return '';
+  const pairs=L.filter(r=>r.partner&&r.others&&!r.partner.solo);
+  const abil=r=>sum(r.st),lg=r=>Math.log10(1+(r.a||0));
+  // --- あなたの選び方
+  const cnt={title:0,looks:0,ability:0,compat:0};
+  pairs.forEach(r=>{const all=[r.partner,...r.others],mx=f=>Math.max(...all.map(f));
+    if(r.partner.w*10+r.partner.job.t===mx(c=>c.w*10+c.job.t))cnt.title++;
+    if(perceived(r.partner,r.era)===mx(c=>perceived(c,r.era)))cnt.looks++;
+    if(sum(r.partner.st)===mx(c=>sum(c.st)))cnt.ability++;
+    if(compat(r,r.partner)===mx(c=>compat(r,c)))cnt.compat++;});
+  const n=pairs.length||1,hs=pairs.reduce((q,r)=>q+r.hap,0)/n;
+  const style=cnt.title/n>=.6?['肩書き重視派','家柄と肩書きのいちばん立派な相手を選ぶことが多かった']:cnt.looks/n>=.6?['見た目重視派','いちばん見た目のいい相手を選ぶことが多かった']:cnt.ability/n>=.5?['噂読みの名人','噂から、本当にいちばん能力の高い相手を見抜くことが多かった']:['迷いながら選ぶ派','肩書きにも見た目にも偏らずに選んでいた'];
+  const last=L[L.length-1];
+  const res=[];
+  res.push(`${n}回の結婚のうち、肩書きがいちばん立派な相手を選んだのは${cnt.title}回、見た目がいちばんの相手は${cnt.looks}回。本当にいちばん能力が高い相手を選べたのは${cnt.ability}回、いちばん気の合う相手は${cnt.compat}回だった。`);
+  res.push(`夫婦の幸せは平均${hs.toFixed(1)}点。${cnt.compat/n>=.5?'気の合う相手を選べた代が多く、幸せは高めだった。':cnt.title/n>=.6?'肩書きを優先したので、相性は運しだいだった。':'相性は、選んだ時点では分からなかった。'}`);
+  // --- 教訓
+  const out=[];
+  // 1 ルールは時代で違う
+  const inh=P.filter(r=>r.inherit).length,arr=pairs.filter(r=>r.arranged||r.elope).length;
+  const ruleEv=P.map(r=>r.aLog&&r.aLog.losses||[]).flat().find(t=>/秩禄|農地改革|インフレ/.test(t));
+  out.push(['時代によってルールが違う',`この家では${P.length}代のうち${inh}代が親の家業をそのまま継いだ。${arr?`親が決めた縁談があった代は${arr}回。`:''}${ruleEv?`「${ruleEv.split('（')[0]}」で財を失った代もある。`:'評価される能力、結婚の決まり、家の継ぎ方は世代ごとに変わった。'}`]);
+  // 2 能力は富に直結しない
+  const cAW=corr(P.map(abil),P.map(lg));
+  const pz=r=>posOf(r.era,r.a||0)||50;
+  const topA=P.reduce((a,r)=>abil(r)>abil(a)?r:a),rich=P.reduce((a,r)=>pz(r)<pz(a)?r:a);
+  out.push(['能力が高くても、豊かになるとは限らない',topA===rich?`いちばん有能だった${topA.full}が、いちばん豊かでもあった。`:`いちばん有能だった（能力計${abil(topA)}）${topA.full}の${qA(topA.era,topA.a||0)}。この血筋でいちばん豊かだった${rich.full}の${qA(rich.era,rich.a||0)}、能力計は${abil(rich)}だった。${rich.aLog?(rich.aLog.inh>=(rich.a||1)*.5?'資産の大半は受け継いだ分だった。':'資産の多くは本人の代で稼いだ分だった。'):'資産は代々の蓄えだった。'}`]);
+  // 3 それでも能力が高いと当たりを引くことがある
+  const jack=P.find(r=>(r.notes||[]).some(t=>t.includes('大当たり')));
+  const lucky=P.find(r=>(r.notes||[]).some(t=>t.includes('運よく巡ってきた')));
+  const ab=state.cmp&&state.cmp.find(c=>c.pol==='ability'),avg=a=>{if(!a.length)return 0;const v=a.map(x=>x.a).sort((x,y)=>x-y);return v[v.length>>1]},p90=a=>{if(!a.length)return 0;const v=a.map(x=>x.a).sort((x,y)=>x-y);return v[Math.floor(v.length*.9)]};
+  out.push(['能力が時代に合うと、大きく稼げることがある',`${jack?`${ERAS[jack.era].e}の${jack.full}は、能力が時代に合い、「${jack.job.n}」で大きく稼いだ。`:lucky?`${ERAS[lucky.era].e}の${lucky.full}は、めったに空きの出ない「${lucky.job.n}」に就けた。`:`この血筋では大きく稼いだ代はなかった。`}${ab?` 同じ時代を「本当の能力」で選び続けると、資産の真ん中は${fmtA(avg(ab.r))}、上位1割の入口は${fmtA(p90(ab.r))}（でたらめに選ぶと${fmtA(avg(alive))}と${fmtA(p90(alive))}）。${avg(ab.r)>avg(alive)*1.1&&p90(ab.r)>p90(alive)*1.05?'能力で選んだほうが、大きく稼ぐ家が多かった。':'能力で選んでも、資産に目立った差は出なかった。'}`:''}`]);
+  // 4 地位と資産は一致しない
+  const lowRich=P.filter(r=>r.job.t<=1&&r.aLog).sort((a,b)=>pz(a)-pz(b))[0],highPoor=P.filter(r=>r.job.t>=3&&r.aLog).sort((a,b)=>pz(b)-pz(a))[0];
+  const med=[...P].map(r=>r.a||0).sort((a,b)=>a-b)[P.length>>1];
+  out.push(['肩書きと資産は一致しない',`${lowRich&&pz(lowRich)<=35?`${ERAS[lowRich.era].e}の${lowRich.full}は「${lowRich.job.n}」だったが、${qA(lowRich.era,lowRich.a||0)}。${lowRich.aLog&&lowRich.aLog.inh>(lowRich.a||1)*.5?'大半は先祖から受け継いだ分だった。':'本人の代の稼ぎと出来事で増えた分が大きかった。'}`:highPoor&&pz(highPoor)>=55?`${ERAS[highPoor.era].e}の${highPoor.full}は「${highPoor.job.n}」と立派な肩書きだったが、${qA(highPoor.era,highPoor.a||0)}にとどまった。`:`この血筋では、肩書きと資産がおおむね揃っていた。ただ、同じ肩書きでも、受け継いだ分と出来事によって資産は何倍も違う。`}`]);
+  // 男女関係・家庭の振り戻し・健康（同じ時代を300回遊ばせた中での割合）
+  const ES=ERA_STATS[state.start||0]||{};
+  const both=pairs.filter(r=>r.bothAttr);
+  out.push(['見た目のいい者どうしの結婚は、崩れることもある',`このゲームを300回回した中では、美男美女どうしの夫婦は、浮気が${ES.bothAff}%、離婚が${ES.bothDiv}%だった。それ以外の夫婦は浮気${ES.othAff}%、離婚${ES.othDiv}%。ゲームでは、どちらにもほかの相手からの誘いが多いと仮定している（現実でも、Ma-Kellamsらの研究で、魅力の高い人ほど結婚期間が短い傾向が報告されている）。${both.length?`この血筋にも美男美女どうしの夫婦が${both.length}組いて、${both.filter(r=>r.affair||r.divorce).length}組で浮気か離婚があった。`:''}`]);
+  out.push(['円満な家庭から、円満な家庭が続くとは限らない',`このゲームを300回回した中では、仲のいい両親の子が、自分も仲のいい夫婦になった割合は${ES.hapHap}%。仲の悪い両親の子でも${ES.unhHap}%だった。子ども時代の逆境が0回の子は${ES.m0}%が心の病を抱えたが、1〜2回の子は${ES.m1}%、3回以上の子は${ES.m3}%。ゲームは「少しの逆境は人を強くし、重なりすぎると傷になる」という研究（Seeryら）を仮定に組み込んでいる。`]);
+  out.push(['よい状態が、よいまま続く家は少ない',`このゲームを300回回した中では、暮らしにゆとりがあり、夫婦仲もよい代のあと、次の代もそうだったのは${ES.goodNext}%（どの代でも平均${ES.goodBase}%）。そういう代が3代続いた家は${ES.good3}%だった。大きな財産を継ぐと働く意欲が薄れやすく、子は親ほど飛び抜けず、恵まれた者どうしの結婚は浮気や離婚で崩れることもある。`]);
+  const sb=L.reduce((q,r)=>q+(r.sibBetter||0),0);
+  out.push(['家を継いだ子が、いちばん恵まれるとは限らない',`このゲームを300回回した中では、跡継ぎより、家を出たきょうだいのほうが豊かになった代が${ES.sibBetter}%あった。${sb?`この血筋でも${sb}回、家を出たきょうだいが跡継ぎより豊かになった。`:'この血筋では、跡継ぎがきょうだいより豊かなまま続いた。'}`]);
+  out.push(['最初の差は、雪だるま式に広がりやすい',`このゲームを300回回した中では、裕福な家の子が、平均より稼ぎのいい職に就いた割合は${ES.upRich}%。ふつうの家では${ES.upMid}%、貧しい家では${ES.upPoor}%だった。豊かな家は教育とつてで道を広げ、つまずいた子は道が狭まる。${ES.lifeRich&&ES.lifePoor?`ゲームの中では寿命にも差が出た。戦後の代で比べると、裕福な家の当主の平均の享年は${ES.lifeRich}歳、ふつう以下の家では${ES.lifePoor}歳だった。`:''}`]);
+  const mis=L.filter(r=>r.mistress).length;
+  if(mis||(ES.misRich||0)>=10)out.push(['裕福な家の夫は、妾や愛人を持つことが多かった',`このゲームを300回回した中では、暮らしが裕福以上の家で夫が妾や愛人を持った割合は${ES.misRich}%、ふつう以下の家では${ES.misOth}%。明治の新律綱領（1870年）は妾を妻と同じ二等親とし、1882年の旧刑法で規定が消えた。${mis?`この血筋でも${mis}代で妾や愛人がいた。`:''}`]);
+  const gl=L.filter(r=>r.recDis||r.domDis||(r.rec||0)===1);
+  if(gl.length)out.push(['遺伝は、知らないうちに受け継がれていた',`潜性遺伝の病気は、両親とも保因者のときだけ子の4人に1人に出る。この血筋では、保因者だった人が${L.filter(r=>(r.rec||0)===1).length}人、潜性遺伝の病気を発症した人が${L.filter(r=>r.recDis).length}人、顕性遺伝の病気を受け継いだ人が${L.filter(r=>r.domDis).length}人いた。結婚相手を選んだ時点では、誰にも分からなかった。誰でも何らかの保因者であるのがふつうで、これは結婚相手を避ける理由になるという意味ではない。`]);
+  const wd=L.reduce((q,r)=>q+(r.warDead||0)+(r.raidDead||0)+(r.husbandWar?1:0),0);
+  if(wd)out.push(['戦争は、選択と関係なく家族を奪った',`この血筋では、戦争で${wd}人が亡くなった。太平洋戦争では、日本人の死者は約310万人とされる（軍人・軍属約230万人、民間人約80万人）。`]);
+  if(L.some(r=>r.adopted))out.push(['家と血筋は、別のものになることがある','この家は途中で養子を迎えた。名前と財産と家業は受け継がれたが、能力や体質は受け継がれていない。江戸〜明治の日本では、家を絶やさないための養子は珍しくなかった。']);
+  const ls=L.filter(r=>r.lifespan);
+  if(ls.length)out.push(['寿命や心の病も、裏で受け継がれていた',`この血筋の当主の享年は ${ls.map(r=>r.lifespan).join('・')} 歳（配偶者は ${L.filter(r=>r.partner&&r.partner.lifespan).map(r=>r.partner.lifespan).join('・')||'—'} 歳）。体質の弱さや落ち込みやすさは遺伝で受け継がれ、暮らしや逆境で表に出やすくなる。${L.some(r=>r.suicide)?'この血筋では、心の病から自ら命を絶った人もいた。':''}`]);
+  // 運：このゲームの測定値と、現実の研究の数字で裏付ける（いちばん大事な教訓なので先頭に置く）
+  const fates=L.reduce((q,r)=>q+(r.notes||[]).filter(t=>t.startsWith('【運命】')).length,0);
+  const srt=alive.map(x=>x.a).sort((a,b)=>a-b),q=f=>srt[Math.floor(srt.length*f)]||0;
+  // 見える情報だけで狙って選んだ1回が、でたらめに選んだ1回に勝つ確率（各1,500回の自動プレイで測定）
+  // 事前の試算（2026-10-31・各4000回）：目標ごとに見える情報だけの選び方（富＝家柄と肩書き、子孫＝家柄と肩書き、幸せ＝性格の近さ、才能＝噂）とでたらめを比べ、前者が上回る確率
+  const WIN={wealth:56,kids:54,hap:64,abil:58},g=state.goal||'wealth';
+  out.unshift(['結果の多くは運で決まる',`${fates?`この血筋では、選択と関係ない出来事が${fates}回あった。`:'この血筋では、選択と関係ない大きな出来事は起きなかったが、戦争や恐慌の影響は受けた。'}見える情報で目標「${GOALS[g].n}」を狙ってうまく選んでも、でたらめに選んだ人に勝てる確率は、事前の試算で約${WIN[g]}%だった。同じ時代をでたらめに選んで300回やり直すと、令和の資産は下位1割で${fmtA(q(.1))}、上位1割で${fmtA(q(.9))}まで開く。現実の研究では、知能と年収の相関は約0.2で、年収の差のうち知能で説明できるのは4%ほどとされている。${ext?'この血筋は途中で途絶えた。':''}`]);
+  // そのプレイで実際に起きたことほど目立たせる
+  const happyThenNot=L.some((r,i)=>r.hap>=7&&L[i+1]&&L[i+1].hap<=3)||L.some((r,i)=>r.hap<=3&&L[i+1]&&L[i+1].hap>=7);
+  const SCORE={'結果の多くは運で決まる':5,'時代によってルールが違う':L.some(r=>r.elope||r.arranged)?2:1,'能力が高くても、豊かになるとは限らない':topA!==rich?3:1,
+    '能力が時代に合うと、大きく稼げることがある':jack?4:1,'肩書きと資産は一致しない':(lowRich&&pz(lowRich)<=35)||(highPoor&&pz(highPoor)>=55)?3:1,
+    '見た目のいい者どうしの結婚は、崩れることもある':both.some(r=>r.affair||r.divorce)?4:both.length?2:1,'円満な家庭から、円満な家庭が続くとは限らない':happyThenNot?3:1,
+    'よい状態が、よいまま続く家は少ない':1,'家を継いだ子が、いちばん恵まれるとは限らない':sb?3:1,'最初の差は、雪だるま式に広がりやすい':1,
+    '裕福な家の夫は、妾や愛人を持つことが多かった':mis?3:0,'戦争は、選択と関係なく家族を奪った':4,'遺伝は、知らないうちに受け継がれていた':L.some(r=>r.recDis||r.domDis)?4:1,
+    '家と血筋は、別のものになることがある':4,'寿命や心の病も、裏で受け継がれていた':L.some(r=>r.suicide)?4:1};
+  const top=out.map((x,i)=>({x,i,s:SCORE[x[0]]??1})).sort((a,b)=>b.s-a.s||a.i-b.i).slice(0,5).sort((a,b)=>a.i-b.i).map(o=>o.x);
+  const first=t=>{const k=t.indexOf('。');return k>0?t.slice(0,k+1):t};
+  const g0=state.goal||'wealth',W0={wealth:56,kids:54,hap:64,abil:58}[g0],pzw=r=>posWord(pz(r));
+  const SHORT={'結果の多くは運で決まる':`見える情報でうまく選んでも、でたらめに選んだ人に勝てる確率は、事前の試算で約${W0}%だった。`,
+    '時代によってルールが違う':`${inh}代が家業をそのまま継いだ。${ruleEv?'制度の変化で財を失った代もあった。':'結婚や相続の決まりも代ごとに違った。'}`,
+    '能力が高くても、豊かになるとは限らない':topA===rich?`いちばん有能だった${topA.full}が、いちばん豊かでもあった。`:`いちばん有能だった${topA.full}より、能力の劣る${rich.full}の家のほうが豊かだった。`,
+    '能力が時代に合うと、大きく稼げることがある':jack?`${jack.full}が、能力と時代が合って「${jack.job.n}」で大きく稼いだ。`:'この血筋では、大きく稼いだ代はなかった。',
+    '肩書きと資産は一致しない':lowRich&&pz(lowRich)<=35?`「${lowRich.job.n}」だった${lowRich.full}の家は、${pzw(lowRich)}だった。`:highPoor&&pz(highPoor)>=55?`「${highPoor.job.n}」と立派な肩書きの${highPoor.full}の家は、${pzw(highPoor)}だった。`:'同じ肩書きでも、資産は何倍も違った。',
+    '見た目のいい者どうしの結婚は、崩れることもある':`このゲームを300回回した中では、美男美女どうしの夫婦の離婚は${ES.bothDiv}%、それ以外は${ES.othDiv}%。${both.length?`この血筋にも${both.length}組いた。`:''}`,
+    '円満な家庭から、円満な家庭が続くとは限らない':`このゲームを300回回した中では、仲のいい両親の子が、自分も仲のいい夫婦になったのは${ES.hapHap}%だけだった。`,
+    'よい状態が、よいまま続く家は少ない':`このゲームを300回回した中では、暮らしも夫婦仲もよい代が3代続いた家は、${ES.good3}%だった。`,
+    '家を継いだ子が、いちばん恵まれるとは限らない':sb?`家を出たきょうだいが、跡継ぎより豊かになった代が${sb}回あった。`:`このゲームを300回回した中では、${ES.sibBetter}%の代で、家を出たきょうだいのほうが豊かになった。`,
+    '最初の差は、雪だるま式に広がりやすい':`このゲームを300回回した中では、稼ぎのいい職に就いたのは、裕福な家の子で${ES.upRich}%、貧しい家の子で${ES.upPoor}%だった。`,
+    '裕福な家の夫は、妾や愛人を持つことが多かった':`この血筋でも${mis}代で、夫に妾や愛人がいた。`,
+    '戦争は、選択と関係なく家族を奪った':`この血筋では、戦争で${wd}人が亡くなった。`,
+    '遺伝は、知らないうちに受け継がれていた':`遺伝の病気を発症した人が${L.filter(r=>r.recDis||r.domDis).length}人。結婚の時点では誰にも分からなかった。結婚相手を避ける理由になるという意味ではない。`,
+    '家と血筋は、別のものになることがある':'途中で養子を迎え、血は途切れたが家は続いた。',
+    '寿命や心の病も、裏で受け継がれていた':L.some(r=>r.suicide)?'心の病から、自ら命を絶った人もいた。':`当主の享年は${Math.min(...ls.map(r=>r.lifespan))}〜${Math.max(...ls.map(r=>r.lifespan))}歳だった。`};
+  const help=L.some(r=>r.mental||r.suicide)?'<p class="muted" style="font-size:12px">こころの不調で悩んでいる人は、ひとりで抱えずに相談してください（<a href="https://www.mhlw.go.jp/mamorouyokokoro/" target="_blank" rel="noopener">厚生労働省「まもろうよ こころ」</a>）。</p>':'';
+  return `<section style="display:flex;flex-direction:column;gap:12px">
+    <h2 style="font-size:24px">この年表からわかること</h2>
+    <span class="label">この血筋で目立ったこと</span>
+    <ol class="lessons">${top.map(([h,t])=>`<li><b>${h}</b><span>${SHORT[h]||first(t)}</span></li>`).join('')}</ol>
+    <details class="fold"><summary>すべての教訓を読む（${out.length}項目・くわしい数字つき）</summary>
+      <ol class="lessons" style="margin-top:12px">${out.map(([h,t])=>`<li><b>${h}</b><span>${t}</span></li>`).join('')}</ol>
+    </details>
+    ${help}
+  </section>
+  <section style="display:flex;flex-direction:column;gap:12px">
+    <h2 style="font-size:24px">あなたの選び方</h2>
+    <p class="final" style="font-size:20px">${style[0]}　<span class="muted" style="font-size:15px;font-family:var(--f-body)">${style[1]}</span></p>
+    <ul class="story">${res.map(t=>`<li>${t}</li>`).join('')}</ul>
+  </section>`;
+}
+
+function gradeView(L,alive,ext){
+  const G=GOALS[state.goal||'wealth'],last=L[L.length-1],hs=L.filter(r=>r.hap);
+  const mine={a:last.a||0,kids:L.reduce((q,r)=>q+(r.kids||0),0),hap:hs.reduce((q,r)=>q+r.hap,0)/Math.max(1,hs.length),s:sum(last.st)};
+  const fmt={a:v=>fmtA(v),kids:v=>Math.round(v)+'人',hap:v=>v.toFixed(1)+'点',s:v=>'計'+v};
+  if(ext)return {html:`<section class="grade"><span class="g">D</span><div><b>目標「${G.n}」</b><p class="muted" style="font-size:14px">${state.extinct&&state.extinct.kind==='single'?'結婚しない道を選んだため、目標の判定はない。':state.extinct&&state.extinct.kind==='nochild'?'家が途絶えたため、目標の判定はない。':'血筋が途絶えたため、目標は届かなかった。'}</p></div></section>`,rank:'D'};
+  const pc=k=>k==='a'?(posOf(last.era,mine.a)||50):pct(alive.map(x=>x[k]),mine[k]);
+  const p=pc(G.k),rank=p<=10?'S':p<=30?'A':p<=60?'B':'C';
+  const others=Object.entries(GOALS).filter(([k])=>GOALS[k]!==G).map(([k,g])=>`${g.n.replace('を築く','').replace('を増やす','').replace('な家庭を続ける','').replace('な家系をつくる','').replace('を未来につなぐ','')}：${rankTxt(pc(g.k))}`).join('　');
+  const hsr=L.filter(r=>r.hap&&r.partner&&!r.partner.solo),hb=hsr.length?hsr.reduce((a,r)=>r.hap>a.hap?r:a):null,hw=hsr.length?hsr.reduce((a,r)=>r.hap<a.hap?r:a):null;
+  const range=hb&&hb!==hw?`<p class="muted" style="font-size:13px">いちばん幸せだったのは${ERAS[hb.era].e}の${hb.full}の夫婦（${hb.hap}点）、いちばんつらかったのは${ERAS[hw.era].e}の${hw.full}の夫婦（${hw.hap}点）。代ごとの差は大きくても、7代を平均すると真ん中に寄る。</p>`:'';
+  return {html:`<section class="grade"><span class="g">${rank}</span><div style="min-width:0"><b>目標「${G.n}」</b><p style="font-size:14px">${G.u}は${fmt[G.k](mine[G.k])}。でたらめに選んだ300回の中で${rankTxt(p)}。</p><p class="muted" style="font-size:13px">ほかの物差しでは　${others}</p>${range}</div></section>`,rank};
+}
+
+// 結果の違いが何で決まったか（配られた札・選択・運を別々に入れ替えて自動プレイし、分散を分けた値。順位に直して計算）
+// 40×40×5通り＝8,000回
+const DECOMP={9:{a:{init:0,choice:1,luck:39,mix:60},kids:{init:10,choice:1,luck:55,mix:34},hap:{init:10,choice:4,luck:49,mix:36},s:{init:0,choice:3,luck:59,mix:38}},
+              0:{a:{init:0,choice:1,luck:70,mix:30},kids:{init:10,choice:2,luck:67,mix:21},hap:{init:19,choice:7,luck:36,mix:38},s:{init:0,choice:6,luck:77,mix:17}}};
+const FACT_N={init:'生まれ',choice:'選択',luck:'運',mix:'組み合わせ'};
+function lifeView(L,alive,ext){
+  const st0=state.start||0,Dd=DECOMP[st0]||DECOMP[9],G=GOALS[state.goal||'wealth'],d=Dd[G.k];
+  const first=L[0],P=L.filter(r=>r.era>=2);
+  const fates=L.reduce((q,r)=>q+(r.notes||[]).filter(t=>t.startsWith('【運命】')).length,0);
+  const jack=P.filter(r=>(r.notes||[]).some(t=>t.includes('大当たり')||t.includes('運よく巡ってきた'))).length;
+  const miss=P.filter(r=>(r.notes||[]).some(t=>t.includes('その口が無かった')||t.includes('手が届かなかった')||t.includes('食べていくのは難しかった')||t.includes('本当は「'))).length;
+  const ruleEv=P.map(r=>r.aLog&&r.aLog.losses||[]).flat().filter(t=>/秩禄|農地改革|インフレ|恐慌/.test(t)).length;
+  const WIN={wealth:56,kids:54,hap:64,abil:58}[state.goal||'wealth'];
+  const bar=x=>`<div class="dbar" role="img" aria-label="${Object.keys(FACT_N).map(k=>FACT_N[k]+x[k]+'%').join('、')}">${Object.keys(FACT_N).map(k=>x[k]?`<span class="d-${k}" style="flex:${x[k]}">${x[k]>=8?({init:'生まれ',choice:'選択',luck:'運',mix:'組み合わせ'})[k]+' '+x[k]+'%':''}</span>`:'').join('')}</div>`;
+  return `<section class="life">
+    <span class="label">このゲームの仕組み</span>
+    <h2 style="font-size:26px">結果を決める4つの要素</h2>
+    <p class="formula">結果 ＝ 生まれ × 選択 × 時代との相性 × 運</p>
+    <ol class="lessons">
+      <li><b>生まれ</b><span>生まれた家と、受け継いだ能力。この家は、暮らしが「${WL[first.w]}」の「${first.job.n}」の家から始まった。親子の能力の相関は約0.4（研究）で、代を重ねると薄まる。</span></li>
+      <li><b>選択</b><span>誰と結婚し、誰に家を継がせるか。プレイヤーが決められるのはここだけ。見える情報でうまく選んだ場合、でたらめに選んだ人に勝てる確率は、事前の試算で約${WIN}%だった。</span></li>
+      <li><b>時代との相性</b><span>その時代に何が評価され、何が失われるか。この血筋では、能力が時代に合って仕事がうまくいった代が${jack}回、向いた仕事に就けなかった代が${miss}回${ruleEv?`、制度の変化で財を失った代が${ruleEv}回`:''}あった。</span></li>
+      <li><b>運</b><span>誰と出会えたか、どんな出来事が起きたか。この血筋では、選択と関係ない出来事が${fates}回あった。${ext?'血筋は途中で途絶えた。':''}</span></li>
+    </ol>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span class="label">目標「${G.n}」の結果の違いは、何で決まったか</span>
+      ${bar(d)}
+      <div class="dtable"><table class="four"><thead><tr><th>物差し</th>${Object.values(FACT_N).map(n=>`<th>${n}</th>`).join('')}</tr></thead><tbody>
+      ${Object.values(GOALS).map(g=>{const x=Dd[g.k];return `<tr class="${g===G?'you':''}"><th>${g.n}</th>${Object.keys(FACT_N).map(k=>`<td class="num">${x[k]}%</td>`).join('')}</tr>`}).join('')}
+      </tbody></table></div>
+      <p class="muted" style="font-size:12px">生まれ（初代の家と能力）・選択（5通りの選び方）・運（出会い・出来事）をそれぞれ入れ替えて${st0===9?'8,000':'3,125'}回自動で遊ばせ、令和の結果の散らばりを分けた値。「組み合わせ」は、同じ選択や同じ生まれでも、運や時代との相性で結果が変わった部分。時代のルールは全員に共通なので、その影響はここに含まれる。</p>
+    </div>
+    <div class="closing">
+      <p>このゲームでは、目標「${G.n}」の7代目の結果の違いのうち、選び方だけで説明できるのは${d.choice}%だった。運だけで決まったのが${d.luck}%、運や時代との組み合わせで決まったのが${d.mix}%。${d.init<=3?'初代の家の差は、7代目にはほぼ残っていなかった。':`初代の家の差は、7代目にも${d.init}%ほど残っていた。`}うまく選べば、でたらめに選ぶより勝つ確率は6割前後に上がる。</p>
+      <p class="q">あなたなら、何を見て相手を選びますか。</p>
+    </div>
+  </section>`;
+}
+
+function endView(){
+  const L=state.line,last=L[L.length-1],ext=state.extinct;
+  ensureDist(state.start||0);
+  if(!state.cmp)state.cmp=CMP();
+  const sims=ERA_FINAL[state.start||0],alive=sims.filter(Boolean),extRate=Math.round((sims.length-alive.length)/sims.length*100);
+  const pairs=L.filter(r=>r.partner&&!r.partner.solo);
+  const judged=pairs.map(r=>{
+    const all=[r.partner,...r.others],mx=Math.max(...all.map(c=>sum(c.st)));
+    const best=all.find(c=>sum(c.st)===mx);
+    const titled=all.reduce((a,c)=>(c.w*10+c.job.t)>(a.w*10+a.job.t)?c:a);
+    const pretty=all.reduce((a,c)=>perceived(c,r.era)>perceived(a,r.era)?c:a);
+    return {r,best,mx,hit:sum(r.partner.st)===mx,titleTrue:sum(titled.st)===mx,lookPick:perceived(r.partner,r.era)===perceived(pretty,r.era),mode:modeOf(r.era)};
+  });
+  const rate=m=>{const x=judged.filter(j=>j.mode===m);return x.length?`${x.filter(j=>j.hit).length}/${x.length}`:'—'};
+  const tt=judged.filter(j=>j.mode!=='ep');
+  const lp=judged.filter(j=>j.lookPick);
+  const kids=pairs.reduce((a,r)=>a+r.kids,0);
+  const pzz=r=>r.era>=2?(posOf(r.era,r.a||0)||100):100,richest=L.reduce((a,r)=>pzz(r)<pzz(a)?r:a,L[0]);
+  let face='';
+  if(!ext){
+    const vs=ERAS.map((_,e)=>({e,v:perceived(last,e)})).filter(x=>x.e>=(state.start||0));
+    const hi=vs.reduce((a,b)=>b.v>a.v?b:a),lo=vs.reduce((a,b)=>b.v<a.v?b:a);
+    const now=lookLabel(last,ERAS.length-1),hl=lookLabel(last,hi.e),ll=lookLabel(last,lo.e);
+    face=hl===ll?`あなたの見た目の評価は、どの時代でもだいたい「${now}」。`:`あなたの見た目の評価は、令和では「${now}」。${hl!==now?`${ERAS[hi.e].e}なら「${hl}」だった。`:''}${ll!==now?`${ERAS[lo.e].e}では「${ll}」だった。`:''}`;
+  }
+  const grade=gradeView(L,alive,ext);
+  const head=ext
+    ?(ext.kind==='war'?`${ERAS[ext.era].e}、${ext.ev.t}。血筋はここで途絶えた。`:ext.kind==='nochild'?`${ERAS[last.era].e}、${last.full}の夫婦には子が生まれず、養子も迎えなかった。この家は${L.length}代で終わった。`:ext.kind==='single'?`${ERAS[last.era].e}、${last.full}は結婚しない道を選んだ。この血筋は${L.length}代で終わった。`:`${ERAS[ext.era].e}、${ext.ev?ext.ev.t:'不運が重なり'}。${last.full}の子は${ext.kids}人いたが、誰も育たず、血筋はここで途絶えた。`)
+    :`${ERAS[state.start||0].y}の「${L[0].job.n}」から始まった血筋は、${L.length}世代を経て、2026年に「${last.job.n}」の${last.given}になった。それがあなた。`;
+  const ps=ext?null:pct(alive.map(x=>x.s),sum(last.st)),pw=ext?null:pct(alive.map(x=>x.w),last.w);
+  const mkShare=(withJob)=>ext
+    ?`縁と運（シード${state.seed}・目標「${GOALS[state.goal||'wealth'].n}」${grade.rank}）｜${L.length}世代目、${ERAS[ext.era].e}で血筋が途絶えた。${state.start?'':`噂で選んだ時代の的中${rate('ep')}、`}肩書きで選んだ時代の的中${rate('spec')}。`
+    :`縁と運（シード${state.seed}・目標「${GOALS[state.goal||'wealth'].n}」${grade.rank}）｜江戸後期から${L.length}世代。${withJob?`${L[0].job.n}から始まった血筋は令和に「${last.job.n}」になった。`:'その血筋は令和まで続いた。'}${state.start?'':`噂で選んだ時代の的中${rate('ep')}、`}肩書きで選んだ時代の的中${rate('spec')}。でたらめに選んだ人と比べて能力は${rankTxt(ps)}。`;
+  const wlen=t=>[...t].reduce((a,ch)=>a+(ch.charCodeAt(0)>0x2ff?2:1),0),tail=` #縁と運 ${'x'.repeat(23)}`;
+  let share=mkShare(true);if(wlen(share+tail)>280)share=mkShare(false);
+  const shareFull=`${share} #縁と運 https://www.noe-match.com/tools/en-to-un/#s-${state.seed}`;
+  return `${strip(ext?ext.era:ERAS.length)}
+  <section class="fade" style="display:flex;flex-direction:column;gap:12px">
+    ${art(ext?'end:'+(ext.kind||'event'):'end:you','')}
+    <span class="label">${ext?'血筋の終わり':'あなたに届くまで'}</span>
+    <p class="final">${head}</p>
+    ${face?`<p>${face}</p>`:''}
+  </section>
+  ${grade.html}
+  ${lessonView(L,alive,ext)}
+  ${lifeView(L,alive,ext)}
+  ${fourView(L,alive,ext,extRate)}
+  ${famTree(L,ext)}
+  <details class="fold"><summary>くわしい記録を見る（年表と本当の能力・富の出どころ）</summary><div class="foldin">
+  <section class="summary">${state.start?`
+    <div><span class="num">${rate('spec')}</span><span class="l">肩書きとスペックで選んで、いちばん能力の高い相手を選べた</span></div>
+    <div><span class="num">${tt.filter(j=>j.titleTrue).length}/${tt.length}</span><span class="l">肩書き・家柄がいちばん立派な相手が、能力もいちばんだった</span></div>
+    <div><span class="num">${judged.filter(j=>j.r.compatBest).length}/${judged.length}</span><span class="l">いちばん気の合う相手を選べた</span></div>
+    <div><span class="num">${judged.filter(j=>j.r.hap>=7).length}/${judged.length}</span><span class="l">幸せだった夫婦</span></div>
+  </section><section class="summary" hidden>`:''}
+    <div><span class="num">${rate('ep')}</span><span class="l">見た目と噂で選んだ時代に、いちばん能力の高い相手を選べた</span></div>
+    <div><span class="num">${rate('mix')}</span><span class="l">家柄と噂で選んだ時代</span></div>
+    <div><span class="num">${rate('spec')}</span><span class="l">肩書きとスペックで選んだ時代</span></div>
+    <div><span class="num">${tt.filter(j=>j.titleTrue).length}/${tt.length}</span><span class="l">肩書き・家柄がいちばん立派な相手が、能力もいちばんだった</span></div>
+  </section>
+  <p class="muted" style="font-size:14px">いちばん見た目のいい相手を選んだのは <span class="num">${lp.length}</span> 回。そのうち能力もいちばんだったのは <span class="num">${lp.filter(j=>j.hit).length}</span> 回。この血筋が生んだ子どもは計 <span class="num">${kids}</span> 人。その時代の中でいちばん豊かだったのは${ERAS[richest.era].e}の${richest.full}（${dispA(richest.era,richest.a||0)}）。</p>
+  ${wealthView(L,alive,ext)}
+  <section style="display:flex;flex-direction:column;gap:12px">
+    <h2 style="font-size:24px">年表と、本当の能力</h2>
+    <ol class="chron">${L.map((r,i)=>{const j=judged.find(x=>x.r===r);return `<li class="${r.you?'you':''} ${ext&&i===L.length-1?'end':''}">
+      <span class="yr">${ERAS[r.era].y}</span>
+      <div class="body">
+        <span class="era-n">${ERAS[r.era].e}・暮らし：${WL[r.w]}${r.era>=2?(r.you?'・60代時点の資産の見込み ':r.era>=13?'・資産 ':'・蓄え ')+dispA(r.era,r.a||0):''}・才能の活用度 <span class="num">${r.use}%</span>${r.kids?`・子${r.kids}人`:''}</span>
+        <span class="who">${r.full}（${r.job.n}${r.edu?'・'+r.edu:''}・${lookLabel(r,r.era)}）${r.you?'＝あなた':''}　${mini(r.st,r.amb)}</span>
+        <span class="mini num"><span>身長${r.hgt||'—'}cm</span><span>身なり${r.style??'—'}</span><span>衝動${r.imp??'—'}</span><span>幸せの感じやすさ${r.joy??'—'}</span><span>体質の弱さ${r.gene??'—'}</span><span>落ち込みやすさ${r.mood??'—'}</span><span>${r.alive?'存命':'享年'+(r.lifespan??'—')}</span><span>潜性の遺伝子${r.rec??0}本${(r.rec||0)===1?'（保因者）':''}</span>${r.dom?'<span>顕性の遺伝病あり</span>':''}<span>近視${r.myo??'—'}</span><span>太りやすさ${r.fat??'—'}</span><span>酒${['強い','弱い','飲めない'][r.alc??0]}</span><span>子のできやすさ${r.fert??'—'}</span>${r.g==='m'?`<span>薄毛${r.bald??'—'}</span>`:''}</span>
+        ${r.notes.map(n=>`<span class="nt">${n}</span>`).join('')}
+        ${r.partner?`${r.affair?'<span class="nt miss">浮気があった。</span>':''}${r.divorce?`<span class="nt miss">離婚した${r.remarry?'が、のちに再婚した':''}。</span>`:''}${r.mistress?`<span class="nt miss">${r.g==='m'?(r.era<=12?'妾を囲っていた。':'愛人がいた。'):(r.era<=12?'夫は妾を囲っていた。':'夫に愛人がいた。')}</span>`:''}${r.regionMove?`<span class="nt">${r.regionMove}。</span>`:''}${r.repat?'<span class="nt miss">満州から引き揚げてきた。</span>':''}${(r.sibOut||[]).map(x=>`<span class="nt">家を出た${x.ordL}の${x.given}は${x.city?'都会へ出て':''}「${x.job.n}」になった（${dispA(r.era+1,x.a)}・享年${x.lifespan}）。</span>`).join('')}${r.warDead?`<span class="nt miss">子のうち${r.warDead}人が戦死した。</span>`:''}${r.raidDead?`<span class="nt miss">子のうち${r.raidDead}人が空襲で亡くなった。</span>`:''}${r.husbandWar?`<span class="nt miss">${r.g==='m'?'戦死した。妻が子を育てた。':'夫は戦死し、ひとりで子を育てた。'}</span>`:''}${r.solo==='child'?'<span class="nt">結婚せずに子を持った。</span>':''}${r.twins?'<span class="nt">双子が生まれた。</span>':''}${r.adopted?'<span class="nt">子が生まれず、養子を迎えた。ここから先は血のつながりがない。</span>':''}${r.childless&&!r.adopted?'<span class="nt miss">子が生まれなかった。</span>':''}${r.moved?`<span class="nt">${r.moved}へ移り住んだ。</span>`:''}${r.partner.spark?`<span class="nt ${r.partner.sparkTrue?'hit':'miss'}">光るものを感じた相手だった。${r.partner.sparkTrue?'その得意は、次の時代に本当に評価されるものだった。':'ただ、次の時代に合う得意ではなかった。'}</span>`:''}<span class="pair">${r.arranged?'【親が決めた縁談】':r.elope?'【駆け落ち】':''}× ${r.partner.full}（${lookLabel(r.partner,r.era)}・${r.partner.mode==='ep'?'肩書きは見えず':r.partner.job.n+'・'+WL[r.partner.w]}${r.partner.edu?'・'+r.partner.edu:''}${r.partner.lifespan?'・享年'+r.partner.lifespan:''}）　${mini(r.partner.st)}</span>
+        ${r.sibs&&r.sibs.length?(()=>{const all=[r.heirPicked,...r.sibs],m=Math.max(...all.map(x=>sum(x.st))),b=all.find(x=>sum(x.st)===m);return sum(r.heirPicked.st)===m?`<span class="nt hit">跡継ぎ：${r.autoHeir?'決まりで継いだ':'選んだ'}${r.heirPicked.ordL}が、きょうだいでいちばん能力が高かった。</span>`:`<span class="nt ${r.autoHeir?'':'miss'}">跡継ぎ：${r.autoHeir?'決まりで家を継がなかった':'継がせなかった'}${b.ordL}の${b.given}は計${m}だった（継いだ${r.heirPicked.ordL}は計${sum(r.heirPicked.st)}）。</span>`})():''}
+        <span class="nt">${r.solo==='child'?'ひとりで子を育てた。暮らしは':'夫婦は'}${hapLabel(r.hap)}（幸せ ${r.hap}/10${r.compatBest?'・いちばん気の合う相手だった':''}）。${r.hapUp?`支えになったのは「${r.hapUp==='気が合った'?'気が合ったこと':r.hapUp}」`:''}${r.hapUp&&r.hapDown?'、':''}${r.hapDown?`こたえたのは「${r.hapDown==='気が合った'?'気が合わなかったこと':r.hapDown}」`:''}${r.hapUp||r.hapDown?'。':''}</span>
+        ${!j?'':j.hit?`<span class="nt hit">選べた相手の中でいちばん能力の高い相手を選んでいた。</span>`:`<span class="nt miss">選ばなかった${j.best.full}（${lookLabel(j.best,r.era)}・${j.best.mode==='ep'?'噂：'+j.best.ep[0]:j.best.job.n}）は計${j.mx}だった。</span>`}`:''}
+      </div></li>`}).join('')}</ol>
+  </section>
+  </div></details>
+  ${PARAMS}
+  <section class="luck"><span class="label">シード</span><p>このゲームのシードは <b class="num" style="font-size:18px;letter-spacing:.1em">${state.seed}</b>。友達が同じシードで遊ぶと、同じ時代に同じ運命が起きる。選び方の違いだけで、年表がどこまで変わるか比べられる。</p></section>
+  <section style="display:flex;flex-direction:column;gap:8px">
+    <span class="label">結果をシェア</span>
+    <textarea id="share" rows="3" readonly>${shareFull}</textarea>
+    <div class="row"><a class="btn" id="shareX" href="https://x.com/intent/tweet?text=${encodeURIComponent(shareFull)}" target="_blank" rel="noopener">Xでシェア</a><button class="btn ghost" id="copy">コピー</button><span id="copied" class="muted" style="font-size:13px"></span><button class="btn ghost" id="same" style="margin-left:auto">同じシードでやり直す</button><button class="btn" id="again">新しくはじめる</button></div>
+  </section>
+  <section id="result-line" style="background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px 18px;text-align:center;display:flex;flex-direction:column;gap:8px;align-items:center">
+    <span class="label" style="letter-spacing:.18em">NOE OFFICIAL LINE</span>
+    <p style="margin:0;font-family:var(--f-disp);font-size:17px;font-weight:600;line-height:1.5">現実の結婚設計の判断材料を、週1回LINEで</p>
+    <p class="muted" style="margin:0;font-size:13px;line-height:1.9">結婚設計に効くFACTだけを、週1回・短文で届けます。<br>気になることの相談も、追加後そのままトークでどうぞ。</p>
+    <a class="btn" href="https://lin.ee/unbDsCR" rel="noopener" target="_blank" onclick="try{gtag('event','line_add_result',{tool:'en-to-un'});}catch(e){}">友だち追加して受け取る</a>
+    <p class="muted" style="margin:0;font-size:11px">登録は無料・配信は週1回だけ。いつでも解除できます。</p>
+  </section>`;
+}
+
+document.addEventListener('click',e=>{
+  if(e.target.closest('#shareX')&&typeof gtag==='function')gtag('event','share',{method:'x',content_type:'game',item_id:'en-to-un'});
+  const b=e.target.closest('button');if(!b)return;
+  if(b.dataset.goal){pendingGoal=b.dataset.goal;document.querySelectorAll('[data-goal]').forEach(x=>x.setAttribute('aria-pressed',x===b));return}
+  if(b.id==='start'){if(b.disabled)return;const sv=$('#seed')&&$('#seed').value,gl=pendingGoal;b.disabled=true;b.textContent='準備中…';setTimeout(()=>newGame(sv,9,gl),30)}
+  else if(b.id==='again')newGame(null,state.start,state.goal);
+  else if(b.id==='same')newGame(state.seed,state.start,state.goal);
+  else if(b.dataset.h!==undefined)pickHeir(+b.dataset.h);
+  else if(b.dataset.solo)marrySolo(b.dataset.solo);
+  else if(b.dataset.adopt)adopt(b.dataset.adopt==='yes');
+  else if(b.dataset.i!==undefined)marry(+b.dataset.i);
+  else if(b.id==='next')advance();
+  else if(b.id==='copy'){
+    const t=$('#share');
+    const fb=()=>{t.select();$('#copied').textContent='選択しました。長押しでコピーできます'};
+    if(navigator.clipboard)navigator.clipboard.writeText(t.value).then(()=>{$('#copied').textContent='コピーしました'},fb);else fb();
+  }
+});
+
+// ---------- ここが変（声を集める） ----------
+const fbCtx=()=>{const e=ERAS[state.phase==='born'||state.phase==='kids'||state.phase==='adopt'?state.gen+1:state.gen]||{};return {seed:state.seed||'',phase:state.phase||'intro',era:e.e||'',gen:state.gen??null,goal:state.goal||''}};
+const fbPost=(sel,txt,c)=>{let t=`#縁と運フィードバック【シード${c.seed}・${c.era}・${c.phase}】「${sel.slice(0,60)}」${txt.slice(0,70)}`;return t.slice(0,140)};
+document.getElementById('fbOpen').addEventListener('click',()=>{
+  const sel=(window.getSelection&&String(window.getSelection())||'').trim().slice(0,300);
+  $('#fbSel').value=sel;$('#fbText').value='';$('#fbStatus').textContent='';$('#fbAlt').hidden=true;$('#fb').hidden=false;$('#fbText').focus();
+});
+document.getElementById('fbCancel').addEventListener('click',()=>{$('#fb').hidden=true});
+document.getElementById('fbSend').addEventListener('click',async()=>{
+  const sel=$('#fbSel').value.trim(),txt=$('#fbText').value.trim(),c=fbCtx();
+  if(!sel&&!txt){$('#fbStatus').textContent='どの文が変か、どう変かを書いてください。';return}
+  const t=fbPost(sel,txt,c);$('#fbAltText').value=t;$('#fbX').href='https://x.com/intent/tweet?text='+encodeURIComponent(t);$('#fbAlt').hidden=false;$('#fbStatus').textContent='';
+  if(typeof gtag==='function')gtag('event','feedback_draft',{item_id:'en-to-un'});
+});
+document.getElementById('fbCopy').addEventListener('click',()=>{const t=$('#fbAltText');const fb=()=>{t.select()};if(navigator.clipboard)navigator.clipboard.writeText(t.value).then(()=>{$('#fbStatus').textContent='コピーしました'},fb);else fb()});
+
+window.claude?.hot?.snapshot?.(()=>state);
+const boot=d=>{if(d&&d.phase)state=d;render()};
+window.claude?.hot?.ready?window.claude.hot.ready(boot):boot(window.claude?.hot?.data??{});
+</script>
+
+</body></html>
