@@ -301,7 +301,7 @@ a.btn{text-decoration:none;display:inline-block}
 <button class="fb-open" id="fbOpen" type="button">ここが変</button>
 <div class="fb" id="fb" hidden role="dialog" aria-labelledby="fbTitle">
   <h3 id="fbTitle">ここが変、を送る</h3>
-  <p class="muted" style="font-size:13px">変だと思った文を選んでからボタンを押すと、その文が入ります。「Xの投稿文を作る」を押すと、シードと場面を入れた投稿文ができます（ハッシュタグ #縁と運フィードバック）。作り手が同じ場面を再現して直します。</p>
+  <p class="muted" style="font-size:13px">変だと思った文を選んでからボタンを押すと、その文が入ります。「Xの投稿文を作る」を押すと、シードと場面を入れた投稿文ができます（ハッシュタグ #縁と運フィードバック）。作り手が見て直します。</p>
   <label class="label" for="fbSel">どの文が変？</label>
   <textarea id="fbSel" rows="2" maxlength="300"></textarea>
   <label class="label" for="fbText">どう変？（例：この時代に女性の徴兵はない）</label>
@@ -1706,9 +1706,7 @@ document.getElementById('fbSend').addEventListener('click',async()=>{
 });
 document.getElementById('fbCopy').addEventListener('click',()=>{const t=$('#fbAltText');const fb=()=>{t.select()};if(navigator.clipboard)navigator.clipboard.writeText(t.value).then(()=>{$('#fbStatus').textContent='コピーしました'},fb);else fb()});
 
-window.claude?.hot?.snapshot?.(()=>state);
-const boot=d=>{if(d&&d.phase)state=d;render()};
-window.claude?.hot?.ready?window.claude.hot.ready(boot):boot(window.claude?.hot?.data??{});
+render();
 </script>
 
 </body></html>
