@@ -200,7 +200,7 @@ article a{overflow-wrap:anywhere;word-break:break-word}
   <p class="err" id="err">タイプと生年月日をすべて正しく選んでください。</p>
 </div>
 
-<div class="result" id="res" aria-live="polite">
+<div class="result" id="result" aria-live="polite">
 <div class="result-head">
 <div class="lbl">二人の恋愛相性度</div>
 <div class="num" id="rScore">—</div>
@@ -230,6 +230,13 @@ article a{overflow-wrap:anywhere;word-break:break-word}
 <p class="pr-free">初回登録で3,000円分無料（最大30分）</p>
 <a class="pr-btn" id="prLink" href="https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU" rel="nofollow sponsored noopener" target="_blank">ココナラ電話占いを無料で試す</a>
 <p class="pr-n">※無料分は新規登録時の特典です。条件は公式サイトでご確認ください。</p>
+</div>
+<div class="line-cta" style="margin:22px 0;padding:22px 18px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+<p style="margin:0 0 8px;font-size:12px;letter-spacing:.18em;color:#7c2e42;">NOE OFFICIAL LINE</p>
+<p style="margin:0 0 10px;font-size:16px;font-weight:600;color:#1d242b;line-height:1.5;">相性の読み解きと、週1回の判断材料をLINEで</p>
+<p style="margin:0 0 14px;font-size:13px;color:#5a6068;line-height:1.8;">結婚設計に効くFACTだけを、週1回・短文で届けます。</p>
+<a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'mbti-aisho-uranai'});}catch(e){}" style="display:inline-block;background:#7c2e42;color:#ffffff;padding:12px 28px;font-size:14px;font-weight:600;text-decoration:none;">友だち追加して受け取る</a>
+<p style="margin:10px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は週1回だけ。いつでも解除できます。</p>
 </div>
 <div class="next-links"><h3>あわせて読む・試す</h3><ul><li><a href="/tools/renai-type-shindan/">16タイプ恋愛診断（12問であなたの恋愛タイプがわかる）</a></li><li><a href="/tools/aisho-uranai/">生年月日でみる二人の相性占い</a></li><li><a href="/tools/seiza-renai-uranai/">星座でみる恋愛傾向占い</a></li><li><a href="/tools/suhi-kekkon-uranai/">数秘術でみる結婚観占い</a></li><li><a href="/tools/konkatsu-type-shindan/">婚活タイプ診断（自分に合う婚活の進め方を選ぶ）</a></li></ul></div>
 </div>
@@ -301,7 +308,7 @@ $('prLink').addEventListener('click',function(){track('uranai_pr_click',{tool:SL
 // 年齢はこのブラウザ内で計算するだけ（送信・保存しない）。18歳未満なら広告枠を出さない
 function isMinor(dt){var n=new Date(),age=n.getFullYear()-dt.y;if(n.getMonth()+1<dt.m||(n.getMonth()+1===dt.m&&n.getDate()<dt.d))age--;return age<18;}
 function showRes(a,b){var box=document.querySelector('.prbox');if(box){var mn=isMinor(a)||isMinor(b);box.hidden=mn;box.style.display=mn?'none':'';}
-  $('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});}
+  $('err').style.display='none';$('result').classList.add('show');$('result').scrollIntoView({behavior:'smooth',block:'start'});}
 onscroll=function(){$('top').classList.toggle('show',scrollY>300);};
 $('run').addEventListener('click',function(){
   var ta=$('at').value,tb=$('bt').value,a=readDate('a'),b=readDate('b');

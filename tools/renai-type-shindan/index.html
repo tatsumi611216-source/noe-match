@@ -217,7 +217,7 @@ article a{overflow-wrap:anywhere;word-break:break-word}
   <p class="err" id="err">すべての質問に答えて、生年月日を選んでください。</p>
 </div>
 
-<div class="result" id="res" aria-live="polite">
+<div class="result" id="result" aria-live="polite">
 <div class="result-head">
 <div class="lbl">あなたの恋愛タイプ</div>
 <div class="num" id="rName">—</div>
@@ -244,6 +244,13 @@ article a{overflow-wrap:anywhere;word-break:break-word}
 <p class="pr-free">初回登録で3,000円分無料（最大30分）</p>
 <a class="pr-btn" id="prLink" href="https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU" rel="nofollow sponsored noopener" target="_blank">ココナラ電話占いを無料で試す</a>
 <p class="pr-n">※無料分は新規登録時の特典です。条件は公式サイトでご確認ください。</p>
+</div>
+<div class="line-cta" style="margin:22px 0;padding:22px 18px;background:#f7f5f2;border:1px solid #e3ddd3;text-align:center;">
+<p style="margin:0 0 8px;font-size:12px;letter-spacing:.18em;color:#7c2e42;">NOE OFFICIAL LINE</p>
+<p style="margin:0 0 10px;font-size:16px;font-weight:600;color:#1d242b;line-height:1.5;">診断結果の読み解きと、週1回の判断材料をLINEで</p>
+<p style="margin:0 0 14px;font-size:13px;color:#5a6068;line-height:1.8;">結婚設計に効くFACTだけを、週1回・短文で届けます。</p>
+<a href="https://lin.ee/unbDsCR" rel="noopener" onclick="try{gtag('event','line_add_click',{tool:'renai-type-shindan'});}catch(e){}" style="display:inline-block;background:#7c2e42;color:#ffffff;padding:12px 28px;font-size:14px;font-weight:600;text-decoration:none;">友だち追加して受け取る</a>
+<p style="margin:10px 0 0;font-size:11px;color:#8a8f95;">登録は無料・配信は週1回だけ。いつでも解除できます。</p>
 </div>
 <div class="next-links"><h3>あわせて読む・試す</h3><ul><li><a href="/tools/mbti-aisho-uranai/">16タイプ（MBTI）×星座でみる恋愛相性占い</a></li><li><a href="/tools/aisho-uranai/">生年月日でみる二人の相性占い</a></li><li><a href="/tools/seiza-renai-uranai/">星座でみる恋愛傾向占い</a></li><li><a href="/tools/konkatsu-type-shindan/">婚活タイプ診断（自分に合う婚活の進め方を選ぶ）</a></li></ul></div>
 </div>
@@ -322,7 +329,7 @@ $('run').addEventListener('click',function(){
   $('rMatch').innerHTML='<strong>'+m.name+'</strong>（'+D.BEST[code]+'）<br>'+m.desc+'求める関係の形が近く、役割は自然に補い合える組み合わせです。';
   setShare(t.name);
   var box=document.querySelector('.prbox');if(box){var mn=isMinor(dt);box.hidden=mn;box.style.display=mn?'none':'';}
-  $('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});
+  $('err').style.display='none';$('result').classList.add('show');$('result').scrollIntoView({behavior:'smooth',block:'start'});
   track('uranai_complete',{tool:SLUG,result:t.name});
 });
 })();
