@@ -6,7 +6,7 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>港区戦記｜18歳から35歳まで、港区女子の人生を選ぶゲーム（無料）</title>
+<title>港区戦記｜18歳から35歳まで、港区女子の人生を選ぶゲーム</title>
 <meta name="description" content="18歳から35歳まで、1年ごとに「会食」「本業」「自分磨き」「婚活」などの一手を選んで進む無料のブラウザゲーム。遊びのモテと結婚のモテ、理想の高さの推移と、選んだ人生の結末が出ます。">
 <link rel="canonical" href="https://www.noe-match.com/tools/minato-senki/">
 <meta property="og:title" content="港区戦記｜港区での18歳〜35歳を選ぶゲーム">
@@ -1275,7 +1275,7 @@ function finish(){
   const endArt=G.married?["endMarry","朝の食卓と二つの指輪"]:["離婚して再出発","許さないと決めた女","自分で終わらせた結婚","40歳で逆転した女","家計の主役になった妻","夜を元手にした女","港区を買う側","選ぶ側に回った女","自分の城を持った女"].includes(title)||/^積み上げ直した/.test(title)?["endWork","朝日の差す高層階のオフィス"]:["endMinato","夜の港区の通りと街灯"];
   $("#app").innerHTML=`
   ${artFig(endArt[0],endArt[1])}
-  <header class="hero fade">
+  <header class="hero fade" id="result">
     <span class="eyebrow">${FINAL?"40歳の最終結末":CLOSED?`最終結果（${A}歳の総括）`:G.married?`${A}歳・結婚の総括`:`${A}歳の総括`}</span>
     <h1 class="ending-title">${title}</h1>
     <p>${body}</p>
