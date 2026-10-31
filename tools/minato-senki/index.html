@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VLQBH0S1SL"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-VLQBH0S1SL');</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>港区戦記｜18歳から35歳まで、港区女子の人生を選ぶゲーム（無料）</title>
+<meta name="description" content="18歳から35歳まで、1年ごとに「会食」「本業」「自分磨き」「婚活」などの一手を選んで進む無料のブラウザゲーム。遊びのモテと結婚のモテ、理想の高さの推移と、選んだ人生の結末が出ます。">
+<link rel="canonical" href="https://www.noe-match.com/tools/minato-senki/">
+<meta property="og:title" content="港区戦記｜港区での18歳〜35歳を選ぶゲーム">
+<meta property="og:description" content="1年ごとの一手で、港区での18歳〜35歳を生きるゲーム。遊びのモテと結婚のモテのずれ、理想の高さ、最後の結末まで。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.noe-match.com/tools/minato-senki/">
+<meta property="og:site_name" content="Noe結婚設計室">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="港区戦記｜港区での18歳〜35歳を選ぶゲーム">
+<meta name="twitter:description" content="1年ごとの一手で、港区での18歳〜35歳を生きるゲーム。遊びのモテと結婚のモテのずれ、理想の高さ、最後の結末まで。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"無料ツール","item":"https://www.noe-match.com/#tools"},{"@type":"ListItem","position":3,"name":"港区戦記","item":"https://www.noe-match.com/tools/minato-senki/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"港区戦記","url":"https://www.noe-match.com/tools/minato-senki/","description":"18歳から35歳まで、1年ごとに「会食」「本業」「自分磨き」「婚活」などの一手を選んで進む無料のブラウザゲーム。遊びのモテと結婚のモテ、理想の高さの推移と、選んだ人生の結末が出ます。","inLanguage":"ja","genre":"シミュレーション","gamePlatform":"Web browser","applicationCategory":"Game","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"JPY"},"publisher":{"@type":"Organization","name":"Noe結婚設計室","url":"https://www.noe-match.com/"}}</script>
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: 一列の「戦記」帳面。上に年齢と戦況、下に今年の一手。終盤に年表グラフ */
+:root{
+  --bg:#f2f1f6; --surface:#ffffff; --ink:#1c2140; --muted:#6a6c82; --line:#dcdbe6;
+  --rose:#b8405e; --gold:#a87a2a; --teal:#2a6f77; --warn:#c0392b;
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans","Yu Gothic",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#15161f; --surface:#1e2030; --ink:#eceaf3; --muted:#9d9cb3; --line:#30324a;
+  --rose:#e27a95; --gold:#d6aa58; --teal:#62b3bb; --warn:#ef6b5e; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15161f; --surface:#1e2030; --ink:#eceaf3; --muted:#9d9cb3; --line:#30324a;
+  --rose:#e27a95; --gold:#d6aa58; --teal:#62b3bb; --warn:#ef6b5e; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.65;margin:0}
+main.game{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+.wrap{max-width:560px;margin:0 auto;display:flex;flex-direction:column;gap:20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.3}
+h1{font-size:2.6rem;font-weight:800;letter-spacing:.04em}
+h2{font-size:1.35rem;font-weight:800}
+h3{font-size:1rem;font-weight:600}
+.eyebrow{font-size:.72rem;letter-spacing:.18em;color:var(--rose);font-weight:700}
+.muted{color:var(--muted)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:12px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+.btn{background:var(--ink);color:var(--bg);border:0;border-radius:4px;padding:12px 16px;font-weight:700;letter-spacing:.04em}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.35;cursor:not-allowed}
+.hero{display:flex;flex-direction:column;gap:8px;border-bottom:2px solid var(--ink);padding-bottom:16px}
+.hero p{margin:0;max-width:34em}
+.presets{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 12px;font-size:.85rem}
+.chip[aria-pressed="true"]{border-color:var(--rose);color:var(--rose);font-weight:700}
+.statrow{display:grid;grid-template-columns:5.5em 1fr auto;align-items:center;gap:10px}
+.stepper{display:flex;align-items:center;gap:6px}
+.stepper button{width:32px;height:32px;border:1px solid var(--line);background:var(--bg);border-radius:4px;font-weight:700}
+.stepper .num{width:2ch;text-align:center}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar>i{display:block;height:100%;background:var(--ink)}
+.hint{font-size:.78rem;color:var(--muted)}
+.values{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.values button{border:1px solid var(--line);background:var(--bg);border-radius:4px;padding:10px 6px;text-align:center;display:flex;flex-direction:column;gap:2px}
+.values.jobs{grid-template-columns:repeat(2,1fr)}
+
+.values button[aria-pressed="true"]{border-color:var(--rose);box-shadow:inset 0 0 0 1px var(--rose)}
+.values b{font-family:var(--display);font-size:1.05rem}
+.values small{color:var(--muted);font-size:.72rem;line-height:1.4}
+/* game */
+.ageline{display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:2px solid var(--ink);padding-bottom:10px}
+.age{font-family:var(--display);font-weight:800;font-size:3rem;line-height:1}
+.age small{font-size:1rem;margin-left:4px}
+.status-tag{font-size:.8rem;border:1px solid var(--ink);border-radius:999px;padding:3px 10px;white-space:nowrap}
+.meters{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
+.meter{display:flex;flex-direction:column;gap:3px;min-width:0}
+.meter .top{display:flex;justify-content:space-between;font-size:.8rem}
+.meter.asobi .bar>i{background:var(--rose)}
+.meter.kekkon .bar>i{background:var(--teal)}
+.meter.ideal .bar>i{background:var(--gold)}
+.meter.sat .bar>i{background:var(--teal)}
+.meter.strain .bar>i{background:var(--warn)}
+.change{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;margin:0;font-size:.85rem}
+.change dt{color:var(--muted)}
+.change dd{margin:0;text-align:right;font-family:var(--mono);overflow-wrap:anywhere}
+.change dd.t{font-family:var(--display);font-weight:700}
+.btn.ext{background:var(--rose);color:#fff}
+.money{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;border-top:1px dashed var(--line);padding-top:10px}
+.money b{font-family:var(--mono);font-weight:500}
+.neg{color:var(--warn)}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.act{border:1px solid var(--line);background:var(--surface);border-radius:6px;padding:12px;text-align:left;display:flex;flex-direction:column;gap:3px;min-width:0}
+.act:hover{border-color:var(--ink)}
+.act b{font-size:.95rem}
+.act small{color:var(--muted);font-size:.74rem;line-height:1.45}
+.act.hot{border-color:var(--rose)}
+.act:disabled{opacity:.5;cursor:not-allowed}
+.act:disabled:hover{border-color:var(--line)}
+.act .why{color:var(--warn)}
+.log{display:flex;flex-direction:column;gap:6px;max-height:260px;overflow:auto;font-size:.86rem}
+.log p{margin:0;display:grid;grid-template-columns:2.6em 1fr;gap:8px}
+.log p .num{color:var(--muted)}
+.offer{border:2px solid var(--rose);border-radius:6px;padding:16px;display:flex;flex-direction:column;gap:10px;background:var(--surface)}
+.offer.event{border-color:var(--gold)}
+.offer .who{font-family:var(--display);font-size:1.3rem;font-weight:800}
+.offer dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:.86rem}
+.offer dt{color:var(--muted)}
+.offer dd{margin:0}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row .btn{flex:1}
+.note{font-size:.82rem;padding:8px 10px;border-left:3px solid var(--gold);background:var(--bg)}
+/* ending */
+.ending-title{font-size:2rem;font-weight:800}
+.score{display:flex;align-items:baseline;gap:10px}
+.score .num{font-size:2.6rem;font-family:var(--display);font-weight:800}
+.chart{overflow-x:auto}
+.chart svg{width:100%;min-width:320px;height:auto;display:block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.78rem}
+.legend span::before{content:"";display:inline-block;width:14px;height:3px;margin-right:6px;vertical-align:middle;background:currentColor}
+.asset{display:flex;align-items:center;gap:14px;border-top:1px dashed var(--line);padding-top:12px}
+.rank{font-family:var(--display);font-weight:800;font-size:2.4rem;width:3.2rem;height:3.2rem;display:grid;place-items:center;border:2px solid var(--gold);color:var(--gold);border-radius:4px;flex:none}
+.asset-main{display:flex;flex-direction:column;min-width:0}
+.asset-main .total{font-size:1.6rem;font-weight:500}
+.breakdown{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:.85rem}
+.breakdown dt{color:var(--muted)}
+.breakdown dd{margin:0;text-align:right}
+.selfcheck{display:flex;flex-direction:column;gap:2px}
+.selfcheck b{font-family:var(--display);font-size:1.4rem;color:var(--rose)}
+.selfcheck p{margin:4px 0 0;font-size:.88rem}
+.selfcheck .num{font-size:.82rem;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.82rem;border-top:1px dashed var(--line);padding-top:10px}
+.grade{font-family:var(--display);font-weight:800;color:var(--rose)}
+.honne{margin:0;padding:10px 12px;background:var(--bg);border-left:3px solid var(--ink);font-family:var(--display);font-size:.98rem;display:flex;flex-direction:column;gap:2px}
+.honne span{font-family:var(--body);font-size:.7rem;letter-spacing:.12em;color:var(--muted)}
+.valuation{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.valuation div{display:flex;flex-direction:column;gap:2px}
+.grade.big{font-size:2rem;line-height:1.1}
+.grade.big small{font-size:1rem;color:var(--muted);margin:0 6px}
+.worlds{display:flex;flex-direction:column;gap:4px}
+.wbar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line)}
+.w-day{background:var(--teal)}.w-night{background:var(--rose)}.w-biz{background:var(--gold)}
+.wleg{display:flex;gap:12px;flex-wrap:wrap;font-size:.75rem;color:var(--muted)}
+.wleg span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:4px;vertical-align:middle}
+.wleg span:nth-child(1)::before{background:var(--teal)}.wleg span:nth-child(2)::before{background:var(--rose)}.wleg span:nth-child(3)::before{background:var(--gold)}
+.coda{padding-block:4px}
+.coda p{margin:0;font-size:.82rem;color:var(--muted);line-height:1.8}
+.lessons{display:flex;flex-direction:column;gap:12px}
+.lessons div{border-left:3px solid var(--rose);padding-left:12px}
+.lessons b{font-family:var(--display);font-size:1.02rem}
+.lessons p{margin:2px 0 0;font-size:.86rem;color:var(--muted)}
+.insights{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.art{margin:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface);max-width:100%}
+.art svg{display:block;width:100%;height:auto;aspect-ratio:16/9}
+@media (max-width:420px){h1{font-size:2.2rem}.actions{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.fade{animation:fade .35s ease-out}@keyframes fade{from{opacity:.4;transform:translateY(4px)}to{opacity:1;transform:none}}}
+
+.nm-head{background:var(--surface);border-bottom:1px solid var(--line)}
+.nm-head-in{max-width:720px;margin:0 auto;padding:12px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.nm-logo{font-family:var(--display);font-size:15px;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:.06em}
+.nm-nav a{color:var(--muted);text-decoration:none;font-size:12px;padding:6px 8px}
+.nm-nav a:hover{color:var(--ink)}
+@media(max-width:640px){.nm-nav{display:none}}
+.nm-crumb{max-width:560px;margin:0 auto;padding:10px max(16px,env(safe-area-inset-left,0px)) 0;font-size:12px;color:var(--muted)}
+.nm-crumb a{color:var(--muted);text-decoration:none}
+.nm-about{max-width:560px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px)) 40px;display:flex;flex-direction:column;gap:16px;line-height:1.9;font-size:14.5px}
+.nm-about section{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px}
+.nm-about h2{font-size:1.1rem;margin:0 0 8px}
+.nm-about p{margin:0 0 8px}
+.nm-about ol{margin:0;padding-left:1.3em}
+.nm-rel ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.nm-rel a{display:block;border:1px solid var(--line);border-radius:6px;padding:10px 14px;color:var(--ink);text-decoration:none;font-size:13.5px;background:var(--bg)}
+.nm-rel a:hover{border-color:var(--rose)}
+.nm-foot{background:#1d242b;color:#9aa3aa;padding:28px 16px 72px;font-size:12px;line-height:1.8;text-align:center}
+.nm-foot a{color:#b9c2c8;text-decoration:none;margin:0 8px;display:inline-block}
+.nm-foot a:hover{color:#fff}
+.nm-foot p{margin:10px 0 0;color:#78868f;font-size:11px}
+
+</style>
+</head>
+<body>
+<header class="nm-head"><div class="nm-head-in"><a href="/" class="nm-logo">Noe結婚設計室</a><nav class="nm-nav"><a href="/#tools">ツール</a><a href="/articles/">記事一覧</a><a href="/#about">運営者</a></nav></div></header>
+<div class="nm-crumb"><a href="/">ホーム</a> ＞ <a href="/#tools">無料ツール</a> ＞ 港区戦記</div>
+<main class="game">
+<div class="wrap" id="app"></div>
+</main>
+<div class="nm-about">
+<section>
+<h2>港区戦記は、18歳から35歳までを1年ずつ選ぶゲームです</h2>
+<p>最初に見た目・仕事力・性格などの能力と、大事にしたい価値観を決めます。そこから1年ごとに、港区の会食に出るか、本業に打ち込むか、自分磨きや婚活をするかを選びます。</p>
+<p>「遊び相手としてのモテ」と「結婚相手としてのモテ」は、同じ人でも別の動き方をします。理想の高さとのずれも含めて、選んだ一手が数年後にどう効いてくるかを見ていきます。結婚したとき、または35歳で総括が出て、延長戦（40歳まで）に進むかを選べます。</p>
+</section>
+<section>
+<h2>遊び方</h2>
+<ol>
+<li>能力の組み合わせと価値観を選んで、はじめる</li>
+<li>1年ごとに「今年の一手」を選ぶ（交際中・結婚後は選べる手が変わります）</li>
+<li>結婚した時点、または35歳で総括が出る</li>
+<li>延長戦に進むと40歳まで続き、最終の結末が出る</li>
+</ol>
+<p>数値や確率はすべてゲーム用の架空の設定です。作中の「モテ」「適齢度」「男たちの値付け」は、港区の男たちの偏った物差しを誇張したもので、人の価値を表すものではありません。1回およそ5〜10分です。</p>
+</section>
+<section class="nm-rel">
+<h2>婚活と結婚相手選びの記事・ツール</h2>
+<ul>
+<li><a href="/tools/konkatsu-type-shindan/">婚活タイプ診断（無料）</a></li>
+<li><a href="/tools/en-to-un/">縁と運｜7代の結婚で家系をつなぐゲーム（無料）</a></li>
+<li><a href="/articles/">記事一覧</a></li>
+</ul>
+</section>
+</div>
+<footer class="nm-foot">
+<div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
+<p><strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+</footer>
+<script>
+const $=s=>document.querySelector(s);
+const clamp=(v,a=0,b=10)=>Math.max(a,Math.min(b,v));
+const rnd=(a,b)=>a+Math.random()*(b-a);
+const pick=a=>a[Math.floor(Math.random()*a.length)];
+const r1=v=>Math.round(v*10)/10;
+
+const STATS=[
+  {k:"looks",n:"見た目",h:"高いほど年齢補正の影響が小さい（ゲーム設定）"},
+  {k:"intel",n:"知性",h:"会話力。結婚相手の評価に効く"},
+  {k:"work",n:"仕事力",h:"本業の年収。年齢で減らない"},
+  {k:"kind",n:"性格",h:"誠実さ。結婚モテの土台"},
+];
+const POOL=28;
+const PRESETS=[
+  {n:"港区デビュー美女",s:{looks:9,intel:5,work:4,kind:6}},
+  {n:"才色兼備",s:{looks:8,intel:7,work:5,kind:4}},
+  {n:"普通の子",s:{looks:6,intel:6,work:6,kind:6}},
+  {n:"バリキャリ",s:{looks:4,intel:7,work:9,kind:4}},
+  {n:"愛され系",s:{looks:6,intel:4,work:5,kind:9}},
+];
+const VALUES=[
+  {k:"antei",n:"安定",d:"誠実な相手と穏やかな家庭"},
+  {k:"shigeki",n:"刺激",d:"華やかな世界にいたい"},
+  {k:"jiritsu",n:"自立",d:"自分の力で稼いで生きる"},
+];
+
+const JOBS=[
+  {k:"gakusei",n:"大学生",d:"特徴がなければこれ。22歳で卒業し、在学中の勉強で就職先が決まる",base:80,kb:0},
+  {k:"ippan",n:"一般職",d:"年収は低め。家庭的に見られ、結婚モテに少し加点",base:260,kb:0.3},
+  {k:"sogo",n:"総合職",d:"仕事力がそのまま年収に。30代で効いてくる",base:320,kb:0},
+  {k:"senmon",n:"専門職",d:"看護師・士業など。年を取るほど強い",base:380,kb:0.6},
+  {k:"kigyo",n:"起業家",d:"学生起業から。当たれば大きく、外せば廃業。振れ幅が最大",base:150,kb:0},
+  {k:"yoru",n:"夜職",d:"若さと見た目で大きく稼ぐ。昼職の相手とは結婚しにくい",base:150,kb:-1.5},
+];
+let setup={stats:{...PRESETS[2].s},preset:2,value:"antei",job:"gakusei"};
+let G=null;
+
+/* ---------- 計算 ---------- */
+// 美人ほど年齢による目減りが小さい（見た目10で半分）
+function decayMul(g){return g.looks>=5?1-0.5*(g.looks-5)/5:1+0.05*(5-g.looks)}
+// 遊び市場の若さ：18〜24歳が満点、20代後半から落ち、30代でさらに落ちる
+function youthA(g){const a=g.age;const drop=a<=24?0:a<=29?(a-24)*0.6:3+(a-29)*0.9;return clamp(10-drop*decayMul(g));}
+// 結婚市場の適齢度：25歳でピーク、20代後半でガクッ、30代でさらにガクッ
+function youthK(g){const a=g.age;if(a<=25)return 6+(a-18)*(4/7);const drop=a<=29?(a-25)*1.0:4+(a-29)*1.1;return clamp(10-drop*decayMul(g));}
+function effLooks(g){ return clamp(g.looks - Math.max(0,g.age-27)*0.4*(1-g.looks/12)); }
+function jobOf(g){return JOBS.find(j=>j.k===g.job)}
+function derive(g){
+  const y=youthA(g), yk=youthK(g), L=effLooks(g), J=jobOf(g), late=g.age>=27;
+  const asobi=clamp(L*0.6+y*0.5-0.5+(g.job==="yoru"?0.8:0));
+  // 20代前半は見た目と適齢度、20代後半からは仕事の比重が上がる
+  const wY=late?0.2:0.3, wL=late?0.14:0.22, wW=late?0.32:0.16;
+  let kekkon=g.kind*0.3+g.work*wW+g.intel*0.12+L*wL+yk*wY-g.rep*0.15+J.kb+(g.nightPast&&g.job!=="yoru"?-0.7:0)-(g.patronOut?0.8:0);
+  if(late&&g.job==="senmon") kekkon+=0.4;
+  if(g.job==="kigyo") kekkon+=((g.biz||0)-4)*(late?0.15:0.05);
+  // 30代はさらにガクッと落ちる（美人ほどゆるやか）
+  if(g.age>=30) kekkon-=(g.age-29)*0.25*decayMul(g);
+  // 逆転の道：30歳以降も、仕事と資格の積み上げは結婚モテに効き続ける
+  if(g.age>=30) kekkon+=Math.max(0,g.work-6)*0.15+Math.min(1.2,(g.quals||0)*0.2);
+  kekkon=clamp(kekkon);
+  let career;
+  if(g.job==="yoru"){ const v=L*0.6+y*0.6; career=Math.round(J.base+v*v*6); }
+  else if(g.job==="gakusei") career=Math.round(J.base+g.work*5);
+  else if(g.planYoru&&g.age<20) career=Math.round(150+g.work*10);
+  else if(g.job==="kigyo") career=Math.round(J.base+(g.biz||0)*(g.biz||0)*30);
+  else career=Math.round(J.base+g.work*(g.job==="ippan"?25:45)+g.intel*10+(g.quals||0)*(g.age>=30?30:15));
+  // 35歳以降の資格・仕事で独立した場合（逆転の道）
+  if(g.indep&&g.job!=="kigyo") career=Math.round(career*1.5+300+(g.quals||0)*40);
+  return {y,yk,L,asobi,kekkon,career};
+}
+
+/* ---------- 画面: キャラ作成 ---------- */
+function used(){return Object.values(setup.stats).reduce((a,b)=>a+b,0)}
+// ===== 挿絵（インライン SVG。文字なし・顔なし。色は CSS 変数でダークモードにも追従） =====
+function ARTwin(x,y,w,h,cols,rows,on){let s="";const cw=w/cols,rh=h/rows;for(let i=0;i<cols;i++)for(let j=0;j<rows;j++){const k=(i*7+j*13+Math.round(x))%10;if(k<on)s+=`<rect x="${(x+i*cw+cw*.25).toFixed(1)}" y="${(y+j*rh+rh*.25).toFixed(1)}" width="${(cw*.5).toFixed(1)}" height="${(rh*.45).toFixed(1)}" fill="var(--gold)" opacity=".85"/>`;}return s;}
+function ARTbld(list,base,op,win){return list.map(([x,w,h])=>`<rect x="${x}" y="${base-h}" width="${w}" height="${h}" fill="var(--ink)" fill-opacity="${op}"/>`+(win?ARTwin(x,base-h+6,w,h-10,Math.max(2,Math.round(w/7)),Math.max(2,Math.round(h/10)),win):"")).join("");}
+function ARTtower(x,base,h,col){const w=h*.32;return `<g fill="none" stroke="${col}" stroke-width="1.4" stroke-linejoin="round"><path d="M${x-w/2} ${base} L${x-w*.12} ${base-h*.55} L${x-w*.05} ${base-h*.85} L${x} ${base-h} L${x+w*.05} ${base-h*.85} L${x+w*.12} ${base-h*.55} L${x+w/2} ${base}"/><path d="M${x-w*.33} ${base-h*.2} H${x+w*.33} M${x-w*.17} ${base-h*.48} H${x+w*.17} M${x-w*.08} ${base-h*.72} H${x+w*.08}"/><path d="M${x-w*.33} ${base-h*.2} L${x+w*.17} ${base-h*.48} M${x+w*.33} ${base-h*.2} L${x-w*.17} ${base-h*.48}" stroke-opacity=".6"/></g>`;}
+function ARTtaxi(x,y,s){return `<g transform="translate(${x} ${y}) scale(${s})"><path d="M0 22 V14 Q0 11 4 10 L14 8 L22 1 H48 L58 9 L70 11 Q76 12 76 17 V22 Z" fill="var(--gold)" fill-opacity=".85" stroke="var(--ink)" stroke-width="1.2"/><path d="M25 4 H38 V9 H19 Z M41 4 H47 L54 9 H41 Z" fill="var(--bg)" fill-opacity=".9"/><rect x="30" y="-3" width="10" height="4" rx="1" fill="var(--rose)"/><circle cx="17" cy="22" r="5.5" fill="var(--ink)"/><circle cx="60" cy="22" r="5.5" fill="var(--ink)"/><circle cx="17" cy="22" r="2" fill="var(--bg)"/><circle cx="60" cy="22" r="2" fill="var(--bg)"/><rect x="72" y="13" width="4" height="3" fill="var(--bg)"/></g>`;}
+function ARTgrad(id,a,oa,b,ob){return `<linearGradient id="${id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}" stop-opacity="${oa}"/><stop offset="1" stop-color="${b}" stop-opacity="${ob}"/></linearGradient>`;}
+function ARTsvg(id,defs,body){return `<svg viewBox="0 0 320 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><defs>${defs}<clipPath id="c-${id}"><rect width="320" height="180"/></clipPath></defs><g clip-path="url(#c-${id})"><rect width="320" height="180" fill="var(--surface)"/>${body}</g></svg>`;}
+function ARTskyline(base,op,win){return ARTbld([[0,22,58],[20,16,82],[34,26,66],[58,14,96],[70,24,74],[92,18,52],[148,22,70],[168,14,104],[180,28,84],[206,18,62],[222,26,92],[246,16,58],[260,24,78],[282,18,100],[298,22,64]],base,op,win);}
+const ART={
+  // タイトル: 港区の夜景（タワー・湾岸の橋・水面）
+  title:()=>ARTsvg("title",ARTgrad("g-title","var(--teal)",.32,"var(--rose)",.16),
+    `<rect width="320" height="180" fill="url(#g-title)"/>
+     <circle cx="262" cy="34" r="12" fill="var(--gold)" opacity=".9"/><circle cx="257" cy="31" r="12" fill="var(--surface)" opacity=".55"/>
+     ${[[30,22],[64,40],[110,18],[200,30],[300,52],[150,46]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1" fill="var(--gold)"/>`).join("")}
+     ${ARTskyline(138,.2,4)}
+     ${ARTtower(124,138,98,"var(--rose)")}
+     <path d="M0 138 H320" stroke="var(--ink)" stroke-opacity=".5"/>
+     <path d="M178 138 Q214 108 250 138 Q286 108 320 138" fill="none" stroke="var(--ink)" stroke-opacity=".55" stroke-width="1.2"/>
+     <path d="M214 120 V138 M286 120 V138" stroke="var(--ink)" stroke-opacity=".55" stroke-width="1.6"/>
+     <rect y="139" width="320" height="41" fill="var(--teal)" fill-opacity=".18"/>
+     ${[[20,148,40],[90,156,28],[150,150,46],[230,160,34],[60,168,50],[200,172,40],[270,150,30]].map(([x,y,w])=>`<path d="M${x} ${y} h${w}" stroke="var(--gold)" stroke-opacity=".7" stroke-width="1.4" stroke-linecap="round"/>`).join("")}
+     <path d="M122 142 v26 M127 144 v18" stroke="var(--rose)" stroke-opacity=".5" stroke-width="1.6" stroke-dasharray="3 3"/>`),
+  // 18〜21歳: 上京・大学・昼の街
+  y18:()=>ARTsvg("y18",ARTgrad("g-y18","var(--teal)",.22,"var(--bg)",.1),
+    `<rect width="320" height="180" fill="url(#g-y18)"/>
+     <circle cx="48" cy="38" r="16" fill="var(--gold)" opacity=".85"/>
+     <path d="M200 30 q10 -8 20 0 q8 -4 14 3 h-34 z M90 50 q8 -6 16 0 q7 -3 11 3 h-27 z" fill="var(--surface)" fill-opacity=".9" stroke="var(--line)"/>
+     ${ARTbld([[0,30,60],[250,26,72],[278,42,56]],132,.1,0)}
+     <g stroke="var(--ink)" stroke-width="1.3" stroke-linejoin="round">
+       <path d="M110 70 L172 46 L234 70 Z" fill="var(--rose)" fill-opacity=".18"/>
+       <rect x="116" y="70" width="112" height="62" fill="var(--surface)"/>
+       <path d="M116 78 H228" />
+       ${[128,148,168,188,208].map(x=>`<path d="M${x} 80 V132"/>`).join("")}
+       <rect x="162" y="108" width="20" height="24" fill="var(--teal)" fill-opacity=".25"/>
+     </g>
+     <circle cx="172" cy="60" r="5" fill="none" stroke="var(--ink)" stroke-width="1.2"/>
+     ${[[70,112,18],[92,118,14],[252,110,17],[288,116,15]].map(([x,y,r])=>`<path d="M${x} ${y+r-2} V132" stroke="var(--ink)" stroke-width="2"/><circle cx="${x}" cy="${y}" r="${r}" fill="var(--teal)" fill-opacity=".35"/>`).join("")}
+     <rect y="132" width="320" height="48" fill="var(--ink)" fill-opacity=".06"/>
+     <path d="M0 132 H320" stroke="var(--ink)" stroke-opacity=".5"/>
+     <path d="M150 180 L166 132 H178 L194 180" fill="var(--gold)" fill-opacity=".12"/>
+     <g transform="translate(206 128)"><circle cx="0" cy="-36" r="6" fill="var(--ink)" fill-opacity=".75"/><path d="M-7 -28 Q0 -31 7 -28 L9 -6 H-9 Z" fill="var(--ink)" fill-opacity=".75"/><path d="M-4 -6 L-6 12 M4 -6 L6 12" stroke="var(--ink)" stroke-opacity=".75" stroke-width="3" stroke-linecap="round"/><path d="M9 -20 L16 -4" stroke="var(--ink)" stroke-opacity=".75" stroke-width="2.4" stroke-linecap="round"/>
+       <rect x="14" y="-6" width="20" height="17" rx="2" fill="var(--rose)" fill-opacity=".8" stroke="var(--ink)" stroke-width="1"/><path d="M20 -6 v-4 h8 v4" fill="none" stroke="var(--ink)" stroke-width="1.2"/><circle cx="18" cy="12" r="1.6" fill="var(--ink)"/><circle cx="30" cy="12" r="1.6" fill="var(--ink)"/></g>
+     ${[[40,90],[120,40],[240,96],[300,70],[86,150],[270,150]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="2.6" ry="1.6" fill="var(--rose)" opacity=".6" transform="rotate(30 ${x} ${y})"/>`).join("")}`),
+  // 22〜26歳: 社会人・オフィス街（昼）
+  y22:()=>ARTsvg("y22",ARTgrad("g-y22","var(--teal)",.2,"var(--bg)",.05),
+    `<rect width="320" height="180" fill="url(#g-y22)"/>
+     ${[[150,40,120],[196,30,100],[232,44,140],[282,38,110]].map(([x,w,h])=>`<rect x="${x}" y="${150-h}" width="${w}" height="${h}" fill="var(--teal)" fill-opacity=".12" stroke="var(--ink)" stroke-opacity=".45"/>`+Array.from({length:Math.floor(h/12)},(_,j)=>`<path d="M${x} ${150-h+12*(j+1)} h${w}" stroke="var(--teal)" stroke-opacity=".35"/>`).join("")).join("")}
+     <rect x="0" y="0" width="140" height="180" fill="var(--surface)"/>
+     <path d="M140 0 V180" stroke="var(--ink)" stroke-opacity=".4" stroke-width="2"/>
+     <rect x="0" y="138" width="320" height="42" fill="var(--ink)" fill-opacity=".1"/>
+     <path d="M0 138 H320" stroke="var(--ink)" stroke-width="1.4"/>
+     <g stroke="var(--ink)" stroke-width="1.3" stroke-linejoin="round">
+       <path d="M52 136 L60 100 H126 L118 136 Z" fill="var(--ink)" fill-opacity=".12"/>
+       <path d="M40 138 H130" stroke-width="2"/>
+       <rect x="66" y="106" width="46" height="24" fill="var(--teal)" fill-opacity=".2" stroke="none"/>
+       <path d="M150 128 h18 l-2 10 h-14 z" fill="var(--surface)"/><path d="M168 130 q6 0 5 4 q-1 3 -6 2" fill="none"/>
+     </g>
+     <path d="M156 124 q2 -4 0 -7 M162 124 q2 -4 0 -7" stroke="var(--muted)" fill="none"/>
+     <path d="M190 138 q6 -30 30 -36" fill="none" stroke="var(--rose)" stroke-width="1.6"/><rect x="214" y="96" width="16" height="22" rx="2" fill="var(--surface)" stroke="var(--rose)" stroke-width="1.4"/><rect x="218" y="101" width="8" height="6" fill="var(--rose)" fill-opacity=".4"/>
+     <rect x="16" y="30" width="38" height="46" fill="var(--gold)" fill-opacity=".14" stroke="var(--ink)" stroke-opacity=".5"/>${[40,50,60].map(y=>`<path d="M22 ${y} h26" stroke="var(--ink)" stroke-opacity=".35"/>`).join("")}`),
+  // 27〜30歳: 夕暮れの港区・タクシー
+  y27:()=>ARTsvg("y27",ARTgrad("g-y27","var(--rose)",.3,"var(--gold)",.18),
+    `<rect width="320" height="180" fill="url(#g-y27)"/>
+     <circle cx="70" cy="112" r="26" fill="var(--gold)" opacity=".55"/>
+     ${ARTskyline(122,.24,2)}
+     ${ARTtower(250,122,92,"var(--rose)")}
+     <rect y="122" width="320" height="58" fill="var(--ink)" fill-opacity=".14"/>
+     <path d="M0 122 H320" stroke="var(--ink)" stroke-opacity=".6"/>
+     ${[30,110,190,270].map(x=>`<path d="M${x} 158 h36" stroke="var(--gold)" stroke-width="2" stroke-opacity=".7"/>`).join("")}
+     ${[24,176].map(x=>`<path d="M${x} 150 V96 q0 -6 8 -6 h8" fill="none" stroke="var(--ink)" stroke-width="1.6"/><circle cx="${x+18}" cy="92" r="4" fill="var(--gold)"/><path d="M${x+18} 96 L${x+8} 150 H${x+28} Z" fill="var(--gold)" fill-opacity=".14"/>`).join("")}
+     ${ARTtaxi(84,134,1.15)}
+     <path d="M84 168 H176" stroke="var(--ink)" stroke-opacity=".25" stroke-width="3"/>`),
+  // 31〜35歳: 夜の部屋の窓・自分の机
+  y31:()=>ARTsvg("y31",ARTgrad("g-y31","var(--teal)",.28,"var(--rose)",.14),
+    `<rect x="40" y="14" width="240" height="118" fill="url(#g-y31)"/>
+     <circle cx="236" cy="38" r="9" fill="var(--gold)" opacity=".85"/>
+     <g clip-path="url(#c-y31w)">${ARTskyline(132,.22,4)}${ARTtower(150,132,80,"var(--rose)")}</g>
+     <rect x="40" y="14" width="240" height="118" fill="none" stroke="var(--ink)" stroke-width="3"/>
+     <path d="M160 14 V132" stroke="var(--ink)" stroke-width="2"/>
+     <path d="M0 132 H320" stroke="var(--ink)" stroke-width="1.6"/>
+     <rect y="133" width="320" height="47" fill="var(--ink)" fill-opacity=".12"/>
+     <g stroke="var(--ink)" stroke-width="1.3" stroke-linejoin="round">
+       <path d="M110 130 L116 104 H178 L172 130 Z" fill="var(--ink)" fill-opacity=".14"/>
+       <path d="M98 132 H186" stroke-width="2"/>
+       <path d="M200 120 h14 l-2 12 h-10 z" fill="var(--surface)"/>
+       <path d="M250 132 l4 -16 h18 l4 16 z" fill="var(--rose)" fill-opacity=".3"/>
+     </g>
+     <rect x="122" y="108" width="44" height="18" fill="var(--teal)" fill-opacity=".35"/>
+     ${[[262,112,-30],[258,104,-10],[266,100,10],[272,106,30]].map(([x,y,r])=>`<ellipse cx="${x}" cy="${y}" rx="4" ry="9" fill="var(--teal)" fill-opacity=".6" transform="rotate(${r} ${x} ${y+8})"/>`).join("")}
+     <path d="M20 132 V60 q0 -8 10 -8 h4" fill="none" stroke="var(--ink)" stroke-opacity=".5" stroke-width="1.4"/><path d="M30 52 l10 0 l-4 10 h-8 z" fill="var(--gold)" fill-opacity=".5"/>`),
+  // 結末（結婚）: 朝の食卓・指輪・二つのカップ
+  endMarry:()=>ARTsvg("em",ARTgrad("g-em","var(--gold)",.24,"var(--bg)",.05),
+    `<rect width="320" height="180" fill="url(#g-em)"/>
+     <rect x="96" y="12" width="128" height="96" fill="var(--teal)" fill-opacity=".14" stroke="var(--ink)" stroke-width="2"/>
+     <path d="M160 12 V108 M96 60 H224" stroke="var(--ink)" stroke-width="1.4"/>
+     <circle cx="184" cy="88" r="16" fill="var(--gold)" opacity=".55"/>
+     ${ARTbld([[98,16,26],[116,12,36],[134,20,22],[196,14,30],[208,16,20]],108,.18,0)}
+     <path d="M0 118 H320" stroke="var(--ink)" stroke-width="1.6"/><rect y="119" width="320" height="61" fill="var(--ink)" fill-opacity=".08"/>
+     <g stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round">
+       <path d="M96 94 h24 l-3 24 h-18 z" fill="var(--surface)"/><path d="M120 99 q8 0 7 6 q-1 5 -9 4" fill="none"/>
+       <path d="M198 94 h24 l-3 24 h-18 z" fill="var(--rose)" fill-opacity=".25"/><path d="M222 99 q8 0 7 6 q-1 5 -9 4" fill="none"/>
+     </g>
+     <path d="M104 90 q3 -6 0 -10 M112 90 q3 -6 0 -10 M206 90 q3 -6 0 -10 M214 90 q3 -6 0 -10" stroke="var(--muted)" fill="none"/>
+     <ellipse cx="160" cy="150" rx="70" ry="8" fill="var(--ink)" fill-opacity=".06"/>
+     <circle cx="150" cy="140" r="11" fill="none" stroke="var(--gold)" stroke-width="3"/>
+     <circle cx="168" cy="140" r="11" fill="none" stroke="var(--gold)" stroke-width="3" stroke-opacity=".85"/>
+     <path d="M146 127 l4 -5 l4 5 l-4 3 z" fill="var(--teal)" stroke="var(--ink)" stroke-width=".8"/>
+     <path d="M262 118 l4 -18 h18 l4 18 z" fill="var(--teal)" fill-opacity=".3" stroke="var(--ink)" stroke-width="1.2"/>
+     ${[[270,92,-20],[276,86,0],[282,92,20]].map(([x,y,r])=>`<ellipse cx="${x}" cy="${y}" rx="4" ry="9" fill="var(--teal)" fill-opacity=".55" transform="rotate(${r} ${x} ${y+8})"/>`).join("")}`),
+  // 結末（仕事で自立・経営者）: 高層階のオフィス、朝日
+  endWork:()=>ARTsvg("ew",ARTgrad("g-ew","var(--gold)",.3,"var(--teal)",.14),
+    `<rect width="320" height="150" fill="url(#g-ew)"/>
+     <circle cx="96" cy="70" r="18" fill="var(--gold)" opacity=".7"/>
+     ${ARTbld([[0,24,40],[22,16,58],[40,30,34],[74,20,48],[100,26,30],[132,18,52],[154,30,38],[190,20,62],[214,28,36],[246,18,50],[268,24,42],[296,24,56]],150,.16,0)}
+     ${ARTtower(130,150,52,"var(--rose)")}
+     ${[80,160,240].map(x=>`<path d="M${x} 0 V150" stroke="var(--ink)" stroke-width="2.4"/>`).join("")}
+     <path d="M0 150 H320" stroke="var(--ink)" stroke-width="2"/>
+     <rect y="150" width="320" height="30" fill="var(--ink)" fill-opacity=".12"/>
+     <g stroke="var(--ink)" stroke-width="1.4" stroke-linejoin="round">
+       <path d="M170 148 H290" stroke-width="2.4"/>
+       <path d="M184 146 L190 124 H236 L230 146 Z" fill="var(--ink)" fill-opacity=".14"/>
+       <path d="M60 172 V160 M44 178 L60 172 L76 178" fill="none" stroke-width="2"/>
+       <path d="M44 156 Q44 104 60 104 Q76 104 76 156 Z" fill="var(--rose)" fill-opacity=".45"/>
+       <path d="M40 156 H80" stroke-width="2.4"/>
+       <path d="M252 134 h14 l-2 12 h-10 z" fill="var(--surface)"/>
+     </g>
+     <rect x="194" y="128" width="32" height="12" fill="var(--teal)" fill-opacity=".4"/>
+     <path d="M100 30 l8 -4 M110 20 l10 -2 M118 34 l8 0" stroke="var(--gold)" stroke-opacity=".8" stroke-width="1.6" stroke-linecap="round"/>`),
+  // 結末（独身のまま港区に残る）: 夜の通り・街灯・タクシー・後ろ姿
+  endMinato:()=>ARTsvg("en",ARTgrad("g-en","var(--teal)",.3,"var(--rose)",.2),
+    `<rect width="320" height="180" fill="url(#g-en)"/>
+     ${[[40,20],[120,30],[200,16],[280,40],[170,50]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1" fill="var(--gold)"/>`).join("")}
+     ${ARTskyline(128,.22,5)}
+     ${ARTtower(200,128,100,"var(--rose)")}
+     <rect y="128" width="320" height="52" fill="var(--ink)" fill-opacity=".16"/>
+     <path d="M0 128 H320" stroke="var(--ink)" stroke-opacity=".6"/>
+     ${[20,100,180,260].map(x=>`<path d="M${x} 162 h40" stroke="var(--gold)" stroke-width="2" stroke-opacity=".6"/>`).join("")}
+     <path d="M78 150 V70 q0 -8 10 -8 h8" fill="none" stroke="var(--ink)" stroke-width="1.8"/><circle cx="98" cy="66" r="4.5" fill="var(--gold)"/>
+     <path d="M98 70 L66 156 H130 Z" fill="var(--gold)" fill-opacity=".16"/>
+     <g transform="translate(98 152)" fill="var(--ink)" fill-opacity=".8"><circle cx="0" cy="-44" r="6"/><path d="M-6 -44 q-2 10 -1 14 h14 q1 -4 -1 -14 z" fill-opacity=".9"/><path d="M-8 -34 Q0 -37 8 -34 L12 -4 H-12 Z"/><path d="M-4 -4 L-5 8 M4 -4 L5 8" stroke="var(--ink)" stroke-opacity=".8" stroke-width="3" stroke-linecap="round"/><rect x="9" y="-20" width="9" height="11" rx="2" fill="var(--rose)" fill-opacity=".9"/></g>
+     ${ARTtaxi(196,140,1)}`),
+};
+// y31 の窓の内側だけに夜景を描くためのクリップ
+const _y31=ART.y31; ART.y31=()=>_y31().replace("<defs>",`<defs><clipPath id="c-y31w"><rect x="40" y="14" width="240" height="118"/></clipPath>`);
+function artFig(k,label){return `<figure class="art fade" role="img" aria-label="${label}">${ART[k]()}</figure>`;}
+function artForAge(a){return a<=21?artFig("y18","上京と大学の昼の街"):a<=26?artFig("y22","オフィス街と仕事の机"):a<=30?artFig("y27","夕暮れの港区とタクシー"):artFig("y31","夜景の見える部屋の机");}
+
+function renderSetup(){
+  const left=POOL-used();
+  $("#app").innerHTML=`
+  ${artFig("title","夜の港区の街並みとタワー")}
+  <header class="hero">
+    <span class="eyebrow">18歳から35歳まで、18年の戦い</span>
+    <h1>港区戦記</h1>
+    <p class="muted">東京・港区を舞台に、一人の女性の18歳から35歳までを生きる人生シミュレーション。見た目や仕事力などの能力値と職業を決め、毎年の過ごし方を選んでいく。結婚した時点か、独身のまま35歳を迎えた時点で、結婚、仕事、資産、幸福度を一度総括する。そのあと40歳までの延長戦に進むか、そこで終えるかを選べる。数値はすべてゲーム用の架空の設定です。作中の「モテ」「適齢度」「男たちの値付け」は、港区の男たちの偏った物差しを誇張したもので、人の価値を表すものではありません。</p>
+  </header>
+  <section class="panel">
+    <h2>初期タイプ</h2>
+    <div class="presets">${PRESETS.map((p,i)=>`<button class="chip" data-p="${i}" aria-pressed="${setup.preset===i}">${p.n}</button>`).join("")}</div>
+  </section>
+  <section class="panel">
+    <div class="row" style="justify-content:space-between;align-items:baseline">
+      <h2>能力値</h2><span class="hint">自由に振れる残り <b class="num">${left}</b> 点</span>
+    </div>
+    <p class="hint" style="margin:0">${left>0?"タイプを選んだあとも、＋−で自由に調整できます。":"残りがないので、上げたい能力があるときは他を下げてください。"}</p>
+    ${STATS.map(s=>`
+      <div>
+        <div class="statrow">
+          <span>${s.n}</span>
+          <div class="bar"><i style="width:${setup.stats[s.k]*10}%"></i></div>
+          <div class="stepper">
+            <button data-d="-1" data-k="${s.k}" aria-label="${s.n}を下げる" ${setup.stats[s.k]<=1?"disabled":""}>−</button>
+            <span class="num">${setup.stats[s.k]}</span>
+            <button data-d="1" data-k="${s.k}" aria-label="${s.n}を上げる" ${(setup.stats[s.k]>=10||left<=0)?"disabled":""}>＋</button>
+          </div>
+        </div>
+        <div class="hint">${s.h}</div>
+      </div>`).join("")}
+  </section>
+  <section class="panel">
+    <h2>職業</h2>
+    <div class="values jobs">${JOBS.map(j=>`<button data-j="${j.k}" aria-pressed="${setup.job===j.k}"><b>${j.n}</b><small>${j.d}</small></button>`).join("")}</div>
+  </section>
+  <section class="panel">
+    <h2>本人の幸せの基準</h2>
+    <p class="hint" style="margin:0">総括の幸福度は、結果がこの価値観に合っているかで決まる。</p>
+    <div class="values">${VALUES.map(v=>`<button data-v="${v.k}" aria-pressed="${setup.value===v.k}"><b>${v.n}</b><small>${v.d}</small></button>`).join("")}</div>
+  </section>
+  <button class="btn" id="start">18歳、東京へ</button>`;
+  document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{setup.preset=+b.dataset.p;setup.stats={...PRESETS[setup.preset].s};renderSetup()});
+  document.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{const k=b.dataset.k;setup.stats[k]=clamp(setup.stats[k]+ +b.dataset.d,1,10);setup.preset=-1;renderSetup()});
+  document.querySelectorAll("[data-v]").forEach(b=>b.onclick=()=>{setup.value=b.dataset.v;renderSetup()});
+  document.querySelectorAll("[data-j]").forEach(b=>b.onclick=()=>{setup.job=b.dataset.j;renderSetup()});
+  $("#start").onclick=startGame;
+}
+
+/* ---------- ゲーム ---------- */
+function startGame(){
+  G={...setup.stats,value:setup.value,job:setup.job==="yoru"?"ippan":setup.job,planYoru:setup.job==="yoru",nightPast:false,divorced:false,misjudge:0,lastPrice:null,usedEv:[],event:null,biz:setup.job==="kigyo"?1.5:0,peakAsobi:0,peakKekkon:0,quals:0,age:18,rep:0,ideal:5,life:0,money:50,happy:0,
+     partner:null,married:false,marriedAge:null,minato:0,declined:0,log:[],hist:[],offer:null,done:false};
+  G.log.push([18,G.planYoru?"上京。20歳になったら夜の仕事をするつもりで、今は昼のアルバイト暮らし。":G.job==="gakusei"?"大学に入学した。港区の夜はまだ遠い。":"上京して社会に出た。港区の夜はまだ遠い。"]);
+  snapshotHist();
+  renderGame();
+}
+function snapshotHist(){const d=derive(G);if(G.age>=20)G.peakAsobi=Math.max(G.peakAsobi,d.asobi);G.peakKekkon=Math.max(G.peakKekkon,d.kekkon);G.hist.push({age:G.age,asobi:d.asobi,kekkon:d.kekkon,ideal:G.ideal,married:G.married,sat:G.married&&G.mar?G.mar.sat:null});}
+function maxAge(){return G.ext?40:35}
+function say(t){G.log.push([G.age,t])}
+
+const ACTIONS=[
+  {k:"minato",n:"港区の会食・ギャラ飲み",d:"若さと見た目がお金になる（本業は7割に抑える）。理想と生活水準が上がる"},
+  {k:"work",n:"本業に打ち込む",d:"仕事力が伸びる。年を取っても減らない。会う時間は減り、出会いはない"},
+  {k:"beauty",n:"自分磨き",d:"見た目を磨く。費用100万円。仕事力は伸びない"},
+  {k:"study",n:"勉強・資格",d:"知性と仕事力が伸びる。30歳からは資格が年収と結婚モテに効く。費用40万、残業が減り収入は少し下がる"},
+  {k:"konkatsu",n:"婚活・紹介",d:"結婚モテに見合った相手と出会う。費用30万、仕事力は伸びない"},
+  {k:"friends",n:"地元の友達・趣味",d:"性格と幸福度が上がり、理想が現実に寄る。収入は1割減り、仕事力は少し鈍る。出会いは少ない"},
+];
+const ACTIONS_P=[
+  {k:"deepen",n:"関係を深める",d:"相手との結びつきを強める"},
+  {k:"propose",n:"結婚を迫る",d:"釣り合いが取れていれば決まりやすい"},
+  {k:"breakup",n:"別れる",d:"理想に届かない相手なら次へ"},
+];
+
+function act(k){
+  if(G.ext){ G.extActs=G.extActs||{}; G.extActs[k]=(G.extActs[k]||0)+1; }
+  if(G.married) return marAct(k);
+  const d=derive(G);
+  let income=d.career, cost=livingCost(G);
+  const vMul=(v)=>G.value===v?1.6:1;
+  switch(k){
+    case "minato":{
+      const gyara=Math.round(price(d)*100);
+      income=Math.round(d.career*0.7)+gyara;
+      G.rep=clamp(G.rep+1.2); G.ideal=clamp(G.ideal+0.6+d.asobi*0.04); G.life=Math.min(500,G.life+60);
+      G.work=clamp(G.work-0.2,1); G.happy+=0.8*vMul("shigeki"); G.minato++;
+      { const pr=price(d), prev=G.lastPrice; G.lastPrice=pr;
+        const lv=callLevel(d), down=prev!=null&&prev>0&&pr<prev;
+        say(pr===0?"会食に顔を出したが、ギャラは出なかった。もう「呼ばれる側」ではない。":`港区の会食に通った。${lv==="引く手あまた"?"誘いが途切れない。":lv==="よく呼ばれる"?"週末の席はだいたい埋まる。":"声がかかるのは、たまに。"}${down?"前の年より、男たちの払い方が渋くなった。":""}`);
+        say("本業は7割に抑え、残りの時間を会食の席にあてた。"); }
+      if(G.partner && !G.married){ if(G.partner.sincerity>=6 && Math.random()<0.4){say(`${G.partner.label}に夜遊びを知られ、別れを告げられた。`);G.partner=null;G.happy-=1;} }
+      else if(!G.partner && price(d)>0 && Math.random()<0.55) G.offer=makeOffer("asobi");
+      break;}
+    case "work":
+      if(G.job==="yoru"){ income=Math.round(d.career*1.2); G.rep=clamp(G.rep+0.8); G.life=Math.min(500,G.life+40); say(`店に出続けた。売上は${d.career>700?"店のトップクラス":"落ち着いてきた"}。`); if(!G.partner&&Math.random()<0.5) G.offer=makeOffer("asobi"); }
+      else if(G.job==="kigyo"){ const dv=rnd(-1.2,1.6)+(G.work+G.intel-12)*0.1; G.biz=clamp(G.biz+dv); G.work=clamp(G.work+0.3); income=derive(G).career;
+        if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("資金が尽きて廃業した。借入を返しながら会社員に戻った。"); }
+        else say(dv>0?`事業が伸びた（事業規模${G.biz.toFixed(1)}）。`:`売上が落ちた（事業規模${G.biz.toFixed(1)}）。`); }
+      else if(G.job==="gakusei"){ G.work=clamp(G.work+0.5); G.intel=clamp(G.intel+0.5); say("授業とゼミに打ち込んだ。"); }
+      else { G.work=clamp(G.work+0.8); income=Math.round(d.career*1.1); say("本業に集中。評価が上がった。"); }
+      G.happy+=0.4*vMul("jiritsu");
+      if(G.partner&&!G.married) G.partner.commit=Math.max(0.1,G.partner.commit-0.05);
+      break;
+    case "startup":{ const wasYoru=G.job==="yoru"; G.money-=300; G.biz=wasYoru?clamp(2+G.rep*0.3+d.L*0.15+(G.money>1200?1:0)):clamp(1.5+(G.work+G.intel)*0.1); G.job="kigyo"; G.planYoru=false; income=derive(G).career; G.happy+=0.5*vMul("jiritsu"); say(wasYoru?`夜で作った顧客と資金で、自分のサロンを開いた（事業規模${G.biz.toFixed(1)}）。`:`貯金を元手に起業した（事業規模${G.biz.toFixed(1)}）。`); break;}
+    case "toYoru": if(G.job==="gakusei")say("大学を辞めた。"); G.job="yoru"; G.nightPast=true; G.rep=clamp(G.rep+2); G.life=Math.min(500,G.life+80); say("昼の仕事を辞めて、ラウンジで働き始めた。"); income=derive(G).career; break;
+    case "toHiru": G.job="ippan"; G.work=Math.min(G.work,4); G.life=Math.max(0,G.life-60); say("夜の仕事を辞めて、事務職に就いた。経歴の空白は面接で聞かれた。"); income=derive(G).career; break;
+    case "beauty": G.looks=clamp(G.looks+0.4); cost+=100; G.happy+=0.5; say("美容とジムに投資した。"); break;
+    case "study": G.intel=clamp(G.intel+0.6); G.work=clamp(G.work+(G.age>=30?0.5:0.3)); G.quals++; cost+=40; income=Math.round(income*0.95); G.happy+=0.3*vMul("jiritsu"); say(G.age>=30?"勉強して資格を一つ取った。30代の資格は、年収と評価に直接効く。":"勉強して資格を一つ取った。"); break;
+    case "konkatsu": cost+=30; G.offer=makeOffer("konkatsu"); say(G.job==="gakusei"||G.age<23?"合コンや友人の紹介で出会いを探した。":"結婚相談所と知人の紹介で出会いを探した。"); break;
+    case "friends": G.kind=clamp(G.kind+0.4); G.rep=clamp(G.rep-0.6); G.ideal=clamp(G.ideal-0.4,2); G.life=Math.max(0,G.life-30); G.happy+=1*vMul("antei");
+      income=Math.round(income*0.9); if(G.job!=="gakusei") G.work=clamp(G.work-0.15,1);
+      say(G.job==="gakusei"?"地元の友達と過ごした。肩の力が抜けた。バイトのシフトは減らした。":"地元の友達と過ごした。肩の力が抜けた。残業と休日出勤を断った分、収入と評価は少し下がった。"); if(!G.partner&&Math.random()<0.15) G.offer=makeOffer("konkatsu","友達の紹介"); break;
+    case "deepen": G.partner.commit=Math.min(0.95,G.partner.commit+0.15); G.happy+=0.6; say(`${G.partner.label}との関係が深まった。`); break;
+    case "propose":{
+      const pw=G.partner.world, ref=G.partner.src==="shacho"?d.asobi:pw==="night"?Math.max(d.kekkon,(d.kekkon+d.asobi)/2):pw==="biz"?d.kekkon*0.6+d.asobi*0.4:d.kekkon;
+      const gap=Math.max(0,G.partner.tier-ref);
+      const balance=clamp(1-gap/3.5,0.05,1);
+      const p=G.partner.commit*balance;
+      if(G.age>=20 && Math.random()<p){ marry(G); G.happy+=1.5; say(`${G.partner.label}と結婚が決まった。`); }
+      else { G.partner.commit=Math.max(0.1,G.partner.commit-0.2); if(gap>0.8||G.partner.src==="asobi"){G.misjudge++;say(G.partner.src==="asobi"?`はぐらかされた。遊びで選ばれたことを、結婚相手として選ばれたと勘違いしていたのかもしれない。`:`はぐらかされた。相手から見ると、あなたは「結婚相手」の格に届いていない。自分の価値を高く見積もっていないか。`);}else say(`まだ早いと言われた。`); if(Math.random()<0.3){say("そのまま関係は終わった。");G.partner=null;G.happy-=1;} }
+      break;}
+    case "breakup": say(`${G.partner.label}と別れた。`); G.partner=null; G.happy-=0.5; break;
+  }
+  if(G.job==="kigyo" && k!=="work" && k!=="startup"){ G.biz=clamp(G.biz-0.4); if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("事業を放置しているうちに資金が尽き、廃業した。借入を返しながら会社員に戻った。"); } }
+  if(!G.partner && !G.married && G.age>=29) G.happy-= (G.value==="antei"?0.5:G.value==="shigeki"?0.2:0);
+  G.money+=Math.round(income*0.75)-cost;
+  payDebt();
+  // 交際中の自然離脱
+  if(G.partner && !G.married && k!=="breakup" && k!=="propose" && Math.random()<(1-G.partner.commit)*0.35){say(`${G.partner.label}から連絡が途絶えた。`);G.partner=null;G.happy-=0.7;}
+  randomEvent();
+  triggerEvent();
+  if(G.offer||G.event) return renderGame();
+  nextYear();
+}
+// 貯金がマイナスの間は借金。年15%の利息を毎年引く
+const DEBT_RATE=0.15;
+function payDebt(){
+  if(G.money>=0) return;
+  if(G.job==="gakusei"){ say(`借金${(-G.money).toLocaleString()}万円。仕送りとバイトでは足りなかった。`); return; }
+  const it=Math.max(1,Math.round(-G.money*DEBT_RATE));
+  G.money-=it; G.happy-=0.6;
+  say(`借金${(-G.money).toLocaleString()}万円。年15%の利息で${it}万円が消えた。生活水準を下げられない。`);
+}
+function randomEvent(){
+  if(Math.random()>0.3) return;
+  const d=derive(G); const ev=[];
+  if(G.age>=27&&!G.married) ev.push(()=>{say("友人の結婚式が続いた。");G.happy-=0.3});
+  if(G.age>=28&&G.minato>2) ev.push(()=>say("会食の席に22歳の子が増えた。視線の集まり方が変わった。"));
+  if(G.rep>=4) ev.push(()=>{say("港区での写真がSNSで知られた。紹介の話が減った。");G.rep=clamp(G.rep+0.6)});
+  const WORK_EV={gakusei:"ゼミの教授に研究の手伝いを任された。",yoru:"店のママに新人の教育を任された。",kigyo:"大口の取引先を紹介された。"};
+  ev.push(()=>{say(WORK_EV[G.job]||"上司に仕事を任された。");G.work=clamp(G.work+0.3);if(G.job==="kigyo")G.biz=clamp(G.biz+0.3)});
+  if(d.L>=8&&G.age>=30) ev.push(()=>say("「全然変わらないね」と言われた。見た目はまだ武器になる。"));
+  pick(ev)();
+}
+const ASOBI_LABELS=["外資金融マン","IT起業家","港区の経営者","開業医","投資家"];
+function makeOffer(src,via){
+  const d=derive(G);
+  const via0=G.job==="yoru"?"お店のお客":G.job==="kigyo"?"経営者の集まり":"港区の会食";
+  if(src==="asobi"){
+    // 夜職×トップクラスの見た目だけに開く、本気の社長ルート
+    if(G.job==="yoru"&&d.L>=8.5&&Math.random()<0.18)
+      return {src:"shacho",label:"上場企業の社長",tier:r1(clamp(d.asobi+1)),income:Math.round(rnd(3000,6000)),sincerity:Math.round(rnd(4,7)),commit:0.8,via:via0,note:"珍しく本気らしい。"};
+    const tier=clamp(d.asobi+rnd(-1,1.5),1,10);
+    return {src,label:pick(ASOBI_LABELS),tier:r1(tier),income:Math.round(800+tier*180+rnd(0,600)),sincerity:Math.round(rnd(1,5)),commit:r1(rnd(0.15,0.35)),via:via0};
+  }
+  // どの世界の男と出会うか（紹介・お見合い・告白は昼の世界）
+  const world=(via||G.age<20)?"day":pickWorld(G);
+  if(world==="night"){
+    const ref=Math.max(d.kekkon,(d.kekkon+d.asobi)/2);
+    const tier=clamp(ref+rnd(-1,1.5),1,10);
+    return {src,world,label:pick(["ホスト","バーテンダー","ラウンジの黒服","ボーイズバー店長"]),tier:r1(tier),income:Math.round(rnd(300,1500)),sincerity:Math.round(rnd(2,8)),commit:r1(rnd(0.5,0.8)+(G.job==="yoru"?0.1:-0.1)),via:"夜の世界のつながり",note:G.job==="yoru"?"同じ世界の人。仕事に理解がある。":"昼の世界の人とは、ノリが違う。"};
+  }
+  if(world==="biz"){
+    const ref=d.kekkon*0.6+d.asobi*0.4;
+    const tier=clamp(ref+rnd(-1,1),1,10);
+    return {src,world,label:pick(["IT起業家","飲食店オーナー","美容サロン経営","不動産会社社長"]),tier:r1(tier),income:Math.round(600+tier*200+rnd(0,1500)),sincerity:Math.round(rnd(3,8)),commit:r1(rnd(0.4,0.7)),via:"経営者の集まり",note:G.job==="yoru"||G.job==="kigyo"?"経営者同士、話が合う。過去の仕事は気にしていない。":""};
+  }
+  const tier=clamp(d.kekkon+rnd(-1.5,1),1,10);
+  // 自分の職業が相手のスペックを引き上げる。30代ほど効く
+  const spec=((G.job==="kigyo"?Math.max(G.work,G.biz):G.work)-5)*(G.age>=27?75:30)+(G.job==="senmon"?80:0);
+  const inc=Math.max(300,Math.round(320+tier*85+spec+rnd(-60,120)));
+  const label=inc<480?pick(["地元の会社員","同い年の会社員"]):inc<750?pick(["メーカー勤務","SE","地方銀行員"]):pick(["総合商社","弁護士","勤務医","外資コンサル"]);
+  let commit=rnd(0.55,0.85), note="";
+  if(G.job==="yoru"){commit*=0.55;note="仕事を話すと、相手の表情が変わった。";}
+  else if(G.nightPast&&Math.random()<0.4){commit*=0.75;note="夜の仕事をしていた過去を気にしている。";}
+  return {src,world:"day",label,tier:r1(tier),income:inc,sincerity:Math.round(rnd(4,9.5)),commit:r1(commit),via:via||"婚活",note};
+}
+
+/* ---------- 2択イベント ---------- */
+const INDEP_C=[["独立する",g=>{g.indep=true;g.indepAsked=true;g.money-=200;g.work=clamp(g.work+0.5);g.happy+=0.8*(g.value==="jiritsu"?1.6:1);if(g.married&&g.mar)g.mar.strain=clamp(g.mar.strain+0.6);say(`${g.quals>(g.q35||0)?`${g.sumAge||35}歳を過ぎて取った資格を看板に`:"積み上げた実績を看板に"}、独立した。最初の一年で、会社員時代の年収を超えた。`);}],
+  ["会社に残る",g=>{g.indepAsked=true;g.work=clamp(g.work+0.3);say("独立の話は断った。会社での評価はさらに上がった。");}]];
+const indepOK=g=>g.ext&&g.age>=37&&!g.indepAsked&&!["yoru","kigyo","gakusei"].includes(g.job)&&g.work>=6&&((g.quals-(g.q35||0))>=1||(g.work-(g.w35||0))>=1.2);
+const EVENTS=[
+ {id:"senpai",when:(g,d)=>g.age>=20&&g.age<=21&&g.job==="gakusei",
+  t:"先輩からの誘い",x:"サークルの先輩に「かわいい子を連れてきてって頼まれてて」と、港区の食事会に誘われた。",
+  c:[["行ってみる",g=>{g.rep=clamp(g.rep+1);g.ideal=clamp(g.ideal+0.6);g.happy+=0.5;say("先輩の誘いで港区の食事会へ。帰りにタクシー代を渡された。");if(!g.partner)g.offer=makeOffer("asobi");}],
+     ["断ってゼミに行く",g=>{g.intel=clamp(g.intel+0.3);say("食事会を断った。ゼミの発表はうまくいった。");}]]},
+ {id:"scout",when:(g,d)=>g.age>=20&&g.age<=26&&g.job!=="yoru"&&g.job!=="kigyo"&&d.L>=7,
+  t:"街でスカウト",x:"表参道でラウンジのスカウトに声をかけられた。「君ならすぐ稼げるよ」。",
+  c:[["話を聞いて始める",g=>{if(g.job==="gakusei")say("大学を辞めた。");g.job="yoru";g.nightPast=true;g.planYoru=false;g.rep=clamp(g.rep+2);g.life=Math.min(500,g.life+80);say("スカウトの紹介でラウンジに入店した。");}],
+     ["名刺だけもらって帰る",g=>say("スカウトの名刺は、しばらく財布に入ったままだった。")]]},
+ {id:"teate",when:(g,d)=>g.age>=22&&!g.married&&d.L>=6.5&&g.rep>=1,
+  t:"パトロンの申し出",x:"会食で知り合った既婚の経営者から、お金を出すから定期的に食事に付き合ってほしいと持ちかけられた。",
+  c:[["受ける",g=>{g.money+=600;g.rep=clamp(g.rep+2);g.ideal=clamp(g.ideal+1);g.kind=clamp(g.kind-0.5,1);g.life=Math.min(500,g.life+80);g.happy+=g.value==="shigeki"?0.8:-0.8;say("申し出を受けた。この一年でまとまったお金が入った。誰にも言えない一年だった。");if(Math.random()<0.4){g.patronOut=true;g.rep=clamp(g.rep+2);g.happy-=1;say("相手の妻に知られ、港区で噂が広まった。紹介の話が来なくなった。");}if(g.partner&&g.partner.sincerity>=5){say(`${g.partner.label}に知られ、別れた。`);g.partner=null;}}],
+     ["断る",g=>{g.kind=clamp(g.kind+0.3);say("パトロンの申し出を断った。");}]]},
+ {id:"insta",when:(g,d)=>g.age>=21&&g.age<=30&&d.L>=7,
+  t:"PR案件",x:"インスタのフォロワーが1万人を超え、美容クリニックからPR案件の依頼が来た。",
+  c:[["受ける",g=>{g.money+=200;g.rep=clamp(g.rep+1);g.ideal=clamp(g.ideal+0.4);say("PR案件で200万円。会食のお誘いも増えた。");}],
+     ["断る",g=>say("PR案件を断った。アカウントは鍵をかけた。")]]},
+ {id:"abroad",when:(g,d)=>g.age>=25&&g.age<=31&&["sogo","senmon"].includes(g.job)&&!g.married,
+  t:"海外赴任の打診",x:"上司から2年間のシンガポール赴任を打診された。キャリアには大きなプラスになる。",
+  c:[["行く",g=>{g.work=clamp(g.work+1.5);g.intel=clamp(g.intel+0.5);g.money+=300;say("シンガポールに赴任した。仕事の幅が一気に広がった。");if(g.partner){say(`遠距離になり、${g.partner.label}とは自然に終わった。`);g.partner=null;}g.age++;g.money+=Math.round(derive(g).career*0.75)-livingCost(g);snapshotHist();say("赴任を終えて帰国した。東京の婚活市場は2年分進んでいた。");}],
+     ["東京に残る",g=>{g.work=clamp(g.work-0.3,1);say("赴任を断った。同期が代わりに行った。");}]]},
+ {id:"oldpro",when:(g,d)=>g.age>=21&&g.age<=27&&g.job!=="yoru"&&!g.partner&&!g.married,
+  t:"地味な先輩からの告白",x:()=>G.job==="gakusei"?"同じゼミの地味だけど誠実な先輩から、真剣に告白された。":"同じ職場の地味だけど誠実な先輩から、真剣に告白された。",
+  c:[["付き合ってみる",g=>{const o=makeOffer("konkatsu","告白");o.sincerity=9;o.commit=0.85;o.label="誠実な先輩";g.partner=o;say(`誠実な先輩（年収${o.income}万円）と付き合い始めた。`);}],
+     ["友達のままで",g=>{g.declined++;g.ideal=clamp(g.ideal+0.2);say("告白を断った。もっといい人がいる気がした。");}]]},
+ {id:"rival",when:(g,d)=>g.age>=27&&g.minato>=2&&!g.married,
+  t:"22歳の新顔",x:"いつもの会食に22歳の子が来た。主催者の視線が全部そっちに行ったのがわかった。",
+  c:[["張り合う",g=>{g.money-=150;g.looks=clamp(g.looks+0.3);g.ideal=clamp(g.ideal+0.3);g.rep=clamp(g.rep+0.5);say("美容医療に150万円かけた。まだ負けていない、と思いたかった。");}],
+     ["港区を卒業する",g=>{g.rep=clamp(g.rep-1.5);g.ideal=clamp(g.ideal-1,2);g.life=Math.max(0,g.life-100);g.happy+=0.5;say("会食のグループLINEを抜けた。生活費を見直した。");}]]},
+ {id:"bouquet",when:(g,d)=>g.age>=26&&g.age<=32&&!g.married,
+  t:"親友の結婚式",x:"親友の結婚式。ブーケトスで、ブーケがまっすぐ自分の方に飛んできた。",
+  c:[["取りに行く",g=>{g.ideal=clamp(g.ideal-0.5,2);g.happy+=0.4;say("ブーケを取った。新郎は普通の会社員で、親友は誰よりも幸せそうだった。");}],
+     ["一歩下がる",g=>{g.happy-=0.3;say("ブーケは後ろの子が取った。少しだけ悔しかった。");}]]},
+ {id:"exnews",when:(g,d)=>g.age>=28&&g.declined>=2&&!g.married,
+  t:"断った相手の近況",x:"昔断った相手が、別の人と結婚して子どもが生まれたとSNSで知った。幸せそうだった。",
+  c:[["連絡してみる",g=>{g.happy-=0.6;say("お祝いのメッセージを送った。返事は丁寧で、短かった。");}],
+     ["そっと閉じる",g=>{g.ideal=clamp(g.ideal-0.8,2);say("アプリを閉じた。自分の理想を少し見直した。");}]]},
+ {id:"omiai",when:(g,d)=>g.age>=29&&!g.partner&&!g.married,
+  t:"母からの電話",x:"母から「いい人いないの？親戚の紹介で、真面目な人がいるんだけど」と電話があった。",
+  c:[["会ってみる",g=>{g.offer=makeOffer("konkatsu","お見合い");g.offer.commit=Math.min(0.9,g.offer.commit+0.25);say("お見合いを受けることにした。");}],
+     ["今はいい",g=>{g.happy-=g.value==="antei"?0.5:0;say("お見合いを断った。母の声が少し寂しそうだった。");}]]},
+ {id:"tenkin",when:(g,d)=>g.age>=22&&g.partner&&!g.married&&g.partner.sincerity>=6,
+  t:"彼の転勤",x:()=>`${G.partner.label}の地方転勤が決まった。「ついてきてほしい。結婚しよう」と言われた。`,
+  c:[["ついて行く",g=>{if(g.job==="sogo"||g.job==="senmon"){g.work=clamp(g.work-1,1);}if(g.job==="kigyo")g.biz=clamp(g.biz-1.5);if(g.job!=="kigyo"&&g.job!=="senmon")g.job="ippan";marry(g);g.happy+=1;say(`${g.partner.label}と結婚して地方へ移った。仕事のキャリアは一度リセットされた。`);}],
+     ["東京に残る",g=>{say(`東京に残ることを選んだ。${g.partner.label}とは別れた。`);g.partner=null;g.happy-=0.8;}]]},
+ {id:"investor",when:(g,d)=>g.job==="kigyo"&&g.biz>=2,
+  t:"出資の話",x:"投資家から「1億出す。ただし株の過半数をもらう」と言われた。",
+  c:[["受ける",g=>{g.biz=clamp(g.biz+2);g.happy+=g.value==="jiritsu"?-1:0.3;g.diluted=true;say("出資を受けた。事業は一気に大きくなったが、株の過半数は投資家のものになった。");}],
+     ["自分でやる",g=>{g.happy+=g.value==="jiritsu"?0.6:0;say("出資を断った。小さくても自分の会社のままでいる。");}]]},
+ {id:"indep",when:(g)=>indepOK(g),t:"独立の誘い",x:"取引先から「独立するなら、うちが最初の顧客になる」と言われた。",c:INDEP_C},
+ {id:"futokyaku",when:(g,d)=>g.job==="yoru"&&g.age>=23,
+  t:"太客の提案",x:"長年の太客から「店を出すなら出資するよ」と言われた。",
+  c:[["受けて独立する",g=>{g.biz=clamp(3+g.rep*0.3);g.job="kigyo";g.rep=clamp(g.rep+0.5);say(`太客の出資で自分の店を開いた（事業規模${g.biz.toFixed(1)}）。`);}],
+     ["まだ店に出る",g=>say("出資の話は保留にした。")]]},
+];
+function triggerEvent(){
+  if(G.offer||G.married) return;
+  if(Math.random()>0.65) return;
+  const d=derive(G);
+  const ok=EVENTS.filter(e=>!G.usedEv.includes(e.id)&&e.when(G,d));
+  if(!ok.length) return;
+  const e=pick(ok); G.usedEv.push(e.id); G.event=e;
+}
+function answerEvent(i){
+  const e=G.event; G.event=null;
+  e.c[i][1](G);
+  if(G.offer||G.event) return renderGame();
+  nextYear();
+}
+function eventHTML(){
+  const e=G.event; const x=typeof e.x==="function"?e.x():e.x;
+  return `<section class="offer event fade">
+    <span class="eyebrow">${G.age}歳の出来事</span>
+    <div class="who">${e.t}</div>
+    <p style="margin:0">${x}</p>
+    <div class="row"><button class="btn" id="ev0">${e.c[0][0]}</button><button class="btn ghost" id="ev1">${e.c[1][0]}</button></div>
+  </section>`;
+}
+function answerOffer(yes){
+  const o=G.offer; G.offer=null;
+  if(yes){G.partner=o; say(`${o.label}（年収${o.income}万円）と付き合い始めた。`);}
+  else{G.declined++; const dk=derive(G).kekkon;
+    if(o.src!=="asobi"&&o.tier>=dk-1&&o.tier<G.ideal-0.5){G.misjudge++;say(`${o.label}の誘いを断った。相手の格（${o.tier.toFixed(1)}）は自分の結婚モテ（${dk.toFixed(1)}）とほぼ釣り合っていた。物足りなく感じたのは、相手ではなく理想のほうがズレているからかもしれない。`);}
+    else say(`${o.label}の誘いを断った。${o.tier<G.ideal-1?"理想には届かなかった。":""}`);}
+  nextYear();
+}
+function nextYear(){
+  // 結婚した年で一度総括する（延長戦の中での結婚は総括しない）
+  if(!G.ext&&!G.sumDone&&G.married){ G.hist.pop(); snapshotHist(); return finish(); }
+  G.age++;
+  if(G.extMsg){ say(G.extMsg); G.extMsg=null; }
+  if(G.age===20&&G.planYoru&&G.job!=="yoru"){G.job="yoru";G.nightPast=true;G.rep=clamp(G.rep+2);say("20歳。予定どおりラウンジで働き始めた。");}
+  if(G.age===22&&G.job==="gakusei"){const t=G.work+G.intel;G.job=t>=15?"sogo":"ippan";if(t>=15)G.work=clamp(G.work+0.5);say(t>=15?"大学を卒業。大手の総合職に内定した。":"大学を卒業。一般職として就職した。");}
+  if(G.age===20&&!G.planYoru) say("20歳。港区の食事会に誘われるようになった。");
+  if(G.married) G.planYoru=false;
+  if(G.age>maxAge()){ G.age=maxAge(); G.hist.pop(); snapshotHist(); return finish(); }
+  snapshotHist(); renderGame();
+}
+/* ---------- 延長戦（36〜40歳） ---------- */
+function startExt(){
+  const n=40-G.age;
+  G.ext=true; G.event=null; G.offer=null; G.q35=G.quals; G.w35=G.work; G.extActs={};
+  G.extMsg=G.married?`延長戦。ここからは結婚生活。40歳までの${n}年。`:`延長戦。ここから40歳までの${n}年。`;
+  nextYear(); if(typeof window!=="undefined"&&window.scrollTo) window.scrollTo(0,0);
+}
+function closeAtSummary(){ G.closed=true; finish(); if(typeof window!=="undefined"&&window.scrollTo) window.scrollTo(0,0); }
+/* ---------- 結婚生活パート ---------- */
+// 結婚の経緯で初期値と伸び方が変わる b=[満足度の初期補正, すれ違いの初期値, すれ違いの毎年の増え方]
+const ROUTE={konkatsu:{n:"婚活・紹介",b:[0.6,0,0.05]},asobi:{n:"遊び相手から",b:[-0.4,1.2,0.3]},night:{n:"夜の世界",b:[0,0.8,0.2]},biz:{n:"経営者",b:[0.2,0.5,0.15]},shacho:{n:"店のお客から",b:[0.4,0.8,0.2]}};
+function marry(g){
+  const p=g.partner, s=p.sincerity;
+  const route=p.src==="shacho"?"shacho":p.src==="asobi"?"asobi":p.world==="night"?"night":p.world==="biz"?"biz":"konkatsu";
+  const b=ROUTE[route].b;
+  const sat=clamp(5+(s-5)*0.35+b[0]-(g.ideal-p.tier>1.5?1:0));
+  g.mar={route,sat,sat0:sat,strain:clamp(1+(s<=4?1.5:0)+b[1]+(g.age<23?0.8:0)),years:0,crisis:0,repaired:0,mask:0,inlaw:0,hInc:1,house:false,usedEv:[],kid:false};
+  if(p.label==="同い年の大学生"||p.label==="バイト先の同年代"){
+    p.label=p.label==="同い年の大学生"?"大学時代の同級生":"バイト先で出会った人";
+    p.income=Math.max(p.income,Math.round(300+p.tier*35+Math.max(0,Math.max(g.age,22)-22)*18+rnd(-30,60)));
+  }
+  g.married=true; g.marriedAge=g.age; (g.marriages=g.marriages||[]).push(g.age);
+}
+function divorce(t,cause){
+  const p=G.partner, m=G.mar;
+  say(t||`${p.label}と離婚した。`); m.cause=cause||"strain";
+  m.endedAge=G.age; m.endLabel=p.label; G.lastMar=m; G.mar=null;
+  G.married=false; G.partner=null; G.divorced=true; G.happy-=1; G.money-=100; G.life=Math.max(0,G.life-50);
+  if(G.job==="ippan"&&G.work<4) G.work=4;
+}
+const ACTIONS_M=[
+  {k:"m_talk",n:"夫婦の会話を増やす",d:"すれ違いが減り、満足度が上がる。誠実な相手ほど効く"},
+  {k:"m_budget",n:"家計を見直す",d:"生活水準を下げて貯金・返済に回す。満足度は少し上がる"},
+  {k:"m_career",n:"仕事を優先する",d:"仕事力と収入が伸びる。家にいる時間が減り、すれ違いが増える"},
+  {k:"m_home",n:"家庭を優先する",d:"満足度が上がり、すれ違いが減る。本人の収入は3割減り、仕事力は少し鈍る"},
+  {k:"m_family",n:"実家・義実家と付き合う",d:"費用30万。義実家との関係が良くなり、介護などの出来事で効いてくる"},
+  {k:"m_trip",n:"二人の旅行・趣味",d:"費用80万。満足度が大きく上がり、すれ違いが減る"},
+  {k:"m_ninkatsu",n:"妊活をする",d:"費用50万。通院で本人の収入と仕事力が下がり、夫婦の負担も増える。授かるかは運と年齢次第"},
+  {k:"m_old",n:"港区の旧友と会う",d:"幸福度と港区慣れが上がる。理想と生活水準も上がり、夫が気にすることがある"},
+];
+function marAct(k){
+  const p=G.partner, m=G.mar, s=p.sincerity;
+  const vMul=(v)=>G.value===v?1.6:1;
+  let myMul=0.8, extra=0;
+  switch(k){
+    case "m_talk": m.strain=clamp(m.strain-1.2-(s>=6?0.3:0)); m.sat=clamp(m.sat+(s>=6?0.7:s>=4?0.45:0.25)); G.happy+=0.3;
+      say(s>=6?"週末に二人で話す時間を作った。言えずにいたことを言えた。":"話す時間を作った。夫の返事は短かったが、ゼロよりはいい。"); break;
+    case "m_budget": G.life=Math.max(0,G.life-60); m.sat=clamp(m.sat+0.2); m.strain=clamp(m.strain-(G.money<0?0.6:0.2));
+      say(G.money<0?"家計を二人で洗い出し、返済の計画を立てた。":"家計を見直した。毎月いくら残るかが、初めて二人の共通の数字になった。"); break;
+    case "m_career": myMul=1;
+      if(G.job==="kigyo"){ G.biz=clamp(G.biz+rnd(-0.6,1.2)+(G.work+G.intel-12)*0.05); G.work=clamp(G.work+0.3); }
+      else if(G.job==="gakusei"){ G.work=clamp(G.work+0.5); G.intel=clamp(G.intel+0.5); }
+      else G.work=clamp(G.work+0.8);
+      m.sat=clamp(m.sat-0.35); m.strain=clamp(m.strain+0.7); G.happy+=0.4*vMul("jiritsu");
+      say(G.job==="kigyo"?`事業に打ち込んだ（事業規模${G.biz.toFixed(1)}）。帰りはいつも夫より遅い。`:G.job==="gakusei"?"学業に打ち込んだ。夫とは生活の時間がずれた。":"仕事を優先した。評価は上がり、夕食は別々の日が増えた。"); break;
+    case "m_home": myMul=0.55; G.work=clamp(G.work-0.2,1); m.sat=clamp(m.sat+0.8); m.strain=clamp(m.strain-0.7); G.happy+=0.5*vMul("antei");
+      say("仕事を減らして、家のことに時間を使った。"); break;
+    case "m_family": extra=30; m.inlaw++; m.sat=clamp(m.sat+0.3); m.strain=clamp(m.strain-0.3); G.happy+=0.1;
+      say(m.inlaw>=2?"義実家とは、気を遣わずに話せるようになってきた。":"盆と正月に、夫の実家と自分の実家を回った。"); break;
+    case "m_trip": extra=80; m.sat=clamp(m.sat+1); m.strain=clamp(m.strain-0.8); G.happy+=0.6;
+      say(pick(["二人で旅行に出た。久しぶりに、仕事の話をしない三日間だった。","二人で同じ趣味を始めた。週末の予定が自然に決まるようになった。"])); break;
+    case "m_ninkatsu":{ m.nk=(m.nk||0)+1; extra=50; myMul=0.65; G.work=clamp(G.work-0.2,1);
+      m.strain=clamp(m.strain+(m.nk>=3?0.8:0.4)-(s>=6?0.2:0)); m.sat=clamp(m.sat+(s>=6?0.2:-0.2));
+      // ゲーム用の架空の確率。年齢で下がる
+      const pr=G.age<30?0.4:G.age<35?0.3:G.age<38?0.18:0.1;
+      if(Math.random()<pr){ m.kid=true; m.kidBy="nk"; say(`妊活${m.nk}年目で、子どもを授かった。`); }
+      else say(m.nk===1?"妊活を始めた。通院の予定を仕事の合間に組み込んだ。":`妊活${m.nk}年目。今年も授からなかった。費用と通院の負担が、少しずつ重くなってきた。`);
+      break;}
+    case "m_old": m.oldMeet=(m.oldMeet||0)+1; G.rep=clamp(G.rep+0.4); G.ideal=clamp(G.ideal+0.3); G.life=Math.min(500,G.life+20); G.happy+=0.7*vMul("shigeki");
+      m.strain=clamp(m.strain+(s>=6?0.5:0.2)); m.sat=clamp(m.sat-0.1);
+      if(Math.random()<0.3){ G.work=clamp(G.work+0.2); say("港区時代の知り合いと会った。仕事の紹介を一つもらった。"); }
+      else say(s>=6?"港区時代の友達と会った。帰りが遅くなり、夫は何も言わなかった。":"港区時代の友達と会った。華やかな話を聞いて、少しだけ昔に戻った。"); break;
+  }
+  if(G.job==="kigyo" && k!=="m_career"){ G.biz=clamp(G.biz-0.4); if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("事業に手が回らず、廃業した。会社員に戻った。"); } }
+  // 経緯と誠実さで、放っておくと溜まるすれ違い
+  m.strain=clamp(m.strain+(s<=4?0.6:s<=6?0.3:0.1)+ROUTE[m.route].b[2]);
+  m.sat=clamp(m.sat+(s-5)*0.06-Math.max(0,m.strain-4)*0.15);
+  m.years++;
+  const myInc=derive(G).career*myMul, cost=livingCost(G)+extra;
+  G.money+=Math.round((myInc+p.income*0.4*m.hInc)*0.75)-cost;
+  payDebt();
+  if(G.money<0) m.strain=clamp(m.strain+0.3);
+  G.happy+=(m.sat-5)*0.12;
+  // 妊活をしていない年にも、授かることはある（運）
+  if(k!=="m_ninkatsu" && !m.kid && G.age<=38 && Math.random()<0.03){ m.kid=true; m.kidBy="luck"; say("子どもを授かった。"); }
+  // 隠していた浮気が知られることがある
+  if(m.secret && Math.random()<0.1){ divorce("隠していたことが夫に知られた。話し合いの末、離婚が決まった。","my"); return nextYear(); }
+  const risk=(s<=4?0.04:s<=6?0.015:0.005)+(G.marriedAge<23?0.03:0)+Math.max(0,m.strain-6)*0.06+(m.sat<3?0.08:0);
+  if(Math.random()<risk){
+    divorce(m.strain>=6?`すれ違いが積み重なり、${p.label}と離婚した。`:G.marriedAge<23?`${p.label}と離婚した。若すぎた結婚だった。`:`${p.label}と離婚した。`);
+    return nextYear();
+  }
+  triggerMarEvent();
+  if(G.event) return renderGame();
+  nextYear();
+}
+const mev=id=>MEVENTS.find(e=>e.id===id);
+const MEVENTS=[
+ {id:"indep",when:(g)=>indepOK(g),t:"独立の誘い",x:"取引先から「独立するなら、うちが最初の顧客になる」と言われた。",c:INDEP_C},
+ {id:"uwaki_found",when:()=>false,t:"夫の浮気",x:"夫は「もう終わっている。やり直したい」と言った。",
+  c:[["許す",g=>{const m=g.mar;m.hForgave=1;if(m.sat>=4.5&&Math.random()<0.7){m.repaired++;m.strain=clamp(m.strain+0.5);m.sat=clamp(m.sat-0.5);say("許すと決めた。そのかわり、毎週話す時間を作ることを約束させた。");}else{m.mask++;m.strain=clamp(m.strain+1);m.sat=clamp(m.sat-0.8);say("許すと言った。けれど、夫のスマホが鳴るたびに気になってしまう。");}}],
+     ["別れる",g=>divorce("許さないと決めた。離婚届に判を押した。","h")]]},
+ {id:"my_uwaki",when:(g,m)=>m.years>=2&&(g.minato>=1||(m.oldMeet||0)>=1)&&Math.random()<0.5,
+  t:"昔の知り合いからの誘い",x:()=>G.minato>=1?"港区時代に親しかった人から「久しぶりに二人で飲まない？」と連絡が来た。結婚していることは知っているはずだ。":"昔付き合っていた人から「久しぶりに会えないかな」と連絡が来た。",
+  c:[["会いに行く",g=>{const m=g.mar;m.myAffair=1;m.strain=clamp(m.strain+1);m.sat=clamp(m.sat-0.4);g.ideal=clamp(g.ideal+0.3);
+       if(Math.random()<0.35){say("会いに行った。一度では終わらなかった。");g.event=mev("my_found");}
+       else{m.secret=true;say("会いに行った。誰にも言わなかった。家に帰ると、夫の顔をまっすぐ見られなかった。");}}],
+     ["既婚だと伝えて断る",g=>{g.mar.sat=clamp(g.mar.sat+0.3);g.ideal=clamp(g.ideal-0.2,2);say("「結婚してるから」と返した。それ以上の連絡は来なかった。");}]]},
+ {id:"my_found",when:()=>false,t:"知られた",x:"夫に、二人で会っていたことを知られた。",
+  c:[["正直に話して謝る",g=>{const m=g.mar;m.crisis++;if(g.partner.sincerity>=6&&m.sat>=4&&Math.random()<0.55){m.repaired++;m.sat=clamp(m.sat-0.8);m.strain=clamp(m.strain+0.3);say("全部話して謝った。夫は長い時間黙ったあと、「やり直したい」と言った。");}else divorce("全部話して謝った。夫は許さなかった。離婚が決まった。","my");}],
+     ["ごまかす",g=>{const m=g.mar;m.mask++;m.secret=true;m.strain=clamp(m.strain+1.5);m.sat=clamp(m.sat-1);say("ごまかした。夫は信じたふりをした。");}]]},
+ {id:"kids_talk",when:(g,m)=>(m.nk||0)>=2&&!m.kid&&!m.two&&!m.foster,
+  t:"これからのこと",x:()=>`妊活を始めて${G.mar.nk}年。夫が「これからどうしようか」と切り出した。`,
+  c:[["もう少し続ける",g=>{g.mar.strain=clamp(g.mar.strain+0.3);g.mar.sat=clamp(g.mar.sat+0.2);say("もう少し続けると二人で決めた。期限も一緒に決めた。");}],
+     ["区切りをつけて話し合う",g=>{say("妊活に区切りをつけて、二人でこれからを話し合った。");g.event=mev("kids_next");}]]},
+ {id:"kids_next",when:()=>false,t:"二人の家族の形",x:"子どもを持つかどうか、持つならどんな形か。二人で何度も話した。",
+  c:[["二人で生きると決める",g=>{const m=g.mar;m.two=true;m.strain=clamp(m.strain-1);m.sat=clamp(m.sat+0.6);say("二人で生きると決めた。通院の予定が消えたカレンダーに、二人の予定が増えた。");}],
+     ["里親・養子について調べる",g=>{const m=g.mar;m.foster=true;m.strain=clamp(m.strain-0.5);m.sat=clamp(m.sat+0.4);g.money-=30;say("里親制度と特別養子縁組の説明会に、二人で行った。家族の形は一つではないと知った。");}]]},
+ {id:"h_job",when:(g,m,p)=>p.world!=="night"&&m.years>=1,
+  t:"夫の転職",x:()=>`${G.partner.label}が「年収は上がるけど、今より忙しくなる会社に移りたい」と言い出した。`,
+  c:[["背中を押す",g=>{g.mar.hInc*=1.3;g.mar.strain=clamp(g.mar.strain+0.6);g.mar.sat=clamp(g.mar.sat+0.3);say("夫は転職した。年収は上がり、帰りは遅くなった。");}],
+     ["今の会社に残ってもらう",g=>{g.mar.sat=clamp(g.mar.sat+0.2);if(g.partner.sincerity<=5)g.mar.strain=clamp(g.mar.strain+0.5);say(g.partner.sincerity<=5?"夫は今の会社に残った。それからしばらく、機嫌が悪かった。":"夫は今の会社に残った。「家にいる時間のほうが大事か」と笑った。");}]]},
+ {id:"h_promo",when:(g,m,p)=>m.years>=2&&p.world!=="night",
+  t:"夫の昇進",x:"夫が管理職に昇進した。給料は上がるが、休日も電話が鳴るようになる。",
+  c:[["家のことを多めに引き受ける",g=>{g.mar.hInc*=1.15;g.work=clamp(g.work-0.3,1);g.mar.sat=clamp(g.mar.sat+(g.partner.sincerity>=6?0.6:0.1));say(g.partner.sincerity>=6?"家のことを多めに引き受けた。夫は毎週「ありがとう」と言った。":"家のことを多めに引き受けた。それが当たり前になっていった。");}],
+     ["家事は半々のままにする",g=>{g.mar.hInc*=1.15;g.mar.strain=clamp(g.mar.strain+0.4);say("家事の分担はそのままにした。話し合いは長引いたが、決めたことは守られた。");}]]},
+ {id:"kaigo",when:(g,m,p)=>g.age>=31&&m.years>=2,
+  t:"義実家の介護",x:"夫の母が倒れ、介護が必要になった。夫は「どうしよう」と言うばかりだ。",
+  c:[["自分も引き受ける",g=>{const ok=g.mar.inlaw>=1;g.work=clamp(g.work-0.5,1);g.money-=100;g.kind=clamp(g.kind+0.3);g.mar.sat=clamp(g.mar.sat+(ok?0.9:0.2));g.mar.strain=clamp(g.mar.strain+(ok?0.2:1));say(ok?"夫と分担して介護を引き受けた。義実家と築いてきた関係が支えになった。":"介護を引き受けた。慣れない義実家との往復で、疲れが溜まった。");}],
+     ["外のサービスを使う",g=>{g.money-=250;g.mar.strain=clamp(g.mar.strain+0.3);say("介護サービスを契約した。費用はかかったが、二人とも仕事を続けられた。");}]]},
+ {id:"uwaki",when:(g,m,p)=>m.years>=1&&(p.sincerity<=6||m.route!=="konkatsu"),
+  t:"夫の浮気の疑い",x:"夫のスマホに、知らない名前からの通知が続いている。",
+  c:[["問い詰める",g=>{const m=g.mar,real=Math.random()<(11-g.partner.sincerity)/11;
+       if(!real){m.strain=clamp(m.strain+0.8);m.sat=clamp(m.sat-0.4);say("ただの仕事相手だった。疑ったことで、少し気まずくなった。");return;}
+       m.crisis++; m.hFound=1; say("問い詰めると、夫は認めた。"); g.event=mev("uwaki_found");}],
+     ["気づかないふりをする",g=>{g.mar.mask++;g.mar.strain=clamp(g.mar.strain+1.2);g.mar.sat=clamp(g.mar.sat-0.6);say("何も聞かなかった。家の中の会話が、事務連絡だけになっていった。");}]]},
+ {id:"house",when:(g,m,p)=>!m.house&&m.years>=1&&(g.money>=600||p.income>=900),
+  t:"家の購入",x:"夫が「そろそろ家を買わないか」と言い出した。",
+  c:[["買う（ローンを組む）",g=>{g.mar.house=true;g.money-=Math.min(Math.max(0,g.money),500);g.life=Math.min(500,g.life+30);g.mar.sat=clamp(g.mar.sat+0.6);g.mar.strain=clamp(g.mar.strain+0.2);say("頭金を入れて、二人の名義で家を買った。毎月の返済が始まった。");}],
+     ["賃貸のままでいる",g=>{g.mar.sat=clamp(g.mar.sat+0.1);say("賃貸のままにした。いつでも身軽に動ける。");}]]},
+ {id:"mycareer",when:(g,m,p)=>g.job!=="yoru"&&g.job!=="gakusei"&&g.age>=26,
+  t:"自分のキャリアの誘い",x:()=>G.job==="kigyo"?"大口の取引先から、事業を一気に広げる話を持ちかけられた。":"昔の上司から「うちに来ないか。役職付きで」と誘われた。",
+  c:[["受ける",g=>{g.work=clamp(g.work+1.2);if(g.job==="ippan")g.job="sogo";if(g.job==="kigyo")g.biz=clamp(g.biz+1.5);g.mar.strain=clamp(g.mar.strain+0.8);g.mar.sat=clamp(g.mar.sat+(g.partner.sincerity>=6?0.2:-0.3));g.happy+=0.6*(g.value==="jiritsu"?1.6:1);say(g.partner.sincerity>=6?"誘いを受けた。夫は「やってみなよ」と言った。忙しさは倍になった。":"誘いを受けた。夫は何も言わなかったが、家の空気は少し冷えた。");}],
+     ["断る",g=>{g.mar.sat=clamp(g.mar.sat+0.3);g.happy-=g.value==="jiritsu"?0.5:0;say("誘いを断った。今の暮らしの形を優先した。");}]]},
+ {id:"h_tenkin",when:(g,m,p)=>m.years>=1&&p.world==="day"&&p.src!=="asobi"&&!m.house,
+  t:"夫の転勤",x:"夫の地方転勤が決まった。3年は戻れないらしい。",
+  c:[["ついて行く",g=>{if(!["kigyo","senmon"].includes(g.job))g.job="ippan";g.work=clamp(g.work-0.5,1);g.mar.sat=clamp(g.mar.sat+0.5);g.mar.strain=clamp(g.mar.strain-0.3);say("夫について地方へ移った。仕事は一から探し直した。");}],
+     ["単身赴任してもらう",g=>{g.mar.strain=clamp(g.mar.strain+0.9);g.mar.sat=clamp(g.mar.sat-0.3);g.money-=60;say("夫は単身赴任になった。週末だけの夫婦になった。");}]]},
+ {id:"slump",when:(g,m,p)=>m.years>=1&&(m.route==="biz"||m.route==="night"||p.sincerity<=5),
+  t:"夫の収入が落ちた",x:()=>G.mar.route==="biz"?"夫の会社の資金繰りが悪化し、役員報酬が大きく減った。":"夫の収入が大きく減った。夫は「すぐ戻る」と言っている。",
+  c:[["自分の稼ぎで支える",g=>{g.mar.hInc*=0.7;g.work=clamp(g.work+0.4);g.mar.sat=clamp(g.mar.sat+(g.partner.sincerity>=5?0.6:0));g.mar.strain=clamp(g.mar.strain+(g.partner.sincerity>=5?0:0.6));say(g.partner.sincerity>=5?"しばらく自分の稼ぎで家計を回した。夫はそれを忘れなかった。":"自分の稼ぎで家計を回した。夫は感謝より、言い訳のほうが多かった。");}],
+     ["生活を切り詰める",g=>{g.mar.hInc*=0.7;g.life=Math.max(0,g.life-80);g.mar.strain=clamp(g.mar.strain+0.3);say("外食とタクシーをやめた。生活は地味になったが、赤字にはならなかった。");}]]},
+ {id:"reunion",when:(g,m,p)=>g.minato>=2&&m.years>=1,
+  t:"港区からの誘い",x:"港区時代の知り合いから、久しぶりに会食の誘いが来た。「結婚してても関係ないでしょ」。",
+  c:[["行く",g=>{g.rep=clamp(g.rep+0.5);g.happy+=0.5*(g.value==="shigeki"?1.6:1);g.mar.strain=clamp(g.mar.strain+0.6);say("久しぶりに港区の会食に出た。昔と同じ顔ぶれが、昔と同じ話をしていた。");}],
+     ["断る",g=>{g.ideal=clamp(g.ideal-0.3,2);g.mar.sat=clamp(g.mar.sat+0.2);say("誘いを断った。あの席に戻りたいとは、もう思わなかった。");}]]},
+];
+function triggerMarEvent(){
+  if(!G.married||Math.random()>0.55) return;
+  const m=G.mar, ok=MEVENTS.filter(e=>!m.usedEv.includes(e.id)&&e.when(G,m,G.partner));
+  if(!ok.length) return;
+  const e=pick(ok); m.usedEv.push(e.id); G.event=e;
+}
+function renderMarried(){
+  const d=derive(G), p=G.partner, m=G.mar;
+  let acts=ACTIONS_M.filter(a=>a.k!=="m_ninkatsu"||!(m.kid||m.two||m.foster));
+  if(G.money<0) acts=acts.map(a=>a.k==="m_trip"?{...a,off:`借金${(-G.money).toLocaleString()}万円を返すまで選べない`}:a);
+  const H=m.sat>=7?"「最近飲みに誘っても来ない。家が楽しいらしい」":m.strain>=6?"「旦那とうまくいってないって噂。本当かは知らない」":G.work>=7?"「結婚してから仕事の顔つきが変わった。前より話が面白い」":"「結婚したんだって。幸せならそれでいいよ」";
+  const tip=m.strain>=6?"すれ違いが6を超えると、離婚の確率が一気に上がる。":m.sat<4?"満足度が低い。会話か旅行で立て直す余地はまだある。":m.years===0?"結婚生活が始まった。ここからは夫婦の満足度・すれ違い・家計の三つを見ながら一年を選ぶ。":"";
+  $("#app").innerHTML=`
+  <div class="ageline"><div class="age num">${G.age}<small>歳</small></div><span class="status-tag">既婚・${m.years+1}年目</span></div>
+  ${artFig("endMarry","朝の食卓と二つの指輪")}
+  <section class="panel fade">
+    <div class="note">夫：${p.label}（年収${Math.round(p.income*m.hInc).toLocaleString()}万円）／誠実さ ${"●".repeat(Math.round(p.sincerity/2))}${"○".repeat(5-Math.round(p.sincerity/2))}／出会い：${ROUTE[m.route].n}</div>
+    <div class="meters">
+      ${meter("sat","夫婦の満足度",m.sat)}
+      ${meter("strain","すれ違い",m.strain)}
+      ${meter("","仕事力",G.work)}
+      ${meter("","性格",G.kind)}
+      ${meter("asobi","遊びモテ",d.asobi)}
+      ${meter("ideal","理想の高さ",G.ideal)}
+    </div>
+    <div class="money">
+      <span>本人の年収 <b>${d.career}</b>万</span>
+      <span>${G.money<0?"借金":"貯金"} <b class="${G.money<0?"neg":""}">${G.money<0?(-G.money).toLocaleString():G.money}</b>万${G.money<0?"（年15%）":""}</span>
+      <span>生活費 <b>${livingCost(G)}</b>万/年</span>
+      ${m.house?"<span>持ち家 <b>あり</b></span>":""}
+      ${G.job==="kigyo"?`<span>事業規模 <b>${G.biz.toFixed(1)}</b></span>`:""}
+    </div>
+    <blockquote class="honne"><span>港区の男たちの本音</span>${H}</blockquote>
+    ${tip?`<div class="note">${tip}</div>`:""}
+  </section>
+  ${G.event?eventHTML():`
+  <section class="panel">
+    <h3>結婚${m.years+1}年目、${G.age}歳の一年をどう過ごす？</h3>
+    <div class="actions">${acts.map(a=>`<button class="act" data-a="${a.k}"${a.off?" disabled":""}><b>${a.n}</b><small>${a.d}</small>${a.off?`<small class="why">${a.off}</small>`:""}</button>`).join("")}</div>
+  </section>`}
+  <section class="panel"><h3>戦記</h3><div class="log" id="log">${G.log.slice().reverse().map(([a,t])=>`<p><span class="num">${a}歳</span><span>${t}</span></p>`).join("")}</div></section>
+  <button class="btn ghost" id="reset">最初からやり直す</button>`;
+  document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>act(b.dataset.a));
+  if(G.event){$("#ev0").onclick=()=>answerEvent(0);$("#ev1").onclick=()=>answerEvent(1);}
+  $("#reset").onclick=renderSetup;
+}
+
+
+function livingCost(g){return (g.job==="gakusei"?35:g.planYoru&&g.age<20?150:g.married?380:220)+g.life+(g.married&&g.mar&&g.mar.kid?50:0)}
+// 22歳未満の出会いは相手も若く、結婚までは考えていない
+const _makeOffer=makeOffer;
+makeOffer=function(src,via){
+  const o=_makeOffer(src,via);
+  if(o.src!=="shacho"){
+    if(G.age<20&&o.world==="day"){o.label=pick(["同い年の大学生","バイト先の同年代"]);o.income=Math.round(rnd(80,180));o.tier=r1(clamp(o.tier-1,1,10));}
+    if(G.age<22){o.commit=r1(o.commit*0.35);o.note=(o.note?o.note+" ":"")+"相手もまだ若く、結婚までは考えていない。";}
+    else if(G.age<24) o.commit=r1(o.commit*0.75);
+  }
+  return o;
+};
+/* ---------- 出会う世界 ---------- */
+// 職業と港区慣れで、昼職・夜の世界・経営者のどこと出会うかが変わる
+function worlds(g){
+  let day=0.8,night=0.05,biz=0.15;
+  if(g.job==="yoru"){day=0.25;night=0.45;biz=0.3}
+  else if(g.job==="kigyo"){day=0.35;night=0.05;biz=0.6}
+  if(g.nightPast&&g.job!=="yoru"){day-=0.1;night+=0.1}
+  const r=g.rep/10; day-=0.35*r; biz+=0.25*r; night+=0.1*r;
+  day=Math.max(0.05,day); const t=day+night+biz;
+  return {day:day/t,night:night/t,biz:biz/t};
+}
+function pickWorld(g){const w=worlds(g),x=Math.random();return x<w.day?"day":x<w.day+w.night?"night":"biz"}
+const WORLD_NAME={day:"昼の世界",night:"夜の世界",biz:"経営者"};
+/* ---------- 値札・本音・値付け ---------- */
+// 遊びモテ5未満は呼ばれない。美人は遊びモテの落ち方がゆるいので30代でも呼ばれ続ける
+function callLevel(d){ const p=price(d); return p===0?"呼ばれない":p>=2.5?"引く手あまた":p>=1.5?"よく呼ばれる":"たまに呼ばれる"; }
+function price(d){ if(d.asobi<5) return 0; return Math.round(Math.pow(d.asobi/10,2)*3.5*10)/10; }
+function grade(v){return v>=8.5?"S":v>=7?"A":v>=5.5?"B":v>=4?"C":v>=2.5?"D":"E"}
+function honne(g,d){
+  const H=[];
+  if(g.age<20) return "（まだ港区の男たちの視界に入っていない）";
+  if(g.married) return "「結婚したんだって。まあ、そろそろだったよね」";
+  if(g.job==="yoru"&&d.L>=8.5) H.push("「店の看板。社長連中が本気で口説いてる」");
+  if(g.job==="kigyo"&&g.biz>=5) H.push("「最近は向こうがおごる側。もう呼べないな」");
+  if(g.rep>=6) H.push("「港区で知らない奴はいない。だから本気の相手には紹介できない」");
+  if(g.ideal-d.kekkon>=2) H.push("「条件だけは一流。自分を何様だと思ってるんだろうね」");
+  if(d.asobi>=9&&g.age<=24) H.push("「今いちばん呼びたい子。若さの値段を、本人だけがまだ知らない」");
+  if(d.asobi>=7&&d.kekkon<d.asobi-1.5) H.push("「連れて行けば場が華やぐ。ただ、嫁にするかは別の話」");
+  if(d.asobi>=5&&d.asobi<7&&g.age>=27) H.push("「顔はまだいける。でももう『連れて行きたい子』じゃなくて『いても困らない子』」");
+  if(d.asobi<5&&g.minato>=3) H.push("「最近は呼ぶ理由が見つからない。グループLINEにはまだいるけど」");
+  if(d.kekkon>=7&&g.rep<2) H.push("「派手さはないけど、結婚するならああいう子だよな」");
+  if(d.L>=8&&g.age>=30) H.push("「30過ぎてあの顔は反則。まだ普通に呼ぶ」");
+  if(!H.length) H.push(g.age<=25?"「普通にかわいい。悪くない」":g.age<=29?"「いい子なんだけどね。印象に残らない」":"「誰だっけ」");
+  return pick(H);
+}
+/* ---------- 描画 ---------- */
+function meter(cls,label,v){return `<div class="meter ${cls}"><div class="top"><span>${label}</span><span class="num">${v.toFixed(1)}</span></div><div class="bar"><i style="width:${v*10}%"></i></div></div>`}
+function renderGame(){
+  if(G.married) return renderMarried();
+  const d=derive(G);
+  const tag=G.partner?`交際中：${G.partner.label}`:G.divorced?"独身（離婚歴あり）":"独身";
+  let base=ACTIONS.map(a=>a.k==="work"&&G.job==="yoru"?{k:"work",n:"店に出る",d:"若さと見た目がそのまま売上に。太客との出会いも"}:a.k==="work"&&G.job==="gakusei"?{k:"work",n:"学業に打ち込む",d:"知性と仕事力が伸びる。22歳の就職先に効く"}:a.k==="work"&&G.job==="kigyo"?{k:"work",n:"事業に打ち込む",d:"仕事力と知性が高いほど伸びやすい。外すと縮む"}:a);
+  if(G.age>=22&&G.job!=="gakusei"&&G.job!=="kigyo"&&(G.money>=300||G.money<0)) base.push(G.job==="yoru"?{k:"startup",n:"独立して店・サロンを開く",d:"夜で作った顧客と資金が元手。貯金300万を使う"}:{k:"startup",n:"起業する",d:"貯金300万を元手に。振れ幅が大きい"});
+  if(G.job==="yoru") base=base.filter(a=>a.k!=="minato");
+  if(G.age<20) base=base.filter(a=>a.k!=="minato");
+  else base.push(G.job==="yoru"?{k:"toHiru",n:"昼の仕事に戻る",d:"収入は下がる。経歴は残る"}:{k:"toYoru",n:"夜の仕事を始める",d:"すぐ稼げる。昼職の相手との結婚は遠のく"});
+  let acts=G.partner&&!G.married?[...base.filter(a=>a.k!=="konkatsu"),...ACTIONS_P]:base;
+  if(G.age<20) acts=acts.map(a=>a.k==="propose"?{...a,off:"20歳になるまでは結婚しない"}:a);
+  // 借金中は費用のかかる行動を押せない
+  if(G.money<0) acts=acts.map(a=>a.k==="beauty"||a.k==="startup"?{...a,off:`借金${(-G.money).toLocaleString()}万円を返すまで選べない`}:a);
+  const MILESTONE={18:"18歳。このゲームの計算では、結婚の市場ではまだ「若すぎる」扱いで、適齢度は25歳に向けて上がっていく。",22:"22歳。結婚の適齢度が上がってきた。このゲームの計算では、ここから25歳までが適齢度の最高値。",25:"25歳。このゲームの港区の物差しでは、ここが「適齢度」の最高値。以降は毎年下がる設定。",27:"27歳。このゲームの計算では、20代後半に入り、適齢度が毎年ガクッと下がり始めた。結婚モテの計算は仕事の比重が上がる。",30:"30歳。このゲームの計算では、適齢度の下がり方がさらに強くなった。見た目が高い人ほど、この落ち方はゆるやか。",33:"33歳。このゲームの計算では、見た目が強い人以外は、遊びモテもはっきり落ちてくる。",36:"36歳。延長戦。適齢度の計算はさらに下がるが、仕事力・資格・性格は積み上がり続ける。",38:"38歳。結婚モテの計算では、若さより仕事と人柄の比重がいっそう大きくなる。"};
+  $("#app").innerHTML=`
+  <div class="ageline"><div class="age num">${G.age}<small>歳</small></div><span class="status-tag">${tag}</span></div>
+  ${artForAge(G.age)}
+  <section class="panel fade">
+    <div class="meters">
+      ${G.age<20?"":meter("asobi","遊びモテ",d.asobi)}
+      ${meter("kekkon","結婚モテ",d.kekkon)}
+      ${meter("ideal","理想の高さ",G.ideal)}
+      ${G.age<20?"":meter("","若さ（遊び）",d.y)}
+      ${meter("","適齢度（結婚）",d.yk)}
+      ${meter("","見た目（実効）",d.L)}
+      ${meter("","仕事力",G.work)}
+      ${meter("","知性",G.intel)}
+      ${meter("","性格",G.kind)}
+    </div>
+    <div class="money">
+      <span>${G.job==="gakusei"?"バイト収入":"年収"} <b>${d.career}</b>万</span>
+      <span>${G.money<0?"借金":"貯金"} <b class="${G.money<0?"neg":""}">${G.money<0?(-G.money).toLocaleString():G.money}</b>万${G.money<0?"（年15%）":""}</span>
+      <span>生活費 <b>${livingCost(G)}</b>万/年</span>
+      <span>港区慣れ <b>${G.rep.toFixed(1)}</b></span>
+      ${G.job==="kigyo"?`<span>事業規模 <b>${G.biz.toFixed(1)}</b></span>`:""}
+    </div>
+    <div class="tags">
+      <span>ギャラ飲みの声 <b>${G.age<20?"—":callLevel(d)}</b></span>
+      <span>遊び相手として <b class="grade">${G.age<20?"—":grade(d.asobi)}</b></span>
+      <span>嫁候補として <b class="grade">${grade(d.kekkon)}</b></span>
+    </div>
+    ${(()=>{if(G.age<20)return "";const w=worlds(G);return `<div class="worlds" aria-label="出会う相手の比率"><span class="hint">婚活で出会う相手</span><div class="wbar"><i class="w-day" style="width:${w.day*100}%"></i><i class="w-night" style="width:${w.night*100}%"></i><i class="w-biz" style="width:${w.biz*100}%"></i></div><div class="wleg"><span>昼職 ${Math.round(w.day*100)}%</span><span>夜の世界 ${Math.round(w.night*100)}%</span><span>経営者 ${Math.round(w.biz*100)}%</span></div></div>`})()}
+    <blockquote class="honne"><span>港区の男たちの本音</span>${honne(G,d)}</blockquote>
+    ${MILESTONE[G.age]?`<div class="note">${MILESTONE[G.age]}</div>`:""}
+    ${G.ideal-d.kekkon>=2?`<div class="note">理想が結婚モテを ${(G.ideal-d.kekkon).toFixed(1)} 上回っている。釣り合う相手を「下」に感じやすい。</div>`:""}
+  </section>
+  ${G.event?eventHTML():G.offer?offerHTML():`
+  <section class="panel">
+    <h3>${G.age}歳の一年、何に使う？</h3>
+    <div class="actions">${acts.map(a=>`<button class="act" data-a="${a.k}"${a.off?" disabled":""}><b>${a.n}</b><small>${a.d}</small>${a.off?`<small class="why">${a.off}</small>`:""}</button>`).join("")}</div>
+  </section>`}
+  <section class="panel"><h3>戦記</h3><div class="log" id="log">${G.log.slice().reverse().map(([a,t])=>`<p><span class="num">${a}歳</span><span>${t}</span></p>`).join("")}</div></section>
+  <button class="btn ghost" id="reset">最初からやり直す</button>`;
+  document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>act(b.dataset.a));
+  if(G.event){$("#ev0").onclick=()=>answerEvent(0);$("#ev1").onclick=()=>answerEvent(1);}
+  else if(G.offer){$("#yes").onclick=()=>answerOffer(true);$("#no").onclick=()=>answerOffer(false);}
+  $("#reset").onclick=renderSetup;
+}
+function offerHTML(){
+  const o=G.offer, d=derive(G);
+  const below=o.tier<G.ideal-1, above=o.src!=="shacho"&&o.tier>d.kekkon+1.5;
+  return `<section class="offer fade">
+    <span class="eyebrow">${o.via}で出会い${o.world?`・${WORLD_NAME[o.world]}`:""}</span>
+    <div class="who">${o.label}</div>
+    <dl>
+      <dt>年収</dt><dd class="num">${o.income}万円</dd>
+      <dt>相手の格</dt><dd class="num">${o.tier.toFixed(1)}</dd>
+      <dt>誠実さ</dt><dd>${"●".repeat(Math.round(o.sincerity/2))}${"○".repeat(5-Math.round(o.sincerity/2))}</dd>
+      <dt>結婚する気</dt><dd>${o.commit>=0.6?"ある":o.commit>=0.4?"どうだろう":"今は遊びたい"}</dd>
+    </dl>
+    ${o.note?`<div class="note">${o.note}</div>`:""}
+    ${below?`<div class="note">あなたの理想（${G.ideal.toFixed(1)}）からすると物足りない相手。</div>`:""}
+    ${above?`<div class="note">あなたの結婚モテ（${d.kekkon.toFixed(1)}）より格上。結婚まで持ち込むのは難しい。</div>`:""}
+    <div class="row"><button class="btn" id="yes">付き合う</button><button class="btn ghost" id="no">断る</button></div>
+  </section>`;
+}
+
+/* ---------- エンディング ---------- */
+const VERDICT={
+  "値段を知っていた女":"「ああいう子を最初に見つけた奴が、一番賢い」",
+  "勝ち逃げした普通の子":"「地味だと思ってた。気づいたら一番幸せそうにしてる」",
+  "選ぶ側に回った女":"「もう誘えない。誘っても、向こうの方が忙しい」",
+  "港区を買う側":"「昔は呼んでた。今はこっちがアポを取ってる」",
+  "夜を元手にした女":"「店で一番頭がよかったのは、あの子だった」",
+  "シンデレラ（夜の部）":"「あの社長を本気にさせたのは、あの子だけ」",
+  "夜の世界で結ばれた二人":"「お似合いだよ、あの二人は」",
+  "ホスト沼の果て":"「あれだけ稼いでたのに、どこに消えたんだろうね」",
+  "経営者の妻":"「あの奥さんがいるから、あいつの会社は回ってる」",
+  "社長夫人（名ばかり）":"「奥さん？ああ、家にいる人ね」",
+  "トロフィーワイフ":"「隣に置くには最高だって、あいつ言ってたよ」",
+  "妥協したと思っている妻":"「旦那いい奴じゃん。本人だけが不満そう」",
+  "招待状が切れない女":"「まだ呼ぶよ。結婚？それはない」",
+  "港区の残り香":"「最近見ないね。まだあのマンション住んでるの？」",
+  "理想だけが一流":"「条件聞いたことある？あれは無理」",
+  "港区の既読スルー":"「誰だっけ」",
+  "ハイスペを射止めた女":"「あの子、仕事できるからな。あいつが惚れたのもわかる」",
+  "港区を卒業した女":"「最近見ないと思ったら、結婚してたのか。賢いな」",
+  "最後に間に合った女":"「落ち着いたよね。いい相手を見つけたと思う」",
+  "これからの人":"「いい子だよ。誰か紹介してあげたら？」",
+  "自分の城を持った女":"「誘っても来ない。自分の部屋のほうが居心地いいらしい」",
+  "バツイチの35歳":"「離婚したんだって。じゃあ、また呼んでみる？」",
+  "毎年選び直した二人":"「あの夫婦、今も二人で飯に行ってる。誘っても来ないわけだ」",
+  "壊れかけて直した二人":"「一回やばいって聞いた。今は前より仲いいらしい」",
+  "仮面夫婦":"「SNSの家族写真はいつも完璧。中身は誰も知らない」",
+  "戦友のような夫婦":"「あそこは夫婦っていうより共同経営者だな」",
+  "ほどほどの夫婦":"「普通の夫婦。それが一番難しいって、最近わかった」",
+  "これから始まる二人":"「40手前で結婚？いいじゃん。俺らの物差しが古いんだよ」",
+  "離婚して再出発":"「離婚したって聞いた。前より楽しそうなんだよな」",
+  "許さないと決めた女":"「旦那のほうが悪いのに、彼女のほうが堂々としてる」",
+  "自分で終わらせた結婚":"「あの件は聞いた。今は真面目にやってるらしい」",
+  "言えないことがある妻":"「会うと楽しそうにしてる。家では知らないけど」",
+  "家計の主役になった妻":"「旦那より稼いでるらしい。あの夫婦、話が合うわけだ」",
+  "家族が増えた二人":"「最近は子どもの話ばっかり。前より顔がやわらかい」",
+  "二人で生きると決めた夫婦":"「あの二人、毎年どこかに旅行してる。うらやましいよ」",
+  "里親という道を選んだ二人":"「里親になる準備を始めたって。ああいう決め方ができるのは強いな」",
+  "40歳で逆転した女":"「昔は呼べば来た子が、今はこっちが頭を下げて仕事を頼んでる」",
+  "港区に残った40歳":"「まだ来てるの？　まあ、場慣れしてて助かるけどね」",
+  "最後まで探し続けた女":"「40で婚活？　本気なら紹介するよ。今のあの子なら」",
+  "自分の暮らしを選んだ女":"「最近誘っても来ない。楽しそうだから、それでいいんじゃない」",
+  "積み上げ直した5年":"「35の頃より今のほうが話してて面白い」",
+};
+// 40歳の結末（結婚生活パート）
+function marEnding(){
+  const m=G.mar, p=G.partner, y=m.years, head=`${G.marriedAge}歳で${p.label}と結婚して${y}年。`;
+  const car=derive(G).career;
+  if(y>=1&&m.secret) return ["言えないことがある妻",head+"誰にも言っていないことがある。家の中では笑っている。その分だけ、夫の顔をまっすぐ見られない日が増えた。隠しごとは、そのときの楽しさよりずっと長く残った。"];
+  if(y>=1&&G.indep&&car>=900&&m.sat>=4) return ["家計の主役になった妻",head+`${G.sumAge||35}歳を過ぎてから仕事を積み上げ、独立した。今は本人の年収が${car.toLocaleString()}万円。夫婦の会話は、家計の相談から事業の相談に変わった。`];
+  if(y>=1&&m.kid&&m.sat>=5.5) return ["家族が増えた二人",head+(m.kidBy==="nk"?`妊活を${m.nk}年続けて、子どもを授かった。`:"子どもを授かった。")+"寝不足と言い合いは増えた。それでも二人で回す家の段取りは、年々うまくなっている。"];
+  if(y>=1&&m.two&&m.sat>=5) return ["二人で生きると決めた夫婦",head+"妊活に区切りをつけて、二人で生きると決めた。週末の予定も、お金の使い道も、二人で決める。誰かに説明する必要のない暮らしになった。"];
+  if(y>=1&&m.foster&&m.sat>=5) return ["里親という道を選んだ二人",head+"妊活に区切りをつけたあと、里親の登録に向けて準備を始めた。血のつながりとは別の形で、家族を作ろうとしている。"];
+  if(y<1) return ["これから始まる二人",`${G.marriedAge}歳で${p.label}と結婚した。結婚生活はまだ始まったばかり。港区の男たちの値付けとは関係のないところで、自分の物差しで選んだ。`];
+  if(m.sat>=7&&m.strain<=3.5&&!m.repaired) return ["毎年選び直した二人",head+"特別なことはしていない。話す時間を削らず、家計を二人で見て、毎年もう一度この人を選び直してきた。港区で覚えた物差しは、家の中では一度も使わなかった。"];
+  if(m.sat>=5.5&&(m.repaired||m.crisis)) return ["壊れかけて直した二人",head+(m.hForgave?"夫の裏切りを、一度は許した。":m.myAffair?"一度は自分が裏切った。":"")+"一度は本気で終わりかけた。それでも話し合うことをやめなかった。前より完璧ではないが、前より正直な夫婦になった。"];
+  if(m.sat>=7&&m.strain<=3.5) return ["毎年選び直した二人",head+"特別なことはしていない。話す時間を削らず、家計を二人で見て、毎年もう一度この人を選び直してきた。"];
+  if(m.sat<4||m.strain>=6.5||(m.mask&&m.sat<5.5)) return ["仮面夫婦",head+"家族写真はきれいに撮れている。夫の予定は知らない。自分の予定も話していない。"+(G.money>=1000?"お金には困っていない。困っていないことだけが、二人をつないでいる。":"別れる理由も、続ける理由も、はっきりしないまま年が過ぎた。")];
+  if(G.work>=6.5||(G.job==="kigyo"&&G.biz>=4)) return ["戦友のような夫婦",head+"甘い言葉は少ない。お互い仕事を持ち、家計と予定を共有して回している。ロマンスより信頼のほうが長持ちすることを、二人とも知っている。"];
+  return ["ほどほどの夫婦",head+"大きな事件はない。小さな不満は、たまに口に出して、たまに飲み込んだ。それで回っている。夫婦としては、悪くない成績だ。"];
+}
+function restartEnding(){
+  const lm=G.lastMar, tail=`${G.money>=500?"貯金と仕事は手元に残った。":"手元に残ったものは多くない。"}${G.work>=6?"仕事が、次の生活の足場になった。":"一人の暮らしを、一から組み立て直している。"}`;
+  if(lm.cause==="h") return ["許さないと決めた女",`${lm.endedAge}歳で、夫の浮気をきっかけに離婚した。許す道もあった。でも、許したあとの自分を想像できなかった。${tail}`];
+  if(lm.cause==="my") return ["自分で終わらせた結婚",`${lm.endedAge}歳で離婚した。きっかけを作ったのは自分だった。一時の気の迷いの代償は、思っていたよりずっと大きかった。${tail}同じことは繰り返さないと決めている。`];
+  return ["離婚して再出発",`${lm.endedAge}歳で${lm.endLabel}と離婚した。${tail}結婚生活をうまくいかせようとした年月で、何が自分に合わないかは前よりずっとはっきりした。`];
+}
+// 40歳の結末（独身）: 36〜40歳の選び方で分かれる
+function singleFinal(d){
+  const ea=G.extActs||{}, qg=G.quals-(G.q35||0), S=G.sumAge||35, N=40-S;
+  if(G.indep&&d.career>=900) return ["40歳で逆転した女",`${S}歳を過ぎてから${qg>0?`資格を${qg}つ取り`:"仕事に打ち込み"}、独立した。年収は${d.career.toLocaleString()}万円。${S}歳の頃に「もう遅い」と言っていた人たちが、今は仕事の相談に来る。`];
+  if(G.lastMar) return restartEnding();
+  if((ea.minato||0)>=2) return ["港区に残った40歳","40歳でも会食に顔を出している。男たちが声をかける相手は年々若くなり、呼ばれる回数は減った。それでも、この街の夜の回し方は誰よりも知っている。"];
+  if((ea.konkatsu||0)>=2) return ["最後まで探し続けた女",`40歳、まだ探している。並べていた条件は、${S}歳の頃よりずっと短くなった。焦りより、自分に合う人の輪郭のほうがはっきりしてきた。`];
+  if((ea.friends||0)>=3) return ["自分の暮らしを選んだ女",`40歳、独身。休日は地元の友達と過ごし、平日は淡々と働く。港区の物差しから降りて${N}年、誰かと比べる回数がずいぶん減った。`];
+  if(qg>=2||(ea.work||0)>=3) return [`積み上げ直した${N}年`,`40歳、独身。${S}歳から${qg>=2?`資格を${qg}つ取り`:"本業に打ち込み"}、年収は${d.career.toLocaleString()}万円になった。派手な逆転ではない。でも、${N}年前より選べることは確実に増えた。`];
+  if(G.money<0||livingCost(G)>d.career*0.75) return ["港区の残り香",`40歳。収入は${S}歳の頃と大きく変わらないのに、美容とタクシー代は変わらない。カードの明細だけが、まだ港区にいる。`];
+  return [`大きくは変わらなかった${N}年`,`40歳、独身。延長戦の${N}年で、暮らしの形は${S}歳の総括のときとほとんど変わっていない。年収は${d.career.toLocaleString()}万円、貯金は${G.money.toLocaleString()}万円。崩れもしなかったし、跳ねもしなかった。`];
+}
+
+function finish(){
+  const d=derive(G); const p=G.partner, m=G.mar, lm=G.lastMar, FINAL=!!G.ext, A=G.age, CLOSED=!FINAL&&!!G.closed;
+  if(!FINAL){ G.sumDone=true; G.sumAge=A; }
+  const S=G.sumAge||35;
+  let h=50+G.happy*2.2;
+  if(G.value==="antei") h+= FINAL ? (G.married&&m ? (m.sat>=5.5?12:m.sat>=4?4:-2) : -10) : (G.married&&p.sincerity>=6?14 : G.married?2 : -10);
+  if(G.value==="shigeki") h+= Math.min(14,G.minato*2.5) + (G.married&&p.src==="asobi"?6:0);
+  if(G.value==="jiritsu") h+= (G.work>=7||(G.job==="kigyo"&&G.biz>=5))?14:G.work>=5?4:-6, h+= G.money>800?5:0, h+= (!G.married&&G.money>=1000)?6:0;
+  if(G.value==="shigeki"&&!G.married&&G.money>=0&&d.asobi>=5) h+=5;
+  const idealRef=d.kekkon, spouseGap=G.married?p.tier-d.kekkon:0;
+  if(!FINAL&&G.ideal-idealRef>2) h-=10;
+  if(livingCost(G)>d.career*0.75+(G.married?p.income*0.3:0)) h-=8;
+  if(G.money<0) h-=8;
+  if(G.married&&m) h+=(m.sat-5)*2.5-Math.max(0,m.strain-5)*2;
+  if(FINAL&&!G.married&&lm&&lm.strain>=6) h+=4;
+  const castle=!G.married&&G.value!=="antei"&&G.money>=1000&&livingCost(G)<=d.career*0.75;
+  h=Math.round(clamp(h,3,98));
+
+  let title,body;
+  if(G.married){
+    if(p.src==="shacho"){title="シンデレラ（夜の部）";body=`${G.marriedAge}歳で${p.label}と結婚。店にいた何百人のうち、この道を通れたのは顔が突き抜けていた一握りだけ。`}
+    else if(p.src==="asobi"){title="トロフィーワイフ";body=`${G.marriedAge}歳で${p.label}と結婚。お金には困らない。${p.sincerity>=4?"夫は家では優しい。外で何をしているかは聞かない。":"夫は今日も会食。自分が昔いた席には、今は別の22歳が座っている。"}`}
+    else if(p.world==="night"){title=p.sincerity>=6?"夜の世界で結ばれた二人":"ホスト沼の果て";body=p.sincerity>=6?`${G.marriedAge}歳で${p.label}と結婚。同じ世界を知っている同士、隠すことが何もない。昼職の家庭とは違う形の、気楽な夫婦。`:`${G.marriedAge}歳で${p.label}と結婚。夫は今日も店。稼ぎも機嫌も月によって違う。結婚前に貢いだ額は、もう数えていない。`}
+    else if(p.world==="biz"){title=p.sincerity>=6?"経営者の妻":"社長夫人（名ばかり）";body=p.sincerity>=6?`${G.marriedAge}歳で${p.label}と結婚。浮き沈みはあるが退屈はしない。港区で遊んだ経験が、夫の会食で役に立っている。`:`${G.marriedAge}歳で${p.label}と結婚。肩書きは社長夫人。夫の会社の資金繰りと、夫の夜の予定は知らされていない。`}
+    else if(p.sincerity>=6 && G.ideal-p.tier<=1.5 && p.income>=1000 && G.marriedAge>=27){title="ハイスペを射止めた女";body=`${G.marriedAge}歳で${p.label}（年収${p.income}万円）と結婚。20代前半には出会えなかった相手。積み上げた仕事が、27歳を過ぎてから効いてきた。港区の男たちが若さにしか値段をつけない間に、彼女の評価は別の物差しで上がっていた。`}
+    else if(p.sincerity>=6 && G.ideal-p.tier<=1.5 && G.minato>=2){title="港区を卒業した女";body=`${G.marriedAge}歳で${p.label}と結婚。港区の夜も知っている。だからこそ、あの席に座っている男たちと、隣で毎朝コーヒーを淹れてくれる男の違いがわかった。辞めどきを間違えなかった。`}
+    else if(p.sincerity>=6 && G.ideal-p.tier<=1.5 && G.marriedAge>=30){title="最後に間に合った女";body=`${G.marriedAge}歳で${p.label}と結婚。このゲームの適齢度はピークを過ぎていたが、理想を目の前の相手に合わせて見直す勇気があった。`}
+    else if(p.sincerity>=6 && G.ideal-p.tier<=1.5 && G.marriedAge<=25 && G.looks<=6.5){title="勝ち逃げした普通の子";body=`${G.marriedAge}歳で${p.label}と結婚。港区の男たちの関心が次の22歳に移った頃、彼女はもう結婚していた。派手さはない。でも35歳で「最近呼ばれない」と悩むこともない。`}
+    else if(p.sincerity>=6 && G.ideal-p.tier<=1.5){title="値段を知っていた女";body=`${G.marriedAge}歳で${p.label}と結婚。港区の男たちは彼女を「呼ぶ子」ではなく「嫁にする子」と見ていた。本人も、自分の値段を正しく知っていた。ギャラ飲みで引っ張りだこだった子たちへの男たちの値付けが下がり始める前に、勝ちはもう決まっていた。`}
+    else if(G.ideal-p.tier>1.5){title="妥協したと思っている妻";body=`${G.marriedAge}歳で${p.label}と結婚。夫は誠実。それでもインスタで港区の知り合いを見るたびに、「自分ならもっと上に行けた」と思ってしまう。市場はそう思っていなかった。`}
+    else{title="勝ち逃げした普通の子";body=`${G.marriedAge}歳で${p.label}と結婚。港区の男たちの関心が次の22歳に移った頃、彼女はもう結婚していた。派手さはない。でも35歳で「最近呼ばれない」と悩むこともない。`}
+  } else {
+    if(G.job==="kigyo"&&G.biz>=5){title=G.nightPast?"夜を元手にした女":"港区を買う側";body=G.nightPast?`年収${d.career}万円の事業を持つ経営者。若さと見た目で稼げる時期に、金と顧客を残した。同じ店にいた子の多くは、稼いだ分を全部使い切って35歳を迎えた。`:`年収${d.career}万円の事業を持つ経営者。昔ギャラ飲みに女の子を呼んでいた側の男たちが、今は取引先として頭を下げてくる。`}
+    else if(d.L>=7.5&&d.asobi>=5){title="招待状が切れない女";body="35歳でもまだ呼ばれる。顔は今も武器だ。ただし誘いはいつも金曜の夜で、日曜の昼に会おうと言う男はいない。"}
+    else if(castle&&G.value==="jiritsu"){title="自分の城を持った女";body=`35歳、独身。貯金${G.money.toLocaleString()}万円で、自分の名義の部屋を買った。合鍵を誰に渡すかは自分で決める。港区の男たちの値付けとは別の物差しで、自分の暮らしを自分で設計してきた。`}
+    else if(G.work>=8){title="選ぶ側に回った女";body=`年収${d.career}万円。もう男に選ばれるのを待っていない。会食に呼ばれる側から、店を予約する側になった。男たちが若さにつける値段は、彼女の人生にほとんど関係がなかった。`}
+    else if(G.money<0||livingCost(G)>d.career*0.75){title="港区の残り香";body="若さで稼げた頃の生活が抜けない。収入は半分になったのに、美容とタクシー代は変わらない。カードの明細だけが、まだ港区にいる。"}
+    else if(G.ideal-d.kekkon>=2.5){title="理想だけが一流";body=`結婚モテは${d.kekkon.toFixed(1)}、理想は${G.ideal.toFixed(1)}。釣り合う相手は何人もいた。全員を「下」に見ていた。男たちは、彼女を「上」に見ていなかった。`}
+    else if(G.divorced){title="バツイチの35歳";body="一度は結婚した。選んだ相手とは、続かなかった。もう一度市場に戻った今、男たちの値付けは前回より厳しい。それでも、何が自分に合わないかは前よりわかっている。"}
+    else if(G.minato>=3){title="港区の既読スルー";body="35歳、独身。グループLINEには残っているが、最後に呼ばれたのがいつか思い出せない。誘いが来なくなったことに、まだ慣れていない。"}
+    else{title="これからの人";body="35歳、独身。大きく崩れてはいない。ここからの選び方次第で、まだどちらにも転ぶ。"}
+  }
+  if(FINAL){
+    let own=false;
+    if(G.married&&m){ [title,body]=marEnding(); own=true; }
+    else { [title,body]=singleFinal(d); own=true; }
+  } else if(G.married&&m&&m.years>=1) body+=`結婚${m.years}年目の今、夫婦の満足度は${m.sat.toFixed(1)}、すれ違いは${m.strain.toFixed(1)}。`;
+  // 総資産 = 貯金 + 会社の評価額 + 夫側の資産（ゲーム内の簡易計算）
+  const company=G.job==="kigyo"?Math.round(Math.max(0,d.career-150)*3*(G.diluted?0.4:1)):0;
+  const husband=G.married?Math.round(p.income*(m?m.hInc:1)*0.06*((A-G.marriedAge)+3)*(p.src==="shacho"?3:1)):0;
+  const house=G.married&&m&&m.house?1200:0;
+  const total=G.money+company+husband+house;
+  const RANKS=[[10000,"S","資産1億超え。もう働かなくても生きていける"],[5000,"A",`余裕のある${A}歳。選択肢が多い`],[2000,"B","堅実に積み上がっている"],[800,"C","平均的。ここからの10年次第"],[0,"D","ほとんど残っていない"],[-Infinity,"E","借金を抱えている"]];
+  const rank=RANKS.find(r=>total>=r[0]);
+  const yen=v=>Math.abs(v)>=10000?`${v<0?"-":""}${(Math.abs(v)/10000).toFixed(2)}億`:`${v.toLocaleString()}万`;
+  const h0=G.hist[0], h20=G.hist.find(h=>h.age>=20)||h0, hl=G.hist[G.hist.length-1];
+  const peak=G.hist.reduce((a,b)=>b.kekkon>a.kekkon?b:a);
+  const insights=[
+    `遊びモテ：${h20.age}歳 ${h20.asobi.toFixed(1)} → ${A}歳 ${hl.asobi.toFixed(1)}`,
+    `結婚モテのピークは${peak.age}歳（${peak.kekkon.toFixed(1)}）`,
+    `理想の高さ：18歳 ${h0.ideal.toFixed(1)} → 最終 ${G.ideal.toFixed(1)}`,
+    `港区で過ごした年：${G.minato}年 ／ 断った相手：${G.declined}人`,
+  ];
+  const vName=VALUES.find(v=>v.k===G.value).n;
+  const L=[];
+  if(G.peakAsobi-G.peakKekkon>=1||G.minato>=3) L.push(["誘われることと、選ばれることは違う",`遊びモテのピークは${G.peakAsobi.toFixed(1)}、結婚モテのピークは${G.peakKekkon.toFixed(1)}。誘いの多さは結婚の近さを意味しない。`]);
+  if(G.looks>=8) L.push(["このゲームでは、見た目が高いほど年齢補正がゆるい",`見た目が高いほど、20代後半以降の若さと適齢度の落ち方がゆるやかになる。35歳時点の遊びモテは${d.asobi.toFixed(1)}。`]);
+  if(G.looks>=7&&G.work<5.5&&!G.married) L.push(["見た目だけでは、若さの減り方に勝てない","このゲームでは、20代後半から結婚モテの計算で仕事の比重が上がる。見た目一本だと、その分だけ結婚が遠のく。"]);
+  if(G.work>=7||G.job==="senmon") L.push(["年を取るほど、自分の職業が相手のスペックを決める","20代後半以降の婚活では、自分の仕事力が出会う相手の年収に強く効く。"]);
+  if(G.nightPast) L.push(["このゲームでは、夜職の経歴は昼職の相手との結婚で重くなる",p&&p.src==="shacho"?"例外は、見た目が突き抜けている場合の社長ルート。誰にでも開く道ではない。":"昼職の相手ほど、本人や親が経歴を気にする。"]);
+  if(G.ideal-idealRef>1.5) L.push(["港区で上がった理想は、このゲームの結婚モテとは連動しない",`理想は${G.ideal.toFixed(1)}まで上がったが、自分の結婚モテは${d.kekkon.toFixed(1)}。差の分だけ、釣り合う相手が「下」に見える。`]);
+  if(G.married&&p.src==="konkatsu"&&Math.abs(spouseGap)<1.5) L.push(["結婚は釣り合い","格上を狙うほど決まらず、釣り合う相手とはすんなり決まる。"]);
+  if(G.money<0||livingCost(G)>d.career*0.75) L.push(["若さで稼いだ生活水準は、若さと一緒には下がらない","収入が減っても、上げた生活費は簡単には戻らない。"]);
+  if(G.nightPast&&G.job==="kigyo") L.push(["夜職で作った人脈とお金は、起業の元手になる","見た目と若さで稼げる時期に、顧客と資金を残せた人は次の道に移れる。"]);
+  if(G.job==="kigyo"||G.log.some(([,t])=>t.includes("廃業"))) L.push(["起業は一番振れ幅が大きい","当たれば会社員の何倍も稼ぎ、相手のスペックも上がる。外せば廃業と借入が残る。"]);
+  if(G.nightPast||G.rep>=5||(p&&p.world&&p.world!=="day")) L.push(["どこで生きるかで、出会う男が変わる","夜職や港区は昼職の男との縁を細くする代わりに、夜の世界と経営者との縁を太くする。どの世界の男と結婚したいかで、選ぶべき道が変わる。"]);
+  if(G.divorced) L.push(["早く決まった結婚が、勝ちとは限らない","相手の誠実さが低い結婚や、22歳前後の若すぎる結婚は、続かない確率が上がる。"]);
+  if(G.misjudge>=2) L.push(["断られ続けるのは、値付けがズレているサイン",`結婚を迫って断られる、釣り合う相手を物足りなく感じる。この人生ではそれが${G.misjudge}回あった。相手の目が厳しいのではなく、自分の見積もりが、このゲームの結婚モテとズレている。`]);
+  const gapSelf=G.ideal-idealRef;
+  const SELF=gapSelf>=3?["理想との乖離が大きい","このゲームの結婚モテを、実際より3段階以上高く見積もっていた。港区で受けた扱いを、そのまま自分の値段だと思っていた可能性が高い。"]:gapSelf>=1.5?["やや勘違い","理想がこのゲームの結婚モテを少し上回っていた。釣り合う相手が「少し下」に見えていたはず。"]:gapSelf<=-1?["謙虚すぎ","このゲームの結婚モテのほうが理想より高かった。もっと上の相手を狙えた。"]:["自己評価は正確","理想とこのゲームの結婚モテがほぼ一致していた。だから迷いが少なかった。"];
+  if(!G.married&&h>=65) L.push(["結婚だけが結末ではない",`35歳で独身でも、価値観（${vName}）に合った暮らしなら幸福度は高い。このゲームの幸福度は、結果が本人の物差しに合っているかで決まる。`]);
+  if(G.quals>=2) L.push(["30代の資格は、遅くない",`資格を${G.quals}つ取った。このゲームでは30歳以降、資格と仕事力が年収と結婚モテに効き続ける。`]);
+  const mm=m||lm;
+  if(mm&&mm.years>=1) L.push(["結婚は、した後の毎年で決まる",`結婚してからの${mm.years}年で、夫婦の満足度は${mm.sat0.toFixed(1)}→${mm.sat.toFixed(1)}。結婚した時点の条件より、その後の一年ごとの選び方が効いた。`]);
+  if(mm&&mm.repaired) L.push(["壊れかけても、直せることがある","問題から目をそらさずに話し合った夫婦は、前より正直な関係になれることがある。"]);
+  if(mm&&mm.mask) L.push(["見ないふりは、問題を消さない","気づかないふりをした分だけ、すれ違いは静かに溜まっていった。"]);
+  if(L.length<2) L.push(["減る資産と、積み上がる資産","若さは毎年減り、仕事力と性格は積み上がる。どちらに時間を使ったかが35歳で効いてくる。"]);
+  const NM={}; [...ACTIONS,...ACTIONS_M,...ACTIONS_P].forEach(a=>NM[a.k]=a.n); Object.assign(NM,{startup:"起業",toYoru:"夜の仕事を始める",toHiru:"昼の仕事に戻る"});
+  const why=[];
+  if(FINAL){
+    const ea=G.extActs||{}, top=Object.entries(ea).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([k,c])=>`${NM[k]||k}×${c}`).join("、");
+    why.push(`${S+1}〜40歳に選んだ行動：${top||"—"}`);
+    if(G.quals>(G.q35||0)) why.push(`${S}歳以降に取った資格：${G.quals-G.q35}つ${G.indep?" → 独立の決め手になった":""}`);
+    if(G.indep&&G.at35) why.push(`独立 → 本人の年収 ${G.at35.career.toLocaleString()}万 → ${d.career.toLocaleString()}万`);
+    const mm2=m||lm;
+    if(mm2){
+      if(mm2.nk) why.push(`妊活：${mm2.nk}年${mm2.kid?" → 授かった":mm2.two?" → 二人で生きると決めた":mm2.foster?" → 里親の道へ":""}`); else if(mm2.kid) why.push("子どもを授かった");
+      if(mm2.hForgave) why.push(`夫の浮気を許した${mm2.repaired?" → 関係を立て直した":" → わだかまりが残った"}`);
+      if(mm2.cause==="h") why.push("夫の浮気で、別れを選んだ");
+      if(mm2.myAffair) why.push(mm2.cause==="my"?"昔の知り合いの誘いに乗り、それが離婚のきっかけになった":mm2.secret?"昔の知り合いの誘いに乗り、隠したまま":"昔の知り合いの誘いに乗り、夫に打ち明けた");
+      if(m&&G.at35&&G.at35.strain!=null) why.push(`すれ違い：${S}歳 ${G.at35.strain.toFixed(1)} → 40歳 ${m.strain.toFixed(1)}`);
+      if(ea.m_talk) why.push(`夫婦の会話を増やした年：${ea.m_talk}回`);
+    }
+  }
+  L.forEach(l=>{l[1]=l[1].replace(/35歳/g,A+"歳");});
+  // 40歳では、結婚市場での値付け（相手選びの良し悪し）を蒸し返さない
+  const LF=["結婚は、した後の毎年で決まる","壊れかけても、直せることがある","見ないふりは、問題を消さない","30代の資格は、遅くない","起業は一番振れ幅が大きい","若さで稼いだ生活水準は、若さと一緒には下がらない","早く決まった結婚が、勝ちとは限らない"];
+  if(FINAL){ for(let i=L.length-1;i>=0;i--) if(!LF.includes(L[i][0])) L.splice(i,1);
+    if(G.indep) L.unshift(["何歳からでも、積み上げは効く",`${S}歳から積み上げた資格と実績で独立した。延長戦の伸びしろは、若さではなく仕事の側にあった。`]);
+    if(!L.length) L.push(["延長戦で動かせるもの",`${S}歳から40歳までのあいだも、若さは減り続けた。動かせたのは、仕事と暮らしと、家の中の関係だった。`]); }
+  if(!FINAL) G.at35={age:A,title,h,total,rank:rank[1],asobi:d.asobi,kekkon:d.kekkon,married:G.married,sat:m?m.sat:null,strain:m?m.strain:null,career:d.career};
+  const a5=G.at35, cmp=FINAL&&a5?`
+  <section class="panel">
+    <h3>${a5.age||35}歳→40歳の変化</h3>
+    <dl class="change">
+      <dt>結末</dt><dd class="t">${a5.title} → ${title}</dd>
+      <dt>幸福度</dt><dd>${a5.h} → ${h}</dd>
+      <dt>推定資産</dt><dd>${yen(a5.total)} → ${yen(total)}（${a5.rank}→${rank[1]}）</dd>
+      <dt>本人の年収</dt><dd>${a5.career.toLocaleString()}万 → ${d.career.toLocaleString()}万</dd>
+      ${G.married&&m?`<dt>結婚生活</dt><dd>${m.years}年目・すれ違い ${a5.strain!=null?a5.strain.toFixed(1)+" → ":""}${m.strain.toFixed(1)}${m.kid?"・子どもあり":""}</dd>`:""}
+      ${a5.sat!=null||m||lm?`<dt>夫婦の満足度</dt><dd>${a5.sat!=null?a5.sat.toFixed(1):"—"} → ${m?m.sat.toFixed(1):lm?"離婚":"—"}</dd>`:""}
+    </dl>
+    <h3>40歳の結末に効いた選択</h3>
+    <ul class="insights">${why.map(t=>`<li>${t}</li>`).join("")}</ul>
+  </section>`:"";
+  const CHOICE=!FINAL&&!CLOSED, extLabel="延長戦に進む（〜40歳）";
+  const extBtn=CHOICE?`<section class="panel choice">
+    <h3>この先をどうする？</h3>
+    <p style="margin:0">${G.married?`結婚生活は${A+1}歳から40歳まで続く。延長戦では、夫婦の毎年を選んでいく。`:`${A+1}歳から40歳までの${40-A}年を、まだ選べる。`}ここで終えれば、この総括が最終結果になる。</p>
+    <div class="row"><button class="btn ext" id="ext">${extLabel}</button><button class="btn ghost" id="close">ここで終える</button></div>
+  </section>`:"";
+  const endArt=G.married?["endMarry","朝の食卓と二つの指輪"]:["離婚して再出発","許さないと決めた女","自分で終わらせた結婚","40歳で逆転した女","家計の主役になった妻","夜を元手にした女","港区を買う側","選ぶ側に回った女","自分の城を持った女"].includes(title)||/^積み上げ直した/.test(title)?["endWork","朝日の差す高層階のオフィス"]:["endMinato","夜の港区の通りと街灯"];
+  $("#app").innerHTML=`
+  ${artFig(endArt[0],endArt[1])}
+  <header class="hero fade">
+    <span class="eyebrow">${FINAL?"40歳の最終結末":CLOSED?`最終結果（${A}歳の総括）`:G.married?`${A}歳・結婚の総括`:`${A}歳の総括`}</span>
+    <h1 class="ending-title">${title}</h1>
+    <p>${body}</p>
+    ${VERDICT[title]?`<blockquote class="honne"><span>港区の男たちの評</span>${VERDICT[title]}</blockquote>`:""}
+  </header>
+  ${extBtn}
+  <section class="panel">
+    <div class="score"><span class="num">${h}</span><span class="muted">幸福度 / 100（価値観：${vName}）</span></div>
+    <div class="asset">
+      <div class="rank">${rank[1]}</div>
+      <div class="asset-main">
+        <span class="muted">${A}歳のゲーム内推定資産</span>
+        <span class="num total ${total<0?"neg":""}">${yen(total)}円</span>
+        <span class="hint">${rank[2]}</span>
+      </div>
+    </div>
+    <dl class="breakdown">
+      <dt>貯金</dt><dd class="num ${G.money<0?"neg":""}">${yen(G.money)}</dd>
+      ${company?`<dt>会社の評価額</dt><dd class="num">${yen(company)}</dd>`:""}
+      ${G.married?`<dt>夫側の資産</dt><dd class="num">${yen(husband)}</dd>`:""}
+      ${house?`<dt>家の持ち分</dt><dd class="num">${yen(house)}</dd>`:""}
+      <dt>本人の年収</dt><dd class="num">${d.career.toLocaleString()}万</dd>
+      ${G.married?`<dt>夫</dt><dd>${p.label}・年収${Math.round(p.income*(m?m.hInc:1)).toLocaleString()}万</dd>`:""}
+    </dl>
+  </section>
+  ${cmp}
+  ${FINAL?"":`<section class="panel">
+    <h3>男たちの値付け</h3>
+    <div class="valuation">
+      <div><span class="muted">遊び相手として</span><b class="grade big">${grade(G.peakAsobi)}<small>→</small>${grade(d.asobi)}</b><span class="hint">ピーク → ${A}歳</span></div>
+      <div><span class="muted">嫁候補として</span><b class="grade big">${grade(G.peakKekkon)}<small>→</small>${grade(d.kekkon)}</b><span class="hint">ピーク → ${A}歳</span></div>
+    </div>
+    <p style="margin:0">${(G.peakAsobi-d.asobi>=3&&G.peakKekkon-d.kekkon>=3)?"遊び相手としても嫁候補としても、男たちの値付けは、ピークから大きく下がった。そのあいだ、次の一手を決められなかった。":G.peakAsobi-G.peakKekkon>=2?"遊びには誘うが、結婚の話はしない。同じ女性に、男たちは都合よく別の値段をつけていた。":G.peakKekkon-G.peakAsobi>=1.5?"港区では目立たない。でも男たちが結婚相手を探すとき、最初に名前が挙がるタイプだった。":"遊び相手としても嫁候補としても、値段はほぼ同じ。値付けのズレが小さい人生だった。"}</p>
+    <p class="muted" style="margin:0;font-size:.85rem">${A}歳のギャラ飲みの声：${callLevel(d)}</p>
+  </section>`}
+  ${FINAL?"":`<section class="panel">
+    <h3>自己評価の答え合わせ</h3>
+    <div class="selfcheck"><b>${SELF[0]}</b><span class="num">理想 ${G.ideal.toFixed(1)} ／ ${A}歳の結婚モテ ${idealRef.toFixed(1)}${G.married?` ／ 結婚相手の格 ${p.tier.toFixed(1)}`:""}</span><p>${SELF[1]}</p>${G.misjudge?`<p>勘違いが表に出た場面：${G.misjudge}回</p>`:""}</div>
+  </section>`}
+  <section class="panel">
+    <h3>このゲームの計算で効いたこと</h3>
+    <div class="lessons">${L.map(([h,t])=>`<div><b>${h}</b><p>${t}</p></div>`).join("")}</div>
+  </section>
+  <section class="panel">
+    <h3>${A-17}年の推移</h3>
+    <div class="legend"><span style="color:var(--rose)">遊びモテ</span><span style="color:var(--teal)">結婚モテ</span><span style="color:var(--gold)">理想の高さ</span>${G.hist.some(x=>x.sat!=null)?`<span style="color:var(--ink)">夫婦の満足度</span>`:""}</div>
+    <div class="chart">${chartSVG()}</div>
+    <ul class="insights">${insights.map(t=>`<li>${t}</li>`).join("")}</ul>
+  </section>
+  <section class="panel"><h3>戦記</h3><div class="log">${G.log.map(([a,t])=>`<p><span class="num">${a}歳</span><span>${t}</span></p>`).join("")}</div></section>
+  <section class="panel nm-line"><span class="eyebrow">NOE OFFICIAL LINE</span><p style="margin:0;font-family:var(--display);font-size:1.05rem;font-weight:600;line-height:1.5">現実の結婚設計の判断材料を、週1回LINEで</p><a class="btn" href="https://lin.ee/unbDsCR" rel="noopener" target="_blank" style="text-align:center;text-decoration:none" onclick="try{gtag('event','line_add_result',{tool:'minato-senki'});}catch(e){}">友だち追加して受け取る</a></section>
+  <section class="coda">
+    <p>※作中の「男たちの値付け」や「モテ」の数値は、港区の男たちの偏った見方を誇張して数字にしたもので、人の価値を表すものではありません。年齢や職業による補正、結婚・離婚・妊娠の確率や妊活の費用などは、すべてゲーム用の架空の設定です。このゲームは、見た目・若さ・職業・年収など、他人と比べられる要素だけで結果を計算しています。実際には、スペックと関係なく「この人だから」で結婚する人もいます。そういう結婚は、このゲームでは再現していません。</p>
+  </section>
+  <div class="row"><a class="btn" id="share" target="_blank" rel="noopener" style="text-align:center;text-decoration:none">結果をXでシェア</a></div>
+  ${CHOICE?`<div class="row"><button class="btn ext" id="ext2">${extLabel}</button><button class="btn ghost" id="close2">ここで終える</button></div>`:""}
+  <div class="row"><button class="btn" id="again">同じ能力でもう一度</button><button class="btn ghost" id="reset">能力を選び直す</button></div>`;
+  $("#share").href="https://x.com/intent/tweet?text="+encodeURIComponent(`港区戦記、${FINAL?"40歳の最終結末":`${A}歳の総括`}は「${title}」。幸福度${h}・資産ランク${rank[1]}。
+#港区戦記
+https://www.noe-match.com/tools/minato-senki/`);
+  $("#again").onclick=startGame; $("#reset").onclick=renderSetup;
+  if(CHOICE){ $("#ext").onclick=startExt; $("#ext2").onclick=startExt; $("#close").onclick=closeAtSummary; $("#close2").onclick=closeAtSummary; }
+}
+function chartSVG(){
+  const W=340,H=190,l=26,r=22,t=10,b=24;
+  const MX=G.ext?40:35, x=a=>l+(a-18)/(MX-18)*(W-l-r), y=v=>t+(10-v)/10*(H-t-b);
+  const path=k=>G.hist.filter(h=>k!=="asobi"||h.age>=20).map((h,i)=>`${i?"L":"M"}${x(h.age).toFixed(1)},${y(h[k]).toFixed(1)}`).join("");
+  let grid="";
+  for(const v of [0,5,10]) grid+=`<line x1="${l}" x2="${W-r}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)"/><text x="${l-6}" y="${y(v)+4}" text-anchor="end" font-size="10" fill="var(--muted)">${v}</text>`;
+  const SA=G.sumAge||35; if(G.ext) grid+=`<line x1="${x(SA)}" x2="${x(SA)}" y1="${t}" y2="${H-b}" stroke="var(--muted)" stroke-dasharray="1 3"/><text x="${x(SA)+3}" y="${H-b-4}" font-size="9" fill="var(--muted)">延長戦</text>`;
+  let sp="",prev=false; for(const h of G.hist){ if(h.sat!=null){ sp+=`${prev?"L":"M"}${x(h.age).toFixed(1)},${y(h.sat).toFixed(1)}`; prev=true; } else prev=false; }
+  for(const a of (G.ext?[18,25,30,35,40]:[18,25,30,35])) grid+=`<text x="${x(a)}" y="${H-6}" text-anchor="middle" font-size="10" fill="var(--muted)">${a}歳</text>`;
+  const m=G.marriedAge?`<line x1="${x(G.marriedAge)}" x2="${x(G.marriedAge)}" y1="${t}" y2="${H-b}" stroke="var(--ink)" stroke-dasharray="2 3"/><text x="${x(G.marriedAge)+4}" y="${t+10}" font-size="10" fill="var(--ink)">結婚</text>`:"";
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="遊びモテ・結婚モテ・理想の推移">${grid}${m}
+    <path d="${path("ideal")}" fill="none" stroke="var(--gold)" stroke-width="2" stroke-dasharray="5 4"/>
+    <path d="${path("asobi")}" fill="none" stroke="var(--rose)" stroke-width="2.5"/>
+    <path d="${path("kekkon")}" fill="none" stroke="var(--teal)" stroke-width="2.5"/>
+    ${sp?`<path d="${sp}" fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-dasharray="1 2.5" stroke-linecap="round"/>`:""}</svg>`;
+}
+
+renderSetup();
+</script>
+</body>
+</html>
