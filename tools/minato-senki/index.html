@@ -501,7 +501,7 @@ function maxAge(){return G.ext?40:35}
 function say(t){G.log.push([G.age,t])}
 
 const ACTIONS=[
-  {k:"minato",n:"港区の会食・ギャラ飲み",d:"若さと見た目がお金になる（本業は7割に抑える）。理想と生活水準が上がる"},
+  {k:"minato",n:"港区の会食・ギャラ飲み",d:"若さと見た目がお金になる（年100回・本業は7割で計算）。理想と生活水準が上がる"},
   {k:"work",n:"本業に打ち込む",d:"仕事力が伸びる。年を取っても減らない。会う時間は減り、出会いはない"},
   {k:"beauty",n:"自分磨き",d:"見た目を磨く。費用100万円。仕事力は伸びない"},
   {k:"study",n:"勉強・資格",d:"知性と仕事力が伸びる。30歳からは資格が年収と結婚モテに効く。費用40万、残業が減り収入は少し下がる"},
@@ -529,7 +529,7 @@ function act(k){
       { const pr=price(d), prev=G.lastPrice; G.lastPrice=pr;
         const lv=callLevel(d), down=prev!=null&&prev>0&&pr<prev;
         say(pr===0?"会食に顔を出したが、ギャラは出なかった。もう「呼ばれる側」ではない。":`港区の会食に通った。${lv==="引く手あまた"?"誘いが途切れない。":lv==="よく呼ばれる"?"週末の席はだいたい埋まる。":"声がかかるのは、たまに。"}${down?"前の年より、男たちの払い方が渋くなった。":""}`);
-        say("本業は7割に抑え、残りの時間を会食の席にあてた。"); }
+        say(`今年の収入は${income}万円（本業は7割、残りは会食の席から）。`); }
       if(G.partner && !G.married){ if(G.partner.sincerity>=6 && Math.random()<0.4){say(`${G.partner.label}に夜遊びを知られ、別れを告げられた。`);G.partner=null;G.happy-=1;} }
       else if(!G.partner && price(d)>0 && Math.random()<0.55) G.offer=makeOffer("asobi");
       break;}
@@ -635,15 +635,15 @@ const indepOK=g=>g.ext&&g.age>=37&&!g.indepAsked&&!["yoru","kigyo","gakusei"].in
 const EVENTS=[
  {id:"senpai",when:(g,d)=>g.age>=20&&g.age<=21&&g.job==="gakusei",
   t:"先輩からの誘い",x:"サークルの先輩に「かわいい子を連れてきてって頼まれてて」と、港区の食事会に誘われた。",
-  c:[["行ってみる",g=>{g.rep=clamp(g.rep+1);g.ideal=clamp(g.ideal+0.6);g.happy+=0.5;say("先輩の誘いで港区の食事会へ。帰りにタクシー代を渡された。");if(!g.partner)g.offer=makeOffer("asobi");}],
+  c:[["行ってみる",g=>{g.rep=clamp(g.rep+1);g.ideal=clamp(g.ideal+0.6);g.happy+=0.5;say("先輩の誘いで港区の食事会へ。帰りのタクシー代に1万円を渡された。");if(!g.partner)g.offer=makeOffer("asobi");}],
      ["断ってゼミに行く",g=>{g.intel=clamp(g.intel+0.3);say("食事会を断った。ゼミの発表はうまくいった。");}]]},
  {id:"scout",when:(g,d)=>g.age>=20&&g.age<=26&&g.job!=="yoru"&&g.job!=="kigyo"&&d.L>=7,
-  t:"街でスカウト",x:"表参道でラウンジのスカウトに声をかけられた。「君ならすぐ稼げるよ」。",
+  t:"街でスカウト",x:"表参道でラウンジのスカウトに声をかけられた。「君なら月100万は余裕だよ」。",
   c:[["話を聞いて始める",g=>{if(g.job==="gakusei")say("大学を辞めた。");g.job="yoru";g.nightPast=true;g.planYoru=false;g.rep=clamp(g.rep+2);g.life=Math.min(500,g.life+80);say("スカウトの紹介でラウンジに入店した。");}],
      ["名刺だけもらって帰る",g=>say("スカウトの名刺は、しばらく財布に入ったままだった。")]]},
  {id:"teate",when:(g,d)=>g.age>=22&&!g.married&&d.L>=6.5&&g.rep>=1,
-  t:"パトロンの申し出",x:"会食で知り合った既婚の経営者から、お金を出すから定期的に食事に付き合ってほしいと持ちかけられた。",
-  c:[["受ける",g=>{g.money+=600;g.rep=clamp(g.rep+2);g.ideal=clamp(g.ideal+1);g.kind=clamp(g.kind-0.5,1);g.life=Math.min(500,g.life+80);g.happy+=g.value==="shigeki"?0.8:-0.8;say("申し出を受けた。この一年でまとまったお金が入った。誰にも言えない一年だった。");if(Math.random()<0.4){g.patronOut=true;g.rep=clamp(g.rep+2);g.happy-=1;say("相手の妻に知られ、港区で噂が広まった。紹介の話が来なくなった。");}if(g.partner&&g.partner.sincerity>=5){say(`${g.partner.label}に知られ、別れた。`);g.partner=null;}}],
+  t:"パトロンの申し出",x:"会食で知り合った既婚の経営者から、「月50万で、たまに食事に付き合ってほしい」と持ちかけられた。",
+  c:[["受ける",g=>{g.money+=600;g.rep=clamp(g.rep+2);g.ideal=clamp(g.ideal+1);g.kind=clamp(g.kind-0.5,1);g.life=Math.min(500,g.life+80);g.happy+=g.value==="shigeki"?0.8:-0.8;say("申し出を受けた。この一年で600万円が入った。誰にも言えない一年だった。");if(Math.random()<0.4){g.patronOut=true;g.rep=clamp(g.rep+2);g.happy-=1;say("相手の妻に知られ、港区で噂が広まった。紹介の話が来なくなった。");}if(g.partner&&g.partner.sincerity>=5){say(`${g.partner.label}に知られ、別れた。`);g.partner=null;}}],
      ["断る",g=>{g.kind=clamp(g.kind+0.3);say("パトロンの申し出を断った。");}]]},
  {id:"insta",when:(g,d)=>g.age>=21&&g.age<=30&&d.L>=7,
   t:"PR案件",x:"インスタのフォロワーが1万人を超え、美容クリニックからPR案件の依頼が来た。",
@@ -1211,16 +1211,16 @@ function finish(){
   if(G.looks>=7&&G.work<5.5&&!G.married) L.push(["見た目だけでは、若さの減り方に勝てない","このゲームでは、20代後半から結婚モテの計算で仕事の比重が上がる。見た目一本だと、その分だけ結婚が遠のく。"]);
   if(G.work>=7||G.job==="senmon") L.push(["年を取るほど、自分の職業が相手のスペックを決める","20代後半以降の婚活では、自分の仕事力が出会う相手の年収に強く効く。"]);
   if(G.nightPast) L.push(["このゲームでは、夜職の経歴は昼職の相手との結婚で重くなる",p&&p.src==="shacho"?"例外は、見た目が突き抜けている場合の社長ルート。誰にでも開く道ではない。":"昼職の相手ほど、本人や親が経歴を気にする。"]);
-  if(G.ideal-idealRef>1.5) L.push(["港区で上がった理想は、このゲームの結婚モテとは連動しない",`理想は${G.ideal.toFixed(1)}まで上がったが、自分の結婚モテは${d.kekkon.toFixed(1)}。差の分だけ、釣り合う相手が「下」に見える。`]);
+  if(G.ideal-idealRef>1.5) L.push(["港区で上がった理想は、市場価値とは連動しない",`理想は${G.ideal.toFixed(1)}まで上がったが、自分の結婚モテは${d.kekkon.toFixed(1)}。差の分だけ、釣り合う相手が「下」に見える。`]);
   if(G.married&&p.src==="konkatsu"&&Math.abs(spouseGap)<1.5) L.push(["結婚は釣り合い","格上を狙うほど決まらず、釣り合う相手とはすんなり決まる。"]);
   if(G.money<0||livingCost(G)>d.career*0.75) L.push(["若さで稼いだ生活水準は、若さと一緒には下がらない","収入が減っても、上げた生活費は簡単には戻らない。"]);
   if(G.nightPast&&G.job==="kigyo") L.push(["夜職で作った人脈とお金は、起業の元手になる","見た目と若さで稼げる時期に、顧客と資金を残せた人は次の道に移れる。"]);
   if(G.job==="kigyo"||G.log.some(([,t])=>t.includes("廃業"))) L.push(["起業は一番振れ幅が大きい","当たれば会社員の何倍も稼ぎ、相手のスペックも上がる。外せば廃業と借入が残る。"]);
   if(G.nightPast||G.rep>=5||(p&&p.world&&p.world!=="day")) L.push(["どこで生きるかで、出会う男が変わる","夜職や港区は昼職の男との縁を細くする代わりに、夜の世界と経営者との縁を太くする。どの世界の男と結婚したいかで、選ぶべき道が変わる。"]);
   if(G.divorced) L.push(["早く決まった結婚が、勝ちとは限らない","相手の誠実さが低い結婚や、22歳前後の若すぎる結婚は、続かない確率が上がる。"]);
-  if(G.misjudge>=2) L.push(["断られ続けるのは、値付けがズレているサイン",`結婚を迫って断られる、釣り合う相手を物足りなく感じる。この人生ではそれが${G.misjudge}回あった。相手の目が厳しいのではなく、自分の見積もりが、このゲームの結婚モテとズレている。`]);
+  if(G.misjudge>=2) L.push(["断られ続けるのは、値付けがズレているサイン",`結婚を迫って断られる、釣り合う相手を物足りなく感じる。この人生ではそれが${G.misjudge}回あった。相手の目が厳しいのではなく、自分の値付けが市場とズレている。`]);
   const gapSelf=G.ideal-idealRef;
-  const SELF=gapSelf>=3?["理想との乖離が大きい","このゲームの結婚モテを、実際より3段階以上高く見積もっていた。港区で受けた扱いを、そのまま自分の値段だと思っていた可能性が高い。"]:gapSelf>=1.5?["やや勘違い","理想がこのゲームの結婚モテを少し上回っていた。釣り合う相手が「少し下」に見えていたはず。"]:gapSelf<=-1?["謙虚すぎ","このゲームの結婚モテのほうが理想より高かった。もっと上の相手を狙えた。"]:["自己評価は正確","理想とこのゲームの結婚モテがほぼ一致していた。だから迷いが少なかった。"];
+  const SELF=gapSelf>=3?["理想との乖離が大きい","自分の市場価値を、実際より3段階以上高く見積もっていた。港区で受けた扱いを、そのまま自分の値段だと思っていた可能性が高い。"]:gapSelf>=1.5?["やや勘違い","理想が市場価値を少し上回っていた。釣り合う相手が「少し下」に見えていたはず。"]:gapSelf<=-1?["謙虚すぎ","市場価値のほうが理想より高かった。もっと上の相手を狙えた。"]:["自己評価は正確","理想と市場価値がほぼ一致していた。だから迷いが少なかった。"];
   if(!G.married&&h>=65) L.push(["結婚だけが結末ではない",`35歳で独身でも、価値観（${vName}）に合った暮らしなら幸福度は高い。このゲームの幸福度は、結果が本人の物差しに合っているかで決まる。`]);
   if(G.quals>=2) L.push(["30代の資格は、遅くない",`資格を${G.quals}つ取った。このゲームでは30歳以降、資格と仕事力が年収と結婚モテに効き続ける。`]);
   const mm=m||lm;
