@@ -8,7 +8,7 @@ single は決済方法別の内訳が非公開で、単一の表しか出てい�
 approx=True は原文が「〜」（下限額）で書かれている社。
 自動生成: python scripts/merge_app_ryokin.py
 """
-CHECKED = "2026年10月3日"
+CHECKED = "2026年11月2日"
 
 APPS = [
  {"key": "pairs", "name": "ペアーズ",
