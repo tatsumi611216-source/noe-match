@@ -120,7 +120,9 @@ button:focus-visible{outline:3px solid var(--ai);outline-offset:2px}
 .tally .nums .l{font-size:13px;color:var(--muted)}
 .tally ul{margin:0;padding-left:1.2em;font-size:14px;line-height:1.8}
 .tally .close{font-family:var(--f-disp);font-size:19px;font-weight:600;line-height:1.6;margin:4px 0 0}
-.enprbox{border:1px solid var(--line);border-radius:6px;padding:14px 16px;background:var(--bg);display:flex;flex-direction:column;gap:8px}
+.enprbox{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:6px;padding:14px 16px;background:var(--bg);display:flex;flex-direction:column;gap:8px}
+.enprbox .enpr-h{font-family:var(--f-disp);font-size:17px;font-weight:600;line-height:1.5}
+.enpr-top{background:var(--card)}
 .enprbox .pr-notice{font-size:12.5px;font-weight:700;color:var(--ink);margin:0}
 .tally .nw{white-space:nowrap}
 .enprbox p{margin:0;font-size:14px;line-height:1.8}
@@ -1631,7 +1633,7 @@ function tallyView(L){
     <div class="enprbox">
       <p class="pr-notice">【PR】電話占いサービスの広告</p>
       <p>自分では決められないことを、誰かに話してみたくなったら。ココナラ電話占いでは、占い師ごとの1分あたりの鑑定料を見比べてから選べます。</p>
-      <a class="btn ghost" id="aff-coconala-enun" href="https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU" rel="nofollow sponsored noopener" target="_blank" onclick="try{gtag('event','aff_click',{tool:'en-to-un',adv:'coconala'});}catch(e){}">ココナラ電話占いの公式サイトを見る</a>
+      <a class="btn" id="aff-coconala-enun" href="https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU" rel="nofollow sponsored noopener" target="_blank" onclick="try{gtag('event','uranai_pr_click',{tool:'en-to-un',adv:'coconala',place:'tally'});}catch(e){}">ココナラ電話占いの公式サイトを見る</a>
       <p class="pr-n">1分ごとに料金がかかります。料金と新規登録の特典の条件は公式サイトで確認してください。</p>
     </div>
   </section>`;
@@ -1680,6 +1682,13 @@ function endView(){
     ${face?`<p>${face}</p>`:''}
   </section>
   ${grade.html}
+  <aside class="enprbox enpr-top fade" id="enpr-top">
+    <p class="pr-notice">【PR】電話占いサービスの広告</p>
+    <p class="enpr-h">結果を誰かに話したくなったら</p>
+    <p>ココナラ電話占いでは、占い師ごとの1分あたりの鑑定料を見比べてから選べます。</p>
+    <a class="btn" id="aff-coconala-enun-top" href="https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU" rel="nofollow sponsored noopener" target="_blank" onclick="try{gtag('event','uranai_pr_click',{tool:'en-to-un',adv:'coconala',place:'top'});}catch(e){}">ココナラ電話占いの公式サイトを見る</a>
+    <p class="pr-n">1分ごとに料金がかかります。料金と新規登録の特典の条件は公式サイトで確認してください。</p>
+  </aside>
   ${lessonView(L,alive,ext)}
   ${lifeView(L,alive,ext)}
   ${fourView(L,alive,ext,extRate)}
