@@ -242,7 +242,7 @@ var PAGE_URL='__URL__';
 var D=__DATA__;
 var ELEMS=['火','地','風','水','火','地','風','水','火','地','風','水'];
 var SIGN_NAMES=['牡羊座','牡牛座','双子座','蟹座','獅子座','乙女座','天秤座','蠍座','射手座','山羊座','水瓶座','魚座'];
-function track(n,p){try{if(typeof gtag==='function')gtag('event',n,p);}catch(e){}}
+function track(n,p){try{p=p||{};if(n==='uranai_complete'){window.__uc=(window.__uc||0)+1;p.n=window.__uc;p.first=window.__uc===1?1:0;}if(typeof gtag==='function')gtag('event',n,p);}catch(e){}}
 function $(id){return document.getElementById(id);}
 (function(){var max=new Date().getFullYear()-18;['ay','by'].forEach(function(id){var s=$(id);if(!s)return;var h='<option value="">年</option>';for(var y=max;y>=1940;y--)h+='<option value="'+y+'">'+y+'年</option>';s.innerHTML=h;});})();
 function readDate(p){

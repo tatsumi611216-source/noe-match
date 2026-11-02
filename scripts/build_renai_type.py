@@ -245,7 +245,7 @@ def main():
 var SLUG='__SLUG__',TITLE='__TITLE__',PAGE_URL='__URL__';
 var D=__DATA__;
 var NQ=D.QA.length;
-function track(n,p){try{if(typeof gtag==='function')gtag('event',n,p);}catch(e){}}
+function track(n,p){try{p=p||{};if(n==='uranai_complete'){window.__uc=(window.__uc||0)+1;p.n=window.__uc;p.first=window.__uc===1?1:0;}if(typeof gtag==='function')gtag('event',n,p);}catch(e){}}
 function $(id){return document.getElementById(id);}
 (function(){var max=new Date().getFullYear()-18;var s=$('ay');if(!s)return;var h='<option value="">年</option>';for(var y=max;y>=1940;y--)h+='<option value="'+y+'">'+y+'年</option>';s.innerHTML=h;})();
 function readDate(){var y=+$('ay').value,m=+$('am').value,d=+$('ad').value;if(!y||!m||!d)return null;var t=new Date(y,m-1,d);if(t.getFullYear()!==y||t.getMonth()!==m-1||t.getDate()!==d)return null;return {y:y,m:m,d:d};}

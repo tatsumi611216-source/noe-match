@@ -845,6 +845,7 @@ function newGame(seed,start=0,goal,initSeed){
     heir:{...nm,...p,region:r.job.f==='food'?'農村':pick(['城下町','農村','宿場町']),st,job:g==='f'&&r.job.fn?gJob(r.job,'f'):r.job,w:w0,a:start?DOWRY[w0]*2:0,use:Math.min(100,Math.round(util({...st,vis:perceived(p,start)},r.job)/r.maxU*100)),ep:episodes(st,1,p,start),pers:persona(st),notes:[start?'血筋の記録はここから。':'血筋のはじまり。']}};
   state.heir.lifespan=lifeOf(state.heir,start,w0);state.heir.edu=eduFor(start,g,r.job,w0,st);
   state.cands=makeCands();
+  if(!SIM){window.__gs=(window.__gs||0)+1;try{if(typeof gtag==='function')gtag('event','game_start',{tool:'en-to-un',goal:state.goal||'wealth',n:window.__gs});}catch(e){}}
   render();
 }
 
@@ -1241,7 +1242,7 @@ function render(){
   else if(state.phase==='kids')app.innerHTML=kidsView();
   else if(state.phase==='adopt')app.innerHTML=adoptView();
   else if(state.phase==='born'){app.innerHTML=bornView();if(state.gen+1===ERAS.length-1&&!state.cmp)setTimeout(()=>{if(!state.cmp&&state.phase==='born')state.cmp=CMP()},400)}
-  else app.innerHTML=endView();
+  else{app.innerHTML=endView();if(!state._gc){state._gc=1;try{if(typeof gtag==='function')gtag('event','game_complete',{tool:'en-to-un',goal:state.goal||'wealth',gens:(state.line||[]).length,extinct:state.extinct?1:0});}catch(e){}}}
 }
 
 function introView(){

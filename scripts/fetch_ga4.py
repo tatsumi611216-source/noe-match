@@ -27,6 +27,7 @@ GSCには一切出ない。GSCだけを見ると「データ記事は表示4.1/�
   python scripts/fetch_ga4.py --report   ページ種別ごとの実績を出す（API未使用）
   python scripts/fetch_ga4.py --backfill-clicks   取得済みの日に clicks キーだけを足す（既存キーは触らない）
   python scripts/fetch_ga4.py --backfill-session  取得済みの日に by_source / by_landing キーだけを足す
+  python scripts/fetch_ga4.py --backfill-tool-events  取得済みの日に tool_events キーだけを足す
 
 clicks キー（2026-09-19 追加・CEO承認）:
   GA4内蔵の click イベントを pagePath × linkId × linkDomain × linkUrl で日別に保存する。
@@ -49,6 +50,13 @@ by_source / by_landing キー（2026-10-08 追加）:
     by_source  = sessionDefaultChannelGroup × sessionSource（ページなし。行の合計＝total）
     by_landing = landingPage × sessionDefaultChannelGroup × sessionSource（入口ページ。1セッション1行）
   集計は scripts/session_recount.py。無い古いファイルは --backfill-session で足す（既存キーは触らない）。
+
+tool_events キー（2026-11-03 追加・30日計画W1・T-130）:
+  ツールの利用イベントを pagePath × eventName で日別に保存する。events キーはイベント名の合計だけで
+  ページの区別が無く、ツール別の完了が数えられなかったため。対象は TOOL_EVENTS（tool_result・tool_calc・
+  uranai_*・game_start・game_complete）。uranai_complete は 11/3 以降 n（その閲覧で何回目の結果か）と
+  first（1回目なら1）を送るが、パラメータは GA4 のカスタム定義が無いと API で取れないので、ここでは
+  ページ×イベント名の回数だけを持つ。無い古いファイルは --backfill-tool-events で足す（既存キーは触らない）。
 
 aff_session_clicks キー（2026-10-08 追加）:
   affc_<linkIdから aff- を除き - を _ にしたもの> を pagePath × eventName で保存する。広告リンクを押したとき、
@@ -167,6 +175,46 @@ def fetch_aff_views(client, prop, ds, prefix="affv_"):
     out = [{"path": r.dimension_values[0].value, "event": r.dimension_values[1].value,
             "count": int(r.metric_values[0].value)} for r in client.run_report(req).rows]
     return sorted(out, key=lambda x: (-x["count"], x["path"], x["event"]))
+
+
+TOOL_EVENTS = ["tool_result", "tool_calc", "uranai_start", "uranai_complete", "uranai_share",
+               "uranai_pr_click", "game_start", "game_complete"]
+
+
+def fetch_tool_events(client, prop, ds):
+    """ツールの利用イベント（TOOL_EVENTS）を ページ×イベント名 で取る。2026-11-03 追加。"""
+    from google.analytics.data_v1beta.types import (
+        DateRange, Dimension, Filter, FilterExpression, Metric, RunReportRequest)
+    req = RunReportRequest(
+        property=prop,
+        date_ranges=[DateRange(start_date=ds, end_date=ds)],
+        dimensions=[Dimension(name="pagePath"), Dimension(name="eventName")],
+        metrics=[Metric(name="eventCount")],
+        dimension_filter=_prod(FilterExpression(filter=Filter(
+            field_name="eventName", in_list_filter=Filter.InListFilter(values=TOOL_EVENTS)))),
+        limit=10000)
+    out = [{"path": r.dimension_values[0].value, "event": r.dimension_values[1].value,
+            "count": int(r.metric_values[0].value)} for r in client.run_report(req).rows]
+    return sorted(out, key=lambda x: (-x["count"], x["path"], x["event"]))
+
+
+def backfill_tool_events():
+    """取得済みの日次ファイルに tool_events キーだけを足す。既存キーは一切書き換えない。"""
+    from google.analytics.data_v1beta import BetaAnalyticsDataClient
+    creds = credentials()
+    prop = resolve_property(creds)
+    client = BetaAnalyticsDataClient(credentials=creds)
+    limit = datetime.date.today() - datetime.timedelta(days=2)
+    n = 0
+    for f in files():
+        d = json.load(io.open(f, encoding="utf-8"))
+        if "tool_events" in d or datetime.date.fromisoformat(d["date"]) > limit:
+            continue
+        d["tool_events"] = fetch_tool_events(client, prop, d["date"])
+        d["tool_events_fetched_at"] = datetime.datetime.now().isoformat(timespec="seconds")
+        io.open(f, "w", encoding="utf-8").write(json.dumps(d, ensure_ascii=False, indent=1))
+        n += 1
+    print("tool_events を足した日: %d" % n)
 
 
 def backfill_clicks():
@@ -310,6 +358,8 @@ def fetch_day(creds, prop, day):
         "aff_views": fetch_aff_views(client, prop, ds),
         # affc_<id>: 広告のクリックを1セッション1枠1回だけ送る（2026-10-08 新設・scripts/aff_view_20261008.py）
         "aff_session_clicks": fetch_aff_views(client, prop, ds, prefix="affc_"),
+        # ツールの利用をページ別に（2026-11-03 追加・T-130）
+        "tool_events": fetch_tool_events(client, prop, ds),
         "by_source": by_source,
         "by_landing": by_landing,
     }
@@ -393,7 +443,10 @@ def main():
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--backfill-clicks", action="store_true")
     ap.add_argument("--backfill-session", action="store_true")
+    ap.add_argument("--backfill-tool-events", action="store_true")
     a = ap.parse_args()
+    if a.backfill_tool_events:
+        return backfill_tool_events()
     if a.backfill_clicks:
         return backfill_clicks()
     if a.backfill_session:

@@ -494,6 +494,7 @@ function startGame(){
      partner:null,married:false,marriedAge:null,minato:0,declined:0,log:[],hist:[],offer:null,done:false};
   G.log.push([18,G.planYoru?"上京。20歳になったら夜の仕事をするつもりで、今は昼のアルバイト暮らし。":G.job==="gakusei"?"大学に入学した。港区の夜はまだ遠い。":"上京して社会に出た。港区の夜はまだ遠い。"]);
   snapshotHist();
+  window.__gs=(window.__gs||0)+1;try{if(typeof gtag==='function')gtag('event','game_start',{tool:'minato-senki',job:setup.job||'',value:setup.value||'',n:window.__gs});}catch(e){}
   renderGame();
 }
 function snapshotHist(){const d=derive(G);if(G.age>=20)G.peakAsobi=Math.max(G.peakAsobi,d.asobi);G.peakKekkon=Math.max(G.peakKekkon,d.kekkon);G.hist.push({age:G.age,asobi:d.asobi,kekkon:d.kekkon,ideal:G.ideal,married:G.married,sat:G.married&&G.mar?G.mar.sat:null});}
@@ -1144,6 +1145,7 @@ function singleFinal(d){
 function finish(){
   const d=derive(G); const p=G.partner, m=G.mar, lm=G.lastMar, FINAL=!!G.ext, A=G.age, CLOSED=!FINAL&&!!G.closed;
   if(!FINAL){ G.sumDone=true; G.sumAge=A; }
+  { const st=FINAL?'ext':'sum'; G._gc=G._gc||{}; if(!G._gc[st]){ G._gc[st]=1; try{if(typeof gtag==='function')gtag('event','game_complete',{tool:'minato-senki',stage:st,age:A,married:G.married?1:0});}catch(e){} } }
   const S=G.sumAge||35;
   let h=50+G.happy*2.2;
   if(G.value==="antei") h+= FINAL ? (G.married&&m ? (m.sat>=5.5?12:m.sat>=4?4:-2) : -10) : (G.married&&p.sincerity>=6?14 : G.married?2 : -10);

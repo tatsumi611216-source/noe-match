@@ -201,7 +201,7 @@ def jsonld(slug, name, desc, faqs):
 
 
 COMMON_JS = r"""
-function track(n,p){try{if(typeof gtag==='function')gtag('event',n,p);}catch(e){}}
+function track(n,p){try{p=p||{};if(n==='uranai_complete'){window.__uc=(window.__uc||0)+1;p.n=window.__uc;p.first=window.__uc===1?1:0;}if(typeof gtag==='function')gtag('event',n,p);}catch(e){}}
 function $(id){return document.getElementById(id);}
 // 年の選択肢の上限は「ページを開いた年 − 18」（JSで動的に作る。JSなしでは静的な選択肢のまま）
 (function(){var max=new Date().getFullYear()-18;['ay','by'].forEach(function(id){var s=$(id);if(!s)return;var h='<option value="">年</option>';for(var y=max;y>=1940;y--)h+='<option value="'+y+'">'+y+'年</option>';s.innerHTML=h;});})();
