@@ -1,5 +1,55 @@
 # Agent Run Log
 
+## 2026-11-02　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（63日前）→ **30日超 → ASPゲート閉鎖**。
+
+⚠️ ASP成果データが未供給（63日間）。今回の記事生成はCTA計測なしで行われる。新規アフィリエイトCTAは設置しない。
+
+→ run 終了後、人手による `agent/asp_results.md` の更新を依頼（後述）。
+
+### Phase 1 打順チェック
+
+- batting_order 3: `tools/tomobataraki-wariai` — cluster=統計・制限なし ✓ → ゲートへ進む
+
+### Phase 2 需要ゲート
+
+`python3 scripts/tool_gate.py "共働き 割合" "共働き世帯 推移"` → 全クエリ **CHECK**（理由：SERPまたはサジェストの取得に失敗。クラウド環境のアウトバウンド制限によりHTTPS接続がブロック）。
+
+AGENT.md 規則「ネットワーク不通などでゲートが動かないときは作らない（需要を実測できないものは作らない）」に従い、**新規記事生成を中止**。
+
+### Phase 3 silent_scan（寄せ直し）
+
+`agent/silent_articles.md`（計測期間：2026-10-02〜2026-10-30、表示ゼロ97本）より「無修飾ヘッドターム」最優先カテゴリから未リライト2本を選定・実施：
+
+**① articles/price-comparison**（初回リライト）
+- 旧：`マッチングアプリ料金・会員数完全比較表【2026年版】`
+- 新：`マッチングアプリ料金の比較表｜30代男性が婚活で選ぶ場合のコスパ【2026年版】`
+- 理由：無修飾ヘッドタームが表示ゼロ。「30代男性」「婚活」の属性固有修飾を前面に出し、コスパ比較クエリに寄せた
+- 更新：title・h1・meta description・og・twitter・JSON-LD headline/description/dateModified・byline・sitemap lastmod
+
+**② articles/safety-guide**（初回リライト）
+- 旧：`安全なマッチングアプリの選び方｜業者・サクラ対策と安心して使えるアプリ比較`
+- 新：`女性が初めてマッチングアプリを選ぶときの安全基準｜業者・サクラ対策4項目【2026年版】`
+- 理由：無修飾ヘッドタームが表示ゼロ。「女性が初めて」の属性固有修飾に切り替え、初利用女性の安全基準クエリに寄せた
+- 更新：title・h1・meta description・og・twitter・JSON-LD headline/description/dateModified・byline・sitemap lastmod
+
+- `rewrites.json` に2件記録 ✓
+- `sitemap_sync.py` で lastmod 更新 ✓（2件：price-comparison・safety-guide → 2026-11-02）
+
+### locks/observing 確認
+
+- locks[] 有効（2026-11-06まで）：`/articles/with-seriousness-data/`・`/articles/compare-popular/`・`/tools/app-kekkonritsu-data/` → 一切編集していない ✓
+- observing：`/articles/garugaru-ki-guide/`・`/tools/nyuseki-calendar/` → 一切編集していない ✓
+
+### ASP更新依頼
+
+⚠️ `agent/asp_results.md` の `last_updated` が 2026-08-31（63日経過）。次回ラン前に人手での更新をお願いします。ASP管理画面（a8.net・afb）の当月成果数値を `agent/asp_results.md` に貼り付け、`last_updated` を今日の日付に更新してください。
+
+---
+
 ## 2026-10-05　週次ラン｜ツール生成1本（tools/shougai-mikonritsu）
 
 ### Phase 4-0 計測ゲート（ASP）
