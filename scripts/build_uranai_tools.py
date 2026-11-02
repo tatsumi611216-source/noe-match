@@ -16,6 +16,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from uranai_content import SIGNS, ELEM_DESC, NUMBERS, COMPAT  # noqa: E402
+import paid_report_blocks as PRB  # noqa: E402  T-132 関心ボタン・次の1本
 
 SITE = 'https://www.noe-match.com'
 COCONALA = 'https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU'
@@ -256,7 +257,7 @@ function isMinor(dt){
   if(n.getMonth()+1<dt.m||(n.getMonth()+1===dt.m&&n.getDate()<dt.d))age--;
   return age<18;
 }
-function showRes(dt,dt2){var box=document.querySelector('.prbox');if(box){var mn=(!!dt&&isMinor(dt))||(!!dt2&&isMinor(dt2));box.hidden=mn;box.style.display=mn?'none':'';}
+function showRes(dt,dt2){var box=document.querySelector('.prbox');if(box){var mn=(!!dt&&isMinor(dt))||(!!dt2&&isMinor(dt2));box.hidden=mn;box.style.display=mn?'none':'';}if(window.__rptReset)window.__rptReset(lastResult,box&&box.hidden);
   $('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});}
 function showErr(){$('err').style.display='block';}
 onscroll=function(){$('top').classList.toggle('show',scrollY>300);};
@@ -294,6 +295,7 @@ def page(slug, *, title, desc, og_title, og_desc, h1, hero_p, hero_img, emblem, 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet">
 <style>{css}</style>
 {jsonld(slug, name, desc, faqs)}
+{PRB.CSS if slug in PRB.CONFIG else ''}
 </head>
 <body>
 {HEADER}
@@ -336,6 +338,7 @@ var PAGE_URL='{url}';
 {run_js}
 }})();
 </script>
+{PRB.js(slug) if slug in PRB.CONFIG else ''}
 </body>
 </html>
 """
@@ -350,8 +353,10 @@ def result_shell(slug, head_inner, body_inner, pr_lead):
 <div class="result-body">
 {body_inner}
 
+{PRB.rpt_html(slug) if slug in PRB.CONFIG else ''}
 {share_html()}
 {prbox_html(slug, pr_lead)}
+{PRB.npick_html(slug) if slug in PRB.CONFIG else ''}
 {other_links(slug)}
 </div>
 </div>"""

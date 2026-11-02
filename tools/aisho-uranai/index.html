@@ -160,6 +160,20 @@ article a{overflow-wrap:anywhere;word-break:break-word}
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "相性タイプはどうやって決まりますか？", "acceptedAnswer": {"@type": "Answer", "text": "二人の星座のエレメント（火・地・風・水）が同じか、補い合う組み合わせか、性質の異なる組み合わせかの3通りと、数秘術のナンバーのリズムが近いか異なるかの2通りを組み合わせ、6つのタイプに分けています。"}}, {"@type": "Question", "name": "相性が悪い組み合わせはありますか？", "acceptedAnswer": {"@type": "Answer", "text": "この占いでは、相性を良し悪しで分けていません。どのタイプにも、自然にうまくいきやすい点とすれ違いやすい点があり、それぞれに話し方のヒントを用意しています。"}}, {"@type": "Question", "name": "相手の生年月日を入力しても大丈夫ですか？", "acceptedAnswer": {"@type": "Answer", "text": "入力した生年月日はお使いのブラウザの中だけで計算し、当サイトのサーバーや第三者には送信せず、保存もしません。それでも相手の個人的な情報なので、できれば相手にひと声かけてから、二人で一緒に楽しむのがおすすめです。"}}, {"@type": "Question", "name": "星座の境目の日に生まれた場合はどうなりますか？", "acceptedAnswer": {"@type": "Answer", "text": "一般的な区切りの日付で星座を決めています。太陽が星座を移る日は生まれた年により1日ほど前後するため、境目に近い方は、星座でみる恋愛傾向占いでとなりの星座の結果もあわせて読んでみてください。"}}, {"@type": "Question", "name": "結果を二人の話し合いにどう使えばよいですか？", "acceptedAnswer": {"@type": "Answer", "text": "「すれ違いやすい点」を読んで、二人のあいだで似た場面があったかを話してみてください。そのうえで「話し方のヒント」から一つだけ選んで試すと、取り入れやすくなります。結果は二人の関係を決めるものではなく、話題のきっかけです。"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "生年月日でみる二人の相性占い（無料）", "url": "https://www.noe-match.com/tools/aisho-uranai/", "applicationCategory": "LifestyleApplication", "operatingSystem": "All", "inLanguage": "ja", "description": "二人の生年月日から、星座のエレメントと数秘術のナンバーを組み合わせて6つの相性タイプに分け、関係の傾向・すれ違いやすい点・話し方のヒントを表示する無料占いです。入力は送信・保存しません。", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}, "publisher": {"@type": "Organization", "name": "Noe結婚設計室", "url": "https://www.noe-match.com/"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://www.noe-match.com/"}, {"@type": "ListItem", "position": 2, "name": "無料ツール", "item": "https://www.noe-match.com/#tools"}, {"@type": "ListItem", "position": 3, "name": "生年月日でみる二人の相性占い（無料）"}]}</script>
+<style>
+.rpt{border:1px dashed #cdbfae;background:#fff;padding:16px 18px;margin:22px 0 0;text-align:center}
+.rpt .rpt-h{font-weight:700;font-size:.95rem;margin:0 0 6px;color:#1d242b;text-align:left}
+.rpt .rpt-p{font-size:.86rem;color:#5a6068;margin:0 0 12px;text-align:left;line-height:1.8}
+.rpt .rpt-btn{background:#fff;color:#7c2e42;border:1.5px solid #7c2e42;font-weight:700;padding:11px 22px;font-size:.92rem;cursor:pointer;max-width:100%;font-family:inherit}
+.rpt .rpt-btn:disabled{color:#8a8f95;border-color:#c9c4bc;cursor:default}
+.rpt .rpt-done{font-size:.86rem;color:#1d242b;background:#f7f5f2;padding:10px 12px;margin:12px 0 0;text-align:left;line-height:1.8}
+.rpt .rpt-done a{color:#7c2e42;font-weight:700}
+a.npick{display:block;border:1px solid #e3ddd3;border-left:4px solid #7c2e42;background:#fff;padding:14px 16px;margin:22px 0 0;text-decoration:none;color:inherit}
+a.npick:hover{background:#faf8f5}
+.npick .npick-l{font-size:11.5px;letter-spacing:.12em;color:#7c2e42;margin:0 0 4px}
+.npick .npick-t{font-weight:700;font-size:.98rem;margin:0 0 4px;color:#1d242b}
+.npick .npick-d{font-size:.85rem;color:#5a6068;margin:0;line-height:1.7}
+</style>
 </head>
 <body>
 <header><div class="header-inner">
@@ -208,6 +222,12 @@ article a{overflow-wrap:anywhere;word-break:break-word}
 <div class="r-block"><h3>すれ違いやすい点</h3><p id="rGap"></p></div>
 <div class="r-block"><h3>話し方のヒント</h3><p id="rTalk"></p></div>
 
+<div class="rpt" id="rpt" data-t132="1">
+<p class="rpt-h">この結果を、もっと詳しく読みたい方へ</p>
+<p class="rpt-p">二人の相性タイプの詳しい説明と、二人で話すための問いのリストをまとめた有料のレポートを準備しています（価格は未定・まだ購入できません）。</p>
+<button type="button" class="rpt-btn" id="rptBtn">もっと詳しいレポート（準備中）</button>
+<p class="rpt-done" id="rptDone" hidden>準備中です。押しても料金はかかりません。できあがったら LINE でお知らせする予定です。受け取りたい方だけ、下から友だち追加してください（任意）。<br><a href="https://lin.ee/unbDsCR" id="rptLine" rel="noopener" target="_blank">LINE で知らせてもらう（任意）</a></p>
+</div>
 <div class="share-block">
 <div class="share-title">結果をシェアする</div>
 <div class="share-btns">
@@ -222,6 +242,11 @@ article a{overflow-wrap:anywhere;word-break:break-word}
 <a class="pr-btn" id="prLink" href="https://px.a8.net/svt/ejp?a8mat=4B8BWW+FJNJQI+2PEO+C28PU" rel="nofollow sponsored noopener" target="_blank">ココナラ電話占いを無料で試す</a>
 <p class="pr-n">※無料分は新規登録時の特典です。条件は公式サイトでご確認ください。</p>
 </div>
+<a class="npick" id="nextPick" href="/tools/en-to-un/" data-to="en-to-un" data-t132="1">
+<p class="npick-l">次の1本</p>
+<p class="npick-t">縁と運｜7代の結婚相手を選ぶ家系ゲーム</p>
+<p class="npick-d">相性を見たあとは、息抜きにゲームを。結婚相手を選んで家系をつなぎ、最後に「自分で決めた回数」と「運が決めた回数」が出ます。無料・登録不要。</p>
+</a>
 <div class="next-links"><h3>あわせて読む・試す</h3><ul><li><a href="/tools/renai-type-shindan/">16タイプ恋愛診断（12問であなたの恋愛タイプがわかる）</a></li><li><a href="/tools/mbti-aisho-uranai/">16タイプ（MBTI）×星座でみる恋愛相性占い</a></li><li><a href="/tools/seiza-renai-uranai/">星座でみる恋愛傾向占い</a></li><li><a href="/tools/suhi-kekkon-uranai/">数秘術でみる結婚観占い</a></li><li><a href="/tools/konkatsu-type-shindan/">婚活タイプ診断（自分に合う婚活の進め方を選ぶ）</a></li><li><a href="/articles/denwa-uranai-konkatsu/">婚活・恋愛の迷いを電話占いで話す前に</a></li></ul></div>
 </div>
 </div>
@@ -324,7 +349,7 @@ function isMinor(dt){
   if(n.getMonth()+1<dt.m||(n.getMonth()+1===dt.m&&n.getDate()<dt.d))age--;
   return age<18;
 }
-function showRes(dt,dt2){var box=document.querySelector('.prbox');if(box){var mn=(!!dt&&isMinor(dt))||(!!dt2&&isMinor(dt2));box.hidden=mn;box.style.display=mn?'none':'';}
+function showRes(dt,dt2){var box=document.querySelector('.prbox');if(box){var mn=(!!dt&&isMinor(dt))||(!!dt2&&isMinor(dt2));box.hidden=mn;box.style.display=mn?'none':'';}if(window.__rptReset)window.__rptReset(lastResult,box&&box.hidden);
   $('err').style.display='none';$('res').classList.add('show');$('res').scrollIntoView({behavior:'smooth',block:'start'});}
 function showErr(){$('err').style.display='block';}
 onscroll=function(){$('top').classList.toggle('show',scrollY>300);};
@@ -358,5 +383,6 @@ $('run').addEventListener('click',function(){
 
 })();
 </script>
+<script>(function(){var T='aisho-uranai',R='';function g(n,p){try{if(typeof gtag==='function')gtag('event',n,p);}catch(e){}}function $(i){return document.getElementById(i);}var b=$('rptBtn'),d=$('rptDone'),box=$('rpt'),l=$('rptLine'),nx=$('nextPick');window.__rptReset=function(r,hide){R=String(r||'');if(box){box.hidden=!!hide;box.style.display=hide?'none':'';}if(b){b.disabled=false;b.textContent='もっと詳しいレポート（準備中）';}if(d)d.hidden=true;};if(b)b.addEventListener('click',function(){if(b.disabled)return;b.disabled=true;b.textContent='準備中です';if(d)d.hidden=false;g('paid_report_interest',{tool:T,result:R});});if(l)l.addEventListener('click',function(){g('line_add_click',{tool:T,from:'paid_report'});});if(nx)nx.addEventListener('click',function(){g('next_pick_click',{tool:T,to:nx.getAttribute('data-to'),result:R});});})();</script>
 </body>
 </html>
