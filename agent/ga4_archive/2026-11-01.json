@@ -1,0 +1,542 @@
+{
+ "date": "2026-11-01",
+ "property": "properties/549779769",
+ "hosts": [
+  "www.noe-match.com",
+  "noe-match.com"
+ ],
+ "fetched_at": "2026-11-03T02:47:31",
+ "total": {
+  "sessions": 31,
+  "users": 24,
+  "views": 47
+ },
+ "total_by_page_sum": {
+  "sessions": 40,
+  "users": 33,
+  "views": 47
+ },
+ "by_page": [
+  {
+   "path": "/tools/en-to-un/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5,
+   "users": 4,
+   "views": 13
+  },
+  {
+   "path": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3,
+   "users": 1,
+   "views": 3
+  },
+  {
+   "path": "/articles/sengyoshufu-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/shussan-ichijikin-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/en-to-un/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/minato-senki/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 3
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/about.html",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/anti-fraud/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/bachelor-date-guide/",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/civil-servant-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/fraud-detection/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/fuufu-aishou-uranai/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-madeno-kikan-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/konkatsu-photo-guide/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/konkatsu-roadmap/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sangokea-nankai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/en-to-un/",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 0
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/seiza-renai-uranai/",
+   "channel": "Organic Social",
+   "source": "facebook.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 47,
+  "session_start": 31,
+  "user_engagement": 25,
+  "first_visit": 19,
+  "scroll": 5,
+  "click": 4,
+  "tool_result": 4,
+  "affv_youbride": 2,
+  "affv_2vljwa": 1,
+  "affv_39vyey": 1,
+  "affv_bachelor": 1,
+  "affv_hoken": 1,
+  "affv_oisix": 1,
+  "affv_soudanjo": 1,
+  "affv_youbride_2": 1,
+  "file_download": 1,
+  "saigenbyo_complete": 1,
+  "saigenbyo_start": 1,
+  "tool_calc": 1
+ },
+ "clicks": [
+  {
+   "path": "/about.html",
+   "linkId": "",
+   "linkDomain": "note.com",
+   "linkUrl": "https://note.com/hachimitsu88812",
+   "count": 3
+  },
+  {
+   "path": "/articles/sengyoshufu-wariai-data/",
+   "linkId": "",
+   "linkDomain": "gender.go.jp",
+   "linkUrl": "https://www.gender.go.jp/about_danjo/whitepaper/r08/zentai/html/honpen/csv/zuhyo00-05.csv",
+   "count": 1
+  }
+ ],
+ "aff_views": [
+  {
+   "path": "/articles/bachelor-date-guide/",
+   "event": "affv_bachelor",
+   "count": 1
+  },
+  {
+   "path": "/articles/civil-servant-guide/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "event": "affv_soudanjo",
+   "count": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "event": "affv_youbride_2",
+   "count": 1
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "event": "affv_2vljwa",
+   "count": 1
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "event": "affv_39vyey",
+   "count": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "event": "affv_hoken",
+   "count": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "event": "affv_oisix",
+   "count": 1
+  }
+ ],
+ "aff_session_clicks": [],
+ "tool_events": [
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "event": "tool_result",
+   "count": 3
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "event": "tool_calc",
+   "count": 1
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "event": "tool_result",
+   "count": 1
+  }
+ ],
+ "by_source": [
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 7
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 7
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 7
+  },
+  {
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 3
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3
+  },
+  {
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Social",
+   "source": "facebook.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/tools/en-to-un",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 3
+  },
+  {
+   "landing": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Referral",
+   "source": "note.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/anti-fraud",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/bachelor-date-guide",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/civil-servant-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/fuufu-aishou-uranai",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-madeno-kikan-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/konkatsu-photo-guide",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/matching-app-ranking",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/sengyoshufu-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shougai-mikonritsu-data",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shussan-ichijikin-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/success-rate-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/with-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/hoikuen-tensu-nerima",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/konkatsu-type-shindan",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/saigenbyo-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sangokea-ryokin",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/seiza-renai-uranai",
+   "channel": "Organic Social",
+   "source": "facebook.com",
+   "sessions": 1
+  }
+ ]
+}
