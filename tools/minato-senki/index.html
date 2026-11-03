@@ -736,6 +736,8 @@ function nextYear(){
   if(G.age===20&&!G.planYoru) say("20歳。港区の食事会に誘われるようになった。");
   if(G.married) G.planYoru=false;
   if(G.age>maxAge()){ G.age=maxAge(); G.hist.pop(); snapshotHist(); return finish(); }
+  // 単身赴任は3年で終わる
+  if(G.married&&G.mar&&G.mar.apart&&G.age>=(G.mar.apartAge||0)+3){ G.mar.apart=0; say("夫の単身赴任が終わり、家に戻ってきた。"); }
   snapshotHist(); voiceTick(); renderGame();
 }
 /* ---------- 延長戦（36〜40歳） ---------- */
@@ -885,7 +887,7 @@ const MEVENTS=[
  {id:"h_tenkin",when:(g,m,p)=>m.years>=1&&p.world==="day"&&p.src!=="asobi"&&!m.house,
   t:"夫の転勤",x:"夫の地方転勤が決まった。3年は戻れないらしい。",
   c:[["ついて行く",g=>{if(!["kigyo","senmon","baito"].includes(g.job))g.job="ippan";g.work=clamp(g.work-0.5,1);g.mar.sat=clamp(g.mar.sat+0.5);g.mar.strain=clamp(g.mar.strain-0.3);say("夫について地方へ移った。仕事は一から探し直した。");}],
-     ["単身赴任してもらう",g=>{g.mar.strain=clamp(g.mar.strain+0.9);g.mar.sat=clamp(g.mar.sat-0.3);g.money-=60;g.mar.apart=1;say("夫は単身赴任になった。週末だけの夫婦になった。");}]]},
+     ["単身赴任してもらう",g=>{g.mar.strain=clamp(g.mar.strain+0.9);g.mar.sat=clamp(g.mar.sat-0.3);g.money-=60;g.mar.apart=1;g.mar.apartAge=g.age;say("夫は単身赴任になった。週末だけの夫婦になった。");}]]},
  {id:"slump",when:(g,m,p)=>m.years>=1&&(m.route==="biz"||m.route==="night"||p.sincerity<=5),
   t:"夫の収入が落ちた",x:()=>G.mar.route==="biz"?"夫の会社の資金繰りが悪化し、役員報酬が大きく減った。":"夫の収入が大きく減った。夫は「すぐ戻る」と言っている。",
   c:[["自分の稼ぎで支える",g=>{g.mar.hInc*=0.7;g.work=clamp(g.work+0.4);g.mar.sat=clamp(g.mar.sat+(g.partner.sincerity>=5?0.6:0));g.mar.strain=clamp(g.mar.strain+(g.partner.sincerity>=5?0:0.6));say(g.partner.sincerity>=5?"しばらく自分の稼ぎで家計を回した。夫はそれを忘れなかった。":"自分の稼ぎで家計を回した。夫は感謝より、言い訳のほうが多かった。");}],
@@ -1011,11 +1013,12 @@ function vMode(g,d){const x=vScore(g,d);return x>=3?"k2":x>=1.5?"k1":"h";}
 // 恋人がいる間は「いい男がいない」系、港区に行っていない人生では港区・店の声を外す
 const V_NOMAN=/まともな男がいない|いい男が来ない|現れないだけ|紹介される人|もっといい男がいる|物足りない/, V_MINATO=/港区|店/;
 function kokoro(g,d){
-  const mode=vMode(g,d), m=g.mar, rough=!!(g.married&&m&&(m.sat<4||m.apart));
+  const mode=vMode(g,d), m=g.mar, rough=!(g.married&&m)?0:m.apart?(m.sat<4?3:2):m.sat<4?1:0;
   const key=[g.age,mode,g.married?1:0,g.job,g.partner?1:0,g.minato?1:0,rough?1:0].join("|");
   if(g.vc&&g.vc.key===key) return g.vc;
   let P;
-  if(g.married) P=mode==="h"?(rough?VOICE.hmx.filter(t=>m.apart?true:!/週末|離れて/.test(t)):VOICE.hm):VOICE.km;
+  // 単身赴任中で満足度4以上は「週末／離れて」の2本だけ、荒れた2本は満足度4未満のときだけ
+  if(g.married) P=mode==="h"?(rough===2?VOICE.hmx.filter(t=>/週末|離れて/.test(t)):rough===1?VOICE.hmx.filter(t=>!/週末|離れて/.test(t)):rough===3?VOICE.hmx.slice():VOICE.hm):VOICE.km;
   else { P=VOICE[mode][vStage(g.age)].slice(); if(g.job==="baito"&&g.age>=20) P.push(pick(VOICE[mode==="h"?"hb":"kb"])); }
   if(g.partner&&!g.married){const f=P.filter(t=>!V_NOMAN.test(t)); if(f.length)P=f;}
   if(!g.minato){const f=P.filter(t=>!V_MINATO.test(t)); if(f.length)P=f;}
@@ -1293,7 +1296,7 @@ function finish(){
     if(KAN&&gapSelf<=-1) L.unshift(["勘違いから戻ってきた",`${cnt}多くの年で心の声は「相手が何をしてくれるか」だったが、${A}歳の時点では理想を結婚モテより下まで見直していた。スポンサー探しをやめた後は、支え合える相手を探す目に変わっていた。`]);
     else if(KAN) L.unshift(["結婚相手ではなく、スポンサーを探していた",`${cnt}心の声は${allK?"最後まで":"多くの年で"}「相手が何をしてくれるか」だった。年収、店選び、家事、包容力と、相手への条件は増え続け、自分が何を差し出すかは${allK?"一度も":"ほとんど"}数えなかった。結婚を支え合う約束ではなく、自分が尽くされる契約だと思っていた。探していたのは結婚相手ではなく、自分の人生を無条件で豊かにしてくれるスポンサーだった。`]);
     else if(gapSelf>=3) L.unshift(["最後に、理想だけが残った",`${cnt}多くの年で心の声は「相手に何ができるか」に向いていたが、${A}歳の時点では理想が結婚モテを大きく上回っていた。若さが減っても理想は下がらず、釣り合う相手が「下」に見え始めていた。`]);
-    else L.unshift(["結婚は、支え合う約束だった",`${cnt}心の声は${allH?"どの年も":"多くの年で"}「相手に何ができるか」に向いていた。条件を見直し、してもらったことに礼を言い、自分が差し出せるものを数えた。${G.married?`だから${p.label}を「下」に見ずに選べた。`:"結婚はしていないが、支え合える相手を見分ける目は持っている。"}結婚を、尽くされる契約ではなく、お互いを助け合う約束として考えていた。`]);
+    else L.unshift(["結婚は、支え合う約束だった",`${cnt}心の声は${allH?"どの年も":"多くの年で"}「相手に何ができるか」に向いていた。条件を見直し、してもらったことに礼を言い、自分が差し出せるものを数えた。${G.married?(gapSelf>=1.5?"":`だから${p.label}を「下」に見ずに選べた。`):"結婚はしていないが、支え合える相手を見分ける目は持っている。"}結婚を、尽くされる契約ではなく、お互いを助け合う約束として考えていた。`]);
     if(G.job==="baito") L.push(KAN?["働き方まで、相手に預けていた","昼のアルバイトのまま、収入と将来は結婚相手が用意してくれるものだと思っていた。このゲームでは27歳から、アルバイトは結婚モテで少し不利になる。"]:["時給の仕事でも、差し出せるものはあった","昼のアルバイトでも、続けた仕事と家計を一緒に支える気持ちは相手に伝わる。このゲームでは27歳からアルバイトは結婚モテで少し不利になるが、仕事力と資格で取り返せる。"]); }
   if(!G.married&&h>=65) L.push(["結婚だけが結末ではない",`35歳で独身でも、価値観（${vName}）に合った暮らしなら幸福度は高い。このゲームの幸福度は、結果が本人の物差しに合っているかで決まる。`]);
   if(G.quals>=2) L.push(["30代の資格は、遅くない",`資格を${G.quals}つ取った。このゲームでは30歳以降、資格と仕事力が年収と結婚モテに効き続ける。`]);
