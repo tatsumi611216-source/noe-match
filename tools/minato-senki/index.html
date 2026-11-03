@@ -1014,7 +1014,7 @@ function vMode(g,d){const x=vScore(g,d);return x>=3?"k2":x>=1.5?"k1":"h";}
 const V_NOMAN=/まともな男がいない|いい男が来ない|現れないだけ|紹介される人|もっといい男がいる|物足りない/, V_MINATO=/港区|店/;
 function kokoro(g,d){
   const mode=vMode(g,d), m=g.mar, rough=!(g.married&&m)?0:m.apart?(m.sat<4?3:2):m.sat<4?1:0;
-  const key=[g.age,mode,g.married?1:0,g.job,g.partner?1:0,g.minato?1:0,rough?1:0].join("|");
+  const key=[g.age,mode,g.married?1:0,g.job,g.partner?1:0,g.minato?1:0,rough].join("|");
   if(g.vc&&g.vc.key===key) return g.vc;
   let P;
   // 単身赴任中で満足度4以上は「週末／離れて」の2本だけ、荒れた2本は満足度4未満のときだけ
