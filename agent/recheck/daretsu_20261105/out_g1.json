@@ -1,0 +1,204 @@
+[
+ {
+  "key": "arakawa",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "age",
+    "current": "0歳6か月〜満3歳未満で、保育園・認定こども園・地域型保育事業・企業主導型保育事業に通っていない子ども",
+    "proposed": "末尾に「集団保育が可能な子ども」の条件を追加",
+    "quote": "「保育園、認定こども園、地域型保育事業、企業主導型保育事業に通っていない、集団保育が可能な子ども」",
+    "url": "https://www.city.arakawa.tokyo.jp/a037/kosodate/hoikuen/kodomodaredemo.html"
+   }
+  ],
+  "note": "cap(月10時間)・fee(300円程度)・reserve・apply(受付開始日の記載なし)・facil(区立第二東日暮里保育園、余裕活用型は掲載予定)は原文と一致。ページ更新日2026年10月6日。"
+ },
+ {
+  "key": "bunkyo",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "facil",
+    "current": "区内実施園（総合支援システムで確認）",
+    "proposed": "区立・私立それぞれの令和8年度事業実施園一覧(PDF)を区ページで公開、と直す。区立園・グループ保育室こうらくは全園全曜日で利用者決定済み(募集なし)の旨も追記可",
+    "quote": "「【区立保育園・グループ保育室こうらく】令和8年度事業実施園一覧（PDF：762KB）」「【私立保育園】令和8年度事業実施園一覧（PDF：955KB）」「現在、全ての区立園・曜日で利用者が決定している状況です。」",
+    "url": "https://www.city.bunkyo.lg.jp/b023/shien/daretsu.html"
+   }
+  ],
+  "note": "cap(記載なし)・fee(区民無料/区民以外月額9,600円)・apply(令和7年12月25日受付開始・毎月10日ごとのアカウント発行・抽選)・age・reserveは一致。ページ更新日2026年10月26日。参考: 区外園利用料補助の申請期限は「令和9年3月15日（月曜日）」、申請方法は「近日中にお知らせします。」"
+ },
+ {
+  "key": "chuo",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "facil",
+    "current": "区内実施施設。0歳児クラスの受け入れはなし",
+    "proposed": "実施施設は5施設(京橋2・日本橋1・月島2)と明記。0歳児なしは据え置き",
+    "quote": "表に掲載の園名: 「ポピンズナーサリースクール京橋」「グローバルキッズ新川園」「ほっぺるランド茅場町」「ほっぺるランド佃大橋」「ほっぺるランド相生橋つくだ」／「本区では0歳児クラスの受け入れを行っていません」",
+    "url": "https://www.city.chuo.lg.jp/a0021/kosodate/kosodate/keikaku/daretuu.html"
+   }
+  ],
+  "note": "施設数5は表の行を数えた値(ページに数の記載なし)。cap・fee・reserve・apply・ageは一致。掲載日2026年10月26日。"
+ },
+ {
+  "key": "edogawa",
+  "status": "一致",
+  "changes": [],
+  "note": "cap24時間(区外/区外在住は10時間)・無償・総合支援システム・受付令和8年3月4日から・認可予定事業者一覧PDF・年齢すべて原文と一致。施設数の記載はなし(PDFのみ)。更新日2026年10月21日。"
+ },
+ {
+  "key": "hachioji",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "facil",
+    "current": "実施施設一覧に41施設を掲載（…令和8年9月1日現在）",
+    "proposed": "44施設を掲載（令和8年10月8日現在）。対象年齢は「0-2歳児」14・「1-2歳児」29・「2歳児」1。うち横川学園は令和8年11月1日から受入開始",
+    "quote": "「五十音順（令和8年10月8日現在）」「※令和8年11月1日から受入れを開始します。」",
+    "url": "https://kosodate.city.hachioji.tokyo.jp/soshiki/hoikuyochienka/hoikuyochienka_kyufutanto/2821.html"
+   },
+   {
+    "field": "cap_note",
+    "current": "（認証保育所の例外の記載なし）",
+    "proposed": "認証保育所に在籍する児童は保育料補助対象外かつ月10時間までを追記",
+    "quote": "「ただし、認証保育所に在籍している児童については、保育料補助の対象外です。また、利用可能時間は月10時間までとなります。」",
+    "url": "https://kosodate.city.hachioji.tokyo.jp/soshiki/hoikuyochienka/hoikuyochienka_kyufutanto/2821.html"
+   },
+   {
+    "field": "age",
+    "current": "生後6か月から満3歳未満。ただし市内の実施施設に限り…",
+    "proposed": "八王子市に住民票があること、幼稚園も在籍除外対象、認証保育所在籍児は3歳以降の延長利用対象外を追記",
+    "quote": "「(1)八王子市に住民票がある。」「認証保育所に在籍している児童は、当該延長利用の対象外とし、満3歳未満までの利用となります。」「企業主導型保育施設及び幼稚園に在籍していない。」",
+    "url": "https://kosodate.city.hachioji.tokyo.jp/soshiki/hoikuyochienka/hoikuyochienka_kyufutanto/2821.html"
+   }
+  ],
+  "note": "施設数44は対象年齢欄の行を数えた値。ページ更新日は2026年10月08日(現在の記載は3月9日)。新情報: 令和8年11月から市立3園(津久田・長房中央・みなみ野)で医療的ケア児等の優先予約枠。cap(制限なし/補助月48,000円)・fee_extra・reserve・applyの受付サイクルは一致。"
+ },
+ {
+  "key": "hiroshima",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "facil",
+    "current": "…PDF、764.9KB・2026年10月1日のページ更新で差し替え…URL: …itirann8.3.3.1.pdf",
+    "proposed": "PDFが差し替わっている。新URL(766.3KB)に直す。施設数は引き続きPDFのみで確認できず",
+    "quote": "「令和8年度広島市こども誰でも通園制度実施施設一覧 （PDF 766.3KB）」 リンク先: …/023/624/itiran8.10.7.pdf",
+    "url": "https://www.city.hiroshima.lg.jp/living/kosodate/1021251/1025852/1023624.html"
+   },
+   {
+    "field": "age",
+    "current": "0歳6か月〜3歳未満のこども…",
+    "proposed": "広島市に住所を有する子どもが対象、と追記",
+    "quote": "「広島市に住所を有するこどものうち、保育園、幼稚園、認定こども園、地域型保育事業所、企業主導型保育事業所に通っていない0歳6か月～3歳未満のこども」",
+    "url": "https://www.city.hiroshima.lg.jp/living/kosodate/1021251/1025852/1023624.html"
+   }
+  ],
+  "note": "ページ更新日は2026年10月7日(現在の記載は10月1日)。cap月10時間・fee300円と減免(生活保護0円/非課税と77,101円未満は60円/DV100円)・申請「随時受付中」・ログインURLは一致。"
+ },
+ {
+  "key": "kobe",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "apply",
+    "current": "…第4期10〜12月利用分は…9月1日(火)から、市外9月6日(日)から…",
+    "proposed": "次期の例を追記: 1〜3月利用分は市内12月4日(金)、市外12月9日(水)から予約受付開始",
+    "quote": "「1～3月利用分は、神戸市内在住の方は12月4日（金曜）【神戸市外在住の方は12月9日（水曜）】より予約受付を開始します。」",
+    "url": "https://www.city.kobe.lg.jp/z/kodomokatekyoku/kosodateshien/daredemotuen.html"
+   }
+  ],
+  "note": "ページ最終更新日は2026年10月19日(現在の記載は10月2日/7月17日)。cap10時間(一部施設は一時保育併用で最大20時間)・fee300円と減免・137施設・5期制・予約30日前(市外25日前)・つうえんポータル予約は一致。"
+ },
+ {
+  "key": "meguro",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "fee",
+    "current": "無償（「目黒区民は無償となります」）。",
+    "proposed": "区民が区内施設は無償。区外施設は原則1時間300円まで無償、超過分は施設ごとに異なる、を追記",
+    "quote": "「目黒区民が、区内の実施施設を利用する場合は無償となります。」「区外の施設を利用する場合は、原則として1時間300円までは無償となります。300円を超える部分については、施設ごとに異なります」",
+    "url": "https://www.city.meguro.tokyo.jp/hoikukeikaku/kosodatekyouiku/kosodate/daredemotuuen.html"
+   }
+  ],
+  "note": "ページ更新日2026年11月2日。cap月10時間・「0歳5か月から認定申請を受け付けます」・予約(面談の受付を一時停止の施設あり)・年齢は一致。施設は別ページ「実施施設」にリンク。"
+ },
+ {
+  "key": "nagoya",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "facil",
+    "current": "令和8年4月時点で市内23か所。令和8年10月から22か所が追加され計45か所になる予定",
+    "proposed": "施設数の記載はページから消えている。「令和8年度こども誰でも通園制度実施一覧（令和8年10月時点）」PDFを案内、に直す(数は確認できず)",
+    "quote": "「令和8年度こども誰でも通園制度実施一覧（令和8年10月時点） （PDF 521.1 KB）」",
+    "url": "https://www.city.nagoya.jp/kodomo/kosodate/1009115/1009125/1033528/1036127.html"
+   },
+   {
+    "field": "fee_extra(減免)",
+    "current": "生活保護世帯や市民税非課税世帯等は減免制度あり（具体額の記載なし）",
+    "proposed": "減免対象の例を「生活保護世帯や市民税所得割額77,101円未満の世帯など」に直す",
+    "quote": "「生活保護世帯や市民税所得割額77,101円未満の世帯などは、利用料が減免される場合があります。」",
+    "url": "https://www.city.nagoya.jp/kodomo/kosodate/1009115/1009125/1033528/1036127.html"
+   },
+   {
+    "field": "cap_note",
+    "current": "（繰越の記載なし）",
+    "proposed": "余った時間は翌月に繰り越せない旨を追記",
+    "quote": "「余った時間は翌月に繰り越せません。」",
+    "url": "https://www.city.nagoya.jp/kodomo/kosodate/1009115/1009125/1033528/1036127.html"
+   }
+  ],
+  "note": "ページ更新日2026年10月26日。cap10時間(1回1時間以上・30分単位)・利用料は事業者設定・つうえんポータル予約・年齢は一致。「23か所」「45か所」は現ページで確認できず。"
+ },
+ {
+  "key": "nakano",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "facil",
+    "current": "区の選定施設4施設（余裕活用型3・一般型1）",
+    "proposed": "選定施設は5施設の掲載(キッズガーデン中野南台・なかよしの森こども園・キッズガーデン新中野駅前・アルテ子どもと木幼保園・キッズガーデン中野上高田)。型別内訳は確認できず",
+    "quote": "「なかよしの森こども園」「※12月開設予定」「キッズガーデン中野上高田」「未定（通常保育の空き定員の状況に応じて募集します）」「現在、中野区の公募による選定を受けずに、乳児等通園支援事業所の認可を受けた区内施設はございません。」",
+    "url": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hoikuen/shisetsu/kodomodaredemo.html"
+   },
+   {
+    "field": "apply",
+    "current": "認定申請の受付は令和8年2月25日に開始。",
+    "proposed": "「令和8年2月25日」はページで確認できず。この一文は削除するか確認できずと注記",
+    "quote": "「生後5か月以降のお子さんから申請の受付を開始」「原則として電子申請のみ」",
+    "url": "https://www.city.tokyo-nakano.lg.jp/kosodate/kosodatesite_ohirune/mokuteki/hoikuen/shisetsu/kodomodaredemo.html"
+   }
+  ],
+  "note": "ページ更新日2026年11月4日。cap(通算月10時間/選定施設は施設上限)・fee・age・reserve(総合支援システム未導入・施設ごとに抽選等・申込期間は施設ごと)は一致。参考: キッズガーデン中野南台となかよしの森こども園は令和8年11月4日〜11月13日が申込期間、他2園は受付終了。"
+ },
+ {
+  "key": "nerima",
+  "status": "変更あり",
+  "changes": [
+   {
+    "field": "apply",
+    "current": "ぴったりサービス（児童のマイナンバーカード）またはLoGoフォームから申請。認定まで3週間程度。",
+    "proposed": "ぴったりサービスの記載はなし。保護者のマイナンバーカード+スマホアプリxIDで認定申請フォーム、カード無しはLoGoフォーム、に直す。LoGoフォーム障害の告知が11/4時点で出ている",
+    "quote": "「マイナンバーカード（保護者）」「スマートフォンアプリ「xID」」「マイナンバーカードをお持ちでない方 LoGoフォーム（外部サイト）よりご申請ください。」「認定には3週間程度かかります。」",
+    "url": "https://www.city.nerima.tokyo.jp/kosodatekyoiku/kodomo/hoiku/daredemo.html"
+   },
+   {
+    "field": "age",
+    "current": "0歳6か月〜2歳児までの未就園児",
+    "proposed": "練馬区在住の子ども、と追記",
+    "quote": "「練馬区在住で、0歳6か月～2歳児までの未就園児」",
+    "url": "https://www.city.nerima.tokyo.jp/kosodatekyoiku/kodomo/hoiku/daredemo.html"
+   },
+   {
+    "field": "facil",
+    "current": "実施施設一覧を区公式ページに掲載",
+    "proposed": "実施予定施設一覧(令和8年度)に18施設+通常保育に空きがある場合の8施設=26施設",
+    "quote": "「以下の施設は、通常保育に空きがある場合に利用できます。」",
+    "url": "https://www.city.nerima.tokyo.jp/kosodatekyoiku/kodomo/hoiku/daredemo.html"
+   }
+  ],
+  "note": "施設数26は表の行を数えた値(定員・申込状況つき)。ページ更新日2026年11月4日。cap月48時間(国10+区38)・1日8時間・無償(当分の間)・区内施設は直接申込は一致。新情報: 区外施設の利用料補助「1時間あたり300円を上限に月10時間分まで」。"
+ }
+]
