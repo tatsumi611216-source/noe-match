@@ -1079,3 +1079,6 @@ policy/editorial.html の6本がすでに「登録されています」に変化
 |---|-----|------|------|
 | 1 | https://www.noe-match.com/articles/yakuzaishi-konkatsu/ | 未登録 | 新規公開 |
 | 2 | https://www.noe-match.com/articles/hoikushi-konkatsu/ | 未登録 | 新規公開 |
+
+## 2026-11-05
+- https://www.noe-match.com/tools/tomobataraki-wariai/
