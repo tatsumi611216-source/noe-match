@@ -1270,3 +1270,14 @@ GA4を入れて分かった「データ記事の流入の49%はAI経由・GSCに
   - 「主要5アプリ」の抽象表記をPairs・Omiai・withの具名固有修飾に切り替え、機能差訴求に寄せた
   - title/og:title/twitter:title/h1/breadcrumb/JSON-LD headline＋description/dateModified/intro段落 更新
   - breadcrumbの不一致（「課金はいつ始めるべきか…」）も同時に修正
+
+## 2026-11-05 tools/tomobataraki-wariai 公開
+
+**Phase 4 CTA gate CLOSED** — asp_results.md last_updated: 2026-08-31（今日から66日経過 > 30日）
+→ Oisix アフィリエイト CTA を設置しなかった。LINE CTA のみ設置。
+→ 次回 asp_results.md 更新後にOisix CTAを追加すること（AGENT.md 4-0参照）。
+
+- 生成: tools/tomobataraki-wariai/index.html（30,805字）
+- factory_audit: FAIL 0件
+- sitemap: 追加済み
+- keyword_queue: batting_order 3 → done（2026-11-05）
