@@ -359,7 +359,7 @@
         {
             "keyword": "ガルガル期 由来",
             "targetPath": "/articles/garugaru-ki-guide/",
-            "status": "observing",
+            "status": "active",
             "nextReviewDate": "2026-10-19",
             "actions": [
                 {
@@ -380,12 +380,21 @@
                     ]
                 }
             ],
-            "reviews": []
+            "reviews": [
+                {
+                    "date": "2026-11-05",
+                    "window": "2026-10-20〜2026-11-02（14日窓）",
+                    "rankBefore": 8.2,
+                    "rankAfter": null,
+                    "impressions": 0,
+                    "verdict": "判定不能"
+                }
+            ]
         },
         {
             "keyword": "2030年 結婚 良い日",
             "targetPath": "/tools/nyuseki-calendar/",
-            "status": "observing",
+            "status": "active",
             "nextReviewDate": "2026-10-22",
             "actions": [
                 {
@@ -401,6 +410,41 @@
                     ],
                     "files": [
                         "tools/nyuseki-calendar/index.html"
+                    ]
+                }
+            ],
+            "reviews": [
+                {
+                    "date": "2026-11-05",
+                    "window": "2026-10-20〜2026-11-02（14日窓）",
+                    "rankBefore": 3.8,
+                    "rankAfter": 6.0,
+                    "impressions": 8,
+                    "verdict": "効果なし"
+                }
+            ]
+        },
+        {
+            "keyword": "妻源病 チェック リスト",
+            "targetPath": "/tools/saigenbyo-check/",
+            "status": "observing",
+            "nextReviewDate": "2026-11-12",
+            "actions": [
+                {
+                    "date": "2026-11-05",
+                    "rankAtAction": 9.1,
+                    "window": "2026-10-06〜2026-11-02",
+                    "needs": "妻の言動で家にいるのがつらい夫（または心配する家族）が、妻源病の具体的なチェック項目を一覧で見て自分が当てはまるか確かめたい。",
+                    "gap": "上位（週刊女性PRIME・夫源病系の法律事務所ページ）はチェック項目を本文に一覧で載せている。対象ページは設問がJSで描画されるだけで、HTML本文に項目の一覧が無く、読むだけで数えられる『リスト』になっていなかった。",
+                    "done": "基礎知識節に h3『妻源病チェックリスト（簡易版15項目を一覧で）』を追加（簡易15問の文言を5領域に分けて静的に掲載・受診/DVの例外サインを明記・判定は重み付きでツールが計算と注記）。FAQ JSON-LDに『チェックリストの項目は？』を追加。結果カード下部の誤表記（夫源病のツール名・URL）を妻源病に修正。sitemap lastmod更新。JSロジック・title・CTAは不変。",
+                    "type": [
+                        "content",
+                        "faq"
+                    ],
+                    "files": [
+                        "tools/saigenbyo-check/index.html",
+                        "sitemap.xml",
+                        "sitemap-all.xml"
                     ]
                 }
             ],

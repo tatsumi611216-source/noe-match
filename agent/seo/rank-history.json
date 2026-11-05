@@ -4730,6 +4730,594 @@
    "impressions": 0,
    "clicks": 0,
    "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "子供 医療費 無料 東京 いつまで",
+   "targetPath": "/tools/kodomo-iryohi-jichitai/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 8.9,
+   "impressions": 74,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "with 成婚率",
+   "targetPath": "/articles/with-seriousness-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 2.1,
+   "impressions": 106,
+   "clicks": 1,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ガルガル期 診断",
+   "targetPath": "/tools/garugaru-check/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 2.4,
+   "impressions": 46,
+   "clicks": 7,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "マリッシュ ユーブライド 比較",
+   "targetPath": "/articles/youbride-marrish-hikaku/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ペアーズ 成婚率",
+   "targetPath": "/articles/pairs-marriage-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ガルガル 期 同居",
+   "targetPath": "/articles/garugaru-doukyo/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ガルガル期 由来",
+   "targetPath": "/articles/garugaru-ki-guide/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "with 年齢層",
+   "targetPath": "/articles/with-nenreiso-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "with 心理テスト",
+   "targetPath": "/articles/with-guide/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 10.6,
+   "impressions": 89,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "2030年 結婚 良い日",
+   "targetPath": "/tools/nyuseki-calendar/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 3.2,
+   "impressions": 20,
+   "clicks": 2,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "新生児 面会 いつから",
+   "targetPath": "/articles/shinseiji-menkai/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "マッチングアプリ 会員数",
+   "targetPath": "/articles/members-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": [
+    {
+     "path": "/articles/pairs-kaiin-data/",
+     "rank": 11.5,
+     "impressions": 2
+    }
+   ]
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "離婚率 2025",
+   "targetPath": "/articles/rikonritsu-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "専業主婦 割合",
+   "targetPath": "/tools/sengyoshufu-wariai/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 17.1,
+   "impressions": 15,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "妻源病 チェック リスト",
+   "targetPath": "/tools/saigenbyo-check/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 9.1,
+   "impressions": 92,
+   "clicks": 4,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ペアーズ 登録者数",
+   "targetPath": "/articles/pairs-kaiin-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 9.8,
+   "impressions": 12,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "omiai 男女比",
+   "targetPath": "/articles/omiai-danjohi-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 6.0,
+   "impressions": 2,
+   "clicks": 0,
+   "others": [
+    {
+     "path": "/articles/omiai-guide/",
+     "rank": 13.8,
+     "impressions": 4
+    }
+   ]
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "練馬区 保育園 点数 ボーダー",
+   "targetPath": "/tools/hoikuen-tensu-nerima/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": 10.0,
+   "impressions": 32,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "マッチングアプリ 選び方 目的別",
+   "targetPath": "/articles/matching-app-ranking/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-06",
+    "end": "2026-11-02",
+    "days": 28
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "子供 医療費 無料 東京 いつまで",
+   "targetPath": "/tools/kodomo-iryohi-jichitai/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": 11.0,
+   "impressions": 1,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "with 成婚率",
+   "targetPath": "/articles/with-seriousness-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": 1.9,
+   "impressions": 24,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ガルガル期 診断",
+   "targetPath": "/tools/garugaru-check/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": 1.8,
+   "impressions": 9,
+   "clicks": 1,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "マリッシュ ユーブライド 比較",
+   "targetPath": "/articles/youbride-marrish-hikaku/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ペアーズ 成婚率",
+   "targetPath": "/articles/pairs-marriage-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ガルガル 期 同居",
+   "targetPath": "/articles/garugaru-doukyo/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ガルガル期 由来",
+   "targetPath": "/articles/garugaru-ki-guide/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "with 年齢層",
+   "targetPath": "/articles/with-nenreiso-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "with 心理テスト",
+   "targetPath": "/articles/with-guide/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": 10.8,
+   "impressions": 18,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "2030年 結婚 良い日",
+   "targetPath": "/tools/nyuseki-calendar/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": 5.0,
+   "impressions": 1,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "新生児 面会 いつから",
+   "targetPath": "/articles/shinseiji-menkai/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "マッチングアプリ 会員数",
+   "targetPath": "/articles/members-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "離婚率 2025",
+   "targetPath": "/articles/rikonritsu-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "専業主婦 割合",
+   "targetPath": "/tools/sengyoshufu-wariai/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": 18.1,
+   "impressions": 14,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "妻源病 チェック リスト",
+   "targetPath": "/tools/saigenbyo-check/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": 9.7,
+   "impressions": 25,
+   "clicks": 2,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "ペアーズ 登録者数",
+   "targetPath": "/articles/pairs-kaiin-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "omiai 男女比",
+   "targetPath": "/articles/omiai-danjohi-data/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": [
+    {
+     "path": "/articles/omiai-guide/",
+     "rank": 13.5,
+     "impressions": 2
+    }
+   ]
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "練馬区 保育園 点数 ボーダー",
+   "targetPath": "/tools/hoikuen-tensu-nerima/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": 9.7,
+   "impressions": 3,
+   "clicks": 0,
+   "others": []
+  },
+  {
+   "measuredOn": "2026-11-05",
+   "keyword": "マッチングアプリ 選び方 目的別",
+   "targetPath": "/articles/matching-app-ranking/",
+   "source": "gsc-archive",
+   "window": {
+    "start": "2026-10-27",
+    "end": "2026-11-02",
+    "days": 7
+   },
+   "rank": null,
+   "impressions": 0,
+   "clicks": 0,
+   "others": []
   }
  ]
 }
