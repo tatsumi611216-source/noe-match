@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """ココナラ電話占いの【PR】枠を恋愛・婚活記事11本に足す（2026-11-04 CEO『ココナラ占いアフィリエイトを記事に貼って』）。
 既存の占い記事12本と同じ部品（cta-mid・A8 a8mat=4B8BWW+FJNJQI+2PEO+C28PU・aff_click adv=coconala）。
-置き場所: 「著者」の見出しの直前。無ければ「関連」の見出しの直前、それも無ければ </article> の直前。
+置き場所: 「著者」の見出しの直前。無ければ「関連」の見出しの直前、それも無ければ </article> の直前（11/6 に app-plus-agency・omiai-guide・pairs-women は関連記事の前、hatsushon-nenmei-data は FAQ の前へ手で移した）。
 除外: 11/3 に占いツールへの文中リンクを入れた10本（11/15 初動判定のため）・success-rate-data（12/5 判定まで固定）・compare-popular（ロック）。
 二度実行しても重ねない（aff-coconala-art の印で判定）。"""
 import os, re, sys
