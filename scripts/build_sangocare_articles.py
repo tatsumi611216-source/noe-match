@@ -92,7 +92,7 @@ HEAD = """<!DOCTYPE html>
 <article>
 <h1>{h1}</h1>
 <p style="font-size:.78rem;color:#8a8f95;margin:6px 0 24px">公開 {today}／{checked}に{n}自治体の公式ページで確認</p>
-<p class="pr-notice">本ページはプロモーションを含みます。記事内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
+<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">PR</p>
 {body}
 <div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:32px 0;background:#faf8f5">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
@@ -114,7 +114,7 @@ HEAD = """<!DOCTYPE html>
 </div>
 <footer><div class="footer-inner">
 <div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
-<p class="footer-disc">※本記事は各自治体の公式公開情報（{checked}確認）にもとづく整理です。制度の適用と最終的な判断は各自治体が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+<p class="footer-disc">※本記事は各自治体の公式公開情報（{checked}確認）にもとづく整理です。制度の適用と最終的な判断は各自治体が行います。<br>&copy; 2026 Noe結婚設計室</p>
 </div></footer>
 <button id="top" onclick="scrollTo({{top:0,behavior:'smooth'}})">↑</button>
 </body>

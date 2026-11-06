@@ -127,7 +127,7 @@ HEADER = ("<header><div class=\"header-inner\">\n"
 
 FOOTER_TOOL = ("<footer><div class=\"footer-inner\">\n"
                "<div><a href=\"/\">ホーム</a><a href=\"/articles/\">記事一覧</a><a href=\"/about.html\">運営者情報</a><a href=\"/privacy-policy.html\">プライバシー</a><a href=\"/disclaimer.html\">免責事項</a></div>\n"
-               "<p class=\"footer-disc\">※本ツールは東京23区の公式公開情報（" + CHECK_RANGE + "確認）に基づく目安です。制度の適用と最終的な判断は各区が行います。<strong style=\"color:#cda\">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>\n"
+               "<p class=\"footer-disc\">※本ツールは東京23区の公式公開情報（" + CHECK_RANGE + "確認）に基づく目安です。制度の適用と最終的な判断は各区が行います。<strong style=\"color:#cda\"><br>&copy; 2026 Noe結婚設計室</p>\n"
                "</div></footer>")
 
 FOOTER_ART = FOOTER_TOOL.replace("本ツールは", "本記事は")

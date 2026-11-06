@@ -412,7 +412,7 @@ table.cmp td.n{text-align:right;font-weight:700;color:#7c2e42;white-space:nowrap
 </div></div>
 
 <article>
-<p class="pr-notice">本ページはプロモーションを含みます。ページ内に広告主から成果報酬を受け取るリンクが含まれます。掲載している統計の数値と計算は、広告とは関係なく公表値にもとづいています。</p>
+<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">PR</p>
 <blockquote><strong>__LW__調査の育休取得率は、女性__LF__%・男性__LM__%です。</strong>令和5年10月〜令和6年9月に出産した人（男性は配偶者が出産した人）のうち、令和7年10月1日までに育休を始めた人の割合で、期間の長さは含みません。</blockquote>
 
 <h2 id="shiraberu">年度と業種を選ぶ</h2>

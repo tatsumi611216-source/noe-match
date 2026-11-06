@@ -353,7 +353,7 @@ __FAQ__
 </article>
 <footer><div class="footer-inner">
 <div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
-<p class="footer-disc">※本ツールは練馬区公式の公開資料（2026年8月23日確認）に基づく目安です。利用調整の最終判定は練馬区が行います。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+<p class="footer-disc">※本ツールは練馬区公式の公開資料（2026年8月23日確認）に基づく目安です。利用調整の最終判定は練馬区が行います。<br>&copy; 2026 Noe結婚設計室</p>
 </div></footer>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
 <script>

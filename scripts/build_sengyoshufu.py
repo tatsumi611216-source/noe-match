@@ -377,7 +377,7 @@ table.cmp td.n{text-align:right;font-weight:700;color:#7c2e42;white-space:nowrap
 </div></div>
 
 <article>
-<p class="pr-notice">本ページはプロモーションを含みます。ページ内に広告主から成果報酬を受け取るリンクが含まれます。掲載している統計の数値と計算は、広告とは関係なく公表値にもとづいています。</p>
+<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">PR</p>
 <blockquote><strong>__LATEST__年の専業主婦世帯の割合は__SHL__%です（専業主婦世帯__LS__万世帯・共働き世帯__LK__万世帯）。</strong>この割合は「専業主婦世帯 ÷（専業主婦世帯＋共働き世帯）」で、どちらも妻が64歳以下・夫が雇用者の世帯に限った数です。全世帯に占める割合ではありません。</blockquote>
 
 <h2 id="shiraberu">年を選ぶ</h2>

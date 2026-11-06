@@ -168,7 +168,6 @@ def main():
 </div></div>
 
 <article>
-<p class="pr-top">【PR】このページには広告（アフィリエイトリンク）が含まれます。</p>
 <blockquote>二人の<strong>16タイプ</strong>と<strong>生年月日</strong>を選ぶと、<strong>恋愛の相性度</strong>、<strong>二人の関係タイプ</strong>、<strong>すれ違いやすい点</strong>、<strong>距離が縮まる話し方</strong>を表示します。</blockquote>
 <div class="calc">
 {person('a', 'あなた')}

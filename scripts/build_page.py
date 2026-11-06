@@ -105,7 +105,7 @@ def build(slug, title, desc, lead, toc, body, faq, related, cta,
 <article>
 <h1>%(title)s</h1>
 <div class="byline"><span class="av">N</span><div>Noe編集部｜結婚まわりのお金と段取りを、公式データで整理するガイドです。<div class="up">公開：%(date)s（最終更新：%(date)s）</div></div></div>
-<p class="pr-notice">本記事はアフィリエイト広告を含みます。広告の有無にかかわらず、編集部が有益と判断した情報のみ掲載しています。</p>
+<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">PR</p>
 
 %(lead)s
 

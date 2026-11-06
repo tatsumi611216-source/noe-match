@@ -103,7 +103,7 @@ HEADER = """<header><div class="header-inner">
 
 FOOTER = """<footer><div class="footer-inner">
 <div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
-<p class="footer-disc"><strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+<p class="footer-disc"><br>&copy; 2026 Noe結婚設計室</p>
 </div></footer>
 <button id="top" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>"""
 
@@ -308,7 +308,6 @@ def page(slug, *, title, desc, og_title, og_desc, h1, hero_p, hero_img, emblem, 
 </div></div>
 
 <article>
-<p class="pr-top">【PR】このページには広告（アフィリエイトリンク）が含まれます。</p>
 {lead_html}
 <div class="calc">
 {form_html}

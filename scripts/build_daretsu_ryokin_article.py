@@ -201,7 +201,7 @@ HTML = """<!DOCTYPE html>
 <div class="breadcrumb"><a href="/">ホーム</a> ＞ <a href="/articles/">記事一覧</a> ＞ {H1}</div>
 <article>
 <h1>{TITLE}</h1>
-<p class="pr-notice">本ページはプロモーションを含みます。記事内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
+<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">PR</p>
 <div class="byline"><div class="av">N</div><div><strong><a href="/about.html" style="color:inherit;text-decoration:none">Noe編集部</a></strong><br>各自治体の公式ページを1件ずつ確認して作成しています。<div class="up">最終更新：{TODAY_JA} ｜ 著者：Noe編集部</div></div></div>
 
 <blockquote><strong>「こども誰でも通園制度は1時間300円」という説明をよく見かける。しかし実際に自治体の公式ページを開くと、そう書いていない自治体が半分近くある。</strong>東京23区と政令指定都市20市、あわせて{N}自治体の公式ページを{TODAY_JA}に確認した。料金は無償と1時間300円に大きく割れ、さらに「施設ごとに決める」としている自治体もあった。無償の自治体でも給食費は別にかかる。数字はすべて各自治体の公式ページから取っている。</blockquote>

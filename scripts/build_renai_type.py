@@ -169,7 +169,6 @@ def main():
 </div></div>
 
 <article>
-<p class="pr-top">【PR】このページには広告（アフィリエイトリンク）が含まれます。</p>
 <blockquote>直感で答えてください。<strong>あなたの恋愛タイプ</strong>、<strong>恋の強み</strong>、<strong>気をつけたいこと</strong>、<strong>相性のいいタイプ</strong>がわかります。</blockquote>
 <div class="calc">
 <p class="progress" id="prog">0 / 12 問</p>

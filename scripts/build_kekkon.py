@@ -90,7 +90,7 @@ FOOTER_TOOL = ("<footer><div class=\"footer-inner\">\n"
                "<a href=\"/privacy-policy.html\">プライバシー</a><a href=\"/disclaimer.html\">免責事項</a></div>\n"
                "<p class=\"footer-disc\">※本ツールは一都三県の各自治体および各都県の公式公開情報（" + CHECKED +
                "確認）にもとづく目安です。制度の適用と最終的な判断は各自治体が行います。"
-               "<strong style=\"color:#cda\">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>"
+               "<strong style=\"color:#cda\"><br>"
                "&copy; 2026 Noe結婚設計室</p>\n</div></footer>")
 
 FOOTER_ART = FOOTER_TOOL.replace("本ツールは", "本記事は")
@@ -385,7 +385,7 @@ label.f{display:block;font-size:.82rem;font-weight:700;color:#3a4148;margin:0 0 
 <article>
 <h1>結婚新生活支援 一都三県ナビ</h1>
 <p style="font-size:.78rem;color:#8a8f95;margin:6px 0 20px">""" + CHECKED + """に各自治体・各都県の公式ページで確認／対象は一都三県の""" + str(N_ALL) + """自治体</p>
-<p class="pr-notice">本ページはプロモーションを含みます。ページ内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
+<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">PR</p>
 
 <p>結婚に伴う住居費と引越費用の補助は、国の交付金を使って<strong>市区町村ごとに</strong>実施されています。同じ制度の名前でも、上限額・年齢・所得・対象になる費目・申請期間は自治体で違います。住む場所を決める前に見ておくと、金額がそのまま変わります。</p>
 <p>令和8年度から制度の名称は<strong>「結婚・妊娠・共育ての相談機会提供・支援プログラム」</strong>に変わり、講座の受講または相談が要件に加わりました。多くの自治体で夫婦の双方に必要です。</p>
@@ -653,7 +653,7 @@ ART_HTML = """<!DOCTYPE html>
 <article>
 <h1>結婚新生活支援の補助金、一都三県""" + str(N_ALL) + """自治体の上限額と条件</h1>
 <p style="font-size:.78rem;color:#8a8f95;margin:6px 0 20px">公開 """ + TODAY + """／出典は各自治体および各都県の公式ページ。""" + CHECKED + """に全件確認</p>
-<p class="pr-notice">本ページはプロモーションを含みます。記事内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
+<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">PR</p>
 """ + ART_BODY + """
 
 </article>

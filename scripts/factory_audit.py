@@ -55,7 +55,7 @@ def body_text(html):
     stripped = re.sub(r'<script.*?</script>|<style.*?</style>', '', html, flags=re.S)
     stripped = re.sub(r'<nav class="toc".*?</nav>', '', stripped, flags=re.S)
     # 冒頭の広告表記も全記事共通の定型文なので内容量には数えない
-    stripped = re.sub(r'<p class="pr-notice">.*?</p>', '', stripped, flags=re.S)
+    stripped = re.sub(r'<p class="pr-notice"[^>]*>.*?</p>', '', stripped, flags=re.S)
     # 中盤CTAも定型の訴求文であり内容量ではない（既存の記事末CTAは従来どおり数え、
     # 過去の計測値と比較できるようにしておく）
     stripped = re.sub(r'<div class="cta-mid">.*?</div>', '', stripped, flags=re.S)

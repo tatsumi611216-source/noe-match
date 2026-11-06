@@ -60,7 +60,7 @@ table.cmp td.n{{text-align:right;font-weight:700;color:#7c2e42;white-space:nowra
 <article>
 <h1>{h1}</h1>
 <p style="font-size:.78rem;color:#8a8f95;margin:6px 0 20px">公開 {today}／出典は公的統計。{checked}に各原典で確認</p>
-<p class="pr-notice">本ページはプロモーションを含みます。記事内に広告主から成果報酬を受け取るリンクが含まれます。掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>
+<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">PR</p>
 {body}
 <div style="border:1px solid #e3ddd3;border-radius:6px;padding:22px 24px;margin:32px 0;background:#faf8f5">
 <p style="font-size:.7rem;color:#999;margin:0 0 6px">PR</p>
@@ -82,7 +82,7 @@ table.cmp td.n{{text-align:right;font-weight:700;color:#7c2e42;white-space:nowra
 </div>
 <footer><div class="footer-inner">
 <div><a href="/">ホーム</a><a href="/articles/">記事一覧</a><a href="/about.html">運営者情報</a><a href="/privacy-policy.html">プライバシー</a><a href="/disclaimer.html">免責事項</a></div>
-<p class="footer-disc">※本記事は公的統計の公表値にもとづく整理です（{checked}確認）。統計は改定・更新されるため、引用の際は原典と公表年をご確認ください。<strong style="color:#cda">【PR】</strong>本サイトはアフィリエイト広告を含みます。<br>&copy; 2026 Noe結婚設計室</p>
+<p class="footer-disc">※本記事は公的統計の公表値にもとづく整理です（{checked}確認）。統計は改定・更新されるため、引用の際は原典と公表年をご確認ください。<br>&copy; 2026 Noe結婚設計室</p>
 </div></footer>
 <button id="top" onclick="scrollTo({{top:0,behavior:'smooth'}})">↑</button>
 </body>
