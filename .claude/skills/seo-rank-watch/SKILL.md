@@ -31,9 +31,10 @@ git -C C:\Users\tatsu\noe-match-local status --short
 ```
 - ブランチが main であること。他セッションの未コミット変更があっても**触らない・巻き込まない**。
 - `pull --ff-only` が失敗したとき（2026-11-04 改訂・CEO『推奨』・10/22〜11/2 に5回連続で止まったため）:
-  1. 未コミットの変更があれば触らずに、`git -C C:\Users\tatsu\noe-match-local pull --rebase --autostash origin main` で取り込む。ahead のコミット（他セッションの push 待ち）は残したままでよい。
-  2. rebase が衝突なく終わったら、通常どおり 1 以降を続ける。改善はローカルコミットまで。push できないとき（無人の実行・承認待ち）は、報告に「push 待ち（ahead n）」と書く。次に承認された push で一緒に本番へ出る。
-  3. 衝突したら `git rebase --abort` で元に戻し、何も改善せず、報告だけ書いて終わる（従来どおり）。
+  1. 未コミットの変更があるときは、他セッションが動いていないことを確かめてから `git -C C:\Users\tatsu\noe-match-local pull --rebase --autostash origin main` で取り込む。ahead のコミット（他セッションの push 待ち）は残したままでよい。
+  2. 実行後に必ず `git status --short` と `git stash list` を見る。`UU` などの未解決が無く、autostash も残っていないときだけ 1 以降を続ける。終了コード 0 だけで成功と判断しない（autostash の復元で衝突しても終了コードは 0 になる）。改善はローカルコミットまで。push できないとき（無人の実行・承認待ち）は、報告に「push 待ち（ahead n）」と書く。
+  3. rebase の途中で衝突したら `git rebase --abort` で元に戻す。「Applying autostash resulted in conflicts」が出たら abort は効かないので、衝突したファイルと stash を消さず、何も改善せず報告だけ書いて終わる。通信や認証の失敗でも同じく報告して終わる。
+  4. push の前に `git log origin/main..HEAD` を出す。自分のコミット以外があれば push せず報告する。他の ahead は別の承認で扱う。
 
 ### 1. 順位を測る
 ```
@@ -117,6 +118,7 @@ git commit -m "seo-rank-watch: <keyword> を改善（<改善の種類>）"
 git pull --rebase --autostash origin main
 git push origin main
 ```
+- `git pull --rebase --autostash` のあとは手順0と同じく `git status --short` と `git stash list` を確かめ、未解決か autostash が残っていれば push せず報告して終わる。`git log origin/main..HEAD` に自分のコミット以外があるときも push せず報告する。
 - 改善しなかった日も `agent/seo/*.json` と report.md はコミットする。
 - ページを変えたら公開を確認する: `gh run list --workflow "Deploy to Pages" --limit 3` で headSha が自分のコミットの run が success になるのを待ち、本番URLを取得して変更文言が入っていることを確かめる。発火していなければ `gh workflow run "Deploy to Pages" --ref main`。
 - **observing の語は nextReviewDate まで絶対に再改善しない。**

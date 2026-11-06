@@ -13,7 +13,7 @@ TEXT = {
     "with-seriousness-data": "数字だけでは決めきれない「この相手とどう進めるか」を、誰かと話しながら整理したいときは、占い師に相談する方法もあります。",
     "shougai-mikonritsu-data": "統計は社会全体の傾向で、自分の結婚の時期や進め方はまた別の話です。気持ちを誰かと話して整理したいときは、占い師に相談する方法もあります。",
     "hatsushon-nenmei-data": "平均の年齢はあくまで目安で、結婚のタイミングは人それぞれです。自分にとっての時期の考え方を話して整理したいときは、占い師に相談する方法もあります。",
-    "kekkon-madeno-kikan-data": "平均の交際期間と比べながら、今の相手との先のことを誰かと話して整理したいときは、占い師に相談する方法もあります。",
+    "kekkon-madeno-kikan-data": "交際期間の長さにかかわらず、今の相手との先のことを誰かと話して整理したいときは、占い師に相談する方法もあります。",
     "omiai-guide": "やり取りしている相手との相性や進め方を、第三者と話しながら整理したいときは、占い師に相談する方法もあります。",
     "pairs-women": "マッチングした相手との相性や、次にどう動くかを誰かと話して整理したいときは、占い師に相談する方法もあります。",
     "civil-servant-guide": "出会いの場が限られるなかで、自分に合う相手像を話しながら整理したいときは、占い師に相談する方法もあります。",
@@ -21,8 +21,7 @@ TEXT = {
     "app-plus-agency": "アプリにするか相談所にするかで迷う気持ちを、話しながら整理したいときは、占い師に相談する方法もあります。",
     "dousei-kekkon-hikaku": "同棲を始める前に、相手との相性や暮らし方の考え方を話して整理したいときは、占い師に相談する方法もあります。",
 }
-NOTICE = ('<p class="pr-notice">本ページはプロモーションを含みます。記事内に広告主から成果報酬を受け取るリンクが含まれます。'
-          '掲載内容は編集部の基準で作成しており、報酬の有無で評価を変えていません。</p>')
+NOTICE = ('<p class="pr-notice" style="font-size:10px;color:#6f747a;border:none;padding:0;margin:4px 0 0;line-height:1.4">本ページはプロモーションを含みます</p>')
 STYLE_INLINE =' style="background:#f7f5f2;border-left:2px solid #7c2e42;padding:20px 24px;margin:30px 0"'
 BTN_INLINE = ' style="display:inline-block;background:#7c2e42;color:#fff;font-weight:500;padding:11px 28px;text-decoration:none;font-size:.84rem"'
 
@@ -31,7 +30,7 @@ def block(slug, has_css):
     btn = '' if has_css else BTN_INLINE
     t = '' if has_css else ' style="margin:0 0 12px;font-size:.9rem;line-height:1.9"'
     return (f'<div class="cta-mid" id="aff-coconala-art"{box}>\n'
-            '<p class="cta-pr" style="font-size:10px;font-weight:400;color:#a0a4a9;margin:0 0 4px">PR</p>\n'
+            '<p class="cta-pr" style="font-size:10px;font-weight:400;color:#6f747a;margin:0 0 4px">PR</p>\n'
             f'<p class="cta-mid-t"{t}>{TEXT[slug]}{TAIL}</p>\n'
             f'<a class="cta-mid-b"{btn} href="{URL}" rel="nofollow sponsored noopener" target="_blank" '
             f"onclick=\"try{{gtag('event','aff_click',{{link_domain:'a8',page_slug:'/articles/{slug}/',adv:'coconala',place:'article'}});}}catch(e){{}}\">"
