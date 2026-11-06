@@ -1,0 +1,330 @@
+{
+ "chiyoda": {
+  "status": 200,
+  "moved": false,
+  "len": 11510,
+  "upd": [
+   "2026年7月31日"
+  ],
+  "missing": {},
+  "oldlabel": "ームページ「病児・病後児保育」（更新日2026年7月31日）"
+ },
+ "chuo": {
+  "status": 200,
+  "moved": false,
+  "len": 4757,
+  "upd": [
+   "2026年10月1日"
+  ],
+  "missing": {},
+  "oldlabel": "s/4862/goannnai.pdf （R8.3.16版）"
+ },
+ "minato": {
+  "status": 200,
+  "moved": false,
+  "len": 7031,
+  "upd": [
+   "2026年4月1日"
+  ],
+  "missing": {},
+  "oldlabel": "8808/goannnai.pdf （令和8年4月1日改訂）"
+ },
+ "shinjuku": {
+  "status": 200,
+  "moved": false,
+  "len": 3,
+  "upd": [],
+  "missing": {
+   "byoji_fee_label": [
+    "3,500円",
+    "2,000円",
+    "150円",
+    "500円",
+    "600円",
+    "4時間"
+   ],
+   "byoji_taisho": [
+    "6年生",
+    "1歳",
+    "1,000円"
+   ],
+   "byoji_jogen": [
+    "6名",
+    "4名",
+    "1日"
+   ]
+  },
+  "oldlabel": "・病後児保育の利用方法等のご案内」PDF（区公式サイト掲載）"
+ },
+ "bunkyo": {
+  "status": 200,
+  "moved": false,
+  "len": 5537,
+  "upd": [
+   "2026年11月4日"
+  ],
+  "missing": {},
+  "oldlabel": "文京区「病児・病後児保育」（更新日2026年7月17日）"
+ },
+ "taito": {
+  "status": 200,
+  "moved": false,
+  "len": 3,
+  "upd": [],
+  "missing": {
+   "byoji_fee_label": [
+    "1日",
+    "2,000円",
+    "2,300円",
+    "600円",
+    "300円"
+   ],
+   "byoji_genmen": [
+    "1日",
+    "1,300円",
+    "1,000円",
+    "300円"
+   ],
+   "byoji_taisho": [
+    "6か月"
+   ],
+   "byoji_jogen": [
+    "4名",
+    "1日",
+    "7日"
+   ]
+  },
+  "oldlabel": "後児保育室）」PDF（令和8年4月1日版・区公式サイト掲載）"
+ },
+ "sumida": {
+  "status": 200,
+  "moved": false,
+  "len": 6765,
+  "upd": [
+   "2026年4月1日"
+  ],
+  "missing": {
+   "byoji_taisho": [
+    "24時間"
+   ]
+  },
+  "oldlabel": "請書PDF: josei_20251201.pdf を併読）"
+ },
+ "koto": {
+  "status": 200,
+  "moved": false,
+  "len": 6488,
+  "upd": [
+   "2026年10月30日"
+  ],
+  "missing": {
+   "byoji_genmen": [
+    "15日",
+    "1,000円"
+   ]
+  },
+  "oldlabel": "PDF: 8riyouryouzyosei.pdf を併読）"
+ },
+ "shinagawa": {
+  "status": 200,
+  "moved": true,
+  "len": 6204,
+  "upd": [
+   "2026年10月30日"
+  ],
+  "missing": {
+   "byoji_genmen": [
+    "1,000円",
+    "1か月"
+   ]
+  },
+  "oldlabel": "t/pdf/hpg000033509_36.pdf を併読）"
+ },
+ "meguro": {
+  "status": 200,
+  "moved": false,
+  "len": 5981,
+  "upd": [
+   "2026年9月30日"
+  ],
+  "missing": {
+   "byoji_genmen": [
+    "1,000円"
+   ]
+  },
+  "oldlabel": "目黒区「病後児保育」"
+ },
+ "ota": {
+  "status": 200,
+  "moved": false,
+  "len": 4769,
+  "upd": [
+   "2026年6月15日"
+  ],
+  "missing": {},
+  "oldlabel": "大田区「病児・病後児保育利用案内」"
+ },
+ "setagaya": {
+  "status": 200,
+  "moved": false,
+  "len": 6052,
+  "upd": [
+   "2026年11月6日"
+  ],
+  "missing": {
+   "byoji_jogen": [
+    "7日間"
+   ]
+  },
+  "oldlabel": "世田谷区「病児・病後児保育 利用のご案内」"
+ },
+ "shibuya": {
+  "status": 200,
+  "moved": false,
+  "len": 3705,
+  "upd": [
+   "2026年4月8日"
+  ],
+  "missing": {},
+  "oldlabel": "渋谷区ポータル 病児・病後児保育制度"
+ },
+ "nakano": {
+  "status": 200,
+  "moved": true,
+  "len": 8115,
+  "upd": [
+   "2026年10月26日"
+  ],
+  "missing": {},
+  "oldlabel": "中野区 病児・病後児保育"
+ },
+ "suginami": {
+  "status": 200,
+  "moved": false,
+  "len": 6097,
+  "upd": [
+   "2026年8月25日"
+  ],
+  "missing": {
+   "byoji_fee_label": [
+    "2,500円"
+   ]
+  },
+  "oldlabel": "杉並区公式ホームページ 病児・病後児保育"
+ },
+ "toshima": {
+  "status": 200,
+  "moved": false,
+  "len": 3,
+  "upd": [],
+  "missing": {
+   "byoji_fee_label": [
+    "1日",
+    "2,200円",
+    "2,000円"
+   ],
+   "byoji_taisho": [
+    "1歳",
+    "10日",
+    "11か月"
+   ]
+  },
+  "oldlabel": "病児・病後児保育のご案内（PDF／豊島区子ども家庭部保育課）"
+ },
+ "kita": {
+  "status": 200,
+  "moved": false,
+  "len": 6326,
+  "upd": [
+   "2026年8月31日"
+  ],
+  "missing": {},
+  "oldlabel": "東京都北区「病児・病後児保育（施設型）のご案内」"
+ },
+ "arakawa": {
+  "status": 200,
+  "moved": false,
+  "len": 3085,
+  "upd": [
+   "2025年10月16日"
+  ],
+  "missing": {},
+  "oldlabel": "ments/2931/goannnai_1.pdf を併読）"
+ },
+ "itabashi": {
+  "status": 200,
+  "moved": false,
+  "len": 3,
+  "upd": [],
+  "missing": {
+   "byoji_fee_label": [
+    "1日",
+    "1,500円"
+   ],
+   "byoji_taisho": [
+    "1歳",
+    "11か月"
+   ],
+   "byoji_jogen": [
+    "7日"
+   ]
+  },
+  "oldlabel": "保育事業実施要綱（第4条・第7条・第8条・第9条・第10条）"
+ },
+ "nerima": {
+  "status": 200,
+  "moved": false,
+  "len": 3565,
+  "upd": [
+   "2026年10月22日"
+  ],
+  "missing": {
+   "byoji_genmen": [
+    "1,000円"
+   ]
+  },
+  "oldlabel": "o.jp/dl/shussan/byogoji.html ）"
+ },
+ "adachi": {
+  "status": 200,
+  "moved": false,
+  "len": 3024,
+  "upd": [
+   "2025年3月14日"
+  ],
+  "missing": {
+   "byoji_fee_label": [
+    "2,500円"
+   ],
+   "byoji_taisho": [
+    "1歳",
+    "6か月"
+   ]
+  },
+  "oldlabel": "kyo.jp/documents/2122/by.pdf ）"
+ },
+ "katsushika": {
+  "status": 200,
+  "moved": false,
+  "len": 6448,
+  "upd": [
+   "令和8年5月28日"
+  ],
+  "missing": {
+   "byoji_jogen": [
+    "7日"
+   ]
+  },
+  "oldlabel": "8/1007663/1008610/1008649.html"
+ },
+ "edogawa": {
+  "status": 200,
+  "moved": false,
+  "len": 1912,
+  "upd": [
+   "2026年4月9日"
+  ],
+  "missing": {},
+  "oldlabel": "児保育」（2026年4月9日更新・子ども家庭部子育て支援課）"
+ }
+}

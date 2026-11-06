@@ -3,3 +3,6 @@ __pycache__/
 .claude/worktrees/
 products/
 agent/product_drafts/
+
+# 再取得時の自治体PDF（公開リポジトリに載せない）
+agent/recheck/**/*.pdf
