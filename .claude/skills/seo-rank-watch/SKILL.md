@@ -30,7 +30,10 @@ git -C C:\Users\tatsu\noe-match-local pull --ff-only
 git -C C:\Users\tatsu\noe-match-local status --short
 ```
 - ブランチが main であること。他セッションの未コミット変更があっても**触らない・巻き込まない**。
-- pull が失敗したら何も改善せず、報告だけ書いて終わる。
+- `pull --ff-only` が失敗したとき（2026-11-04 改訂・CEO『推奨』・10/22〜11/2 に5回連続で止まったため）:
+  1. 未コミットの変更があれば触らずに、`git -C C:\Users\tatsu\noe-match-local pull --rebase --autostash origin main` で取り込む。ahead のコミット（他セッションの push 待ち）は残したままでよい。
+  2. rebase が衝突なく終わったら、通常どおり 1 以降を続ける。改善はローカルコミットまで。push できないとき（無人の実行・承認待ち）は、報告に「push 待ち（ahead n）」と書く。次に承認された push で一緒に本番へ出る。
+  3. 衝突したら `git rebase --abort` で元に戻し、何も改善せず、報告だけ書いて終わる（従来どおり）。
 
 ### 1. 順位を測る
 ```
