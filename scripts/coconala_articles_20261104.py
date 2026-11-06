@@ -21,7 +21,7 @@ TEXT = {
     "app-plus-agency": "アプリにするか相談所にするかで迷う気持ちを、話しながら整理したいときは、占い師に相談する方法もあります。",
     "dousei-kekkon-hikaku": "同棲を始める前に、相手との相性や暮らし方の考え方を話して整理したいときは、占い師に相談する方法もあります。",
 }
-NOTICE = ('<p class="pr-notice" style="font-size:10px;color:#6f747a;border:none;padding:0;margin:4px 0 0;line-height:1.4">本ページはプロモーションを含みます</p>')
+NOTICE = ('<p class="pr-notice" style="font-size:10px;color:#a0a4a9;border:none;padding:0;margin:4px 0 0;line-height:1.4">本ページはプロモーションを含みます</p>')
 STYLE_INLINE =' style="background:#f7f5f2;border-left:2px solid #7c2e42;padding:20px 24px;margin:30px 0"'
 BTN_INLINE = ' style="display:inline-block;background:#7c2e42;color:#fff;font-weight:500;padding:11px 28px;text-decoration:none;font-size:.84rem"'
 
@@ -30,7 +30,7 @@ def block(slug, has_css):
     btn = '' if has_css else BTN_INLINE
     t = '' if has_css else ' style="margin:0 0 12px;font-size:.9rem;line-height:1.9"'
     return (f'<div class="cta-mid" id="aff-coconala-art"{box}>\n'
-            '<p class="cta-pr" style="font-size:10px;font-weight:400;color:#6f747a;margin:0 0 4px">PR</p>\n'
+            '<p class="cta-pr" style="font-size:10px;font-weight:400;color:#a0a4a9;margin:0 0 4px">PR</p>\n'
             f'<p class="cta-mid-t"{t}>{TEXT[slug]}{TAIL}</p>\n'
             f'<a class="cta-mid-b"{btn} href="{URL}" rel="nofollow sponsored noopener" target="_blank" '
             f"onclick=\"try{{gtag('event','aff_click',{{link_domain:'a8',page_slug:'/articles/{slug}/',adv:'coconala',place:'article'}});}}catch(e){{}}\">"
