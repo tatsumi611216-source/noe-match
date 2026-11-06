@@ -112,6 +112,7 @@ noe-match 固有の注意:
 }
 ```
 コミットは**ファイルを明示指定**する（`git add -A` 禁止＝他セッションのWIPを吸う前科あり）:
+（pull の前に手順0-1 と同じ確認をし、`agent/ga4_archive/`・`agent/gsc_archive/` 以外の変更があれば autostash せず報告して終わる）
 ```
 git add agent/seo/watchwords.json agent/seo/rank-history.json agent/seo/improvement-log.json agent/seo/report.md <変更したページ>
 git commit -m "seo-rank-watch: <keyword> を改善（<改善の種類>）"
