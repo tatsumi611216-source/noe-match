@@ -49,6 +49,40 @@ https://www.noe-match.com/tools/ikukyu-shutokuritsu/          ← 新規公開�
 https://www.noe-match.com/articles/ikukyu-shutokuritsu-data/  ← 新規公開（育休取得率データ記事）
 ```
 
+#### 2026-11-06 実測（index_check --refresh・未インデックス34本のうち、上記と下記に未掲載だった分）
+
+※ Googleにまだ一度もクロールされていない11本を先に。後半16本は『クロール済み・未登録』で、過去に申請済みのものの再申請（効果は薄いので後回し）。1回20件まで。
+
+```
+https://www.noe-match.com/articles/app-ryokin-kaitei-data/
+https://www.noe-match.com/articles/app-taikai-riyu-data/
+https://www.noe-match.com/articles/bachelor-shinsa-data/
+https://www.noe-match.com/articles/daredemo-tsuen-yoyaku/
+https://www.noe-match.com/articles/ikukyu-kyufukin-data/
+https://www.noe-match.com/articles/sengyoshufu-wariai-data/
+https://www.noe-match.com/articles/tapple-kaiin-data/
+https://www.noe-match.com/articles/yakuzaishi-konkatsu/
+https://www.noe-match.com/tools/mbti-aisho-uranai/
+https://www.noe-match.com/tools/minato-senki/
+https://www.noe-match.com/tools/renai-type-shindan/
+https://www.noe-match.com/articles/20s-guide/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/30s-konkatsu/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/35s-strategy/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/40s-guide/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/app-plus-agency/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/faq-troubleshooting/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/fraud-statistics/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/late-20s-strategy/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/omiai-vs-pairs/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/pairs-men/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/price-comparison/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/safety-guide/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/student-guide/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/tapple-vs-pairs/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/with-vs-pairs/   ← クロール済み・未登録（再申請）
+https://www.noe-match.com/articles/with-women/   ← クロール済み・未登録（再申請）
+```
+
 #### 2026-10-05 新規・修正分
 
 ```
