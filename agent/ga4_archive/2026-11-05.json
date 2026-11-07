@@ -1,0 +1,409 @@
+{
+ "date": "2026-11-05",
+ "property": "properties/549779769",
+ "hosts": [
+  "www.noe-match.com",
+  "noe-match.com"
+ ],
+ "fetched_at": "2026-11-07T00:41:02",
+ "total": {
+  "sessions": 32,
+  "users": 27,
+  "views": 32
+ },
+ "total_by_page_sum": {
+  "sessions": 33,
+  "users": 28,
+  "views": 32
+ },
+ "by_page": [
+  {
+   "path": "/articles/dousei-kekkon-hikaku/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 3,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/members-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 3,
+   "users": 3,
+   "views": 3
+  },
+  {
+   "path": "/articles/price-comparison/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 3,
+   "users": 3,
+   "views": 3
+  },
+  {
+   "path": "/articles/sengyoshufu-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 3,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/tools/en-to-un/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3,
+   "users": 1,
+   "views": 4
+  },
+  {
+   "path": "/articles/age-data/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/age-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/daredemo-tsuen-ryokin/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kodomo-iryohi-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/soudanjo-hiyou-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 0,
+   "views": 1
+  },
+  {
+   "path": "/tools/hitorioya-shien-jichitai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/koisaihi-simulator/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/minato-senki/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 32,
+  "session_start": 32,
+  "first_visit": 25,
+  "user_engagement": 19,
+  "affv_hoken": 3,
+  "game_start": 3,
+  "scroll": 3,
+  "game_complete": 2,
+  "tool_result": 2,
+  "affv_soudanjo": 1,
+  "affv_youbride": 1,
+  "click": 1,
+  "file_download": 1
+ },
+ "clicks": [
+  {
+   "path": "/articles/tomobataraki-wariai-data/",
+   "linkId": "",
+   "linkDomain": "gender.go.jp",
+   "linkUrl": "https://www.gender.go.jp/about_danjo/whitepaper/r08/zentai/html/honpen/csv/zuhyo00-05.csv",
+   "count": 1
+  }
+ ],
+ "aff_views": [
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "event": "affv_hoken",
+   "count": 2
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "event": "affv_soudanjo",
+   "count": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/tools/hitorioya-shien-jichitai/",
+   "event": "affv_hoken",
+   "count": 1
+  }
+ ],
+ "aff_session_clicks": [],
+ "tool_events": [
+  {
+   "path": "/tools/en-to-un/",
+   "event": "game_start",
+   "count": 3
+  },
+  {
+   "path": "/tools/en-to-un/",
+   "event": "game_complete",
+   "count": 2
+  },
+  {
+   "path": "/tools/koisaihi-simulator/",
+   "event": "tool_result",
+   "count": 2
+  }
+ ],
+ "by_source": [
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 11
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 8
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 7
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 6
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/articles/members-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 3
+  },
+  {
+   "landing": "/articles/price-comparison",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 3
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/age-data",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/dousei-kekkon-hikaku",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/sengyoshufu-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/en-to-un",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/sangokea-ryokin",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/age-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/daredemo-tsuen-ryokin",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/hatsushon-nenmei-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kodomo-iryohi-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shougai-mikonritsu-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/soudanjo-hiyou-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/success-rate-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/tomobataraki-wariai-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/with-seriousness-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/hitorioya-shien-jichitai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/koisaihi-simulator",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/minato-senki",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sengyoshufu-wariai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ]
+}
