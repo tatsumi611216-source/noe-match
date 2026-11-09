@@ -1,5 +1,68 @@
 # Agent Run Log
 
+## 2026-11-09　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本 / ツール是正1本
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（70日前）→ **30日超 → ASPゲート閉鎖**。
+
+⚠️ ASP成果データが未供給（70日間）。今回の記事生成はCTA計測なしで行われる。新規アフィリエイトCTAは設置しない。
+
+→ run 終了後、人手による `agent/asp_results.md` の更新を依頼（後述）。
+
+### Phase 1 打順チェック
+
+- batting_order 3: `tools/tomobataraki-wariai` — cluster=統計、制限なし ✓ → ゲートへ進む
+
+### Phase 2 需要ゲート
+
+`python3 scripts/tool_gate.py "共働き 割合" "共働き世帯 推移"` → 全クエリ **CHECK**（理由：SERPまたはサジェストの取得に失敗。クラウド環境のアウトバウンド制限によりHTTPS接続がブロック）。
+
+AGENT.md 規則「ネットワーク不通などでゲートが動かないときは作らない」に従い、**新規記事生成を中止**。
+
+### Phase 3 打順が尽きたとき / silent_scan（寄せ直し）
+
+`agent/silent_articles.md`（計測期間：2026-10-09〜2026-11-06、表示ゼロ116本）より「無修飾ヘッドターム」最優先カテゴリから表示ゼロ継続2本を選定・2回目のリライト実施：
+
+**① articles/age-data**（2回目のリライト）
+- 旧：`マッチングアプリの年齢層｜公表アプリと非公表アプリ`
+- 新：`Omiai・Pairs・withの年齢構成｜30代が確認すべき公表状況と実数【2026年版】`
+- 理由：1回目リライト（2026-08-23）後も表示ゼロ継続。「Omiai・Pairs・with」のアプリ名固有修飾と「30代」属性を前置し、婚活前の確認クエリに寄せた
+- 更新：title・h1・meta description・og・twitter・JSON-LD headline/dateModified・byline（2026年11月9日）・sitemap lastmod
+
+**② articles/members-data**（2回目のリライト）
+- 旧：`マッチングアプリの男女比はどれくらい？会員数より先に見るべき数字【2026年版】`
+- 新：`Pairsの男女比は公表されていない｜婚活で会員数より先に確認すべき数字【2026年版】`
+- 理由：1回目リライト（2026-07-30）後も表示ゼロ継続。「Pairs」のアプリ名固有修飾と「非公表」という逆説的切り口で、婚活前調査クエリに寄せた
+- 更新：title・h1・meta description・og・twitter・JSON-LD headline/dateModified・byline（2026年11月9日）・sitemap lastmod
+
+- `rewrites.json` に2件記録 ✓
+- `sitemap_sync.py` で lastmod 更新 ✓（2件：age-data・members-data → 2026-11-09）
+
+### Phase 4 ツール是正（打順が尽きたとき手順2）
+
+`agent/quality_backlog_tools.md` より title違反1本を是正：
+
+**tools/seikatsuhi-simulator**: title 33字 → 32字に短縮（「分担**を**シミュレーション」→「分担シミュレーション」、を削除で1字短縮）
+- `quality_backlog_tools.md` の当該エントリから title 違反を削除（LINE CTA 未設置は残存課題として継続）
+
+### locks/observing 確認
+
+- locks[]：全エントリが2026-10-06〜2026-11-06期限 → すべて **EXPIRED** ✓（一切編集していない）
+- observing：`agent/seo/improvement-log.json` の observing フィールドは現在空 ✓
+
+### factory_audit
+
+`python3 scripts/factory_audit.py` → **新規FAIL: 0本 / ツール新規FAIL: 0本** ✓
+
+既知バックログ: 記事27本・ツール19本（変動なし）。
+
+### ASP更新依頼
+
+⚠️ `agent/asp_results.md` の `last_updated` が 2026-08-31（70日経過）。次回ラン前に人手での更新をお願いします。ASP管理画面（a8.net・afb）の当月成果数値を `agent/asp_results.md` に貼り付け、`last_updated` を今日の日付に更新してください。
+
+---
+
 ## 2026-11-02　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本
 
 ### Phase 4-0 計測ゲート（ASP）
