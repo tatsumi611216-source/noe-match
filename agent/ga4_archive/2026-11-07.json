@@ -1,0 +1,328 @@
+{
+ "date": "2026-11-07",
+ "property": "properties/549779769",
+ "hosts": [
+  "www.noe-match.com",
+  "noe-match.com"
+ ],
+ "fetched_at": "2026-11-09T00:37:19",
+ "total": {
+  "sessions": 17,
+  "users": 15,
+  "views": 25
+ },
+ "total_by_page_sum": {
+  "sessions": 21,
+  "users": 20,
+  "views": 25
+ },
+ "by_page": [
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/dousei-kekkon-hikaku/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/first-date-spot/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/fraud-detection/",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/fraud-statistics/",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-uchiiwai-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-app-ranking/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 3
+  },
+  {
+   "path": "/articles/pair-ring-guide/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/price-comparison/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shinseiji-menkai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/en-to-un/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/minato-senki/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 25,
+  "session_start": 17,
+  "user_engagement": 15,
+  "first_visit": 13,
+  "tool_result": 3,
+  "affv_hanayume": 1,
+  "scroll": 1
+ },
+ "clicks": [],
+ "aff_views": [
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "event": "affv_hanayume",
+   "count": 1
+  }
+ ],
+ "aff_session_clicks": [],
+ "tool_events": [
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "event": "tool_result",
+   "count": 3
+  }
+ ],
+ "by_source": [
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 7
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 4
+  },
+  {
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/dousei-kekkon-hikaku",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/first-date-spot",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/fraud-statistics",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-uchiiwai-guide",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/matching-app-ranking",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/matching-app-ranking",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/pair-ring-guide",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shinseiji-menkai",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/en-to-un",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/fugenbyo-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/nyuseki-calendar",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sengyoshufu-wariai",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sengyoshufu-wariai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ]
+}
