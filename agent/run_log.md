@@ -1,5 +1,78 @@
 # Agent Run Log
 
+## 2026-11-12　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / Phase2タイトルCTR最適化2本 / カニバリゼーション修正1本 / 寄せ直し2本
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（73日前）→ **30日超 → ASPゲート閉鎖**。
+
+⚠️ ASP成果データが未供給（73日間）。今回の記事生成はCTA計測なしで行われる。新規アフィリエイトCTAは設置しない。
+
+### Phase 1 打順チェック
+
+- batting_order 3: `tools/tomobataraki-wariai` — cluster=統計、制限なし ✓ → ゲートへ進む
+
+### Phase 2 需要ゲート
+
+`python3 scripts/tool_gate.py` → 全対象クエリ **CHECK**（理由：SERPまたはサジェストの取得に失敗。クラウド環境のアウトバウンド制限によりHTTPS接続がブロック）。
+
+AGENT.md 規則「ネットワーク不通などでゲートが動かないときは作らない」に従い、**新規記事生成を中止**。
+
+### Phase 2 GSC強化（タイトルCTR最適化）
+
+GSC期間：2026-10-09〜2026-11-06。10位以内・CTR<2%・インプレッション≧10 の候補22件から優先2本を選定・タイトル変更実施（locks確認済・with-seriousness-dataは2026-11-06期限EXPIRED）。
+
+**① articles/with-seriousness-data**（タイトルCTR最適化）
+- 旧：`withの成婚率・結婚率は公表されていない｜会員数のみ公表`（29字）
+- 新：`with で結婚できる？｜成婚率は非公表・代わりに確認すべき数字`（32字）
+- 対象クエリ：「with 結婚」pos 8.7・89インプレ・CTR 0%、「with 成婚」pos 6.8・44インプレ・CTR 0%
+- 更新：title・og:title・twitter:title・JSON-LD dateModified→2026-11-12・sitemap lastmod
+
+**② tools/sengyoshufu-wariai**（タイトルCTR最適化）
+- 旧：`専業主婦の割合の推移｜1985〜2025年を年別に調べる`（28字）
+- 新：`専業主婦の割合を年代別に調べる｜1985〜2025年の推移`（29字）
+- 対象クエリ：「専業主婦 割合 年代別」pos 9.9・41インプレ・CTR 0%
+- 更新：title・og:title・twitter:title・JSON-LD dateModified→2026-11-12・sitemap lastmod（手動）
+
+### Phase 2 GSC強化（カニバリゼーション修正）
+
+5件の実カニバリゼーションを検出。3件（夫源病チェックシリーズ）はobservingのため非対応。1件を修正：
+
+**articles/konkatsu-roadmap → articles/kekkon-madeno-kikan-data**（内部リンク追加）
+- クエリ：「マッチング アプリ 結婚 まで の 期間」でkonkatsu-roadmap pos 16.0、kekkon-madeno-kikan-data pos 13.0 が競合
+- 修正：konkatsu-roadmap の「平均成婚期間」段落に kekkon-madeno-kikan-data への内部リンクを追加
+- JSON-LD dateModified→2026-11-12・sitemap lastmod更新
+
+### Phase 3 silent_scan（寄せ直し）
+
+`agent/silent_articles.md`（計測期間：2026-10-09〜2026-11-06、表示ゼロ116本）より「無修飾ヘッドターム」最優先カテゴリから未リライト2本を選定（前回10/26: privacy-protection・renkatsu-vs-konkatsu、前々回10/19: faq-troubleshooting・free-vs-paid を除外）：
+
+**① articles/app-plus-agency**（寄せ直し・30代属性固有修飾）
+- 旧：`結婚相談所に入らなくていい人の条件｜アプリだけで足りるかの判断基準【2026年版】`（41字）
+- 新：`30代婚活｜相談所なしでアプリだけで済む人の判断基準【2026年版】`（33字）
+- 導入：「30代前半・費用を抑えたい人が相談所に踏み切る必要があるかは」と属性明示の一文を追加
+- JSON-LD dateModified→2026-11-12・sitemap lastmod
+
+**② articles/success-stories**（寄せ直し・20代後半女性固有修飾）
+- 旧：`看護師・会社員がPairs・Omiaiで結婚した体験談｜成婚まで何ヶ月かかったか`（40字）
+- 新：`20代後半女性がPairsで結婚した体験談｜成婚まで何ヶ月か【2026年版】`（34字）
+- 導入：「20代後半女性の体験談を中心に構成」と対象属性を明示する一文を追加
+- JSON-LD dateModified→2026-11-12・sitemap lastmod
+
+- `sitemap_sync.py` で lastmod 更新 ✓（4件）+ sengyoshufu-wariai 手動更新 ✓
+
+### factory_audit
+
+`python3 scripts/factory_audit.py` → **新規FAIL: 0本 / ツール新規FAIL: 0本** ✓
+
+既知バックログ: 記事27本・ツール19本（変動なし）。
+
+### ASP更新依頼
+
+⚠️ `agent/asp_results.md` の `last_updated` が 2026-08-31（73日経過）。次回ラン前に人手での更新をお願いします。ASP管理画面（a8.net・afb）の当月成果数値を `agent/asp_results.md` に貼り付け、`last_updated` を今日の日付に更新してください。
+
+---
+
 ## 2026-11-09　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本 / ツール是正1本
 
 ### Phase 4-0 計測ゲート（ASP）
