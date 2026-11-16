@@ -1,0 +1,335 @@
+{
+ "date": "2026-11-14",
+ "property": "properties/549779769",
+ "hosts": [
+  "www.noe-match.com",
+  "noe-match.com"
+ ],
+ "fetched_at": "2026-11-16T00:50:44",
+ "total": {
+  "sessions": 17,
+  "users": 13,
+  "views": 21
+ },
+ "total_by_page_sum": {
+  "sessions": 21,
+  "users": 17,
+  "views": 21
+ },
+ "by_page": [
+  {
+   "path": "/articles/pairs-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 3,
+   "users": 1,
+   "views": 3
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/appkon-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/birthday-aishou-renai/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-chokin-mokuhyou/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-madeno-kikan-data/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/kekkon-madeno-kikan-data/",
+   "channel": "Unassigned",
+   "source": "(not set)",
+   "sessions": 1,
+   "users": 1,
+   "views": 0
+  },
+  {
+   "path": "/articles/kodomo-iryohi-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/konkatsu-party-guide/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/nashikon-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/articles/nashikon-data/",
+   "channel": "Unassigned",
+   "source": "(not set)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shikijo-erabi-guide/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 0,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/daredemo-tsuen-jichitai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 21,
+  "session_start": 17,
+  "first_visit": 12,
+  "user_engagement": 10,
+  "affv_bachelor": 1,
+  "affv_hoken": 1,
+  "affv_oisix": 1,
+  "saigenbyo_complete": 1,
+  "saigenbyo_mode_switch": 1,
+  "saigenbyo_start": 1,
+  "scroll": 1,
+  "tool_result": 1
+ },
+ "clicks": [],
+ "aff_views": [
+  {
+   "path": "/articles/pairs-guide/",
+   "event": "affv_bachelor",
+   "count": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "event": "affv_hoken",
+   "count": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "event": "affv_oisix",
+   "count": 1
+  }
+ ],
+ "aff_session_clicks": [],
+ "tool_events": [
+  {
+   "path": "/tools/daredemo-tsuen-jichitai/",
+   "event": "tool_result",
+   "count": 1
+  }
+ ],
+ "by_source": [
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 7
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 3
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 3
+  },
+  {
+   "channel": "Unassigned",
+   "source": "(not set)",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/articles/pairs-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 3
+  },
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "",
+   "channel": "Unassigned",
+   "source": "(not set)",
+   "sessions": 1
+  },
+  {
+   "landing": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/appkon-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/birthday-aishou-renai",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-chokin-mokuhyou",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kekkon-madeno-kikan-data",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/kodomo-iryohi-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/konkatsu-party-guide",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/nashikon-data",
+   "channel": "Unassigned",
+   "source": "(not set)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/nashikon-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shougai-mikonritsu-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/with-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/daredemo-tsuen-jichitai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/saigenbyo-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ]
+}
