@@ -1,0 +1,304 @@
+{
+ "date": "2026-11-15",
+ "property": "properties/549779769",
+ "hosts": [
+  "www.noe-match.com",
+  "noe-match.com"
+ ],
+ "fetched_at": "2026-11-17T03:28:58",
+ "total": {
+  "sessions": 14,
+  "users": 13,
+  "views": 13
+ },
+ "total_by_page_sum": {
+  "sessions": 14,
+  "users": 13,
+  "views": 13
+ },
+ "by_page": [
+  {
+   "path": "/articles/first-date-guide/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/konkatsu-party-guide/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/matching-josei-cost-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/nyuseki-2027-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/price-comparison/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shougai-mikonritsu-data/",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/hitorioya-shien-jichitai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/suhi-kekkon-uranai/",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "session_start": 14,
+  "page_view": 13,
+  "first_visit": 12,
+  "user_engagement": 10,
+  "tool_result": 3,
+  "aff_click": 1,
+  "affv_3ahe0q": 1,
+  "affv_hoken": 1,
+  "affv_soudanjo": 1,
+  "affv_youbride": 1,
+  "click": 1,
+  "scroll": 1,
+  "uranai_complete": 1,
+  "uranai_start": 1
+ },
+ "clicks": [
+  {
+   "path": "/articles/konkatsu-party-guide/",
+   "linkId": "aff-2kabei",
+   "linkDomain": "px.a8.net",
+   "linkUrl": "https://px.a8.net/svt/ejp?a8mat=4B8B4Q+2KABEI+17R0+TUGK2",
+   "count": 1
+  }
+ ],
+ "aff_views": [
+  {
+   "path": "/articles/with-seriousness-data/",
+   "event": "affv_soudanjo",
+   "count": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/tools/hitorioya-shien-jichitai/",
+   "event": "affv_hoken",
+   "count": 1
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "event": "affv_3ahe0q",
+   "count": 1
+  }
+ ],
+ "aff_session_clicks": [],
+ "tool_events": [
+  {
+   "path": "/tools/hitorioya-shien-jichitai/",
+   "event": "tool_result",
+   "count": 2
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "event": "tool_result",
+   "count": 1
+  },
+  {
+   "path": "/tools/suhi-kekkon-uranai/",
+   "event": "uranai_complete",
+   "count": 1
+  },
+  {
+   "path": "/tools/suhi-kekkon-uranai/",
+   "event": "uranai_start",
+   "count": 1
+  }
+ ],
+ "by_source": [
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 4
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 3
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/articles/with-seriousness-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2
+  },
+  {
+   "landing": "(not set)",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/first-date-guide",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/konkatsu-party-guide",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/matching-josei-cost-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/nyuseki-2027-guide",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/price-comparison",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/shougai-mikonritsu-data",
+   "channel": "Organic Search",
+   "source": "openai",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/hitorioya-shien-jichitai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/hoikuen-tensu-nerima",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/konkatsu-type-shindan",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/suhi-kekkon-uranai",
+   "channel": "Unassigned",
+   "source": "openai",
+   "sessions": 1
+  }
+ ]
+}
