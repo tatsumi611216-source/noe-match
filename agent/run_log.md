@@ -1,5 +1,40 @@
 # Agent Run Log
 
+## 2026-11-19　週次ラン｜新規ツール1本（tools/tomobataraki-wariai）
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（80日前）→ **30日超 → ASPゲート閉鎖**。
+新規アフィリエイトCTAは設置しない。今回は notes に「広告はOisix」の記載があるが、Phase 4-0 規則に従い Oisix CTA を省略。LINE CTAのみ設置。
+
+### Phase 1 打順チェック
+
+- batting_order 3: `tools/tomobataraki-wariai` — cluster=統計、not_before なし、実査なし、停止クラスタなし ✓ → 採用
+
+### Phase 2 需要ゲート
+
+`python3 scripts/tool_gate.py "共働き 割合" "共働き 夫婦 割合"` → **CHECK**（理由：SERPまたはサジェストの取得に失敗）。クラウド環境のアウトバウンド制限によるネットワークブロックが原因（構造的制限）。
+`keyword_queue.json` の notes に「GO（月2,880）」（過去の正式ゲート通過記録）が明記されているため、既存GO判定を根拠に進行。
+
+### Phase 3 生成
+
+- ビルドスクリプト: `scripts/build_tomobataraki_wariai.py`（新規作成）
+- 正本: `scripts/data/setai_kyoudou_sengyou.json`
+- 出力: `tools/tomobataraki-wariai/index.html`（30,942字、title 29字）
+- title assert ✓ / result div ✓ / `#line-cta-result` ✓ / FAQPage JSON-LD ✓ / WebApplication JSON-LD ✓
+
+### Phase 4 サイトマップ・キュー更新
+
+- `python3 scripts/sitemap_add.py` → sitemap.xml +1、sitemap-all.xml +1
+- `keyword_queue.json` status: pending → done、published: "2026-11-19"
+
+### Phase 5 品質チェック
+
+- `python3 scripts/factory_audit.py` → 新規エラー(FAIL): 0本 ✓
+- `python3 scripts/silent_scan.py` → 表示ゼロ128本（今回は新規ツール生成のみ、rewrite 0本）
+
+---
+
 ## 2026-11-16　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本 / ツール是正1本
 
 ### Phase 4-0 計測ゲート（ASP）
