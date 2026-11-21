@@ -1,0 +1,643 @@
+{
+ "date": "2026-11-19",
+ "property": "properties/549779769",
+ "hosts": [
+  "www.noe-match.com",
+  "noe-match.com"
+ ],
+ "fetched_at": "2026-11-21T02:00:29",
+ "total": {
+  "sessions": 39,
+  "users": 33,
+  "views": 52
+ },
+ "total_by_page_sum": {
+  "sessions": 44,
+  "users": 38,
+  "views": 52
+ },
+ "by_page": [
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 4,
+   "users": 4,
+   "views": 4
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 2,
+   "users": 1,
+   "views": 3
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2,
+   "users": 1,
+   "views": 4
+  },
+  {
+   "path": "/articles/sengyoshufu-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 2,
+   "views": 4
+  },
+  {
+   "path": "/articles/success-rate-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 0
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Referral",
+   "source": "service.smt.docomo.ne.jp",
+   "sessions": 2,
+   "users": 1,
+   "views": 8
+  },
+  {
+   "path": "/articles/daredemo-tsuen-ryokin/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/ikukyu-fuufu-doji/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/ikukyu-fuufu-doji/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/nashikon-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/nurse-konkatsu-soudanjo/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/nyuseki-2027-guide/",
+   "channel": "Organic Social",
+   "source": "tiktok.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/omiai-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/pairs-women/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/shinseiji-menkai/",
+   "channel": "Unassigned",
+   "source": "(not set)",
+   "sessions": 1,
+   "users": 1,
+   "views": 0
+  },
+  {
+   "path": "/articles/with-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/zexy-enmusubi-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/aisho-uranai/",
+   "channel": "Unassigned",
+   "source": "threads",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/minato-senki/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/minato-senki/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/minato-senki/",
+   "channel": "Unassigned",
+   "source": "note",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/seikatsuhi-simulator/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/soudanjo-simulator/",
+   "channel": "Unassigned",
+   "source": "x",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 52,
+  "session_start": 36,
+  "user_engagement": 31,
+  "first_visit": 28,
+  "tool_result": 10,
+  "click": 5,
+  "scroll": 5,
+  "tool_calc": 5,
+  "file_download": 3,
+  "affv_youbride": 2,
+  "game_complete": 2,
+  "garugaru_complete": 2,
+  "affv_hoken": 1,
+  "affv_result": 1,
+  "affv_soudanjo": 1,
+  "affv_youbride_2": 1,
+  "game_start": 1
+ },
+ "clicks": [
+  {
+   "path": "/articles/sengyoshufu-wariai-data/",
+   "linkId": "",
+   "linkDomain": "gender.go.jp",
+   "linkUrl": "https://www.gender.go.jp/about_danjo/whitepaper/r08/zentai/html/honpen/csv/zuhyo00-05.csv",
+   "count": 3
+  },
+  {
+   "path": "/about.html",
+   "linkId": "",
+   "linkDomain": "note.com",
+   "linkUrl": "https://note.com/hachimitsu88812",
+   "count": 2
+  }
+ ],
+ "aff_views": [
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "event": "affv_soudanjo",
+   "count": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/articles/hatsushon-nenmei-data/",
+   "event": "affv_youbride_2",
+   "count": 1
+  },
+  {
+   "path": "/articles/with-guide/",
+   "event": "affv_youbride",
+   "count": 1
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "event": "affv_result",
+   "count": 1
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "event": "affv_hoken",
+   "count": 1
+  }
+ ],
+ "aff_session_clicks": [],
+ "tool_events": [
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "event": "tool_calc",
+   "count": 4
+  },
+  {
+   "path": "/tools/hoikuen-tensu-nerima/",
+   "event": "tool_result",
+   "count": 3
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "event": "tool_result",
+   "count": 3
+  },
+  {
+   "path": "/tools/sangokea-ryokin/",
+   "event": "tool_result",
+   "count": 3
+  },
+  {
+   "path": "/tools/minato-senki/",
+   "event": "game_complete",
+   "count": 2
+  },
+  {
+   "path": "/tools/minato-senki/",
+   "event": "game_start",
+   "count": 1
+  },
+  {
+   "path": "/tools/seikatsuhi-simulator/",
+   "event": "tool_calc",
+   "count": 1
+  },
+  {
+   "path": "/tools/seikatsuhi-simulator/",
+   "event": "tool_result",
+   "count": 1
+  }
+ ],
+ "by_source": [
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 10
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 8
+  },
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 7
+  },
+  {
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 4
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2
+  },
+  {
+   "channel": "Referral",
+   "source": "service.smt.docomo.ne.jp",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "channel": "Organic Social",
+   "source": "tiktok.com",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "(not set)",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "note",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "threads",
+   "sessions": 1
+  },
+  {
+   "channel": "Unassigned",
+   "source": "x",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 3
+  },
+  {
+   "landing": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/hatsushon-nenmei-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/sengyoshufu-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/nyuseki-calendar",
+   "channel": "Referral",
+   "source": "service.smt.docomo.ne.jp",
+   "sessions": 2
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Unassigned",
+   "source": "(not set)",
+   "sessions": 1
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "(not set)",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/daredemo-tsuen-ryokin",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/hatsushon-nenmei-data",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/ikukyu-fuufu-doji",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/ikukyu-fuufu-doji",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/nashikon-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/nurse-konkatsu-soudanjo",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/nyuseki-2027-guide",
+   "channel": "Organic Social",
+   "source": "tiktok.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/omiai-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/pairs-women",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/success-rate-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/with-guide",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/zexy-enmusubi-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/aisho-uranai",
+   "channel": "Unassigned",
+   "source": "threads",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/hoikuen-tensu-nerima",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/minato-senki",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/minato-senki",
+   "channel": "Unassigned",
+   "source": "note",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/nyuseki-calendar",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sangokea-ryokin",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/seikatsuhi-simulator",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/sengyoshufu-wariai",
+   "channel": "AI Assistant",
+   "source": "chatgpt.com",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/soudanjo-simulator",
+   "channel": "Unassigned",
+   "source": "x",
+   "sessions": 1
+  }
+ ]
+}
