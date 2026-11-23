@@ -1,5 +1,71 @@
 # Agent Run Log
 
+## 2026-11-23　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本 / ツール是正1本
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（84日前）→ **30日超 → ASPゲート閉鎖**。
+
+⚠️ ASP成果データが未供給（84日間）。今回の記事生成はCTA計測なしで行われる。新規アフィリエイトCTAは設置しない。
+
+### Phase 1 打順チェック
+
+- batting_order 3: `tools/tomobataraki-wariai` — cluster=統計、not_before なし、実査なし ✓ → ゲートへ進む
+- batting_order 4: `articles/koukousei-iryohi-data` — cluster=制度、not_before なし → ゲートへ進む
+- batting_order 5: `articles/sangokea-tokyo-data` — cluster=A、not_before なし → ゲートへ進む
+- batting_order 6: `tools/heikin-shokon-nenrei` — notes に「新規実査あり」→ **実査待ち**としてスキップ
+- batting_order 7: `tools/rikonritsu-todofuken` — cluster=統計、not_before=2026-10-06（通過）→ ゲートへ進む
+- batting_order 8: `articles/jukunen-rikon-data` — cluster=統計、not_before=2026-10-06（通過）→ ゲートへ進む
+- batting_order 9: `articles/funin-josei-katsushika-data` — cluster=制度、not_before なし → ゲートへ進む
+
+### Phase 2 需要ゲート
+
+全6件に対して `python3 scripts/tool_gate.py` を実行 → **全クエリ CHECK**（理由：SERPまたはサジェストの取得に失敗。クラウド環境のアウトバウンド制限によりHTTPS接続がブロック）。
+
+AGENT.md 規則「ネットワーク不通などでゲートが動かないときは作らない（需要を実測できないものは作らない）」に従い、**新規記事生成を中止**。6件すべて「CHECK・人の目視待ち」として今回はスキップ。
+
+### Phase 3 寄せ直し（silent_scan）
+
+`python3 scripts/silent_scan.py` 再生成（計測対象244本 / 表示ゼロ127本）。無修飾ヘッドターム最優先カテゴリからリライト未実施2本を選定・実施：
+
+**① articles/price-comparison**（初回リライト）
+- 旧 title：`マッチングアプリ料金の比較表｜30代男性が婚活で選ぶ場合のコスパ【2026年版】`
+- 新 title：`30代会社員が婚活アプリの料金を比較する｜月額・年間コスト整理（2026年11月）`
+- 理由：無修飾ヘッドタームから「会社員」（職業修飾＝サイト外固有修飾）へ寄せ直し。title・og:title・twitter:title・JSON-LD headline・h1・intro 段落を同期。dateModified 2026-11-02→2026-11-23
+
+**② articles/safety-guide**（初回リライト）
+- 旧 title：`女性が初めてマッチングアプリを選ぶときの安全基準｜業者・サクラ対策4項目【2026年版】`
+- 新 title：`婚活を始める30代女性が安全なマッチングアプリを選ぶ基準｜業者・サクラ対策（2026年11月）`
+- 理由：「女性が初めて」から「30代女性・婚活開始」属性へ寄せ直し。title・og:title・twitter:title・JSON-LD headline・h1・intro 段落を同期。dateModified 2026-11-02→2026-11-23
+
+- `rewrites.json` に2件記録 ✓
+- `python3 scripts/sitemap_sync.py` 実行 → sitemap.xml・sitemap-all.xml 各2件更新 ✓
+
+### Phase 4 ツール是正（打順が尽きたとき手順2）
+
+`agent/quality_backlog_tools.md` より LINE CTA 未設置1本を是正：
+
+**tools/kosodate-shien-23ku**:「#result 内に LINE CTA が無い」違反を是正。`<p class="sub-num" id="srcNote">` の直後、result div 閉じタグの直前に `<section id="line-cta-result">` を追加（lin.ee/unbDsCR・gtag event "line_add_result"）。
+- `quality_backlog_tools.md` から当該エントリを削除 ✓
+- factory_audit: ツール既知バックログ 18 → 17 ✓
+
+### locks/observing 確認
+
+- locks[]：全エントリが2026-10-05〜2026-11-06期限 → すべて **EXPIRED** ✓
+- observing：`/tools/saigenbyo-check/` のみ（今回の操作対象外）
+
+### factory_audit
+
+`python3 scripts/factory_audit.py` → **構造エラー: 0件 / 新規FAIL: 0本 / ツール新規FAIL: 0本** ✓
+
+既知バックログ: 記事27本・ツール17本（ツール -1）
+
+### ASP更新依頼
+
+⚠️ `agent/asp_results.md` の `last_updated` が 2026-08-31（84日経過）。次回ラン前に人手での更新をお願いします。ASP管理画面（a8.net・afb）の当月成果数値を `agent/asp_results.md` に貼り付け、`last_updated` を今日の日付に更新してください。
+
+---
+
 ## 2026-11-16　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本 / ツール是正1本
 
 ### Phase 4-0 計測ゲート（ASP）

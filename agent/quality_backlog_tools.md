@@ -24,7 +24,6 @@
 | tools/kodomo-iryohi-jichitai | title 47字（サフィックス除く・32字以内） |
 | tools/koisaihi-simulator | title 34字（サフィックス除く・32字以内） ／ 結果領域（id="result…"）が見つからない |
 | tools/konkatsu-type-shindan | 結果領域（id="result…"）が見つからない |
-| tools/kosodate-shien-23ku | title 50字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
 | tools/nyuseki-calendar | title 48字（サフィックス除く・32字以内） ／ 結果領域（id="result…"）が見つからない |
 | tools/rikongo-seikatsuhi | title 35字（サフィックス除く・32字以内） ／ 結果領域（id="result…"）が見つからない |
 | tools/saigenbyo-check | title 34字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
