@@ -1,0 +1,458 @@
+{
+ "date": "2026-11-22",
+ "property": "properties/549779769",
+ "hosts": [
+  "www.noe-match.com",
+  "noe-match.com"
+ ],
+ "fetched_at": "2026-11-24T05:10:08",
+ "total": {
+  "sessions": 28,
+  "users": 22,
+  "views": 36
+ },
+ "total_by_page_sum": {
+  "sessions": 32,
+  "users": 26,
+  "views": 36
+ },
+ "by_page": [
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Referral",
+   "source": "service.smt.docomo.ne.jp",
+   "sessions": 3,
+   "users": 1,
+   "views": 8
+  },
+  {
+   "path": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/agency-vs-app/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sengyoshufu-wariai-data/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 1,
+   "views": 0
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/tools/sengyoshufu-wariai/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2,
+   "users": 2,
+   "views": 2
+  },
+  {
+   "path": "/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 0,
+   "views": 1
+  },
+  {
+   "path": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 0,
+   "views": 1
+  },
+  {
+   "path": "/articles/koninhiyou-guide/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/pairs-women/",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/rikon-junbi-jyunban/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/safety-guide/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/sango-satogaeri/",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/articles/soudanjo-hiyou-data/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/daredemo-tsuen-jichitai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/garugaru-check/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 2
+  },
+  {
+   "path": "/tools/kodomo-iryohi-jichitai/",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/konkatsu-type-shindan/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/mbti-aisho-uranai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  },
+  {
+   "path": "/tools/suhi-kekkon-uranai/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1,
+   "users": 1,
+   "views": 1
+  }
+ ],
+ "events": {
+  "page_view": 36,
+  "session_start": 27,
+  "first_visit": 20,
+  "user_engagement": 19,
+  "affv_oisix": 4,
+  "scroll": 4,
+  "tool_result": 4,
+  "uranai_complete": 4,
+  "affv_hanayume": 2,
+  "affv_hoken": 2,
+  "fugenbyo_complete": 2,
+  "fugenbyo_start": 2,
+  "uranai_start": 2,
+  "affv_soudanjo": 1,
+  "fugenbyo_mode_switch": 1,
+  "garugaru_complete": 1,
+  "garugaru_mode_switch": 1,
+  "garugaru_start": 1,
+  "saigenbyo_complete": 1,
+  "saigenbyo_start": 1
+ },
+ "clicks": [],
+ "aff_views": [
+  {
+   "path": "/tools/fugenbyo-check/",
+   "event": "affv_oisix",
+   "count": 2
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "event": "affv_hanayume",
+   "count": 2
+  },
+  {
+   "path": "/articles/sango-satogaeri/",
+   "event": "affv_oisix",
+   "count": 1
+  },
+  {
+   "path": "/articles/with-seriousness-data/",
+   "event": "affv_soudanjo",
+   "count": 1
+  },
+  {
+   "path": "/tools/fugenbyo-check/",
+   "event": "affv_hoken",
+   "count": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "event": "affv_hoken",
+   "count": 1
+  },
+  {
+   "path": "/tools/saigenbyo-check/",
+   "event": "affv_oisix",
+   "count": 1
+  }
+ ],
+ "aff_session_clicks": [],
+ "tool_events": [
+  {
+   "path": "/tools/mbti-aisho-uranai/",
+   "event": "uranai_complete",
+   "count": 3
+  },
+  {
+   "path": "/tools/nyuseki-calendar/",
+   "event": "tool_result",
+   "count": 3
+  },
+  {
+   "path": "/tools/daredemo-tsuen-jichitai/",
+   "event": "tool_result",
+   "count": 1
+  },
+  {
+   "path": "/tools/mbti-aisho-uranai/",
+   "event": "uranai_start",
+   "count": 1
+  },
+  {
+   "path": "/tools/suhi-kekkon-uranai/",
+   "event": "uranai_complete",
+   "count": 1
+  },
+  {
+   "path": "/tools/suhi-kekkon-uranai/",
+   "event": "uranai_start",
+   "count": 1
+  }
+ ],
+ "by_source": [
+  {
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 12
+  },
+  {
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 5
+  },
+  {
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 5
+  },
+  {
+   "channel": "Referral",
+   "source": "service.smt.docomo.ne.jp",
+   "sessions": 3
+  },
+  {
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 2
+  },
+  {
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  }
+ ],
+ "by_landing": [
+  {
+   "landing": "/tools/nyuseki-calendar",
+   "channel": "Referral",
+   "source": "service.smt.docomo.ne.jp",
+   "sessions": 3
+  },
+  {
+   "landing": "/",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 2
+  },
+  {
+   "landing": "/articles/sengyoshufu-wariai-data",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/nyuseki-calendar",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/saigenbyo-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 2
+  },
+  {
+   "landing": "/tools/sengyoshufu-wariai",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 2
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "(not set)",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/about.html",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/pairs-women",
+   "channel": "Organic Search",
+   "source": "bing",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/safety-guide",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/sango-satogaeri",
+   "channel": "Organic Search",
+   "source": "duckduckgo",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/soudanjo-hiyou-data",
+   "channel": "Direct",
+   "source": "(direct)",
+   "sessions": 1
+  },
+  {
+   "landing": "/articles/with-seriousness-data",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/daredemo-tsuen-jichitai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/fugenbyo-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/garugaru-check",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/kodomo-iryohi-jichitai",
+   "channel": "Organic Search",
+   "source": "yahoo",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/mbti-aisho-uranai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  },
+  {
+   "landing": "/tools/suhi-kekkon-uranai",
+   "channel": "Organic Search",
+   "source": "google",
+   "sessions": 1
+  }
+ ]
+}
