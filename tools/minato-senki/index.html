@@ -255,6 +255,8 @@ const JOBS=[
   {k:"senmon",n:"専門職",d:"看護師・士業など。年を取るほど強い",base:380,kb:0.6},
   {k:"kigyo",n:"起業家",d:"学生起業から。当たれば大きく、外せば廃業。振れ幅が最大",base:150,kb:0},
   {k:"yoru",n:"夜職",d:"若さと見た目で大きく稼ぐ。昼職の相手とは結婚しにくい",base:150,kb:-1.5},
+  {k:"geino",n:"芸能",d:"女優・タレント。知名度がそのまま年収になる。数字で見える値札を背負う仕事",base:180,kb:-0.8},
+  {k:"influ",n:"インフルエンサー",d:"フォロワー数が収入と値段を決める。バズれば跳ね、炎上すれば落ちる",base:190,kb:-0.5},
 ];
 let setup={stats:{...PRESETS[2].s},preset:2,value:"antei",job:"gakusei"};
 let G=null;
@@ -277,20 +279,26 @@ function derive(g){
   if(late&&g.job==="senmon") kekkon+=0.4;
   if(late&&g.job==="baito") kekkon-=0.3;
   if(g.job==="kigyo") kekkon+=((g.biz||0)-4)*(late?0.15:0.05);
+  if(g.job==="geino"&&(g.fame||0)>=7) kekkon-=0.4;
+  if(g.job==="influ"&&(g.fans||0)>=30) kekkon-=0.3;
   // 30代はさらにガクッと落ちる（美人ほどゆるやか）
   if(g.age>=30) kekkon-=(g.age-29)*0.25*decayMul(g);
   // 逆転の道：30歳以降も、仕事と資格の積み上げは結婚モテに効き続ける
   if(g.age>=30) kekkon+=Math.max(0,g.work-6)*0.15+Math.min(1.2,(g.quals||0)*0.2);
   kekkon=clamp(kekkon);
+  const q5=Math.min(g.quals||0,5); // 資格の年収寄与は5つで飽和
   let career;
   if(g.job==="yoru"){ const v=L*0.6+y*0.6; career=Math.round(J.base+v*v*6); }
   else if(g.job==="gakusei") career=Math.round(J.base+g.work*5);
   else if(g.planYoru&&g.age<20) career=Math.round(150+g.work*10);
   else if(g.job==="kigyo") career=Math.round(J.base+(g.biz||0)*(g.biz||0)*30);
-  else if(g.job==="baito") career=Math.round(J.base+g.work*12+g.intel*5+(g.quals||0)*(g.age>=30?20:10));
-  else career=Math.round(J.base+g.work*(g.job==="ippan"?25:45)+g.intel*10+(g.quals||0)*(g.age>=30?30:15));
+  else if(g.job==="geino") career=Math.round(J.base+(g.fame||0)*(g.fame||0)*22);
+  else if(g.job==="influ") career=Math.round(J.base+Math.min(g.fans||0,10)*35+Math.min(Math.max((g.fans||0)-10,0),40)*24+Math.max((g.fans||0)-50,0)*12);
+  else if(g.job==="baito") career=Math.round(J.base+g.work*12+g.intel*5+q5*(g.age>=30?20:10));
+  else career=Math.round(J.base+g.work*(g.job==="ippan"?25:45)+g.intel*10+q5*(g.age>=30?30:15));
   // 35歳以降の資格・仕事で独立した場合（逆転の道）
-  if(g.indep&&g.job!=="kigyo") career=Math.round(career*1.5+300+(g.quals||0)*40);
+  if(g.indep&&g.job!=="kigyo") career=Math.round(career*1.5+300+q5*40);
+  career+=(g.promoBonus||0); // 期限付き機会「昇進の打診」の恒常補正
   return {y,yk,L,asobi,kekkon,career};
 }
 
@@ -443,6 +451,10 @@ const _y31=ART.y31; ART.y31=()=>_y31().replace("<defs>",`<defs><clipPath id="c-y
 function artFig(k,label){return `<figure class="art fade" role="img" aria-label="${label}">${ART[k]()}</figure>`;}
 function artForAge(a){return a<=21?artFig("y18","上京と大学の昼の街"):a<=26?artFig("y22","オフィス街と仕事の机"):a<=30?artFig("y27","夕暮れの港区とタクシー"):artFig("y31","夜景の見える部屋の机");}
 
+/* ---------- 称号コレクション（結末タイトルを localStorage に蓄積） ---------- */
+const TITLE_KEY="minato-senki:titles:v1";
+function loadTitles(){ try{ return JSON.parse(localStorage.getItem(TITLE_KEY)||"[]"); }catch(e){ return []; } }
+function saveTitle(t){ try{ const a=loadTitles(); if(t&&!a.includes(t)){ a.push(t); localStorage.setItem(TITLE_KEY,JSON.stringify(a)); } }catch(e){} }
 function renderSetup(){
   const left=POOL-used();
   $("#app").innerHTML=`
@@ -484,6 +496,7 @@ function renderSetup(){
     <p class="hint" style="margin:0">総括の幸福度は、結果がこの価値観に合っているかで決まる。</p>
     <div class="values">${VALUES.map(v=>`<button data-v="${v.k}" aria-pressed="${setup.value===v.k}"><b>${v.n}</b><small>${v.d}</small></button>`).join("")}</div>
   </section>
+  ${(()=>{const ts=loadTitles();return ts.length?`<section class="panel"><h2>これまでの戦記</h2><p class="hint" style="margin:0 0 8px">集めた称号 <b class="num">${ts.length}</b> 種</p><div class="presets">${ts.map(t=>`<span class="chip">${t}</span>`).join("")}</div></section>`:"";})()}
   <button class="btn" id="start">18歳、東京へ</button>`;
   document.querySelectorAll("[data-p]").forEach(b=>b.onclick=()=>{setup.preset=+b.dataset.p;setup.stats={...PRESETS[setup.preset].s};renderSetup()});
   document.querySelectorAll("[data-k]").forEach(b=>b.onclick=()=>{const k=b.dataset.k;setup.stats[k]=clamp(setup.stats[k]+ +b.dataset.d,1,10);setup.preset=-1;renderSetup()});
@@ -494,8 +507,8 @@ function renderSetup(){
 
 /* ---------- ゲーム ---------- */
 function startGame(){
-  G={...setup.stats,value:setup.value,job:setup.job==="yoru"?"ippan":setup.job,planYoru:setup.job==="yoru",nightPast:false,divorced:false,misjudge:0,lastPrice:null,usedEv:[],event:null,biz:setup.job==="kigyo"?1.5:0,peakAsobi:0,peakKekkon:0,quals:0,age:18,rep:0,ideal:5,life:0,money:50,happy:0,
-     partner:null,married:false,marriedAge:null,minato:0,declined:0,log:[],hist:[],offer:null,done:false};
+  G={...setup.stats,value:setup.value,job:setup.job==="yoru"?"ippan":setup.job,planYoru:setup.job==="yoru",nightPast:false,divorced:false,misjudge:0,lastPrice:null,usedEv:[],event:null,biz:setup.job==="kigyo"?1.5:0,fame:setup.job==="geino"?(setup.stats.looks>=8?2:1.5):0,fans:setup.job==="influ"?0.3:0,peakAsobi:0,peakKekkon:0,quals:0,age:18,rep:0,ideal:5,life:0,money:50,happy:0,
+     partner:null,married:false,marriedAge:null,minato:0,declined:0,log:[],hist:[],actHist:[],opp:null,promoBonus:0,missedOpp:[],offer:null,done:false};
   G.log.push([18,G.planYoru?"上京。20歳になったら夜の仕事をするつもりで、今は昼のアルバイト暮らし。":G.job==="gakusei"?"大学に入学した。港区の夜はまだ遠い。":G.job==="baito"?"上京して、昼のアルバイトで暮らし始めた。港区の夜はまだ遠い。":"上京して社会に出た。港区の夜はまだ遠い。"]);
   snapshotHist();
   window.__gs=(window.__gs||0)+1;try{if(typeof gtag==='function')gtag('event','game_start',{tool:'minato-senki',job:setup.job||'',value:setup.value||'',n:window.__gs});}catch(e){}
@@ -520,9 +533,31 @@ const ACTIONS_P=[
   {k:"breakup",n:"別れる",d:"理想に届かない相手なら次へ"},
 ];
 
+/* 直近3年の行動履歴による効果倍率（連続ではなく履歴で効かせる。交互押しでは回復しない） */
+function histMul(k){
+  G.actHist=G.actHist||[];
+  const c=G.actHist.filter(a=>a===k).length;
+  const m=c>=3?0.35:c===2?0.6:c===1?0.8:1;
+  G.actHist.push(k); if(G.actHist.length>3) G.actHist.shift();
+  return m;
+}
+/* 期限付き機会の解決（該当行動で発動、選ばなければ消滅してログに残る） */
+function resolveOpp(k){
+  if(!G.opp) return;
+  const o=G.opp; G.opp=null;
+  if(o.id==="promo"){
+    if(k==="work"){ if(Math.random()<0.75){ G.promoBonus=(G.promoBonus||0)+180; say("昇進の打診に応え、管理職への昇進が決まった。年収が大きく上がった。"); } else say("昇進の打診に応えたが、今年の昇進は見送られた。"); }
+    else { (G.missedOpp=G.missedOpp||[]).push("昇進の打診"); say("今年限りの昇進の打診は、見送った。機会は消えた。"); }
+  } else if(o.id==="lover"&&G.partner){
+    if(k==="deepen"){ G.partner.commit=Math.min(0.98,G.partner.commit+0.3); say(`${G.partner.label}と、将来のことを真剣に話した。結婚への空気が濃くなった。`); }
+    else { G.partner.commit=Math.max(0.1,G.partner.commit-0.15); (G.missedOpp=G.missedOpp||[]).push("恋人との将来の話"); say(`${G.partner.label}は将来の話をしたそうだったが、今年は流れた。少し距離ができた気がする。`); }
+  }
+}
 function act(k){
   if(G.ext){ G.extActs=G.extActs||{}; G.extActs[k]=(G.extActs[k]||0)+1; }
   if(G.married) return marAct(k);
+  const fMul=histMul(k);
+  resolveOpp(k);
   const d=derive(G);
   let income=d.career, cost=livingCost(G);
   const vMul=(v)=>G.value===v?1.6:1;
@@ -541,9 +576,16 @@ function act(k){
       break;}
     case "work":
       if(G.job==="yoru"){ income=Math.round(d.career*1.2); G.rep=clamp(G.rep+0.8); G.life=Math.min(500,G.life+40); say(`店に出続けた。売上は${d.career>700?"店のトップクラス":"落ち着いてきた"}。`); if(!G.partner&&Math.random()<0.5) G.offer=makeOffer("asobi"); }
-      else if(G.job==="kigyo"){ const dv=rnd(-1.2,1.6)+(G.work+G.intel-12)*0.1; G.biz=clamp(G.biz+dv); G.work=clamp(G.work+0.3); income=derive(G).career;
+      else if(G.job==="kigyo"){ const dv=rnd(-1.0,1.7)+(G.work+G.intel-12)*0.1; G.biz=clamp(G.biz+dv); G.work=clamp(G.work+0.3); income=derive(G).career;
         if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("資金が尽きて廃業した。借入を返しながら会社員に戻った。"); }
         else say(dv>0?`事業が伸びた（事業規模${G.biz.toFixed(1)}）。`:`売上が落ちた（事業規模${G.biz.toFixed(1)}）。`); }
+      else if(G.job==="geino"){ const dv=rnd(-0.5,1.4)+(G.work+G.intel-12)*0.08-(G.age>=32&&G.looks<8?0.3:0); G.fame=clamp((G.fame||0)+dv,0,10); G.work=clamp(G.work+0.2); income=Math.round(derive(G).career*1.05);
+        if(G.fame<=0.3){ G.job="ippan"; G.fame=0; G.happy-=1; say("仕事の声がかからなくなった。芸能の仕事は終わり、一般職に就いた。"); }
+        else say(dv>0.4?`撮影と収録に明け暮れた。名前が売れてきた（知名度${G.fame.toFixed(1)}）。`:dv<-0.4?`仕事は減ってきた。呼ばれ方が変わってきた気がする（知名度${G.fame.toFixed(1)}）。`:`撮影と収録の日々。知名度は${G.fame.toFixed(1)}。`); }
+      else if(G.job==="influ"){ const g0=G.fans||0.3; let mul=(g0<1?rnd(1.25,1.65):g0<10?rnd(1.15,1.45):g0<30?rnd(1.05,1.25):g0<100?rnd(0.95,1.15):rnd(0.90,1.08))+(G.looks>=7?0.08:0)+(G.kind>=7?0.05:0); let buzz="";
+        if(Math.random()<0.10){ mul*=1.8; buzz="投稿がバズった。"; } else if(Math.random()<0.06){ mul*=0.65; buzz="投稿の一部が切り取られて炎上し、フォロワーが減った。"; }
+        G.fans=Math.min(300,g0*mul+rnd(0.05,0.35)); income=derive(G).career; G.happy+=0.3*vMul("shigeki");
+        say(`${buzz}配信と投稿に打ち込んだ。フォロワーは${G.fans.toFixed(1)}万人。`); }
       else if(G.job==="gakusei"){ G.work=clamp(G.work+0.5); G.intel=clamp(G.intel+0.5); say("授業とゼミに打ち込んだ。"); }
       else if(G.job==="baito"){ G.work=clamp(G.work+0.5); income=Math.round(d.career*1.15);
         if(G.age>=20&&G.work>=6&&Math.random()<0.35){ G.job="ippan"; G.happy+=0.5; say("シフトを増やして働いた。店長に推され、正社員になった。"); }
@@ -555,10 +597,10 @@ function act(k){
     case "startup":{ const wasYoru=G.job==="yoru"; G.money-=300; G.biz=wasYoru?clamp(2+G.rep*0.3+d.L*0.15+(G.money>1200?1:0)):clamp(1.5+(G.work+G.intel)*0.1); G.job="kigyo"; G.planYoru=false; income=derive(G).career; G.happy+=0.5*vMul("jiritsu"); say(wasYoru?`夜で作った顧客と資金で、自分のサロンを開いた（事業規模${G.biz.toFixed(1)}）。`:`貯金を元手に起業した（事業規模${G.biz.toFixed(1)}）。`); break;}
     case "toYoru": if(G.job==="gakusei")say("大学を辞めた。"); G.job="yoru"; G.nightPast=true; G.rep=clamp(G.rep+2); G.life=Math.min(500,G.life+80); say("昼の仕事を辞めて、ラウンジで働き始めた。"); income=derive(G).career; break;
     case "toHiru": G.job="ippan"; G.work=Math.min(G.work,4); G.life=Math.max(0,G.life-60); say("夜の仕事を辞めて、事務職に就いた。経歴の空白は面接で聞かれた。"); income=derive(G).career; break;
-    case "beauty": G.looks=clamp(G.looks+0.4); cost+=100; G.happy+=0.5; say("美容とジムに投資した。"); break;
+    case "beauty": { const bMul=Math.max(0.2,(10-G.looks)/5); G.looks=clamp(G.looks+0.4*bMul); cost+=100; G.happy+=0.5*fMul; say(bMul<=0.4?"美容とジムに投資した。伸びしろは、だいぶ小さくなってきた。":"美容とジムに投資した。"); break; }
     case "study": G.intel=clamp(G.intel+0.6); G.work=clamp(G.work+(G.age>=30?0.5:0.3)); G.quals++; cost+=40; income=Math.round(income*0.95); G.happy+=0.3*vMul("jiritsu"); say(G.age>=30?"勉強して資格を一つ取った。30代の資格は、年収と評価に直接効く。":"勉強して資格を一つ取った。"); break;
     case "konkatsu": cost+=30; G.offer=makeOffer("konkatsu"); say(G.job==="gakusei"||G.age<23?"合コンや友人の紹介で出会いを探した。":"結婚相談所と知人の紹介で出会いを探した。"); break;
-    case "friends": G.kind=clamp(G.kind+0.4); G.rep=clamp(G.rep-0.6); G.ideal=clamp(G.ideal-0.4,2); G.life=Math.max(0,G.life-30); G.happy+=1*vMul("antei");
+    case "friends": G.kind=clamp(G.kind+0.4*fMul); G.rep=clamp(G.rep-0.6); G.ideal=clamp(G.ideal-0.4,2); G.life=Math.max(0,G.life-30); G.happy+=1*vMul("antei")*fMul; if(fMul<=0.6) say("地元の友達と過ごした。楽しいが、去年と同じ顔ぶれで、同じ話だった。");
       income=Math.round(income*0.9); if(G.job!=="gakusei") G.work=clamp(G.work-0.15,1);
       say(G.job==="gakusei"?"地元の友達と過ごした。肩の力が抜けた。バイトのシフトは減らした。":"地元の友達と過ごした。肩の力が抜けた。残業と休日出勤を断った分、収入と評価は少し下がった。"); if(!G.partner&&Math.random()<0.15) G.offer=makeOffer("konkatsu","友達の紹介"); break;
     case "deepen": G.partner.commit=Math.min(0.95,G.partner.commit+0.15); G.happy+=0.6; say(`${G.partner.label}との関係が深まった。`); break;
@@ -572,7 +614,8 @@ function act(k){
       break;}
     case "breakup": say(`${G.partner.label}と別れた。`); G.partner=null; G.happy-=0.5; break;
   }
-  if(G.job==="kigyo" && k!=="work" && k!=="startup"){ G.biz=clamp(G.biz-0.4); if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("事業を放置しているうちに資金が尽き、廃業した。借入を返しながら会社員に戻った。"); } }
+  if(G.job==="kigyo" && k!=="work" && k!=="startup"){ G.biz=clamp(G.biz-0.15); if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("事業を放置しているうちに資金が尽き、廃業した。借入を返しながら会社員に戻った。"); } }
+  if(G.job==="influ" && k!=="work" && (G.fans||0)>=5){ G.fans=(G.fans||0)*0.92; } // 投稿を休んだ年はフォロワーが少し離れる（5万人以上のみ）
   if(!G.partner && !G.married && G.age>=29) G.happy-= (G.value==="antei"?0.5:G.value==="shigeki"?0.2:0);
   G.money+=Math.round(income*0.75)-cost;
   payDebt();
@@ -598,7 +641,7 @@ function randomEvent(){
   if(G.age>=27&&!G.married) ev.push(()=>{say("友人の結婚式が続いた。");G.happy-=0.3});
   if(G.age>=28&&G.minato>2) ev.push(()=>say("会食の席に22歳の子が増えた。視線の集まり方が変わった。"));
   if(G.rep>=4) ev.push(()=>{say("港区での写真がSNSで知られた。紹介の話が減った。");G.rep=clamp(G.rep+0.6)});
-  const WORK_EV={gakusei:"ゼミの教授に研究の手伝いを任された。",yoru:"店のママに新人の教育を任された。",kigyo:"大口の取引先を紹介された。"};
+  const WORK_EV={gakusei:"ゼミの教授に研究の手伝いを任された。",yoru:"店のママに新人の教育を任された。",kigyo:"大口の取引先を紹介された。",geino:"プロデューサーに食事に誘われた。仕事の話だった。",influ:"企業の担当者から、案件の相談が来た。"};
   ev.push(()=>{say(WORK_EV[G.job]||"上司に仕事を任された。");G.work=clamp(G.work+0.3);if(G.job==="kigyo")G.biz=clamp(G.biz+0.3)});
   if(d.L>=8&&G.age>=30) ev.push(()=>say("「全然変わらないね」と言われた。見た目はまだ武器になる。"));
   pick(ev)();
@@ -628,7 +671,7 @@ function makeOffer(src,via){
   }
   const tier=clamp(d.kekkon+rnd(-1.5,1),1,10);
   // 自分の職業が相手のスペックを引き上げる。30代ほど効く
-  const spec=((G.job==="kigyo"?Math.max(G.work,G.biz):G.work)-5)*(G.age>=27?75:30)+(G.job==="senmon"?80:0);
+  const spec=((G.job==="kigyo"?Math.max(G.work,G.biz):G.work)-5)*(G.age>=27?75:30)+(G.job==="senmon"?80:0)+(G.job==="geino"?(G.fame||0)*25:0)+(G.job==="influ"?Math.min(50,G.fans||0)*5:0);
   const inc=Math.max(300,Math.round(320+tier*85+spec+rnd(-60,120)));
   const label=inc<480?pick(["地元の会社員","同い年の会社員"]):inc<750?pick(["メーカー勤務","SE","地方銀行員"]):pick(["総合商社","弁護士","勤務医","外資コンサル"]);
   let commit=rnd(0.55,0.85), note="";
@@ -695,6 +738,22 @@ const EVENTS=[
   t:"太客の提案",x:"長年の太客から「店を出すなら出資するよ」と言われた。",
   c:[["受けて独立する",g=>{g.biz=clamp(3+g.rep*0.3);g.job="kigyo";g.rep=clamp(g.rep+0.5);say(`太客の出資で自分の店を開いた（事業規模${g.biz.toFixed(1)}）。`);}],
      ["まだ店に出る",g=>say("出資の話は保留にした。")]]},
+ {id:"scandal",when:(g,d)=>g.job==="geino"&&g.age>=20&&g.age<=34,
+  t:"熱愛報道",x:"週刊誌に、男性と歩く写真が載った。「人気タレントに熱愛」と見出しがついた。",
+  c:[["謝罪して活動を続ける",g=>{g.fame=clamp((g.fame||0)-0.8,0);g.kind=clamp(g.kind+0.2);say("事務所のコメントで謝罪した。仕事は少し減ったが、誠実な対応だと評価する声もあった。");}],
+     ["開き直って公表する",g=>{g.fame=clamp((g.fame||0)+0.6);g.rep=clamp(g.rep+0.5);g.happy+=g.value==="shigeki"?0.8:0;say("SNSで交際を公表した。賛否は割れたが、名前は一気に広まった。");if(g.partner&&g.partner.sincerity<5){say(`${g.partner.label}とは、そのまま終わった。`);g.partner=null;}}]]},
+ {id:"drama",when:(g,d)=>g.job==="geino"&&(g.fame||0)>=3,
+  t:"主演の打診",x:"連続ドラマの主演オファーが来た。半年は撮影に拘束される。決まれば知名度は跳ねる。",
+  c:[["受ける",g=>{g.fame=clamp((g.fame||0)+1.2);g.work=clamp(g.work+0.5);g.money+=200;say("主演ドラマは当たった。街で声をかけられる回数が変わった。");if(g.partner)g.partner.commit=Math.max(0.1,g.partner.commit-0.1);}],
+     ["今は受けない",g=>{g.happy+=0.3;say("主演は断った。代わりに出た同世代の子が、翌年ブレイクした。");}]]},
+ {id:"enjou",when:(g,d)=>g.job==="influ"&&(g.fans||0)>=5,
+  t:"切り取り炎上",x:"配信の発言の一部が切り取られて拡散された。本人はそんなつもりじゃなかった、という釈明は届いていない。",
+  c:[["謝罪動画を出す",g=>{g.fans=(g.fans||0)*0.85;g.money-=30;say("謝罪動画を出した。登録者は少し減ったが、騒ぎは収まった。");}],
+     ["無視して様子を見る",g=>{if(Math.random()<0.5){g.fans=(g.fans||0)*1.15;say("無視していたら、騒ぎが逆に拡散の燃料になった。フォロワーは増えた。");}else{g.fans=(g.fans||0)*0.6;say("無視が火に油を注いだ。フォロワーは大きく減った。");}}]]},
+ {id:"anken",when:(g,d)=>g.job==="influ"&&(g.fans||0)>=10,
+  t:"大手企業の案件",x:"大手企業から、1本180万円のPR案件の依頼。正直、商品は微妙だ。受ければ数字は伸びる。",
+  c:[["受ける",g=>{g.money+=180;g.rep=clamp(g.rep+0.5);g.ideal=clamp(g.ideal+0.3);say("案件を受けた。収入は増えたが、コメント欄の空気は少し変わった。");}],
+     ["イメージを守って断る",g=>{g.fans=(g.fans||0)*1.05;g.kind=clamp(g.kind+0.2);say("案件は断った。古参のフォロワーからは「信用できる」と言われた。");}]]},
 ];
 function triggerEvent(){
   if(G.offer||G.married) return;
@@ -739,6 +798,14 @@ function nextYear(){
   if(G.age>maxAge()){ G.age=maxAge(); G.hist.pop(); snapshotHist(); return finish(); }
   // 単身赴任は3年で終わる
   if(G.married&&G.mar&&G.mar.apart&&G.age>=(G.mar.apartAge||0)+3){ G.mar.apart=0; say("夫の単身赴任が終わり、家に戻ってきた。"); }
+  // 期限付きの機会（年初に提示され、その年に選ばなければ消える）
+  G.opp=null;
+  if(Math.random()<0.3){
+    const cands=[];
+    if(!G.married&&G.age>=27&&G.work>=6) cands.push({id:"promo"});
+    if(!G.married&&G.partner) cands.push({id:"lover"});
+    if(cands.length) G.opp=pick(cands);
+  }
   snapshotHist(); voiceTick(); renderGame();
 }
 /* ---------- 延長戦（36〜40歳） ---------- */
@@ -783,6 +850,7 @@ const ACTIONS_M=[
 ];
 function marAct(k){
   const p=G.partner, m=G.mar, s=p.sincerity;
+  const sMul=histMul(k);
   const vMul=(v)=>G.value===v?1.6:1;
   let myMul=0.8, extra=0;
   switch(k){
@@ -793,14 +861,16 @@ function marAct(k){
     case "m_career": myMul=1;
       if(G.job==="kigyo"){ G.biz=clamp(G.biz+rnd(-0.6,1.2)+(G.work+G.intel-12)*0.05); G.work=clamp(G.work+0.3); }
       else if(G.job==="gakusei"){ G.work=clamp(G.work+0.5); G.intel=clamp(G.intel+0.5); }
+      else if(G.job==="geino"){ G.fame=clamp((G.fame||0)+rnd(-0.3,0.8),0,10); G.work=clamp(G.work+0.4); }
+      else if(G.job==="influ"){ G.fans=Math.min(300,(G.fans||0.3)*rnd(1.05,1.3)+0.05); G.work=clamp(G.work+0.4); }
       else G.work=clamp(G.work+0.8);
-      m.sat=clamp(m.sat-0.35); m.strain=clamp(m.strain+0.7); G.happy+=0.4*vMul("jiritsu");
+      m.sat=clamp(m.sat-0.3); m.strain=clamp(m.strain+(s>=8?0.25:0.5)); G.happy+=0.4*vMul("jiritsu");
       say(G.job==="kigyo"?`事業に打ち込んだ（事業規模${G.biz.toFixed(1)}）。帰りはいつも夫より遅い。`:G.job==="gakusei"?"学業に打ち込んだ。夫とは生活の時間がずれた。":"仕事を優先した。評価は上がり、夕食は別々の日が増えた。"); break;
     case "m_home": myMul=0.55; G.work=clamp(G.work-0.2,1); m.sat=clamp(m.sat+0.8); m.strain=clamp(m.strain-0.7); G.happy+=0.5*vMul("antei");
       say("仕事を減らして、家のことに時間を使った。"); break;
     case "m_family": extra=30; m.inlaw++; m.sat=clamp(m.sat+0.3); m.strain=clamp(m.strain-0.3); G.happy+=0.1;
       say(m.inlaw>=2?"義実家とは、気を遣わずに話せるようになってきた。":"盆と正月に、夫の実家と自分の実家を回った。"); break;
-    case "m_trip": extra=80; m.sat=clamp(m.sat+1); m.strain=clamp(m.strain-0.8); G.happy+=0.6;
+    case "m_trip": extra=80; m.sat=clamp(m.sat+1*sMul); m.strain=clamp(m.strain-0.8); G.happy+=0.6*sMul;
       say(pick(["二人で旅行に出た。久しぶりに、仕事の話をしない三日間だった。","二人で同じ趣味を始めた。週末の予定が自然に決まるようになった。"])); break;
     case "m_ninkatsu":{ m.nk=(m.nk||0)+1; extra=50; myMul=0.65; G.work=clamp(G.work-0.2,1);
       m.strain=clamp(m.strain+(m.nk>=3?0.8:0.4)-(s>=6?0.2:0)); m.sat=clamp(m.sat+(s>=6?0.2:-0.2));
@@ -814,7 +884,8 @@ function marAct(k){
       if(Math.random()<0.3){ G.work=clamp(G.work+0.2); say("港区時代の知り合いと会った。仕事の紹介を一つもらった。"); }
       else say(s>=6?"港区時代の友達と会った。帰りが遅くなり、夫は何も言わなかった。":"港区時代の友達と会った。華やかな話を聞いて、少しだけ昔に戻った。"); break;
   }
-  if(G.job==="kigyo" && k!=="m_career"){ G.biz=clamp(G.biz-0.4); if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("事業に手が回らず、廃業した。会社員に戻った。"); } }
+  if(G.job==="kigyo" && k!=="m_career"){ G.biz=clamp(G.biz-0.15); if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("事業に手が回らず、廃業した。会社員に戻った。"); } }
+  if(G.job==="influ" && k!=="m_career" && (G.fans||0)>=5){ G.fans=(G.fans||0)*0.92; }
   // 経緯と誠実さで、放っておくと溜まるすれ違い
   m.strain=clamp(m.strain+(s<=4?0.6:s<=6?0.3:0.1)+ROUTE[m.route].b[2]);
   m.sat=clamp(m.sat+(s-5)*0.06-Math.max(0,m.strain-4)*0.15);
@@ -928,7 +999,7 @@ function renderMarried(){
       <span>${G.money<0?"借金":"貯金"} <b class="${G.money<0?"neg":""}">${G.money<0?(-G.money).toLocaleString():G.money}</b>万${G.money<0?"（年15%）":""}</span>
       <span>生活費 <b>${livingCost(G)}</b>万/年</span>
       ${m.house?"<span>持ち家 <b>あり</b></span>":""}
-      ${G.job==="kigyo"?`<span>事業規模 <b>${G.biz.toFixed(1)}</b></span>`:""}
+      ${G.job==="kigyo"?`<span>事業規模 <b>${G.biz.toFixed(1)}</b></span>`:""}${G.job==="geino"?`<span>知名度 <b>${(G.fame||0).toFixed(1)}</b></span>`:""}${G.job==="influ"?`<span>フォロワー <b>${(G.fans||0).toFixed(1)}万人</b></span>`:""}
     </div>
     ${voiceHTML()}
     <blockquote class="honne"><span>港区の男たちの本音</span>${H}</blockquote>
@@ -965,6 +1036,8 @@ function worlds(g){
   let day=0.8,night=0.05,biz=0.15;
   if(g.job==="yoru"){day=0.25;night=0.45;biz=0.3}
   else if(g.job==="kigyo"){day=0.35;night=0.05;biz=0.6}
+  else if(g.job==="geino"){day=0.45;night=0.1;biz=0.45}
+  else if(g.job==="influ"){day=0.55;night=0.1;biz=0.35}
   if(g.nightPast&&g.job!=="yoru"){day-=0.1;night+=0.1}
   const r=g.rep/10; day-=0.35*r; biz+=0.25*r; night+=0.1*r;
   day=Math.max(0.05,day); const t=day+night+biz;
@@ -1040,6 +1113,8 @@ function honne(g,d){
   if(g.married) return "「結婚したんだって。まあ、そろそろだったよね」";
   if(g.job==="yoru"&&d.L>=8.5) H.push("「店の看板。社長連中が本気で口説いてる」");
   if(g.job==="kigyo"&&g.biz>=5) H.push("「最近は向こうがおごる側。もう呼べないな」");
+  if(g.job==="geino"&&(g.fame||0)>=6) H.push("「テレビの人だ。嫁にするイメージは湧かないけど、隣にいたら自慢できる」");
+  if(g.job==="influ"&&(g.fans||0)>=30) H.push(`「フォロワー${(g.fans||0).toFixed(0)}万人。値段は画面に出てるようなもんだな」`);
   if(g.rep>=6) H.push("「港区で知らない奴はいない。だから本気の相手には紹介できない」");
   if(g.ideal-d.kekkon>=2) H.push("「条件だけは一流。自分を何様だと思ってるんだろうね」");
   if(d.asobi>=9&&g.age<=24) H.push("「今いちばん呼びたい子。若さの値段を、本人だけがまだ知らない」");
@@ -1057,7 +1132,7 @@ function renderGame(){
   if(G.married) return renderMarried();
   const d=derive(G);
   const tag=G.partner?`交際中：${G.partner.label}`:G.divorced?"独身（離婚歴あり）":"独身";
-  let base=ACTIONS.map(a=>a.k==="work"&&G.job==="yoru"?{k:"work",n:"店に出る",d:"若さと見た目がそのまま売上に。太客との出会いも"}:a.k==="work"&&G.job==="gakusei"?{k:"work",n:"学業に打ち込む",d:"知性と仕事力が伸びる。22歳の就職先に効く"}:a.k==="work"&&G.job==="baito"?{k:"work",n:"シフトを増やす",d:"収入が少し増え、仕事力が少し伸びる。20歳から、仕事力が高いと正社員の声がかかる"}:a.k==="work"&&G.job==="kigyo"?{k:"work",n:"事業に打ち込む",d:"仕事力と知性が高いほど伸びやすい。外すと縮む"}:a);
+  let base=ACTIONS.map(a=>a.k==="work"&&G.job==="yoru"?{k:"work",n:"店に出る",d:"若さと見た目がそのまま売上に。太客との出会いも"}:a.k==="work"&&G.job==="geino"?{k:"work",n:"撮影・収録に打ち込む",d:"知名度がそのまま年収になる。浮き沈みは大きい"}:a.k==="work"&&G.job==="influ"?{k:"work",n:"配信・投稿に打ち込む",d:"フォロワー数が収入を決める。バズりと炎上は紙一重"}:a.k==="work"&&G.job==="gakusei"?{k:"work",n:"学業に打ち込む",d:"知性と仕事力が伸びる。22歳の就職先に効く"}:a.k==="work"&&G.job==="baito"?{k:"work",n:"シフトを増やす",d:"収入が少し増え、仕事力が少し伸びる。20歳から、仕事力が高いと正社員の声がかかる"}:a.k==="work"&&G.job==="kigyo"?{k:"work",n:"事業に打ち込む",d:"仕事力と知性が高いほど伸びやすい。外すと縮む"}:a);
   if(G.age>=22&&G.job!=="gakusei"&&G.job!=="kigyo"&&(G.money>=300||G.money<0)) base.push(G.job==="yoru"?{k:"startup",n:"独立して店・サロンを開く",d:"夜で作った顧客と資金が元手。貯金300万を使う"}:{k:"startup",n:"起業する",d:"貯金300万を元手に。振れ幅が大きい"});
   if(G.job==="yoru") base=base.filter(a=>a.k!=="minato");
   if(G.age<20) base=base.filter(a=>a.k!=="minato");
@@ -1087,7 +1162,7 @@ function renderGame(){
       <span>${G.money<0?"借金":"貯金"} <b class="${G.money<0?"neg":""}">${G.money<0?(-G.money).toLocaleString():G.money}</b>万${G.money<0?"（年15%）":""}</span>
       <span>生活費 <b>${livingCost(G)}</b>万/年</span>
       <span>港区慣れ <b>${G.rep.toFixed(1)}</b></span>
-      ${G.job==="kigyo"?`<span>事業規模 <b>${G.biz.toFixed(1)}</b></span>`:""}
+      ${G.job==="kigyo"?`<span>事業規模 <b>${G.biz.toFixed(1)}</b></span>`:""}${G.job==="geino"?`<span>知名度 <b>${(G.fame||0).toFixed(1)}</b></span>`:""}${G.job==="influ"?`<span>フォロワー <b>${(G.fans||0).toFixed(1)}万人</b></span>`:""}
     </div>
     <div class="tags">
       <span>ギャラ飲みの声 <b>${G.age<20?"—":callLevel(d)}</b></span>
@@ -1100,6 +1175,7 @@ function renderGame(){
     ${MILESTONE[G.age]?`<div class="note">${MILESTONE[G.age]}</div>`:""}
     ${G.ideal-d.kekkon>=2?`<div class="note">理想が結婚モテを ${(G.ideal-d.kekkon).toFixed(1)} 上回っている。釣り合う相手を「下」に感じやすい。</div>`:""}
   </section>
+  ${!G.event&&!G.offer&&G.opp?`<section class="panel fade"><div class="note"><b>今年限りの機会：${G.opp.id==="promo"?"昇進の打診":"恋人からの将来の話"}</b><br>${G.opp.id==="promo"?"今の仕事に集中すれば、管理職への昇進が見えている（「本業に打ち込む」で応える）。他の過ごし方を選ぶと、この話は流れる。":`${G.partner?G.partner.label:"恋人"}が、二人の将来について話し合いたがっている（「関係を深める」で応える）。見送ると、少し距離ができる。`}</div></section>`:""}
   ${G.event?eventHTML():G.offer?offerHTML():`
   <section class="panel">
     <h3>${G.age}歳の一年、何に使う？</h3>
@@ -1139,6 +1215,10 @@ const VERDICT={
   "港区を買う側":"「昔は呼んでた。今はこっちがアポを取ってる」",
   "夜を元手にした女":"「店で一番頭がよかったのは、あの子だった」",
   "シンデレラ（夜の部）":"「あの社長を本気にさせたのは、あの子だけ」",
+  "画面の中の人":"「テレビで見る人。港区の席じゃなくて、画面の向こうが主戦場になった」",
+  "元・少し有名な人":"「前はテレビに出てた人。今は、それが一番の自己紹介らしい」",
+  "画面の向こうの有名人":"「フォロワー数十万人。呼ばれる側じゃなく、呼ぶ側の数字を持つようになった」",
+  "更新が止まったアカウント":"「最後の投稿がいつか、誰も覚えていない。数字だけが残った」",
   "夜の世界で結ばれた二人":"「お似合いだよ、あの二人は」",
   "ホスト沼の果て":"「あれだけ稼いでたのに、どこに消えたんだろうね」",
   "経営者の妻":"「あの奥さんがいるから、あいつの会社は回ってる」",
@@ -1203,10 +1283,10 @@ function singleFinal(d){
   const ea=G.extActs||{}, qg=G.quals-(G.q35||0), S=G.sumAge||35, N=40-S;
   if(G.indep&&d.career>=900) return ["40歳で逆転した女",`${S}歳を過ぎてから${qg>0?`資格を${qg}つ取り`:"仕事に打ち込み"}、独立した。年収は${d.career.toLocaleString()}万円。${S}歳の頃に「もう遅い」と言っていた人たちが、今は仕事の相談に来る。`];
   if(G.lastMar) return restartEnding();
-  if((ea.minato||0)>=2) return ["港区に残った40歳","40歳でも会食に顔を出している。男たちが声をかける相手は年々若くなり、呼ばれる回数は減った。それでも、この街の夜の回し方は誰よりも知っている。"];
   if((ea.konkatsu||0)>=2) return ["最後まで探し続けた女",`40歳、まだ探している。並べていた条件は、${S}歳の頃よりずっと短くなった。焦りより、自分に合う人の輪郭のほうがはっきりしてきた。`];
   if((ea.friends||0)>=3) return ["自分の暮らしを選んだ女",`40歳、独身。休日は地元の友達と過ごし、平日は淡々と働く。港区の物差しから降りて${N}年、誰かと比べる回数がずいぶん減った。`];
   if(qg>=2||(ea.work||0)>=3) return [`積み上げ直した${N}年`,`40歳、独身。${S}歳から${qg>=2?`資格を${qg}つ取り`:"本業に打ち込み"}、年収は${d.career.toLocaleString()}万円になった。派手な逆転ではない。でも、${N}年前より選べることは確実に増えた。`];
+  if((ea.minato||0)>=3) return ["港区に残った40歳","40歳でも会食に顔を出している。男たちが声をかける相手は年々若くなり、呼ばれる回数は減った。それでも、この街の夜の回し方は誰よりも知っている。"];
   if(G.money<0||livingCost(G)>d.career*0.75) return ["港区の残り香",`40歳。収入は${S}歳の頃と大きく変わらないのに、美容とタクシー代は変わらない。カードの明細だけが、まだ港区にいる。`];
   return [`大きくは変わらなかった${N}年`,`40歳、独身。延長戦の${N}年で、暮らしの形は${S}歳の総括のときとほとんど変わっていない。年収は${d.career.toLocaleString()}万円、貯金は${G.money.toLocaleString()}万円。崩れもしなかったし、跳ねもしなかった。`];
 }
@@ -1245,6 +1325,10 @@ function finish(){
     else{title="勝ち逃げした普通の子";body=`${G.marriedAge}歳で${p.label}と結婚。港区の男たちの関心が次の22歳に移った頃、彼女はもう結婚していた。派手さはない。でも35歳で「最近呼ばれない」と悩むこともない。`}
   } else {
     if(G.job==="kigyo"&&G.biz>=5){title=G.nightPast?"夜を元手にした女":"港区を買う側";body=G.nightPast?`年収${d.career}万円の事業を持つ経営者。若さと見た目で稼げる時期に、金と顧客を残した。同じ店にいた子の多くは、稼いだ分を全部使い切って35歳を迎えた。`:`年収${d.career}万円の事業を持つ経営者。昔ギャラ飲みに女の子を呼んでいた側の男たちが、今は取引先として頭を下げてくる。`}
+    else if(G.job==="geino"&&(G.fame||0)>=7){title="画面の中の人";body=`35歳。知名度は${(G.fame||0).toFixed(1)}まで上がった。街を歩けば声をかけられ、紹介されるときは名前より先に数字と肩書きが来る。港区の男たちがつける値段より、世間がつける値段のほうが大きくなった。`}
+    else if(G.job==="geino"){title="元・少し有名な人";body=`35歳、独身。「前はテレビに出ていて」が自己紹介の枕詞になった。知名度は${(G.fame||0).toFixed(1)}。数字で見える値札を背負った分、数字が下がったときの静けさも知っている。`}
+    else if(G.job==="influ"&&(G.fans||0)>=50){title="画面の向こうの有名人";body=`35歳、独身。フォロワーは${(G.fans||0).toFixed(1)}万人。一日は数字の確認から始まる。港区の会食に呼ばれるより、自分が配信するほうが稼げるようになった。呼ばれる側から、数字を持つ側へ。`}
+    else if(G.job==="influ"&&(G.fans||0)<3){title="更新が止まったアカウント";body=`35歳、独身。フォロワーは${(G.fans||0).toFixed(1)}万人で止まった。最後の投稿のいいねは数十個。数字で見える値札は、数字が止まったときに一番重かった。`}
     else if(d.L>=7.5&&d.asobi>=5){title="招待状が切れない女";body="35歳でもまだ呼ばれる。顔は今も武器だ。ただし誘いはいつも金曜の夜で、日曜の昼に会おうと言う男はいない。"}
     else if(castle&&G.value==="jiritsu"){title="自分の城を持った女";body=`35歳、独身。貯金${G.money.toLocaleString()}万円で、自分の名義の部屋を買った。合鍵を誰に渡すかは自分で決める。港区の男たちの値付けとは別の物差しで、自分の暮らしを自分で設計してきた。`}
     else if(G.work>=8){title="選ぶ側に回った女";body=`年収${d.career}万円。もう男に選ばれるのを待っていない。会食に呼ばれる側から、店を予約する側になった。男たちが若さにつける値段は、彼女の人生にほとんど関係がなかった。`}
@@ -1306,6 +1390,7 @@ function finish(){
   if(mm&&mm.years>=1) L.push(["結婚は、した後の毎年で決まる",`結婚してからの${mm.years}年で、夫婦の満足度は${mm.sat0.toFixed(1)}→${mm.sat.toFixed(1)}。結婚した時点の条件より、その後の一年ごとの選び方が効いた。`]);
   if(mm&&mm.repaired) L.push(["壊れかけても、直せることがある","問題から目をそらさずに話し合った夫婦は、前より正直な関係になれることがある。"]);
   if(mm&&mm.mask) L.push(["見ないふりは、問題を消さない","気づかないふりをした分だけ、すれ違いは静かに溜まっていった。"]);
+  if(G.missedOpp&&G.missedOpp.length) L.push(["逃した機会",`年初に来た「${[...new Set(G.missedOpp)].slice(0,3).join("」「")}」の機会を、${G.missedOpp.length}回見送った。今年限りの話は、来年は来ない。`]);
   if(L.length<2) L.push(["減る資産と、積み上がる資産","若さは毎年減り、仕事力と性格は積み上がる。どちらに時間を使ったかが35歳で効いてくる。"]);
   const NM={}; [...ACTIONS,...ACTIONS_M,...ACTIONS_P].forEach(a=>NM[a.k]=a.n); Object.assign(NM,{startup:"起業",toYoru:"夜の仕事を始める",toHiru:"昼の仕事に戻る"});
   const why=[];
@@ -1326,7 +1411,7 @@ function finish(){
   }
   L.forEach(l=>{l[1]=l[1].replace(/35歳/g,A+"歳");});
   // 40歳では、結婚市場での値付け（相手選びの良し悪し）を蒸し返さない
-  const LF=["結婚相手ではなく、スポンサーを探していた","結婚は、支え合う約束だった","勘違いから戻ってきた","最後に、理想だけが残った","結婚は、した後の毎年で決まる","壊れかけても、直せることがある","見ないふりは、問題を消さない","30代の資格は、遅くない","起業は一番振れ幅が大きい","若さで稼いだ生活水準は、若さと一緒には下がらない","早く決まった結婚が、勝ちとは限らない"];
+  const LF=["結婚相手ではなく、スポンサーを探していた","結婚は、支え合う約束だった","勘違いから戻ってきた","最後に、理想だけが残った","結婚は、した後の毎年で決まる","壊れかけても、直せることがある","見ないふりは、問題を消さない","逃した機会","30代の資格は、遅くない","起業は一番振れ幅が大きい","若さで稼いだ生活水準は、若さと一緒には下がらない","早く決まった結婚が、勝ちとは限らない"];
   if(FINAL){ for(let i=L.length-1;i>=0;i--) if(!LF.includes(L[i][0])) L.splice(i,1);
     if(G.indep) L.unshift(["何歳からでも、積み上げは効く",`${S}歳から積み上げた資格と実績で独立した。延長戦の伸びしろは、若さではなく仕事の側にあった。`]);
     if(!L.length) L.push(["延長戦で動かせるもの",`${S}歳から40歳までのあいだも、若さは減り続けた。動かせたのは、仕事と暮らしと、家の中の関係だった。`]); }
@@ -1352,6 +1437,7 @@ function finish(){
     <div class="row"><button class="btn ext" id="ext">${extLabel}</button><button class="btn ghost" id="close">ここで終える</button></div>
   </section>`:"";
   const endArt=G.married?["endMarry","朝の食卓と二つの指輪"]:["離婚して再出発","許さないと決めた女","自分で終わらせた結婚","40歳で逆転した女","家計の主役になった妻","夜を元手にした女","港区を買う側","選ぶ側に回った女","自分の城を持った女"].includes(title)||/^積み上げ直した/.test(title)?["endWork","朝日の差す高層階のオフィス"]:["endMinato","夜の港区の通りと街灯"];
+  saveTitle(title);
   $("#app").innerHTML=`
   ${artFig(endArt[0],endArt[1])}
   <header class="hero fade" id="result">
