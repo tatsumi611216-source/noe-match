@@ -275,7 +275,7 @@ function derive(g){
   const asobi=clamp(L*0.6+y*0.5-0.5+(g.job==="yoru"?0.8:0));
   // 20代前半は見た目と適齢度、20代後半からは仕事の比重が上がる
   const wY=late?0.2:0.3, wL=late?0.14:0.22, wW=late?0.32:0.16;
-  let kekkon=g.kind*0.3+g.work*wW+g.intel*0.12+L*wL+yk*wY-g.rep*0.15+J.kb+(g.nightPast&&g.job!=="yoru"?-0.7:0)-(g.patronOut?0.8:0);
+  let kekkon=g.kind*0.3+g.work*wW+g.intel*0.12+L*wL+yk*wY-g.rep*0.15+J.kb+(g.nightPast&&g.job!=="yoru"?-0.7:0)-(g.patronOut?0.8:0)-(g.crime?2:0);
   if(late&&g.job==="senmon") kekkon+=0.4;
   if(late&&g.job==="baito") kekkon-=0.3;
   if(g.job==="kigyo") kekkon+=((g.biz||0)-4)*(late?0.15:0.05);
@@ -697,6 +697,18 @@ const EVENTS=[
   t:"パトロンの申し出",x:"会食で知り合った既婚の経営者から、「月50万で、たまに食事に付き合ってほしい」と持ちかけられた。",
   c:[["受ける",g=>{g.money+=600;g.rep=clamp(g.rep+2);g.ideal=clamp(g.ideal+1);g.kind=clamp(g.kind-0.5,1);g.life=Math.min(500,g.life+80);g.happy+=g.value==="shigeki"?0.8:-0.8;say("申し出を受けた。この一年で600万円が入った。誰にも言えない一年だった。");if(Math.random()<0.4){g.patronOut=true;g.rep=clamp(g.rep+2);g.happy-=1;say("相手の妻に知られ、港区で噂が広まった。紹介の話が来なくなった。");}if(g.partner&&g.partner.sincerity>=5){say(`${g.partner.label}に知られ、別れた。`);g.partner=null;}}],
      ["断る",g=>{g.kind=clamp(g.kind+0.3);say("パトロンの申し出を断った。");}]]},
+ {id:"tsutsu",when:(g,d)=>g.age>=21&&g.age<=30&&(g.minato>=1||g.job==="yoru")&&g.rep>=1,
+  t:"美人局の誘い",x:"港区で知り合った男に、バーの個室で持ちかけられた。「アプリで釣った男とホテルに入る。出てきたところで俺が現れて、『同意はなかった。不同意性交等罪で被害届を出す。示談なら500万』と言う。君は泣く演技だけでいい。取り分は半分ずつ」。",
+  c:[["乗る",g=>{const gain=Math.round(rnd(250,500));g.tsutsu=(g.tsutsu||0)+1;g.money+=gain;g.rep=clamp(g.rep+2);g.kind=clamp(g.kind-1,1);g.ideal=clamp(g.ideal+0.5);g.work=clamp(g.work-0.3,1);g.life=Math.min(500,g.life+40);g.happy+=g.value==="shigeki"?1:-1;say(`話に乗った。示談金から${gain}万円が手元に残った。簡単な金だった。簡単すぎた。`);if(g.partner)say(`${g.partner.label}には、一生言えない。`);}],
+     ["断る",g=>{g.kind=clamp(g.kind+0.3);say("美人局の誘いを断った。その金は、人生のどこかで払うことになると思った。");}]]},
+ {id:"tsutsu2",when:(g,d)=>g.age<=33&&(g.tsutsu||0)>=1&&!g.crime&&Math.random()<0.6,
+  t:"また美人局の誘い",x:"例の男から連絡が来た。「前回うまくいったろ？　今回の相手はもっと金を持ってる。取り分も増やす」。",
+  c:[["また乗る",g=>{const gain=Math.round(rnd(300,600));g.tsutsu=(g.tsutsu||0)+1;g.money+=gain;g.rep=clamp(g.rep+1);g.kind=clamp(g.kind-0.7,1);g.work=clamp(g.work-0.3,1);g.happy+=g.value==="shigeki"?0.8:-1.2;say(`また乗った。${gain}万円。回数を重ねるほど、断る理由のほうが薄くなっていく。`);}],
+     ["もう断る",g=>{g.kind=clamp(g.kind+0.2);say("今度は断った。ただ、一度知ってしまった金の味は、なかなか消えない。");}]]},
+ {id:"tsutsu_busted",when:(g,d)=>(g.tsutsu||0)>=1&&!g.crime&&Math.random()<0.14+0.09*(g.tsutsu||0),
+  t:"美人局がバレた",x:"被害者の一人が、ホテルの前で録音していた。警察の内偵はとっくに終わっていたらしい。共犯の男は先に捕まり、あなたの名前も出た。恐喝と詐欺の疑いで、任意同行を求められている。",
+  c:[["認めて、示談と賠償に回す",g=>{g.crime=true;g.money-=1000;g.happy-=3;g.life=Math.max(0,g.life-150);g.ideal=clamp(g.ideal-1,2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("認めた。逮捕され、実名で報道された。勤め先は辞めた。示談と賠償で貯金はほぼ消えた。前科と記事は、港区の肩書きより長く残る。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}],
+     ["否認する",g=>{if(Math.random()<0.5){g.money-=300;g.rep=clamp(g.rep+2);g.happy-=2;say("否認を続けて不起訴になった。ただ、任意同行の様子は撮られていた。港区ではもう噂になっている。弁護士費用で300万円が消えた。");}else{g.crime=true;g.money-=1200;g.happy-=3;g.life=Math.max(0,g.life-150);g.ideal=clamp(g.ideal-1,2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("否認したが起訴され、有罪になった。逮捕と報道で勤め先は辞めた。払う額は、認めた場合より増えた。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}}]]},
  {id:"insta",when:(g,d)=>g.age>=21&&g.age<=30&&d.L>=7,
   t:"PR案件",x:"インスタのフォロワーが1万人を超え、美容クリニックからPR案件の依頼が来た。",
   c:[["受ける",g=>{g.money+=200;g.rep=clamp(g.rep+1);g.ideal=clamp(g.ideal+0.4);say("PR案件で200万円。会食のお誘いも増えた。");}],
@@ -1222,6 +1234,7 @@ const VERDICT={
   "画面の向こうの有名人":"「フォロワー数十万人。呼ばれる側じゃなく、呼ぶ側の数字を持つようになった」",
   "更新が止まったアカウント":"「最後の投稿がいつか、誰も覚えていない。数字だけが残った」",
   "夜の世界で結ばれた二人":"「お似合いだよ、あの二人は」",
+  "表に戻れない女":"「あの子、ニュースに出てたよね」",
   "ホスト沼の果て":"「あれだけ稼いでたのに、どこに消えたんだろうね」",
   "経営者の妻":"「あの奥さんがいるから、あいつの会社は回ってる」",
   "社長夫人（名ばかり）":"「奥さん？ああ、家にいる人ね」",
@@ -1284,6 +1297,7 @@ function restartEnding(){
 function singleFinal(d){
   const ea=G.extActs||{}, qg=G.quals-(G.q35||0), S=G.sumAge||35, N=40-S;
   if(G.indep&&d.career>=900) return ["40歳で逆転した女",`${S}歳を過ぎてから${qg>0?`資格を${qg}つ取り`:"仕事に打ち込み"}、独立した。年収は${d.career.toLocaleString()}万円。${S}歳の頃に「もう遅い」と言っていた人たちが、今は仕事の相談に来る。`];
+  if(G.crime) return ["表に戻れない女",`美人局に加担したことが表に出て、逮捕された。前科と報道は消えず、港区の紹介も、まともな勤め先も戻ってこなかった。あの時受け取った示談金は、何倍にもなって人生から返済させられている。`];
   if(G.lastMar) return restartEnding();
   if((ea.konkatsu||0)>=2) return ["最後まで探し続けた女",`40歳、まだ探している。並べていた条件は、${S}歳の頃よりずっと短くなった。焦りより、自分に合う人の輪郭のほうがはっきりしてきた。`];
   if((ea.friends||0)>=3) return ["自分の暮らしを選んだ女",`40歳、独身。休日は地元の友達と過ごし、平日は淡々と働く。港区の物差しから降りて${N}年、誰かと比べる回数がずいぶん減った。`];
@@ -1396,6 +1410,8 @@ function finish(){
   if(L.length<2) L.push(["減る資産と、積み上がる資産","若さは毎年減り、仕事力と性格は積み上がる。どちらに時間を使ったかが35歳で効いてくる。"]);
   const NM={}; [...ACTIONS,...ACTIONS_M,...ACTIONS_P].forEach(a=>NM[a.k]=a.n); Object.assign(NM,{startup:"起業",toYoru:"夜の仕事を始める",toHiru:"昼の仕事に戻る"});
   const why=[];
+  if(G.crime) why.push("美人局への加担が発覚し、逮捕された。前科と報道は、稼いだ示談金よりずっと長く残った。");
+  else if((G.tsutsu||0)>0) why.push(`美人局に${G.tsutsu}回加担し、バレずに終わった。稼いだ金より、「知っている人間がいる」ことのほうが残った。`);
   if(FINAL){
     const ea=G.extActs||{}, top=Object.entries(ea).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([k,c])=>`${NM[k]||k}×${c}`).join("、");
     why.push(`${S+1}〜40歳に選んだ行動：${top||"—"}`);
