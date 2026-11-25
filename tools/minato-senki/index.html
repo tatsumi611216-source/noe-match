@@ -619,6 +619,7 @@ function act(k){
   if(G.kidSingle && !G.married){ G.money-=50; if(Math.random()<0.3) say("子育てと仕事の両立は、想像よりずっとお金と体力を使った。"); }
   if(G.drugActive && (G.drugN||0)>=2){ G.work=clamp(G.work-0.2,1); if(Math.random()<0.4) say("薬が切れている時間は、何も手につかなくなってきた。"); }
   if(G.avCareer && !G.married){ const inc=Math.round(rnd(150,450)); G.money+=inc; G.work=clamp(G.work-0.1,1); if(Math.random()<0.35) say(`専属の撮影で${inc}万円が入った。`); }
+  if(G.itadaki && !G.married){ const inc=Math.round(rnd(300,800)); G.money+=inc; G.itadakiTotal=(G.itadakiTotal||0)+inc; G.itadakiN=(G.itadakiN||0)+1; G.kind=clamp(G.kind-0.1,1); if(Math.random()<0.4) say(`パパから${inc}万円分が届いた。「いただく」生活が続いている。`); }
   if(!G.partner && !G.married && G.age>=29) G.happy-= (G.value==="antei"?0.5:G.value==="shigeki"?0.2:0);
   G.money+=Math.round(income*0.75)-cost;
   payDebt();
@@ -766,6 +767,22 @@ const EVENTS=[
   t:"出演がバレた",x:"「これ、君じゃない？」――知人の画面に、作品のサムネイルと、見覚えのある顔があった。噂は港区から、勤め先や実家のある世界へ広がり始めている。",
   c:[["受け入れる",g=>{g.avBusted=true;g.happy-=2.5;g.rep=clamp(g.rep+2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"&&g.job!=="geino"&&g.job!=="influ"){g.job="baito";}say("会社には居づらくなり、辞めた。家族とは、しばらく連絡が途絶えた。");if(g.partner){say(`${g.partner.label}とは、それきりになった。`);g.partner=null;}}],
      ["別人だと言い張る",g=>{if(Math.random()<0.5){g.happy-=1;say("「別人です」と言い張って、その場は収まった。ただ、信じていない目もあった。");}else{g.avBusted=true;g.happy-=2.5;g.rep=clamp(g.rep+2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"&&g.job!=="geino"&&g.job!=="influ"){g.job="baito";}say("スクリーンショットと照合され、言い逃れはできなかった。会社は辞めた。");if(g.partner){say(`${g.partner.label}とは、それきりになった。`);g.partner=null;}}}]]},
+ {id:"papakatsu_dark",when:(g,d)=>g.age>=20&&g.age<=30&&(g.minato>=2||(g.partner&&g.partner.kind==="asobi"))&&!g.itadaki,
+  t:"本気のパパ",x:"港区の席で知り合った経営者の男が、桁違いの本気を見せ始めた。「君のためなら何でもする」。使い方次第では、人生が変わる額が動きそうな相手だ。",
+  c:[["本気で巻き取りにいく",g=>{const amt=Math.round(rnd(800,1500));g.itadaki=true;g.itadakiN=1;g.itadakiTotal=(g.itadakiTotal||0)+amt;g.money+=amt;g.ideal=clamp(g.ideal+0.5);g.kind=clamp(g.kind-1,1);g.rep=clamp(g.rep+1);say(`「いただく」側に回った。車、時計、現金――${amt}万円分が、短期間で自分のものになった。本気の男は、財布の開き方が違う。`);}],
+     ["普通のお小遣いに留める",g=>{g.money+=150;say("お小遣い程度で留めた。深入りすれば額は跳ねるが、危ない橋だと思った。");}]]},
+ {id:"itadaki_manual",when:(g,d)=>!!g.itadaki&&(g.itadakiN||0)>=1&&!g.manual&&Math.random()<0.5,
+  t:"マニュアル販売の誘い",x:"「その巻き取り方、教えてほしい」と同世代の子たちから声がかかる。やり方をマニュアルにして売れば、自分が動かなくても金になる。ただし、広まるほど目立つ。",
+  c:[["売る",g=>{const amt=Math.round(rnd(500,1200));g.manual=true;g.itadakiTotal=(g.itadakiTotal||0)+amt;g.money+=amt;g.rep=clamp(g.rep+2);say(`マニュアルは飛ぶように売れ、${amt}万円になった。買い手の女の子たちが各地で同じことを始める。輪が広がるほど、発案者の自分の影も濃くなる。`);}],
+     ["売らない",g=>{g.kind=clamp(g.kind+0.2);say("マニュアル化はやめた。広めた分だけ、警察と被害者の目が自分に向くと思った。");}]]},
+ {id:"itadaki_obsess",when:(g,d)=>!!g.itadaki&&Math.random()<0.4,
+  t:"パパの暴走",x:"巻き取り相手のパパが、本気になりすぎた。連絡は1日数十件、「会えないなら死ぬ」とまで言い始めた。金は運んでくるが、熱量が制御を外れている。",
+  c:[["受け止めるふりをして続ける",g=>{const amt=Math.round(rnd(200,400));g.itadakiTotal=(g.itadakiTotal||0)+amt;g.money+=amt;g.happy-=1;say(`なだめながら関係を続けた。${amt}万円が追加で入ったが、携帯が鳴るたびに身構えるようになった。`);}],
+     ["きっぱり切る",g=>{if(Math.random()<0.5){g.happy+=0.3;say("連絡先を全て切り替えて、関係を断った。しばらくは怖かったが、男は諦めた。");}else{g.rep=clamp(g.rep+1);g.happy-=1.5;say("切った途端、男は周囲に「騙された」と吹聴し始めた。港区に噂が回った。");}}]]},
+ {id:"itadaki_busted",when:(g,d)=>!!g.itadaki&&Math.random()<(0.08+0.06*(g.itadakiN||0)+(g.manual?0.15:0)),
+  t:"詐欺容疑の報道",x:"朝のニュースに、自分の顔写真と「男性から多額の現金を騙し取った疑い」の字幕が流れた。被害を訴える男性が複数現れ、マニュアルの存在まで報じられている。",
+  c:[["認めて弁済に進む",g=>{g.crime=true;g.crimeKind="itadaki";g.itadaki=false;g.money=Math.floor(g.money*0.3);g.rep=clamp(g.rep+3);g.happy-=3;g.life-=150;if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("容疑を認め、巻き取った金の大半は弁済と税金で消えた。残ったのは前科と報道と、ネットに残り続ける実名だった。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}],
+     ["否認して争う",g=>{if(Math.random()<0.5){g.money=Math.max(0,g.money-400);g.happy-=1.5;say("証拠不十分で不起訴になった。金の一部は残ったが、名前と顔は全国に知られた。");}else{g.crime=true;g.crimeKind="itadaki";g.itadaki=false;g.money=Math.floor(g.money*0.2);g.rep=clamp(g.rep+3);g.happy-=3;g.life-=150;if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("否認は通らず、有罪になった。弁済で財産はほぼ消えた。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}}]]},
  {id:"insta",when:(g,d)=>g.age>=21&&g.age<=30&&d.L>=7,
   t:"PR案件",x:"インスタのフォロワーが1万人を超え、美容クリニックからPR案件の依頼が来た。",
   c:[["受ける",g=>{g.money+=200;g.rep=clamp(g.rep+1);g.ideal=clamp(g.ideal+0.4);say("PR案件で200万円。会食のお誘いも増えた。");}],
@@ -1320,6 +1337,7 @@ const VERDICT={
   "消せない過去を持つ女":"「あの子、昔あっち系に出てたらしいよ」",
   "国民的スター":"「港区の席にいた頃の面影は、もうないね。格が違う」",
   "トップインフルエンサー":"「フォロワー100万超え。呼ばれる側から、完全に卒業したね」",
+  "いただききった女":"「あの子、男から巻き取るのが天才的に上手かったらしいよ。捕まらなかったけど」",
   "ホスト沼の果て":"「あれだけ稼いでたのに、どこに消えたんだろうね」",
   "経営者の妻":"「あの奥さんがいるから、あいつの会社は回ってる」",
   "社長夫人（名ばかり）":"「奥さん？ああ、家にいる人ね」",
@@ -1382,8 +1400,9 @@ function restartEnding(){
 function singleFinal(d){
   const ea=G.extActs||{}, qg=G.quals-(G.q35||0), S=G.sumAge||35, N=40-S;
   if(G.indep&&d.career>=900) return ["40歳で逆転した女",`${S}歳を過ぎてから${qg>0?`資格を${qg}つ取り`:"仕事に打ち込み"}、独立した。年収は${d.career.toLocaleString()}万円。${S}歳の頃に「もう遅い」と言っていた人たちが、今は仕事の相談に来る。`];
-  if(G.crime) return ["表に戻れない女",G.crimeKind==="drug"?`薬物で逮捕されたことが表に出た。前科と報道は消えず、港区の紹介も、まともな勤め先も戻ってこなかった。一晩の高揚感の代金は、人生の残りで払い続けている。`:`美人局に加担したことが表に出て、逮捕された。前科と報道は消えず、港区の紹介も、まともな勤め先も戻ってこなかった。あの時受け取った示談金は、何倍にもなって人生から返済させられている。`];
+  if(G.crime) return ["表に戻れない女",G.crimeKind==="drug"?`薬物で逮捕されたことが表に出た。前科と報道は消えず、港区の紹介も、まともな勤め先も戻ってこなかった。一晩の高揚感の代金は、人生の残りで払い続けている。`:G.crimeKind==="itadaki"?`パパ活で男たちから巻き取ったことが詐欺として表に出て、逮捕された。弁済で金は消え、前科と実名報道は消えなかった。「いただく」技術は、最後に自分の人生をいただいていった。`:`美人局に加担したことが表に出て、逮捕された。前科と報道は消えず、港区の紹介も、まともな勤め先も戻ってこなかった。あの時受け取った示談金は、何倍にもなって人生から返済させられている。`];
   if(G.kidSingle) return ["シングルマザーとして生きた女",`結婚せずに子どもを産み、一人で育てた。港区の物差しでは測れない生活だった。お金も時間も足りなかったが、この子と生きてきた年数だけは、誰にも取り上げられない。`];
+  if((G.itadakiTotal||0)>=2500&&!G.crime) return ["いただききった女",`40歳。男たちから巻き取った総額は${(G.itadakiTotal||0).toLocaleString()}万円。捕まらなかった。金は残り、名前は表に出なかった。いただききった女の老後は、静かで豊かだった。`];
   if(G.avBusted) return ["消せない過去を持つ女",`AV出演が周囲に知れた。仕事も、縁談も、実家との関係も、その前と後では別物になった。ネットのデータは、引っ越しでも改名でも消えなかった。`];
   if(G.job==="geino"&&G.topStar) return ["国民的スター",`40歳。国民的スターの座は、若い頃の港区の夜とは別の世界の話になった。年収は${d.career.toLocaleString()}万円。値段をつけられる人生から、値段を決める人生への逆転は完成した。`];
   if(G.job==="influ"&&(G.fans||0)>=100) return ["トップインフルエンサー",`40歳、独身。フォロワーは${(G.fans||0).toFixed(1)}万人。年収は${d.career.toLocaleString()}万円。港区に呼ばれていた頃の自分が、遠い昔の人に見える。`];
@@ -1430,6 +1449,7 @@ function finish(){
     else{title="勝ち逃げした普通の子";body=`${G.marriedAge}歳で${p.label}と結婚。港区の男たちの関心が次の22歳に移った頃、彼女はもう結婚していた。派手さはない。でも35歳で「最近呼ばれない」と悩むこともない。`}
   } else {
     if(G.job==="kigyo"&&G.biz>=5){title=G.nightPast?"夜を元手にした女":"港区を買う側";body=G.nightPast?`年収${d.career}万円の事業を持つ経営者。若さと見た目で稼げる時期に、金と顧客を残した。同じ店にいた子の多くは、稼いだ分を全部使い切って35歳を迎えた。`:`年収${d.career}万円の事業を持つ経営者。昔ギャラ飲みに女の子を呼んでいた側の男たちが、今は取引先として頭を下げてくる。`}
+    else if((G.itadakiTotal||0)>=2500&&!G.crime){title="いただききった女";body=`35歳、独身。男たちから巻き取った総額は${(G.itadakiTotal||0).toLocaleString()}万円。バレずに、捕まらずに、いただききった。残ったのは金と、誰にも言えない成功の記録だけだった。`}
     else if(G.job==="geino"&&G.topStar){title="国民的スター";body=`35歳、独身。連続ドラマの大ヒットで、国民的スターになった。知名度は${(G.fame||0).toFixed(1)}。街を歩けば誰もが知っていて、港区の会食に呼ばれる理由がなくなった。値段をつける側と、つけられる側が、完全に逆転した。`}
     else if(G.job==="geino"&&(G.fame||0)>=7){title="画面の中の人";body=`35歳。知名度は${(G.fame||0).toFixed(1)}まで上がった。街を歩けば声をかけられ、紹介されるときは名前より先に数字と肩書きが来る。港区の男たちがつける値段より、世間がつける値段のほうが大きくなった。`}
     else if(G.job==="geino"){title="元・少し有名な人";body=`35歳、独身。「前はテレビに出ていて」が自己紹介の枕詞になった。知名度は${(G.fame||0).toFixed(1)}。数字で見える値札を背負った分、数字が下がったときの静けさも知っている。`}
@@ -1501,7 +1521,8 @@ function finish(){
   if(L.length<2) L.push(["減る資産と、積み上がる資産","若さは毎年減り、仕事力と性格は積み上がる。どちらに時間を使ったかが35歳で効いてくる。"]);
   const NM={}; [...ACTIONS,...ACTIONS_M,...ACTIONS_P].forEach(a=>NM[a.k]=a.n); Object.assign(NM,{startup:"起業",toYoru:"夜の仕事を始める",toHiru:"昼の仕事に戻る"});
   const why=[];
-  if(G.crime) why.push(G.crimeKind==="drug"?"薬物で逮捕された。報道は一晩で広がり、戻れる場所はほとんどなかった。":"美人局への加担が発覚し、逮捕された。前科と報道は、稼いだ示談金よりずっと長く残った。");
+  if(G.crime) why.push(G.crimeKind==="drug"?"薬物で逮捕された。報道は一晩で広がり、戻れる場所はほとんどなかった。":G.crimeKind==="itadaki"?"パパ活詐欺で逮捕された。巻き取った金は弁済で消え、前科と実名報道だけが残った。":"美人局への加担が発覚し、逮捕された。前科と報道は、稼いだ示談金よりずっと長く残った。");
+  if((G.itadakiTotal||0)>0&&!G.crime) why.push(`男たちから総額${(G.itadakiTotal||0).toLocaleString()}万円を「いただいた」。${G.manual?"マニュアルまで売った。":""}バレずに終わった。`);
   else if((G.tsutsu||0)>0) why.push(`美人局に${G.tsutsu}回加担し、バレずに終わった。稼いだ金より、「知っている人間がいる」ことのほうが残った。`);
   if((G.drugN||0)>0&&!G.crime) why.push(`薬物に${G.drugN}回手を出し、バレずに終わった。`);
   if(G.eggAge) why.push(`卵子凍結：${G.eggAge}歳で凍結した${G.eggUsed?"卵子を使って、授かった":""}`);
