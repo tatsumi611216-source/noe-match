@@ -899,9 +899,11 @@ function marAct(k){
   if(k!=="m_ninkatsu" && !m.kid && G.age<=38 && Math.random()<0.03){ m.kid=true; m.kidBy="luck"; say("子どもを授かった。"); }
   // 隠していた浮気が知られることがある
   if(m.secret && Math.random()<0.1){ divorce("隠していたことが夫に知られた。話し合いの末、離婚が決まった。","my"); return nextYear(); }
-  const risk=(s<=4?0.04:s<=6?0.015:0.005)+(G.marriedAge<23?0.03:0)+Math.max(0,m.strain-6)*0.06+(m.sat<3?0.08:0);
+  // 夜の世界で出会った夫はキャバ通いが直らないことがある。一度許しても繰り返し、離婚率を押し上げる
+  if(m.kyaba && Math.random()<0.3){ m.strain=clamp(m.strain+1.2); m.sat=clamp(m.sat-0.6); say("また別のキャバ嬢の名前が出てきた。夫の店通いは、結婚しても直らなかった。"); }
+  const risk=(s<=4?0.04:s<=6?0.015:0.005)+(G.marriedAge<23?0.03:0)+Math.max(0,m.strain-6)*0.06+(m.sat<3?0.08:0)+((m.route==="night"||m.route==="shacho")?0.02:0)+(m.kyaba?0.03:0);
   if(Math.random()<risk){
-    divorce(m.strain>=6?`すれ違いが積み重なり、${p.label}と離婚した。`:G.marriedAge<23?`${p.label}と離婚した。若すぎた結婚だった。`:`${p.label}と離婚した。`);
+    divorce(m.kyaba?`夫のキャバ通いと浮気は、最後まで直らなかった。${p.label}と離婚した。`:m.strain>=6?`すれ違いが積み重なり、${p.label}と離婚した。`:G.marriedAge<23?`${p.label}と離婚した。若すぎた結婚だった。`:`${p.label}と離婚した。`);
     return nextYear();
   }
   triggerMarEvent();
@@ -912,7 +914,7 @@ const mev=id=>MEVENTS.find(e=>e.id===id);
 const MEVENTS=[
  {id:"indep",when:(g)=>indepOK(g),t:"独立の誘い",x:"取引先から「独立するなら、うちが最初の顧客になる」と言われた。",c:INDEP_C},
  {id:"uwaki_found",when:()=>false,t:"夫の浮気",x:"夫は「もう終わっている。やり直したい」と言った。",
-  c:[["許す",g=>{const m=g.mar;m.hForgave=1;if(m.sat>=4.5&&Math.random()<0.7){m.repaired++;m.strain=clamp(m.strain+0.5);m.sat=clamp(m.sat-0.5);say("許すと決めた。そのかわり、毎週話す時間を作ることを約束させた。");}else{m.mask++;m.strain=clamp(m.strain+1);m.sat=clamp(m.sat-0.8);say("許すと言った。けれど、夫のスマホが鳴るたびに気になってしまう。");}}],
+  c:[["許す",g=>{const m=g.mar;m.hForgave=1;if(m.route==="night"||m.route==="shacho")m.kyaba=1;if(m.sat>=4.5&&Math.random()<0.7){m.repaired++;m.strain=clamp(m.strain+0.5);m.sat=clamp(m.sat-0.5);say("許すと決めた。そのかわり、毎週話す時間を作ることを約束させた。");}else{m.mask++;m.strain=clamp(m.strain+1);m.sat=clamp(m.sat-0.8);say("許すと言った。けれど、夫のスマホが鳴るたびに気になってしまう。");}}],
      ["別れる",g=>divorce("許さないと決めた。離婚届に判を押した。","h")]]},
  {id:"my_uwaki",when:(g,m)=>m.years>=2&&(g.minato>=1||(m.oldMeet||0)>=1)&&Math.random()<0.5,
   t:"昔の知り合いからの誘い",x:()=>G.minato>=1?"港区時代に親しかった人から「久しぶりに二人で飲まない？」と連絡が来た。結婚していることは知っているはずだ。":"昔付き合っていた人から「久しぶりに会えないかな」と連絡が来た。",
@@ -943,10 +945,10 @@ const MEVENTS=[
   c:[["自分も引き受ける",g=>{const ok=g.mar.inlaw>=1;g.work=clamp(g.work-0.5,1);g.money-=100;g.kind=clamp(g.kind+0.3);g.mar.sat=clamp(g.mar.sat+(ok?0.9:0.2));g.mar.strain=clamp(g.mar.strain+(ok?0.2:1));say(ok?"夫と分担して介護を引き受けた。義実家と築いてきた関係が支えになった。":"介護を引き受けた。慣れない義実家との往復で、疲れが溜まった。");}],
      ["外のサービスを使う",g=>{g.money-=250;g.mar.strain=clamp(g.mar.strain+0.3);say("介護サービスを契約した。費用はかかったが、二人とも仕事を続けられた。");}]]},
  {id:"uwaki",when:(g,m,p)=>m.years>=1&&(p.sincerity<=6||m.route!=="konkatsu"),
-  t:"夫の浮気の疑い",x:"夫のスマホに、知らない名前からの通知が続いている。",
-  c:[["問い詰める",g=>{const m=g.mar,real=Math.random()<(11-g.partner.sincerity)/11;
+  t:"夫の浮気の疑い",x:()=>(G.mar.route==="night"||G.mar.route==="shacho")?"夫のスマホに、キャバ嬢らしい名前からの通知が続いている。自分がいた店とは別の店の子らしい。":"夫のスマホに、知らない名前からの通知が続いている。",
+  c:[["問い詰める",g=>{const m=g.mar,night=m.route==="night"||m.route==="shacho",real=Math.random()<Math.min(0.92,(11-g.partner.sincerity)/11+(night?0.3:0));
        if(!real){m.strain=clamp(m.strain+0.8);m.sat=clamp(m.sat-0.4);say("ただの仕事相手だった。疑ったことで、少し気まずくなった。");return;}
-       m.crisis++; m.hFound=1; say("問い詰めると、夫は認めた。"); g.event=mev("uwaki_found");}],
+       m.crisis++; m.hFound=1; say(night?"問い詰めると、夫は認めた。相手は別の店のキャバ嬢だった。":"問い詰めると、夫は認めた。"); g.event=mev("uwaki_found");}],
      ["気づかないふりをする",g=>{g.mar.mask++;g.mar.strain=clamp(g.mar.strain+1.2);g.mar.sat=clamp(g.mar.sat-0.6);say("何も聞かなかった。家の中の会話が、事務連絡だけになっていった。");}]]},
  {id:"house",when:(g,m,p)=>!m.house&&m.years>=1&&(g.money>=600||p.income>=900),
   t:"家の購入",x:"夫が「そろそろ家を買わないか」と言い出した。",
