@@ -275,7 +275,7 @@ function derive(g){
   const asobi=clamp(L*0.6+y*0.5-0.5+(g.job==="yoru"?0.8:0)+(g.avLabel?0.5:0));
   // 20代前半は見た目と適齢度、20代後半からは仕事の比重が上がる
   const wY=late?0.2:0.3, wL=late?0.14:0.22, wW=late?0.32:0.16;
-  let kekkon=g.kind*0.3+g.work*wW+g.intel*0.12+L*wL+yk*wY-g.rep*0.15+J.kb+(g.nightPast&&g.job!=="yoru"?-0.7:0)-(g.patronOut?0.8:0)-(g.crime?2:0)-(g.kidSingle?1.2:0)-(g.avLabel?1.5:0)-(g.avBusted?1:0);
+  let kekkon=g.kind*0.3+g.work*wW+g.intel*0.12+L*wL+yk*wY-g.rep*0.15+J.kb+(g.nightPast&&g.job!=="yoru"?-0.7:0)-(g.patronOut?0.8:0)-(g.crime?2:0)-(g.kidSingle?1.2:0)-(g.avLabel?1.5:0)-(g.avBusted?1:0)-(g.fcBusted?0.5:0);
   if(late&&g.job==="senmon") kekkon+=0.4;
   if(late&&g.job==="baito") kekkon-=0.3;
   if(g.job==="kigyo") kekkon+=((g.biz||0)-4)*(late?0.15:0.05);
@@ -620,6 +620,9 @@ function act(k){
   if(G.drugActive && (G.drugN||0)>=2){ G.work=clamp(G.work-0.2,1); if(Math.random()<0.4) say("薬が切れている時間は、何も手につかなくなってきた。"); }
   if(G.avCareer && !G.married){ const inc=Math.round(rnd(150,450)); G.money+=inc; G.work=clamp(G.work-0.1,1); if(Math.random()<0.35) say(`専属の撮影で${inc}万円が入った。`); }
   if(G.itadaki && !G.married){ const inc=Math.round(rnd(300,800)); G.money+=inc; G.itadakiTotal=(G.itadakiTotal||0)+inc; G.itadakiN=(G.itadakiN||0)+1; G.kind=clamp(G.kind-0.1,1); if(Math.random()<0.4) say(`パパから${inc}万円分が届いた。「いただく」生活が続いている。`); }
+  if(G.fanclub && !G.married){ const inc=Math.round(rnd(40,120)+(G.fcLevel>=2?rnd(100,250):0)); G.money+=inc; if(Math.random()<0.35) say(`ファンクラブの売上で${inc}万円が入った。`); }
+  if(G.mitsugi && !G.married){ const inc=Math.round(rnd(80,200)); G.money+=inc; G.mitsugiTotal=(G.mitsugiTotal||0)+inc; if(Math.random()<0.3) say(`貢がれたブランド品を売って${inc}万円になった。`); }
+  if(G.gamble && !G.married){ const loss=Math.round(rnd(50,200)); G.money-=loss; G.work=clamp(G.work-0.1,1); if(Math.random()<0.35) say(`ギャンブルで${loss}万円溶かした。取り返さなければ、という気持ちが止まらない。`); }
   if(!G.partner && !G.married && G.age>=29) G.happy-= (G.value==="antei"?0.5:G.value==="shigeki"?0.2:0);
   G.money+=Math.round(income*0.75)-cost;
   payDebt();
@@ -783,6 +786,58 @@ const EVENTS=[
   t:"詐欺容疑の報道",x:"朝のニュースに、自分の顔写真と「男性から多額の現金を騙し取った疑い」の字幕が流れた。被害を訴える男性が複数現れ、マニュアルの存在まで報じられている。",
   c:[["認めて弁済に進む",g=>{g.crime=true;g.crimeKind="itadaki";g.itadaki=false;g.money=Math.floor(g.money*0.3);g.rep=clamp(g.rep+3);g.happy-=3;g.life-=150;if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("容疑を認め、巻き取った金の大半は弁済と税金で消えた。残ったのは前科と報道と、ネットに残り続ける実名だった。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}],
      ["否認して争う",g=>{if(Math.random()<0.5){g.money=Math.max(0,g.money-400);g.happy-=1.5;say("証拠不十分で不起訴になった。金の一部は残ったが、名前と顔は全国に知られた。");}else{g.crime=true;g.crimeKind="itadaki";g.itadaki=false;g.money=Math.floor(g.money*0.2);g.rep=clamp(g.rep+3);g.happy-=3;g.life-=150;if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("否認は通らず、有罪になった。弁済で財産はほぼ消えた。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}}]]},
+ {id:"app_fanclub",when:(g,d)=>!!g.appMode&&g.age>=20&&g.age<=30&&d.L>=7&&(g.minato>=1||g.rep>=1)&&!g.fanclub,
+  t:"ファンクラブ開設の誘い",x:"SNSのフォロワーから「有料ファンクラブ作ってほしい」とDMが何通も来た。写真と日常動画のサブスクなら、際どいことはしなくても回りそうだ。ただし、身バレと副業バレのリスクはある。",
+  c:[["開設する",g=>{const amt=Math.round(rnd(50,120));g.fanclub=true;g.fcLevel=1;g.money+=amt;g.rep=clamp(g.rep+1);g.happy+=g.value==="shigeki"?0.5:-0.5;say(`ファンクラブを開設した。初月で${amt}万円。顔と生活の一部を切り売りする、新しい収入の柱ができた。`);}],
+     ["やめておく",g=>{g.kind=clamp(g.kind+0.2);say("ファンクラブはやめておいた。バレた時の代償が大きすぎると思った。");}]]},
+ {id:"app_fc_grow",when:(g,d)=>!!g.appMode&&!!g.fanclub&&g.fcLevel===1&&Math.random()<0.6,
+  t:"ファンクラブが伸びた",x:"会員数が増え、限定コンテンツの更新依頼が追いつかなくなってきた。運営に時間を取られるが、売上は本業に迫る勢いだ。",
+  c:[["本腰を入れる",g=>{const amt=Math.round(rnd(150,400));g.fcLevel=2;g.money+=amt;g.work=clamp(g.work-0.2,1);say(`ファンクラブに本腰を入れた。売上${amt}万円。本業の合間に撮って編集する生活が始まった。`);}],
+     ["細く長く続ける",g=>{const amt=Math.round(rnd(50,120));g.money+=amt;say(`無理のない範囲で続けた。売上${amt}万円。`);}]]},
+ {id:"app_fc_bare",when:(g,d)=>!!g.appMode&&!!g.fanclub&&!g.fcBusted&&Math.random()<(g.fcLevel>=2?0.22:0.12),
+  t:"会社にバレた",x:"「これ、あなたですよね」――人事に呼ばれ、ファンクラブの画面を見せられた。副業禁止の就業規則が机の上にある。",
+  c:[["謝罪して閉じる",g=>{g.fcBusted=true;g.fanclub=false;g.happy-=1.5;g.rep=clamp(g.rep+1);say("謝罪してファンクラブは閉じた。仕事は残ったが、社内の視線は変わった。");}],
+     ["開き直る",g=>{g.fcBusted=true;if(Math.random()<0.5){g.happy-=1;say("「プライベートです」と突っぱねて、注意で済んだ。ただし居心地は悪くなった。");}else{g.happy-=2;if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"&&g.job!=="geino"&&g.job!=="influ"){g.job="baito";}say("居づらくなって、結局辞めた。ファンクラブだけが残った。");if(g.partner){say(`${g.partner.label}とは、それきりになった。`);g.partner=null;}}}]]},
+ {id:"app_crypto",when:(g,d)=>!!g.appMode&&g.age>=21&&g.age<=33&&g.money>=50&&!g.crypto,
+  t:"仮想通貨の誘い",x:"港区の席で、男がスマホのチャートを見せてきた。「これ、1年で8倍になったやつ。余裕資金でやればいい」。余裕資金は50万円ある。",
+  c:[["50万円分買う",g=>{g.crypto=true;g.money-=50;say("仮想通貨を50万円分買った。チャートを見る回数が、1日の大半を占めるようになった。");}],
+     ["やめておく",g=>{say("仮想通貨はやめておいた。上がる話しかしない人の金言は、だいたい逆だと思った。");}]]},
+ {id:"app_crypto_result",when:(g,d)=>!!g.appMode&&!!g.crypto&&Math.random()<0.7,
+  t:"チャートの行方",x:"買った仮想通貨のチャートが、大きく動き始めた。",
+  c:[["利確する",g=>{g.crypto=false;if(Math.random()<0.45){const amt=Math.round(rnd(200,600));g.money+=amt;g.cryptoWin=true;say(`暴騰していた。利確して${amt}万円の利益。笑いが止まらない夜だった。`);}else{const amt=Math.round(rnd(100,400));g.money-=amt;g.happy-=1;if(Math.random()<0.4)g.gamble=true;say(`暴落していた。${amt}万円の損。取り返したい、という気持ちが芽生えた。`);}}],
+     ["まだ持つ",g=>{if(Math.random()<0.5){const amt=Math.round(rnd(100,300));g.money+=amt;say(`さらに上がった。含み益${amt}万円分。売り時を逃し続けるのも才能のうちだと思った。`);}else{const amt=Math.round(rnd(100,300));g.money-=amt;g.happy-=1;if(Math.random()<0.4)g.gamble=true;say(`持っている間に暴落した。${amt}万円の損。`);}g.crypto=false;}]]},
+ {id:"app_gamble_chase",when:(g,d)=>!!g.appMode&&!!g.gamble&&Math.random()<0.5,
+  t:"取り返したい",x:"負けを取り返すには、賭けるしかない。競馬、パチンコ、オンラインカジノ――入口はいくらでもある。",
+  c:[["追いかける",g=>{const amt=Math.round(rnd(100,300));g.money-=amt;g.happy-=1;g.work=clamp(g.work-0.2,1);say(`追いかけて、さらに${amt}万円負けた。負け額だけが、着実に育っていく。`);}],
+     ["今日はやめる",g=>{g.happy+=0.3;say("今日はやめた。ただ、明日も同じ誘惑は来る。");}]]},
+ {id:"app_gamble_stop",when:(g,d)=>!!g.appMode&&!!g.gamble&&Math.random()<0.4,
+  t:"底",x:"気づけば、貯金の減り方も、仕事中の集中力も、前とは別物になっていた。このままだと、取り返したいのは金じゃなく人生の方になる。",
+  c:[["きっぱりやめる",g=>{g.gamble=false;g.kind=clamp(g.kind+0.3);g.happy+=0.5;say("ギャンブルをやめた。負けた金は戻らないが、これ以上は増やさない。");}],
+     ["まだ取り返せる",g=>{const amt=Math.round(rnd(100,300));g.money-=amt;say(`やめられなかった。さらに${amt}万円が消えた。`);}]]},
+ {id:"app_seminar",when:(g,d)=>!!g.appMode&&g.age>=24&&g.age<=34&&(g.rep>=2||g.job==="kigyo")&&!g.seminar,
+  t:"教える側の誘い",x:"「あなたの港区での勝ち方、セミナーにしませんか」。稼ぎ方そのものより、稼ぎ方を教える方が儲かる、という話だった。高額塾の企画書が添えられている。",
+  c:[["始める",g=>{const amt=Math.round(rnd(200,500));g.seminar=true;g.money+=amt;g.rep=clamp(g.rep+2);g.kind=clamp(g.kind-0.5,1);say(`高額セミナーを始めた。初回で${amt}万円。教える側の景色は、思ったより金色だった。`);}],
+     ["やらない",g=>{g.kind=clamp(g.kind+0.2);say("セミナーはやらなかった。実績の薄い成功談を売る気にはなれなかった。");}]]},
+ {id:"app_seminar_fire",when:(g,d)=>!!g.appMode&&!!g.seminar&&Math.random()<0.45,
+  t:"セミナーの炎上",x:"受講生の告発ポストが拡散された。「内容が薄い」「返金に応じない」。コメント欄は荒れ、まとめサイトにも載った。",
+  c:[["返金対応する",g=>{const amt=Math.round(rnd(150,400));g.money-=amt;g.seminar=false;g.seminarFire=true;g.rep=clamp(g.rep-1);say(`希望者への返金に応じた。${amt}万円が戻っていった。炎上は収まったが、名前で検索すると残り続ける。`);}],
+     ["強気で続ける",g=>{g.seminarFire=true;if(Math.random()<0.5){const amt=Math.round(rnd(100,300));g.money+=amt;g.rep=clamp(g.rep+1);say(`強気の発信を続けたら、炎上が逆に宣伝になった。売上${amt}万円。賛否のある名前は、無名より強い。`);}else{const amt=Math.round(rnd(200,500));g.money-=amt;g.seminar=false;g.rep=clamp(g.rep+2);g.happy-=1.5;say(`騒ぎが大きくなり、返金と謝罪に追い込まれた。${amt}万円の損失。`);}}]]},
+ {id:"app_brand",when:(g,d)=>!!g.appMode&&g.age>=20&&g.age<=30&&(g.minato>=2||(g.partner&&g.partner.kind==="asobi"))&&!g.mitsugi,
+  t:"ブランド好きのパパ",x:"会食で知り合った男が、会うたびにブランドの紙袋を渡してくる。「君にはこれが似合う」。着ない服やバッグは、正直、現金に換えた方がありがたい。",
+  c:[["もらって転売する",g=>{const amt=Math.round(rnd(150,350));g.mitsugi=true;g.mitsugiTotal=(g.mitsugiTotal||0)+amt;g.money+=amt;g.kind=clamp(g.kind-0.3,1);say(`プレゼントはフリマと買取で現金化した。${amt}万円。詐欺でも何でもない、ただの転売だった。`);}],
+     ["物より現金がいいと言う",g=>{g.money+=80;say("率直に伝えたら、現金でお小遣いをもらえた。80万円。");}]]},
+ {id:"app_brand_obsess",when:(g,d)=>!!g.appMode&&!!g.mitsugi&&Math.random()<0.35,
+  t:"貢ぐ側の本気",x:"ブランド品を買ってくれる男が、本気の顔をするようになった。「他の男にも、こんなことさせてるの？」。物で繋がっていた関係が、熱を持ち始めた。",
+  c:[["なだめて続ける",g=>{const amt=Math.round(rnd(100,250));g.mitsugiTotal=(g.mitsugiTotal||0)+amt;g.money+=amt;g.happy-=0.8;say(`なだめながら関係を続けた。${amt}万円分が追加で届いたが、笑顔の維持が仕事になった。`);}],
+     ["距離を置く",g=>{if(Math.random()<0.5){g.mitsugi=false;say("距離を置いた。男は諦め、紙袋は来なくなった。");}else{g.money=Math.max(0,g.money-150);g.rep=clamp(g.rep+1);g.mitsugi=false;say("男の妻に知られた。示談で150万円を払い、関係は終わった。");}}]]},
+ {id:"app_dousei",when:(g,d)=>!!g.appMode&&!!g.partner&&!g.married&&g.age>=24&&g.age<=33&&!g.dousei,
+  t:"同棲の提案",x:"恋人から「一緒に住まない？」と言われた。結婚前提の同棲。家賃は折半で、生活は一気に現実になる。",
+  c:[["同棲する",g=>{g.dousei=true;g.money-=40;g.happy+=0.8;g.partner.commit=Math.min(1,g.partner.commit+0.1);say("同棲を始めた。引っ越しで40万円。港区の夜より、朝のキッチンの方が二人の距離を決めるようになった。");}],
+     ["まだしない",g=>{g.partner.commit=Math.max(0.05,g.partner.commit-0.05);say("同棲は断った。相手の顔に、少し影が差した。");}]]},
+ {id:"app_dousei2",when:(g,d)=>!!g.appMode&&!!g.dousei&&!!g.partner&&Math.random()<0.55,
+  t:"同棲の先",x:"同棲して1年。結婚の話を出すたび、相手の答えは少しずつ濁る。式の費用、親への挨拶、住む場所――現実の論点は、どれも重い。",
+  c:[["結婚に進める",g=>{g.partner.commit=Math.min(1,g.partner.commit+0.25);g.happy+=0.5;say("腹を割って話し合い、結婚に向けて動き出した。指輪の予算で揉めたのも、今は笑い話の範囲だ。");}],
+     ["見切りをつける",g=>{g.hadan=true;g.dousei=false;g.money-=30;g.happy-=2;say("破談にした。引っ越しで30万円。同棲した年数は戻らないが、結婚してから気づくよりは安かった、と思いたい。");g.partner=null;}]]},
  {id:"insta",when:(g,d)=>g.age>=21&&g.age<=30&&d.L>=7,
   t:"PR案件",x:"インスタのフォロワーが1万人を超え、美容クリニックからPR案件の依頼が来た。",
   c:[["受ける",g=>{g.money+=200;g.rep=clamp(g.rep+1);g.ideal=clamp(g.ideal+0.4);say("PR案件で200万円。会食のお誘いも増えた。");}],
@@ -1523,6 +1578,12 @@ function finish(){
   const why=[];
   if(G.crime) why.push(G.crimeKind==="drug"?"薬物で逮捕された。報道は一晩で広がり、戻れる場所はほとんどなかった。":G.crimeKind==="itadaki"?"パパ活詐欺で逮捕された。巻き取った金は弁済で消え、前科と実名報道だけが残った。":"美人局への加担が発覚し、逮捕された。前科と報道は、稼いだ示談金よりずっと長く残った。");
   if((G.itadakiTotal||0)>0&&!G.crime) why.push(`男たちから総額${(G.itadakiTotal||0).toLocaleString()}万円を「いただいた」。${G.manual?"マニュアルまで売った。":""}バレずに終わった。`);
+  if(G.fanclub||G.fcBusted) why.push(`有料ファンクラブを運営していた。${G.fcBusted?"会社にバレた。":"最後までバレなかった。"}`);
+  if((G.mitsugiTotal||0)>0) why.push(`ブランド品を貢がせて転売し、総額${(G.mitsugiTotal||0).toLocaleString()}万円にした。`);
+  if(G.gamble) why.push("ギャンブルにハマり、溶かした金と時間は戻らなかった。");
+  else if(G.cryptoWin) why.push("仮想通貨で大きく当てた時期がある。");
+  if(G.seminarFire) why.push("情報商材・セミナーが炎上したことがある。検索すると今も出てくる。");
+  if(G.hadan) why.push("結婚前提の同棲は、破談に終わった。");
   else if((G.tsutsu||0)>0) why.push(`美人局に${G.tsutsu}回加担し、バレずに終わった。稼いだ金より、「知っている人間がいる」ことのほうが残った。`);
   if((G.drugN||0)>0&&!G.crime) why.push(`薬物に${G.drugN}回手を出し、バレずに終わった。`);
   if(G.eggAge) why.push(`卵子凍結：${G.eggAge}歳で凍結した${G.eggUsed?"卵子を使って、授かった":""}`);
