@@ -272,10 +272,10 @@ function effLooks(g){ return clamp(g.looks - Math.max(0,g.age-27)*0.4*(1-g.looks
 function jobOf(g){return JOBS.find(j=>j.k===g.job)}
 function derive(g){
   const y=youthA(g), yk=youthK(g), L=effLooks(g), J=jobOf(g), late=g.age>=27;
-  const asobi=clamp(L*0.6+y*0.5-0.5+(g.job==="yoru"?0.8:0));
+  const asobi=clamp(L*0.6+y*0.5-0.5+(g.job==="yoru"?0.8:0)+(g.avLabel?0.5:0));
   // 20代前半は見た目と適齢度、20代後半からは仕事の比重が上がる
   const wY=late?0.2:0.3, wL=late?0.14:0.22, wW=late?0.32:0.16;
-  let kekkon=g.kind*0.3+g.work*wW+g.intel*0.12+L*wL+yk*wY-g.rep*0.15+J.kb+(g.nightPast&&g.job!=="yoru"?-0.7:0)-(g.patronOut?0.8:0)-(g.crime?2:0);
+  let kekkon=g.kind*0.3+g.work*wW+g.intel*0.12+L*wL+yk*wY-g.rep*0.15+J.kb+(g.nightPast&&g.job!=="yoru"?-0.7:0)-(g.patronOut?0.8:0)-(g.crime?2:0)-(g.kidSingle?1.2:0)-(g.avLabel?1.5:0)-(g.avBusted?1:0);
   if(late&&g.job==="senmon") kekkon+=0.4;
   if(late&&g.job==="baito") kekkon-=0.3;
   if(g.job==="kigyo") kekkon+=((g.biz||0)-4)*(late?0.15:0.05);
@@ -616,6 +616,9 @@ function act(k){
   }
   if(G.job==="kigyo" && k!=="work" && k!=="startup"){ G.biz=clamp(G.biz-0.15); if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("事業を放置しているうちに資金が尽き、廃業した。借入を返しながら会社員に戻った。"); } }
   if(G.job==="influ" && k!=="work" && (G.fans||0)>=5){ G.fans=(G.fans||0)*0.92; } // 投稿を休んだ年はフォロワーが少し離れる（5万人以上のみ）
+  if(G.kidSingle && !G.married){ G.money-=50; if(Math.random()<0.3) say("子育てと仕事の両立は、想像よりずっとお金と体力を使った。"); }
+  if(G.drugActive && (G.drugN||0)>=2){ G.work=clamp(G.work-0.2,1); if(Math.random()<0.4) say("薬が切れている時間は、何も手につかなくなってきた。"); }
+  if(G.avCareer && !G.married){ const inc=Math.round(rnd(150,450)); G.money+=inc; G.work=clamp(G.work-0.1,1); if(Math.random()<0.35) say(`専属の撮影で${inc}万円が入った。`); }
   if(!G.partner && !G.married && G.age>=29) G.happy-= (G.value==="antei"?0.5:G.value==="shigeki"?0.2:0);
   G.money+=Math.round(income*0.75)-cost;
   payDebt();
@@ -707,8 +710,62 @@ const EVENTS=[
      ["もう断る",g=>{g.kind=clamp(g.kind+0.2);say("今度は断った。ただ、一度知ってしまった金の味は、なかなか消えない。");}]]},
  {id:"tsutsu_busted",when:(g,d)=>(g.tsutsu||0)>=1&&!g.crime&&Math.random()<0.14+0.09*(g.tsutsu||0),
   t:"美人局がバレた",x:"被害者の一人が、ホテルの前で録音していた。警察の内偵はとっくに終わっていたらしい。共犯の男は先に捕まり、あなたの名前も出た。恐喝と詐欺の疑いで、任意同行を求められている。",
-  c:[["認めて、示談と賠償に回す",g=>{g.crime=true;g.money-=1000;g.happy-=3;g.life=Math.max(0,g.life-150);g.ideal=clamp(g.ideal-1,2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("認めた。逮捕され、実名で報道された。勤め先は辞めた。示談と賠償で貯金はほぼ消えた。前科と記事は、港区の肩書きより長く残る。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}],
-     ["否認する",g=>{if(Math.random()<0.5){g.money-=300;g.rep=clamp(g.rep+2);g.happy-=2;say("否認を続けて不起訴になった。ただ、任意同行の様子は撮られていた。港区ではもう噂になっている。弁護士費用で300万円が消えた。");}else{g.crime=true;g.money-=1200;g.happy-=3;g.life=Math.max(0,g.life-150);g.ideal=clamp(g.ideal-1,2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("否認したが起訴され、有罪になった。逮捕と報道で勤め先は辞めた。払う額は、認めた場合より増えた。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}}]]},
+  c:[["認めて、示談と賠償に回す",g=>{g.crime=true;g.crimeKind="tsutsu";g.money-=1000;g.happy-=3;g.life=Math.max(0,g.life-150);g.ideal=clamp(g.ideal-1,2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("認めた。逮捕され、実名で報道された。勤め先は辞めた。示談と賠償で貯金はほぼ消えた。前科と記事は、港区の肩書きより長く残る。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}],
+     ["否認する",g=>{if(Math.random()<0.5){g.money-=300;g.rep=clamp(g.rep+2);g.happy-=2;say("否認を続けて不起訴になった。ただ、任意同行の様子は撮られていた。港区ではもう噂になっている。弁護士費用で300万円が消えた。");}else{g.crime=true;g.crimeKind="tsutsu";g.money-=1200;g.happy-=3;g.life=Math.max(0,g.life-150);g.ideal=clamp(g.ideal-1,2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("否認したが起訴され、有罪になった。逮捕と報道で勤め先は辞めた。払う額は、認めた場合より増えた。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}}]]},
+ {id:"egg",when:(g,d)=>g.age>=27&&g.age<=34&&!g.eggAge&&g.money>=40,
+  t:"卵子凍結の広告",x:"クリニックの広告が目に留まった。「今の年齢の卵子を、未来の自分に残す」。費用は60万円ほど。やるなら、若いうちのほうがいいらしい。",
+  c:[["凍結する（60万円）",g=>{g.money-=60;g.eggAge=g.age;g.happy+=0.3;say(`${g.age}歳で卵子を凍結した。保険を買ったような、変な安心感があった。`);}],
+     ["今はしない",g=>{say("卵子凍結は見送った。60万円は、今の自分に使いたかった。");}]]},
+ {id:"kikon",when:(g,d)=>g.age>=22&&g.age<=33&&d.L>=6.5&&(g.minato>=1||g.rep>=1)&&!g.mistress,
+  t:"既婚者からの誘い",x:"会食で知り合った経営者が、帰りの車の中で言った。「妻とはもう終わっている。君と過ごす時間が一番楽しい」。左手の薬指には、指輪の跡があった。",
+  c:[["関係を持つ",g=>{g.mistress=true;g.money+=250;g.life=Math.min(500,g.life+60);g.ideal=clamp(g.ideal+0.4);g.kind=clamp(g.kind-0.5,1);g.happy+=g.value==="shigeki"?1:-0.3;say("既婚者との関係が始まった。贈り物と援助で、生活は少し派手になった。誰にも言えない関係だった。");}],
+     ["断る",g=>{g.kind=clamp(g.kind+0.3);say("「奥さんがいる人とは無理です」と断った。");}]]},
+ {id:"saretsuma",when:(g,d)=>!!g.mistress&&Math.random()<0.35,
+  t:"妻からの慰謝料請求",x:"内容証明が届いた。相手の妻が探偵をつけていて、写真も揃っているらしい。不貞の慰謝料として300万円の請求だった。",
+  c:[["払って終わらせる",g=>{g.money-=300;g.mistress=false;g.saretsuma=true;g.patronOut=true;g.happy-=1.5;say("慰謝料300万円を払った。港区では噂が広まり、紹介の話が減った。");}],
+     ["弁護士を入れて争う",g=>{g.mistress=false;g.saretsuma=true;g.patronOut=true;if(Math.random()<0.5){g.money-=150;g.happy-=1;say("弁護士を入れて、150万円まで減額して終わらせた。");}else{g.money-=400;g.rep=clamp(g.rep+2);g.happy-=2;say("争ったが、裁判で400万円の支払いになった。報道はされなかったが、港区の噂は止まらなかった。");}}]]},
+ {id:"ninshin",when:(g,d)=>g.age>=20&&g.age<=34&&!g.kidSingle&&((g.partner&&g.partner.src==="asobi")||g.minato>=3)&&Math.random()<0.35,
+  t:"生理が来ない",x:"2か月、生理が来ていない。検査薬は陽性だった。相手は、港区の遊び相手。結婚の約束もない相手だ。",
+  c:[["相手に伝える",g=>{g.event=EVENTS.find(e=>e.id==="ninshin2");}],
+     ["一人で決める",g=>{g.event=EVENTS.find(e=>e.id==="ninshin3");}]]},
+ {id:"ninshin2",when:()=>false,t:"相手の答え",x:"伝えた。電話の向こうで、長い沈黙があった。",
+  c:[["結果を受け止める",g=>{if(Math.random()<0.45){g.kidSingle=true;g.money+=40;g.happy+=0.3;g.partner=null;say("「認知する。養育費も払う」と言われた。結婚の話は出なかったが、一人で抱えるよりはましだった。");}else{say("「俺の子かどうか分からない」と言われ、連絡が取れなくなった。");g.partner=null;g.event=EVENTS.find(e=>e.id==="ninshin3");}}],
+     ["やっぱり一人で決める",g=>{g.event=EVENTS.find(e=>e.id==="ninshin3");}]]},
+ {id:"ninshin3",when:()=>false,t:"一人で決める",x:"相手には頼らない。決めるのは、自分しかいない。",
+  c:[["一人で産む",g=>{g.kidSingle=true;g.money-=80;g.work=clamp(g.work-0.5,1);g.happy+=0.3;say("一人で産むと決めた。逃げた男のことは、もう考えないことにした。");}],
+     ["中絶する",g=>{g.money-=30;g.abort=(g.abort||0)+1;g.happy-=1.5;if(Math.random()<0.25){g.abortDamage=true;say("手術は終わった。医師に「次の妊娠は、少し難しくなるかもしれない」と言われた。");}else say("手術は終わった。身体より、心のほうが回復に時間がかかった。");}]]},
+ {id:"drug_party",when:(g,d)=>g.age>=20&&g.age<=32&&(g.minato>=2||g.job==="yoru")&&g.rep>=2&&!g.drugN,
+  t:"パーティの誘い",x:"六本木のマンションのパーティ。知り合いの男が、小さな袋を取り出して笑った。「いいものがあるよ。港区じゃ普通だって」。",
+  c:[["使う",g=>{g.drugN=1;g.drugActive=true;g.work=clamp(g.work-0.3,1);g.happy+=g.value==="shigeki"?1.5:-0.5;say("使った。高揚感は強烈だった。ただ、翌日の落ち込みも強烈だった。");}],
+     ["断って帰る",g=>{g.kind=clamp(g.kind+0.2);g.rep=clamp(g.rep-0.5);say("「今日は帰る」と言って出た。場の空気は少し悪くなった。");}]]},
+ {id:"drug_again",when:(g,d)=>!!g.drugActive&&!g.crime&&Math.random()<0.6,
+  t:"また誘われる",x:"また同じ誘いが来た。前回の高揚感は、まだ身体が覚えている。",
+  c:[["使う",g=>{g.drugN=(g.drugN||0)+1;g.money-=40;g.work=clamp(g.work-0.4,1);g.looks=clamp(g.looks-0.2);g.happy+=0.8;say("また使った。量も、誘われる頻度も、少しずつ増えている気がする。");}],
+     ["断ち切る",g=>{g.drugActive=false;g.kind=clamp(g.kind+0.3);say("誘いを断ち、そのグループとは距離を置いた。");}]]},
+ {id:"drug_busted",when:(g,d)=>!!g.drugActive&&!g.crime&&Math.random()<0.12+0.08*(g.drugN||0),
+  t:"薬物で逮捕",x:"パーティのあったマンションは、とっくに内偵されていた。家宅捜索で、あなたの部屋からも使用の痕跡が出た。薬物使用の疑いで逮捕され、その日のうちに実名で報道された。",
+  c:[["受け入れる",g=>{g.crime=true;g.crimeKind="drug";g.drugActive=false;g.money-=500;g.happy-=3;g.looks=clamp(g.looks-0.5);g.life=Math.max(0,g.life-150);g.ideal=clamp(g.ideal-1,2);if(g.job==="geino")g.fame=0.5;if(g.job==="influ")g.fans=(g.fans||0)*0.1;if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("勤め先は辞めた。取引先も、フォロワーも、港区の紹介も、一晩で遠くなった。");if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}],
+     ["黙秘して弁護士を待つ",g=>{g.crime=true;g.crimeKind="drug";g.drugActive=false;g.happy-=2.5;g.looks=clamp(g.looks-0.5);g.life=Math.max(0,g.life-150);g.ideal=clamp(g.ideal-1,2);if(g.job==="geino")g.fame=0.5;if(g.job==="influ")g.fans=(g.fans||0)*0.1;if(Math.random()<0.5){g.money-=700;say("弁護士が示談と保釈をまとめてくれた。執行猶予がつき、勤め先は辞めずに済んだ。ただ、報道と前科は消えない。");}else{g.money-=600;if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"){g.job="baito";}say("弁護士を待ったが、結果は変わらなかった。勤め先は辞めた。費用だけが余分にかかった。");}if(g.partner){say(`${g.partner.label}とは、報道の日に別れた。`);g.partner=null;}}]]},
+ {id:"av_label",when:(g,d)=>g.age>=20&&g.age<=28&&d.L>=8&&(g.minato>=1||g.rep>=1||g.job==="yoru")&&!g.avLabel,
+  t:"AVメーカーのスカウト",x:"夜の帰り道、制作会社のスカウトに声をかけられた。「単体デビューで、君クラスなら破格の条件を出す」。名刺には大手レーベルの名前があった。顔出しが条件だという。",
+  c:[["デビューする",g=>{const fee=Math.round(rnd(300,700));g.avLabel=true;g.money+=fee;g.rep=clamp(g.rep+3);g.kind=clamp(g.kind-0.3,1);g.happy+=g.value==="shigeki"?1:-1.5;say(`レーベルからデビューした。出演料は${fee}万円。作品は配信され続け、消せない過去がネットに残り続ける。`);}],
+     ["断る",g=>{g.kind=clamp(g.kind+0.2);say("AV出演を断った。一度出たら、消せない種類の仕事だと思った。");}]]},
+ {id:"av_career",when:(g,d)=>!!g.avLabel&&!g.avCareer&&Math.random()<0.6,
+  t:"専属契約の話",x:"デビュー作が売れたらしい。レーベルから「専属にならないか」と声がかかった。本数が増えれば、年収は会社員の比ではないという。",
+  c:[["専属になる",g=>{const fee=Math.round(rnd(400,900));g.avCareer=true;g.money+=fee;g.work=clamp(g.work-0.5,1);g.happy+=g.value==="shigeki"?0.8:-1;say(`専属契約を結んだ。契約金${fee}万円。本業との両立は、だんだん難しくなっていく。`);}],
+     ["単発のままにする",g=>{const fee=Math.round(rnd(100,300));g.money+=fee;say(`専属は断り、単発で続けた。出演料${fee}万円。深入りはしないつもりだった。`);}]]},
+ {id:"av_kosatsu",when:(g,d)=>g.age>=20&&g.age<=30&&d.L>=7&&(g.minato>=1||g.rep>=1)&&!g.avLabel&&!g.avKosatsu,
+  t:"個撮の誘い",x:"SNSのDMに、個人撮影の誘いが来た。「顔出しなし、モザイクあり。1回で10万円。データは買い取りで、表には出ない」。条件は悪くない。",
+  c:[["受ける",g=>{const fee=Math.round(rnd(40,100));g.avKosatsu=1;g.money+=fee;g.happy+=g.value==="shigeki"?0.5:-0.5;say(`個撮を受けた。${fee}万円。「表に出ない」はずのデータが、今どこにあるかは分からない。`);}],
+     ["断る",g=>{say("個撮の誘いを断った。データの行方を他人に握られるのが怖かった。");}]]},
+ {id:"av_kosatsu2",when:(g,d)=>(g.avKosatsu||0)>=1&&Math.random()<0.5,
+  t:"また個撮の誘い",x:"前回の撮影者から、また誘いが来た。「常連さんがついた。単価も上げるよ」。",
+  c:[["また受ける",g=>{const fee=Math.round(rnd(40,120));g.avKosatsu=(g.avKosatsu||0)+1;g.money+=fee;say(`また個撮を受けた。${fee}万円。回数が増えるほど、データの行き先は増えていく。`);}],
+     ["もうやめる",g=>{g.kind=clamp(g.kind+0.2);say("個撮はやめた。これ以上、消せないデータを増やさない。");}]]},
+ {id:"av_leak",when:(g,d)=>!g.avBusted&&(!!g.avLabel||(g.avKosatsu||0)>=1)&&Math.random()<(g.avLabel?0.18:0.06+0.04*(g.avKosatsu||0)),
+  t:"出演がバレた",x:"「これ、君じゃない？」――知人の画面に、作品のサムネイルと、見覚えのある顔があった。噂は港区から、勤め先や実家のある世界へ広がり始めている。",
+  c:[["受け入れる",g=>{g.avBusted=true;g.happy-=2.5;g.rep=clamp(g.rep+2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"&&g.job!=="geino"&&g.job!=="influ"){g.job="baito";}say("会社には居づらくなり、辞めた。家族とは、しばらく連絡が途絶えた。");if(g.partner){say(`${g.partner.label}とは、それきりになった。`);g.partner=null;}}],
+     ["別人だと言い張る",g=>{if(Math.random()<0.5){g.happy-=1;say("「別人です」と言い張って、その場は収まった。ただ、信じていない目もあった。");}else{g.avBusted=true;g.happy-=2.5;g.rep=clamp(g.rep+2);if(g.job==="kigyo"){g.job="ippan";g.biz=0;}else if(g.job!=="yoru"&&g.job!=="gakusei"&&g.job!=="baito"&&g.job!=="geino"&&g.job!=="influ"){g.job="baito";}say("スクリーンショットと照合され、言い逃れはできなかった。会社は辞めた。");if(g.partner){say(`${g.partner.label}とは、それきりになった。`);g.partner=null;}}}]]},
  {id:"insta",when:(g,d)=>g.age>=21&&g.age<=30&&d.L>=7,
   t:"PR案件",x:"インスタのフォロワーが1万人を超え、美容クリニックからPR案件の依頼が来た。",
   c:[["受ける",g=>{g.money+=200;g.rep=clamp(g.rep+1);g.ideal=clamp(g.ideal+0.4);say("PR案件で200万円。会食のお誘いも増えた。");}],
@@ -766,6 +823,22 @@ const EVENTS=[
   t:"大手企業の案件",x:"大手企業から、1本180万円のPR案件の依頼。正直、商品は微妙だ。受ければ数字は伸びる。",
   c:[["受ける",g=>{g.money+=180;g.rep=clamp(g.rep+0.5);g.ideal=clamp(g.ideal+0.3);say("案件を受けた。収入は増えたが、コメント欄の空気は少し変わった。");}],
      ["イメージを守って断る",g=>{g.fans=(g.fans||0)*1.05;g.kind=clamp(g.kind+0.2);say("案件は断った。古参のフォロワーからは「信用できる」と言われた。");}]]},
+ {id:"break_hit",when:(g,d)=>g.job==="geino"&&(g.fame||0)>=5&&g.age<=32&&!g.breakHit,
+  t:"ブレイクの兆し",x:"出演したドラマの演技が切り取られて拡散され、バラエティのオファーも一気に増えた。事務所は「今年が勝負」と言っている。",
+  c:[["波に乗って出まくる",g=>{g.breakHit=true;g.fame=clamp((g.fame||0)+1.5);g.work=clamp(g.work+0.5);g.money+=400;g.happy+=1;say("休む間もなく出続けた。知名度は一気に跳ねた。気づけば、港区の会食より撮影のほうが多い生活になっていた。");if(g.partner)g.partner.commit=Math.max(0.1,g.partner.commit-0.15);}],
+     ["ペースを守る",g=>{g.breakHit=true;g.fame=clamp((g.fame||0)+0.5);g.happy+=0.3;say("仕事は選んで受けた。大きな波ではないが、名前は着実に残り始めた。");}]]},
+ {id:"top_star",when:(g,d)=>g.job==="geino"&&(g.fame||0)>=8&&!!g.breakHit&&!g.topStar,
+  t:"国民的ヒットの主演",x:"朝の連続ドラマの主演オファーが来た。決まれば、知名度は「タレント」から「国民的スター」の領域に入る。半年以上の拘束と、プライベートのほぼ全てが代償だ。",
+  c:[["受ける",g=>{g.topStar=true;g.fame=clamp((g.fame||0)+2);g.money+=1500;g.happy+=1.5;say("ドラマは社会現象級のヒットになった。街の誰もが彼女を知っている。港区の男たちがつける値段より、世間がつける値段のほうが、はるかに大きくなった。");}],
+     ["今の生活を守る",g=>{g.fame=clamp((g.fame||0)+0.3);g.happy+=0.5;say("主演は断った。代わりに出た女優が、その年の顔になった。");}]]},
+ {id:"buzz_big",when:(g,d)=>g.job==="influ"&&(g.fans||0)>=15&&!g.buzzBig&&Math.random()<0.6,
+  t:"大バズり",x:"投稿した動画が桁違いに回り始めた。テレビの情報番組からも取材依頼が来ている。フォロワーの増え方が、今までと違う。",
+  c:[["波に乗って毎日投稿する",g=>{g.buzzBig=true;g.fans=(g.fans||0)*1.7;g.work=clamp(g.work+0.5);g.happy+=1;say("毎日投稿で波に乗った。フォロワーは一気に増えた。数字が、港区の紹介より大きな力を持ち始めた。");}],
+     ["ペースを守る",g=>{g.buzzBig=true;g.fans=(g.fans||0)*1.25;g.happy+=0.3;say("ペースは守った。それでもフォロワーは大きく増えた。");}]]},
+ {id:"top_influ",when:(g,d)=>g.job==="influ"&&(g.fans||0)>=60&&!!g.buzzBig&&!g.topInflu,
+  t:"トップ層への誘い",x:"大手事務所とプラットフォームから、トップクリエイター向けの大型契約の話が来た。地上波のレギュラー出演もついてくる。受ければ、フォロワー100万人の景色が見える。",
+  c:[["受ける",g=>{g.topInflu=true;g.fans=(g.fans||0)*1.3;g.money+=800;g.happy+=1.2;say("大型契約を結んだ。配信は趣味ではなく、事業になった。呼ばれる側から、数字で呼ぶ側への転身だった。");}],
+     ["自分のチャンネルを守る",g=>{g.fans=(g.fans||0)*1.1;g.kind=clamp(g.kind+0.2);say("契約は断り、自分のチャンネルのまま続けた。数字の伸びは緩やかだが、自由は残った。");}]]},
 ];
 function triggerEvent(){
   if(G.offer||G.married) return;
@@ -884,11 +957,15 @@ function marAct(k){
       say(m.inlaw>=2?"義実家とは、気を遣わずに話せるようになってきた。":"盆と正月に、夫の実家と自分の実家を回った。"); break;
     case "m_trip": extra=80; m.sat=clamp(m.sat+1*sMul); m.strain=clamp(m.strain-0.8); G.happy+=0.6*sMul;
       say(pick(["二人で旅行に出た。久しぶりに、仕事の話をしない三日間だった。","二人で同じ趣味を始めた。週末の予定が自然に決まるようになった。"])); break;
-    case "m_ninkatsu":{ m.nk=(m.nk||0)+1; extra=50; myMul=0.65; G.work=clamp(G.work-0.2,1);
-      m.strain=clamp(m.strain+(m.nk>=3?0.8:0.4)-(s>=6?0.2:0)); m.sat=clamp(m.sat+(s>=6?0.2:-0.2));
-      // ゲーム用の架空の確率。年齢で下がる
-      const pr=G.age<30?0.4:G.age<35?0.3:G.age<38?0.18:0.1;
-      if(Math.random()<pr){ m.kid=true; m.kidBy="nk"; say(`妊活${m.nk}年目で、子どもを授かった。`); }
+    case "m_ninkatsu":{ m.nk=(m.nk||0)+1; extra=m.ivf?100:50; myMul=0.65; G.work=clamp(G.work-0.2,1);
+      m.strain=clamp(m.strain+(m.nk>=3?0.8:0.4)+(m.ivf?0.3:0)-(s>=6?0.2:0)); m.sat=clamp(m.sat+(s>=6?0.2:-0.2));
+      // ゲーム用の架空の確率。年齢で下がる。凍結卵と体外受精で押し上げ、過去の中絶の後遺症で下がる
+      const bracket=a=>a<30?0.4:a<35?0.3:a<38?0.18:0.1;
+      let pr=bracket(G.age);
+      if(G.eggAge&&G.age>G.eggAge) pr=Math.max(pr,bracket(G.eggAge)-0.08);
+      if(m.ivf) pr=Math.min(0.75,pr+0.18);
+      if(G.abortDamage) pr*=0.7;
+      if(Math.random()<pr){ m.kid=true; m.kidBy="nk"; if(G.eggAge&&bracket(G.age)<bracket(G.eggAge)) G.eggUsed=true; say(`妊活${m.nk}年目で、子どもを授かった。`); }
       else say(m.nk===1?"妊活を始めた。通院の予定を仕事の合間に組み込んだ。":`妊活${m.nk}年目。今年も授からなかった。費用と通院の負担が、少しずつ重くなってきた。`);
       break;}
     case "m_old": m.oldMeet=(m.oldMeet||0)+1; G.rep=clamp(G.rep+0.4); G.ideal=clamp(G.ideal+0.3); G.life=Math.min(500,G.life+20); G.happy+=0.7*vMul("shigeki");
@@ -944,6 +1021,10 @@ const MEVENTS=[
  {id:"kids_next",when:()=>false,t:"二人の家族の形",x:"子どもを持つかどうか、持つならどんな形か。二人で何度も話した。",
   c:[["二人で生きると決める",g=>{const m=g.mar;m.two=true;m.strain=clamp(m.strain-1);m.sat=clamp(m.sat+0.6);say("二人で生きると決めた。通院の予定が消えたカレンダーに、二人の予定が増えた。");}],
      ["里親・養子について調べる",g=>{const m=g.mar;m.foster=true;m.strain=clamp(m.strain-0.5);m.sat=clamp(m.sat+0.4);g.money-=30;say("里親制度と特別養子縁組の説明会に、二人で行った。家族の形は一つではないと知った。");}]]},
+ {id:"ivf",when:(g,m)=>(m.nk||0)>=2&&!m.kid&&!m.ivf&&!m.two&&!m.foster,
+  t:"高度不妊治療の提案",x:()=>`妊活を始めて${G.mar.nk}年。クリニックで「体外受精に進みますか」と聞かれた。費用は1年で100万円近くかかる。夫の検査では、夫側にも要因があると言われた。`,
+  c:[["体外受精に進む",g=>{const m=g.mar;m.ivf=true;g.money-=80;m.strain=clamp(m.strain+0.5);say("体外受精に進むことにした。初回の採卵と移植で80万円が消えた。確率は上がる。負担も上がる。");}],
+     ["今の治療を続ける",g=>{g.mar.sat=clamp(g.mar.sat+0.1);say("体外受精は見送った。今の治療を、もう少し続ける。");}]]},
  {id:"h_job",when:(g,m,p)=>p.world!=="night"&&m.years>=1,
   t:"夫の転職",x:()=>`${G.partner.label}が「年収は上がるけど、今より忙しくなる会社に移りたい」と言い出した。`,
   c:[["背中を押す",g=>{g.mar.hInc*=1.3;g.mar.strain=clamp(g.mar.strain+0.6);g.mar.sat=clamp(g.mar.sat+0.3);say("夫は転職した。年収は上がり、帰りは遅くなった。");}],
@@ -1235,6 +1316,10 @@ const VERDICT={
   "更新が止まったアカウント":"「最後の投稿がいつか、誰も覚えていない。数字だけが残った」",
   "夜の世界で結ばれた二人":"「お似合いだよ、あの二人は」",
   "表に戻れない女":"「あの子、ニュースに出てたよね」",
+  "シングルマザーとして生きた女":"「あの子、子どもを一人で育ててるんだって。強いよね」",
+  "消せない過去を持つ女":"「あの子、昔あっち系に出てたらしいよ」",
+  "国民的スター":"「港区の席にいた頃の面影は、もうないね。格が違う」",
+  "トップインフルエンサー":"「フォロワー100万超え。呼ばれる側から、完全に卒業したね」",
   "ホスト沼の果て":"「あれだけ稼いでたのに、どこに消えたんだろうね」",
   "経営者の妻":"「あの奥さんがいるから、あいつの会社は回ってる」",
   "社長夫人（名ばかり）":"「奥さん？ああ、家にいる人ね」",
@@ -1297,7 +1382,11 @@ function restartEnding(){
 function singleFinal(d){
   const ea=G.extActs||{}, qg=G.quals-(G.q35||0), S=G.sumAge||35, N=40-S;
   if(G.indep&&d.career>=900) return ["40歳で逆転した女",`${S}歳を過ぎてから${qg>0?`資格を${qg}つ取り`:"仕事に打ち込み"}、独立した。年収は${d.career.toLocaleString()}万円。${S}歳の頃に「もう遅い」と言っていた人たちが、今は仕事の相談に来る。`];
-  if(G.crime) return ["表に戻れない女",`美人局に加担したことが表に出て、逮捕された。前科と報道は消えず、港区の紹介も、まともな勤め先も戻ってこなかった。あの時受け取った示談金は、何倍にもなって人生から返済させられている。`];
+  if(G.crime) return ["表に戻れない女",G.crimeKind==="drug"?`薬物で逮捕されたことが表に出た。前科と報道は消えず、港区の紹介も、まともな勤め先も戻ってこなかった。一晩の高揚感の代金は、人生の残りで払い続けている。`:`美人局に加担したことが表に出て、逮捕された。前科と報道は消えず、港区の紹介も、まともな勤め先も戻ってこなかった。あの時受け取った示談金は、何倍にもなって人生から返済させられている。`];
+  if(G.kidSingle) return ["シングルマザーとして生きた女",`結婚せずに子どもを産み、一人で育てた。港区の物差しでは測れない生活だった。お金も時間も足りなかったが、この子と生きてきた年数だけは、誰にも取り上げられない。`];
+  if(G.avBusted) return ["消せない過去を持つ女",`AV出演が周囲に知れた。仕事も、縁談も、実家との関係も、その前と後では別物になった。ネットのデータは、引っ越しでも改名でも消えなかった。`];
+  if(G.job==="geino"&&G.topStar) return ["国民的スター",`40歳。国民的スターの座は、若い頃の港区の夜とは別の世界の話になった。年収は${d.career.toLocaleString()}万円。値段をつけられる人生から、値段を決める人生への逆転は完成した。`];
+  if(G.job==="influ"&&(G.fans||0)>=100) return ["トップインフルエンサー",`40歳、独身。フォロワーは${(G.fans||0).toFixed(1)}万人。年収は${d.career.toLocaleString()}万円。港区に呼ばれていた頃の自分が、遠い昔の人に見える。`];
   if(G.lastMar) return restartEnding();
   if((ea.konkatsu||0)>=2) return ["最後まで探し続けた女",`40歳、まだ探している。並べていた条件は、${S}歳の頃よりずっと短くなった。焦りより、自分に合う人の輪郭のほうがはっきりしてきた。`];
   if((ea.friends||0)>=3) return ["自分の暮らしを選んだ女",`40歳、独身。休日は地元の友達と過ごし、平日は淡々と働く。港区の物差しから降りて${N}年、誰かと比べる回数がずいぶん減った。`];
@@ -1341,8 +1430,10 @@ function finish(){
     else{title="勝ち逃げした普通の子";body=`${G.marriedAge}歳で${p.label}と結婚。港区の男たちの関心が次の22歳に移った頃、彼女はもう結婚していた。派手さはない。でも35歳で「最近呼ばれない」と悩むこともない。`}
   } else {
     if(G.job==="kigyo"&&G.biz>=5){title=G.nightPast?"夜を元手にした女":"港区を買う側";body=G.nightPast?`年収${d.career}万円の事業を持つ経営者。若さと見た目で稼げる時期に、金と顧客を残した。同じ店にいた子の多くは、稼いだ分を全部使い切って35歳を迎えた。`:`年収${d.career}万円の事業を持つ経営者。昔ギャラ飲みに女の子を呼んでいた側の男たちが、今は取引先として頭を下げてくる。`}
+    else if(G.job==="geino"&&G.topStar){title="国民的スター";body=`35歳、独身。連続ドラマの大ヒットで、国民的スターになった。知名度は${(G.fame||0).toFixed(1)}。街を歩けば誰もが知っていて、港区の会食に呼ばれる理由がなくなった。値段をつける側と、つけられる側が、完全に逆転した。`}
     else if(G.job==="geino"&&(G.fame||0)>=7){title="画面の中の人";body=`35歳。知名度は${(G.fame||0).toFixed(1)}まで上がった。街を歩けば声をかけられ、紹介されるときは名前より先に数字と肩書きが来る。港区の男たちがつける値段より、世間がつける値段のほうが大きくなった。`}
     else if(G.job==="geino"){title="元・少し有名な人";body=`35歳、独身。「前はテレビに出ていて」が自己紹介の枕詞になった。知名度は${(G.fame||0).toFixed(1)}。数字で見える値札を背負った分、数字が下がったときの静けさも知っている。`}
+    else if(G.job==="influ"&&(G.fans||0)>=100){title="トップインフルエンサー";body=`35歳、独身。フォロワーは${(G.fans||0).toFixed(1)}万人。トップ層の契約を取り、配信は趣味ではなく事業になった。港区の会食に呼ばれるより、自分が発信するほうが稼ぐ。数字を持つ側の景色は、呼ばれていた頃とは全然違った。`}
     else if(G.job==="influ"&&(G.fans||0)>=50){title="画面の向こうの有名人";body=`35歳、独身。フォロワーは${(G.fans||0).toFixed(1)}万人。一日は数字の確認から始まる。港区の会食に呼ばれるより、自分が配信するほうが稼げるようになった。呼ばれる側から、数字を持つ側へ。`}
     else if(G.job==="influ"&&(G.fans||0)<3){title="更新が止まったアカウント";body=`35歳、独身。フォロワーは${(G.fans||0).toFixed(1)}万人で止まった。最後の投稿のいいねは数十個。数字で見える値札は、数字が止まったときに一番重かった。`}
     else if(d.L>=7.5&&d.asobi>=5){title="招待状が切れない女";body="35歳でもまだ呼ばれる。顔は今も武器だ。ただし誘いはいつも金曜の夜で、日曜の昼に会おうと言う男はいない。"}
@@ -1410,8 +1501,17 @@ function finish(){
   if(L.length<2) L.push(["減る資産と、積み上がる資産","若さは毎年減り、仕事力と性格は積み上がる。どちらに時間を使ったかが35歳で効いてくる。"]);
   const NM={}; [...ACTIONS,...ACTIONS_M,...ACTIONS_P].forEach(a=>NM[a.k]=a.n); Object.assign(NM,{startup:"起業",toYoru:"夜の仕事を始める",toHiru:"昼の仕事に戻る"});
   const why=[];
-  if(G.crime) why.push("美人局への加担が発覚し、逮捕された。前科と報道は、稼いだ示談金よりずっと長く残った。");
+  if(G.crime) why.push(G.crimeKind==="drug"?"薬物で逮捕された。報道は一晩で広がり、戻れる場所はほとんどなかった。":"美人局への加担が発覚し、逮捕された。前科と報道は、稼いだ示談金よりずっと長く残った。");
   else if((G.tsutsu||0)>0) why.push(`美人局に${G.tsutsu}回加担し、バレずに終わった。稼いだ金より、「知っている人間がいる」ことのほうが残った。`);
+  if((G.drugN||0)>0&&!G.crime) why.push(`薬物に${G.drugN}回手を出し、バレずに終わった。`);
+  if(G.eggAge) why.push(`卵子凍結：${G.eggAge}歳で凍結した${G.eggUsed?"卵子を使って、授かった":""}`);
+  if(G.abort) why.push(`若い頃に妊娠し、中絶を選んだ。${G.abortDamage?"その影響は、後の妊活の確率にも残った。":"あの判断は、ずっと覚えている。"}`);
+  if(G.saretsuma) why.push("既婚者との関係が妻に知られ、慰謝料を払った。港区での噂も残った。");
+  else if(G.mistress) why.push("既婚者との関係は、バレないまま続いていた。");
+  if(G.avLabel) why.push(`AVにレーベルデビューした。${G.avCareer?"専属として続けた。":""}${G.avBusted?"出演は周囲にも知られた。":"作品はネットに残り続けている。"}`);
+  else if((G.avKosatsu||0)>0) why.push(`個撮AVに${G.avKosatsu}回出た。${G.avBusted?"流出して、周囲に知られた。":"バレずに終わったが、データはどこかに残っている。"}`);
+  if(G.topStar) why.push("連続ドラマの大ヒットで国民的スターになった。港区の値付けより、世間の数字が大きくなった。");
+  if(G.topInflu) why.push(`フォロワー${(G.fans||0).toFixed(0)}万人。トップ層の契約を取り、配信が本業になった。`);
   if(FINAL){
     const ea=G.extActs||{}, top=Object.entries(ea).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([k,c])=>`${NM[k]||k}×${c}`).join("、");
     why.push(`${S+1}〜40歳に選んだ行動：${top||"—"}`);
