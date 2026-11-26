@@ -1777,7 +1777,7 @@ function heroM(g,d){ const m=g.mar;
     hana:g.fame||0};
 }
 function sisM(s){return {shigoto:s.work,okane:s.money,kekkon:s.married?(s.kid?7.5:6.5):2,kekkonM:s.married?7:4,hana:clamp(s.fame)};}
-const MLABEL={asobi:"遊びモテ",kekkonM:"結婚モテ",shiawase:"幸福度",shigoto:"仕事力",okane:"貯金",kekkon:"結婚モテ",hana:"知名度"};
+const MLABEL={asobi:"遊びモテ",kekkonM:"結婚モテ",shiawase:"幸福度",shigoto:"仕事力",okane:"貯金",kekkon:"結婚モテ",hana:"知名度",fufu:"夫婦の満足度"};
 function battleCheck(){
   if(G.event||G.atSum) return false;
   const rv=rvInit(G);
@@ -1794,7 +1794,7 @@ function battleCheck(){
   let bm=battleMake(who);
   if(bm.who==="yui"&&rv.rec.some(x=>x.w==="yui"&&x.sc===bm.sc)) bm=yuiAlt(G,rv);
   rv.slot[i]=1; if(!bm) return false;
-  rv.cur=bm; G.event=battleEvent(rv.cur); return true;
+  rv.cur=fufuSwap(bm); G.event=battleEvent(rv.cur); return true;
 }
 function yuiAlt(g,rv){
   const H=heroM(g,derive(g)), used=sc=>rv.rec.some(x=>x.w==="yui"&&x.sc===sc), yt=g.age>=rv.yuiAge?6.9:5.2;
@@ -1804,6 +1804,15 @@ function yuiAlt(g,rv){
 }
 // ユイの最初の子が生まれた年齢（出産祝いの合戦があればその年。無ければ結婚の2年後）
 function yuiBirth(g){const r=((g.rv&&g.rv.rec)||[]).find(x=>x.w==="yui"&&x.sc==="出産祝い");const w=((g.rv&&g.rv.rec)||[]).find(x=>x.w==="yui"&&x.sc==="結婚式");return r?r.a:w?w.a+2:((g.rv&&g.rv.yuiAge)||24)+2;}
+// 結婚している間の合戦は、物差しを「夫婦の満足度」にする。結婚モテは年齢で下がるだけで、結婚後は必ず負けるため（11/27 CEO）。離婚したら元の物差しに戻る。
+function fufuSwap(b){
+  if(!G.married||!G.mar||!["kekkonM","asobi","hana"].includes(b.m)) return b;
+  const rv=G.rv, s=rv.s; let th;
+  if(b.who==="sis") th=clamp((s&&s.married?6.9:6.2)+(s&&s.kid?0.2:0)+rnd(-0.9,0.9));
+  else th=clamp((G.age>=rv.yuiAge?6.9:6.2)+rnd(-0.9,0.9));
+  const x=b.x.replace("「で、そっちは？」","「で、旦那さんとはどうなの？」").replace("「で、そっちは最近どうなの」","「で、旦那さんとは最近どうなの」").replace("「で、最近どうなの」","「で、旦那さんとは最近どうなの」");
+  return Object.assign({},b,{m:"fufu",mine:clamp(G.mar.sat),theirs:th,x});
+}
 function battleMake(who){
   const g=G, d=derive(g), H=heroM(g,d), a=g.age, rv=g.rv;
   if(who==="reina"){ const ra=a+2;
