@@ -13,9 +13,14 @@
 <meta property="og:description" content="1年ごとの一手で、港区を生きるゲーム。ライバルとの合戦つき。遊びのモテと結婚のモテのずれ、理想の高さ、最後の結末まで。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.noe-match.com/tools/minato-senki/">
+<meta property="og:image" content="https://www.noe-match.com/images/minato-senki-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="港区女子戦記｜世の中ね、顔かお金かなのよ">
 <meta property="og:site_name" content="Noe結婚設計室">
 <meta property="og:locale" content="ja_JP">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.noe-match.com/images/minato-senki-og.jpg">
 <meta name="twitter:title" content="港区女子戦記｜世の中ね、顔かお金かなのよ">
 <meta name="twitter:description" content="1年ごとの一手で、港区を生きるゲーム。ライバルとの合戦つき。遊びのモテと結婚のモテのずれ、理想の高さ、最後の結末まで。">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ホーム","item":"https://www.noe-match.com/"},{"@type":"ListItem","position":2,"name":"無料ツール","item":"https://www.noe-match.com/#tools"},{"@type":"ListItem","position":3,"name":"港区女子戦記","item":"https://www.noe-match.com/tools/minato-senki/"}]}</script>
@@ -438,6 +443,35 @@ details.record>summary{font-family:var(--display);font-weight:800}
 details.record .fold-in{display:flex;flex-direction:column;gap:14px}
 .endact .items,.endact .band,.endact .eyes2,.endact .recs,.endact .rv40,.endact .selfbox{width:100%;align-self:stretch}
 
+/* 深み（2026-11-26）: 3択の出来事・家族写真・自分の値札・男の趣味の移り変わり・友達の結末 */
+.row.col{flex-direction:column}
+.row.col .btn{flex:none;width:100%}
+.famphoto{display:block;width:100%;max-width:300px;height:auto;margin:0 auto}
+.nefuda{display:flex;align-items:center;gap:10px;margin:8px 0;padding:6px 10px;border:1px dashed var(--line);border-radius:8px;color:var(--muted);font-size:.78rem;max-width:100%;box-sizing:border-box}
+.nefuda>div{display:flex;align-items:baseline;gap:6px;min-width:0}
+.nefuda small{font-size:.72rem}
+.nefuda b{font-family:var(--display);font-size:1rem;color:var(--ink)}
+.nefuda .nf-k{font-size:.7rem;letter-spacing:.1em;padding:1px 6px;border:1px solid currentColor;border-radius:3px;transform:rotate(-4deg)}
+.nefuda.s2{font-size:.86rem;border-style:solid}
+.nefuda.s2 b{font-size:1.25rem}
+.nefuda.s3{font-size:.95rem;border:2px solid var(--gold);color:var(--gold);background:color-mix(in srgb,var(--gold) 8%,transparent)}
+.nefuda.s3 b{font-size:1.6rem;color:var(--gold)}
+.nefuda.s4{font-size:1rem;border:2px solid var(--rose);color:var(--rose);background:color-mix(in srgb,var(--rose) 10%,transparent);padding:10px 12px}
+.nefuda.s4 b{font-size:2rem;color:var(--rose)}
+.nefuda.s3 small,.nefuda.s4 small{font-size:.8rem}
+.mtaste{list-style:none;margin:6px 0 14px;padding:0;display:grid;gap:8px}
+.mtaste li{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--surface)}
+.mtaste .mt-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.mtaste .mt-h .num{font-size:.8rem;color:var(--muted)}
+.mtaste .mt-h b{font-size:.92rem}
+.mtaste .mt-h small{font-size:.72rem;color:var(--muted)}
+.mtaste .mt-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px}
+.mtaste .mt-2>div{min-width:0;display:flex;flex-direction:column;gap:2px}
+.mtaste .mt-2 small{font-size:.7rem;color:var(--muted)}
+.mtaste .mt-2 span{font-size:.84rem;overflow-wrap:anywhere}
+.mtaste li.s2 .mt-2>div:first-child span,.mtaste li.s3 .mt-2>div:first-child span{color:var(--gold);font-weight:700}
+.mtaste li.s4 .mt-2>div:first-child span{color:var(--rose);font-weight:700}
+.friendr{margin:10px 0 4px;padding:10px 12px;border-radius:8px;background:color-mix(in srgb,var(--rose) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--rose) 35%,transparent);font-size:.9rem;text-align:center;overflow-wrap:anywhere}
 </style>
 </head>
 <body>
@@ -531,11 +565,11 @@ function decayMul(g){return g.looks>=5?1-0.5*(g.looks-5)/5:1+0.05*(5-g.looks)}
 function youthA(g){const a=g.age;const drop=a<=24?0:a<=29?(a-24)*0.6:3+(a-29)*0.9;return clamp(10-drop*decayMul(g));}
 // 結婚市場の適齢度：25歳でピーク、20代後半でガクッ、30代でさらにガクッ
 function youthK(g){const a=g.age;if(a<=25)return 6+(a-18)*(4/7);const drop=a<=29?(a-25)*1.0:4+(a-29)*1.1;return clamp(10-drop*decayMul(g));}
-function effLooks(g){ return clamp(g.looks - Math.max(0,g.age-27)*0.4*(1-g.looks/12)); }
+function effLooks(g){ return clamp(g.looks + seiAdd(g) - Math.max(0,g.age-27)*0.4*(1-g.looks/12)); }
 function jobOf(g){return JOBS.find(j=>j.k===g.job)||JOBS.find(j=>j.k==="ippan")}
 function derive(g){
   const y=youthA(g), yk=youthK(g), L=effLooks(g), J=jobOf(g), late=g.age>=27;
-  const asobi=clamp(L*0.6+y*0.5-0.5+(g.job==="yoru"?0.8:0)+(g.avLabel?0.5:0)+(g.job==="ca"&&g.age<30?0.4:0));
+  const asobi=clamp(-seiPen(g)+L*0.6+y*0.5-0.5+(g.job==="yoru"?0.8:0)+(g.avLabel?0.5:0)+(g.job==="ca"&&g.age<30?0.4:0));
   // 20代前半は見た目と適齢度、20代後半からは仕事の比重が上がる
   const wY=late?0.2:0.3, wL=late?0.14:0.22, wW=late?0.32:0.16;
   let kekkon=g.kind*0.3+g.work*wW+g.intel*0.12+L*wL+yk*wY-g.rep*0.15+J.kb+(g.nightPast&&g.job!=="yoru"?-0.7:0)-(g.patronOut?0.8:0)-(g.crime?2:0)-(g.kidSingle?1.2:0)-(g.avLabel?1.5:0)-(g.avBusted?1:0)-(g.fcBusted?0.5:0);
@@ -838,7 +872,7 @@ function act(k){
   if(G.partner && !G.married && k!=="breakup" && k!=="propose" && Math.random()<(1-G.partner.commit)*0.35){say(`${G.partner.label}から連絡が途絶えた。`);G.partner=null;G.happy-=0.7;}
   randomEvent();
   rvLean(G,k); somAct(G,k);
-  if(!hatsuCheck()&&!battleCheck()) triggerEvent();
+  fkYear(G); if(!hatsuCheck()&&!battleCheck()&&!fkCheck()) triggerEvent();
   if(G.offer||G.event) return renderGame();
   nextYear();
 }
@@ -1192,7 +1226,7 @@ function answerEvent(i){
 }
 function answerOffer(yes){
   turnStart();
-  const o=G.offer; G.offer=null;
+  const o=G.offer; G.offer=null; fkOffer(G,o,yes);
   if(yes){somOffer(G,o,true); G.partner=o; say(`${o.label}（年収${o.income}万円）と付き合い始めた。`);}
   else{G.declined++; const dk=derive(G).kekkon;
     if(o.src!=="asobi"&&o.tier>=dk-1&&o.tier<G.ideal-0.5){G.misjudge++;somAdd(G,0.3,"相手を格で断ったこと");say(`${o.label}の誘いを断った。相手の格（${o.tier.toFixed(1)}）は自分の結婚モテ（${dk.toFixed(1)}）とほぼ釣り合っていた。物足りなく感じたのは、相手ではなく理想のほうがズレているからかもしれない。`);}
@@ -1249,7 +1283,7 @@ function marry(g){
     p.label=p.label==="同い年の大学生"?"大学時代の同級生":"バイト先で出会った人";
     p.income=Math.max(p.income,Math.round(300+p.tier*35+Math.max(0,Math.max(g.age,22)-22)*18+rnd(-30,60)));
   }
-  g.married=true; g.marriedAge=g.age; (g.marriages=g.marriages||[]).push(g.age);
+  g.married=true; g.marriedAge=g.age; fkMarry(g); (g.marriages=g.marriages||[]).push(g.age);
 }
 function divorce(t,cause){
   const p=G.partner, m=G.mar;
@@ -1331,7 +1365,7 @@ function marAct(k){
     return nextYear();
   }
   rvLean(G,k); somAct(G,k);
-  if(!hatsuCheck()&&!battleCheck()) triggerMarEvent();
+  fkYear(G); if(!hatsuCheck()&&!battleCheck()&&!fkCheck()) triggerMarEvent();
   if(G.event) return renderGame();
   nextYear();
 }
@@ -1517,6 +1551,7 @@ function honne(g,d){
   const H=[];
   if(g.age<20) return "（まだ港区の男たちの視界に入っていない）";
   if(g.married) return "「結婚したんだって。まあ、そろそろだったよね」";
+  { const sh=seiHonne(g); if(sh) return sh; }
   if(g.job==="yoru"&&d.L>=8.5) H.push("「店の看板。社長連中が本気で口説いてる」");
   if(g.job==="kigyo"&&g.biz>=5) H.push("「最近は向こうがおごる側。もう呼べないな」");
   if(g.job==="geino"&&(g.fame||0)>=6) H.push("「テレビの人だ。嫁にするイメージは湧かないけど、隣にいたら自慢できる」");
@@ -1785,7 +1820,7 @@ function rvLines(g,A){
       else if(s.rich) sl="年上の経営者と結婚して、港区のタワーマンションに住んでいる。夫は家にいない日が多い。";
       else if(s.fame<3||s.money<0) sl=`フォロワーは${Math.min(9,Math.max(1,Math.round(s.fame*3)))}千人まで減った。アパレルの販売員をしている。「あの頃が一番楽しかった」とは言わない。`;
       else sl=`インスタの仕事と販売の仕事をかけもちしている。${s.married?"":"独身。"}港区の会食には、もう行っていない。`; }
-    out.push([I.pk,`${I.rel}・${I.n}（${sa}歳）`,pre+sl]);
+    out.push([I.pk,`${I.rel}・${I.n}（${sa}歳）`,pre+sl+fkSisFace(g,ken,I)]);
   }
   return out;
 }
@@ -1900,6 +1935,7 @@ function finish(){
   if(G.divorced) L.push(["早く決まった結婚が、勝ちとは限らない","相手の誠実さが低い結婚や、22歳前後の若すぎる結婚は、続かない確率が上がる。"]);
   if(G.misjudge>=2) L.push(["断られ続けるのは、値付けがズレているサイン",`結婚を迫って断られる、釣り合う相手を物足りなく感じる。この人生ではそれが${G.misjudge}回あった。相手の目が厳しいのではなく、自分の値付けが市場とズレている。`]);
   const gapSelf=G.ideal-idealRef;
+  if(G.sei&&G.sei.n>=3) L.push(["顔は直せた。年齢は直せなかった",`クリニックに通ったのは${G.sei.n}回。最初は${G.sei.first}歳だった。`]);
   const SELF=gapSelf>=3?["理想との乖離が大きい","自分の市場価値を、実際より3段階以上高く見積もっていた。港区で受けた扱いを、そのまま自分の値段だと思っていた可能性が高い。"]:gapSelf>=1.5?["やや勘違い","理想が市場価値を少し上回っていた。釣り合う相手が「少し下」に見えていたはず。"]:gapSelf<=-1?["謙虚すぎ","市場価値のほうが理想より高かった。もっと上の相手を狙えた。"]:["自己評価は正確","理想と市場価値がほぼ一致していた。だから迷いが少なかった。"];
   { const vy=G.vy||{k:0,h:0}, cnt=`この人生で心の声が勘違いの側だった年は${vy.k}年、謙虚の側だった年は${vy.h}年。`;
     const KAN=vy.k!==vy.h?vy.k>vy.h:vScore(G,d)>=1.5;
@@ -1956,7 +1992,7 @@ function finish(){
   }
   L.forEach(l=>{l[1]=l[1].replace(/35歳/g,A+"歳");});
   // 40歳では、結婚市場での値付け（相手選びの良し悪し）を蒸し返さない
-  const LF=["結婚相手ではなく、スポンサーを探していた","結婚は、支え合う約束だった","勘違いから戻ってきた","最後に、理想だけが残った","結婚は、した後の毎年で決まる","壊れかけても、直せることがある","見ないふりは、問題を消さない","逃した機会","30代の資格は、遅くない","起業は一番振れ幅が大きい","若さで稼いだ生活水準は、若さと一緒には下がらない","早く決まった結婚が、勝ちとは限らない"];
+  const LF=["顔は直せた。年齢は直せなかった","結婚相手ではなく、スポンサーを探していた","結婚は、支え合う約束だった","勘違いから戻ってきた","最後に、理想だけが残った","結婚は、した後の毎年で決まる","壊れかけても、直せることがある","見ないふりは、問題を消さない","逃した機会","30代の資格は、遅くない","起業は一番振れ幅が大きい","若さで稼いだ生活水準は、若さと一緒には下がらない","早く決まった結婚が、勝ちとは限らない"];
   if(FINAL){ for(let i=L.length-1;i>=0;i--) if(!LF.includes(L[i][0])) L.splice(i,1);
     if(G.indep) L.unshift(["何歳からでも、積み上げは効く",`${S}歳から積み上げた資格と実績で独立した。延長戦の伸びしろは、若さではなく仕事の側にあった。`]);
     if(!L.length) L.push(["延長戦で動かせるもの",`${S}歳から40歳までのあいだも、若さは減り続けた。動かせたのは、仕事と暮らしと、家の中の関係だった。`]); }
@@ -2006,7 +2042,7 @@ ${SHARE_URL}`)<=280:shareText.length+verdict.length<105)) shareText+=`\n男た�
     <div class="seg" id="cardfmt" role="group" aria-label="画像の形"><button data-fmt="p" aria-pressed="true">4:5（投稿）</button><button data-fmt="s" aria-pressed="false">9:16（ストーリー）</button></div>
     <img id="cardimg" alt="結果カードの画像（${title}）" width="1080" height="1350">
     <p class="hint" id="cardhint">画像は長押し（PCは右クリック）でも保存できます。</p>
-    <div class="sharebtns"><a class="btn" id="share" target="_blank" rel="noopener">Xでシェア</a><button class="btn ghost" id="shareimg">画像を共有</button><button class="btn ghost" id="saveimg">画像を保存</button><button class="btn ghost" id="copy">結果文をコピー</button></div>
+    <div class="sharebtns"><a class="btn" id="share" target="_blank" rel="noopener">Xでシェア</a><a class="btn ghost" id="shareline" target="_blank" rel="noopener">LINEで送る</a><button class="btn ghost" id="shareimg">画像を共有</button><button class="btn ghost" id="saveimg">画像を保存</button><button class="btn ghost" id="copy">結果文をコピー</button></div>
   </section>`;
   $("#app").innerHTML=`
   <figure class="art endart fade" role="img" aria-label="${endArt[1]}">${ART[endArt[0]]()}</figure>
@@ -2241,7 +2277,7 @@ function eventHTML(){
   const fig=p?`<div class="avatar">${avatarSVG(p)}</div>`:`<div class="evic" aria-hidden="true">${e.ic||EVIC[e.id]||"✦"}</div>`;
   return `<section class="sheet event${e.bt?" battle":""}" aria-label="${esc(e.t)}"><div class="sheet-head">${fig}<div><span class="badge">${G.age}歳の${e.bt?"合戦":"出来事"}${p?`・${p.name}`:""}</span><div class="who">${e.t}</div></div></div>
     <p>${x}</p>${e.card?`<div class="hcard">${e.card}</div>`:""}${e.x2?`<p>${e.x2}</p>`:""}
-    <div class="row"><button class="btn" id="ev0">${e.c[0][0]}</button><button class="btn ghost" id="ev1">${e.c[1][0]}</button></div></section>`;
+    <div class="row${e.c.length>2?" col":""}">${e.c.map((c,i)=>`<button class="btn${i?" ghost":""}" id="ev${i}">${c[0]}</button>`).join("")}</div></section>`;
 }
 function offerHTML(){
   const o=G.offer, d=derive(G), st=somStage(som(G));
@@ -2259,7 +2295,7 @@ let BUSY=false;
 function bindGame(){
   document.querySelectorAll("details[data-stat]").forEach(el=>el.addEventListener("toggle",()=>{PREF.statOpen=el.open;savePref();}));
   document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{if(BUSY)return;BUSY=true;b.classList.add("picked");setTimeout(()=>{BUSY=false;act(b.dataset.a);},110);});
-  if(G.event){$("#ev0").onclick=()=>answerEvent(0);$("#ev1").onclick=()=>answerEvent(1);}
+  if(G.event){G.event.c.forEach((_,i)=>{const b=$("#ev"+i);if(b)b.onclick=()=>answerEvent(i);});}
   else if(G.offer){$("#yes").onclick=()=>answerOffer(true);$("#no").onclick=()=>answerOffer(false);}
   $("#menu").onclick=openMenu;
 }
@@ -2281,6 +2317,7 @@ function renderGame(){
   const [ak,al]=sceneForAge(G.age), w=G.age<20?null:worlds(G);
   $("#app").innerHTML=`${hudHTML(d)}
   ${sceneHTML(ak,al)}
+  ${fkTag(d)}
   ${resHTML()}
   ${!G.event&&!G.offer&&G.opp?`<section class="panel fade"><div class="note"><b>今年限りの機会：${G.opp.id==="promo"?"昇進の打診":"恋人からの将来の話"}</b><br>${G.opp.id==="promo"?"今の仕事に集中すれば、管理職への昇進が見えている（「本業に打ち込む」で応える）。他の過ごし方を選ぶと、この話は流れる。":`${G.partner?G.partner.label:"恋人"}が、二人の将来について話し合いたがっている（「関係を深める」で応える）。見送ると、少し距離ができる。`}</div></section>`:""}
   ${G.event?eventHTML():G.offer?offerHTML():choicesHTML(acts,`${G.age}歳の一年、何に使う？`)}
@@ -2429,7 +2466,7 @@ function openZukan(){
 }
 
 /* ---------- レア度 ---------- */
-const RARE={"港区の残り香":  28.1, "招待状が切れない女":  11.1, "選ぶ側に回った女":  6.5, "大きくは変わらなかった◯年":  6.1, "夜を元手にした女":  5.9, "勝ち逃げした普通の子":  4.5, "これからの人":  4.2, "積み上げ直した◯年":  3.2, "値段を知っていた女":  2.6, "自分の城を持った女":  2.6, "離婚して再出発":  1.9, "理想だけが一流":  1.9, "家族が増えた二人":  1.7, "最後まで探し続けた女":  1.6, "毎年選び直した二人":  1.6, "儲け話を信じた女":  1.4, "経営者の妻":  1.1, "最後に間に合った女":  1.1, "夜の世界で結ばれた二人":  1.1, "妥協したと思っている妻":  1, "ホスト沼の果て":  0.9, "社長夫人（名ばかり）":  0.9, "ほどほどの夫婦":  0.9, "表に戻れない女":  0.9, "トロフィーワイフ":  0.8, "ハイスペを射止めた女":  0.8, "いただききった女":  0.8, "港区を卒業した女":  0.7, "自分の暮らしを選んだ女":  0.6, "これから始まる二人":  0.5, "戦友のような夫婦":  0.4, "仮面夫婦":  0.4, "元・少し有名な人":  0.3, "更新が止まったアカウント":  0.3, "言えないことがある妻":  0.3, "港区を買う側":  0.3, "シングルマザーとして生きた女":  0.2, "港区の既読スルー":  0.1, "40歳で逆転した女":  0.1, "許さないと決めた女":  0.1, "自分で終わらせた結婚":  0.1, "港区に残った40歳":  0.1, "家計の主役になった妻":  0.1, "消せない過去を持つ女":  0.1, "いいねの数だけ残った女":  0.1, "二人で生きると決めた夫婦":  0, "壊れかけて直した二人":  0, "里親という道を選んだ二人":  0};
+const RARE={"港区の残り香":  26.4, "招待状が切れない女":  15.1, "夜を元手にした女":  6.8, "選ぶ側に回った女":  5.7, "大きくは変わらなかった◯年":  5.5, "これからの人":  4.8, "勝ち逃げした普通の子":  4.3, "積み上げ直した◯年":  4.2, "値段を知っていた女":  2, "最後まで探し続けた女":  2, "理想だけが一流":  1.8, "自分の城を持った女":  1.8, "離婚して再出発":  1.6, "家族が増えた二人":  1.6, "経営者の妻":  1.6, "毎年選び直した二人":  1.5, "最後に間に合った女":  1, "ほどほどの夫婦":  0.9, "ホスト沼の果て":  0.9, "儲け話を信じた女":  0.9, "社長夫人（名ばかり）":  0.8, "ハイスペを射止めた女":  0.8, "港区を卒業した女":  0.7, "いただききった女":  0.7, "妥協したと思っている妻":  0.7, "表に戻れない女":  0.7, "夜の世界で結ばれた二人":  0.6, "これから始まる二人":  0.6, "戦友のような夫婦":  0.5, "トロフィーワイフ":  0.5, "元・少し有名な人":  0.5, "自分の暮らしを選んだ女":  0.4, "港区に残った40歳":  0.4, "仮面夫婦":  0.4, "港区を買う側":  0.4, "更新が止まったアカウント":  0.3, "シングルマザーとして生きた女":  0.2, "許さないと決めた女":  0.2, "40歳で逆転した女":  0.2, "言えないことがある妻":  0.2, "港区の既読スルー":  0.1, "壊れかけて直した二人":  0.1, "シンデレラ（夜の部）":  0.1, "いいねの数だけ残った女":  0.1, "家計の主役になった妻":  0, "二人で生きると決めた夫婦":  0, "自分で終わらせた結婚":  0};
 function rarePct(t){if(LOCAL_T.includes(t))return null;const v=RARE[zkey(t)];return v==null?null:v;}
 function pctTxt(p){return p==null?"":p<1?"1%未満":p<10?`${p.toFixed(1)}%`:`${Math.round(p)}%`;}
 function stars(p){return p==null?"★★★☆☆":p<1?"★★★★★":p<3?"★★★★☆":p<7?"★★★☆☆":p<15?"★★☆☆☆":"★☆☆☆☆";}
@@ -2620,7 +2657,7 @@ function localEnding(){
   </section>
   <section class="panel uzu still" aria-label="回文"><p class="uzu-k">${KAIBUN}</p>${uzuSVG(false)}<p class="uzu-r">${line}</p></section>
   <button class="btn ext big" id="tokyo">もし、あのとき東京に行っていたら</button>
-  <section class="panel sharebox"><h2>結果をシェア</h2><div class="sharebtns"><a class="btn" id="share" target="_blank" rel="noopener">Xでシェア</a><button class="btn ghost" id="copy">結果文をコピー</button></div></section>
+  <section class="panel sharebox"><h2>結果をシェア</h2><div class="sharebtns"><a class="btn" id="share" target="_blank" rel="noopener">Xでシェア</a><a class="btn ghost" id="shareline" target="_blank" rel="noopener">LINEで送る</a><button class="btn ghost" id="copy">結果文をコピー</button></div></section>
   <div class="row"><button class="btn ghost" id="reset">タイトルへ</button></div>`;
   bindShare(share);
   $("#tokyo").onclick=goTokyo; $("#reset").onclick=()=>{renderSetup();toTop();};
@@ -2664,7 +2701,7 @@ function personaOf(o){
   const a=L[h%L.length]; let b=L[(h*7+3)%L.length]; if(b===a) b=L[(h+1)%L.length]; return [a,b];
 }
 function cardView(o,s,big){
-  const st=somStage(s), pp=o.persona||personaOf(o), sc=Math.round((o.sincerity||5)/2);
+  const st=somStage(s), pp=(o.persona||personaOf(o)).concat(st<=1&&manTrait(o)?[manTrait(o)]:[]), sc=Math.round((o.sincerity||5)/2);
   const per=st<4?`<div class="persona p${st}">${pp.map(t=>`<span>${t}</span>`).join("")}</div>`:"";
   const inc=`<div><span>年収</span><b class="num">${Math.round(o.income||0).toLocaleString()}万円</b></div>`, tier=`<div><span>相手の格</span><b class="num">${(+o.tier||0).toFixed(1)}</b></div>`;
   const sin=`<div><span>誠実さ</span><b>${"●".repeat(sc)}${"○".repeat(5-sc)}</b></div>`, com=`<div><span>結婚する気</span><b>${o.commit>=0.6?"ある":o.commit>=0.4?"どうだろう":"今は遊びたい"}</b></div>`;
@@ -2717,6 +2754,7 @@ function eyesHTML(g,A,win){
   const ics=f.ic||["・","・","・"];
   return `<section class="panel rivals endact fade" aria-label="第2幕 思い出"><span class="actno">第2幕</span><h2>思い出</h2>
     ${f.legacy?"":`<ul class="items">${f.mem.map((m,i)=>`<li><span aria-hidden="true">${ics[i]||"・"}</span>${m}</li>`).join("")}</ul>`}
+    ${menHTML(g,A)}
     <h3>はじめての人の今</h3>
     <div class="eyes2"><div class="ecard e0"><small>18歳の目</small><b>${f.n}</b>${cardView(o,0,false)}</div><div class="ecard e${st}"><small>${A}歳の目</small><b>${f.n}</b>${cardView(o,s,false)}</div></div>
     <p class="hnow">${f.n}（${A}歳）。${now}</p>
@@ -2756,6 +2794,173 @@ function uzuBind(onCut){
   };
 }
 
+const SHARE_Q=true; // シェアのURLに結末の番号と経路を付けるか（web版のみ）
+/* ---------- 深み（2026-11-26）: 整形とモテ・姉妹との対比・男の裏のパラメータ・男の趣味の移り変わり・自分の値札・シェアの経路 ---------- */
+/* 整形: 見た目の上乗せ（add）は実効の見た目に足す。3回目以降は港区系の男からの遊びモテが下がる（seiPen） */
+function seiOf(g){ if(!g.sei) g.sei={n:0,add:0,peak:0,first:0,last:0,stop:false,big:0,fail:0,asks:0,ask:0,photo:0}; return g.sei; }
+function seiAdd(g){ return (g&&g.sei&&g.sei.add)||0; }
+function seiPen(g){ const n=(g&&g.sei&&g.sei.n)||0; return n<3?0:0.6*(n-2)+0.2*(n-2)*(n-2); }
+const SEI_OP=[{n:"目元だけ（二重など・約80万円）",cost:80,add:0.6,som:0.6},{n:"顔全体（輪郭など・約300万円）",cost:300,add:1.2,som:0.9}];
+function seiMaintCost(S){ return S.big?120:40; }
+function seiDo(g,big,maint){
+  const S=seiOf(g), k=SEI_OP[big?1:0], cost=maint?seiMaintCost(S):k.cost;
+  let add=(maint?0.4:k.add)*Math.pow(0.6,S.n), fail=false;
+  if(big&&!maint&&Math.random()<0.15){ fail=true; add*=0.35; g.happy-=1.2; S.fail++; }
+  g.money-=cost; S.n++; S.add=Math.round((S.add+add)*100)/100; S.peak=Math.max(S.peak,S.add); S.last=g.age; if(!S.first) S.first=g.age; if(big&&!maint) S.big=1; S.stop=false;
+  somAdd(g,maint?0.3:k.som,"クリニックに通い始めたこと");
+  if(!fail) g.happy+=0.3;
+  const pay=g.money<0?"足りない分は分割払いにした。":"";
+  if(maint){ S.m=(S.m||0)+1; say(`クリニックでメンテナンスを受けた（メンテナンス${S.m}回目）。約${cost}万円。${pay}`); }
+  else say(`${big?"クリニックで顔全体を直した":"クリニックで目元を直した"}。約${cost}万円。${pay}${fail?"ダウンタイムが長引いた。腫れが引いても、思っていた顔にはならなかった。":"鏡の顔は、思っていた顔に近づいた。"}`);
+}
+function seiEvent(){
+  const S=seiOf(G), g=G, r=g.reina===1&&Math.random()<0.5;
+  const x=r?"レイナに「私が通ってるところ、紹介しようか。カウンセリングだけでも」と言われた。会食で、隣の子と顔を比べられた次の週だった。"
+    :g.job==="influ"?"投稿のコメント欄で、ほかの子の顔と並べて比べられた。美容クリニックから「カウンセリングだけでもどうですか」とメッセージが届いた。"
+    :(g.minato||0)>=1?"会食の席で、隣の子と顔を比べられた。帰りに、同じ席の子からクリニックのカウンセリングに誘われた。"
+    :"友達が目元を直していた。並んで撮った写真を見て、「カウンセリング、一緒に行く？」と誘われた。";
+  const end=()=>{ S.asks++; S.ask=g.age; };
+  return {id:"seikei",who:r?"reina":null,ic:"🪞",t:"整形のカウンセリング",x,
+    c:[[SEI_OP[0].n,gg=>{end();seiDo(gg,false,false);}],[SEI_OP[1].n,gg=>{end();seiDo(gg,true,false);}],["しない",gg=>{end();say("カウンセリングには行かなかった。");}]]};
+}
+function seiMaintEvent(){
+  const S=seiOf(G), cost=seiMaintCost(S), y=G.age-S.last;
+  return {id:"seikei_m",ic:"🪞",t:"メンテナンスの案内",x:`クリニックから「そろそろメンテナンスの時期です」と連絡が来た。前回から${y}年。`,
+    c:[[`続ける（約${cost}万円）`,gg=>seiDo(gg,!!seiOf(gg).big,true)],["やめる",gg=>{const s=seiOf(gg);s.stop=true;s.last=gg.age;say("メンテナンスをやめた。効果は、少しずつ薄れていく。");}]]};
+}
+/* 正月の家族写真: 整形のたびに主人公の輪郭だけが少しずつ変わる */
+function famPhotoSVG(n){
+  const k=Math.min(0.62,n*0.2), head=(cx,cy,r)=>`<circle cx="${cx}" cy="${cy}" r="${r}"/>`;
+  const hero=(cx,cy,r)=>`<path d="M${cx-r} ${cy} A${r} ${r} 0 0 1 ${cx+r} ${cy} Q${(cx+r*(1-k*0.5)).toFixed(1)} ${(cy+r*(0.9+0.2*k)).toFixed(1)} ${cx} ${(cy+r*(1+0.3*k)).toFixed(1)} Q${(cx-r*(1-k*0.5)).toFixed(1)} ${(cy+r*(0.9+0.2*k)).toFixed(1)} ${cx-r} ${cy} Z"/>`;
+  const body=(cx,top,w,h)=>`<path d="M${cx-w/2} ${top+h} Q${cx-w/2} ${top} ${cx} ${top} Q${cx+w/2} ${top} ${cx+w/2} ${top+h} Z"/>`;
+  return `<svg class="famphoto" viewBox="0 0 240 132" role="img" aria-label="正月の家族写真"><rect x="4" y="4" width="232" height="124" rx="4" fill="var(--surface2)" stroke="var(--line)"/>
+    <g fill="var(--muted)" opacity=".55">${head(52,48,14)}${body(52,64,42,56)}${head(96,52,13)}${body(96,67,38,53)}</g>
+    <g fill="var(--muted)" opacity=".8">${head(146,56,12)}${body(146,70,34,50)}</g>
+    <g fill="var(--rose)" opacity=".85">${hero(190,56,12)}${body(190,70,34,50)}</g></svg>`;
+}
+function sisPath(g){ return (g.rv&&g.rv.s&&g.rv.s.path)||((g.rv&&g.rv.lean)>0.35?"hana":"ken"); }
+function sisFaceEvent(){
+  const S=seiOf(G), I=sisInfo(G), hana=sisPath(G)==="hana", first=!S.photo;
+  S.photo=S.n;
+  const x=first?`正月に帰省した。叔母さんが、${I.rel}の${I.n}と私を見比べて言った。「昔はそっくりだったのに。最近、${I.n}ちゃんと似てないね」`
+    :`正月の家族写真。シャッターの前で、母が「${I.n}と並んで。あら、また少し変わった？」と言った。`;
+  const x2=first?(hana?`${I.n}は私の顔をじっと見て言った。「どこのクリニック？ 私のところのほうが自然だよ」`:`${I.n}は少し黙ってから、小さい声で言った。「お母さんに似てた顔、好きだったのに」`)
+    :(hana?`${I.n}も、前とは目元が違っていた。並ぶと、母に似ているのはどちらでもなかった。`:`${I.n}は、私の顔のことをもう何も言わなかった。`);
+  return {id:"sis_face",who:I.pk,t:"正月の家族写真",x,card:famPhotoSVG(S.n),x2,
+    c:[["笑ってごまかす",gg=>say(`${first?"叔母さんの言葉を":"母の言葉を"}、笑ってごまかした。家族写真の私は、去年の私と少しだけ違った。`)],
+       ["本当のことを話す",gg=>{gg.happy+=0.3;somAdd(gg,-0.2);say(hana?`${I.n}にクリニックの名前を答えた。${I.n}は「私のところのほうが上手い」と言った。`:`${I.n}に、${first?"":"また"}顔を直したことを話した。${I.n}は「そっか」とだけ言った。`);}]]};
+}
+function fkCheck(){
+  if(!G||G.event||G.offer||G.atSum||G.age<20) return false;
+  const S=seiOf(G);
+  if(S.n>0&&S.photo<S.n&&G.age>S.last&&S.photo<3&&Math.random()<0.5){ G.event=sisFaceEvent(); return true; }
+  if(S.n>0&&!S.stop&&G.age-S.last>=2+(S.n%2)&&Math.random()<0.75){ G.event=seiMaintEvent(); return true; }
+  if(!S.n&&S.asks<2&&G.age<=36&&(!S.asks||(G.age-S.ask>=5&&som(G)>=4))){
+    const near=(G.minato||0)>=1||som(G)>=2||["yoru","influ","geino"].includes(G.job)||G.reina===1;
+    if(near&&Math.random()<0.2){ G.event=seiEvent(); return true; }
+  }
+  return false;
+}
+function fkSisFace(g,ken,I){
+  if(!(g.sei&&g.sei.n)) return "";
+  return ken?`${I.n}の目尻には、母と同じ笑いじわができていた。`:`${I.n}も顔を直した。二人とも、もう母には似ていない。`;
+}
+/* 港区の男たちの本音（整形の回数） */
+function seiHonne(g){
+  const n=(g.sei&&g.sei.n)||0;
+  if(n===2&&Math.random()<0.5) return "「最近また雰囲気変わった？」";
+  if(n>=3&&Math.random()<0.7) return pick(n>=4?["「顔は綺麗。でも全員同じ顔に見えてきた」","「前の顔のほうが呼びたかった」","「綺麗なのは分かる。でも、もう呼ぶ理由にはならない」"]:["「顔は綺麗。でも全員同じ顔に見えてきた」","「前の顔のほうが呼びたかった」"]);
+  return null;
+}
+
+/* 出会う男の裏のパラメータ: 男の染まり具合（人を値段で見る度合い）。数字では見せない */
+function manSom(o){
+  if(!o) return 0;
+  if(o.msom==null){
+    const s=o.src, w=o.world, v=String(o.via||""), sc=o.sincerity||5;
+    let b=s==="hatsu"?1:s==="asobi"?rnd(6,9.5):s==="shacho"?rnd(5,8):w==="biz"?rnd(4.5,8):w==="night"?rnd(3,7):/婚活|相談所/.test(v)?rnd(2.5,6):rnd(1,4.5);
+    if(sc>=7) b-=1.5; else if(sc<=3) b+=1;
+    o.msom=Math.round(clamp(b,0,10)*10)/10;
+  }
+  return o.msom;
+}
+const MTRAIT_HI=["初対面で年齢を聞く","人を肩書きで紹介する","店の値段の話が多い"], MTRAIT_LO=["昔の友達と今も会う","年を取るのを楽しみにしている","親の話をよくする"];
+function manTrait(o){
+  if(!o||o.src==="hatsu"||o.persona) return null; const m=manSom(o), h=[...String(o.label||"")].length+Math.round((o.income||0)/7);
+  return m>=7?MTRAIT_HI[h%3]:m<=3?MTRAIT_LO[h%3]:null;
+}
+const PAST={"約束を守る":"約束を守る人だった","話を最後まで聞く":"話を最後まで聞く人だった","よく笑う":"よく笑う人だった","店員さんに丁寧":"店員さんに丁寧な人だった","遅刻しない":"遅刻しない人だった","嘘が下手":"嘘が下手な人だった","母親を大事にしている":"母親を大事にする人だった","話が面白い":"話が面白い人だった","少し見栄っ張り":"少し見栄っ張りだった","気前がいい":"気前がいい人だった","いつも忙しそう":"いつも忙しそうだった","聞き上手":"聞き上手だった","店員に横柄":"店員に横柄だった","時間にルーズ":"時間にルーズだった","自分の話が長い":"自分の話が長かった","スマホを伏せて置く":"スマホを伏せて置く人だった","人の年収をすぐ聞く":"人の年収をすぐ聞く人だった","約束をよく変える":"約束をよく変える人だった","初対面で年齢を聞く":"初対面で年齢を聞く人だった","人を肩書きで紹介する":"人を肩書きで紹介する人だった","店の値段の話が多い":"店の値段の話が多かった","昔の友達と今も会う":"昔の友達と今も会う人だった","年を取るのを楽しみにしている":"年を取るのを楽しみにしている人だった","親の話をよくする":"親の話をよくする人だった"};
+function pastOf(t){ t=String(t||""); if(PAST[t]) return PAST[t]; if(/(い|る|く|う|つ|す|む|ぶ|ぐ)$/.test(t)) return t+"人だった"; return t+"な人だった"; }
+/* 男の趣味の移り変わり: 付き合った・結婚した・断った主な相手を記録 */
+function menLog(g,o,k){
+  if(!o) return; g.men=g.men||[];
+  g.men.push({a:g.age,l:String(o.label||"相手"),i:Math.round(o.income||0),t:Math.round((+o.tier||0)*10)/10,p:(o.persona||personaOf(o)).slice(0,2),m:manTrait(o),st:somStage(som(g)),k});
+  o._mi=g.men.length-1;
+}
+function fkOffer(g,o,yes){
+  if(!o) return; manSom(o);
+  if(yes) menLog(g,o,"付き合った");
+  else if(o.src==="hatsu"||(o.income||0)>=1000||(+o.tier||0)>=derive(g).kekkon-0.5) menLog(g,o,"断った");
+}
+function fkMarry(g){ const p=g.partner; if(p&&g.men&&p._mi!=null&&g.men[p._mi]) g.men[p._mi].k="結婚した"; }
+/* 毎年: 整形のやめた分が少しずつ戻る／男の染まり具合が関係に効く */
+function fkYear(g){
+  const S=g.sei; if(S&&S.stop&&S.add>S.peak*0.35) S.add=Math.max(Math.round(S.peak*35)/100,Math.round((S.add-0.15)*100)/100);
+  const p=g.partner; if(!p) return; const m=manSom(p), d=derive(g);
+  if(!g.married){
+    if(m>=6.5&&(g.age>=30||seiPen(g)>0||d.asobi<(+p.tier||0)-1.5)&&Math.random()<0.25){
+      say(`${p.label}は、${seiPen(g)>0?"「前の顔のほうがよかった」と言い残して":"若い子との食事を優先するようになって"}、離れていった。`);
+      g.partner=null; g.happy-=0.6; return;
+    }
+    if(m<=3.5){ p.yrs=(p.yrs||0)+1; p.commit=Math.min(0.95,(p.commit||0.5)+0.03*Math.min(3,p.yrs)); }
+  } else if(g.mar){
+    const M=g.mar;
+    if(m<=3.5&&(M.years||0)>=2){ M.sat=clamp(M.sat+0.08); M.strain=clamp(M.strain-0.05,0); }
+    else if(m>=7&&(g.age>=33||seiPen(g)>0)){ M.strain=clamp(M.strain+0.12); }
+  }
+}
+/* エンディング: 男の趣味の移り変わり（並べるだけ・説明は付けない） */
+function menHTML(g,A){
+  const L=(g.men||[]).filter(x=>x.a<=A); if(L.length<2) return "";
+  let rows=L;
+  if(rows.length>7){ const keep=new Set([0,rows.length-1]); rows.forEach((x,i)=>{if(x.k==="結婚した")keep.add(i);}); const rest=rows.map((_,i)=>i).filter(i=>!keep.has(i)); while(keep.size<7&&rest.length){ keep.add(rest.splice(Math.floor(rest.length/2),1)[0]); } rows=rows.filter((_,i)=>keep.has(i)); }
+  const then=x=>x.st<=1?x.p[0]:x.st<=3?`年収${x.i.toLocaleString()}万円`:`年収${x.i.toLocaleString()}万円・格${x.t.toFixed(1)}`;
+  const used=new Set(), eye=x=>{ if(x.st<=1) return pastOf(x.p[0]); const c=[x.m,x.p[1],x.p[0]].filter(Boolean).map(pastOf), t=c.find(v=>!used.has(v))||c[0]; used.add(t); return t; };
+  return `<h3>男の趣味の移り変わり</h3>
+    <ol class="mtaste">${rows.map(x=>`<li class="s${x.st}"><div class="mt-h"><span class="num">${x.a}歳</span><b>${esc(x.l)}</b><small>${x.k}</small></div><div class="mt-2"><div><small>当時の目</small><span>${esc(then(x))}</span></div><div><small>18歳の目</small><span>${esc(eye(x))}</span></div></div></li>`).join("")}</ol>`;
+}
+/* 自分の値札: 染まるほど大きく出る（見る目と見られる目を同じ速さで） */
+function fkTag(d){
+  if(!G||G.age<20||G.married) return ""; const st=somStage(som(G)); if(!st) return "";
+  return `<div class="nefuda s${st}" aria-label="自分の値札"><span class="nf-k">値札</span><div><small>遊び相手として</small><b>${grade(d.asobi)}</b></div><div><small>嫁候補として</small><b>${grade(d.kekkon)}</b></div></div>`;
+}
+
+/* ---------- シェアの経路: LINEで送る・友達の結果つきリンク・計測 ---------- */
+function track(ev,p){ try{ if(typeof gtag==="function") gtag("event",ev,Object.assign({tool:"minato-senki"},p||{})); }catch(e){} }
+function rcode(t){ let h=5381; for(const c of String(zkey(t))) h=((h*33)^c.charCodeAt(0))>>>0; return h.toString(36).slice(0,6); }
+function rtitle(c){ return ZUKAN().concat(LOCAL_T).find(t=>rcode(t)===c)||null; }
+function shareLink(src,T){ if(!SHARE_Q) return SHARE_URL; const q=[]; if(T) q.push("r="+rcode(T)); q.push("utm_source="+src); return SHARE_URL+"?"+q.join("&"); }
+const _bindShare=bindShare;
+bindShare=function(text){
+  const m=String(text).match(/(?:タイプは|結末は)「([^」]+)」/), T=m?m[1]:"";
+  const tx=src=>SHARE_Q?String(text).split(SHARE_URL).join(shareLink(src,T)):String(text);
+  _bindShare(tx("share"));
+  const x=$("#share"); if(x) x.href="https://x.com/intent/tweet?text="+encodeURIComponent(tx("x"));
+  const ln=$("#shareline"); if(ln) ln.href="https://line.me/R/share?text="+encodeURIComponent(tx("line"));
+  [["share","x"],["shareline","line"],["shareimg","image"],["saveimg","save"],["copy","copy"]].forEach(([id,k])=>{const b=$("#"+id); if(b&&b.addEventListener&&!b._tk){ b._tk=1; b.addEventListener("click",()=>track("share_click",{method:k==="save"&&makeCard.fmt==="s"?"story":k,ending:T})); }});
+  const key=T+"|"+(G?G.age:"");
+  if(T&&bindShare.last!==key){ bindShare.last=key; let zn=0; try{zn=zukanCount().n;}catch(e){} track("game_result",{ending:T,code:rcode(T),zukan:zn,age:G?G.age:18,eyes:G&&G.eyes?G.eyes.hy+"/"+G.eyes.tot:"",seikei:G&&G.sei?G.sei.n:0}); }
+};
+const FRIEND=(()=>{ try{ if(typeof location==="undefined"||!location.search) return null; const r=new URLSearchParams(location.search).get("r"); return r?rtitle(r):null; }catch(e){ return null; } })();
+const _renderSetup=renderSetup;
+renderSetup=function(){
+  _renderSetup.apply(this,arguments);
+  if(!FRIEND||(typeof G!=="undefined"&&G)) return;
+  const app=$("#app"); if(!app||!app.insertAdjacentHTML) return;
+  app.insertAdjacentHTML("afterbegin",`<div class="friendr" role="note">友達は「${esc(String(FRIEND).replace("◯年","年月"))}」でした。あなたは？</div>`);
+  if(!renderSetup.tk){ renderSetup.tk=1; track("friend_open",{ending:FRIEND}); }
+};
+
 /* ---------- キーボード ---------- */
 if(typeof document!=="undefined"&&document.addEventListener) document.addEventListener("keydown",e=>{
   if(e.altKey||e.ctrlKey||e.metaKey) return;
@@ -2763,7 +2968,7 @@ if(typeof document!=="undefined"&&document.addEventListener) document.addEventLi
   const y=$("#yr"); if(y&&y.classList&&y.classList.contains("show")){if(showYear.hide)showYear.hide();e.preventDefault();return;}
   if(!/^[1-9]$/.test(e.key)) return;
   const i=+e.key-1, q=s=>document.querySelector(s);
-  const btns=q("#pr0")?[q("#pr0"),q("#pr1"),q("#pr2")].filter(Boolean):q("#prskip")?[q("#prskip"),q("#prre")]:q("#ev0")?[q("#ev0"),q("#ev1")]:q("#yes")?[q("#yes"),q("#no")]:[...document.querySelectorAll(".actions .act")];
+  const btns=q("#pr0")?[q("#pr0"),q("#pr1"),q("#pr2")].filter(Boolean):q("#prskip")?[q("#prskip"),q("#prre")]:q("#ev0")?[q("#ev0"),q("#ev1"),q("#ev2")].filter(Boolean):q("#yes")?[q("#yes"),q("#no")]:[...document.querySelectorAll(".actions .act")];
   const b=btns[i]; if(b&&!b.disabled){e.preventDefault();b.click();}
 });
 
