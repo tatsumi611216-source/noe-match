@@ -1799,7 +1799,7 @@ function chartSVG(){
    ========================================================== */
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
 const SHARE_URL="https://www.noe-match.com/tools/minato-senki/";
-let PREF=Object.assign({theme:"auto",speed:"normal",detail:false},LS.get("ms-pref",{}));
+let PREF=Object.assign({theme:"auto",speed:"normal",detail:false,statOpen:true},LS.get("ms-pref",{}));
 function savePref(){LS.set("ms-pref",PREF);}
 function applyTheme(){const r=document.documentElement;if(!r||!r.setAttribute)return;if(PREF.theme==="auto")r.removeAttribute("data-theme");else r.setAttribute("data-theme",PREF.theme);}
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -1953,6 +1953,7 @@ function logHTML(){return `<details class="fold"><summary>戦記<small>${G.log.l
 function msNote(){return PREF.speed==="off"&&MILESTONE[G.age]&&!G.married?`<div class="note">${MILESTONE[G.age]}</div>`:"";}
 let BUSY=false;
 function bindGame(){
+  document.querySelectorAll("details[data-stat]").forEach(el=>el.addEventListener("toggle",()=>{PREF.statOpen=el.open;savePref();}));
   document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{if(BUSY)return;BUSY=true;b.classList.add("picked");setTimeout(()=>{BUSY=false;act(b.dataset.a);},110);});
   if(G.event){$("#ev0").onclick=()=>answerEvent(0);$("#ev1").onclick=()=>answerEvent(1);}
   else if(G.offer){$("#yes").onclick=()=>answerOffer(true);$("#no").onclick=()=>answerOffer(false);}
@@ -1980,7 +1981,7 @@ function renderGame(){
   <blockquote class="honne"><span>港区の男たちの本音</span>${honne(G,d)}</blockquote>
   ${msNote()}
   ${G.ideal-d.kekkon>=2?`<div class="note">理想が結婚モテを ${(G.ideal-d.kekkon).toFixed(1)} 上回っている。釣り合う相手を「下」に感じやすい。</div>`:""}
-  <details class="fold"><summary>ステータス詳細<small>${esc(tag)}</small></summary><div class="fold-in">
+  <details class="fold" data-stat${PREF.statOpen!==false?" open":""}><summary>ステータス詳細<small>${esc(tag)}</small></summary><div class="fold-in">
     <div class="meters">
       ${G.age<20?"":meter("asobi","遊びモテ",d.asobi)}
       ${meter("kekkon","結婚モテ",d.kekkon)}
@@ -2024,7 +2025,7 @@ function renderMarried(){
   ${G.event?eventHTML():choicesHTML(acts,`結婚${m.years+1}年目、${G.age}歳の一年をどう過ごす？`)}
   <blockquote class="honne"><span>港区の男たちの本音</span>${H}</blockquote>
   ${tip?`<div class="note">${tip}</div>`:""}
-  <details class="fold"><summary>夫婦と家計の詳細<small>出会い：${ROUTE[m.route].n}</small></summary><div class="fold-in">
+  <details class="fold" data-stat${PREF.statOpen!==false?" open":""}><summary>夫婦と家計の詳細<small>出会い：${ROUTE[m.route].n}</small></summary><div class="fold-in">
     <div class="note">夫：${p.label}（年収${Math.round(p.income*m.hInc).toLocaleString()}万円）／誠実さ ${"●".repeat(Math.round(p.sincerity/2))}${"○".repeat(5-Math.round(p.sincerity/2))}／出会い：${ROUTE[m.route].n}</div>
     <div class="meters">
       ${meter("sat","夫婦の満足度",m.sat)}
