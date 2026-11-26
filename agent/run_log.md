@@ -1,5 +1,45 @@
 # Agent Run Log
 
+## 2026-11-26　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本 / ツール是正1本
+
+### Phase 4-0 計測ゲート（ASP）
+
+`asp_results.md` の `last_updated: 2026-08-31`（87日前）→ **30日超 → ASPゲート閉鎖**。今回は新規アフィリエイトCTA設置なし。
+
+### ツールゲート
+
+`tool_gate.py` は Google Suggest・Aramakijake・DDG SERP に依存。クラウド環境のアウトバウンドHTTPS制限により3エンドポイントともブロック → 全クエリが CHECK 返却。新規ツール・データ記事の生成をスキップ。
+
+### Phase 2 寄せ直し（2本）
+
+**① articles/agency-vs-app**（前回: 2026-08-22）
+- 旧title: `マッチングアプリがうまくいかない人が結婚相談所に移るときの費用`
+- 新title: `30代後半が婚活アプリから相談所に移る費用（2026年11月）`（31字 ✓）
+- 旧breadcrumb不整合（旧題名"結婚相談所とマッチングアプリの違い..."が残存）を修正
+- 更新箇所: title / og:title / twitter:title / JSON-LD headline・dateModified / BreadcrumbList position3 / breadcrumb text / h1 / byline / intro
+
+**② articles/app-plus-agency**（前回: 2026-07-30）
+- 旧title: `結婚相談所に入らなくていい人の条件｜アプリだけで足りるかの判断基準【2026年版】`
+- 新title: `30代前半が婚活アプリだけで足りる条件（2026年11月）`（29字 ✓）
+- 更新箇所: title / og:title / twitter:title / JSON-LD headline・dateModified / BreadcrumbList position3 / breadcrumb text / h1 / byline / intro
+
+### ツール品質是正（1本）
+
+**tools/app-kakin-hikaku**
+- title短縮: `マッチングアプリはWebとアプリ内課金でいくら違う？8社の料金を比べる` (35字) → `マッチングアプリのWeb課金とアプリ内課金の料金差（8社比較）` (31字 ✓)
+- `<section id="line-cta-result">` を `#result` div内に追加（`lin.ee/unbDsCR` を含む）
+- quality_backlog_tools.md から当ツール行を削除
+
+### sitemap同期
+
+`python3 scripts/sitemap_sync.py` → sitemap.xml・sitemap-all.xml 各2件を書き換え（agency-vs-app・app-plus-agency の lastmod を 2026-11-26 に更新）
+
+### factory_audit 確認
+
+`python3 scripts/factory_audit.py --strict` → agency-vs-app・app-plus-agency・app-kakin-hikaku に新規 FAIL なし
+
+---
+
 ## 2026-11-23　週次ラン｜新記事なし（ゲートCHECK・ネットワーク不通） / 寄せ直し2本 / ツール是正1本
 
 ### Phase 4-0 計測ゲート（ASP）

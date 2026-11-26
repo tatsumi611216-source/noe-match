@@ -12,7 +12,6 @@
 
 | ツール | 違反 |
 |---|---|
-| tools/app-kakin-hikaku | title 35字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
 | tools/app-kekkonritsu-data | title 42字（サフィックス除く・32字以内） ／ 結果領域（id="result…"）が見つからない |
 | tools/daredemo-tsuen-jichitai | title 45字（サフィックス除く・32字以内） |
 | tools/fugenbyo-check | title 33字（サフィックス除く・32字以内） ／ #result 内に LINE CTA が無い |
