@@ -141,6 +141,10 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 .res li{position:relative;padding-left:14px}
 .res li::before{content:"";position:absolute;left:2px;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
 .res li.more{color:var(--muted);font-size:.8rem}
+.res li.drift{font-size:.8rem;border-top:1px dashed var(--line);padding-top:6px;margin-top:2px}
+.res li.drift::before{background:var(--muted);top:calc(.62em + 6px)}
+.res li.drift b{font-weight:700;color:var(--muted)}.res li.drift small{color:var(--muted);font-size:.76rem}
+.res li.drift .dl{font-size:.72rem}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .dchip{display:inline-flex;align-items:center;gap:4px;font-size:.74rem;padding:3px 8px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);font-family:var(--body);white-space:nowrap}
 .dchip b{font-family:var(--mono);font-weight:500}
@@ -157,10 +161,12 @@ button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var
 .act:active{transform:scale(.96)}
 .act .ic{flex:none;width:28px;height:28px;border-radius:10px;display:grid;place-items:center;background:var(--surface2);font-size:1.05rem;line-height:1}
 .act .tx{display:flex;flex-direction:column;gap:2px;min-width:0}
-.act b{font-size:.88rem;line-height:1.3;text-wrap:balance}
+.act b{font-size:.88rem;line-height:1.3;text-wrap:balance;word-break:auto-phrase}
+.act .nw{white-space:nowrap}
+.res li.drift small{display:block;margin-top:2px}
 .act .tx{flex:1}
 .actions .act:last-child:nth-child(odd){grid-column:auto}
-.act small{color:var(--muted);font-size:.72rem;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.act small{color:var(--muted);font-size:.72rem;line-height:1.4;white-space:normal;word-break:auto-phrase;overflow-wrap:anywhere}
 .act kbd{position:absolute;right:7px;top:6px;font-family:var(--mono);font-size:.7rem;color:var(--muted);opacity:.6}
 @media (hover:none){.act kbd{display:none}}
 .act.hot{border-color:var(--rose)}
@@ -1443,6 +1449,7 @@ function marAct(k){
   if(G.job==="kigyo" && k!=="m_career"){ G.biz=clamp(G.biz-0.15); if(G.biz<=0.3){ G.job="ippan"; G.biz=0; G.money-=300; G.happy-=1.5; say("事業に手が回らず、廃業した。会社員として働き始めた。"); } }
   if(G.job==="influ" && k!=="m_career" && (G.fans||0)>=5){ G.fans=(G.fans||0)*0.92; }
   // 経緯と誠実さで、放っておくと溜まるすれ違い
+  const st0=m.strain, sa0=m.sat;
   m.strain=clamp(m.strain+(s<=4?0.6:s<=6?0.3:0.1)+ROUTE[m.route].b[2]);
   m.sat=clamp(m.sat+(s-5)*0.06-Math.max(0,m.strain-4)*0.15);
   m.years++;
@@ -1450,6 +1457,7 @@ function marAct(k){
   G.money+=Math.round((myInc+p.income*0.4*m.hInc)*0.75)-cost;
   payDebt();
   if(G.money<0) m.strain=clamp(m.strain+0.3);
+  m._dr={st:m.strain-st0,sa:m.sat-sa0,why:driftWhy(s,m.route,G.money<0)};
   G.happy+=(m.sat-5)*0.12;
   // 妊活をしていない年にも、授かることはある（運）
   if(k!=="m_ninkatsu" && !m.kid && !kidAt(G) && G.age<=38 && Math.random()<0.03){ m.kid=true; m.kidBy="luck"; m.kidAt=G.age; G.kidAt=G.kidAt||G.age; say("子どもを授かった。"); }
@@ -2219,8 +2227,7 @@ ${SHARE_URL}`)<=280:shareText.length+verdict.length<105)) shareText+=`\n男た�
   </section>`;
   $("#app").innerHTML=`
   <figure class="art endart fade" role="img" aria-label="${endArt[1]}">${ART[endArt[0]]()}</figure>
-  ${RV?RV.html+SHAREBOX+`<details class="fold record"><summary>人生の記録をひらく</summary><div class="fold-in">`:""}
-  <section class="result-card fade" id="result">
+  <section class="result-card fade" id="result"><!--rc1101-->
     <span class="eyebrow">${stage}・あなたの港区タイプ</span>
     <h1 class="ending-title">${title}</h1>
     <div class="rarity"><span class="stars" aria-label="レア度">${stars(rp)}</span>${rp!=null?`<span>出現率 ${pctTxt(rp)}</span>`:""}${isNew?`<span class="newb">NEW</span>`:""}</div>
@@ -2229,6 +2236,7 @@ ${SHARE_URL}`)<=280:shareText.length+verdict.length<105)) shareText+=`\n男た�
     <div class="kpis">${kpis.map(([l,v])=>`<div><span>${l}</span><b>${String(v).replace("→","<small>→</small>")}</b></div>`).join("")}</div>
     <div class="radar">${radarSVG(radar)}<ul>${radar.map(([l,v],i)=>`<li><span>${i===0?"遊びモテ（最高）":i===1?"結婚モテ（最高）":l}</span><b>${l==="幸福度"?h:v.toFixed(1)}</b></li>`).join("")}</ul></div>
   </section>
+  ${RV?RV.html+SHAREBOX+`<details class="fold record"><summary>人生の記録をひらく</summary><div class="fold-in">`:""}
   ${extBtn}
   ${RV?"":SHAREBOX}
   <details class="fold" open><summary>このゲームの計算で効いたこと<small>${L.length}つ</small></summary><div class="fold-in"><div class="lessons">${L.map(([hh,t])=>`<div><b>${hh}</b><p>${t}</p></div>`).join("")}</div></div></details>
@@ -2336,7 +2344,19 @@ function turnDeltas(t0){
   add("仕事力",t0.work,n.work,1);add("貯金",t0.money,n.money,1,true);
   return o;
 }
-function turnEnd(){const t0=G.t0;G.t0=null;if(!t0){G.lastRes=null;return;}G.lastRes={lines:G.log.slice(t0.log).map(x=>x[1]).filter(t=>!/^心の声「/.test(t)),deltas:turnDeltas(t0),prev:t0};}
+function turnEnd(){const t0=G.t0;G.t0=null;if(!t0){G.lastRes=null;return;}
+  const dr=G.married&&G.mar&&G.mar._dr?G.mar._dr:null; if(G.mar) G.mar._dr=null;
+  let ds=turnDeltas(t0);
+  // #1103: 夫婦の満足度・すれ違いは、毎年ひとりでに動く分を差し引いて「選んだこと・出来事の分」だけをチップに出す
+  if(dr&&t0.married){ ds=ds.map(o=>{ const k=o.label==="満足度"?"sa":o.label==="すれ違い"?"st":null; if(!k) return o; const dv=o.dv-dr[k], dir=k==="sa"?1:-1; return Math.abs(dv)<0.05?null:{...o,dv,cls:(dv>0)===(dir>0)?"up":"down"}; }).filter(Boolean);
+    if(Math.abs(dr.sa)<0.05&&Math.abs(dr.st)<0.05) dr.none=1; }
+  G.lastRes={lines:G.log.slice(t0.log).map(x=>x[1]).filter(t=>!/^心の声「/.test(t)),deltas:ds,prev:t0,drift:dr&&t0.married&&!dr.none?dr:null};}
+// #1103: 毎年ひとりでに溜まる分の理由（夫の誠実さと出会い方、借金）
+function driftWhy(s,route,debt){
+  const a=s<=4?"夫は家のことを後回しにしがち。":s<=6?"忙しい年は、二人の会話が減る。":"夫は誠実で、すれ違いは溜まりにくい。";
+  const b={asobi:"遊び相手から始まった二人には、決めごとが少ない",night:"夜の世界で出会った二人は、生活の時間がずれている",shacho:"店のお客から始まった二人は、まだ対等になりきれていない",biz:"経営者の夫は、家にいる時間が短い",konkatsu:"条件をすり合わせて結婚した分、大きなずれは少ない"}[route]||"";
+  return `${a}${b?b+"。":""}${debt?"返済の話も、二人の間にある。":""}`;
+}
 function chipsHTML(ds){return ds.map(x=>`<span class="dchip ${x.dv>0?"up":"down"}">${x.label}<b>${x.dv>0?"↑":"↓"}${x.money?Math.abs(Math.round(x.dv)).toLocaleString()+"万":Math.abs(x.dv).toFixed(1)}</b></span>`).join("");}
 
 /* ---------- 年送りの演出 ---------- */
@@ -2354,7 +2374,7 @@ function showYear(from,to){
 }
 
 /* ---------- 選択肢のアイコンと一言 ---------- */
-const AMETA={minato:["🥂","お金と港区慣れ↑ 理想と生活費も↑"],work:["💼","仕事力と年収↑ 出会いはない"],beauty:["💄","見た目↑ 費用100万"],study:["📚","知性と仕事力↑ 30代の資格は強い"],konkatsu:["💍","釣り合う相手と出会う 費用30万"],friends:["🏡","性格と幸福↑ 理想が現実に寄る"],startup:["🚀","貯金300万が元手 振れ幅が大きい"],toYoru:["🌙","すぐ稼げる 昼職との結婚は遠のく"],toHiru:["☀️","収入は下がる 経歴は残る"],deepen:["💞","相手との結びつきを強める"],propose:["💐","釣り合っていれば決まりやすい"],breakup:["💔","理想に届かないなら次へ"],m_talk:["🗣️","すれ違い↓ 満足度↑"],m_budget:["🧮","生活費を下げて貯金と返済へ"],m_career:["💼","仕事力と収入↑ すれ違いも↑"],m_home:["🏠","満足度↑ 本人の収入は3割減"],m_family:["👪","義実家と近づく 費用30万"],m_trip:["✈️","満足度が大きく↑ 費用80万"],m_ninkatsu:["🌱","費用50万 授かるかは運と年齢"],m_old:["🥂","幸福と港区慣れ↑ 夫が気にすることも"]};
+const AMETA={minato:["🥂","お金と港区慣れ↑ 理想と生活費も↑"],work:["💼","仕事力と年収↑ 出会いはない"],beauty:["💄","見た目↑ 費用100万"],study:["📚","知性と仕事力↑ 30代の資格は強い"],konkatsu:["💍","釣り合う相手と出会う 費用30万"],friends:["🏡","性格と幸福↑ 理想が現実に寄る"],startup:["🚀","貯金300万が元手 振れ幅が大きい"],toYoru:["🌙","すぐ稼げる 昼職との結婚は遠のく"],toHiru:["☀️","収入は下がる 経歴は残る"],deepen:["💞","相手との結びつきを強める"],propose:["💐","釣り合っていれば決まりやすい"],breakup:["💔","理想に届かないなら次へ"],m_talk:["🗣️","すれ違い↓ 満足度↑"],m_budget:["🧮","生活費を下げて貯金と返済へ"],m_career:["💼","仕事力と収入↑ すれ違いも↑"],m_home:["🏠","満足度↑ 本人の収入は3割減"],m_family:["👪","義実家と近づく 費用30万"],m_trip:["✈️","満足度が大きく↑ 費用80万"],m_ninkatsu:["🌱","費用50万 授かるかは運と年齢"],m_old:["🥂","幸福と港区慣れ↑ 夫が気にする"]};
 const AMETA_W={gakko:["🩺","知性と仕事力↑ 20歳で専門職に"],yoru:["🍸","若さと見た目が売上に 太客との出会いも"],gakusei:["🎓","知性と仕事力↑ 22歳の就職先に効く"],baito:["🧾","収入と仕事力↑ 正社員の声も"],kigyo:["📈","当たれば伸び、外すと縮む"],influ:["📱","フォロワーが収入に バズと炎上は紙一重"],geino:["🎬","知名度が年収に 浮き沈みが大きい"]};
 function deco(a){const m=(a.k==="work"&&AMETA_W[G.job])||(a.k==="startup"&&G.job==="yoru"&&["💐","夜の顧客と資金が元手 貯金300万"])||AMETA[a.k]||["・",""];return {...a,ic:m[0],s:m[1]};}
 
@@ -2437,15 +2457,17 @@ function hudHTML(d){
 }
 function sceneForAge(a){return a<=21?["y18","上京と大学の昼の街"]:a<=26?["y22","オフィス街と仕事の机"]:a<=30?["y27","夕暮れの港区とタクシー"]:["y31","夜景の見える部屋の机"];}
 function sceneHTML(k,label){const v=kokoro(G,derive(G));return `<figure class="scene fade" role="img" aria-label="${label}">${ART[k]()}<figcaption class="voice-cap ${v.mode==="h"?"h":"k"}"><span>彼女の心の声</span>「${v.t}」</figcaption></figure>`;}
-function resBox(h,lines,ds){const max=4,sh=lines.slice(0,max),more=lines.length-sh.length;return `<section class="res fade" aria-label="${h}"><div class="res-h"><span>${h}</span></div><ul>${sh.map(t=>`<li>${t}</li>`).join("")}${more>0?`<li class="more">ほか${more}件は戦記に</li>`:""}</ul>${ds.length?`<div class="chips">${chipsHTML(ds)}</div>`:""}</section>`;}
+function driftLI(dr){ if(!dr) return ""; const f=(l,v,dir)=>Math.abs(v)<0.05?"":`${l}<i class="dl ${(v>0)===(dir>0)?"up":"down"}">${v>0?"↑":"↓"}${Math.abs(v).toFixed(1)}</i>`;
+  const p=[f("すれ違い",dr.st,-1),f("満足度",dr.sa,1)].filter(Boolean).join("・"); return p?`<li class="drift"><b>毎年ひとりでに</b> ${p}<small>${dr.why}</small></li>`:""; }
+function resBox(h,lines,ds,dr){const max=4,sh=lines.slice(0,max),more=lines.length-sh.length;return `<section class="res fade" aria-label="${h}"><div class="res-h"><span>${h}</span></div><ul>${sh.map(t=>`<li>${t}</li>`).join("")}${more>0?`<li class="more">ほか${more}件は戦記に</li>`:""}${driftLI(dr)}</ul>${ds.length?`<div class="chips">${chipsHTML(ds)}</div>`:""}</section>`;}
 function resHTML(){
   if(G.t0){const lines=G.log.slice(G.t0.log).map(x=>x[1]).filter(t=>!/^心の声「/.test(t));return lines.length?resBox("今年ここまで",lines,[]):"";}
   const r=G.lastRes;
   if(!r){return G.age===18&&G.log.length?resBox("はじまり",G.log.filter(x=>x[0]===18).slice(0,3).map(x=>x[1]),[]):"";}
   if(!r.lines.length&&!r.deltas.length) return "";
-  return resBox("去年の結果",r.lines,r.deltas);
+  return resBox("去年の結果",r.lines,r.deltas,r.drift);
 }
-function choicesHTML(acts,q){return `<section class="choices fade" aria-label="今年の行動"><h2 class="q">${q}</h2><div class="actions">${acts.map((a,i)=>`<button class="act" data-a="${a.k}"${a.off?" disabled":""}><span class="ic" aria-hidden="true">${a.ic}</span><span class="tx"><b>${a.n}</b><small>${PREF.detail?a.d:(a.s||a.d)}</small>${a.off?`<small class="why">${a.off}</small>`:""}</span><kbd>${i+1}</kbd></button>`).join("")}</div></section>`;}
+function choicesHTML(acts,q){return `<section class="choices fade" aria-label="今年の行動"><h2 class="q">${q}</h2><div class="actions" lang="ja">${acts.map((a,i)=>`<button class="act" data-a="${a.k}"${a.off?" disabled":""}><span class="ic" aria-hidden="true">${a.ic}</span><span class="tx"><b>${String(a.n).replace("義実家","<span class=\"nw\">義実家</span>")}</b><small>${String(PREF.detail?a.d:(a.s||a.d)).replace(/(費用\d+万|3割減|運と年齢)/g,'<span class="nw">$1</span>')}</small>${a.off?`<small class="why">${a.off}</small>`:""}</span><kbd>${i+1}</kbd></button>`).join("")}</div></section>`;}
 function eventHTML(){
   const e=G.event, x=typeof e.x==="function"?e.x():e.x, p=e.who&&PEOPLE[e.who];
   const fig=p?`<div class="avatar">${avatarSVG(p)}</div>`:`<div class="evic" aria-hidden="true">${e.ic||EVIC[e.id]||"✦"}</div>`;
@@ -2886,6 +2908,8 @@ function loanEvent(){
   if(k==="due"){
     return {id:"loan",ic:"📄",t:"返済の督促",x:`カードローンの残高が${loanDebt().toLocaleString()}万円になった。年収は${derive(G).career.toLocaleString()}万円。毎月の返済が、利息に追いつかない。`,
       c:[["自己破産を申し立てる",g=>loanHasan(false)],
+         ["カードを解約して、返し続ける",g=>{ g.loan.on=0; g.loan.stop=g.age; g.loan.nobuy=1; somAdd(g,-1.0); g.happy-=0.6; g.life=Math.max(0,(g.life||0)-80);
+           say(`カードを解約した。残りの${loanDebt().toLocaleString()}万円は、毎月決まった額を返していく。会食の誘いは、半分断るようになった。`); }],
          ["もう一年、返してみる",g=>{ g.loan.wait=g.age; g.loan.nobuy=1; g.happy-=0.5; g.life=Math.max(0,(g.life||0)-60); say("もう一年、返してみることにした。外食とタクシーをやめた。"); }]]};
   }
   return {id:"loan",ic:"💳",t:"カードの明細",x:`カードローンの残高は${loanDebt().toLocaleString()}万円。今月も、新作の案内が届いた。`,
@@ -3142,13 +3166,17 @@ function fkSisFace(g,ken,I,sa){
   if(!(g.sei&&g.sei.n)) return "";
   const sisSei=!!g.sei.sisSei; if(sisSei) ken=false; // 家族写真で発信の姉妹も顔を直していたら、道が変わっても「も顔を直した」側
   if(ken&&sa!=null&&sa<35) return ""; // 笑いじわは35歳以上の姉妹だけ
-  return ken?`${I.n}の目尻には、母と同じ笑いじわができていた。`:`${I.n}も顔を直した。二人とも、もう母には似ていない。`;
+  // 家族写真のときは堅実な道で、あとから発信の道に変わった姉妹は「あとから」直した（Fable 12）
+  return ken?`${I.n}の目尻には、母と同じ笑いじわができていた。`:`${I.n}も${g.sei.photo&&!sisSei?"、あとから":""}顔を直した。二人とも、もう母には似ていない。`;
 }
 /* 港区の男たちの本音（整形の回数） */
 function seiHonne(g){
   const n=(g.sei&&g.sei.n)||0;
   if(n===2&&Math.random()<0.5) return "「最近また雰囲気変わった？」";
-  if(n>=3&&Math.random()<0.7) return pick(n>=4?["「顔は綺麗。でも全員同じ顔に見えてきた」","「前の顔のほうが呼びたかった」","「綺麗なのは分かる。でも、もう呼ぶ理由にはならない」"]:["「顔は綺麗。でも全員同じ顔に見えてきた」","「前の顔のほうが呼びたかった」"]);
+  if(n>=3&&g.sei.hA===g.age) return g.sei.hl; // 同じ年に描き直しても変えない
+  if(n>=3&&Math.random()<0.7){ // 前の年と同じ一文は続けない（Fable 11）
+    const L=(n>=4?["「顔は綺麗。でも全員同じ顔に見えてきた」","「前の顔のほうが呼びたかった」","「綺麗なのは分かる。でも、もう呼ぶ理由にはならない」"]:["「顔は綺麗。でも全員同じ顔に見えてきた」","「前の顔のほうが呼びたかった」"]).filter(t=>t!==g.sei.hl);
+    g.sei.hA=g.age; return g.sei.hl=pick(L); }
   return null;
 }
 
