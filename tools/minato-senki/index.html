@@ -202,6 +202,9 @@ details.fold>summary::after{content:"";width:8px;height:8px;border-right:2px sol
 details.fold[open]>summary::after{transform:rotate(-135deg);margin-top:4px}
 details.fold>summary small{font-family:var(--body);font-weight:400;color:var(--muted);font-size:.76rem;margin-left:auto}
 .fold-in{padding:0 16px 16px;display:flex;flex-direction:column;gap:12px}
+.statbox{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.statbox>.stat-h{padding:12px 16px 10px;font-family:var(--display);font-weight:700;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.statbox>.stat-h small{font-family:var(--body);font-weight:400;color:var(--muted);font-size:.76rem;margin-left:auto}
 .meters{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px}
 .meter{display:flex;flex-direction:column;gap:3px;min-width:0}
 .meter .top{display:flex;justify-content:space-between;font-size:.8rem}
@@ -1314,6 +1317,20 @@ function marry(g){
   }
   g.married=true; g.marriedAge=g.age; fkMarry(g); (g.marriages=g.marriages||[]).push(g.age);
 }
+// 離婚の理由を一つに決めて、文面で分かるようにする
+function divWhy(R,p,m,s){
+  let k=Object.keys(R).reduce((a,b)=>R[b]>R[a]?b:a);
+  if(R.kyaba) k="kyaba";
+  if(k==="sin"&&s>6) k=m.strain>3?"strain":"sat";
+  const L=p.label, T={
+    kyaba:`夫のキャバ通いと浮気は、最後まで直らなかった。${L}と離婚した。`,
+    night:`夫の夜の付き合いは、結婚しても減らなかった。${L}と離婚した。`,
+    strain:`すれ違いが積み重なり、話し合っても戻らなかった（すれ違い${m.strain.toFixed(1)}）。${L}と離婚した。`,
+    sat:`夫婦の満足度が上がらないまま、年が過ぎた（満足度${m.sat.toFixed(1)}）。${L}と離婚した。`,
+    sin:`夫は誠実な人ではなかった。約束を破られるたびに信じられなくなり、${L}と離婚した。`,
+    young:`${G.marriedAge}歳での結婚は早すぎた。二人の生き方が合わなくなり、${L}と離婚した。`};
+  return T[k];
+}
 function divorce(t,cause){
   const p=G.partner, m=G.mar;
   say(t||`${p.label}と離婚した。`); if(m.kid) say(kidAge(G)===0?"子どもは自分が育てることにした。":"子どもは自分が引き取った。"); m.cause=cause||"strain";
@@ -1400,9 +1417,11 @@ function marAct(k){
   if(m.secret && Math.random()<0.1){ divorce("隠していたことが夫に知られた。話し合いの末、離婚が決まった。","my"); return nextYear(); }
   // 夜の世界で出会った夫はキャバ通いが直らないことがある。一度許しても繰り返し、離婚率を押し上げる
   if(m.kyaba && Math.random()<0.3){ m.strain=clamp(m.strain+1.2); m.sat=clamp(m.sat-0.6); say("また別のキャバ嬢の名前が出てきた。夫の店通いは、結婚しても直らなかった。"); }
-  const risk=(s<=4?0.04:s<=6?0.015:0.005)+(G.marriedAge<23?0.03:0)+Math.max(0,m.strain-6)*0.06+(m.sat<3?0.08:0)+((m.route==="night"||m.route==="shacho")?0.02:0)+(m.kyaba?0.03:0);
-  if(Math.random()<risk){
-    divorce(m.kyaba?`夫のキャバ通いと浮気は、最後まで直らなかった。${p.label}と離婚した。`:m.strain>=6?`すれ違いが積み重なり、${p.label}と離婚した。`:G.marriedAge<23?`${p.label}と離婚した。若すぎた結婚だった。`:`${p.label}と離婚した。`);
+  // 満足度6以上・すれ違い3以下の夫婦は、誠実さや若い結婚だけでは離婚しない
+  const calm=m.sat>=6&&m.strain<=3;
+  const R={sin:calm?0:(s<=4?0.04:s<=6?0.015:0.005),young:calm||G.marriedAge>=23?0:0.03,strain:Math.max(0,m.strain-6)*0.06,sat:m.sat<3?0.08:0,night:calm||!(m.route==="night"||m.route==="shacho")?0:0.02,kyaba:m.kyaba?0.03:0};
+  if(Math.random()<Object.values(R).reduce((a,b)=>a+b,0)){
+    divorce(divWhy(R,p,m,s));
     return nextYear();
   }
   rvLean(G,k); somAct(G,k);
@@ -2404,7 +2423,6 @@ function logHTML(){return `<details class="fold"><summary>戦記<small>${G.log.l
 function msNote(){return PREF.speed==="off"&&MILESTONE[G.age]&&!G.married?`<div class="note">${MILESTONE[G.age]}</div>`:"";}
 let BUSY=false;
 function bindGame(){
-  document.querySelectorAll("details[data-stat]").forEach(el=>el.addEventListener("toggle",()=>{PREF.statOpen=el.open;savePref();}));
   document.querySelectorAll("[data-a]").forEach(b=>b.onclick=()=>{if(BUSY)return;BUSY=true;b.classList.add("picked");setTimeout(()=>{BUSY=false;act(b.dataset.a);},110);});
   if(G.event){G.event.c.forEach((_,i)=>{const b=$("#ev"+i);if(b)b.onclick=()=>answerEvent(i);});}
   else if(G.offer){$("#yes").onclick=()=>answerOffer(true);$("#no").onclick=()=>answerOffer(false);}
@@ -2435,7 +2453,7 @@ function renderGame(){
   ${G.event?eventHTML():G.offer?offerHTML():choicesHTML(acts,`${G.age}歳の一年、何に使う？`)}
   ${msNote()}
   ${G.ideal-d.kekkon>=2?`<div class="note">理想が結婚モテを ${(G.ideal-d.kekkon).toFixed(1)} 上回っている。釣り合う相手を「下」に感じやすい。</div>`:""}
-  <details class="fold" data-stat${PREF.statOpen!==false?" open":""}><summary>ステータス詳細<small>${esc(tag)}</small></summary><div class="fold-in">
+  <section class="statbox"><div class="stat-h">ステータス<small>${esc(tag)}</small></div><div class="fold-in">
     <div class="meters">
       ${G.age<20?"":meter("asobi","遊びモテ",d.asobi)}
       ${meter("kekkon","結婚モテ",d.kekkon)}
@@ -2462,7 +2480,7 @@ function renderGame(){
     </div>
     ${w?`<div class="worlds" aria-label="出会う相手の比率"><span class="hint">婚活で出会う相手</span><div class="wbar"><i class="w-day" style="width:${w.day*100}%"></i><i class="w-night" style="width:${w.night*100}%"></i><i class="w-biz" style="width:${w.biz*100}%"></i></div><div class="wleg"><span>昼職 ${Math.round(w.day*100)}%</span><span>夜の世界 ${Math.round(w.night*100)}%</span><span>経営者 ${Math.round(w.biz*100)}%</span></div></div>`:""}
     ${MILESTONE[G.age]?`<div class="note">${MILESTONE[G.age]}</div>`:""}
-  </div></details>
+  </div></section>
   ${logHTML()}`;
   bindGame(); saveGame();
 }
@@ -2479,7 +2497,7 @@ function renderMarried(){
   ${resHTML()}
   ${G.event?eventHTML():choicesHTML(acts,`${marY(G)<1?"新婚":`結婚${marY(G)}年目`}、${G.age}歳の一年をどう過ごす？`)}
   ${tip?`<div class="note">${tip}</div>`:""}
-  <details class="fold" data-stat${PREF.statOpen!==false?" open":""}><summary>夫婦と家計の詳細<small>出会い：${ROUTE[m.route].n}</small></summary><div class="fold-in">
+  <section class="statbox"><div class="stat-h">夫婦と家計<small>出会い：${ROUTE[m.route].n}</small></div><div class="fold-in">
     <div class="note">夫：${p.label}（年収${Math.round(p.income*m.hInc).toLocaleString()}万円）／人柄：${(p.persona||personaOf(p)).slice(0,2).join("・")}／出会い：${ROUTE[m.route].n}</div>
     <div class="meters">
       ${meter("sat","夫婦の満足度",m.sat)}
@@ -2497,7 +2515,7 @@ function renderMarried(){
       ${kidAt(G)?"<span>子ども <b>あり</b></span>":""}
       ${G.job==="kigyo"?`<span>事業規模 <b>${G.biz.toFixed(1)}</b></span>`:""}${G.job==="geino"?`<span>知名度 <b>${(G.fame||0).toFixed(1)}</b></span>`:""}${G.job==="influ"?`<span>フォロワー <b>${(G.fans||0).toFixed(1)}万人</b></span>`:""}
     </div>
-  </div></details>
+  </div></section>
   ${logHTML()}`;
   bindGame(); saveGame();
 }
@@ -2577,7 +2595,7 @@ function openZukan(){
 }
 
 /* ---------- レア度 ---------- */
-const RARE={"港区の残り香":  26.4, "招待状が切れない女":  15.1, "夜を元手にした女":  6.8, "選ぶ側に回った女":  5.7, "大きくは変わらなかった◯年":  5.5, "これからの人":  4.8, "勝ち逃げした普通の子":  4.3, "積み上げ直した◯年":  4.2, "値段を知っていた女":  2, "最後まで探し続けた女":  2, "理想だけが一流":  1.8, "自分の城を持った女":  1.8, "離婚して再出発":  1.6, "家族が増えた二人":  1.6, "経営者の妻":  1.6, "毎年選び直した二人":  1.5, "最後に間に合った女":  1, "ほどほどの夫婦":  0.9, "ホスト沼の果て":  0.9, "儲け話を信じた女":  0.9, "社長夫人（名ばかり）":  0.8, "ハイスペを射止めた女":  0.8, "港区を卒業した女":  0.7, "いただききった女":  0.7, "妥協したと思っている妻":  0.7, "表に戻れない女":  0.7, "夜の世界で結ばれた二人":  0.6, "これから始まる二人":  0.6, "戦友のような夫婦":  0.5, "トロフィーワイフ":  0.5, "元・少し有名な人":  0.5, "自分の暮らしを選んだ女":  0.4, "港区に残った40歳":  0.4, "仮面夫婦":  0.4, "港区を買う側":  0.4, "更新が止まったアカウント":  0.3, "シングルマザーとして生きた女":  0.2, "許さないと決めた女":  0.2, "40歳で逆転した女":  0.2, "言えないことがある妻":  0.2, "港区の既読スルー":  0.1, "壊れかけて直した二人":  0.1, "シンデレラ（夜の部）":  0.1, "いいねの数だけ残った女":  0.1, "家計の主役になった妻":  0, "二人で生きると決めた夫婦":  0, "自分で終わらせた結婚":  0};
+const RARE={"これからの人":  18.1, "理想だけが一流":  15.1, "大きくは変わらなかった◯年":  11.4, "港区の残り香":  8.9, "値段を知っていた女":  6.5, "夜を元手にした女":  6.3, "自分の城を持った女":  3.9, "昼に戻った◯年":  2.4, "家族が増えた二人":  2.1, "毎年選び直した二人":  2.1, "最後に間に合った女":  1.5, "経営者の妻":  1.4, "夜の世界で結ばれた二人":  1.4, "ほどほどの夫婦":  1.4, "離婚して再出発":  1.4, "選ぶ側に回った女":  1.2, "妥協したと思っている妻":  1.1, "港区の既読スルー":  1, "ハイスペを射止めた女":  1, "社長夫人（名ばかり）":  1, "儲け話を信じた女":  0.9, "招待状が切れない女":  0.9, "トロフィーワイフ":  0.8, "勝ち逃げした普通の子":  0.8, "最後まで探し続けた女":  0.8, "港区を卒業した女":  0.8, "積み上げ直した◯年":  0.8, "いただききった女":  0.7, "自分の暮らしを選んだ女":  0.6, "表に戻れない女":  0.6, "これから始まる二人":  0.6, "戦友のような夫婦":  0.5, "港区を買う側":  0.4, "言えないことがある妻":  0.3, "更新が止まったアカウント":  0.3, "港区に残った40歳":  0.3, "許さないと決めた女":  0.2, "自分で終わらせた結婚":  0.2, "シングルマザーとして生きた女":  0.2, "40歳で逆転した女":  0.2, "二人で生きると決めた夫婦":  0.1, "消せない過去を持つ女":  0.1, "壊れかけて直した二人":  0.1, "仮面夫婦":  0.1, "家計の主役になった妻":  0.1, "シンデレラ（夜の部）":  0.1, "元・少し有名な人":  0.1};
 function rarePct(t){if(LOCAL_T.includes(t))return null;const v=RARE[zkey(t)];return v==null?null:v;}
 function pctTxt(p){return p==null?"":p<1?"1%未満":p<10?`${p.toFixed(1)}%`:`${Math.round(p)}%`;}
 function stars(p){return p==null?"★★★☆☆":p<1?"★★★★★":p<3?"★★★★☆":p<7?"★★★☆☆":p<15?"★★☆☆☆":"★☆☆☆☆";}
