@@ -477,6 +477,20 @@ details.record .fold-in{display:flex;flex-direction:column;gap:14px}
 .mtaste li.s2 .mt-2>div:first-child span,.mtaste li.s3 .mt-2>div:first-child span{color:var(--gold);font-weight:700}
 .mtaste li.s4 .mt-2>div:first-child span{color:var(--rose);font-weight:700}
 .friendr{margin:10px 0 4px;padding:10px 12px;border-radius:8px;background:color-mix(in srgb,var(--rose) 10%,var(--surface));border:1px solid color-mix(in srgb,var(--rose) 35%,transparent);font-size:.9rem;text-align:center;overflow-wrap:anywhere}
+/* ---- 声を送る（11/27）: 右下のボタン→ここが変／あなたの体験 ---- */
+body{padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+.fb-open{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;background:var(--surface);color:var(--rose);border:1.5px solid var(--rose);padding:0 14px;min-height:40px;font:700 .8rem var(--body);border-radius:999px;box-shadow:var(--shadow)}
+body:has(.startbar) .fb-open{bottom:var(--fb-lift,72px);min-height:32px;padding:0 12px;font-size:.74rem;box-shadow:none}
+.startbar .sum{padding:0 86px}
+.fb{position:fixed;left:max(12px,env(safe-area-inset-left,0px));right:max(12px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:65;max-width:520px;max-height:calc(100dvh - 24px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));overflow:auto;margin:0 auto;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:8px;box-shadow:0 10px 30px rgba(0,0,0,.28)}
+.fb h3{display:flex;justify-content:space-between;align-items:center;font-size:1rem}
+.fb label{font-size:.8rem;color:var(--muted)}
+.fb textarea,.fb select{width:100%;font:inherit;font-size:16px;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.fb textarea{resize:vertical;line-height:1.6}
+.fb .fb-row{display:flex;gap:8px}.fb .fb-row .btn{flex:1;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center}
+.fb .fb-note{font-size:.76rem;color:var(--muted);line-height:1.6}
+.fb .fb-st{font-size:.82rem}
+.fb .fb-st:empty{display:none}
 </style>
 </head>
 <body>
@@ -487,6 +501,31 @@ details.record .fold-in{display:flex;flex-direction:column;gap:14px}
 <div class="yr" id="yr" hidden></div>
 <div class="modal" id="modal" hidden></div>
 <div class="toast" id="toast" role="status" hidden></div>
+<button class="fb-open" id="fbOpen" type="button" aria-haspopup="dialog">声を送る</button>
+<div class="fb" id="fb" hidden role="dialog" aria-labelledby="fbTitle">
+  <h3 id="fbTitle">声を送る<button class="linkbtn" id="fbClose" type="button" style="min-height:40px;padding:4px 8px">閉じる</button></h3>
+  <div class="seg" role="group" aria-label="送る内容"><button type="button" id="fbTabHen" aria-pressed="true">ここが変</button><button type="button" id="fbTabVoice" aria-pressed="false">あなたの体験を教えて</button></div>
+  <div id="fbHen" style="display:flex;flex-direction:column;gap:6px">
+    <label for="fbSel">どの文？（文を選んでから押すと、ここに入ります）</label>
+    <textarea id="fbSel" rows="2" maxlength="300"></textarea>
+    <label for="fbText">どう変？</label>
+    <textarea id="fbText" rows="3" maxlength="400" placeholder="例：この年齢でこの職業はありえない"></textarea>
+    <p class="fb-note" id="fbCtx"></p>
+  </div>
+  <div id="fbVoice" hidden style="display:flex;flex-direction:column;gap:6px">
+    <label for="fbExp">港区・婚活・結婚・仕事で、実際にあったこと。ゲームの材料にします。</label>
+    <textarea id="fbExp" rows="5" maxlength="800" placeholder="例：食事会で、最初に年収を聞かれた"></textarea>
+    <label for="fbAge">年代（任意）</label>
+    <select id="fbAge"><option value="">選ばない</option><option>10代</option><option>20代前半</option><option>20代後半</option><option>30代前半</option><option>30代後半</option><option>40代</option><option>50代以上</option></select>
+  </div>
+  <div class="fb-row"><button class="btn" id="fbSend" type="button">送る</button></div>
+  <p class="fb-st" id="fbStatus" role="status"></p>
+  <div id="fbAlt" hidden style="display:flex;flex-direction:column;gap:6px">
+    <p class="fb-note">この画面からは保存できません。Xで送ってください（#港区女子戦記の声）。</p>
+    <div class="fb-row"><a class="btn" id="fbX" target="_blank" rel="noopener">Xで送る</a><button class="btn ghost" id="fbCopy" type="button">文をコピー</button></div>
+    <textarea id="fbAltText" rows="4" readonly></textarea>
+  </div>
+</div>
 </main>
 <div class="nm-about">
 <section>
@@ -3124,6 +3163,78 @@ if(typeof document!=="undefined"&&document.addEventListener) document.addEventLi
   const btns=q("#pr0")?[q("#pr0"),q("#pr1"),q("#pr2")].filter(Boolean):q("#prskip")?[q("#prskip"),q("#prre")]:q("#ev0")?[q("#ev0"),q("#ev1"),q("#ev2")].filter(Boolean):q("#yes")?[q("#yes"),q("#no")]:[...document.querySelectorAll(".actions .act")];
   const b=btns[i]; if(b&&!b.disabled){e.preventDefault();b.click();}
 });
+
+/* ---------- 声を送る（ここが変／あなたの体験） ---------- */
+(()=>{
+  if(typeof document==="undefined"||!document.getElementById) return;
+  const el=id=>document.getElementById(id), open=el("fbOpen"), box=el("fb");
+  if(!open||!box||!open.addEventListener) return;
+  const tk=(e,p)=>{ try{ if(typeof track==="function") track(e,p); else if(typeof gtag==="function") gtag("event",e,Object.assign({tool:"minato-senki"},p||{})); }catch(x){} };
+  let kind="hen", lastSel="";
+  const grabSel=()=>{ try{ const s=String((window.getSelection&&window.getSelection())||"").trim(); if(s&&!(box.contains&&window.getSelection().anchorNode&&box.contains(window.getSelection().anchorNode))) lastSel=s.slice(0,300); }catch(e){} };
+  try{ document.addEventListener("selectionchange",grabSel); }catch(e){}
+  open.addEventListener("pointerdown",grabSel);
+  const jobName=g=>{ const j=(typeof JOBS!=="undefined"&&g)?JOBS.find(x=>x.k===g.job):null; return j?j.n:(g&&g.job)||""; };
+  const scene=()=>{
+    const a=document.querySelector("#app"), q=s=>{ const n=a&&a.querySelector&&a.querySelector(s); return n&&n.textContent?n.textContent.replace(/\s+/g," ").trim().slice(0,40):""; };
+    const g=typeof G!=="undefined"?G:null;
+    const ph=!g?(typeof PRO!=="undefined"&&PRO?"序章":"はじめの設定"):g.ext&&g.done?"40歳の終幕":g.sumDone&&!g.ext?"まとめ":g.offer?"プロポーズ":`${g.age}歳`;
+    const h=q(".sheet .badge")||q("h2"); return g&&!g.sumDone&&!g.offer?(h||ph):[ph,h].filter(Boolean).join("・");
+  };
+  const ctx=()=>{
+    const g=typeof G!=="undefined"?G:null;
+    return {age:g?g.age:null,job:g?jobName(g):"",married:g?(g.married?"既婚":g.divorced?"離婚後":"未婚"):"",partner:g&&g.partner?String(g.partner.label||""):"",scene:scene(),
+      log:g&&g.log?g.log.slice(-3).map(x=>`${x[0]}歳 ${x[1]}`.slice(0,120)):[]};
+  };
+  const ctxLine=c=>[c.age!=null?`${c.age}歳`:"",c.job,c.married,c.scene].filter(Boolean).join("・");
+  const setKind=k=>{ kind=k; el("fbTabHen").setAttribute("aria-pressed",k==="hen"?"true":"false"); el("fbTabVoice").setAttribute("aria-pressed",k==="voice"?"true":"false");
+    el("fbHen").hidden=k!=="hen"; el("fbVoice").hidden=k!=="voice"; el("fbStatus").textContent=""; el("fbAlt").hidden=true; };
+  open.addEventListener("click",()=>{
+    grabSel(); el("fbSel").value=lastSel; lastSel=""; el("fbText").value=""; el("fbCtx").textContent="一緒に届く情報："+(ctxLine(ctx())||"はじめの画面");
+    setKind(el("fbExp").value.trim()&&!el("fbSel").value?"voice":"hen"); box.hidden=false; open.hidden=true;
+    tk("feedback_open",{kind});
+    try{ (el("fbSel").value?el("fbText"):el("fbSel")).focus({preventScroll:true}); }catch(e){}
+  });
+  const close=()=>{ box.hidden=true; open.hidden=false; };
+  el("fbClose").addEventListener("click",close);
+  el("fbTabHen").addEventListener("click",()=>setKind("hen"));
+  el("fbTabVoice").addEventListener("click",()=>setKind("voice"));
+  const postText=rec=>rec.kind==="hen"
+    ?`#港区女子戦記の声【ここが変・${ctxLine(rec)}】「${rec.selected}」${rec.comment}`
+    :`#港区女子戦記の声【体験${rec.ageBand?"・"+rec.ageBand:""}】${rec.text}`;
+  el("fbSend").addEventListener("click",async()=>{
+    let rec;
+    if(kind==="hen"){ const sel=el("fbSel").value.trim(), txt=el("fbText").value.trim();
+      if(!sel&&!txt){ el("fbStatus").textContent="どの文か、どう変かを書いてください。"; return; }
+      rec=Object.assign({kind:"hen",selected:sel,comment:txt},ctx());
+    } else { const t=el("fbExp").value.trim();
+      if(!t){ el("fbStatus").textContent="あったことを書いてください。"; return; }
+      rec={kind:"voice",text:t,ageBand:el("fbAge").value||""};
+    }
+    rec.at=new Date().toISOString(); rec.ver="v1";
+    el("fbStatus").textContent="送っています…"; el("fbAlt").hidden=true;
+    const showAlt=()=>{ const full=postText(rec); el("fbAltText").value=full; el("fbX").href="https://twitter.com/intent/tweet?text="+encodeURIComponent(full.slice(0,135));
+      el("fbX").dataset.kind=rec.kind; el("fbAlt").hidden=false; el("fbStatus").textContent=""; };
+    try{
+      const C=window.claude, db=C&&C.use?await C.use("db"):null, user=db?await C.use("user"):null;
+      const uid=user&&user.id?await user.id():null;
+      if(!db||!uid){ showAlt(); return; }
+      await db.collection((rec.kind==="hen"?"minato_feedback/":"minato_voice/")+uid+"/items").add(rec);
+      el("fbStatus").textContent="届きました。ありがとうございます。";
+      if(rec.kind==="hen"){ el("fbSel").value=""; el("fbText").value=""; } else { el("fbExp").value=""; el("fbAge").value=""; }
+      tk("feedback_send",{kind:rec.kind,method:"db"});
+    }catch(e){ showAlt(); }
+  });
+  el("fbX").addEventListener("click",()=>tk("feedback_send",{kind:el("fbX").dataset.kind||kind,method:"x"}));
+  el("fbCopy").addEventListener("click",()=>{ const t=el("fbAltText"), done=()=>{el("fbStatus").textContent="コピーしました。";}, sel=()=>{ try{t.select();}catch(e){} el("fbStatus").textContent="選択しました。長押しでコピーできます。"; };
+    tk("feedback_send",{kind:el("fbX").dataset.kind||kind,method:"copy"});
+    if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(t.value).then(done,sel); else sel(); });
+  box.addEventListener("keydown",e=>{ e.stopPropagation(); if(e.key==="Escape") close(); }); // 数字キーで年の選択が押されないように
+  const lift=()=>{ try{ const sm=document.querySelector(".startbar .sum"); if(sm&&sm.getBoundingClientRect&&!open.hidden){ const r=sm.getBoundingClientRect(), bh=open.getBoundingClientRect().height||32; if(r.height>0) document.documentElement.style.setProperty("--fb-lift",Math.round(window.innerHeight-(r.top+r.height/2)-bh/2)+"px"); } }catch(e){} };
+  try{ if(typeof MutationObserver!=="undefined") new MutationObserver(lift).observe(document.querySelector("#app"),{childList:true}); }catch(e){}
+  try{ window.addEventListener("resize",lift); window.addEventListener("scroll",lift,{passive:true}); }catch(e){}
+  lift();
+})();
 
 applyTheme();
 renderSetup();
